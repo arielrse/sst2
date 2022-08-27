@@ -1,0 +1,19 @@
+{
+  "cm": "",
+  "sitioId": "",
+  "propertyId": "",
+  "b_idenActivo": "001",
+  "b_nroActivo": "",
+  "b1_noAplica": false,
+  "b1_idenActivo": "",
+  "b1_nroActivo": "",
+  "d_horainicio": "",
+  "d_horafin": "",
+  "d_transcurrido": "",
+  "c_fechaRealizacion": "",
+  "e_personal": [
+    { "nombre": "Mario","cargo": "","telefono": "" },
+    { "nombre": "Juan","cargo": "","telefono": "" },
+    { "nombre": "Pepe","cargo": "","telefono": "" }
+  ]
+}

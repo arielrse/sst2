@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="91d437b3-7b2a-4735-b42e-d069e2557717" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="2CHdg7WDgz6l5AKIK71D4cKNGkc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina003" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\sst\paquetes\rutina\data" />
+      <recent name="C:\xampp\htdocs\sst\paquetes\rutina" />
+      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico\rutina003" />
+      <recent name="C:\xampp\htdocs\sst\paquetes\rutina" />
+      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico\rutina002" />
+      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico\rutina001" />
+      <recent name="C:\xampp\htdocs\sst\paquetes\rutina\data" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="91d437b3-7b2a-4735-b42e-d069e2557717" name="Default Changelist" comment="" />
+      <created>1658463552672</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658463552672</updated>
+      <workItem from="1658463554102" duration="3910000" />
+      <workItem from="1658467742926" duration="6837000" />
+      <workItem from="1658521879944" duration="2284000" />
+      <workItem from="1658524204020" duration="1011000" />
+      <workItem from="1658526366478" duration="181000" />
+      <workItem from="1658526556287" duration="15573000" />
+      <workItem from="1658586896093" duration="18861000" />
+      <workItem from="1658652888728" duration="21423000" />
+      <workItem from="1658756399082" duration="11632000" />
+      <workItem from="1658870158100" duration="17876000" />
+      <workItem from="1658920618404" duration="1379000" />
+      <workItem from="1658922515336" duration="10544000" />
+      <workItem from="1659019937654" duration="370000" />
+      <workItem from="1659021871857" duration="12546000" />
+      <workItem from="1659066656574" duration="12876000" />
+      <workItem from="1659105940483" duration="6846000" />
+      <workItem from="1659148153146" duration="2101000" />
+      <workItem from="1659178934129" duration="29365000" />
+      <workItem from="1659317862086" duration="9657000" />
+      <workItem from="1659362325993" duration="2326000" />
+      <workItem from="1659407621035" duration="8791000" />
+      <workItem from="1659474385694" duration="9387000" />
+      <workItem from="1659530954074" duration="10800000" />
+      <workItem from="1659699013705" duration="8695000" />
+      <workItem from="1659799022322" duration="17386000" />
+      <workItem from="1659877363834" duration="18650000" />
+      <workItem from="1659930945522" duration="1204000" />
+      <workItem from="1660014115306" duration="8480000" />
+      <workItem from="1660051298631" duration="2146000" />
+      <workItem from="1660135636691" duration="587000" />
+      <workItem from="1660476228597" duration="24962000" />
+      <workItem from="1660562192333" duration="29976000" />
+      <workItem from="1660650653453" duration="3757000" />
+      <workItem from="1660655185403" duration="1860000" />
+      <workItem from="1660657675299" duration="13852000" />
+      <workItem from="1660740475811" duration="2554000" />
+      <workItem from="1660751916093" duration="19968000" />
+      <workItem from="1660828969316" duration="15755000" />
+      <workItem from="1660896938000" duration="38546000" />
+      <workItem from="1660994100708" duration="20418000" />
+      <workItem from="1661079108921" duration="21528000" />
+      <workItem from="1661175535395" duration="31507000" />
+      <workItem from="1661262940119" duration="18137000" />
+      <workItem from="1661337853632" duration="28606000" />
+      <workItem from="1661431535635" duration="66056000" />
+      <workItem from="1661602507683" duration="17574000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1660051326520">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1660051326520" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1661220326050">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1661220326050" />
+    <state x="758" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1661179465802">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="758" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1661179465802" />
+    <state x="766" y="96" width="954" height="844" key="find.popup" timestamp="1661522813218">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="766" y="96" width="954" height="844" key="find.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1661522813218" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1661624683208">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1661624683208" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1661548324137" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1661577647718">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1661577647718" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1661549359525" />
+  </component>
+</project>
