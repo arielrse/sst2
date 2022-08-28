@@ -1015,3 +1015,4 @@ $web = $_SESSION["web"];
     </div>
 </div>
 
+<script src="../../paquetes/rutina/rutina006.js" type="text/javascript"></script>

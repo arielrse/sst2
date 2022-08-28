@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91d437b3-7b2a-4735-b42e-d069e2557717" name="Default Changelist" comment="" />
+    <list default="true" id="91d437b3-7b2a-4735-b42e-d069e2557717" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina004/rutina_g2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina004/rutina_g3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paquetes/rutina/rutina000.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paquetes/rutina/rutina004.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_004.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_004.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_005.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_005.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_006.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_006.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_007.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_007.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_008.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_008.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_009.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_009.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_010.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_010.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_011.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_011.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_012.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_012.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_013.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_013.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_014.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_014.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_015.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_015.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_016.php" beforeDir="false" afterPath="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina_016.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paquetes/rutina/data/rutina004.json" beforeDir="false" afterPath="$PROJECT_DIR$/paquetes/rutina/data/rutina004.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +29,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2CHdg7WDgz6l5AKIK71D4cKNGkc" />
   <component name="ProjectViewState">
@@ -18,22 +41,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modulos/seguimiento_tecnico/rutina003" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/paquetes/rutina" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\sst\paquetes\rutina" />
+      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico\rutina004" />
+      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico\rutina003" />
+      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico\rutina002" />
+      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico\rutina001" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\sst\paquetes\rutina\data" />
       <recent name="C:\xampp\htdocs\sst\paquetes\rutina" />
       <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico\rutina003" />
-      <recent name="C:\xampp\htdocs\sst\paquetes\rutina" />
-      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico\rutina002" />
-      <recent name="C:\xampp\htdocs\sst\modulos\seguimiento_tecnico\rutina001" />
-      <recent name="C:\xampp\htdocs\sst\paquetes\rutina\data" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -92,6 +116,8 @@
       <workItem from="1661337853632" duration="28606000" />
       <workItem from="1661431535635" duration="66056000" />
       <workItem from="1661602507683" duration="17574000" />
+      <workItem from="1661639930494" duration="801000" />
+      <workItem from="1661640891679" duration="8605000" />
     </task>
     <servers />
   </component>
@@ -120,10 +146,10 @@
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1661624683208" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1661548324137" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1661577647718">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1661648184925">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1661577647718" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1661549359525" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1661648184925" />
   </component>
 </project>
