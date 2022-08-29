@@ -86,7 +86,7 @@ $(document).ready(function() {
     var g3_17_01=  $('#g3_17_01').val(); var g3_17_02 = $('#g3_17_02').val();
     var g3_18_01=  $('#g3_18_01').val(); var g3_18_02 = $('#g3_18_02').val();
     var g3_19_01=  $('#g3_19_01').val(); var g3_19_02 = $('#g3_19_02').val(); var g3_19_03 = $('#g3_19_03').val(); var g3_19_04 = $('#g3_19_04').val();
-    var g3_20_01=  $('#g3_20_01').val(); var g3_20_02 = $('#g3_20_02').val(); var g3_20_03 = $('#g3_20_03').val();
+    var g3_20_01=  $('#g3_20_01').val(); var g3_20_02 = $('#g3_20_02').val(); var g3_20_03 = $('#g3_20_03').prop('checked');
     /** footer **/
     var h_pendientes        = $('#h_pendientes').val()
     var i_recomendaciones   = $('#i_recomendaciones').val()
