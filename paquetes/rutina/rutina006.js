@@ -147,7 +147,7 @@ getDatos().then( (datos) => {
     datos.i_recomendaciones = i_recomendaciones;
     datos.j_observaciones   = j_observaciones;
 
-    alert(JSON.stringify( datos ));
+    //alert(JSON.stringify( datos ));
 
                 jQuery.post("../../paquetes/rutina/update_rutina.php", {
                     idrutina: idrutina,
