@@ -22,7 +22,7 @@ $g3_16_01 = $g_desarrollo_g3->g3_16_01; $g3_16_02 = $g_desarrollo_g3->g3_16_02;
 $g3_17_01 = $g_desarrollo_g3->g3_17_01; $g3_17_02 = $g_desarrollo_g3->g3_17_02;
 $g3_18_01 = $g_desarrollo_g3->g3_18_01; $g3_18_02 = $g_desarrollo_g3->g3_18_02;
 $g3_19_01 = $g_desarrollo_g3->g3_19_01; $g3_19_02 = $g_desarrollo_g3->g3_19_02; $g3_19_03 = $g_desarrollo_g3->g3_19_03; $g3_19_04 = $g_desarrollo_g3->g3_19_04;
-$g3_20_01 = $g_desarrollo_g3->g3_20_01; $g3_20_02 = $g_desarrollo_g3->g3_20_02; $g3_20_03 = $g_desarrollo_g3->g3_20_03 ? "checked" : "";
+$g3_20_01 = $g_desarrollo_g3->g3_20_01; $g3_20_02 = $g_desarrollo_g3->g3_20_02; $g3_20_03 = $g_desarrollo_g3->g3_20_03;
 
 ?>
 
