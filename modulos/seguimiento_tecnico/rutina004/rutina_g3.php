@@ -129,7 +129,7 @@ $g3_20_01 = $g_desarrollo_g3->g3_20_01; $g3_20_02 = $g_desarrollo_g3->g3_20_02; 
         <div class="input-group input-group-sm mb-2">
             <h7 class="mb-0">G.3.10	Medición de baja presión con instrumento</h7>
             <div class="form-check form-check-inline">
-                <input type="text" class="form-control" id="g3_09_01" value="<?php echo $g3_10_01 ?>">
+                <input type="text" class="form-control" id="g3_10_01" value="<?php echo $g3_10_01 ?>">
             </div>
             <div class="form-check form-check-inline">
                 <label class="form-check-label">PSI</label>
@@ -293,7 +293,7 @@ $g3_20_01 = $g_desarrollo_g3->g3_20_01; $g3_20_02 = $g_desarrollo_g3->g3_20_02; 
             <span class="input-group-text">registro de voltaje nominal</span>
 
             <div class="input-group-text">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <input class="form-check-input" type="checkbox" id="g3_20_03" required <?php echo $g3_20_03?>>
             </div>
             <span class="input-group-text">N/A</span>
 
