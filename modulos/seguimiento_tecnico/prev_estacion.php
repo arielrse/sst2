@@ -287,13 +287,13 @@ $cel2    = $datoGp['cel2'];*/
 
 
     function eliminarRutina(idrutina, codForm){
-        alert( 'Desea eliminar? rutina: ' + idrutina + " - " + codForm);
+        alert( 'Realmente desea eliminar la rutina? : ' + codForm);
 
         jQuery.post("../../paquetes/rutina/delete_rutina.php", {
             idrutina: idrutina,
             codForm: codForm
             }, function(data){
-                alert('Data: ' + data);
+                //alert('Data: ' + data);
                 $("#table-routine").load(window.location + " #table-routine");
             }
         );
