@@ -19,7 +19,7 @@ $g3_16_01 = $g_desarrollo_g3->g3_16_01; $g3_16_02 = $g_desarrollo_g3->g3_16_02;
 $g3_17_01 = $g_desarrollo_g3->g3_17_01; $g3_17_02 = $g_desarrollo_g3->g3_17_02;
 $g3_18_01 = $g_desarrollo_g3->g3_18_01; $g3_18_02 = $g_desarrollo_g3->g3_18_02;
 $g3_19_01 = $g_desarrollo_g3->g3_19_01; $g3_19_02 = $g_desarrollo_g3->g3_19_02; $g3_19_03 = $g_desarrollo_g3->g3_19_03; $g3_19_04 =  $g_desarrollo_g3->g3_19_04;
-$g3_20_01 = $g_desarrollo_g3->g3_20_01; $g3_20_02 = $g_desarrollo_g3->g3_20_02; $g3_20_03 = $g_desarrollo_g3->g3_20_03;
+$g3_20_01 = $g_desarrollo_g3->g3_20_01; $g3_20_02 = $g_desarrollo_g3->g3_20_02; $g3_20_03 = $g_desarrollo_g3->g3_20_03 ? "checked" : "";
 ?>
 
 <div class="card">
@@ -293,10 +293,18 @@ $g3_20_01 = $g_desarrollo_g3->g3_20_01; $g3_20_02 = $g_desarrollo_g3->g3_20_02; 
             <span class="input-group-text">registro de voltaje nominal</span>
 
             <div class="input-group-text">
-                <input class="form-check-input" type="checkbox" id="g3_20_03" required <?php echo $g3_20_03?>>
+                <input class="form-check-input" type="checkbox" id="g3_20_03" <?php echo $g3_20_03?>>
             </div>
             <span class="input-group-text">N/A</span>
+        </div>
 
+        <div class="row align-items-center row-cols-auto g-2 mb-2">
+            <div class="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                </div>
+            </div>
         </div>
 
     </div>

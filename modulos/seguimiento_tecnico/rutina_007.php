@@ -17,7 +17,6 @@ $codigoForm = $_GET['cform'];
 
         <?php require("rutina_footer.php"); ?>
 
-
     </div>
 </div>
 
