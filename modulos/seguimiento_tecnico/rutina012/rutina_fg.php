@@ -95,7 +95,7 @@ $g5_08_01 = $g_desarrollo->g5_08_01; $g5_08_02 = $g_desarrollo->g5_08_02;
                     </div>
                 </td>
                 <td>
-                    <input type="text" class="form-control form-control-sm" id="" placeholder="Obs." value="<?php echo $f1_02_03 ?>">
+                    <input type="text" class="form-control form-control-sm" id="f1_02_03" placeholder="Obs." value="<?php echo $f1_02_03 ?>">
                 </td>
 
             </tr>
@@ -150,13 +150,13 @@ $g5_08_01 = $g_desarrollo->g5_08_01; $g5_08_02 = $g_desarrollo->g5_08_02;
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="g1_01_01" value="option1" <?php echo $g1_01_01 ?>>
-                        <label class="form-check-label" for="inlineCheckbox1">Operativo</label>
+                        <label class="form-check-label" for="g1_01_01">Operativo</label>
                     </div>
                 </td>
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="g1_01_02" value="option1" <?php echo $g1_01_02 ?>>
-                        <label class="form-check-label" for="inlineCheckbox1">No operativo</label>
+                        <label class="form-check-label" for="g1_01_02">No operativo</label>
                     </div>
                 </td>
                 <td>
