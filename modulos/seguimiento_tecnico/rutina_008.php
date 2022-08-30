@@ -1,8 +1,10 @@
 <?php
 $web = $_SESSION["web"];
-//$idevento = $_GET['event'];
+$codigoForm = $_GET['cform'];
 
 ?>
+<input type="hidden" name="codigoForm" id="codigoForm" value="<?=$codigoForm?>" />
+
 <div class="page-wrapper">
     <div class="page-content">
 
@@ -11,8 +13,10 @@ $web = $_SESSION["web"];
 
         <?php require("rutina_head.php"); ?>
 
-        <div class="row">
+        <?php require("rutina008/rutina_fg.php"); ?>
+        <!--<div class="row">
             <div class="col-xl-12 mx-auto">
+
                 <h6>F. Verificación Visual - Estado del Activo</h6>
 
                 <div class="card">
@@ -643,8 +647,8 @@ $web = $_SESSION["web"];
 
 
             </div>
-        </div>
-        <!--end row-->
+        </div>-->
+
 
 
         <?php require("rutina_footer.php"); ?>
