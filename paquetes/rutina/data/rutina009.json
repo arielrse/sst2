@@ -9,11 +9,6 @@
   "d_transcurrido": "",
   "c_fechaRealizacion": "",
   "e_personal": "",
-
-  "h_pendientes": "",
-  "i_recomendaciones": "",
-  "j_observaciones": "",
-
   "g_desarrollo":
   {
     "f1_01_01": false, "f1_01_02": false, "f1_01_03": "",
@@ -36,5 +31,8 @@
     "g1_17_01": false, "g1_17_02": false, "g1_17_03": false, "g1_17_04": false,
     "g1_18_01": false, "g1_18_02": false, "g1_18_03": false, "g1_18_04": false,
     "g1_19_01": false, "g1_19_02": false, "g1_19_03": false, "g1_19_04": false
-  }
+  },
+  "h_pendientes": "",
+  "i_recomendaciones": "",
+  "j_observaciones": ""
 }

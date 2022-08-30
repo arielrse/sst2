@@ -31,6 +31,16 @@ $g1_21_01 = $g_desarrollo->g1_21_01; $g1_21_02 = $g_desarrollo->g1_21_02; $g1_21
 
 <div class="card">
     <div class="card-body">
+
+        <div class="row align-items-center row-cols-auto g-2 mb-2">
+            <div class="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                </div>
+            </div>
+        </div>
+
         <table class="table mb-0">
             <tbody>
             <tr>
