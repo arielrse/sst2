@@ -77,7 +77,6 @@ getDatos().then( (datos) => {
     datos.e_personal         = e_personal;
 
     /** g_desarrollo **/
-    //datos.g_desarrollo.g1_01_01 = g1_01_01; datos.g_desarrollo_g1.g1_01_02 = g1_01_02; datos.g_desarrollo_g1.g1_01_03 = g1_01_03;
     datos.g_desarrollo.f1_01_01 = f1_01_01; datos.g_desarrollo.f1_01_02 = f1_01_02; datos.g_desarrollo.f1_01_03 = f1_01_03;
     datos.g_desarrollo.g1_01_01 = g1_01_01; datos.g_desarrollo.g1_01_02 = g1_01_02; datos.g_desarrollo.g1_01_03 = g1_01_03;
     datos.g_desarrollo.g1_02_01 = g1_02_01; datos.g_desarrollo.g1_02_02 = g1_02_02; datos.g_desarrollo.g1_02_03 = g1_02_03;
