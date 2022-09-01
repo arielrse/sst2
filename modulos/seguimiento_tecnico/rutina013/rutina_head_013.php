@@ -179,6 +179,13 @@ while( $data4 = mysqli_fetch_array($res4) ){
     <div class="card">
         <div class="card-body p-3">
 
+            <div class="col mb-2">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                </div>
+            </div>
+
             <table class="table mb-0">
                 <tbody>
 
@@ -272,6 +279,13 @@ while( $data4 = mysqli_fetch_array($res4) ){
     <h6>D. Personal Técnico Responsable</h6>
     <div class="card">
         <div class="card-body p-3">
+
+            <div class="col mb-2">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                </div>
+            </div>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
                 <div class="col">
