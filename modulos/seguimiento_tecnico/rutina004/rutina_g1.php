@@ -26,12 +26,14 @@ $g1_18_01 = $g_desarrollo_g1->g1_18_01 ? "checked" : ""; $g1_18_02 = $g_desarrol
 <div class="card">
     <div class="card-body">
         <div class="row align-items-center row-cols-auto g-2 mb-2">
+
             <div class="col">
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
                     <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
                 </div>
             </div>
+
         </div>
         <table class="table">
             <tr>
@@ -278,7 +280,7 @@ $g1_18_01 = $g_desarrollo_g1->g1_18_01 ? "checked" : ""; $g1_18_02 = $g_desarrol
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="g1_12_02" value="option2" <?php echo $g1_12_02 ?>>
-                        <label class="form-check-label" for="g1_12_0213Malo</label>
+                        <label class="form-check-label" for="g1_12_0213">Malo</label>
                     </div>
                 </td>
                 <td>
@@ -338,7 +340,7 @@ $g1_18_01 = $g_desarrollo_g1->g1_18_01 ? "checked" : ""; $g1_18_02 = $g_desarrol
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="g1_15_02" value="option2" <?php echo $g1_15_02 ?>>
-                        <label class="form-check-label" for="g1_15_0216Malo</label>
+                        <label class="form-check-label" for="g1_15_02">Malo</label>
                     </div>
                 </td>
                 <td>
@@ -358,7 +360,7 @@ $g1_18_01 = $g_desarrollo_g1->g1_18_01 ? "checked" : ""; $g1_18_02 = $g_desarrol
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="g1_16_02" value="option2" <?php echo $g1_16_02 ?>>
-                        <label class="form-check-label" for="g1_16_0217Malo</label>
+                        <label class="form-check-label" for="g1_16_02">Malo</label>
                     </div>
                 </td>
                 <td>
