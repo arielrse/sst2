@@ -32,10 +32,10 @@ $g1_03_04_01 = $g_desarrollo_g1->g1_03_04_01 ? "checked" : ""; $g1_03_04_02 = $g
 $g1_03_05_01 = $g_desarrollo_g1->g1_03_05_01 ? "checked" : ""; $g1_03_05_02 = $g_desarrollo_g1->g1_03_05_02;
 $g1_03_06_01 = $g_desarrollo_g1->g1_03_06_01 ? "checked" : ""; $g1_03_06_02 = $g_desarrollo_g1->g1_03_06_02 ? "checked" : ""; $g1_03_06_03 = $g_desarrollo_g1->g1_03_06_03;
 $g1_04_01_01 = $g_desarrollo_g1->g1_04_01_01 ? "checked" : ""; $g1_04_01_02 = $g_desarrollo_g1->g1_04_01_02 ? "checked" : "";
-$g1_04_02_01 = $g_desarrollo_g1->g1_04_02_01 ? "checked" : ""; $g1_04_02_02 = $g_desarrollo_g1->g1_04_02_02 ? "checked" : "";
+$g1_04_02_01 = $g_desarrollo_g1->g1_04_02_01 ? "checked" : ""; $g1_04_02_02 = $g_desarrollo_g1->g1_04_02_02 ? "checked" : ""; $g1_04_02_03 = $g_desarrollo_g1->g1_04_02_03;
 $g1_04_03_01 = $g_desarrollo_g1->g1_04_03_01 ? "checked" : ""; $g1_04_03_02 = $g_desarrollo_g1->g1_04_03_02;
 $g1_04_04_01 = $g_desarrollo_g1->g1_04_04_01 ? "checked" : ""; $g1_04_04_02 = $g_desarrollo_g1->g1_04_04_02;
-$g1_04_05_01 = $g_desarrollo_g1->g1_04_05_01 ? "checked" : ""; $g1_04_05_02 = $g_desarrollo_g1->g1_04_05_02 ? "checked" : "";
+$g1_04_05_01 = $g_desarrollo_g1->g1_04_05_01 ? "checked" : ""; $g1_04_05_02 = $g_desarrollo_g1->g1_04_05_02 ? "checked" : ""; $g1_04_05_03 = $g_desarrollo_g1->g1_04_05_03;
 $g1_04_06_01 = $g_desarrollo_g1->g1_04_06_01 ? "checked" : ""; $g1_04_06_02 = $g_desarrollo_g1->g1_04_06_02;
 $g1_04_07_01 = $g_desarrollo_g1->g1_04_07_01 ? "checked" : ""; $g1_04_07_02 = $g_desarrollo_g1->g1_04_07_02;
 $g1_04_08_01 = $g_desarrollo_g1->g1_04_08_01 ? "checked" : ""; $g1_04_08_02 = $g_desarrollo_g1->g1_04_08_02;
@@ -53,8 +53,8 @@ $g2_03_01 = $g_desarrollo_g2->g2_03_01 ? "checked" : "";  $g2_03_02 = $g_desarro
 $g2_04_01 = $g_desarrollo_g2->g2_04_01 ? "checked" : "";  $g2_04_02 = $g_desarrollo_g2->g2_04_02 ? "checked" : ""; $g2_04_03 = $g_desarrollo_g2->g2_04_03;
 
 $g_desarrollo_g3 = $obj->{'g_desarrollo_g3'};
-$g3_01_01_01 = $g_desarrollo_g3->g3_01_01_01 ? "checked" : ""; $g3_01_01_02 = $g_desarrollo_g3->g3_01_01_01 ? "checked" : ""; $g3_01_01_03 = $g_desarrollo_g3->g3_01_01_03;
-$g3_01_02_01 = $g_desarrollo_g3->g3_01_02_01 ? "checked" : ""; $g3_01_02_02 = $g_desarrollo_g3->g3_01_02_01 ? "checked" : ""; $g3_01_02_03 = $g_desarrollo_g3->g3_01_02_03;
+$g3_01_01_01 = $g_desarrollo_g3->g3_01_01_01; $g3_01_01_02 = $g_desarrollo_g3->g3_01_01_01; $g3_01_01_03 = $g_desarrollo_g3->g3_01_01_03;
+$g3_01_02_01 = $g_desarrollo_g3->g3_01_02_01; $g3_01_02_02 = $g_desarrollo_g3->g3_01_02_01; $g3_01_02_03 = $g_desarrollo_g3->g3_01_02_03;
 $g3_02_01_01 = $g_desarrollo_g3->g3_02_01_01 ? "checked" : ""; $g3_02_01_02 = $g_desarrollo_g3->g3_02_01_01 ? "checked" : ""; $g3_02_01_03 = $g_desarrollo_g3->g3_02_01_03;
 $g3_02_02_01 = $g_desarrollo_g3->g3_02_02_01 ? "checked" : ""; $g3_02_02_02 = $g_desarrollo_g3->g3_02_02_01 ? "checked" : ""; $g3_02_02_03 = $g_desarrollo_g3->g3_02_02_03;
 $g3_02_03_01 = $g_desarrollo_g3->g3_02_03_01 ? "checked" : ""; $g3_02_03_02 = $g_desarrollo_g3->g3_02_03_01 ? "checked" : ""; $g3_02_03_03 = $g_desarrollo_g3->g3_02_03_03;
@@ -66,6 +66,15 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
 
         <div class="card">
             <div class="card-body">
+
+                <div class="row align-items-center row-cols-auto g-2 mb-2">
+                    <div class="col">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                            <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                        </div>
+                    </div>
+                </div>
                 <table class="table mb-0">
                     <tbody>
 
@@ -437,6 +446,15 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
         <div class="card">
             <div class="card-body">
 
+                <div class="row align-items-center row-cols-auto g-2 mb-2">
+                    <div class="col">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                            <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                        </div>
+                    </div>
+                </div>
+
                 <div><h7>G.1 GRUPO ELECTRÓGENO</h7></div>
 
                 <div><h7><strong>G.1.1 Verificación del grupo electrógeno sin carga: monofásico/trifásico</strong></h7></div>
@@ -744,14 +762,14 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.1 Verificar el nivel de aceite en el "Carter" (varilla nivel en el rango de bajo a alto)</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_01_01" value="option1" <?php echo $g1_04_01_01 ?>>
+                                <label class="form-check-label" for="g1_04_01_01">Verificado</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Baja</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_01_02" value="option3" <?php echo $g1_04_01_02 ?>>
+                                <label class="form-check-label" for="g1_04_01_02">Baja</label>
                             </div>
                         </td>
                         <td>
@@ -765,19 +783,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.2 Verificar el estado del aceite (en la varilla)</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Buena</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_02_01" value="option1" <?php echo $g1_04_02_01 ?>>
+                                <label class="form-check-label" for="g1_04_02_01">Buena</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Mala</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_02_02" value="option3" <?php echo $g1_04_02_02 ?>>
+                                <label class="form-check-label" for="g1_04_02_02">Mala</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_04_02_03" value="<?php echo $g1_04_02_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -786,14 +804,14 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.3 Limpiar el filtro de aire</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Realizado</label>
+                                <input class="form-check-input" type="checkbox" id="1_04_03_01" value="option1" <?php echo $g1_04_03_01 ?>>
+                                <label class="form-check-label" for="1_04_03_01">Realizado</label>
                             </div>
                         </td>
                         <td></td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_04_03_02" value="<?php echo $g1_04_03_02 ?>">
                             </div>
                         </td>
                     </tr>
@@ -802,14 +820,14 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.4 Ajustar la tensión en las correas impulsoras de las turbinas de aire</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Realizado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_04_01" value="option1" <?php echo $g1_04_04_01 ?>>
+                                <label class="form-check-label" for="g1_04_04_01">Realizado</label>
                             </div>
                         </td>
                         <td></td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_04_04_02" value="<?php echo $g1_04_04_02 ?>">
                             </div>
                         </td>
                     </tr>
@@ -818,19 +836,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.5 Verificar el nivel de refrigerante en el radiador (agua + liquido refrigerante)</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_05_01" value="option1" <?php echo $g1_04_05_01 ?>>
+                                <label class="form-check-label" for="g1_04_05_01">Verificado</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Baja</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_05_02" value="option3" <?php echo $g1_04_05_02 ?>>
+                                <label class="form-check-label" for="g1_04_05_02">Baja</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_04_05_03" value="<?php echo $g1_04_05_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -839,14 +857,14 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.6 Verificar si la rejilla de salida de aire (libre de obstrucciones)</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_06_01" value="option1" <?php echo $g1_04_06_01 ?>>
+                                <label class="form-check-label" for="g1_04_06_01">Verificado</label>
                             </div>
                         </td>
                         <td></td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_04_06_02" value="<?php echo $g1_04_06_02 ?>">
                             </div>
                         </td>
                     </tr>
@@ -855,14 +873,14 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.7 Ajuste en bornes y/o terminales de todas las conexiones eléctricas</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Realizado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_07_01" value="option1" <?php echo $g1_04_07_01 ?>>
+                                <label class="form-check-label" for="g1_04_07_01">Realizado</label>
                             </div>
                         </td>
                         <td></td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_04_07_02" value="<?php echo $g1_04_07_02 ?>">
                             </div>
                         </td>
                     </tr>
@@ -871,14 +889,14 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.8 Verificar el ajuste del ventilador al alternador</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_08_01" value="option1" <?php echo $g1_04_08_01 ?>>
+                                <label class="form-check-label" for="g1_04_08_01">Verificado</label>
                             </div>
                         </td>
                         <td></td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_04_08_02" value="<?php echo $g1_04_08_02 ?>">
                             </div>
                         </td>
                     </tr>
@@ -887,14 +905,14 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.9 Verificar el libre desplazamiento del flotador en el tanque de combustible</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_09_01" value="option1" <?php echo $g1_04_09_01 ?>>
+                                <label class="form-check-label" for="g1_04_09_01">Verificado</label>
                             </div>
                         </td>
                         <td></td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_04_09_02" value="<?php echo $g1_04_09_02 ?>">
                             </div>
                         </td>
                     </tr>
@@ -903,14 +921,14 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.10 Verificar la temperatura superficial del precalentador [°C]</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_10_01" value="option1" <?php echo $g1_04_10_01 ?>>
+                                <label class="form-check-label" for="g1_04_10_01">Verificado</label>
                             </div>
                         </td>
                         <td></td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_04_10_02" value="<?php echo $g1_04_10_02 ?>">
                             </div>
                         </td>
                     </tr>
@@ -928,19 +946,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.5.1 Verificar la operación de las bombas de inyección de combustible</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Operativo</label>
+                                <input class="form-check-input" type="checkbox" id="g1_05_01_02" value="option1" <?php echo $g1_05_01_02 ?>>
+                                <label class="form-check-label" for="g1_05_01_02">Operativo</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Falla</label>
+                                <input class="form-check-input" type="checkbox" id="g1_05_01_02" value="option3" <?php echo $g1_05_01_02 ?>>
+                                <label class="form-check-label" for="g1_05_01_02">Falla</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_05_01_03" value="<?php echo $g1_05_01_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -949,14 +967,14 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.5.2 Verificar temperatura del motor en operación [°C]</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_05_02_01" value="option1" <?php echo $g1_05_02_01 ?>>
+                                <label class="form-check-label" for="g1_05_02_01">Verificado</label>
                             </div>
                         </td>
                         <td></td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_05_02_02" value="<?php echo $g1_05_02_02 ?>">
                             </div>
                         </td>
                     </tr>
@@ -965,14 +983,14 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.5.3 Verificar revoluciones del motor en operación [RPM]</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_05_03_01" value="option1" <?php echo $g1_05_03_01 ?>>
+                                <label class="form-check-label" for="g1_05_03_01">Verificado</label>
                             </div>
                         </td>
                         <td></td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_05_03_02" value="<?php echo $g1_05_03_02 ?>">
                             </div>
                         </td>
                     </tr>
@@ -990,19 +1008,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.2.1 Verificar el estado del ducto trasvase de combustible del tanque externo</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
+                                <input class="form-check-input" type="checkbox" id="g2_01_01" value="option1" <?php echo $g2_01_01 ?>>
+                                <label class="form-check-label" for="g2_01_01">Verificado</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Dañado</label>
+                                <input class="form-check-input" type="checkbox" id="g2_01_02" value="option3" <?php echo $g2_01_02 ?>>
+                                <label class="form-check-label" for="g2_01_02">Dañado</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g2_01_03" value="<?php echo $g2_01_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -1011,19 +1029,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.2.2 Verificar el funcionamiento de la bomba trasvase externa de combustible</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Operativo</label>
+                                <input class="form-check-input" type="checkbox" id="g2_02_01" value="option1" <?php echo $g2_02_01 ?>>
+                                <label class="form-check-label" for="g2_02_01">Operativo</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Falla</label>
+                                <input class="form-check-input" type="checkbox" id="g2_02_02" value="option3" <?php echo $g2_02_02 ?>>
+                                <label class="form-check-label" for="g2_02_02">Falla</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_05_03_02" value="<?php echo $g2_02_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -1032,19 +1050,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.2.3 Verificar el sensor de nivel del tanque externo de combustible</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Operativo</label>
+                                <input class="form-check-input" type="checkbox" id="g2_03_01" value="option1" <?php echo $g2_03_01 ?>>
+                                <label class="form-check-label" for="g2_03_01">Operativo</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Falla</label>
+                                <input class="form-check-input" type="checkbox" id="g2_03_02" value="option3" <?php echo $g2_03_02 ?>>
+                                <label class="form-check-label" for="g2_03_02">Falla</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_05_03_02" value="<?php echo $g2_03_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -1053,19 +1071,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.2.4 Drenar el agua y sedimento mediante válvula purgadora del tanque externo</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Realizado</label>
+                                <input class="form-check-input" type="checkbox" id="g2_04_01" value="option1" <?php echo $g2_04_01 ?>>
+                                <label class="form-check-label" for="g2_04_01">Realizado</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Falla</label>
+                                <input class="form-check-input" type="checkbox" id="g2_04_02" value="option3" <?php echo $g2_04_02 ?>>
+                                <label class="form-check-label" for="g2_04_02">Falla</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g2_04_03" value="<?php echo $g2_04_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -1085,11 +1103,11 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                 </div>
                 <div class="input-group input-group-sm mb-2">
                     <span class="input-group-text">T. Arranque</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="g3_01_01_01" value="<?php echo $g3_01_01_01 ?>">
                     <span class="input-group-text">T. Transferen.</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="g3_01_01_02" value="<?php echo $g3_01_01_02 ?>">
                     <span class="input-group-text">Obs.</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="g3_01_01_03" value="<?php echo $g3_01_01_03 ?>">
                 </div>
 
                 <div>
@@ -1097,11 +1115,11 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                 </div>
                 <div class="input-group input-group-sm mb-2">
                     <span class="input-group-text">T. Retransfer.</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="g3_01_02_01" value="<?php echo $g3_01_02_01 ?>">
                     <span class="input-group-text">T. Parada</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="g3_01_02_02" value="<?php echo $g3_01_02_02 ?>">
                     <span class="input-group-text">Obs.</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="g3_01_02_03" value="<?php echo $g3_01_02_03 ?>">
                 </div>
 
 
@@ -1115,19 +1133,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.3.2.1 Verificación de operativa de transferencia Manual</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Operativo</label>
+                                <input class="form-check-input" type="checkbox" id="g3_02_01_01" value="option1" <?php echo $g3_02_01_01 ?>>
+                                <label class="form-check-label" for="g3_02_01_01">Operativo</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Falla</label>
+                                <input class="form-check-input" type="checkbox" id="g3_02_01_02" value="option3" <?php echo $g3_02_01_02 ?>>
+                                <label class="form-check-label" for="g3_02_01_02">Falla</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g3_02_01_03" value="<?php echo $g3_02_01_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -1136,19 +1154,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.3.2.2 Verificación de etiquetado de cables de energía</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
+                                <input class="form-check-input" type="checkbox" id="g3_02_02_01" value="option1" <?php echo $g3_02_02_01 ?>>
+                                <label class="form-check-label" for="g3_02_02_01">Verificado</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Dañado</label>
+                                <input class="form-check-input" type="checkbox" id="g3_02_02_02" value="option3" <?php echo $g3_02_02_02 ?>>
+                                <label class="form-check-label" for="g3_02_02_02">Dañado</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g3_02_02_03" value="<?php echo $g3_02_02_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -1157,19 +1175,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.3.2.3 Verificación de fusibles de protección</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Operativo</label>
+                                <input class="form-check-input" type="checkbox" id="g3_02_03_01" value="option1" <?php echo $g3_02_03_01 ?>>
+                                <label class="form-check-label" for="g3_02_03_01">Operativo</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Falla</label>
+                                <input class="form-check-input" type="checkbox" id="g3_02_03_02" value="option3" <?php echo $g3_02_03_02 ?>>
+                                <label class="form-check-label" for="g3_02_03_02">Falla</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g3_02_03_03" value="<?php echo $g3_02_03_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -1178,19 +1196,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.3.2.4 Verificación de relés de control</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Operativo</label>
+                                <input class="form-check-input" type="checkbox" id="g3_02_04_01" value="option1" <?php echo $g3_02_04_01 ?>>
+                                <label class="form-check-label" for="g3_02_04_01">Operativo</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Falla</label>
+                                <input class="form-check-input" type="checkbox" id="g3_02_04_02" value="option3" <?php echo $g3_02_04_02 ?>>
+                                <label class="form-check-label" for="g3_02_04_02">Falla</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g3_02_04_03" value="<?php echo $g3_02_04_03 ?>">
                             </div>
                         </td>
                     </tr>

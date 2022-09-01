@@ -1,6 +1,6 @@
 
 async function getDatos() {
-    const res = await fetch("../../paquetes/rutina/data/rutina000.json");
+    const res = await fetch("../../paquetes/rutina/data/rutina011.json");
     const datosFetch = await res.json();
     return datosFetch;
 }
@@ -81,8 +81,8 @@ $(document).ready(function() {
 
     /** g_desarrollo_g2 **/
     //var g3_20_01 = $('#g3_20_01').val(); var g3_20_02 = $('#g3_20_02').val(); var g3_20_03 = $('#g3_20_03').prop('checked');
-    var g3_01_01_01 = $('#g3_01_01_01').prop('checked');  var g3_01_01_02 = $('#g3_01_01_02').prop('checked'); var g3_01_01_03 = $('#g3_01_01_03').val();
-    var g3_01_02_01 = $('#g3_01_02_01').prop('checked');  var g3_01_02_02 = $('#g3_01_02_02').prop('checked'); var g3_01_02_03 = $('#g3_01_02_03').val();
+    var g3_01_01_01 = $('#g3_01_01_01').val();  var g3_01_01_02 = $('#g3_01_01_02').val(); var g3_01_01_03 = $('#g3_01_01_03').val();
+    var g3_01_02_01 = $('#g3_01_02_01').val();  var g3_01_02_02 = $('#g3_01_02_02').val(); var g3_01_02_03 = $('#g3_01_02_03').val();
     var g3_02_01_01 = $('#g3_02_01_01').prop('checked');  var g3_02_01_02 = $('#g3_02_01_02').prop('checked'); var g3_02_01_03 = $('#g3_02_01_03').val();
     var g3_02_02_01 = $('#g3_02_02_01').prop('checked');  var g3_02_02_02 = $('#g3_02_02_02').prop('checked'); var g3_02_02_03 = $('#g3_02_02_03').val();
     var g3_02_03_01 = $('#g3_02_03_01').prop('checked');  var g3_02_03_02 = $('#g3_02_03_02').prop('checked'); var g3_02_03_03 = $('#g3_02_03_03').val();
