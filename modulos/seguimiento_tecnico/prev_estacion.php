@@ -63,7 +63,7 @@ $cel2    = $datoGp['cel2'];*/
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Mantenimiento</li>
+                        <li class="breadcrumb-item active" aria-current="page">Mantenimiento  </li>
                     </ol>
                 </nav>
             </div>
@@ -148,7 +148,7 @@ $cel2    = $datoGp['cel2'];*/
                                                     $codigo = $data['codigo'];
                                                     $idrutina = $data['idrutina'];
                                                     $href = "$link_modulo?path=rutina_$codigo.php&event=$idevento&rut=$idrutina&cform=$codigo&gp=$idgrupo";
-                                                    $eliminarRutina = "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutina($idrutina, $codigo)'><i class='bx bxs-trash'></i></a>";
+                                                    $eliminarRutina = "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutina(`$idrutina`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
                                                     echo "
                                                     <tr>
                                                         <th scope='row'>$i</th>
@@ -181,88 +181,6 @@ $cel2    = $datoGp['cel2'];*/
                 </div>
             </div>
 
-            <!--<div class="card-body">
-                <ul class="nav nav-tabs nav-primary mb-0" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
-                            <div class="d-flex align-items-center">
-                                <div class="tab-icon"><i class='bx bx-cog font-18 me-1'></i>
-                                </div>
-                                <div class="tab-title"> Rutinas </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
-                            <div class="d-flex align-items-center">
-                                <div class="tab-icon"><i class='bx bx-bookmark-alt font-18 me-1'></i>
-                                </div>
-                                <div class="tab-title">Archivos</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab" aria-selected="false">
-                            <div class="d-flex align-items-center">
-                                <div class="tab-icon"><i class='bx bx-star font-18 me-1'></i>
-                                </div>
-                                <div class="tab-title">Imagen</div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <div class="tab-content pt-3">
-                    <div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
-                        <div class="card">
-                            <div class="card-body">
-                                <div id="table-routine">
-                                    <table class="table mb-0 table-hover">
-                                        <tbody>
-                                        <?php
-/*                                            $query = "SELECT r.idrutina, f.idformulario, f.codigo, f.nombre
-                                                        FROM rutina r
-                                                        LEFT JOIN formulario f ON r.idformulario = f.idformulario
-                                                        WHERE r.idevento = $idevento";
-
-                                            $result = mysqli_query($conexion, $query);
-                                            $rows	= mysqli_num_rows($result);
-                                            if ( $rows > 0 ){
-                                                $i = 0;
-                                                while( $data = mysqli_fetch_array($result) ){
-                                                    $i++;
-                                                    $codigo = $data['codigo'];
-                                                    $idrutina = $data['idrutina'];
-                                                    $href = "$link_modulo?path=rutina_$codigo.php&event=$idevento&rut=$idrutina&cform=$codigo&gp=$idgrupo";
-                                                    echo "
-                                                    <tr>
-                                                        <th scope='row'>$i</th>
-                                                        <td>".$data['nombre']."</td>
-                                                        <td>
-                                                            <div class='d-flex order-actions'>
-                                                                <a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>
-                                                                <a href='javascript:;' class='ms-3'><i class='bx bxs-trash'></i></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    ";
-                                                }
-                                            }
-                                        */?>
-                                        </tbody>
-                                </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="primaryprofile" role="tabpanel">
-                        <p>...</p>
-                    </div>
-                    <div class="tab-pane fade" id="primarycontact" role="tabpanel">
-                        <p>...</p>
-                    </div>
-                </div>
-            </div>-->
-
         </div>
 
     </div>
@@ -287,7 +205,9 @@ $cel2    = $datoGp['cel2'];*/
 
 
     function eliminarRutina(idrutina, codForm){
+
         alert( 'Realmente desea eliminar la rutina? : ' + codForm);
+        //alert( 'idrutina: : ' + idrutina);
 
         jQuery.post("../../paquetes/rutina/delete_rutina.php", {
             idrutina: idrutina,
@@ -297,7 +217,6 @@ $cel2    = $datoGp['cel2'];*/
                 $("#table-routine").load(window.location + " #table-routine");
             }
         );
-
     }
 
     $(document).ready(function() {
