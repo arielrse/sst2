@@ -1,6 +1,6 @@
 
 async function getDatos() {
-    const res = await fetch("../../paquetes/rutina/data/rutina000.json");
+    const res = await fetch("../../paquetes/rutina/data/rutina015.json");
     const datosFetch = await res.json();
     return datosFetch;
 }
@@ -158,15 +158,15 @@ getDatos().then( (datos) => {
 
     /** g_desarrollo_g2 **/
    // datos.g_desarrollo_g2.g2_01_01 = g2_01_01; datos.g_desarrollo_g2.g2_01_02 = g2_01_02;
-    datos.g_desarrollo_g2.g2_01_01 g2_01_01;  datos.g_desarrollo_g2.g2_01_02 = g2_01_02; datos.g_desarrollo_g2.g2_01_03 = g2_01_03;
-    datos.g_desarrollo_g2.g2_02_01 g2_02_01;  datos.g_desarrollo_g2.g2_02_02 = g2_02_02; datos.g_desarrollo_g2.g2_02_03 = g2_02_03;
-    datos.g_desarrollo_g2.g2_03_01 g2_03_01;  datos.g_desarrollo_g2.g2_03_02 = g2_03_02; datos.g_desarrollo_g2.g2_03_03 = g2_03_03;
-    datos.g_desarrollo_g2.g2_04_01 g2_04_01;  datos.g_desarrollo_g2.g2_04_02 = g2_04_02; datos.g_desarrollo_g2.g2_04_03 = g2_04_03;
-    datos.g_desarrollo_g2.g2_05_01 g2_05_01;  datos.g_desarrollo_g2.g2_05_02 = g2_05_02; datos.g_desarrollo_g2.g2_05_03 = g2_05_03;
-    datos.g_desarrollo_g2.g2_06_01 g2_06_01;  datos.g_desarrollo_g2.g2_06_02 = g2_06_02; datos.g_desarrollo_g2.g2_06_03 = g2_06_03;
-    datos.g_desarrollo_g2.g2_07_01 g2_07_01;  datos.g_desarrollo_g2.g2_07_02 = g2_07_02; datos.g_desarrollo_g2.g2_07_03 = g2_07_03;
-    datos.g_desarrollo_g2.g2_08_01 g2_08_01;  datos.g_desarrollo_g2.g2_08_02 = g2_08_02; datos.g_desarrollo_g2.g2_08_03 = g2_08_03;
-    datos.g_desarrollo_g2.g2_09_01 g2_09_01;  datos.g_desarrollo_g2.g2_09_02 = g2_09_02; datos.g_desarrollo_g2.g2_09_03 = g2_09_03;
+    datos.g_desarrollo_g2.g2_01_01 = g2_01_01;  datos.g_desarrollo_g2.g2_01_02 = g2_01_02; datos.g_desarrollo_g2.g2_01_03 = g2_01_03;
+    datos.g_desarrollo_g2.g2_02_01 = g2_02_01;  datos.g_desarrollo_g2.g2_02_02 = g2_02_02; datos.g_desarrollo_g2.g2_02_03 = g2_02_03;
+    datos.g_desarrollo_g2.g2_03_01 = g2_03_01;  datos.g_desarrollo_g2.g2_03_02 = g2_03_02; datos.g_desarrollo_g2.g2_03_03 = g2_03_03;
+    datos.g_desarrollo_g2.g2_04_01 = g2_04_01;  datos.g_desarrollo_g2.g2_04_02 = g2_04_02; datos.g_desarrollo_g2.g2_04_03 = g2_04_03;
+    datos.g_desarrollo_g2.g2_05_01 = g2_05_01;  datos.g_desarrollo_g2.g2_05_02 = g2_05_02; datos.g_desarrollo_g2.g2_05_03 = g2_05_03;
+    datos.g_desarrollo_g2.g2_06_01 = g2_06_01;  datos.g_desarrollo_g2.g2_06_02 = g2_06_02; datos.g_desarrollo_g2.g2_06_03 = g2_06_03;
+    datos.g_desarrollo_g2.g2_07_01 = g2_07_01;  datos.g_desarrollo_g2.g2_07_02 = g2_07_02; datos.g_desarrollo_g2.g2_07_03 = g2_07_03;
+    datos.g_desarrollo_g2.g2_08_01 = g2_08_01;  datos.g_desarrollo_g2.g2_08_02 = g2_08_02; datos.g_desarrollo_g2.g2_08_03 = g2_08_03;
+    datos.g_desarrollo_g2.g2_09_01 = g2_09_01;  datos.g_desarrollo_g2.g2_09_02 = g2_09_02; datos.g_desarrollo_g2.g2_09_03 = g2_09_03;
 
     /**  "f_satelital_f2" **/
     // datos.f_satelital_f2.f2_01_01 =
