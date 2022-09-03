@@ -474,13 +474,13 @@ $g2_09_01 = $g_desarrollo_g2->g2_09_01 ? "checked" : ""; $g2_09_02 = $g_desarrol
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="g2_09_01" value="option1" <?php echo $g2_09_01 ?>>
-                        <label class="form-check-label" for="g2_08_01">SI</label>
+                        <label class="form-check-label" for="g2_09_01">SI</label>
                     </div>
                 </td>
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="g2_09_02" value="option3" <?php echo $g2_09_02 ?>>
-                        <label class="form-check-label" for="g2_08_02">NO</label>
+                        <label class="form-check-label" for="g2_09_02">NO</label>
                     </div>
                 </td>
                 <td>

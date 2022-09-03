@@ -24,6 +24,7 @@ $g1_06_01 = $g_desarrollo_g1->g1_06_01 ? "checked" : ""; $g1_06_02 = $g_desarrol
 $g1_07_01 = $g_desarrollo_g1->g1_07_01 ? "checked" : ""; $g1_07_02 = $g_desarrollo_g1->g1_07_02 ? "checked" : ""; $g1_07_03 = $g_desarrollo_g1->g1_07_03;
 $g1_08_01 = $g_desarrollo_g1->g1_08_01 ? "checked" : ""; $g1_08_02 = $g_desarrollo_g1->g1_08_02 ? "checked" : ""; $g1_08_03 = $g_desarrollo_g1->g1_08_03;
 $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? "checked" : ""; $g1_09_02 = $g_desarrollo_g1->g1_09_02 ? "checked" : ""; $g1_09_03 = $g_desarrollo_g1->g1_09_03;
+
 ?>
 
 <h6>D. Sistema de Transporte Microondas MW</h6>
@@ -451,14 +452,14 @@ $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? "checked" : ""; $g1_09_02 = $g_desarrol
                 <td>D.2	Verificacion peinado de cables y etiquetado en IDU</td>
                 <td>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id=g1_02_011" value="option1"<?php echo $g1_02_01 ?>>
-                        <label class="form-check-label" for=g1_02_011">SI</label>
+                        <input class="form-check-input" type="checkbox" id="g1_02_01" value="option1" <?php echo $g1_02_01 ?>>
+                        <label class="form-check-label" for="g1_02_01">SI</label>
                     </div>
                 </td>
                 <td>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id=g1_02_023" value="option3"<?php echo $g1_02_02 ?>>
-                        <label class="form-check-label" for=g1_02_023">NO</label>
+                        <input class="form-check-input" type="checkbox" id="g1_02_02" value="option3" <?php echo $g1_02_02 ?>>
+                        <label class="form-check-label" for="g1_02_02">NO</label>
                     </div>
                 </td>
                 <td>

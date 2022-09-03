@@ -136,15 +136,15 @@ getDatos().then( (datos) => {
 
     /** g_desarrollo_g1 **/
     //datos.g_desarrollo_g1.g1_01_01 = g1_01_01; datos.g_desarrollo_g1.g1_01_02 = g1_01_02; datos.g_desarrollo_g1.g1_01_03 = g1_01_03;
-    datos.g_desarrollo_g1.g1_01_01 =g1_01_01;  datos.g_desarrollo_g1.g1_01_02 = g1_01_02; datos.g_desarrollo_g1.g1_01_03 = g1_01_03;
-    datos.g_desarrollo_g1.g1_02_01 =g1_02_01;  datos.g_desarrollo_g1.g1_02_02 = g1_02_02; datos.g_desarrollo_g1.g1_02_03 = g1_02_03;
-    datos.g_desarrollo_g1.g1_03_01 =g1_03_01;  datos.g_desarrollo_g1.g1_03_02 = g1_03_02; datos.g_desarrollo_g1.g1_03_03 = g1_03_03;
-    datos.g_desarrollo_g1.g1_04_01 =g1_04_01;  datos.g_desarrollo_g1.g1_04_02 = g1_04_02; datos.g_desarrollo_g1.g1_04_03 = g1_04_03;
-    datos.g_desarrollo_g1.g1_05_01 =g1_05_01;  datos.g_desarrollo_g1.g1_05_02 = g1_05_02; datos.g_desarrollo_g1.g1_05_03 = g1_05_03;
-    datos.g_desarrollo_g1.g1_06_01 =g1_06_01;  datos.g_desarrollo_g1.g1_06_02 = g1_06_02; datos.g_desarrollo_g1.g1_06_03 = g1_06_03;
-    datos.g_desarrollo_g1.g1_07_01 =g1_07_01;  datos.g_desarrollo_g1.g1_07_02 = g1_07_02; datos.g_desarrollo_g1.g1_07_03 = g1_07_03;
-    datos.g_desarrollo_g1.g1_08_01 =g1_08_01;  datos.g_desarrollo_g1.g1_08_02 = g1_08_02; datos.g_desarrollo_g1.g1_08_03 = g1_08_03;
-    datos.g_desarrollo_g1.g1_09_01 =g1_09_01;  datos.g_desarrollo_g1.g1_09_02 = g1_09_02; datos.g_desarrollo_g1.g1_09_03 = g1_09_03;
+    datos.g_desarrollo_g1.g1_01_01 = g1_01_01;  datos.g_desarrollo_g1.g1_01_02 = g1_01_02; datos.g_desarrollo_g1.g1_01_03 = g1_01_03;
+    datos.g_desarrollo_g1.g1_02_01 = g1_02_01;  datos.g_desarrollo_g1.g1_02_02 = g1_02_02; datos.g_desarrollo_g1.g1_02_03 = g1_02_03;
+    datos.g_desarrollo_g1.g1_03_01 = g1_03_01;  datos.g_desarrollo_g1.g1_03_02 = g1_03_02; datos.g_desarrollo_g1.g1_03_03 = g1_03_03;
+    datos.g_desarrollo_g1.g1_04_01 = g1_04_01;  datos.g_desarrollo_g1.g1_04_02 = g1_04_02; datos.g_desarrollo_g1.g1_04_03 = g1_04_03;
+    datos.g_desarrollo_g1.g1_05_01 = g1_05_01;  datos.g_desarrollo_g1.g1_05_02 = g1_05_02; datos.g_desarrollo_g1.g1_05_03 = g1_05_03;
+    datos.g_desarrollo_g1.g1_06_01 = g1_06_01;  datos.g_desarrollo_g1.g1_06_02 = g1_06_02; datos.g_desarrollo_g1.g1_06_03 = g1_06_03;
+    datos.g_desarrollo_g1.g1_07_01 = g1_07_01;  datos.g_desarrollo_g1.g1_07_02 = g1_07_02; datos.g_desarrollo_g1.g1_07_03 = g1_07_03;
+    datos.g_desarrollo_g1.g1_08_01 = g1_08_01;  datos.g_desarrollo_g1.g1_08_02 = g1_08_02; datos.g_desarrollo_g1.g1_08_03 = g1_08_03;
+    datos.g_desarrollo_g1.g1_09_01 = g1_09_01;  datos.g_desarrollo_g1.g1_09_02 = g1_09_02; datos.g_desarrollo_g1.g1_09_03 = g1_09_03;
 
     /** f_fibra **/
     datos.f_fibra.f1_01_01 = f1_01_01; datos.f_fibra.f1_01_02 = f1_01_02; datos.f_fibra.f1_01_03 = f1_01_03; datos.f_fibra.f1_01_04 = f1_01_04; datos.f_fibra.f1_01_05 = f1_01_05;
