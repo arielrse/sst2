@@ -149,6 +149,7 @@ $cel2    = $datoGp['cel2'];*/
                                                     $idrutina = $data['idrutina'];
                                                     $href = "$link_modulo?path=rutina_$codigo.php&event=$idevento&rut=$idrutina&cform=$codigo&gp=$idgrupo";
                                                     $eliminarRutina = "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutina(`$idrutina`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
+                                                    $generarReporte = "<a href='javascript:;' class='ms-3' id=''><i class='bx bxs-file'></i></a>";
                                                     echo "
                                                     <tr>
                                                         <th scope='row'>$i</th>
@@ -157,6 +158,7 @@ $cel2    = $datoGp['cel2'];*/
                                                             <div class='d-flex order-actions'>
                                                                 <a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>
                                                                 ".$eliminarRutina."
+                                                                ".$generarReporte."
                                                             </div>
                                                         </td>
                                                     </tr>
