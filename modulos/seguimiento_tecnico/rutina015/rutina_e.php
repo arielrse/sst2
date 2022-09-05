@@ -469,6 +469,7 @@ $g2_09_01 = $g_desarrollo_g2->g2_09_01 ? "checked" : ""; $g2_09_02 = $g_desarrol
                 </td>
             </tr>
 
+
             <tr>
                 <td>E.9	Tomas fotográficas</td>
                 <td>
