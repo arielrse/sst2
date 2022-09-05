@@ -147,9 +147,14 @@ $cel2    = $datoGp['cel2'];*/
                                                     $i++;
                                                     $codigo = $data['codigo'];
                                                     $idrutina = $data['idrutina'];
-                                                    $href = "$link_modulo?path=rutina_$codigo.php&event=$idevento&rut=$idrutina&cform=$codigo&gp=$idgrupo";
+                                                    $href    = "$link_modulo?path=rutina_$codigo.php&event=$idevento&rut=$idrutina&cform=$codigo&gp=$idgrupo";
+                                                    $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
+
                                                     $eliminarRutina = "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutina(`$idrutina`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
-                                                    $generarReporte = "<a href='javascript:;' class='ms-3' id=''><i class='bx bxs-file'></i></a>";
+
+                                                    //$generarReporte = "<a href='javascript:;' class='ms-3' id='btnGenerarReporte' onclick='generarReporte(`$idrutina`)'><i class='bx bxs-file'></i></a>";
+                                                    /*<a href='$hrefpdf' class='ms-3' target='_blank'><i class='bx bxs-file'></i></a>*/
+
                                                     echo "
                                                     <tr>
                                                         <th scope='row'>$i</th>
@@ -158,7 +163,6 @@ $cel2    = $datoGp['cel2'];*/
                                                             <div class='d-flex order-actions'>
                                                                 <a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>
                                                                 ".$eliminarRutina."
-                                                                ".$generarReporte."
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -217,6 +221,16 @@ $cel2    = $datoGp['cel2'];*/
             }, function(data){
                 //alert('Data: ' + data);
                 $("#table-routine").load(window.location + " #table-routine");
+            }
+        );
+    }
+
+    function generarReporte(idrutina){
+        alert("Reporte PDF: " + idrutina);
+        jQuery.post("../../modulos/seguimiento_tecnico/rutina001/loadReport.php", {
+                idrutina: idrutina,
+            }, function(data){
+
             }
         );
     }

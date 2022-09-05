@@ -25,9 +25,10 @@ $cel2    = $data2['cel2'];
 $cel3    = $data2['cel3'];
 
 /* ---------------------------------- */
-$res3 = mysqli_query($conexion, "SELECT r.cabecera FROM rutina$cform r WHERE r.idrutina = ".$idrutina);
+$res3 = mysqli_query($conexion, "SELECT r.id, r.cabecera FROM rutina$cform r WHERE r.idrutina = ".$idrutina);
 $data3 = mysqli_fetch_array($res3);
 $jsonCab = $data3['cabecera'];
+$idrutinax = $data3['id'];
 
 $obj = json_decode($jsonCab);
 $cm                 = $obj->{'cm'};
@@ -68,8 +69,9 @@ while( $data4 = mysqli_fetch_array($res4) ){
 
 $b1View = $cform == "001";
 
+$hrefpdf = "../../modulos/$modulo/rutina$cform/reporte.php";
 ?>
-<input type="hidden" id="rutinaId" value="<?php echo $idrutina ?>" />
+<input type="hidden" name="rutinaId" id="rutinaId" value="<?php echo $idrutina ?>" />
 
     <div class="row row-cols-auto pb-2">
         <div class="col">
@@ -78,6 +80,17 @@ $b1View = $cform == "001";
         <div class="col">
             <input type="button" class="btn btn-secondary px-5" name="Submit" value="Cancelar" onclick="history.back()" />
         </div>
+
+        <form action="<?php echo $hrefpdf ?>" method="post" enctype="multipart/form-data">
+            <input type="hidden" id="idrutina" name="idrutina" value="<?php echo $idrutina ?>" />
+            <input type="hidden" id="idevento" name="idevento" value="<?php echo $idevento ?>" />
+            <input type="hidden" id="cform" name="cform" value="<?php echo $cform ?>" />
+            <input type="hidden" id="idrutinax" name="idrutinax" value="<?php echo $idrutinax ?>" />
+            <div class="col">
+                <input type="submit" class="btn btn-info px-5" name="Submit" value="Generar"  />
+            </div>
+        </form>
+
     </div>
 
 
@@ -121,11 +134,6 @@ $b1View = $cform == "001";
                 <div class="col-auto">
                     <input type="text" class="form-control form-control-sm" id="b_nroActivo" value="<?php echo $b_nroActivo?>">
                 </div>
-                <!--<div class="col-auto">
-                    <span id="passwordHelpInline" class="form-text">
-                      Must be 8-20 characters long.
-                    </span>
-                </div>-->
             </div>
 
             <?php if ( $b1View ) { ?>
