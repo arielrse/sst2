@@ -1,24 +1,57 @@
 <?php
+require("../../../funciones/DateUtils.php");
+require("../ReporteMtoUtils.php");
 
-function getPlantilla($jsonData){
+function getPlantilla($conexion, $jsonData, $idgrupo){
 
     $obj = json_decode($jsonData);
+    $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
+    $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
+
+    $dataPersMtto = getPersonalMtto($conexion, $idgrupo);
+    $nombre2 = $dataPersMtto['nombre2'];
+    $nombre3 = $dataPersMtto['nombre3'];
+    $cargo2  = $dataPersMtto['cargo2'];
+    $cargo3  = $dataPersMtto['cargo3'];
+    $cel2    = $dataPersMtto['cel2'];
+    $cel3    = $dataPersMtto['cel3'];
+
+    //---------------------------
+    //$idusuario = $obj->{'e_personal'};
+    $dataPers = getPersonalOyM($conexion, $obj->{'e_personal'});
+    $nombre1 = $dataPers['nombre'];
+    $cargo1  = $dataPers['cargo'];
+    $cel1    = $dataPers['cel'];
+
     $cm                 = $obj->{'cm'};
     $sitioId            = $obj->{'sitioId'};
     $propertyId         = $obj->{'propertyId'};
     $b_idenActivo       = $obj->{'b_idenActivo'};
     $b_nroActivo        = $obj->{'b_nroActivo'};
 
+    $b1_noAplica    = $obj->{'b1_noAplica'}     ? $check : $uncheck;
+    $b1_idenActivo  = $obj->{'b1_idenActivo'}   ? $obj->{'b1_idenActivo'}  : "" ;
+    $b1_nroActivo   = $obj->{'b1_nroActivo'}    ? $obj->{'b1_nroActivo'}   : "" ;
+
+    $c_fechaRealizacion = dateToLiteral($obj->{'c_fechaRealizacion'});
+
+    $d_horainicio   = $obj->{'d_horainicio'};
+    $d_horafin      = $obj->{'d_horafin'};
+    $tiempoTrans    = timeDiff($d_horainicio, $d_horafin);
+
+    /** f_verificacion **/
+    $f_verificacion = $obj->{'f_verificacion'};
+    $f01_1 = $f_verificacion[0]->f01_1 ? $check : $uncheck;
+    $f01_2 = $f_verificacion[0]->f01_2 ? $check : $uncheck;
+    $f01_3 = $f_verificacion[0]->f01_3;
+    $f02_1 = $f_verificacion[1]->f02_1 ? $check : $uncheck;
+    $f02_2 = $f_verificacion[1]->f02_2 ? $check : $uncheck;
+    $f02_3 = $f_verificacion[1]->f02_3;
+
     $plantilla =
 '<body>    
     <div class="card-">
         <div class="card-body-">
-            
-            
-            <!--<div class="invoice-head">
-                
-            </div>-->
-        
             <div id="invoice">
                 <div class="invoice">
                 <table>
@@ -49,17 +82,17 @@ function getPlantilla($jsonData){
                     <table>
                         <tbody>
                             <tr>
-                                <td class="no">CM/SCM:</td>
-                                <td>'. $cm .'</td>
-                                <td class="no">ID Sitio:</td>
-                                <td>'. $sitioId .'</td>
-                                <td class="no">Property_id:</td>
-                                <td>'. $propertyId .'</td>
+                                <td class="col-10p no">CM/SCM:</td>
+                                <td class="col-20p">'. $cm .'</td>
+                                <td class="col-10p no">ID Sitio:</td>
+                                <td class="col-10p">'. $sitioId .'</td>
+                                <td class="col-12p no">Property_id:</td>
+                                <td class="col-40p">'. $propertyId .'</td>
                             </tr>     
                         </tbody>        
                     </table>									                        
                 </main>
-                
+               
                 <main>
                     <div class="notices">
                         <div class="notice"><strong>B. Identificación del Activo</strong></div>
@@ -69,9 +102,9 @@ function getPlantilla($jsonData){
                     <table>
                         <tbody>
                             <tr>
-                                <td class="no">Identificación:</td>
+                                <td class="col-15p no">Identificación:</td>
                                 <td>'. $b_idenActivo .'</td>
-                                <td class="no">N° Activo Fijo:</td>
+                                <td class="col-15p no">N° Activo Fijo:</td>
                                 <td>'. $b_nroActivo .'</td>
                             </tr>     
                         </tbody>        
@@ -87,12 +120,12 @@ function getPlantilla($jsonData){
                     <table>
                         <tbody>
                             <tr>
-                                <td class="no">NO APLICA</td>
-                                <td>&#10004;</td>
-                                <td class="no">Identificación:</td>
-                                <td>Developing</td>
-                                <td class="no">N° Activo Fijo:</td>
-                                <td></td>
+                                <td class="col-10p no">NO APLICA</td>
+                                <td class="col-5p" align="center">'.$b1_noAplica.'</td>
+                                <td class="col-13p no">Identificación:</td>
+                                <td>'.$b1_idenActivo.'</td>
+                                <td class="col-13p no">N° Activo Fijo:</td>
+                                <td>'.$b1_nroActivo.'</td>
                             </tr>     
                         </tbody>        
                     </table>									                        
@@ -107,8 +140,8 @@ function getPlantilla($jsonData){
                     <table>
                         <tbody>
                             <tr>
-                                <td class="no col-4">Fecha de mantenimiento:</td>
-                                <td class="col-8">05/09/2022</td>
+                                <td class="col-30p no">Fecha de mantenimiento:</td>
+                                <td class="col-70p">'.$c_fechaRealizacion.'</td>
                             </tr>     
                         </tbody>        
                     </table>									                        
@@ -123,12 +156,12 @@ function getPlantilla($jsonData){
                     <table>
                         <tbody>
                             <tr>
-                                <td class="no">Hora de inicio:</td>
-                                <td>08:00</td>
-                                <td class="no">Hora de Culminación:</td>
-                                <td>09:30</td>
-                                <td class="no">Tiempo Transcurrido:</td>
-                                <td>01:30</td>
+                                <td class="col-15p no">Hora de inicio:</td>
+                                <td>'.$d_horainicio.'</td>
+                                <td class="col-20p no">Hora de Culminación:</td>
+                                <td>'.$d_horafin.'</td>
+                                <td class="col-20p no">Tiempo Transcurrido:</td>
+                                <td>'.$tiempoTrans.'</td>
                             </tr>     
                         </tbody>        
                     </table>									                        
@@ -141,32 +174,59 @@ function getPlantilla($jsonData){
                 </main>	
                 <main>
                     <table>
-                        <tbody>
+                        <tbody> 
                             <tr>
-                                <td class="col-1 no">Nombre:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Cargo:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Teléfono:</td>
-                                <td class="col-2">---</td>
+                                <td class="col-8p no">Nombre:</td>
+                                <td class="col-30p">'.$nombre1.'</td>
+                                <td class="col-7p no">Cargo:</td>
+                                <td class="col-35p">'.$cargo1.'</td>
+                                <td class="col-10p no">Teléfono:</td>
+                                <td class="col-8p">'.$cel1.'</td>
                             </tr>
                             <tr>
-                                <td class="col-1 no">Nombre:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Cargo:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Teléfono:</td>
-                                <td class="col-2">---</td>
+                                <td class="col-8p no">Nombre:</td>
+                                <td class="col-30p">'.$nombre2.'</td>
+                                <td class="col-7p no">Cargo:</td>
+                                <td class="col-35p">'.$cargo2.'</td>
+                                <td class="col-10p no">Teléfono:</td>
+                                <td class="col-8p">'.$cel2.'</td>
                             </tr>
                             <tr>
-                                <td class="col-1 no">Nombre:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Cargo:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Teléfono:</td>
-                                <td class="col-2">---</td>
+                                <td class="col-8p no">Nombre:</td>
+                                <td class="col-30p">'.$nombre3.'</td>
+                                <td class="col-7p no">Cargo:</td>
+                                <td class="col-35p">'.$cargo3.'</td>
+                                <td class="col-10p no">Teléfono:</td>
+                                <td class="col-8p">'.$cel3.'</td>
                             </tr>
                             
+                            
+                        </tbody>        
+                    </table>									                        
+                </main>
+                
+                <main>
+                    <div class="notices">
+                        <div class="notice"><strong>F. Verificación Visual - Estado del Activo</strong></div>
+                    </div>
+                </main>	
+                <main>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td class="col-40p">F.1 Etiquetado de cada bateria:</td>
+                                <td class="col-10p">'.$f01_1.' Si</td>
+                                <td class="col-10p">'.$f01_2.' No</td>
+                                <td class="col-40p">'.$f01_3.' Obs</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">F.2 Etiquetado de gabinete:</td>
+                                <td class="col-10p">'.$f02_1.' Si</td>
+                                <td class="col-10p">'.$f02_2.' No</td>
+                                <td class="col-40p">'.$f02_3.' Obs</td>
+                            </tr>
+                            
+                                                    
                         </tbody>        
                     </table>									                        
                 </main>

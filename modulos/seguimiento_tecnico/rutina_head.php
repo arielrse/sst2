@@ -82,10 +82,10 @@ $hrefpdf = "../../modulos/$modulo/rutina$cform/reporte.php";
         </div>
 
         <form action="<?php echo $hrefpdf ?>" method="post" enctype="multipart/form-data" target="_blank">
-            <input type="hidden" id="idrutina" name="idrutina" value="<?php echo $idrutina ?>" />
-            <input type="hidden" id="idevento" name="idevento" value="<?php echo $idevento ?>" />
             <input type="hidden" id="cform" name="cform" value="<?php echo $cform ?>" />
             <input type="hidden" id="idrutinax" name="idrutinax" value="<?php echo $idrutinax ?>" />
+            <input type="hidden" id="idgrupo" name="idgrupo" value="<?php echo $idgrupo ?>" />
+            <input type="hidden" id="iddepartamento" name="iddepartamento" value="<?php echo $iddepartamento ?>" />
             <div class="col">
                 <input type="submit" class="btn btn-info px-5" name="Submit" value="Generar"  />
             </div>
