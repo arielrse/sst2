@@ -2672,9 +2672,25 @@ input.search-control-2::placeholder {
 	flex: 0 0 auto;
 	width: 7%
 }
+.col-8p {
+	flex: 0 0 auto;
+	width: 8%
+}
 .col-10p {
 	flex: 0 0 auto;
 	width: 10%
+}
+.col-11p {
+	flex: 0 0 auto;
+	width: 11%
+}
+.col-12p {
+	flex: 0 0 auto;
+	width: 12%
+}
+.col-13p {
+	flex: 0 0 auto;
+	width: 13%
 }
 .col-15p {
 	flex: 0 0 auto;
@@ -2691,6 +2707,10 @@ input.search-control-2::placeholder {
 .col-30p {
 	flex: 0 0 auto;
 	width: 30%
+}
+.col-33p {
+	flex: 0 0 auto;
+	width: 33%
 }
 .col-35p {
 	flex: 0 0 auto;
