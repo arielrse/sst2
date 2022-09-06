@@ -2663,3 +2663,85 @@ input.search-control-2::placeholder {
 	flex: 0 0 auto;
 	width: 100%
 }
+
+.col-5p {
+	flex: 0 0 auto;
+	width: 5%
+}
+.col-7p {
+	flex: 0 0 auto;
+	width: 7%
+}
+.col-10p {
+	flex: 0 0 auto;
+	width: 10%
+}
+.col-15p {
+	flex: 0 0 auto;
+	width: 15%
+}
+.col-20p {
+	flex: 0 0 auto;
+	width: 20%
+}
+.col-25p {
+	flex: 0 0 auto;
+	width: 25%
+}
+.col-30p {
+	flex: 0 0 auto;
+	width: 30%
+}
+.col-35p {
+	flex: 0 0 auto;
+	width: 35%
+}
+.col-40p {
+	flex: 0 0 auto;
+	width: 40%
+}
+.col-50 {
+	flex: 0 0 auto;
+	width: 50%
+}
+.col-55p {
+	flex: 0 0 auto;
+	width: 55%
+}
+.col-60p {
+	flex: 0 0 auto;
+	width: 60%
+}
+.col-65p {
+	flex: 0 0 auto;
+	width: 65%
+}
+.col-70p {
+	flex: 0 0 auto;
+	width: 70%
+}
+.col-75p {
+	flex: 0 0 auto;
+	width: 75%
+}
+.col-80p {
+	flex: 0 0 auto;
+	width: 80%
+}
+
+.col-85p {
+	flex: 0 0 auto;
+	width: 85%
+}
+.col-90p {
+	flex: 0 0 auto;
+	width: 90%
+}
+.col-95p {
+	flex: 0 0 auto;
+	width: 95%
+}
+.col-100p {
+	flex: 0 0 auto;
+	width: 100%
+}
