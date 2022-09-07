@@ -975,6 +975,12 @@ a {
 	font-size: 1.0em
 }
 
+.invoice table .num {
+	text-align: right;
+	padding-right: 10px;
+	font-size: 1.0em
+}
+
 .invoice table .qty,
 .invoice table .total,
 .invoice table .unit {
@@ -2721,7 +2727,7 @@ input.search-control-2::placeholder {
 	flex: 0 0 auto;
 	width: 40%
 }
-.col-50 {
+.col-50p {
 	flex: 0 0 auto;
 	width: 50%
 }
@@ -2771,4 +2777,10 @@ input.search-control-2::placeholder {
 .tborder td, th {
 	border: 1px solid #717171;
 	border-collapse: collapse;
+}
+
+
+.mr-1 {
+	margin-right: 5px;
+	/*padding-right: .50rem!important*/
 }
