@@ -1,27 +1,13 @@
 <?php
 require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
+require("variable_text.php");
 
 function getPlantilla($conexion, $jsonData, $idgrupo){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
     $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
-
-    $dataPersMtto = getPersonalMtto($conexion, $idgrupo);
-    $nombre2 = $dataPersMtto['nombre2'];
-    $nombre3 = $dataPersMtto['nombre3'];
-    $cargo2  = $dataPersMtto['cargo2'];
-    $cargo3  = $dataPersMtto['cargo3'];
-    $cel2    = $dataPersMtto['cel2'];
-    $cel3    = $dataPersMtto['cel3'];
-
-    //---------------------------
-    //$idusuario = $obj->{'e_personal'};
-    $dataPers = getPersonalOyM($conexion, $obj->{'e_personal'});
-    $nombre1 = $dataPers['nombre'];
-    $cargo1  = $dataPers['cargo'];
-    $cel1    = $dataPers['cel'];
 
     $cm                 = $obj->{'cm'};
     $sitioId            = $obj->{'sitioId'};
@@ -39,6 +25,21 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $d_horafin      = $obj->{'d_horafin'};
     $tiempoTrans    = timeDiff($d_horainicio, $d_horafin);
 
+    //---------------------------
+    $dataPers = getPersonalOyM($conexion, $obj->{'e_personal'});
+    $nombre1 = $dataPers['nombre'];
+    $cargo1  = $dataPers['cargo'];
+    $cel1    = $dataPers['cel'];
+
+    $dataPersMtto = getPersonalMtto($conexion, $idgrupo);
+    $nombre2 = $dataPersMtto['nombre2'];
+    $nombre3 = $dataPersMtto['nombre3'];
+    $cargo2  = $dataPersMtto['cargo2'];
+    $cargo3  = $dataPersMtto['cargo3'];
+    $cel2    = $dataPersMtto['cel2'];
+    $cel3    = $dataPersMtto['cel3'];
+    //---------------------------
+
     /** f_verificacion **/
     $f_verificacion = $obj->{'f_verificacion'};
     $f01_1 = $f_verificacion[0]->f01_1 ? $check : $uncheck;
@@ -47,6 +48,27 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $f02_1 = $f_verificacion[1]->f02_1 ? $check : $uncheck;
     $f02_2 = $f_verificacion[1]->f02_2 ? $check : $uncheck;
     $f02_3 = $f_verificacion[1]->f02_3;
+    $f03_1 = $f_verificacion[2]->f03_1 ? $check : $uncheck;
+    $f03_2 = $f_verificacion[2]->f03_2 ? $check : $uncheck;
+    $f03_3 = $f_verificacion[2]->f03_3;
+    $f04_1 = $f_verificacion[3]->f04_1 ? $check : $uncheck;
+    $f04_2 = $f_verificacion[3]->f04_2 ? $check : $uncheck;
+    $f04_3 = $f_verificacion[3]->f04_3;
+    $f05_1 = $f_verificacion[4]->f05_1 ? $check : $uncheck;
+    $f05_2 = $f_verificacion[4]->f05_2 ? $check : $uncheck;
+    $f05_3 = $f_verificacion[4]->f05_3;
+    $f06_1 = $f_verificacion[5]->f06_1 ? $check : $uncheck;
+    $f06_2 = $f_verificacion[5]->f06_2 ? $check : $uncheck;
+    $f06_3 = $f_verificacion[5]->f06_3;
+    $f07_1 = $f_verificacion[6]->f07_1 ? $check : $uncheck;
+    $f07_2 = $f_verificacion[6]->f07_2 ? $check : $uncheck;
+    $f07_3 = $f_verificacion[6]->f07_3;
+    $f08_1 = $f_verificacion[7]->f08_1 ? $check : $uncheck;
+    $f08_2 = $f_verificacion[7]->f08_2 ? $check : $uncheck;
+    $f08_3 = $f_verificacion[7]->f08_3;
+    $f09_1 = $f_verificacion[8]->f09_1 ? $check : $uncheck;
+    $f09_2 = $f_verificacion[8]->f09_2 ? $check : $uncheck;
+    $f09_3 = $f_verificacion[8]->f09_3;
 
     $plantilla =
 '<body>    
@@ -69,7 +91,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                     </tr>
                     <tr>
                         <th class="text-center" colspan="2">
-                            <h3>RUTINA DE MANTENIMIENTO PREVENTIVO - BANCO DE BATERÍAS</h3>
+                            <h4>RUTINA DE MANTENIMIENTO PREVENTIVO - BANCO DE BATERÍAS</h4>
                         </th>
                     </tr>
                 </table>
@@ -173,7 +195,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                     </div>
                 </main>	
                 <main>
-                    <table>
+                    <table class="tborder">
                         <tbody> 
                             <tr>
                                 <td class="col-8p no">Nombre:</td>
@@ -209,21 +231,130 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                     <div class="notices">
                         <div class="notice"><strong>F. Verificación Visual - Estado del Activo</strong></div>
                     </div>
-                </main>	
+                </main>
                 <main>
-                    <table border="1">
+                    <table class="tborder">
                         <tbody>
                             <tr>
-                                <td class="col-40p">F.1 Etiquetado de cada bateria:</td>
+                                <td class="col-40p">'.constant('F01').'</td>
                                 <td class="col-10p">'.$f01_1.' Si</td>
                                 <td class="col-10p">'.$f01_2.' No</td>
-                                <td class="col-40p">'.$f01_3.' Obs</td>
+                                <td class="col-40p">Obs. '.$f01_3.'</td>
                             </tr>
                             <tr>
-                                <td class="col-40p">F.2 Etiquetado de gabinete:</td>
+                                <td class="col-40p">'.constant('F02').'</td>
                                 <td class="col-10p">'.$f02_1.' Si</td>
                                 <td class="col-10p">'.$f02_2.' No</td>
-                                <td class="col-40p">'.$f02_3.' Obs</td>
+                                <td class="col-40p">Obs. '.$f02_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('F03').'</td>
+                                <td class="col-10p">'.$f03_1.' Si</td>
+                                <td class="col-10p">'.$f03_2.' No</td>
+                                <td class="col-40p">Obs. '.$f03_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('F04').'</td>
+                                <td class="col-10p">'.$f04_1.' Si</td>
+                                <td class="col-10p">'.$f04_2.' No</td>
+                                <td class="col-40p">Obs. '.$f04_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('F05').'</td>
+                                <td class="col-10p">'.$f05_1.' Bueno</td>
+                                <td class="col-10p">'.$f05_2.' Malo</td>
+                                <td class="col-40p">Obs. '.$f05_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('F06').'</td>
+                                <td class="col-10p">'.$f06_1.' Si</td>
+                                <td class="col-10p">'.$f06_2.' No</td>
+                                <td class="col-40p">Obs. '.$f06_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('F07').'</td>
+                                <td class="col-10p">'.$f07_1.' Si</td>
+                                <td class="col-10p">'.$f07_2.' No</td>
+                                <td class="col-40p">Obs. '.$f07_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('F08').'</td>
+                                <td class="col-10p">'.$f08_1.' Si</td>
+                                <td class="col-10p">'.$f08_2.' No</td>
+                                <td class="col-40p">Obs. '.$f08_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('F09').'</td>
+                                <td class="col-10p">'.$f09_1.' Si</td>
+                                <td class="col-10p">'.$f09_2.' No</td>
+                                <td class="col-40p">Obs. '.$f09_3.'</td>
+                            </tr>
+                                                    
+                        </tbody>        
+                    </table>									                        
+                </main>
+                
+                <main>
+                    <div class="notices">
+                        <div class="notice"><strong>'.constant('GTITLE').'</strong></div>
+                    </div>
+                </main>
+                <main>
+                    <table class="tborder">
+                        <tbody>
+                            <tr>
+                                <td class="col-40p">'.constant('G01').'</td>
+                                <td class="col-10p">'.$f01_1.' Si</td>
+                                <td class="col-10p">'.$f01_2.' No</td>
+                                <td class="col-40p">Obs. '.$f01_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G02').'</td>
+                                <td class="col-10p">'.$f02_1.' Si</td>
+                                <td class="col-10p">'.$f02_2.' No</td>
+                                <td class="col-40p">Obs. '.$f02_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G03').'</td>
+                                <td class="col-10p">'.$f03_1.' Si</td>
+                                <td class="col-10p">'.$f03_2.' No</td>
+                                <td class="col-40p">Obs. '.$f03_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G04').'</td>
+                                <td class="col-10p">'.$f04_1.' Si</td>
+                                <td class="col-10p">'.$f04_2.' No</td>
+                                <td class="col-40p">Obs. '.$f04_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G05').'</td>
+                                <td class="col-10p">'.$f05_1.' Si</td>
+                                <td class="col-10p">'.$f05_2.' No</td>
+                                <td class="col-40p">Obs. '.$f05_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G06').'</td>
+                                <td class="col-10p">'.$f06_1.' Si</td>
+                                <td class="col-10p">'.$f06_2.' No</td>
+                                <td class="col-40p">Obs. '.$f06_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G07').'</td>
+                                <td class="col-10p">'.$f07_1.' Si</td>
+                                <td class="col-10p">'.$f07_2.' No</td>
+                                <td class="col-40p">Obs. '.$f07_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G08').'</td>
+                                <td class="col-10p">'.$f08_1.' Si</td>
+                                <td class="col-10p">'.$f08_2.' No</td>
+                                <td class="col-40p">Obs. '.$f08_3.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G09').'</td>
+                                <td class="col-10p">'.$f09_1.' Si</td>
+                                <td class="col-10p">'.$f09_2.' No</td>
+                                <td class="col-40p">Obs. '.$f09_3.'</td>
                             </tr>
                             
                                                     

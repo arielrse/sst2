@@ -940,14 +940,15 @@ a {
 }
 
 .invoice main .notices .notice {
-	font-size: 1.2em
+	font-size: 1em
 }
 
 .invoice table {
 	width: 100%;
 	border-collapse: collapse;
 	border-spacing: 0;
-	margin-bottom: 2px
+	margin-bottom: 2px;
+	font-size: 10px;
 }
 
 .invoice table th {
@@ -2764,4 +2765,10 @@ input.search-control-2::placeholder {
 .col-100p {
 	flex: 0 0 auto;
 	width: 100%
+}
+
+
+.tborder td, th {
+	border: 1px solid #717171;
+	border-collapse: collapse;
 }
