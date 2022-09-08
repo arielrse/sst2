@@ -270,67 +270,67 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                                 <td colspan="5"><strong>G.1	Verificaciones tecnicas</strong></td>
                             </tr>
                             <tr>
-                                <td class="col-35p">G.1.1 Verificacion de operación del controldador</td>
+                                <td class="col-50p">G.1.1 Verificacion de operación del controldador</td>
                                 <td class="col-5p"> </td>
-                                <td class="col-10p">'.  $g1_01_01 . ' Sin Humedad </td>
-                                <td class="col-10p">'.  $g1_01_02 . ' Con Humedad </td>
-                                <td class="col-30p">Obs. '.         $g1_01_03 . '</td>
+                                <td class="col-15p">'.  $g1_01_01 . ' Sin Humedad </td>
+                                <td class="col-15p">'.  $g1_01_02 . ' Con Humedad </td>
+                                <td class="col-20p">Obs. '.         $g1_01_03 . '</td>
                             </tr>
                             <tr>
-                                <td class="col-35p">G.1.2 Verificacion de operación de los motores ventiladores</td>
-                                <td class="col-7p">'.  $g1_02_01 . ' N/A </td>
+                                <td class="col-50p">G.1.2 Verificacion de operación de los motores ventiladores</td>
+                                <td class="col-5p">'.  $g1_02_01 . ' N/A </td>
                                 <td class="col-15p">'.  $g1_02_02 . ' Operativo </td>
-                                <td class="col-15p">' .  $g1_02_03 . ' No Operativo </td>
-                                <td class="col-30p">Obs. ' .  $g1_02_04 . '</td>
+                                <td class="col-15p">'.  $g1_02_03 . ' No Operativo </td>
+                                <td class="col-20p">Obs. ' .  $g1_02_04 . '</td>
                             </tr>
                             <tr>
-                                <td class="col-35p">G.1.3 Inspeccion del sistema electrico del TD a equipo</td>
+                                <td class="col-50p">G.1.3 Inspeccion del sistema electrico del TD a equipo</td>
                                 <td class="col-5p"> </td>
-                                <td class="col-10p">'.     $g1_03_01 . ' SI </td>
-                                <td class="col-10p"> </td>
-                                <td class="col-30p">Obs. ' .  $g1_03_02 . '</td>
+                                <td class="col-15p">'.     $g1_03_01 . ' SI </td>
+                                <td class="col-15p"> </td>
+                                <td class="col-20p">Obs. ' .  $g1_03_02 . '</td>
                             </tr>
                             <tr>
-                                <td class="col-35p">G.1.4	Verificacion del ruido de operación de los rodamientos de motores</td>
+                                <td class="col-50p">G.1.4	Verificacion del ruido de operación de los rodamientos de motores</td>
                                 <td class="col-5p"></td>
-                                <td class="col-10p">'. $g1_04_01 . ' Aceptable </td>
-                                <td class="col-10p">' .     $g1_04_02 . ' Alto </td>
-                                <td class="col-30p">Obs. ' .     $g1_04_03 . '</td>
+                                <td class="col-15p">'. $g1_04_01 . ' Aceptable </td>
+                                <td class="col-15p">' .     $g1_04_02 . ' Alto </td>
+                                <td class="col-20p">Obs. ' .     $g1_04_03 . '</td>
                             </tr>
                              <tr>
-                                <td class="col-35p">G.1.5 Verificacion de aterramento del equipo</td>
+                                <td class="col-50p">G.1.5 Verificacion de aterramento del equipo</td>
                                 <td class="col-5p"> </td>
-                                <td class="col-10p">'.  $g1_05_01 . ' Bueno </td>
-                                <td class="col-10p">'.   $g1_05_02 . ' Malo </td>
-                                <td class="col-30p">Obs. '.   $g1_05_03 . '</td>
+                                <td class="col-15p">'.  $g1_05_01 . ' Bueno </td>
+                                <td class="col-15p">'.   $g1_05_02 . ' Malo </td>
+                                <td class="col-20p">Obs. '.   $g1_05_03 . '</td>
                             </tr>
                             <tr>
-                                <td class="col-35p">G.1.6 Verificacion del buen estado fisico del equipo</td>
-                                <td class="col-7p"> </td>
-                                <td class="col-15p">'.      $g1_06_02 . ' Bueno </td>
-                                <td class="col-15p">' . $g1_06_03 . ' Con Daños</td>
-                                <td class="col-30p">Obs. ' .      $g1_06_04 . '</td>
+                                <td class="col-50p">G.1.6 Verificacion del buen estado fisico del equipo</td>
+                                <td class="col-5p"> </td>
+                                <td class="col-15p">'.      $g1_06_01 . ' Bueno </td>
+                                <td class="col-15p">' . $g1_06_02 . ' Con Daños</td>
+                                <td class="col-20p">Obs. ' .      $g1_06_03 . '</td>
                             </tr>
                             <tr>
-                                <td class="col-35p">G.1.7 Verificación de la correcta operación del display y teclas</td>
+                                <td class="col-50p">G.1.7 Verificación de la correcta operación del display y teclas</td>
                                 <td class="col-5p"> </td>
-                                <td class="col-10p">'.     $g1_07_01 . ' Bueno</td>
-                                <td class="col-10p">' .    $g1_07_02 . ' Malo </td>
-                                <td class="col-30p">Obs. ' .     $g1_07_03 . '</td>
+                                <td class="col-15p">'.     $g1_07_01 . ' Bueno</td>
+                                <td class="col-15p">' .    $g1_07_02 . ' Malo </td>
+                                <td class="col-20p">Obs. ' .     $g1_07_03 . '</td>
                             </tr>
                             <tr>
-                                <td class="col-35p">G.1.8 Verificación del buen estado de Shunt, PDUs</td>
+                                <td class="col-50p">G.1.8 Verificación del buen estado de Shunt, PDUs</td>
                                 <td class="col-5p"> </td>
-                                <td class="col-10p">'. $g1_08_01 . ' Bueno</td>
-                                <td class="col-10p">'. $g1_08_02 . ' Malo </td>
-                                <td class="col-30p">Obs. ' . $g1_08_03 . '</td>
+                                <td class="col-15p">'. $g1_08_01 . ' Bueno</td>
+                                <td class="col-15p">'. $g1_08_02 . ' Malo </td>
+                                <td class="col-20p">Obs. ' . $g1_08_03 . '</td>
                             </tr>
                             <tr>
-                                <td class="col-35p">G.1.9 Verificación de sobre carga de capacidad de la planta rectificadora</td>
+                                <td class="col-50p">G.1.9 Verificación de sobre carga de capacidad de la planta rectificadora</td>
                                 <td class="col-5p"> </td>
-                                <td class="col-10p">'. $g1_09_01 . ' Sin Sobrecarga </td>
-                                <td class="col-10p">' .  $g1_09_02 . ' Sobrecargado </td>
-                                <td class="col-30p">Obs. ' .          $g1_09_03 . '</td>
+                                <td class="col-15p">'. $g1_09_01 . ' Sin Sobrecarga </td>
+                                <td class="col-15p">' .  $g1_09_02 . ' Sobrecargado </td>
+                                <td class="col-20p">Obs. ' .          $g1_09_03 . '</td>
                             </tr>
                         </tbody>        
                     </table>									                        
@@ -346,73 +346,73 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                                 <td class="col-45p">G.2.1 Limpieza de los filtros de polvo de aire</td>
                                 <td class="col-15p">'.  $g2_01_01 . ' Realizado </td>
                                 <td class="col-15p"> </td>
-                                <td class="col-30p">Obs. '.         $g2_01_02 . '</td>
+                                <td class="col-25p">Obs. '.         $g2_01_02 . '</td>
                             </tr>
                             <tr>
                                 <td class="col-45p">G.2.2 Limpieza de polvo de rendijas de renovación de aire del gabinete</td>
                                 <td class="col-15p">'.  $g2_02_01 . ' Realizado </td>
                                 <td class="col-15p">'.  $g2_02_02 . ' N/A </td>
-                                <td class="col-30p">Obs. '.        $g2_02_03 . '</td>
+                                <td class="col-25p">Obs. '.        $g2_02_03 . '</td>
                             </tr>
                             <tr>
                                 <td class="col-45p">G.2.3 Revisión de sobrecalentamiento del cableado en ac</td>
                                 <td class="col-15p">'. $g2_03_01 . ' No es necesario </td>
                                 <td class="col-15p">'. $g2_03_02 . ' Realizado </td>
-                                <td class="col-30p">Obs. ' .  $g2_03_03 . '</td>
+                                <td class="col-25p">Obs. ' .  $g2_03_03 . '</td>
                             </tr>
                             <tr>
                                 <td class="col-45p">G.2.4	Revisión de sobrecalentamiento del cableado en dc</td>
                                 <td class="col-15p">'.  $g2_04_01 . ' Realizado </td>
                                 <td class="col-15p"> </td>
-                                <td class="col-30p">Obs. '. $g2_04_02 . '</td>
+                                <td class="col-25p">Obs. '. $g2_04_02 . '</td>
                             </tr>
                              <tr>
                                 <td class="col-45p">G.2.5 Control de distribución de energía DC en/los puntos de servicio</td>
                                 <td class="col-15p">'.  $g2_05_01 . ' Realizado </td>
                                 <td class="col-15p"> </td>
-                                <td class="col-30p">Obs. '.        $g2_05_02 . '</td>
+                                <td class="col-25p">Obs. '.        $g2_05_02 . '</td>
                             </tr>
                             <tr>
                                 <td class="col-45p">G.2.6 Ajuste del torque de elementos de sujeción en el PDU DC</td>
                                 <td class="col-15p">'.  $g2_06_01 . ' Realizado </td>
                                 <td class="col-15p"> </td>
-                                <td class="col-30p">Obs. '.        $g2_06_02 . '</td>
+                                <td class="col-25p">Obs. '.        $g2_06_02 . '</td>
                             </tr>
                             <tr>
                                 <td class="col-45p">G.2.7 Ajuste de borneras en el panel eléctrico del equipo</td>
                                 <td class="col-15p">'.  $g2_07_01 . ' Realizado </td>
                                 <td class="col-15p"> </td>
-                                <td class="col-30p">Obs. '.        $g2_07_02 . '</td>
+                                <td class="col-25p">Obs. '.        $g2_07_02 . '</td>
                             </tr>
                             <tr>
                                 <td class="col-45p">G.2.8 Ajuste de borneras del circuito del equipo en el tablero eléctrico</td>
                                 <td class="col-15p">'.  $g2_08_01 . ' Realizado </td>
                                 <td class="col-15p"> </td>
-                                <td class="col-30p">Obs. '.        $g2_08_02 . '</td>
+                                <td class="col-25p">Obs. '.        $g2_08_02 . '</td>
                             </tr>
                             <tr>
                                 <td class="col-45p">G.2.9 Lubricación de los motores ventiladores</td>
                                 <td class="col-15p">'.  $g2_09_01 . ' Realizado </td>
                                 <td class="col-15p"> </td>
-                                <td class="col-30p">Obs. '.        $g2_09_02 . '</td>
+                                <td class="col-25p">Obs. '.        $g2_09_02 . '</td>
                             </tr>
                             <tr>
                                 <td class="col-45p">G.2.10 Inspección del estado de los fusibles de protección</td>
                                 <td class="col-15p">'.  $g2_10_01 . ' Realizado </td>
                                 <td class="col-15p"> </td>
-                                <td class="col-30p">Obs. '.        $g2_10_02 . '</td>
+                                <td class="col-25p">Obs. '.        $g2_10_02 . '</td>
                             </tr>
                             <tr>
                                 <td class="col-45p">G.2.11 Prueba de autonomía del banco de baterías</td>
                                 <td class="col-15p">'.  $g2_11_01 . ' Realizado </td>
                                 <td class="col-15p"> </td>
-                                <td class="col-30p">Obs. '.        $g2_11_02 . '</td>
+                                <td class="col-25p">Obs. '.        $g2_11_02 . '</td>
                             </tr>
                             <tr>
                                 <td class="col-45p">G.2.12 Revisión de operación de todos los módulos de rectificadores</td>
                                 <td class="col-15p">'.  $g2_12_01 . ' Realizado </td>
                                 <td class="col-15p"> </td>
-                                <td class="col-30p">Obs. '.        $g2_12_02 . '</td>
+                                <td class="col-25p">Obs. '.        $g2_12_02 . '</td>
                             </tr>
                         </tbody>        
                     </table>									                        
