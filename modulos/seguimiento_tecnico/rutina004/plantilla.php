@@ -407,7 +407,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                     <table class="tborder">
                         <tbody>
                             <tr>
-                                <td colspan="5"><strong>'.constant('G2TITLE').'</strong></td>
+                                <td colspan="4"><strong>'.constant('G2TITLE').'</strong></td>
                             </tr>
                             <tr>
                                 <td class="col-50p">'.constant('G2_01').'</td>
