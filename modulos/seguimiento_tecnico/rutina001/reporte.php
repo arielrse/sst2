@@ -15,6 +15,7 @@ $data3 = mysqli_fetch_array($res3);
 $jsonData = $data3['cabecera'];
 $plantilla = getPlantilla($conexion, $jsonData, $idgrupo);
 
+
 $mpdf = new \Mpdf\Mpdf(['format' => 'Letter']);
 $mpdf->AddPage('P', '', '', '', '', '3', '3', '1.5', '1.5');
 

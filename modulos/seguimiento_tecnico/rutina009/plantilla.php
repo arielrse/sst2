@@ -1,24 +1,54 @@
 <?php
+require("../../../funciones/DateUtils.php");
+require("../ReporteMtoUtils.php");
+require("variable_text.php");
 
-function getPlantilla($jsonData){
+function getPlantilla($conexion, $jsonData, $idgrupo){
 
     $obj = json_decode($jsonData);
+    $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
+    $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
+
     $cm                 = $obj->{'cm'};
     $sitioId            = $obj->{'sitioId'};
     $propertyId         = $obj->{'propertyId'};
     $b_idenActivo       = $obj->{'b_idenActivo'};
     $b_nroActivo        = $obj->{'b_nroActivo'};
 
+    $c_fechaRealizacion = dateToLiteral($obj->{'c_fechaRealizacion'});
+
+    $d_horainicio   = $obj->{'d_horainicio'};
+    $d_horafin      = $obj->{'d_horafin'};
+    $tiempoTrans    = timeDiff($d_horainicio, $d_horafin);
+
+    //---------------------------
+    $dataPers = getPersonalOyM($conexion, $obj->{'e_personal'});
+    $nombre1 = $dataPers['nombre'];
+    $cargo1  = $dataPers['cargo'];
+    $cel1    = $dataPers['cel'];
+
+    $dataPersMtto = getPersonalMtto($conexion, $idgrupo);
+    $nombre2 = $dataPersMtto['nombre2'];
+    $nombre3 = $dataPersMtto['nombre3'];
+    $cargo2  = $dataPersMtto['cargo2'];
+    $cargo3  = $dataPersMtto['cargo3'];
+    $cel2    = $dataPersMtto['cel2'];
+    $cel3    = $dataPersMtto['cel3'];
+    //---------------------------
+
+    /** f_verificacion **/
+    $f_verificacion = $obj->{'f_verificacion'};
+    $f01_1 = $f_verificacion->f01_1 ? $check : $uncheck;
+    $f01_2 = $f_verificacion->f01_2 ? $check : $uncheck;
+    $f01_3 = $f_verificacion->f01_3;
+    $f02_1 = $f_verificacion->f02_1 ? $check : $uncheck;
+    $f02_2 = $f_verificacion->f02_2 ? $check : $uncheck;
+    $f02_3 = $f_verificacion->f02_3;
+
     $plantilla =
 '<body>    
     <div class="card-">
         <div class="card-body-">
-            
-            
-            <!--<div class="invoice-head">
-                
-            </div>-->
-        
             <div id="invoice">
                 <div class="invoice">
                 <table>
@@ -36,7 +66,7 @@ function getPlantilla($jsonData){
                     </tr>
                     <tr>
                         <th class="text-center" colspan="2">
-                            <h3>RUTINA DE MANTENIMIENTO PREVENTIVO - BANCO DE BATERÍAS</h3>
+                            <h4>RUTINA DE MANTENIMIENTO PREVENTIVO</h4>
                         </th>
                     </tr>
                 </table>
@@ -55,11 +85,11 @@ function getPlantilla($jsonData){
                                 <td class="col-10p">'. $sitioId .'</td>
                                 <td class="col-12p no">Property_id:</td>
                                 <td class="col-40p">'. $propertyId .'</td>
-                            </tr>      
+                            </tr>     
                         </tbody>        
                     </table>									                        
                 </main>
-                
+               
                 <main>
                     <div class="notices">
                         <div class="notice"><strong>B. Identificación del Activo</strong></div>
@@ -89,7 +119,7 @@ function getPlantilla($jsonData){
                             <tr>
                                 <td class="col-30p no">Fecha de mantenimiento:</td>
                                 <td class="col-70p">'.$c_fechaRealizacion.'</td>
-                            </tr>      
+                            </tr>     
                         </tbody>        
                     </table>									                        
                 </main>
@@ -128,7 +158,7 @@ function getPlantilla($jsonData){
                                 <td class="col-7p no">Cargo:</td>
                                 <td class="col-35p">'.$cargo1.'</td>
                                 <td class="col-10p no">Teléfono:</td>
-                                <td class="col-8p">'.$cel1.'</td>
+                                <td class="col-10p">'.$cel1.'</td>
                             </tr>
                             <tr>
                                 <td class="col-8p no">Nombre:</td>
@@ -136,7 +166,7 @@ function getPlantilla($jsonData){
                                 <td class="col-7p no">Cargo:</td>
                                 <td class="col-35p">'.$cargo2.'</td>
                                 <td class="col-10p no">Teléfono:</td>
-                                <td class="col-8p">'.$cel2.'</td>
+                                <td class="col-10p">'.$cel2.'</td>
                             </tr>
                             <tr>
                                 <td class="col-8p no">Nombre:</td>
@@ -144,7 +174,7 @@ function getPlantilla($jsonData){
                                 <td class="col-7p no">Cargo:</td>
                                 <td class="col-35p">'.$cargo3.'</td>
                                 <td class="col-10p no">Teléfono:</td>
-                                <td class="col-8p">'.$cel3.'</td>
+                                <td class="col-10p">'.$cel3.'</td>
                             </tr>
                             
                             
@@ -154,35 +184,23 @@ function getPlantilla($jsonData){
                 
                 <main>
                     <div class="notices">
-                        <div class="notice"><strong>E. Personal Técnico Responsable</strong></div>
+                        <div class="notice"><strong>'.constant('FTITLE').'</strong></div>
                     </div>
                 </main>	
                 <main>
-                    <table>
+                    <table class="tborder">
                         <tbody>
                             <tr>
-                                <td class="col-1 no">Nombre:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Cargo:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Teléfono:</td>
-                                <td class="col-2">---</td>
+                                <td class="col-40p">'.constant('F01').'</td>
+                                <td class="col-10p">'.$f01_1.' Si</td>
+                                <td class="col-10p">'.$f01_2.' No</td>
+                                <td class="col-40p">Obs. '.$f01_3.'</td>
                             </tr>
                             <tr>
-                                <td class="col-1 no">Nombre:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Cargo:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Teléfono:</td>
-                                <td class="col-2">---</td>
-                            </tr>
-                            <tr>
-                                <td class="col-1 no">Nombre:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Cargo:</td>
-                                <td class="col-3">---</td>
-                                <td class="col-1 no">Teléfono:</td>
-                                <td class="col-2">---</td>
+                                <td class="col-40p">'.constant('F02').'</td>
+                                <td class="col-10p">'.$f02_1.' Si</td>
+                                <td class="col-10p">'.$f02_2.' No</td>
+                                <td class="col-40p">Obs. '.$f02_3.'</td>
                             </tr>
                             
                         </tbody>        
