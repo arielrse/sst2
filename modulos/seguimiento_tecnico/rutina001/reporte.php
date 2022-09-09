@@ -24,6 +24,4 @@ $mpdf->writeHtml($css, \Mpdf\HTMLParserMode::HEADER_CSS);
 $mpdf->writeHtml($plantilla, \Mpdf\HTMLParserMode::HTML_BODY);
 $mpdf->output("Report$cform.pdf", "I");
 
-generate($css, $plantilla);
-
 ?>

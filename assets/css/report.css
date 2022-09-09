@@ -994,6 +994,12 @@ a {
 	background: #2F75B5
 }
 
+.invoice table .no1 {
+	color: #000;
+	font-size: 1.0em;
+	background: #6bade5
+}
+
 .invoice table .unit {
 	background: #ddd
 }
@@ -2783,4 +2789,16 @@ input.search-control-2::placeholder {
 .mr-1 {
 	margin-right: 5px;
 	/*padding-right: .50rem!important*/
+}
+
+div.areatext {
+	/*height: auto;*/
+	height: 70px;
+	border: 1px solid black;
+	padding: 2px;
+}
+
+div.b {
+	height: 50px;
+	border: 1px solid black;
 }

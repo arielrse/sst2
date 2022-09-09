@@ -117,8 +117,49 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $g18_1 = $g_desarrollo[17]->g18_1;
     $g18_2 = $g_desarrollo[17]->g18_2;
 
+    /** g_voltaje **/
+    $g_voltaje = $obj->{'g_voltaje'};
+    $g19_b01 = $g_voltaje->g19_b01;
+    $g19_b02 = $g_voltaje->g19_b02;
+    $g19_b03 = $g_voltaje->g19_b03;
+    $g19_b04 = $g_voltaje->g19_b04;
+    $g19_b05 = $g_voltaje->g19_b05;
+    $g19_b06 = $g_voltaje->g19_b06;
+    $g19_b07 = $g_voltaje->g19_b07;
+    $g19_b08 = $g_voltaje->g19_b08;
+    $g19_b09 = $g_voltaje->g19_b09;
+    $g19_b10 = $g_voltaje->g19_b10;
+    $g19_b11 = $g_voltaje->g19_b11;
+    $g19_b12 = $g_voltaje->g19_b12;
+    $g19_b13 = $g_voltaje->g19_b13;
+    $g19_b14 = $g_voltaje->g19_b14;
+    $g19_b15 = $g_voltaje->g19_b15;
+    $g19_b16 = $g_voltaje->g19_b16;
+    $g19_b17 = $g_voltaje->g19_b17;
+    $g19_b18 = $g_voltaje->g19_b18;
+    $g19_b19 = $g_voltaje->g19_b19;
+    $g19_b20 = $g_voltaje->g19_b20;
+    $g19_b21 = $g_voltaje->g19_b21;
+    $g19_b22 = $g_voltaje->g19_b22;
+    $g19_b23 = $g_voltaje->g19_b23;
+    $g19_b24 = $g_voltaje->g19_b24;
+
+    $g_descarga = $obj->{'g_descarga'};
+    $g20_1_1 = $g_descarga->g20_1_1;
+    $g20_1_2 = $g_descarga->g20_1_2;
+    $g20_1_3 = $g_descarga->g20_1_3;
+    $g20_2_1 = $g_descarga->g20_2_1;
+    $g20_2_2 = $g_descarga->g20_2_2;
+    $g20_2_3 = $g_descarga->g20_2_3;
+
+
+
+    $subPlantilla1 = getSubPlantilla1($jsonData);
+    $subPlantilla2 = getSubPlantilla2($jsonData);
+    $footerPlantilla = getFooter($jsonData);
+
     $plantilla =
-'<body>    
+'<body>
     <div class="card-">
         <div class="card-body-">
             <div id="invoice">
@@ -166,7 +207,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                     <div class="notices">
                         <div class="notice"><strong>B. Identificación del Activo</strong></div>
                     </div>
-                </main>																        
+                </main>
                 <main>
                     <table>
                         <tbody>
@@ -363,26 +404,26 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                             </tr>
                             <tr>
                                 <td class="col-40p">'.constant('G03').'</td>
-                                <td class="col-10p">'.$g03_1.' Si</td>
-                                <td class="col-10p">'.$g03_2.' No</td>
+                                <td class="col-10p">'.$g03_1.' Bueno</td>
+                                <td class="col-10p">'.$g03_2.' Malo</td>
                                 <td class="col-40p">Obs. '.$g03_3.'</td>
                             </tr>
                             <tr>
                                 <td class="col-40p">'.constant('G04').'</td>
-                                <td class="col-10p">'.$g04_1.' Si</td>
-                                <td class="col-10p">'.$g04_2.' No</td>
+                                <td class="col-10p">'.$g04_1.' Bueno</td>
+                                <td class="col-10p">'.$g04_2.' Malo</td>
                                 <td class="col-40p">Obs. '.$g04_3.'</td>
                             </tr>
                             <tr>
                                 <td class="col-40p">'.constant('G05').'</td>
-                                <td class="col-10p">'.$g05_1.' Si</td>
-                                <td class="col-10p">'.$g05_2.' No</td>
+                                <td class="col-10p">'.$g05_1.' Bueno</td>
+                                <td class="col-10p">'.$g05_2.' Malo</td>
                                 <td class="col-40p">Obs. '.$g05_3.'</td>
                             </tr>
                             <tr>
                                 <td class="col-40p">'.constant('G06').'</td>
-                                <td class="col-10p">'.$g06_1.' Si</td>
-                                <td class="col-10p">'.$g06_2.' No</td>
+                                <td class="col-10p">'.$g06_1.' Bueno</td>
+                                <td class="col-10p">'.$g06_2.' Malo</td>
                                 <td class="col-40p">Obs. '.$g06_3.'</td>
                             </tr>
                             <tr>
@@ -402,14 +443,70 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                                 <td class="col-10p num">'.$g09_1.'</td>
                                 <td class="col-10p"></td>
                                 <td class="col-40p">Obs. '.$g09_2.'</td>
-                            </tr>                        
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G10').'</td>
+                                <td class="col-10p num">'.$g10_1.'</td>
+                                <td class="col-10p"></td>
+                                <td class="col-40p">Obs. '.$g10_2.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G11').'</td>
+                                <td class="col-10p num">'.$g11_1.'</td>
+                                <td class="col-10p"></td>
+                                <td class="col-40p">Obs. '.$g11_2.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G12').'</td>
+                                <td class="col-10p num">'.$g12_1.'</td>
+                                <td class="col-10p"></td>
+                                <td class="col-40p">Obs. '.$g12_2.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G13').'</td>
+                                <td class="col-10p num">'.$g13_1.'</td>
+                                <td class="col-10p"></td>
+                                <td class="col-40p">Obs. '.$g13_2.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G14').'</td>
+                                <td class="col-10p num">'.$g14_1.'</td>
+                                <td class="col-10p"></td>
+                                <td class="col-40p">Obs. '.$g14_2.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G15').'</td>
+                                <td class="col-10p num">'.$g15_1.'</td>
+                                <td class="col-10p"></td>
+                                <td class="col-40p">Obs. '.$g15_2.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G16').'</td>
+                                <td class="col-10p num">'.$g16_1.'</td>
+                                <td class="col-10p"></td>
+                                <td class="col-40p">Obs. '.$g16_2.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G17').'</td>
+                                <td class="col-10p num">'.$g17_1.'</td>
+                                <td class="col-10p"></td>
+                                <td class="col-40p">Obs. '.$g17_2.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-40p">'.constant('G18').'</td>
+                                <td class="col-10p num">'.$g18_1.'</td>
+                                <td class="col-10p"></td>
+                                <td class="col-40p">Obs. '.$g18_2.'</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">'.constant('G19').'</td>
+                            </tr>
+                            
                         </tbody>        
                     </table>									                        
                 </main>
                 
                 <main>
-                
-                </main>
                     <table>
                         <tr>
                             <td>
@@ -418,147 +515,928 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                                         <td>
                                             <table class="tborder">
                                                 <tr>
-                                                    <td>N° Bat.</td>
-                                                    <td>VDC</td>
+                                                    <td><strong>N° Bat.</strong></td>
+                                                    <td><strong>VDC</strong></td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B1</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b01.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B2</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b02.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B3</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b03.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B4</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b04.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B5</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b05.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B6</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b06.'</td>
                                                 </tr>
                                             </table>
                                         </td>
                                         <td>
                                             <table class="tborder">
                                                 <tr>
-                                                    <td>N° Bat.</td>
-                                                    <td>VDC</td>
+                                                    <td><strong>N° Bat.</strong></td>
+                                                    <td><strong>VDC</strong></td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B7</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b07.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B8</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b08.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B9</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b09.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B10</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b10.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B11</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b11.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B12</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b12.'</td>
                                                 </tr>
                                             </table>
                                         </td>
                                         <td>
                                             <table class="tborder">
                                                 <tr>
-                                                    <td>N° Bat.</td>
-                                                    <td>VDC</td>
+                                                    <td><strong>N° Bat.</strong></td>
+                                                    <td><strong>VDC</strong></td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B13</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b13.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B14</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b14.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B15</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b15.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B16</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b16.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B17</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b17.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B18</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b18.'</td>
                                                 </tr>
                                             </table>
                                         </td>
                                         <td>
                                             <table class="tborder">
                                                 <tr>
-                                                    <td>N° Bat.</td>
-                                                    <td>VDC</td>
+                                                    <td><strong>N° Bat.</strong></td>
+                                                    <td><strong>VDC</strong></td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B19</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b19.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B20</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b20.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B21</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b21.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B22</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b22.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B23</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b23.'</td>
                                                 </tr>
                                                 <tr>
                                                     <td>BB2-B24</td>
-                                                    <td></td>
+                                                    <td>'.$g19_b24.'</td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
-                                </table>    
+                                </table>   
                             </td>
                         </tr>
                     </table>
+                </main>
+                
+                <main>
+                    <table class="tborder">
+                        <tbody>
+                            <tr>
+                                <td class="col-75p">G.20 Medidas por descarga BB:</td>
+                                <td class="col-5p">Obs.</td>
+                                <td class="col-20p"></td>
+                            </tr>
+                        </tbody>        
+                    </table>									                        
+                </main>
+                
+                <main>
+                    <table class="tborder">
+                        <tbody>
+                            <tr>
+                                <td colspan="6">G.20.1 Datos de Hojas Tecnicas:</td>
+                            </tr>
+                            <tr>
+                                <td class="col-25p">Corriente de descarga ADC:</td>
+                                <td class="col-10p">'.$g20_1_1.'</td>
+                                <td class="col-25p">Tiempo Noninal de descarga min:</td>
+                                <td class="col-15p">'.$g20_1_2.'</td>
+                                <td class="col-5p">Obs.</td>
+                                <td class="col-20p">'.$g20_1_3.'</td>
+                            </tr>
+                        </tbody>        
+                    </table>									                        
+                </main>
+                
+                <main>
+                    <table class="tborder">
+                        <tbody>
+                            <tr>
+                                <td colspan="6">G.20.2 Medidas en descarga:</td>
+                            </tr>
+                            <tr>
+                                <td class="col-25p">Corriente de descarga ADC:</td>
+                                <td class="col-10p">'.$g20_2_1.'</td>
+                                <td class="col-25p">Tiempo Noninal de descarga min:</td>
+                                <td class="col-15p">'.$g20_2_2.'</td>
+                                <td class="col-5p">Obs.</td>
+                                <td class="col-20p">'.$g20_2_3.'</td>
+                            </tr>
+                        </tbody>        
+                    </table>									                        
+                </main>
+                
+                '. $subPlantilla1 .'
+                
+                <main>
+                    <table class="tborder">
+                        <tr>
+                            <td colspan="4">G.21 Medidas Resistencia Interna BB:</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">G.21.a Datos de Hojas Tecnicas:</td>
+                        </tr>
+                        <tr>
+                            <td class="col-30p">Valor aproximado mΩ</td>
+                            <td class="col-30p">'.$g21_1.'</td>
+                            <td class="col-10p">Obs.</td>
+                            <td class="col-30p">'.$g21_2.'</td>
+                        </tr>
+                    </table>									                        
+                </main>
+                '. $subPlantilla2 .'
+                '. $footerPlantilla .'
                 </div>
             </div>
         </div>
 	</div>
-    
 </body>
-
 ';
 
     return $plantilla;
 }
 
-?>
+function getSubPlantilla1($jsonData){
 
+    $obj = json_decode($jsonData);
+    $g_tiempo_tension = $obj->{'g_tiempo_tension'};
+    $g_bb2_b1_1 = $g_tiempo_tension->g_bb2_b1_1;
+    $g_bb2_b1_2 = $g_tiempo_tension->g_bb2_b1_2;
+    $g_bb2_b1_3 = $g_tiempo_tension->g_bb2_b1_3;
+    $g_bb2_b1_4 = $g_tiempo_tension->g_bb2_b1_4;
+    $g_bb2_b1_5 = $g_tiempo_tension->g_bb2_b1_5;
+    $g_bb2_b1_6 = $g_tiempo_tension->g_bb2_b1_6;
+    $g_bb2_b1_7 = $g_tiempo_tension->g_bb2_b1_7;
+    $g_bb2_b1_8 = $g_tiempo_tension->g_bb2_b1_8;
+    $g_bb2_b2_1 = $g_tiempo_tension->g_bb2_b2_1;
+    $g_bb2_b2_2 = $g_tiempo_tension->g_bb2_b2_2;
+    $g_bb2_b2_3 = $g_tiempo_tension->g_bb2_b2_3;
+    $g_bb2_b2_4 = $g_tiempo_tension->g_bb2_b2_4;
+    $g_bb2_b2_5 = $g_tiempo_tension->g_bb2_b2_5;
+    $g_bb2_b2_6 = $g_tiempo_tension->g_bb2_b2_6;
+    $g_bb2_b2_7 = $g_tiempo_tension->g_bb2_b2_7;
+    $g_bb2_b2_8 = $g_tiempo_tension->g_bb2_b2_8;
+    $g_bb2_b3_1 = $g_tiempo_tension->g_bb2_b3_1;
+    $g_bb2_b3_2 = $g_tiempo_tension->g_bb2_b3_2;
+    $g_bb2_b3_3 = $g_tiempo_tension->g_bb2_b3_3;
+    $g_bb2_b3_4 = $g_tiempo_tension->g_bb2_b3_4;
+    $g_bb2_b3_5 = $g_tiempo_tension->g_bb2_b3_5;
+    $g_bb2_b3_6 = $g_tiempo_tension->g_bb2_b3_6;
+    $g_bb2_b3_7 = $g_tiempo_tension->g_bb2_b3_7;
+    $g_bb2_b3_8 = $g_tiempo_tension->g_bb2_b3_8;
+    $g_bb2_b4_1 = $g_tiempo_tension->g_bb2_b4_1;
+    $g_bb2_b4_2 = $g_tiempo_tension->g_bb2_b4_2;
+    $g_bb2_b4_3 = $g_tiempo_tension->g_bb2_b4_3;
+    $g_bb2_b4_4 = $g_tiempo_tension->g_bb2_b4_4;
+    $g_bb2_b4_5 = $g_tiempo_tension->g_bb2_b4_5;
+    $g_bb2_b4_6 = $g_tiempo_tension->g_bb2_b4_6;
+    $g_bb2_b4_7 = $g_tiempo_tension->g_bb2_b4_7;
+    $g_bb2_b4_8 = $g_tiempo_tension->g_bb2_b4_8;
+    $g_bb2_b5_1 = $g_tiempo_tension->g_bb2_b5_1;
+    $g_bb2_b5_2 = $g_tiempo_tension->g_bb2_b5_2;
+    $g_bb2_b5_3 = $g_tiempo_tension->g_bb2_b5_3;
+    $g_bb2_b5_4 = $g_tiempo_tension->g_bb2_b5_4;
+    $g_bb2_b5_5 = $g_tiempo_tension->g_bb2_b5_5;
+    $g_bb2_b5_6 = $g_tiempo_tension->g_bb2_b5_6;
+    $g_bb2_b5_7 = $g_tiempo_tension->g_bb2_b5_7;
+    $g_bb2_b5_8 = $g_tiempo_tension->g_bb2_b5_8;
+    $g_bb2_b6_1 = $g_tiempo_tension->g_bb2_b6_1;
+    $g_bb2_b6_2 = $g_tiempo_tension->g_bb2_b6_2;
+    $g_bb2_b6_3 = $g_tiempo_tension->g_bb2_b6_3;
+    $g_bb2_b6_4 = $g_tiempo_tension->g_bb2_b6_4;
+    $g_bb2_b6_5 = $g_tiempo_tension->g_bb2_b6_5;
+    $g_bb2_b6_6 = $g_tiempo_tension->g_bb2_b6_6;
+    $g_bb2_b6_7 = $g_tiempo_tension->g_bb2_b6_7;
+    $g_bb2_b6_8 = $g_tiempo_tension->g_bb2_b6_8;
+    $g_bb2_b7_1 = $g_tiempo_tension->g_bb2_b7_1;
+    $g_bb2_b7_2 = $g_tiempo_tension->g_bb2_b7_2;
+    $g_bb2_b7_3 = $g_tiempo_tension->g_bb2_b7_3;
+    $g_bb2_b7_4 = $g_tiempo_tension->g_bb2_b7_4;
+    $g_bb2_b7_5 = $g_tiempo_tension->g_bb2_b7_5;
+    $g_bb2_b7_6 = $g_tiempo_tension->g_bb2_b7_6;
+    $g_bb2_b7_7 = $g_tiempo_tension->g_bb2_b7_7;
+    $g_bb2_b7_8 = $g_tiempo_tension->g_bb2_b7_8;
+    $g_bb2_b8_1 = $g_tiempo_tension->g_bb2_b8_1;
+    $g_bb2_b8_2 = $g_tiempo_tension->g_bb2_b8_2;
+    $g_bb2_b8_3 = $g_tiempo_tension->g_bb2_b8_3;
+    $g_bb2_b8_4 = $g_tiempo_tension->g_bb2_b8_4;
+    $g_bb2_b8_5 = $g_tiempo_tension->g_bb2_b8_5;
+    $g_bb2_b8_6 = $g_tiempo_tension->g_bb2_b8_6;
+    $g_bb2_b8_7 = $g_tiempo_tension->g_bb2_b8_7;
+    $g_bb2_b8_8 = $g_tiempo_tension->g_bb2_b8_8;
+    $g_bb2_b9_1 = $g_tiempo_tension->g_bb2_b9_1;
+    $g_bb2_b9_2 = $g_tiempo_tension->g_bb2_b9_2;
+    $g_bb2_b9_3 = $g_tiempo_tension->g_bb2_b9_3;
+    $g_bb2_b9_4 = $g_tiempo_tension->g_bb2_b9_4;
+    $g_bb2_b9_5 = $g_tiempo_tension->g_bb2_b9_5;
+    $g_bb2_b9_6 = $g_tiempo_tension->g_bb2_b9_6;
+    $g_bb2_b9_7 = $g_tiempo_tension->g_bb2_b9_7;
+    $g_bb2_b9_8 = $g_tiempo_tension->g_bb2_b9_8;
+    $g_bb2_b10_1 = $g_tiempo_tension->g_bb2_b10_1;
+    $g_bb2_b10_2 = $g_tiempo_tension->g_bb2_b10_2;
+    $g_bb2_b10_3 = $g_tiempo_tension->g_bb2_b10_3;
+    $g_bb2_b10_4 = $g_tiempo_tension->g_bb2_b10_4;
+    $g_bb2_b10_5 = $g_tiempo_tension->g_bb2_b10_5;
+    $g_bb2_b10_6 = $g_tiempo_tension->g_bb2_b10_6;
+    $g_bb2_b10_7 = $g_tiempo_tension->g_bb2_b10_7;
+    $g_bb2_b10_8 = $g_tiempo_tension->g_bb2_b10_8;
+    $g_bb2_b11_1 = $g_tiempo_tension->g_bb2_b11_1;
+    $g_bb2_b11_2 = $g_tiempo_tension->g_bb2_b11_2;
+    $g_bb2_b11_3 = $g_tiempo_tension->g_bb2_b11_3;
+    $g_bb2_b11_4 = $g_tiempo_tension->g_bb2_b11_4;
+    $g_bb2_b11_5 = $g_tiempo_tension->g_bb2_b11_5;
+    $g_bb2_b11_6 = $g_tiempo_tension->g_bb2_b11_6;
+    $g_bb2_b11_7 = $g_tiempo_tension->g_bb2_b11_7;
+    $g_bb2_b11_8 = $g_tiempo_tension->g_bb2_b11_8;
+    $g_bb2_b12_1 = $g_tiempo_tension->g_bb2_b12_1;
+    $g_bb2_b12_2 = $g_tiempo_tension->g_bb2_b12_2;
+    $g_bb2_b12_3 = $g_tiempo_tension->g_bb2_b12_3;
+    $g_bb2_b12_4 = $g_tiempo_tension->g_bb2_b12_4;
+    $g_bb2_b12_5 = $g_tiempo_tension->g_bb2_b12_5;
+    $g_bb2_b12_6 = $g_tiempo_tension->g_bb2_b12_6;
+    $g_bb2_b12_7 = $g_tiempo_tension->g_bb2_b12_7;
+    $g_bb2_b12_8 = $g_tiempo_tension->g_bb2_b12_8;
+    $g_bb2_b13_1 = $g_tiempo_tension->g_bb2_b13_1;
+    $g_bb2_b13_2 = $g_tiempo_tension->g_bb2_b13_2;
+    $g_bb2_b13_3 = $g_tiempo_tension->g_bb2_b13_3;
+    $g_bb2_b13_4 = $g_tiempo_tension->g_bb2_b13_4;
+    $g_bb2_b13_5 = $g_tiempo_tension->g_bb2_b13_5;
+    $g_bb2_b13_6 = $g_tiempo_tension->g_bb2_b13_6;
+    $g_bb2_b13_7 = $g_tiempo_tension->g_bb2_b13_7;
+    $g_bb2_b13_8 = $g_tiempo_tension->g_bb2_b13_8;
+    $g_bb2_b14_1 = $g_tiempo_tension->g_bb2_b14_1;
+    $g_bb2_b14_2 = $g_tiempo_tension->g_bb2_b14_2;
+    $g_bb2_b14_3 = $g_tiempo_tension->g_bb2_b14_3;
+    $g_bb2_b14_4 = $g_tiempo_tension->g_bb2_b14_4;
+    $g_bb2_b14_5 = $g_tiempo_tension->g_bb2_b14_5;
+    $g_bb2_b14_6 = $g_tiempo_tension->g_bb2_b14_6;
+    $g_bb2_b14_7 = $g_tiempo_tension->g_bb2_b14_7;
+    $g_bb2_b14_8 = $g_tiempo_tension->g_bb2_b14_8;
+    $g_bb2_b15_1 = $g_tiempo_tension->g_bb2_b15_1;
+    $g_bb2_b15_2 = $g_tiempo_tension->g_bb2_b15_2;
+    $g_bb2_b15_3 = $g_tiempo_tension->g_bb2_b15_3;
+    $g_bb2_b15_4 = $g_tiempo_tension->g_bb2_b15_4;
+    $g_bb2_b15_5 = $g_tiempo_tension->g_bb2_b15_5;
+    $g_bb2_b15_6 = $g_tiempo_tension->g_bb2_b15_6;
+    $g_bb2_b15_7 = $g_tiempo_tension->g_bb2_b15_7;
+    $g_bb2_b15_8 = $g_tiempo_tension->g_bb2_b15_8;
+    $g_bb2_b16_1 = $g_tiempo_tension->g_bb2_b16_1;
+    $g_bb2_b16_2 = $g_tiempo_tension->g_bb2_b16_2;
+    $g_bb2_b16_3 = $g_tiempo_tension->g_bb2_b16_3;
+    $g_bb2_b16_4 = $g_tiempo_tension->g_bb2_b16_4;
+    $g_bb2_b16_5 = $g_tiempo_tension->g_bb2_b16_5;
+    $g_bb2_b16_6 = $g_tiempo_tension->g_bb2_b16_6;
+    $g_bb2_b16_7 = $g_tiempo_tension->g_bb2_b16_7;
+    $g_bb2_b16_8 = $g_tiempo_tension->g_bb2_b16_8;
+    $g_bb2_b17_1 = $g_tiempo_tension->g_bb2_b17_1;
+    $g_bb2_b17_2 = $g_tiempo_tension->g_bb2_b17_2;
+    $g_bb2_b17_3 = $g_tiempo_tension->g_bb2_b17_3;
+    $g_bb2_b17_4 = $g_tiempo_tension->g_bb2_b17_4;
+    $g_bb2_b17_5 = $g_tiempo_tension->g_bb2_b17_5;
+    $g_bb2_b17_6 = $g_tiempo_tension->g_bb2_b17_6;
+    $g_bb2_b17_7 = $g_tiempo_tension->g_bb2_b17_7;
+    $g_bb2_b17_8 = $g_tiempo_tension->g_bb2_b17_8;
+    $g_bb2_b18_1 = $g_tiempo_tension->g_bb2_b18_1;
+    $g_bb2_b18_2 = $g_tiempo_tension->g_bb2_b18_2;
+    $g_bb2_b18_3 = $g_tiempo_tension->g_bb2_b18_3;
+    $g_bb2_b18_4 = $g_tiempo_tension->g_bb2_b18_4;
+    $g_bb2_b18_5 = $g_tiempo_tension->g_bb2_b18_5;
+    $g_bb2_b18_6 = $g_tiempo_tension->g_bb2_b18_6;
+    $g_bb2_b18_7 = $g_tiempo_tension->g_bb2_b18_7;
+    $g_bb2_b18_8 = $g_tiempo_tension->g_bb2_b18_8;
+    $g_bb2_b19_1 = $g_tiempo_tension->g_bb2_b19_1;
+    $g_bb2_b19_2 = $g_tiempo_tension->g_bb2_b19_2;
+    $g_bb2_b19_3 = $g_tiempo_tension->g_bb2_b19_3;
+    $g_bb2_b19_4 = $g_tiempo_tension->g_bb2_b19_4;
+    $g_bb2_b19_5 = $g_tiempo_tension->g_bb2_b19_5;
+    $g_bb2_b19_6 = $g_tiempo_tension->g_bb2_b19_6;
+    $g_bb2_b19_7 = $g_tiempo_tension->g_bb2_b19_7;
+    $g_bb2_b19_8 = $g_tiempo_tension->g_bb2_b19_8;
+    $g_bb2_b20_1 = $g_tiempo_tension->g_bb2_b20_1;
+    $g_bb2_b20_2 = $g_tiempo_tension->g_bb2_b20_2;
+    $g_bb2_b20_3 = $g_tiempo_tension->g_bb2_b20_3;
+    $g_bb2_b20_4 = $g_tiempo_tension->g_bb2_b20_4;
+    $g_bb2_b20_5 = $g_tiempo_tension->g_bb2_b20_5;
+    $g_bb2_b20_6 = $g_tiempo_tension->g_bb2_b20_6;
+    $g_bb2_b20_7 = $g_tiempo_tension->g_bb2_b20_7;
+    $g_bb2_b20_8 = $g_tiempo_tension->g_bb2_b20_8;
+    $g_bb2_b21_1 = $g_tiempo_tension->g_bb2_b21_1;
+    $g_bb2_b21_2 = $g_tiempo_tension->g_bb2_b21_2;
+    $g_bb2_b21_3 = $g_tiempo_tension->g_bb2_b21_3;
+    $g_bb2_b21_4 = $g_tiempo_tension->g_bb2_b21_4;
+    $g_bb2_b21_5 = $g_tiempo_tension->g_bb2_b21_5;
+    $g_bb2_b21_6 = $g_tiempo_tension->g_bb2_b21_6;
+    $g_bb2_b21_7 = $g_tiempo_tension->g_bb2_b21_7;
+    $g_bb2_b21_8 = $g_tiempo_tension->g_bb2_b21_8;
+    $g_bb2_b22_1 = $g_tiempo_tension->g_bb2_b22_1;
+    $g_bb2_b22_2 = $g_tiempo_tension->g_bb2_b22_2;
+    $g_bb2_b22_3 = $g_tiempo_tension->g_bb2_b22_3;
+    $g_bb2_b22_4 = $g_tiempo_tension->g_bb2_b22_4;
+    $g_bb2_b22_5 = $g_tiempo_tension->g_bb2_b22_5;
+    $g_bb2_b22_6 = $g_tiempo_tension->g_bb2_b22_6;
+    $g_bb2_b22_7 = $g_tiempo_tension->g_bb2_b22_7;
+    $g_bb2_b22_8 = $g_tiempo_tension->g_bb2_b22_8;
+    $g_bb2_b23_1 = $g_tiempo_tension->g_bb2_b23_1;
+    $g_bb2_b23_2 = $g_tiempo_tension->g_bb2_b23_2;
+    $g_bb2_b23_3 = $g_tiempo_tension->g_bb2_b23_3;
+    $g_bb2_b23_4 = $g_tiempo_tension->g_bb2_b23_4;
+    $g_bb2_b23_5 = $g_tiempo_tension->g_bb2_b23_5;
+    $g_bb2_b23_6 = $g_tiempo_tension->g_bb2_b23_6;
+    $g_bb2_b23_7 = $g_tiempo_tension->g_bb2_b23_7;
+    $g_bb2_b23_8 = $g_tiempo_tension->g_bb2_b23_8;
+    $g_bb2_b24_1 = $g_tiempo_tension->g_bb2_b24_1;
+    $g_bb2_b24_2 = $g_tiempo_tension->g_bb2_b24_2;
+    $g_bb2_b24_3 = $g_tiempo_tension->g_bb2_b24_3;
+    $g_bb2_b24_4 = $g_tiempo_tension->g_bb2_b24_4;
+    $g_bb2_b24_5 = $g_tiempo_tension->g_bb2_b24_5;
+    $g_bb2_b24_6 = $g_tiempo_tension->g_bb2_b24_6;
+    $g_bb2_b24_7 = $g_tiempo_tension->g_bb2_b24_7;
+    $g_bb2_b24_8 = $g_tiempo_tension->g_bb2_b24_8;
+
+    $plantilla = '
+    <main>
+        <table class="tborder text-center">
+            <tbody>
+                
+                <tr>
+                    <td class="col-15p" rowspan="3"><b>N° Bat.</b></td>
+                    <td class="col-15p" rowspan="3"><b>I ADC</b></td>
+                    <td class="col-70p" colspan="7"><b>TIEMPO MINUTOS</b></td>
+                </tr>
+                <tr>
+                    <td><b>0</b></td>
+                    <td><b>10</b></td>
+                    <td><b>20</b></td>
+                    <td><b>30</b></td>
+                    <td><b>40</b></td>
+                    <td><b>50</b></td>
+                    <td><b>60</b></td>
+                </tr>
+                <tr>
+                    <td colspan="7"><b>TENSION VDC</b></td>
+                </tr>
+                <tr>
+                    <td>BB2-B1</td>
+                    <td>'.$g_bb2_b1_1.'</td>
+                    <td>'.$g_bb2_b1_2.'</td>
+                    <td>'.$g_bb2_b1_3.'</td>
+                    <td>'.$g_bb2_b1_4.'</td>
+                    <td>'.$g_bb2_b1_5.'</td>
+                    <td>'.$g_bb2_b1_6.'</td>
+                    <td>'.$g_bb2_b1_7.'</td>
+                    <td>'.$g_bb2_b1_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B2</td>
+                    <td>'.$g_bb2_b2_1.'</td>
+                    <td>'.$g_bb2_b2_2.'</td>
+                    <td>'.$g_bb2_b2_3.'</td>
+                    <td>'.$g_bb2_b2_4.'</td>
+                    <td>'.$g_bb2_b2_5.'</td>
+                    <td>'.$g_bb2_b2_6.'</td>
+                    <td>'.$g_bb2_b2_7.'</td>
+                    <td>'.$g_bb2_b2_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B3</td>
+                    <td>'.$g_bb2_b3_1.'</td>
+                    <td>'.$g_bb2_b3_2.'</td>
+                    <td>'.$g_bb2_b3_3.'</td>
+                    <td>'.$g_bb2_b3_4.'</td>
+                    <td>'.$g_bb2_b3_5.'</td>
+                    <td>'.$g_bb2_b3_6.'</td>
+                    <td>'.$g_bb2_b3_7.'</td>
+                    <td>'.$g_bb2_b3_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B4</td>
+                    <td>'.$g_bb2_b4_1.'</td>
+                    <td>'.$g_bb2_b4_2.'</td>
+                    <td>'.$g_bb2_b4_3.'</td>
+                    <td>'.$g_bb2_b4_4.'</td>
+                    <td>'.$g_bb2_b4_5.'</td>
+                    <td>'.$g_bb2_b4_6.'</td>
+                    <td>'.$g_bb2_b4_7.'</td>
+                    <td>'.$g_bb2_b4_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B5</td>
+                    <td>'.$g_bb2_b5_1.'</td>
+                    <td>'.$g_bb2_b5_2.'</td>
+                    <td>'.$g_bb2_b5_3.'</td>
+                    <td>'.$g_bb2_b5_4.'</td>
+                    <td>'.$g_bb2_b5_5.'</td>
+                    <td>'.$g_bb2_b5_6.'</td>
+                    <td>'.$g_bb2_b5_7.'</td>
+                    <td>'.$g_bb2_b5_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B6</td>
+                    <td>'.$g_bb2_b6_1.'</td>
+                    <td>'.$g_bb2_b6_2.'</td>
+                    <td>'.$g_bb2_b6_3.'</td>
+                    <td>'.$g_bb2_b6_4.'</td>
+                    <td>'.$g_bb2_b6_5.'</td>
+                    <td>'.$g_bb2_b6_6.'</td>
+                    <td>'.$g_bb2_b6_7.'</td>
+                    <td>'.$g_bb2_b6_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B7</td>
+                    <td>'.$g_bb2_b7_1.'</td>
+                    <td>'.$g_bb2_b7_2.'</td>
+                    <td>'.$g_bb2_b7_3.'</td>
+                    <td>'.$g_bb2_b7_4.'</td>
+                    <td>'.$g_bb2_b7_5.'</td>
+                    <td>'.$g_bb2_b7_6.'</td>
+                    <td>'.$g_bb2_b7_7.'</td>
+                    <td>'.$g_bb2_b7_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B8</td>
+                    <td>'.$g_bb2_b8_1.'</td>
+                    <td>'.$g_bb2_b8_2.'</td>
+                    <td>'.$g_bb2_b8_3.'</td>
+                    <td>'.$g_bb2_b8_4.'</td>
+                    <td>'.$g_bb2_b8_5.'</td>
+                    <td>'.$g_bb2_b8_6.'</td>
+                    <td>'.$g_bb2_b8_7.'</td>
+                    <td>'.$g_bb2_b8_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B9</td>
+                    <td>'.$g_bb2_b9_1.'</td>
+                    <td>'.$g_bb2_b9_2.'</td>
+                    <td>'.$g_bb2_b9_3.'</td>
+                    <td>'.$g_bb2_b9_4.'</td>
+                    <td>'.$g_bb2_b9_5.'</td>
+                    <td>'.$g_bb2_b9_6.'</td>
+                    <td>'.$g_bb2_b9_7.'</td>
+                    <td>'.$g_bb2_b9_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B10</td>
+                    <td>'.$g_bb2_b10_1.'</td>
+                    <td>'.$g_bb2_b10_2.'</td>
+                    <td>'.$g_bb2_b10_3.'</td>
+                    <td>'.$g_bb2_b10_4.'</td>
+                    <td>'.$g_bb2_b10_5.'</td>
+                    <td>'.$g_bb2_b10_6.'</td>
+                    <td>'.$g_bb2_b10_7.'</td>
+                    <td>'.$g_bb2_b10_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B11</td>
+                    <td>'.$g_bb2_b11_1.'</td>
+                    <td>'.$g_bb2_b11_2.'</td>
+                    <td>'.$g_bb2_b11_3.'</td>
+                    <td>'.$g_bb2_b11_4.'</td>
+                    <td>'.$g_bb2_b11_5.'</td>
+                    <td>'.$g_bb2_b11_6.'</td>
+                    <td>'.$g_bb2_b11_7.'</td>
+                    <td>'.$g_bb2_b11_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B12</td>
+                    <td>'.$g_bb2_b12_1.'</td>
+                    <td>'.$g_bb2_b12_2.'</td>
+                    <td>'.$g_bb2_b12_3.'</td>
+                    <td>'.$g_bb2_b12_4.'</td>
+                    <td>'.$g_bb2_b12_5.'</td>
+                    <td>'.$g_bb2_b12_6.'</td>
+                    <td>'.$g_bb2_b12_7.'</td>
+                    <td>'.$g_bb2_b12_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B13</td>
+                    <td>'.$g_bb2_b13_1.'</td>
+                    <td>'.$g_bb2_b13_2.'</td>
+                    <td>'.$g_bb2_b13_3.'</td>
+                    <td>'.$g_bb2_b13_4.'</td>
+                    <td>'.$g_bb2_b13_5.'</td>
+                    <td>'.$g_bb2_b13_6.'</td>
+                    <td>'.$g_bb2_b13_7.'</td>
+                    <td>'.$g_bb2_b13_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B14</td>
+                    <td>'.$g_bb2_b14_1.'</td>
+                    <td>'.$g_bb2_b14_2.'</td>
+                    <td>'.$g_bb2_b14_3.'</td>
+                    <td>'.$g_bb2_b14_4.'</td>
+                    <td>'.$g_bb2_b14_5.'</td>
+                    <td>'.$g_bb2_b14_6.'</td>
+                    <td>'.$g_bb2_b14_7.'</td>
+                    <td>'.$g_bb2_b14_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B15</td>
+                    <td>'.$g_bb2_b15_1.'</td>
+                    <td>'.$g_bb2_b15_2.'</td>
+                    <td>'.$g_bb2_b15_3.'</td>
+                    <td>'.$g_bb2_b15_4.'</td>
+                    <td>'.$g_bb2_b15_5.'</td>
+                    <td>'.$g_bb2_b15_6.'</td>
+                    <td>'.$g_bb2_b15_7.'</td>
+                    <td>'.$g_bb2_b15_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B16</td>
+                    <td>'.$g_bb2_b16_1.'</td>
+                    <td>'.$g_bb2_b16_2.'</td>
+                    <td>'.$g_bb2_b16_3.'</td>
+                    <td>'.$g_bb2_b16_4.'</td>
+                    <td>'.$g_bb2_b16_5.'</td>
+                    <td>'.$g_bb2_b16_6.'</td>
+                    <td>'.$g_bb2_b16_7.'</td>
+                    <td>'.$g_bb2_b16_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B17</td>
+                    <td>'.$g_bb2_b17_1.'</td>
+                    <td>'.$g_bb2_b17_2.'</td>
+                    <td>'.$g_bb2_b17_3.'</td>
+                    <td>'.$g_bb2_b17_4.'</td>
+                    <td>'.$g_bb2_b17_5.'</td>
+                    <td>'.$g_bb2_b17_6.'</td>
+                    <td>'.$g_bb2_b17_7.'</td>
+                    <td>'.$g_bb2_b17_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B18</td>
+                    <td>'.$g_bb2_b18_1.'</td>
+                    <td>'.$g_bb2_b18_2.'</td>
+                    <td>'.$g_bb2_b18_3.'</td>
+                    <td>'.$g_bb2_b18_4.'</td>
+                    <td>'.$g_bb2_b18_5.'</td>
+                    <td>'.$g_bb2_b18_6.'</td>
+                    <td>'.$g_bb2_b18_7.'</td>
+                    <td>'.$g_bb2_b18_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B19</td>
+                    <td>'.$g_bb2_b19_1.'</td>
+                    <td>'.$g_bb2_b19_2.'</td>
+                    <td>'.$g_bb2_b19_3.'</td>
+                    <td>'.$g_bb2_b19_4.'</td>
+                    <td>'.$g_bb2_b19_5.'</td>
+                    <td>'.$g_bb2_b19_6.'</td>
+                    <td>'.$g_bb2_b19_7.'</td>
+                    <td>'.$g_bb2_b19_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B20</td>
+                    <td>'.$g_bb2_b20_1.'</td>
+                    <td>'.$g_bb2_b20_2.'</td>
+                    <td>'.$g_bb2_b20_3.'</td>
+                    <td>'.$g_bb2_b20_4.'</td>
+                    <td>'.$g_bb2_b20_5.'</td>
+                    <td>'.$g_bb2_b20_6.'</td>
+                    <td>'.$g_bb2_b20_7.'</td>
+                    <td>'.$g_bb2_b20_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B21</td>
+                    <td>'.$g_bb2_b21_1.'</td>
+                    <td>'.$g_bb2_b21_2.'</td>
+                    <td>'.$g_bb2_b21_3.'</td>
+                    <td>'.$g_bb2_b21_4.'</td>
+                    <td>'.$g_bb2_b21_5.'</td>
+                    <td>'.$g_bb2_b21_6.'</td>
+                    <td>'.$g_bb2_b21_7.'</td>
+                    <td>'.$g_bb2_b21_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B22</td>
+                    <td>'.$g_bb2_b22_1.'</td>
+                    <td>'.$g_bb2_b22_2.'</td>
+                    <td>'.$g_bb2_b22_3.'</td>
+                    <td>'.$g_bb2_b22_4.'</td>
+                    <td>'.$g_bb2_b22_5.'</td>
+                    <td>'.$g_bb2_b22_6.'</td>
+                    <td>'.$g_bb2_b22_7.'</td>
+                    <td>'.$g_bb2_b22_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B23</td>
+                    <td>'.$g_bb2_b23_1.'</td>
+                    <td>'.$g_bb2_b23_2.'</td>
+                    <td>'.$g_bb2_b23_3.'</td>
+                    <td>'.$g_bb2_b23_4.'</td>
+                    <td>'.$g_bb2_b23_5.'</td>
+                    <td>'.$g_bb2_b23_6.'</td>
+                    <td>'.$g_bb2_b23_7.'</td>
+                    <td>'.$g_bb2_b23_8.'</td>
+                </tr>
+                <tr>
+                    <td>BB2-B24</td>
+                    <td>'.$g_bb2_b24_1.'</td>
+                    <td>'.$g_bb2_b24_2.'</td>
+                    <td>'.$g_bb2_b24_3.'</td>
+                    <td>'.$g_bb2_b24_4.'</td>
+                    <td>'.$g_bb2_b24_5.'</td>
+                    <td>'.$g_bb2_b24_6.'</td>
+                    <td>'.$g_bb2_b24_7.'</td>
+                    <td>'.$g_bb2_b24_8.'</td>
+                </tr>
+                
+            </tbody>        
+        </table>									                        
+    </main>
+    ';
+
+    return $plantilla;
+}
+
+function getSubPlantilla2($jsonData){
+
+    $obj = json_decode($jsonData);
+
+    $g_resistencia_bb = $obj->{'g_resistencia_bb'};
+    $g21_1 = $g_resistencia_bb->g21_1;
+    $g21_2 = $g_resistencia_bb->g21_2;
+
+    $g22_medidas = $obj->{'g22_medidas'};
+    $g22_obs = $g22_medidas->g22_obs;
+    $g22_b01 = $g22_medidas->g22_b01;
+    $g22_b02 = $g22_medidas->g22_b02;
+    $g22_b03 = $g22_medidas->g22_b03;
+    $g22_b04 = $g22_medidas->g22_b04;
+    $g22_b05 = $g22_medidas->g22_b05;
+    $g22_b06 = $g22_medidas->g22_b06;
+    $g22_b07 = $g22_medidas->g22_b07;
+    $g22_b08 = $g22_medidas->g22_b08;
+    $g22_b09 = $g22_medidas->g22_b09;
+    $g22_b10 = $g22_medidas->g22_b10;
+    $g22_b11 = $g22_medidas->g22_b11;
+    $g22_b12 = $g22_medidas->g22_b12;
+    $g22_b13 = $g22_medidas->g22_b13;
+    $g22_b14 = $g22_medidas->g22_b14;
+    $g22_b15 = $g22_medidas->g22_b15;
+    $g22_b16 = $g22_medidas->g22_b16;
+    $g22_b17 = $g22_medidas->g22_b17;
+    $g22_b18 = $g22_medidas->g22_b18;
+    $g22_b19 = $g22_medidas->g22_b19;
+    $g22_b20 = $g22_medidas->g22_b20;
+    $g22_b21 = $g22_medidas->g22_b21;
+    $g22_b22 = $g22_medidas->g22_b22;
+    $g22_b23 = $g22_medidas->g22_b23;
+    $g22_b24 = $g22_medidas->g22_b24;
+
+    $plantilla =
+    '<main>
+        <table class="tborder">
+            <tr>
+                <td class="col-60p">G.22.b Medidas realizadas:</td>
+                <td class="col-10p">Obs.</td>
+                <td class="col-30p">'.$g22_obs.'</td>
+            </tr>
+        </table>									                        
+    </main>         
+    <main>
+        <table>
+            <tr>
+                <td>
+                    <table class="tborder">
+                        <tr>
+                            <td><strong>N° Bat.</strong></td>
+                            <td><strong>VDC</strong></td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B1</td>
+                            <td>'.$g22_b01.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B2</td>
+                            <td>'.$g22_b02.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B3</td>
+                            <td>'.$g22_b03.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B4</td>
+                            <td>'.$g22_b04.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B5</td>
+                            <td>'.$g22_b05.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B6</td>
+                            <td>'.$g22_b06.'</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="tborder">
+                        <tr>
+                            <td><strong>N° Bat.</strong></td>
+                            <td><strong>VDC</strong></td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B7</td>
+                            <td>'.$g22_b07.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B8</td>
+                            <td>'.$g22_b08.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B9</td>
+                            <td>'.$g22_b09.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B10</td>
+                            <td>'.$g22_b10.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B11</td>
+                            <td>'.$g22_b11.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B12</td>
+                            <td>'.$g22_b12.'</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="tborder">
+                        <tr>
+                            <td><strong>N° Bat.</strong></td>
+                            <td><strong>VDC</strong></td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B13</td>
+                            <td>'.$g22_b13.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B14</td>
+                            <td>'.$g22_b14.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B15</td>
+                            <td>'.$g22_b15.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B16</td>
+                            <td>'.$g22_b16.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B17</td>
+                            <td>'.$g22_b17.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B18</td>
+                            <td>'.$g22_b18.'</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="tborder">
+                        <tr>
+                            <td><strong>N° Bat.</strong></td>
+                            <td><strong>VDC</strong></td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B19</td>
+                            <td>'.$g22_b19.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B20</td>
+                            <td>'.$g22_b20.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B21</td>
+                            <td>'.$g22_b21.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B22</td>
+                            <td>'.$g22_b22.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B23</td>
+                            <td>'.$g22_b23.'</td>
+                        </tr>
+                        <tr>
+                            <td>BB2-B24</td>
+                            <td>'.$g22_b24.'</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </main>';
+
+    return $plantilla;
+}
+
+function getFooter($jsonData){
+
+    $obj = json_decode($jsonData);
+    $h_pendientes       = $obj->{'h_pendientes'};
+    $i_recomendaciones  = $obj->{'i_recomendaciones'};
+    $j_observaciones    = $obj->{'j_observaciones'};
+
+    $planilla = '
+    <main>
+        <div class="notices">
+            <div class="notice"><strong>H. Pendientes</strong></div>
+        </div>
+    </main>
+    <main>
+        <div class="areatext">'. $h_pendientes .'</div>
+    </main>
+    
+    <main>
+        <div class="notices">
+            <div class="notice"><strong>I. Recomendaciones</strong></div>
+        </div>
+    </main>
+    <main>
+        <div class="areatext">'. $i_recomendaciones .'</div>
+    </main>
+    
+    <main>
+        <div class="notices">
+            <div class="notice"><strong>J. Observaciones</strong></div>
+        </div>
+    </main>
+    <main>
+        <div class="areatext">'. $j_observaciones .'</div>
+    </main>
+    ';
+
+    return $planilla;
+}
+
+?>
