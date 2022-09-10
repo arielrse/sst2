@@ -14,7 +14,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $propertyId         = $obj->{'propertyId'};
     $b_idenActivo       = $obj->{'b_idenActivo'};
     $b_nroActivo        = $obj->{'b_nroActivo'};
-
+    $footerPlantilla    = getFooter($jsonData);
     $c_fechaRealizacion = dateToLiteral($obj->{'c_fechaRealizacion'});
 
     $d_horainicio   = $obj->{'d_horainicio'};
@@ -688,6 +688,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                         </tbody>        
                     </table>									                        
                 </main> 
+                 '. $footerPlantilla .'
                 </div>
             </div>
         </div>
