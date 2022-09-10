@@ -128,6 +128,10 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $g20_2_2 = $g_descarga->g20_2_2;
     $g20_2_3 = $g_descarga->g20_2_3;
 
+    $g_resistencia_bb = $obj->{'g_resistencia_bb'};
+    $g21_1 = $g_resistencia_bb->g21_1;
+    $g21_2 = $g_resistencia_bb->g21_2;
+
     $plantilla =
 '<body>
     <div class="card-">
@@ -1042,10 +1046,6 @@ function getSubPlantilla1($jsonData){
 function getSubPlantilla2($jsonData){
 
     $obj = json_decode($jsonData);
-
-    $g_resistencia_bb = $obj->{'g_resistencia_bb'};
-    $g21_1 = $g_resistencia_bb->g21_1;
-    $g21_2 = $g_resistencia_bb->g21_2;
 
     $g22_medidas = $obj->{'g22_medidas'};
     $g22_obs = $g22_medidas->g22_obs;
