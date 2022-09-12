@@ -1,6 +1,6 @@
 <?php
 $g_desarrollo = $obj->{'g_desarrollo'};
-//$f1_01_01 = $g_desarrollo->f1_01_01 ? "checked" : ""; $f1_01_02 = $g_desarrollo->f1_01_02 ? "checked" : ""; $f1_01_03 = $g_desarrollo->f1_01_03;
+
 $f1_01_01 = $g_desarrollo->f1_01_01 ? "checked" : ""; $f1_01_02 = $g_desarrollo->f1_01_02 ? "checked" : ""; $f1_01_03 = $g_desarrollo->f1_01_03;
 $g1_01_01 = $g_desarrollo->g1_01_01 ? "checked" : ""; $g1_01_02 = $g_desarrollo->g1_01_02 ? "checked" : ""; $g1_01_03 = $g_desarrollo->g1_01_03;
 $g1_02_01 = $g_desarrollo->g1_02_01 ? "checked" : ""; $g1_02_02 = $g_desarrollo->g1_02_02 ? "checked" : ""; $g1_02_03 = $g_desarrollo->g1_02_03;

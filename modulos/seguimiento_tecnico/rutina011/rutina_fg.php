@@ -1,6 +1,6 @@
 <?php
 $f_verificacion = $obj->{'f_verificacion'};
-//$f1_01_01 = $f_verificacion->f1_01_01 ? "checked" : ""; $f1_01_02 = $f_verificacion->f1_01_02 ? "checked" : ""; $f1_01_03 = $f_verificacion->f1_01_03;
+
 $f1_01_01 = $f_verificacion->f1_01_01 ? "checked" : ""; $f1_01_02 = $f_verificacion->f1_01_02 ? "checked" : ""; $f1_01_03 = $f_verificacion->f1_01_02 ? "checked" : "";
 $f1_02_01 = $f_verificacion->f1_02_01 ? "checked" : ""; $f1_02_02 = $f_verificacion->f1_02_02 ? "checked" : ""; $f1_02_03 = $f_verificacion->f1_02_02 ? "checked" : "";
 $f1_03_01 = $f_verificacion->f1_03_01 ? "checked" : ""; $f1_03_02 = $f_verificacion->f1_03_02 ? "checked" : ""; $f1_03_03 = $f_verificacion->f1_03_02 ? "checked" : "";
@@ -19,7 +19,7 @@ $f1_15_01 = $f_verificacion->f1_15_01 ? "checked" : ""; $f1_15_02 = $f_verificac
 $f1_16_01 = $f_verificacion->f1_16_01 ? "checked" : ""; $f1_16_02 = $f_verificacion->f1_16_02 ? "checked" : ""; $f1_16_03 = $f_verificacion->f1_16_02 ? "checked" : "";
 
 $g_desarrollo_g1 = $obj->{'g_desarrollo_g1'};
-//$f1_01_01 = $g_desarrollo_g1->f1_01_01 ? "checked" : ""; $f1_01_02 = $g_desarrollo->f1_01_02 ? "checked" : ""; $f1_01_03 = $g_desarrollo_g1->f1_01_03;
+
 $g1_01_01_01 = $g_desarrollo_g1->g1_01_01_01; $g1_01_01_02 = $g_desarrollo_g1->g1_01_01_02; $g1_01_01_03 = $g_desarrollo_g1->g1_01_01_03; $g1_01_01_04 = $g_desarrollo_g1->g1_01_01_04;
 $g1_01_02_01 = $g_desarrollo_g1->g1_01_02_01; $g1_01_02_02 = $g_desarrollo_g1->g1_01_02_02; $g1_01_02_03 = $g_desarrollo_g1->g1_01_02_03; $g1_01_02_04 = $g_desarrollo_g1->g1_01_02_04;
 $g1_02_01_01 = $g_desarrollo_g1->g1_02_01_01; $g1_02_01_02 = $g_desarrollo_g1->g1_02_01_02; $g1_02_01_03 = $g_desarrollo_g1->g1_02_01_03; $g1_02_01_04 = $g_desarrollo_g1->g1_02_01_04;
