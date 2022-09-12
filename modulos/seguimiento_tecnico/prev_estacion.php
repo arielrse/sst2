@@ -212,17 +212,16 @@ $cel2    = $datoGp['cel2'];*/
 
     function eliminarRutina(idrutina, codForm){
 
-        alert( 'Realmente desea eliminar la rutina? : ' + codForm);
-        //alert( 'idrutina: : ' + idrutina);
-
-        jQuery.post("../../paquetes/rutina/delete_rutina.php", {
-            idrutina: idrutina,
-            codForm: codForm
-            }, function(data){
-                //alert('Data: ' + data);
-                $("#table-routine").load(window.location + " #table-routine");
-            }
-        );
+        if (confirm('¿Esta seguro que desea eliminar la rutina? : ' + codForm)){
+            jQuery.post("../../paquetes/rutina/delete_rutina.php", {
+                idrutina: idrutina,
+                codForm: codForm
+                }, function(data){
+                    //alert('Data: ' + data);
+                    $("#table-routine").load(window.location + " #table-routine");
+                }
+            );
+        }
     }
 
     function generarReporte(idrutina){

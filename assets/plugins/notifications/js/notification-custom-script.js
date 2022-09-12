@@ -284,3 +284,13 @@ function anim5_noti() {
 		msg: 'Lorem ipsum dolor sit amet hears farmer indemnity inherent.'
 	});
 }
+
+  function noti_error_delete() {
+	  Lobibox.notify('error', {
+		  pauseDelayOnHover: true,
+		  continueDelayOnInactiveTab: false,
+		  position: 'top right',
+		  icon: 'bx bx-info-circle',
+		  msg: 'No es posible hasta eliminar las rutinas'
+	  });
+  }
