@@ -12,6 +12,7 @@ define('F09', 'F.9	Alarmas pruebas de test / modulo controlador:');
 
 define('GTITLE', 'G. Desarrollo de Rutina de Mantenimiento');
 define('G01', 'G.1 Ajuste en bornera:');
+define('G01', 'G.1 Ajuste en bornera:');
 define('G02', 'G.2 Limpieza en bornera:');
 define('G03', 'G.3 Ajuste de aterramiento:');
 define('G04', 'G.4 Anclaje:');
