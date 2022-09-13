@@ -9,7 +9,8 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
     $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
-    $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - BANCO DE BATERÍAS';
+    $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - SISTEMA AUTOMÁTICO DE TRANSFERENCIA
+';
     $cabecera        = getCabecera($conexion, $jsonData, $idgrupo, $titulo, false);
     $footerPlantilla = getFooter($jsonData);
     /** g_desarrollo **/

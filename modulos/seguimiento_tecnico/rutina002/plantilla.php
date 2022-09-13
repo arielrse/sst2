@@ -105,7 +105,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                     </tr>
                     <tr>
                         <th class="text-center" colspan="2">
-                            <h3>RUTINA DE MANTENIMIENTO PREVENTIVO - BANCO DE BATERÍAS</h3>
+                            <h3>RUTINA DE MANTENIMIENTO PREVENTIVO - PLANTAS RECTIFICADORAS</h3>
                         </th>
                     </tr>
                 </table>

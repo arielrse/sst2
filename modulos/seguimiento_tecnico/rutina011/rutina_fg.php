@@ -49,7 +49,7 @@ $g1_05_02_01 = $g_desarrollo_g1->g1_05_02_01 ? "checked" : ""; $g1_05_02_02 = $g
 $g1_05_03_01 = $g_desarrollo_g1->g1_05_03_01 ? "checked" : ""; $g1_05_03_02 = $g_desarrollo_g1->g1_05_03_02;
 
 $g_desarrollo_g2 = $obj->{'g_desarrollo_g2'};
-//$g2_01_01 = $g_desarrollo_g2->g2_01_01 ? "checked" : ""; $g2_01_02 = $g_desarrollo_g2->g2_01_02;
+
 $g2_01_01 = $g_desarrollo_g2->g2_01_01 ? "checked" : "";  $g2_01_02 = $g_desarrollo_g2->g2_01_02 ? "checked" : ""; $g2_01_03 = $g_desarrollo_g2->g2_01_03;
 $g2_02_01 = $g_desarrollo_g2->g2_02_01 ? "checked" : "";  $g2_02_02 = $g_desarrollo_g2->g2_02_02 ? "checked" : ""; $g2_02_03 = $g_desarrollo_g2->g2_02_03;
 $g2_03_01 = $g_desarrollo_g2->g2_03_01 ? "checked" : "";  $g2_03_02 = $g_desarrollo_g2->g2_03_02 ? "checked" : ""; $g2_03_03 = $g_desarrollo_g2->g2_03_03;
@@ -97,7 +97,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_01_03" value="<?php echo $f1_01_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_01_03" value="<?php echo $f1_01_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -139,7 +139,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_03_03" value="<?php echo $f1_03_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs."id="f1_03_03" value="<?php echo $f1_03_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -160,7 +160,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_04_03" value="<?php echo $f1_04_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs."id="f1_04_03" value="<?php echo $f1_04_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -181,7 +181,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_05_03" value="<?php echo $f1_05_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_05_03" value="<?php echo $f1_05_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -202,7 +202,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_06_03" value="<?php echo $f1_06_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_06_03" value="<?php echo $f1_06_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -223,7 +223,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_07_03" value="<?php echo $f1_07_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_07_03" value="<?php echo $f1_07_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -244,7 +244,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_08_03" value="<?php echo $f1_08_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_08_03" value="<?php echo $f1_08_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -265,7 +265,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_09_03" value="<?php echo $f1_09_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_09_03" value="<?php echo $f1_09_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -286,7 +286,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_10_03" value="<?php echo $f1_10_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_10_03" value="<?php echo $f1_10_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -307,7 +307,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_11_03" value="<?php echo $f1_11_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_11_03" value="<?php echo $f1_11_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -328,7 +328,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_12_03" value="<?php echo $f1_12_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_12_03" value="<?php echo $f1_12_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -349,7 +349,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_13_03" value="<?php echo $f1_13_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_13_03" value="<?php echo $f1_13_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -370,7 +370,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_14_03" value="<?php echo $f1_14_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_14_03" value="<?php echo $f1_14_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -391,7 +391,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_15_03" value="<?php echo $f1_15_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_15_03" value="<?php echo $f1_15_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -412,7 +412,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" id="f1_16_03" value="<?php echo $f1_16_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="f1_16_03" value="<?php echo $f1_16_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -1079,10 +1079,10 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                 </table>
 
                 <div>
-                    <h7 class="mb-0 text-uppercase">G.3 SISTEMA DE TRANSFERENCIA AUTOMÁTICO INTEGRADO</h7>
+                    <h7 class="mb-0 text-uppercase"><strong>G.3 SISTEMA DE TRANSFERENCIA AUTOMÁTICO INTEGRADO</strong></h7>
                 </div>
                 <div>
-                    <h7 class="mb-0">G.3.1 Pruebas de funcionamiento automático</h7>
+                    <h7 class="mb-0"><strong>G.3.1 Pruebas de funcionamiento automático</strong></h7>
                 </div>
 
                 <div>

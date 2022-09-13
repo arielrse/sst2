@@ -86,7 +86,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                     </tr>
                     <tr>
                         <th class="text-center" colspan="2">
-                            <h4>RUTINA DE MANTENIMIENTO PREVENTIVO</h4>
+                            <h4>RUTINA DE MANTENIMIENTO PREVENTIVO - EXTENSIÓN DE ENERGÍA MEDIA TENSIÓN</h4>
                         </th>
                     </tr>
                 </table>
