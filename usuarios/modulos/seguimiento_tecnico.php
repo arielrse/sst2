@@ -118,6 +118,7 @@ $link_modulo_r=$modulo."_r.php";
 <!--notification js -->
 <script src="../../assets/plugins/notifications/js/lobibox.min.js"></script>
 <script src="../../assets/plugins/notifications/js/notifications.min.js"></script>
+<script src="../../assets/plugins/notifications/js/notification-custom-script.js"></script>
 <script src="../../assets/js/index.js"></script>
 <!--app JS-->
 <script src="../../assets/js/app.js"></script>

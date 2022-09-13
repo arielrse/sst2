@@ -1,22 +1,22 @@
 <?php
 $f_verificacion = $obj->{'f_verificacion'};
 
-$f1_01_01 = $f_verificacion->f1_01_01 ? "checked" : ""; $f1_01_02 = $f_verificacion->f1_01_02 ? "checked" : ""; $f1_01_03 = $f_verificacion->f1_01_02 ? "checked" : "";
-$f1_02_01 = $f_verificacion->f1_02_01 ? "checked" : ""; $f1_02_02 = $f_verificacion->f1_02_02 ? "checked" : ""; $f1_02_03 = $f_verificacion->f1_02_02 ? "checked" : "";
-$f1_03_01 = $f_verificacion->f1_03_01 ? "checked" : ""; $f1_03_02 = $f_verificacion->f1_03_02 ? "checked" : ""; $f1_03_03 = $f_verificacion->f1_03_02 ? "checked" : "";
-$f1_04_01 = $f_verificacion->f1_04_01 ? "checked" : ""; $f1_04_02 = $f_verificacion->f1_04_02 ? "checked" : ""; $f1_04_03 = $f_verificacion->f1_04_02 ? "checked" : "";
-$f1_05_01 = $f_verificacion->f1_05_01 ? "checked" : ""; $f1_05_02 = $f_verificacion->f1_05_02 ? "checked" : ""; $f1_05_03 = $f_verificacion->f1_05_02 ? "checked" : "";
-$f1_06_01 = $f_verificacion->f1_06_01 ? "checked" : ""; $f1_06_02 = $f_verificacion->f1_06_02 ? "checked" : ""; $f1_06_03 = $f_verificacion->f1_06_02 ? "checked" : "";
-$f1_07_01 = $f_verificacion->f1_07_01 ? "checked" : ""; $f1_07_02 = $f_verificacion->f1_07_02 ? "checked" : ""; $f1_07_03 = $f_verificacion->f1_07_02 ? "checked" : "";
-$f1_08_01 = $f_verificacion->f1_08_01 ? "checked" : ""; $f1_08_02 = $f_verificacion->f1_08_02 ? "checked" : ""; $f1_08_03 = $f_verificacion->f1_08_02 ? "checked" : "";
-$f1_09_01 = $f_verificacion->f1_09_01 ? "checked" : ""; $f1_09_02 = $f_verificacion->f1_09_02 ? "checked" : ""; $f1_09_03 = $f_verificacion->f1_09_02 ? "checked" : "";
-$f1_10_01 = $f_verificacion->f1_10_01 ? "checked" : ""; $f1_10_02 = $f_verificacion->f1_10_02 ? "checked" : ""; $f1_10_03 = $f_verificacion->f1_10_02 ? "checked" : "";
-$f1_11_01 = $f_verificacion->f1_11_01 ? "checked" : ""; $f1_11_02 = $f_verificacion->f1_11_02 ? "checked" : ""; $f1_11_03 = $f_verificacion->f1_11_02 ? "checked" : "";
-$f1_12_01 = $f_verificacion->f1_12_01 ? "checked" : ""; $f1_12_02 = $f_verificacion->f1_12_02 ? "checked" : ""; $f1_12_03 = $f_verificacion->f1_12_02 ? "checked" : "";
-$f1_13_01 = $f_verificacion->f1_13_01 ? "checked" : ""; $f1_13_02 = $f_verificacion->f1_13_02 ? "checked" : ""; $f1_13_03 = $f_verificacion->f1_13_02 ? "checked" : "";
-$f1_14_01 = $f_verificacion->f1_14_01 ? "checked" : ""; $f1_14_02 = $f_verificacion->f1_14_02 ? "checked" : ""; $f1_14_03 = $f_verificacion->f1_14_02 ? "checked" : "";
-$f1_15_01 = $f_verificacion->f1_15_01 ? "checked" : ""; $f1_15_02 = $f_verificacion->f1_15_02 ? "checked" : ""; $f1_15_03 = $f_verificacion->f1_15_02 ? "checked" : "";
-$f1_16_01 = $f_verificacion->f1_16_01 ? "checked" : ""; $f1_16_02 = $f_verificacion->f1_16_02 ? "checked" : ""; $f1_16_03 = $f_verificacion->f1_16_02 ? "checked" : "";
+$f1_01_01 = $f_verificacion->f1_01_01 ? "checked" : ""; $f1_01_02 = $f_verificacion->f1_01_02 ? "checked" : ""; $f1_01_03 = $f_verificacion->f1_01_03;
+$f1_02_01 = $f_verificacion->f1_02_01 ? "checked" : ""; $f1_02_02 = $f_verificacion->f1_02_02 ? "checked" : ""; $f1_02_03 = $f_verificacion->f1_02_03;
+$f1_03_01 = $f_verificacion->f1_03_01 ? "checked" : ""; $f1_03_02 = $f_verificacion->f1_03_02 ? "checked" : ""; $f1_03_03 = $f_verificacion->f1_03_03;
+$f1_04_01 = $f_verificacion->f1_04_01 ? "checked" : ""; $f1_04_02 = $f_verificacion->f1_04_02 ? "checked" : ""; $f1_04_03 = $f_verificacion->f1_04_03;
+$f1_05_01 = $f_verificacion->f1_05_01 ? "checked" : ""; $f1_05_02 = $f_verificacion->f1_05_02 ? "checked" : ""; $f1_05_03 = $f_verificacion->f1_05_03;
+$f1_06_01 = $f_verificacion->f1_06_01 ? "checked" : ""; $f1_06_02 = $f_verificacion->f1_06_02 ? "checked" : ""; $f1_06_03 = $f_verificacion->f1_06_03;
+$f1_07_01 = $f_verificacion->f1_07_01 ? "checked" : ""; $f1_07_02 = $f_verificacion->f1_07_02 ? "checked" : ""; $f1_07_03 = $f_verificacion->f1_07_03;
+$f1_08_01 = $f_verificacion->f1_08_01 ? "checked" : ""; $f1_08_02 = $f_verificacion->f1_08_02 ? "checked" : ""; $f1_08_03 = $f_verificacion->f1_08_03;
+$f1_09_01 = $f_verificacion->f1_09_01 ? "checked" : ""; $f1_09_02 = $f_verificacion->f1_09_02 ? "checked" : ""; $f1_09_03 = $f_verificacion->f1_09_03;
+$f1_10_01 = $f_verificacion->f1_10_01 ? "checked" : ""; $f1_10_02 = $f_verificacion->f1_10_02 ? "checked" : ""; $f1_10_03 = $f_verificacion->f1_10_03;
+$f1_11_01 = $f_verificacion->f1_11_01 ? "checked" : ""; $f1_11_02 = $f_verificacion->f1_11_02 ? "checked" : ""; $f1_11_03 = $f_verificacion->f1_11_03;
+$f1_12_01 = $f_verificacion->f1_12_01 ? "checked" : ""; $f1_12_02 = $f_verificacion->f1_12_02 ? "checked" : ""; $f1_12_03 = $f_verificacion->f1_12_03;
+$f1_13_01 = $f_verificacion->f1_13_01 ? "checked" : ""; $f1_13_02 = $f_verificacion->f1_13_02 ? "checked" : ""; $f1_13_03 = $f_verificacion->f1_13_03;
+$f1_14_01 = $f_verificacion->f1_14_01 ? "checked" : ""; $f1_14_02 = $f_verificacion->f1_14_02 ? "checked" : ""; $f1_14_03 = $f_verificacion->f1_14_03;
+$f1_15_01 = $f_verificacion->f1_15_01 ? "checked" : ""; $f1_15_02 = $f_verificacion->f1_15_02 ? "checked" : ""; $f1_15_03 = $f_verificacion->f1_15_03;
+$f1_16_01 = $f_verificacion->f1_16_01 ? "checked" : ""; $f1_16_02 = $f_verificacion->f1_16_02 ? "checked" : ""; $f1_16_03 = $f_verificacion->f1_16_03;
 
 $g_desarrollo_g1 = $obj->{'g_desarrollo_g1'};
 
@@ -25,13 +25,15 @@ $g1_01_02_01 = $g_desarrollo_g1->g1_01_02_01; $g1_01_02_02 = $g_desarrollo_g1->g
 $g1_02_01_01 = $g_desarrollo_g1->g1_02_01_01; $g1_02_01_02 = $g_desarrollo_g1->g1_02_01_02; $g1_02_01_03 = $g_desarrollo_g1->g1_02_01_03; $g1_02_01_04 = $g_desarrollo_g1->g1_02_01_04;
 $g1_02_02_01 = $g_desarrollo_g1->g1_02_02_01; $g1_02_02_02 = $g_desarrollo_g1->g1_02_02_02; $g1_02_02_03 = $g_desarrollo_g1->g1_02_02_03; $g1_02_02_04 = $g_desarrollo_g1->g1_02_02_04;
 $g1_02_03_01 = $g_desarrollo_g1->g1_02_03_01; $g1_02_03_02 = $g_desarrollo_g1->g1_02_03_02; $g1_02_03_03 = $g_desarrollo_g1->g1_02_03_03; $g1_02_03_04 = $g_desarrollo_g1->g1_02_03_04;
-$g1_03_01_01 = $g_desarrollo_g1->g1_03_02_01 ? "checked" : ""; $g1_03_01_02 = $g_desarrollo_g1->g1_03_02_02 ? "checked" : ""; $g1_03_01_03 = $g_desarrollo_g1->g1_03_01_03;
+
+$g1_03_01_01 = $g_desarrollo_g1->g1_03_01_01 ? "checked" : ""; $g1_03_01_02 = $g_desarrollo_g1->g1_03_01_02 ? "checked" : ""; $g1_03_01_03 = $g_desarrollo_g1->g1_03_01_03;
 $g1_03_02_01 = $g_desarrollo_g1->g1_03_02_01 ? "checked" : ""; $g1_03_02_02 = $g_desarrollo_g1->g1_03_02_02 ? "checked" : ""; $g1_03_02_03 = $g_desarrollo_g1->g1_03_02_03;
-$g1_03_03_01 = $g_desarrollo_g1->g1_03_03_01 ? "checked" : ""; $g1_03_03_02 = $g_desarrollo_g1->g1_03_02_02 ? "checked" : ""; $g1_03_03_03 = $g_desarrollo_g1->g1_03_03_03;
+$g1_03_03_01 = $g_desarrollo_g1->g1_03_03_01 ? "checked" : ""; $g1_03_03_02 = $g_desarrollo_g1->g1_03_03_02 ? "checked" : ""; $g1_03_03_03 = $g_desarrollo_g1->g1_03_03_03;
 $g1_03_04_01 = $g_desarrollo_g1->g1_03_04_01 ? "checked" : ""; $g1_03_04_02 = $g_desarrollo_g1->g1_03_04_02;
 $g1_03_05_01 = $g_desarrollo_g1->g1_03_05_01 ? "checked" : ""; $g1_03_05_02 = $g_desarrollo_g1->g1_03_05_02;
 $g1_03_06_01 = $g_desarrollo_g1->g1_03_06_01 ? "checked" : ""; $g1_03_06_02 = $g_desarrollo_g1->g1_03_06_02 ? "checked" : ""; $g1_03_06_03 = $g_desarrollo_g1->g1_03_06_03;
-$g1_04_01_01 = $g_desarrollo_g1->g1_04_01_01 ? "checked" : ""; $g1_04_01_02 = $g_desarrollo_g1->g1_04_01_02 ? "checked" : "";
+
+$g1_04_01_01 = $g_desarrollo_g1->g1_04_01_01 ? "checked" : ""; $g1_04_01_02 = $g_desarrollo_g1->g1_04_01_02 ? "checked" : ""; $g1_04_01_03 = $g_desarrollo_g1->g1_04_01_03;
 $g1_04_02_01 = $g_desarrollo_g1->g1_04_02_01 ? "checked" : ""; $g1_04_02_02 = $g_desarrollo_g1->g1_04_02_02 ? "checked" : ""; $g1_04_02_03 = $g_desarrollo_g1->g1_04_02_03;
 $g1_04_03_01 = $g_desarrollo_g1->g1_04_03_01 ? "checked" : ""; $g1_04_03_02 = $g_desarrollo_g1->g1_04_03_02;
 $g1_04_04_01 = $g_desarrollo_g1->g1_04_04_01 ? "checked" : ""; $g1_04_04_02 = $g_desarrollo_g1->g1_04_04_02;
@@ -41,7 +43,8 @@ $g1_04_07_01 = $g_desarrollo_g1->g1_04_07_01 ? "checked" : ""; $g1_04_07_02 = $g
 $g1_04_08_01 = $g_desarrollo_g1->g1_04_08_01 ? "checked" : ""; $g1_04_08_02 = $g_desarrollo_g1->g1_04_08_02;
 $g1_04_09_01 = $g_desarrollo_g1->g1_04_09_01 ? "checked" : ""; $g1_04_09_02 = $g_desarrollo_g1->g1_04_09_02;
 $g1_04_10_01 = $g_desarrollo_g1->g1_04_10_01 ? "checked" : ""; $g1_04_10_02 = $g_desarrollo_g1->g1_04_10_02;
-$g1_05_01_01 = $g_desarrollo_g1->g1_05_01_01 ? "checked" : ""; $g1_05_01_02 = $g_desarrollo_g1->g1_05_01_02 ? "checked" : "";
+
+$g1_05_01_01 = $g_desarrollo_g1->g1_05_01_01 ? "checked" : ""; $g1_05_01_02 = $g_desarrollo_g1->g1_05_01_02 ? "checked" : ""; $g1_05_01_03 = $g_desarrollo_g1->g1_05_01_03;
 $g1_05_02_01 = $g_desarrollo_g1->g1_05_02_01 ? "checked" : ""; $g1_05_02_02 = $g_desarrollo_g1->g1_05_02_02;
 $g1_05_03_01 = $g_desarrollo_g1->g1_05_03_01 ? "checked" : ""; $g1_05_03_02 = $g_desarrollo_g1->g1_05_03_02;
 
@@ -94,8 +97,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_01_03" value="option2" <?php echo $f1_01_03 ?>>
-                                <label class="form-check-label" for="f1_01_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_01_03" value="<?php echo $f1_01_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -116,8 +118,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_02_03" value="option2" <?php echo $f1_02_03 ?>>
-                                <label class="form-check-label" for="f1_02_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_02_03" value="<?php echo $f1_02_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -138,8 +139,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_03_03" value="option2" <?php echo $f1_03_03 ?>>
-                                <label class="form-check-label" for="f1_03_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_03_03" value="<?php echo $f1_03_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -160,8 +160,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_04_03" value="option2" <?php echo $f1_04_03 ?>>
-                                <label class="form-check-label" for="f1_04_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_04_03" value="<?php echo $f1_04_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -182,8 +181,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_05_03" value="option2" <?php echo $f1_05_03 ?>>
-                                <label class="form-check-label" for="f1_05_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_05_03" value="<?php echo $f1_05_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -192,20 +190,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>F.6	Fuga en la bomba combustible</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_06_03" value="option1" <?php echo $f1_06_01 ?>>
+                                <input class="form-check-input" type="checkbox" id="f1_06_01" value="option1" <?php echo $f1_06_01 ?>>
                                 <label class="form-check-label" for="f1_06_03">Si</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_06_03" value="option2" <?php echo $f1_06_02 ?>>
+                                <input class="form-check-input" type="checkbox" id="f1_06_02" value="option2" <?php echo $f1_06_02 ?>>
                                 <label class="form-check-label" for="f1_06_03">No</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_06_03" value="option2" <?php echo $f1_06_03 ?>>
-                                <label class="form-check-label" for="f1_06_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_06_03" value="<?php echo $f1_06_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -214,20 +211,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>F.7	Estado de ducto de escapes</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_07_03" value="option1" <?php echo $f1_07_01 ?>>
+                                <input class="form-check-input" type="checkbox" id="f1_07_01" value="option1" <?php echo $f1_07_01 ?>>
                                 <label class="form-check-label" for="f1_07_03">Bueno</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_07_03" value="option2" <?php echo $f1_07_02 ?>>
+                                <input class="form-check-input" type="checkbox" id="f1_07_02" value="option2" <?php echo $f1_07_02 ?>>
                                 <label class="form-check-label" for="f1_07_03">Malo</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_07_03" value="option2" <?php echo $f1_07_03 ?>>
-                                <label class="form-check-label" for="f1_07_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_07_03" value="<?php echo $f1_07_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -248,8 +244,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_08_03" value="option2" <?php echo $f1_08_03 ?>>
-                                <label class="form-check-label" for="f1_08_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_08_03" value="<?php echo $f1_08_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -270,8 +265,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_09_03" value="option2" <?php echo $f1_09_03 ?>>
-                                <label class="form-check-label" for="f1_09_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_09_03" value="<?php echo $f1_09_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -292,8 +286,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_10_03" value="option2" <?php echo $f1_10_03 ?>>
-                                <label class="form-check-label" for="f1_10_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_10_03" value="<?php echo $f1_10_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -314,8 +307,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_11_03" value="option2" <?php echo $f1_11_03 ?>>
-                                <label class="form-check-label" for="f1_11_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_11_03" value="<?php echo $f1_11_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -336,8 +328,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_12_03" value="option2" <?php echo $f1_12_03 ?>>
-                                <label class="form-check-label" for="f1_12_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_12_03" value="<?php echo $f1_12_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -358,8 +349,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_13_03" value="option2" <?php echo $f1_13_03 ?>>
-                                <label class="form-check-label" for="f1_13_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_13_03" value="<?php echo $f1_13_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -380,8 +370,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_14_03" value="option2" <?php echo $f1_14_03 ?>>
-                                <label class="form-check-label" for="f1_14_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_14_03" value="<?php echo $f1_14_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -402,8 +391,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_15_03" value="option2" <?php echo $f1_15_03 ?>>
-                                <label class="form-check-label" for="f1_15_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_15_03" value="<?php echo $f1_15_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -424,8 +412,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="f1_16_03" value="option2" <?php echo $f1_16_03 ?>>
-                                <label class="form-check-label" for="f1_16_03">Obs.</label>
+                                <input type="text" class="form-control" id="f1_16_03" value="<?php echo $f1_16_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -547,22 +534,22 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                                 <td class="col-xl-4">G.1.2.1 Voltaje de salida del grupo con carga [VAC]</td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="g1_01_03_01" value="<?php echo $g1_02_01_01 ?>">
+                                        <input type="text" class="form-control" id="g1_02_01_01" value="<?php echo $g1_02_01_01 ?>">
                                     </div>
                                 </td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="g1_01_03_02" value="<?php echo $g1_02_01_02 ?>">
+                                        <input type="text" class="form-control" id="g1_02_01_02" value="<?php echo $g1_02_01_02 ?>">
                                     </div>
                                 </td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="g1_01_03_03" value="<?php echo $g1_02_01_03 ?>">
+                                        <input type="text" class="form-control" id="g1_02_01_03" value="<?php echo $g1_02_01_03 ?>">
                                     </div>
                                 </td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="g1_01_03_04" value="<?php echo $g1_02_01_04 ?>">
+                                        <input type="text" class="form-control" id="g1_02_01_04" value="<?php echo $g1_02_01_04 ?>">
                                     </div>
                                 </td>
 
@@ -572,22 +559,22 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                                 <td class="col-xl-4">G.1.2.2 Corriente de salida del grupo en servicio [A]</td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="g1_01_04_01" value="<?php echo $g1_02_02_01 ?>">
+                                        <input type="text" class="form-control" id="g1_02_02_01" value="<?php echo $g1_02_02_01 ?>">
                                     </div>
                                 </td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="g1_01_04_02" value="<?php echo $g1_02_02_02 ?>">
+                                        <input type="text" class="form-control" id="g1_02_02_02" value="<?php echo $g1_02_02_02 ?>">
                                     </div>
                                 </td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="g1_01_04_03" value="<?php echo $g1_02_02_03 ?>">
+                                        <input type="text" class="form-control" id="g1_02_02_03" value="<?php echo $g1_02_02_03 ?>">
                                     </div>
                                 </td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="g1_01_04_04" value="<?php echo $g1_02_02_04 ?>">
+                                        <input type="text" class="form-control" id="g1_02_02_04" value="<?php echo $g1_02_02_04 ?>">
                                     </div>
                                 </td>
 
@@ -597,22 +584,22 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                                 <td class="col-xl-4">G.1.2.3 Frecuencia con carga [Hz]</td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="" value="<?php echo $g1_02_03_01 ?>">
+                                        <input type="text" class="form-control" id="g1_02_03_01" value="<?php echo $g1_02_03_01 ?>">
                                     </div>
                                 </td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="" value="<?php echo $g1_02_03_02 ?>">
+                                        <input type="text" class="form-control" id="g1_02_03_02" value="<?php echo $g1_02_03_02 ?>">
                                     </div>
                                 </td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="" value="<?php echo $g1_02_03_03 ?>">
+                                        <input type="text" class="form-control" id="g1_02_03_03" value="<?php echo $g1_02_03_03 ?>">
                                     </div>
                                 </td>
                                 <td class="col-xl-2">
                                     <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" id="" value="<?php echo $g1_02_03_04 ?>">
+                                        <input type="text" class="form-control" id="g1_02_03_04" value="<?php echo $g1_02_03_04 ?>">
                                     </div>
                                 </td>
 
@@ -731,19 +718,19 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.3.6 Verificar la temperatura superficial en operación [°C]</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" <?php echo $g1_03_06_01 ?>>
+                                <input class="form-check-input" type="checkbox" id="g1_03_06_01" value="option1" <?php echo $g1_03_06_01 ?>>
                                 <label class="form-check-label" for="inlineCheckbox1">Verificado</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" <?php echo $g1_03_06_02 ?>>
+                                <input class="form-check-input" type="checkbox" id="g1_03_06_02" value="option3" <?php echo $g1_03_06_02 ?>>
                                 <label class="form-check-label" for="inlineCheckbox3">Alta</label>
                             </div>
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs." id="g1_03_05_02" value="<?php echo $g1_03_06_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_03_06_03" value="<?php echo $g1_03_06_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -774,7 +761,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs.">
+                                <input type="text" class="form-control" placeholder="Obs." id="g1_04_01_03" value="<?php echo $g1_04_01_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -804,8 +791,8 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.4.3 Limpiar el filtro de aire</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="1_04_03_01" value="option1" <?php echo $g1_04_03_01 ?>>
-                                <label class="form-check-label" for="1_04_03_01">Realizado</label>
+                                <input class="form-check-input" type="checkbox" id="g1_04_03_01" value="option1" <?php echo $g1_04_03_01 ?>>
+                                <label class="form-check-label" for="g1_04_03_01">Realizado</label>
                             </div>
                         </td>
                         <td></td>
@@ -946,8 +933,8 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         <td>G.1.5.1 Verificar la operación de las bombas de inyección de combustible</td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="g1_05_01_02" value="option1" <?php echo $g1_05_01_02 ?>>
-                                <label class="form-check-label" for="g1_05_01_02">Operativo</label>
+                                <input class="form-check-input" type="checkbox" id="g1_05_01_01" value="option1" <?php echo $g1_05_01_01 ?>>
+                                <label class="form-check-label" for="g1_05_01_01">Operativo</label>
                             </div>
                         </td>
                         <td>
@@ -1041,7 +1028,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs." id="g1_05_03_02" value="<?php echo $g2_02_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="g2_02_03" value="<?php echo $g2_02_03 ?>">
                             </div>
                         </td>
                     </tr>
@@ -1062,7 +1049,7 @@ $g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g
                         </td>
                         <td>
                             <div class="form-check form-check-inline">
-                                <input type="text" class="form-control" placeholder="Obs." id="g1_05_03_02" value="<?php echo $g2_03_03 ?>">
+                                <input type="text" class="form-control" placeholder="Obs." id="g2_03_03" value="<?php echo $g2_03_03 ?>">
                             </div>
                         </td>
                     </tr>

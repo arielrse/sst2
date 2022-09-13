@@ -44,8 +44,7 @@
                                     <select name="sitio" id="sitio" class="single-select">
                                         <option value="0" selected class="title7"> Seleccionar... </option>
                                         <?php
-                                        $res2=mysqli_query($conexion, "SELECT s.idsitio, s.codsitio, s.nombre
-                                                                     FROM sitio s ");
+                                        $res2=mysqli_query($conexion, "SELECT s.idsitio, s.codsitio, s.nombre FROM sitio s where s.iddepartamento = $iddepartamento");
                                         while($dato2=mysqli_fetch_array($res2)){
                                             $idsitio  = $dato2['idsitio'];
                                             $descripcion = $dato2['nombre'].' ('.$dato2['codsitio'].')';
@@ -59,35 +58,13 @@
                                 </div>
                             </div>
 
-                            <!--<div class="row mb-3">
-                                <label for="inputEnterYourName" class="col-sm-3 col-form-label">Estacion:</label>
-                                <div class="col-sm-9">
-                                    <select name="estacion" id="estacion" class="single-select">
-                                        <option value="0" selected class="title7"> Seleccionar... </option>
-                                        <?php
-/*                                        $res2=mysqli_query($conexion, "SELECT e.idestacionentel, e.nombreestacion, e.tipo, c.coddep
-                                                                     FROM estacionentel e
-                                                                     LEFT JOIN centro c on e.idcentro = c.idcentro");
-                                        while($dato2=mysqli_fetch_array($res2)){
-                                            $idestacionentel  = $dato2['idestacionentel'];
-                                            $descripcion = $dato2['nombreestacion'].' ('.$dato2['coddep'].'-'.$dato2['tipo'].')';
-                                            echo '<option value="'.$idestacionentel.'" ';
-
-                                            if( $idestacionentel == (!isset($dato) ? $dato['idestacionentel'] : '') ) echo 'selected';
-                                            echo'>'. $descripcion .'</option>';
-                                        }
-                                        */?>
-                                    </select>
-                                </div>
-                            </div>-->
-
                             <div class="row mb-3">
                                 <label for="inputEnterYourName" class="col-sm-3 col-form-label">Centro de Mantenimiento:</label>
                                 <div class="col-sm-9">
                                     <select name="idcentro" id="ingreso_por" class="single-select">
                                         <option value="0" selected class="title7"> Seleccionar... </option>
                                         <?php
-                                        $resultado=mysqli_query($conexion, "SELECT idcentro, nombre, codigo FROM centro");
+                                        $resultado=mysqli_query($conexion, "SELECT idcentro, nombre, codigo FROM centro where iddepartamento = $iddepartamento");
                                         while($dato=mysqli_fetch_array($resultado))
                                             echo '<option value="'.$dato['idcentro'].'">'.$dato['nombre'].'</option>';
                                         ?>
@@ -101,8 +78,12 @@
                                     <select name="idgrupo" class="single-select" id="idgrupo">
                                         <option value="0" selected class="title7"> Seleccionar... </option>
                                         <?php
-                                        $resultado=mysqli_query($conexion, "SELECT g.idgrupo, g.codigo, g.nombre, c.nombre as nombreCentro "
-                                            . "FROM grupo g JOIN centro c ON g.idcentro = c.idcentro");
+                                        $resultado=mysqli_query($conexion, "
+                                            SELECT g.idgrupo, g.codigo, g.nombre, c.nombre AS nombreCentro, d.iddepartamento
+                                            FROM grupo g 
+                                            JOIN centro c       ON g.idcentro = c.idcentro
+                                            JOIN departamento d ON c.iddepartamento = d.iddepartamento
+                                            WHERE d.`iddepartamento` = $iddepartamento ");
                                         while($dato=mysqli_fetch_array($resultado))
                                             echo '<option value="'.$dato['idgrupo'].'">'.$dato['nombre'].' ('.$dato['nombreCentro'].')</option>';
                                         ?>
@@ -113,14 +94,15 @@
                             <div class="row mb-3">
                                 <label for="inputEnterYourName" class="col-sm-3 col-form-label">Fecha Inicial:</label>
                                 <div class="col-sm-9">
-                                    <input name="fechainicio" type="text" id="fechainicio" class="result form-control">
+                                    <!--<input name="fechainicio" type="text" id="fechainicio" class="result form-control">-->
+                                    <input type="date" name="fechainicio" id="c_fechaRealizacion" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="inputEnterYourName" class="col-sm-3 col-form-label">Fecha Final:</label>
                                 <div class="col-sm-9">
-                                    <input name="fechafin" type="text" id="fechafin" class="result form-control">
+                                    <input type="date" name="fechafin" id="fechafin" class="form-control">
                                 </div>
                             </div>
 
@@ -146,7 +128,7 @@
 </div>
 
 
-<script>
+<!--<script>
     $(function () {
         $('#fechainicio').bootstrapMaterialDatePicker({
             time: false
@@ -156,4 +138,4 @@
         });
 
     });
-</script>
+</script>-->
