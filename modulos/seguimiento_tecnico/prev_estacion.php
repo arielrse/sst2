@@ -107,7 +107,7 @@ $cel2    = $datoGp['cel2'];*/
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item" role="presentation">
+                        <!--<li class="nav-item" role="presentation">
                             <a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
                                 <div class="d-flex align-items-center">
                                     <div class="tab-icon"><i class='bx bx-bookmark-alt font-18 me-1'></i>
@@ -115,8 +115,8 @@ $cel2    = $datoGp['cel2'];*/
                                     <div class="tab-title">Archivos</div>
                                 </div>
                             </a>
-                        </li>
-                        <li class="nav-item" role="presentation">
+                        </li>-->
+                        <!--<li class="nav-item" role="presentation">
                             <a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab" aria-selected="false">
                                 <div class="d-flex align-items-center">
                                     <div class="tab-icon"><i class='bx bx-star font-18 me-1'></i>
@@ -124,7 +124,7 @@ $cel2    = $datoGp['cel2'];*/
                                     <div class="tab-title">Imagen</div>
                                 </div>
                             </a>
-                        </li>
+                        </li>-->
                     </ul>
                     <div class="tab-content pt-3">
                         <div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
@@ -149,8 +149,10 @@ $cel2    = $datoGp['cel2'];*/
                                                     $idrutina = $data['idrutina'];
                                                     $href    = "$link_modulo?path=rutina_$codigo.php&event=$idevento&rut=$idrutina&cform=$codigo&gp=$idgrupo";
                                                     $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
+                                                    $hrefImg = "$link_modulo?path=rutina_add_image.php&rut=$idrutina";
 
                                                     $eliminarRutina = "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutina(`$idrutina`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
+                                                    $addImagenes    = "<a href='$hrefImg' class='ms-3'><i class='bx bxs-image-add'></i></a>";
 
                                                     //$generarReporte = "<a href='javascript:;' class='ms-3' id='btnGenerarReporte' onclick='generarReporte(`$idrutina`)'><i class='bx bxs-file'></i></a>";
                                                     /*<a href='$hrefpdf' class='ms-3' target='_blank'><i class='bx bxs-file'></i></a>*/
@@ -163,6 +165,7 @@ $cel2    = $datoGp['cel2'];*/
                                                             <div class='d-flex order-actions'>
                                                                 <a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>
                                                                 ".$eliminarRutina."
+                                                                ".$addImagenes."
                                                             </div>
                                                         </td>
                                                     </tr>

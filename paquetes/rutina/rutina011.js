@@ -28,22 +28,22 @@ $(document).ready(function() {
 
     /** f_verificacion **/
     //var f01_1 = $('#f01_1').prop('checked'); var f01_2 = $('#f01_2').prop('checked'); var f01_3 = $('#f01_3').val();
-    var f1_01_01 = $('#f1_01_01').prop('checked'); var f1_01_02 = $('#f1_01_02').prop('checked'); var f1_01_03 = $('#f1_01_03').prop('checked');
-    var f1_02_01 = $('#f1_02_01').prop('checked'); var f1_02_02 = $('#f1_02_02').prop('checked'); var f1_02_03 = $('#f1_02_03').prop('checked');
-    var f1_03_01 = $('#f1_03_01').prop('checked'); var f1_03_02 = $('#f1_03_02').prop('checked'); var f1_03_03 = $('#f1_03_03').prop('checked');
-    var f1_04_01 = $('#f1_04_01').prop('checked'); var f1_04_02 = $('#f1_04_02').prop('checked'); var f1_04_03 = $('#f1_04_03').prop('checked');
-    var f1_05_01 = $('#f1_05_01').prop('checked'); var f1_05_02 = $('#f1_05_02').prop('checked'); var f1_05_03 = $('#f1_05_03').prop('checked');
-    var f1_06_01 = $('#f1_06_01').prop('checked'); var f1_06_02 = $('#f1_06_02').prop('checked'); var f1_06_03 = $('#f1_06_03').prop('checked');
-    var f1_07_01 = $('#f1_07_01').prop('checked'); var f1_07_02 = $('#f1_07_02').prop('checked'); var f1_07_03 = $('#f1_07_03').prop('checked');
-    var f1_08_01 = $('#f1_08_01').prop('checked'); var f1_08_02 = $('#f1_08_02').prop('checked'); var f1_08_03 = $('#f1_08_03').prop('checked');
-    var f1_09_01 = $('#f1_09_01').prop('checked'); var f1_09_02 = $('#f1_09_02').prop('checked'); var f1_09_03 = $('#f1_09_03').prop('checked');
-    var f1_10_01 = $('#f1_10_01').prop('checked'); var f1_10_02 = $('#f1_10_02').prop('checked'); var f1_10_03 = $('#f1_10_03').prop('checked');
-    var f1_11_01 = $('#f1_11_01').prop('checked'); var f1_11_02 = $('#f1_11_02').prop('checked'); var f1_11_03 = $('#f1_11_03').prop('checked');
-    var f1_12_01 = $('#f1_12_01').prop('checked'); var f1_12_02 = $('#f1_12_02').prop('checked'); var f1_12_03 = $('#f1_12_03').prop('checked');
-    var f1_13_01 = $('#f1_13_01').prop('checked'); var f1_13_02 = $('#f1_13_02').prop('checked'); var f1_13_03 = $('#f1_13_03').prop('checked');
-    var f1_14_01 = $('#f1_14_01').prop('checked'); var f1_14_02 = $('#f1_14_02').prop('checked'); var f1_14_03 = $('#f1_14_03').prop('checked');
-    var f1_15_01 = $('#f1_15_01').prop('checked'); var f1_15_02 = $('#f1_15_02').prop('checked'); var f1_15_03 = $('#f1_15_03').prop('checked');
-    var f1_16_01 = $('#f1_16_01').prop('checked'); var f1_16_02 = $('#f1_16_02').prop('checked'); var f1_16_03 = $('#f1_16_03').prop('checked');
+    var f1_01_01 = $('#f1_01_01').prop('checked'); var f1_01_02 = $('#f1_01_02').prop('checked'); var f1_01_03 = $('#f1_01_03').val();
+    var f1_02_01 = $('#f1_02_01').prop('checked'); var f1_02_02 = $('#f1_02_02').prop('checked'); var f1_02_03 = $('#f1_02_03').val();
+    var f1_03_01 = $('#f1_03_01').prop('checked'); var f1_03_02 = $('#f1_03_02').prop('checked'); var f1_03_03 = $('#f1_03_03').val();
+    var f1_04_01 = $('#f1_04_01').prop('checked'); var f1_04_02 = $('#f1_04_02').prop('checked'); var f1_04_03 = $('#f1_04_03').val();
+    var f1_05_01 = $('#f1_05_01').prop('checked'); var f1_05_02 = $('#f1_05_02').prop('checked'); var f1_05_03 = $('#f1_05_03').val();
+    var f1_06_01 = $('#f1_06_01').prop('checked'); var f1_06_02 = $('#f1_06_02').prop('checked'); var f1_06_03 = $('#f1_06_03').val();
+    var f1_07_01 = $('#f1_07_01').prop('checked'); var f1_07_02 = $('#f1_07_02').prop('checked'); var f1_07_03 = $('#f1_07_03').val();
+    var f1_08_01 = $('#f1_08_01').prop('checked'); var f1_08_02 = $('#f1_08_02').prop('checked'); var f1_08_03 = $('#f1_08_03').val();
+    var f1_09_01 = $('#f1_09_01').prop('checked'); var f1_09_02 = $('#f1_09_02').prop('checked'); var f1_09_03 = $('#f1_09_03').val();
+    var f1_10_01 = $('#f1_10_01').prop('checked'); var f1_10_02 = $('#f1_10_02').prop('checked'); var f1_10_03 = $('#f1_10_03').val();
+    var f1_11_01 = $('#f1_11_01').prop('checked'); var f1_11_02 = $('#f1_11_02').prop('checked'); var f1_11_03 = $('#f1_11_03').val();
+    var f1_12_01 = $('#f1_12_01').prop('checked'); var f1_12_02 = $('#f1_12_02').prop('checked'); var f1_12_03 = $('#f1_12_03').val();
+    var f1_13_01 = $('#f1_13_01').prop('checked'); var f1_13_02 = $('#f1_13_02').prop('checked'); var f1_13_03 = $('#f1_13_03').val();
+    var f1_14_01 = $('#f1_14_01').prop('checked'); var f1_14_02 = $('#f1_14_02').prop('checked'); var f1_14_03 = $('#f1_14_03').val();
+    var f1_15_01 = $('#f1_15_01').prop('checked'); var f1_15_02 = $('#f1_15_02').prop('checked'); var f1_15_03 = $('#f1_15_03').val();
+    var f1_16_01 = $('#f1_16_01').prop('checked'); var f1_16_02 = $('#f1_16_02').prop('checked'); var f1_16_03 = $('#f1_16_03').val();
 
     /** g_desarrollo_g1 **/
     //var g1_01_01 = $('#g1_01_01').prop('checked'); var g1_01_02 = $('#g1_01_02').prop('checked'); var g1_01_03 = $('#g1_01_03').val();

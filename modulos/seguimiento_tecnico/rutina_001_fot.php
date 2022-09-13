@@ -1,0 +1,18 @@
+<?php
+$web = $_SESSION["web"];
+$codigoForm = $_GET['cform'];
+?>
+<input type="hidden" name="codigoForm" id="codigoForm" value="<?=$codigoForm?>" />
+
+<div class="page-wrapper">
+    <div class="page-content">
+
+        <h6 class="mb-0 text-uppercase">RUTINA DE MANTENIMIENTO PREVENTIVO - BANCO DE BATERÍAS</h6>
+        <hr/>
+
+        <?php require("rutina_add_image.php"); ?>
+
+
+
+    </div>
+</div>
