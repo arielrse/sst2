@@ -2,6 +2,7 @@
 require("../../funciones/motor.php");
 
 $urlAddImage = $_POST['urlAddImage'];
+$idrutina = $_POST['idrutina'];
 
 if(isset($_POST['Guardar'])){
     $imagen = $_FILES['imagen']['name'];
@@ -11,7 +12,7 @@ if(isset($_POST['Guardar'])){
         $tipo = $_FILES['imagen']['type'];
         $temp  = $_FILES['imagen']['tmp_name'];
 
-       if( !((strpos($tipo,'gif') || strpos($tipo,'jpeg') || strpos($tipo,'webp')))){
+       if( !((strpos($tipo,'gif') || strpos($tipo,'jpeg') || strpos($tipo,'webp') || strpos($tipo,'png')))){
           $_SESSION['mensaje'] = 'solo se permite archivos jpeg, gif, webp';
           $_SESSION['tipo'] = 'danger';
           //header('location:../index.php');
@@ -19,7 +20,8 @@ if(isset($_POST['Guardar'])){
           header("Location: ".$url);
 
        }else{
-         $query = "INSERT INTO imagenes(imagen,nombre) values('$imagen','$nombre')";
+         //$query = "INSERT INTO imagenes(imagen,nombre) values('$imagen','$nombre')";
+         $query = "INSERT INTO rutina_imagen(imagen,nombre, idrutina) values('$imagen','$nombre', '$idrutina')";
          $resultado = mysqli_query($conexion, $query);
          if($resultado){
               move_uploaded_file($temp,'../../fotos/'.$imagen);
