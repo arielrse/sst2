@@ -412,7 +412,112 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                         <div class="notice"><strong>'.constant('G3TITLE').'</strong></div>
                     </div>
                 </main>
-               
+                <main>
+                    <table class="tborder"> 
+                         <tr>
+                            <td class="col-100p">'.constant('G3_01').'</td>
+                         </tr>
+                    </table>
+                </main>
+                 <main>
+                    <table>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <table class="tborder">
+                                                <tr>
+                                                    <td></td>
+                                                    <td><strong>V Vdc</strong></td>
+                                                    <td><strong>I A</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cadena 1</td>
+                                                    <td>'.$g3_01_01.'</td>
+                                                    <td>'.$g3_01_02.'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 2</td>
+                                                    <td>'.$g3_01_03.'</td>
+                                                    <td>'.$g3_01_04.'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 3</td>
+                                                    <td>'.$g3_01_05.'</td>
+                                                    <td>'.$g3_01_06.'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 4</td>
+                                                    <td>'.$g3_01_07.'</td>
+                                                    <td>'.$g3_01_08.'</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table class="tborder">
+                                                <tr>
+                                                    <td></td>
+                                                    <td><strong>V Vdc</strong></td>
+                                                    <td><strong>I A</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 1</td>
+                                                    <td>'.$g3_01_09.'</td>
+                                                    <td>'.$g3_01_10.'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 2</td>
+                                                    <td>'.$g3_01_11.'</td>
+                                                    <td>'.$g3_01_12.'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 3</td>
+                                                    <td>'.$g3_01_13.'</td>
+                                                    <td>'.$g3_01_14.'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 4</td>
+                                                    <td>'.$g3_01_15.'</td>
+                                                    <td>'.$g3_01_16.'</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table class="tborder">
+                                                <tr>
+                                                    <td></td>
+                                                    <td><strong>V Vdc</strong></td>
+                                                    <td><strong>I A</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 1</td>
+                                                    <td>'.$g3_01_17.'</td>
+                                                    <td>'.$g3_01_18.'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 2</td>
+                                                    <td>'.$g3_01_19.'</td>
+                                                    <td>'.$g3_01_20.'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 3</td>
+                                                    <td>'.$g3_01_21.'</td>
+                                                    <td>'.$g3_01_22.'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Array 4</td>
+                                                    <td>'.$g3_01_23.'</td>
+                                                    <td>'.$g3_01_24.'</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>   
+                            </td>
+                        </tr>
+                    </table>
+                </main>
                 <main>
                     <table border="1">
                         <tbody>

@@ -38,9 +38,10 @@ $localidad      = $dataIden['localidad'];
 $municipio      = $dataIden['municipio'];
 
 /* ---------------------------------- */
-$res3 = mysqli_query($conexion, "SELECT r.cabecera FROM rutina$cform r WHERE r.idrutina = ".$idrutina);
+$res3 = mysqli_query($conexion, "SELECT r.id, r.cabecera FROM rutina$cform r WHERE r.idrutina = ".$idrutina);
 $data3 = mysqli_fetch_array($res3);
-$jsonCab = $data3['cabecera'];
+$jsonCab   = $data3['cabecera'];
+$idrutinax = $data3['id'];
 
 $obj = json_decode($jsonCab);
 $cm                 = $obj->{'cm'};
@@ -84,6 +85,7 @@ while( $data4 = mysqli_fetch_array($res4) ){
     if ($e_personal == $userId) $selected = "selected";
 
     $selectSupervisor .= "<option value='$userId' $selected>" . $data4['nombre'] . " - " . $data4['cargo'] . "</option>";
+    $hrefpdf = "../../modulos/$modulo/rutina$cform/reporte.php";
 }
 
 ?>
@@ -96,6 +98,15 @@ while( $data4 = mysqli_fetch_array($res4) ){
         <div class="col">
             <input type="button" class="btn btn-secondary px-5" name="Submit" value="Cancelar" onclick="history.back()" />
         </div>
+        <form action="<?php echo $hrefpdf ?>" method="post" enctype="multipart/form-data" target="_blank">
+            <input type="hidden" id="cform" name="cform" value="<?php echo $cform ?>" />
+            <input type="hidden" id="idrutinax" name="idrutinax" value="<?php echo $idrutinax ?>" />
+            <input type="hidden" id="idgrupo" name="idgrupo" value="<?php echo $idgrupo ?>" />
+            <input type="hidden" id="iddepartamento" name="iddepartamento" value="<?php echo $iddepartamento ?>" />
+            <div class="col">
+                <input type="submit" class="btn btn-info px-5" name="Submit" value="Generar"  />
+            </div>
+        </form>
     </div>
 
     <h6>A. Identificación del Sitio</h6>
