@@ -33,7 +33,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Mantenimiento Preventivo</li>
+                        <li class="breadcrumb-item active" aria-current="page">Cronograma</li>
                     </ol>
                 </nav>
             </div>
@@ -44,11 +44,11 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
         <div class="card">
             <div class="card-body">
 
-                <!--<div class="row row-cols-auto g-3">
+                <div class="row row-cols-auto g-3">
                         <div class="col">
-                            <input name="nuevoE" type="button" value="Nuevo" class="btn btn-primary px-5" onClick="location.href='<?/*=$link_modulo*/?>?path=nuevo_evento.php'" />
+                            <input name="nuevoE" type="button" value="Nuevo" class="btn btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=nuevo_evento.php'" />
                         </div>
-                </div>-->
+                </div>
                 <hr />
 
                 <div class="table-responsive">
@@ -75,7 +75,8 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                                      FROM evento e
                                      LEFT JOIN sitio s ON e.`idsitio` = s.`idsitio`
                                      LEFT JOIN grupo g ON e.`idgrupo` = g.`idgrupo`
-                                     WHERE g.idgrupo = ".$dato['idgrupo'];
+                                     LEFT JOIN centro c ON g.idcentro = c.idcentro
+                                     WHERE c.iddepartamento = ".$iddepartamento;
 
                         $resultado = mysqli_query($conexion, $consulta);
                         $filas	   = mysqli_num_rows($resultado);
@@ -102,7 +103,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                                     <td>".$dato['grupo']."</td>
                                     <td>
                                         <div class='d-flex order-actions'>
-                                            <a href='$href' class=''><i class='bx bxs-edit'></i></a>
+                                            <a href='javascript:;' class='ms-3' onclick='eliminarMtto(`$idevento`, `$nombre`)'><i class='bx bxs-trash'></i></a>
                                         </div>
                                     </td>
                                 </tr>";

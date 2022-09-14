@@ -7,13 +7,14 @@ $idrutinax = $_POST['idrutinax'];
 $cform = $_POST['cform'];
 $idgrupo = $_POST['idgrupo'];
 $iddepartamento = $_POST['iddepartamento'];
+$idevento = $_POST['idevento'];
 
 $css = file_get_contents('../../../assets/css/report.css');
 
 $res3 = mysqli_query($conexion, "SELECT r.id, r.cabecera FROM rutina$cform r WHERE r.id = ".$idrutinax);
 $data3 = mysqli_fetch_array($res3);
 $jsonData = $data3['cabecera'];
-$plantilla = getPlantilla($conexion, $jsonData, $idgrupo);
+$plantilla = getPlantilla($conexion, $jsonData, $idgrupo, $idevento);
 
 
 $mpdf = new \Mpdf\Mpdf(['format' => 'Letter']);

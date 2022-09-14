@@ -1,130 +1,84 @@
 <?
-include("../../funciones/class.paginado.php");
-if (isset($_GET['pagina'])){
-$pagina = $_GET['pagina'];
-}				  
-$nro_por_pagina=15;
+
 
 $consulta="SELECT id,CONCAT(nombre,' ',ap_pat,' ',ap_mat) AS nom,DATE_FORMAT(fecha_nacimiento,'%d/%m/%Y') AS nac,cuenta,direccion,mail,mail2,skype,msn,telf,cel,telf_oficina,interno,cargo,nro_ing,activo FROM usuarios";
 
- if($nively=='1') $admin=true;
- else  $admin=false;
 
 ?>
-<div align="center"><span class="title">LISTA DE USUARIOS</span></div>
-<table width="100%" class="table4">
-<tr>
-    <td colspan="6" class="paginado">
-        <div align="left">
-        <?
-        $rs = new paginado($conexion);
-        $rs->pagina($pagina);
-        $rs->porPagina($nro_por_pagina);
-        $rs->propagar("path");
-        $rs->propagar("nro_por_pagina");
-        if(!$rs->query($consulta))
-        {    die( $rs->error() );
-        }
-        echo "Mostrando ".$rs->desde()." - ".$rs->hasta()." de un total de ".$rs->total()."<br>"; ?>
+<div class="page-wrapper">
+    <div class="page-content">
+
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">SST</div>
+            <div class="ps-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 p-0">
+                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Gestion de usuarios</li>
+                    </ol>
+                </nav>
+            </div>
         </div>
-    </td>
-    <td colspan="4" class="paginado">
-        <div align="right">
-            <input class="btn_dark" onClick="location.href='<?=$musuarios?>nuevo_usuario.php'" type="button" value="Nuevo">
+
+
+        <div class="row row-cols-auto mb-2">
+            <div class="col">
+                <button type="button" class="btn btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=nuevo_usuario.php'">Nuevo</button>
+            </div>
         </div>
-    </td>
-</tr>					  
-<tr>
-<th width="3%" height="16">COD</th>
-<th width="22%">USUARIO</th>
-<th width="17%">CARGO</th>			              
-<th width="20%">CORREOS</th>
-<th width="17%">CUENTAS EXTERNAS </th> 
-<th width="8%">TELF</th>
-<th width="5%">TELF OF</th>	
-<th width="3%">INT</th>	
-<th width="2%">ACT</th>
-<th width="3%"></th>
-</tr>
-<?
-$i=0;
-  while($row = $rs->obtenerArray())
- {
- 
- $id=$row['id'];
- $nom=$row['nom'];
- $nac=$row['nac'];
- $cuenta=$row['cuenta'];
- $direccion=$row['direccion'];
- $mail=$row['mail'];
- $mail2=$row['mail2'];
- $skype=$row['skype'];
-	if($skype!="") $skype_link='<a href="skype:'.$skype.'?chat" class="enlaceboton">'.$skype.'<img src="../../img/ico_skype.gif" width="16" height="16" border="0"></a>
-';
-else $skype_link="";
- $msn=$row['msn'];
-	if($msn!="") $msn='<a href="msnim:chat?contact='.$msn.'" class="enlaceboton">'.$msn.'<img src="../../img/ico_msn.gif" width="16" height="16" border="0"></a>';
 
- $telf=$row['telf'];
- $cel=$row['cel'];
- $telf_oficina=$row['telf_oficina'];
- $interno=$row['interno'];
- $cargo=$row['cargo'];
- $nro_ing=$row['nro_ing'];
- $activo=$row['activo'];
- switch($activo){
- case '1' : $activo='<img src="../../img/ico_2.gif" width="16" height="16" border="0" alt="Activo">'; break;
- case '0' : $activo='<img src="../../img/ico_0.gif" width="16" height="16" border="0" alt="Usuario Inactivo">'; break;
- default: $activo="?";
- }
- 
+        <div class="card">
+            <div class="card-body">
 
-if($buscar!=NULL)
-switch($campo)
-{
-case 'c.razon_social':
-$cliente=eregi_replace ($buscar,"<span class='marcar'>".$buscar."</span>",$cliente); break;
-case 'p.proyecto':
-$proyecto=eregi_replace ($buscar,"<span class='marcar'>".$buscar."</span>",$proyecto); break;
-} 
+                <div class="table-responsive">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Cuenta</th>
+                                <th>Email</th>
+                                <th>Departamento</th>
+                                <th>Nivel</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
- $i++;
-	 if($i%2==0)
-	{
-	$rowt="#f6f7f8";
-	}
-	else
-	{
-	$rowt="#f1f1f1";
-	}
-///////////
- 
- if($admin){
- $edit="<a href=\"".$link_modulo."?path=modificar_usuario.php&id=".$id."\"><img src='../../img/change.gif' alt='Modificar Monto' border=\"0\" align=\"absmiddle\"></a>";
- }
- else $edit="";
- 	
-	echo"<tr height='25' bgcolor='$rowt' onmouseover=\"setPointer(this, '#DADADA')\" onmouseout=\"setPointer(this, '$rowt')\"> 
-            <td><DIV ALIGN='CENTER'><B>$id</B></DIV></td>
-            <td><span class='title6'>$nom</span> <span class='title5'>$nac<BR>$direccion</span></td>
-			<td class='title5'>$cuenta<BR><b>$cargo</b></td>			
-            <td class='title5'><a href='mailto:$mail' class='enlacemail'>$mail".'<img src="../../img/ico_outlook.jpg" width="16" height="16" border="0">'."</a><BR>$mail2</td>            
-            <td class='title5'>$skype_link<BR>$msn</td>
-			<td class='title5'>$telf<BR>$cel</td>
-			<td class='title5'>$telf_oficina</td>
-			<td><span class='title'>$interno</span></td>			
-			<td>$activo</td>
-			<td>$edit</td>";
-          echo"</tr>";
- }
-?>
-<tfoot>
-<tr> 
-<td colspan="10" class="paginado">
-<?
-echo $rs->anterior()." - ".$rs->nroPaginas()." - ".$rs->siguiente();
-?></td>
-</tr>	
-</tfoot>
-</table>
-<script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script>
+                        <?php
+                        $consulta = "SELECT u.`id`, concat(u.nombre, ' ', u.`ap_pat`, ' ', u.`ap_mat`) AS nombre, u.`cuenta`, u.`mail`, u.`nivel`, d.`nombre` as depto
+                                    FROM usuarios u
+                                    LEFT JOIN departamento d ON u.`iddepartamento` = d.`iddepartamento`";
+
+                        $resultado = mysqli_query($conexion, $consulta);
+                        $filas	   = mysqli_num_rows($resultado);
+
+
+                        while($dato=mysqli_fetch_array($resultado)){
+
+                            $href = $link_modulo."?path=modificar_usuario.php&id=".$dato['id'];
+                            $btnEditar = "<a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>";
+
+                            echo"
+                            <tr>
+                                <td><center>".$dato['id']."</center></td>
+                                <td><center>".$dato['nombre']."</center></td>
+                                <td><center>".$dato['cuenta']."</center></td>
+                                <td><center>".$dato['mail']."</center></td>
+                                <td><center>".$dato['depto']."</center></td>
+                                <td><center>".$dato['nivel']."</center></td>
+                                <td><center>".$btnEditar."</center></td>
+                            </tr>";
+                        }
+                        ?>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

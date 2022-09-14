@@ -43,7 +43,8 @@ if(isset($_GET["rif"])){
                                 <?php
                                 $res2=mysqli_query($conexion, "SELECT e.idestacionentel, e.nombreestacion, e.tipo, c.coddep
                                                                      FROM estacionentel e
-                                                                     LEFT JOIN centro c on e.idcentro = c.idcentro");
+                                                                     LEFT JOIN centro c on e.idcentro = c.idcentro
+                                                                     WHERE c.iddepartamento = '$iddepartamento'");
                                 while($dato2=mysqli_fetch_array($res2)){
                                     $idestacionentel  = $dato2['idestacionentel'];
                                     $descripcion = $dato2['nombreestacion'].' ('.$dato2['coddep'].'-'.$dato2['tipo'].')';

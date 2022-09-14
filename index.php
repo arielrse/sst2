@@ -87,7 +87,7 @@ $sw = isset($_GET["sw"]) ? $_GET["sw"] : 0;
                                     <form class="row g-3" name="form" method="post" action="v0001.php">
                                         <div class="col-12">
                                             <label for="inputEmailAddress" class="form-label">Dirección de correo electrónico</label>
-                                            <input type="email" class="form-control" name="santo" id="santo" placeholder="Correo electronico" value="ariel.siles@gmail.com">
+                                            <input type="text" class="form-control" name="santo" id="santo" placeholder="Correo electronico" value="ariel.siles@gmail.com">
 
                                         </div>
                                         <div class="col-12">
