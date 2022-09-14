@@ -3,14 +3,14 @@ require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
 require("variable_text.php");
 
-function getPlantilla($conexion, $jsonData, $idgrupo){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idevento){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
     $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
-    $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - SISTEMA DE ALIMENTACION ININTERRUMPIDA';
-   // $cabecera        = getCabecera($conexion, $jsonData, $idgrupo, $titulo, false);
+    $titulo     = 'RUTINA DE MANTENIMIENTO PREVENTIVO - INFRAESTRUCTURA DEL SITIO';
+    $cabecera   = getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento);
    // $footerPlantilla = getFooter($jsonData);
     //---------------------------
 
@@ -69,7 +69,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
         <div class="card-body-">
             <div id="invoice">
                 <div class="invoice">
-                
+                '. $cabecera .'
                 <main>
                     <div class="notices">
                         <div class="notice"><strong>'.constant('FTITLE').'</strong></div>
