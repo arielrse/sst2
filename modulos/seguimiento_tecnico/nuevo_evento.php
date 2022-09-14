@@ -115,7 +115,7 @@
                                 <!--<div class="col">-->
                                 <div class="ms-auto">
                                     <input type="submit" class="btn btn-primary px-5 mt-2 mt-lg-0" name="nuevo" value="Guardar" />
-                                    <input type="button" onClick="location.href='<?=$mst?>mantenimientos.php'" value="Cancelar" class="btn btn-secondary px-5 mt-2 mt-lg-0">
+                                    <input type="button" onClick="location.href='<?=$mst?>cronograma.php'" value="Cancelar" class="btn btn-secondary px-5 mt-2 mt-lg-0">
                                 </div>
                             </div>
 

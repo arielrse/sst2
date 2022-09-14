@@ -36,18 +36,6 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                     </ol>
                 </nav>
             </div>
-            <div class="ms-auto">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary">Settings</button>
-                    <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-                        <a class="dropdown-item" href="javascript:;">Another action</a>
-                        <a class="dropdown-item" href="javascript:;">Something else here</a>
-                        <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-                    </div>
-                </div>
-            </div>
 
         </div>
         <!--end breadcrumb-->
@@ -58,22 +46,22 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
             <div class="card-body">
 
 
-                    <div class="row row-cols-auto g-3">
-                        <form name="form1" method="post" class="row g-3">
-                        <div class="col">
-                            <input name="fecha" type="text" class="result form-control" id="fecha" value="<?=substr($fecha,0,10);?>">
-                        </div>
-
-                        <div class="col">
-                            <input class="btn btn-dark px-5" name="Submit" type="submit" value="Buscar">
-                        </div>
-
-                        <div class="col">
-                            <button type="button" class="btn btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=n_ticketn.php'">Nuevo</button>
-                        </div>
-                        </form>
+                <div class="row row-cols-auto g-3">
+                    <form name="form1" method="post" class="row g-3">
+                    <div class="col">
+                        <input name="fecha" type="text" class="result form-control" id="fecha" value="<?=substr($fecha,0,10);?>">
                     </div>
-                    <hr />
+
+                    <div class="col">
+                        <input class="btn btn-dark px-5" name="Submit" type="submit" value="Buscar">
+                    </div>
+
+                    <div class="col">
+                        <button type="button" class="btn btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=n_ticketn.php'">Nuevo</button>
+                    </div>
+                    </form>
+                </div>
+                <hr />
                 <div class="table-responsive">
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
