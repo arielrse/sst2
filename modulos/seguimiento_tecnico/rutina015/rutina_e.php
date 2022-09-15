@@ -226,58 +226,60 @@ $g2_09_01 = $g_desarrollo_g2->g2_09_01 ? "checked" : ""; $g2_09_02 = $g_desarrol
                         </td>
                     </tr>
 
-                    <tr>
-                        <td class="col-xl-1">4</td>
-                        <td class="col-xl-2">Detalle de puertos ETH ópticos</td>
-                        <td class="col-xl-2">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_07_01" value="<?php echo $f1_07_01 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-2">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_07_02" value="<?php echo $f1_07_02 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-2">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_07_03" value="<?php echo $f1_07_03 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-2">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_07_04" value="<?php echo $f1_07_04 ?>">
-                            </div>
-                        </td>
-                    </tr>
+                    </tbody>
+                </table>
 
-                    <tr>
-                        <td class="col-xl-1">5</td>
-                        <td class="col-xl-2">Puertos opticos en bandeja ODF</td>
-                        <td class="col-xl-2">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_08_01" value="<?php echo $f1_08_01 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-2">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_08_02" value="<?php echo $f1_08_02 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-2">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_08_03" value="<?php echo $f1_08_03 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-2">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_08_04" value="<?php echo $f1_08_04 ?>">
-                            </div>
-                        </td>
-                    </tr>
+                <table class="table table-bordered mb-3">
+                    <tbody>
+                        <tr>
+                            <td class="col-xl-1">4</td>
+                            <td class="col-xl-2">Detalle de puertos ETH ópticos</td>
+                            <td class="col-xl-2">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" id="f1_07_01" value="<?php echo $f1_07_01 ?>">
+                                </div>
+                            </td>
+                            <td class="col-xl-2">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" id="f1_07_02" value="<?php echo $f1_07_02 ?>">
+                                </div>
+                            </td>
+                            <td class="col-xl-2">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" id="f1_07_03" value="<?php echo $f1_07_03 ?>">
+                                </div>
+                            </td>
+                            <td class="col-xl-2">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" id="f1_07_04" value="<?php echo $f1_07_04 ?>">
+                                </div>
+                            </td>
+                        </tr>
 
-
-
+                        <tr>
+                            <td class="col-xl-1">5</td>
+                            <td class="col-xl-2">Puertos opticos en bandeja ODF</td>
+                            <td class="col-xl-2">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" id="f1_08_01" value="<?php echo $f1_08_01 ?>">
+                                </div>
+                            </td>
+                            <td class="col-xl-2">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" id="f1_08_02" value="<?php echo $f1_08_02 ?>">
+                                </div>
+                            </td>
+                            <td class="col-xl-2">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" id="f1_08_03" value="<?php echo $f1_08_03 ?>">
+                                </div>
+                            </td>
+                            <td class="col-xl-2">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" id="f1_08_04" value="<?php echo $f1_08_04 ?>">
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
