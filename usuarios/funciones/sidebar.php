@@ -56,7 +56,7 @@ $muser = "../modulos/usuarios.php?path=";
 
         <li>
             <a href="<?=$mst?>cronograma.php">
-                <div class="parent-icon"><i class='bx bx-grid-alt'></i>
+                <div class="parent-icon"><i class='bx bx-calendar-plus'></i>
                 </div>
                 <div class="menu-title">Cronogramas</div>
             </a>
@@ -71,19 +71,11 @@ $muser = "../modulos/usuarios.php?path=";
         </li>
 
         <li>
-            <a class="has-arrow" href="javascript:;">
+            <a href="<?=$muser?>ver_centros.php">
                 <div class="parent-icon"><i class='bx bx-home-circle'></i>
                 </div>
                 <div class="menu-title">Centros Mtto</div>
             </a>
-            <ul>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Chuquisaca</a>
-                </li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Potosi</a>
-                </li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Tarija</a>
-                </li>
-            </ul>
         </li>
 
         <li>
@@ -95,19 +87,11 @@ $muser = "../modulos/usuarios.php?path=";
         </li>
 
         <li>
-            <a class="has-arrow" href="javascript:;">
+            <a href="javascript:;">
                 <div class="parent-icon"><i class="bx bx-line-chart"></i>
                 </div>
                 <div class="menu-title">Estadisticas</div>
             </a>
-            <ul>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Estadistica A</a>
-                </li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Estadistica B</a>
-                </li>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Estadistica C</a>
-                </li>
-            </ul>
         </li>
 
         <li>
