@@ -54,11 +54,18 @@ $(document).ready(function() {
     var f1_01_01 = $('#f1_01_01').val(); var f1_01_02 = $('#f1_01_02').val(); var f1_01_03 = $('#f1_01_03').val(); var f1_01_04 = $('#f1_01_04').val(); var f1_01_05= $('#f1_01_05').val();
     var f1_02_01 = $('#f1_02_01').val(); var f1_02_02 = $('#f1_02_02').val(); var f1_02_03 = $('#f1_02_03').val(); var f1_02_04 = $('#f1_02_04').val(); var f1_02_05= $('#f1_02_05').val();
     var f1_03_01 = $('#f1_03_01').val(); var f1_03_02 = $('#f1_03_02').val(); var f1_03_03 = $('#f1_03_03').val(); var f1_03_04 = $('#f1_03_04').val(); var f1_03_05= $('#f1_03_05').val();
-    var f1_04_01 = $('#f1_04_01').val(); var f1_04_02 = $('#f1_04_02').val(); var f1_04_03 = $('#f1_04_03').val(); var f1_04_04 = $('#f1_04_04').val();
-    var f1_05_01 = $('#f1_05_01').val(); var f1_05_02 = $('#f1_05_02').val(); var f1_05_03 = $('#f1_05_03').val(); var f1_05_04 = $('#f1_05_04').val();
-    var f1_06_01 = $('#f1_06_01').val(); var f1_06_02 = $('#f1_06_02').val(); var f1_06_03 = $('#f1_06_03').val(); var f1_06_04 = $('#f1_06_04').val();
-    var f1_07_01 = $('#f1_07_01').val(); var f1_07_02 = $('#f1_07_02').val(); var f1_07_03 = $('#f1_07_03').val(); var f1_07_04 = $('#f1_07_04').val();
-    var f1_08_01 = $('#f1_08_01').val(); var f1_08_02 = $('#f1_08_02').val(); var f1_08_03 = $('#f1_08_03').val(); var f1_08_04 = $('#f1_08_04').val();
+
+    var f1_04_01    = $('#f1_04_01').val(); var f1_04_02   = $('#f1_04_02').val();   var f1_04_03   = $('#f1_04_03').val();   var f1_04_04_from = $('#f1_04_04_from').val(); var f1_04_05 = $('#f1_04_05').val();
+                                                                                                                              var f1_04_04_to   = $('#f1_04_04_to').val();
+    var f1_05_01    = $('#f1_05_01').val(); var f1_05_02   = $('#f1_05_02').val();   var f1_05_03   = $('#f1_05_03').val();   var f1_05_04_from = $('#f1_05_04_from').val(); var f1_05_05 = $('#f1_05_05').val();
+                                                                                                                              var f1_05_04_to   = $('#f1_05_04_to').val();
+    var f1_06_01    = $('#f1_06_01').val(); var f1_06_02   = $('#f1_06_02').val();   var f1_06_03   = $('#f1_06_03').val();   var f1_06_04_from = $('#f1_06_04_from').val(); var f1_06_05 = $('#f1_06_05').val();
+                                                                                                                              var f1_06_04_to   = $('#f1_06_04_to').val();
+                                            var f1_07_02   = $('#f1_07_02').val();   var f1_07_03_a = $('#f1_07_03_a').val(); var f1_07_04_a    = $('#f1_07_04_a').val();    var f1_07_05_a = $('#f1_07_05_a').val();
+                                                                                     var f1_07_03_b = $('#f1_07_03_b').val(); var f1_07_04_b    = $('#f1_07_04_b').val();    var f1_07_05_b = $('#f1_07_05_b').val();
+                                            var f1_08_02   = $('#f1_08_02').val();   var f1_08_03_a = $('#f1_08_03_a').val(); var f1_08_04_a    = $('#f1_08_04_a').val();    var f1_08_05_a = $('#f1_08_05_a').val();
+                                                                                     var f1_08_03_b = $('#f1_08_03_b').val(); var f1_08_04_b    = $('#f1_08_04_b').val();    var f1_08_05_b = $('#f1_08_05_b').val();
+                                                                                     var f1_08_03_c = $('#f1_08_03_c').val(); var f1_08_04_c    = $('#f1_08_04_c').val();    var f1_08_05_c = $('#f1_08_05_c').val();
 
     /** g_desarrollo_g2 **/
     //var g2_01_01 = $('#g2_01_01').prop('checked'); var g2_01_02 = $('#g2_01_02').val();
@@ -150,11 +157,20 @@ getDatos().then( (datos) => {
     datos.f_fibra.f1_01_01 = f1_01_01; datos.f_fibra.f1_01_02 = f1_01_02; datos.f_fibra.f1_01_03 = f1_01_03; datos.f_fibra.f1_01_04 = f1_01_04; datos.f_fibra.f1_01_05 = f1_01_05;
     datos.f_fibra.f1_02_01 = f1_02_01; datos.f_fibra.f1_02_02 = f1_02_02; datos.f_fibra.f1_02_03 = f1_02_03; datos.f_fibra.f1_02_04 = f1_02_04; datos.f_fibra.f1_02_05 = f1_02_05;
     datos.f_fibra.f1_03_01 = f1_03_01; datos.f_fibra.f1_03_02 = f1_03_02; datos.f_fibra.f1_03_03 = f1_03_03; datos.f_fibra.f1_03_04 = f1_03_04; datos.f_fibra.f1_03_05 = f1_03_05;
-    datos.f_fibra.f1_04_01 = f1_04_01; datos.f_fibra.f1_04_02 = f1_04_02; datos.f_fibra.f1_04_03 = f1_04_03; datos.f_fibra.f1_04_04 = f1_04_04;
-    datos.f_fibra.f1_05_01 = f1_05_01; datos.f_fibra.f1_05_02 = f1_05_02; datos.f_fibra.f1_05_03 = f1_05_03; datos.f_fibra.f1_05_04 = f1_05_04;
-    datos.f_fibra.f1_06_01 = f1_06_01; datos.f_fibra.f1_06_02 = f1_06_02; datos.f_fibra.f1_06_03 = f1_06_03; datos.f_fibra.f1_06_04 = f1_06_04;
-    datos.f_fibra.f1_07_01 = f1_07_01; datos.f_fibra.f1_07_02 = f1_07_02; datos.f_fibra.f1_07_03 = f1_07_03; datos.f_fibra.f1_07_04 = f1_07_04;
-    datos.f_fibra.f1_08_01 = f1_08_01; datos.f_fibra.f1_08_02 = f1_08_02; datos.f_fibra.f1_08_03 = f1_08_03; datos.f_fibra.f1_08_04 = f1_08_04;
+
+    datos.f_fibra.f1_04_01 = f1_04_01; datos.f_fibra.f1_04_02 = f1_04_02; datos.f_fibra.f1_04_03 = f1_04_03; datos.f_fibra.f1_04_04_from = f1_04_04_from; datos.f_fibra.f1_04_05 = f1_04_05;
+                                                                                                             datos.f_fibra.f1_04_04_to   = f1_04_04_to;
+    datos.f_fibra.f1_05_01 = f1_05_01; datos.f_fibra.f1_05_02 = f1_05_02; datos.f_fibra.f1_05_03 = f1_05_03; datos.f_fibra.f1_05_04_from = f1_05_04_from; datos.f_fibra.f1_05_05 = f1_05_05;
+                                                                                                             datos.f_fibra.f1_05_04_to   = f1_05_04_to;
+    datos.f_fibra.f1_06_01 = f1_06_01; datos.f_fibra.f1_06_02 = f1_06_02; datos.f_fibra.f1_06_03 = f1_06_03; datos.f_fibra.f1_06_04_from = f1_06_04_from; datos.f_fibra.f1_06_05 = f1_06_05;
+                                                                                                             datos.f_fibra.f1_06_04_to   = f1_06_04_to;
+
+                                       datos.f_fibra.f1_07_02    = f1_07_02;   datos.f_fibra.f1_07_03_a = f1_07_03_a; datos.f_fibra.f1_07_04_a = f1_07_04_a; datos.f_fibra.f1_07_05_a = f1_07_05_a;
+                                                                               datos.f_fibra.f1_07_03_b = f1_07_03_b; datos.f_fibra.f1_07_04_b = f1_07_04_b; datos.f_fibra.f1_07_05_b = f1_07_05_b;
+
+                                       datos.f_fibra.f1_08_02    = f1_08_02;   datos.f_fibra.f1_08_03_a = f1_08_03_a; datos.f_fibra.f1_08_04_a = f1_08_04_a; datos.f_fibra.f1_08_05_a = f1_08_05_a;
+                                                                               datos.f_fibra.f1_08_03_b = f1_08_03_b; datos.f_fibra.f1_08_04_b = f1_08_04_b; datos.f_fibra.f1_08_05_b = f1_08_05_b;
+                                                                               datos.f_fibra.f1_08_03_c = f1_08_03_c; datos.f_fibra.f1_08_04_c = f1_08_04_c; datos.f_fibra.f1_08_05_c = f1_08_05_c;
 
     /** g_desarrollo_g2 **/
    // datos.g_desarrollo_g2.g2_01_01 = g2_01_01; datos.g_desarrollo_g2.g2_01_02 = g2_01_02;
