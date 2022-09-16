@@ -2,15 +2,23 @@
 
 /** f_fibra **/
 $f_fibra = $obj->{'f_fibra'};
-//$d_01_01 = $f_fibra->d_01_01; $d_01_02 = $f_fibra->d_01_02;
+
 $f1_01_01 = $f_fibra->f1_01_01; $f1_01_02 = $f_fibra->f1_01_02; $f1_01_03 = $f_fibra->f1_01_03; $f1_01_04 = $f_fibra->f1_01_04; $f1_01_05 = $f_fibra->f1_01_05;
 $f1_02_01 = $f_fibra->f1_02_01; $f1_02_02 = $f_fibra->f1_02_02; $f1_02_03 = $f_fibra->f1_02_03; $f1_02_04 = $f_fibra->f1_02_04; $f1_02_05 = $f_fibra->f1_02_05;
 $f1_03_01 = $f_fibra->f1_03_01; $f1_03_02 = $f_fibra->f1_03_02; $f1_03_03 = $f_fibra->f1_03_03; $f1_03_04 = $f_fibra->f1_03_04; $f1_03_05 = $f_fibra->f1_03_05;
-$f1_04_01 = $f_fibra->f1_04_01; $f1_04_02 = $f_fibra->f1_04_02; $f1_04_03 = $f_fibra->f1_04_03; $f1_04_04 = $f_fibra->f1_04_04;
-$f1_05_01 = $f_fibra->f1_05_01; $f1_05_02 = $f_fibra->f1_05_02; $f1_05_03 = $f_fibra->f1_05_03; $f1_05_04 = $f_fibra->f1_05_04;
-$f1_06_01 = $f_fibra->f1_06_01; $f1_06_02 = $f_fibra->f1_06_02; $f1_06_03 = $f_fibra->f1_06_03; $f1_06_04 = $f_fibra->f1_06_04;
-$f1_07_01 = $f_fibra->f1_07_01; $f1_07_02 = $f_fibra->f1_07_02; $f1_07_03 = $f_fibra->f1_07_03; $f1_07_04 = $f_fibra->f1_07_04;
-$f1_08_01 = $f_fibra->f1_08_01; $f1_08_02 = $f_fibra->f1_08_02; $f1_08_03 = $f_fibra->f1_08_03; $f1_08_04 = $f_fibra->f1_08_04;
+
+$f1_04_01 = $f_fibra->f1_04_01; $f1_04_02 = $f_fibra->f1_04_02; $f1_04_03 = $f_fibra->f1_04_03; $f1_04_04_from = $f_fibra->f1_04_04_from; $f1_04_05 = $f_fibra->f1_04_05;
+                                                                                                $f1_04_04_to   = $f_fibra->f1_04_04_to;
+$f1_05_01 = $f_fibra->f1_05_01; $f1_05_02 = $f_fibra->f1_05_02; $f1_05_03 = $f_fibra->f1_05_03; $f1_05_04_from = $f_fibra->f1_05_04_from; $f1_05_05 = $f_fibra->f1_05_05;
+                                                                                                $f1_05_04_to   = $f_fibra->f1_05_04_to;
+$f1_06_01 = $f_fibra->f1_06_01; $f1_06_02 = $f_fibra->f1_06_02; $f1_06_03 = $f_fibra->f1_06_03; $f1_06_04_from = $f_fibra->f1_06_04_from; $f1_06_05 = $f_fibra->f1_06_05;
+                                                                                                $f1_06_04_to   = $f_fibra->f1_06_04_to;
+
+                                $f1_07_02 = $f_fibra->f1_07_02; $f1_07_03_a = $f_fibra->f1_07_03_a; $f1_07_04_a = $f_fibra->f1_07_04_a; $f1_07_05_a = $f_fibra->f1_07_05_a;
+                                                                $f1_07_03_b = $f_fibra->f1_07_03_b; $f1_07_04_b = $f_fibra->f1_07_04_b; $f1_07_05_b = $f_fibra->f1_07_05_b;
+                                $f1_08_02 = $f_fibra->f1_08_02; $f1_08_03_a = $f_fibra->f1_08_03_a; $f1_08_04_a = $f_fibra->f1_08_04_a; $f1_08_05_a = $f_fibra->f1_08_05_a;
+                                                                $f1_08_03_b = $f_fibra->f1_08_03_b; $f1_08_04_b = $f_fibra->f1_08_04_b; $f1_08_05_b = $f_fibra->f1_08_05_b;
+                                                                $f1_08_03_c = $f_fibra->f1_08_03_c; $f1_08_04_c = $f_fibra->f1_08_04_c; $f1_08_05_c = $f_fibra->f1_08_05_c;
 
 //$e_01_01 = $d_sectores->e_01_01;
 $g_desarrollo_g2 = $obj->{'g_desarrollo_g2'};
@@ -153,7 +161,6 @@ $g2_09_01 = $g_desarrollo_g2->g2_09_01 ? "checked" : ""; $g2_09_02 = $g_desarrol
 
                     <tr>
                         <td class="col-xl-1">1</td>
-                        <td class="col-xl-2">DWDM (Optix OSN1800)</td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" id="f1_04_01" value="<?php echo $f1_04_01 ?>">
@@ -170,15 +177,35 @@ $g2_09_01 = $g_desarrollo_g2->g2_09_01 ? "checked" : ""; $g2_09_02 = $g_desarrol
                             </div>
                         </td>
                         <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Tx From:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_04_04_from" value="<?php echo $f1_04_04_from ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Rx To:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_04_04_to" value="<?php echo $f1_04_04_to ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_04_04" value="<?php echo $f1_04_04 ?>">
+                                <input type="text" class="form-control" id="f1_04_05" value="<?php echo $f1_04_05 ?>">
                             </div>
                         </td>
                     </tr>
 
                     <tr>
                         <td class="col-xl-1">2</td>
-                        <td class="col-xl-2">FIBRA OSCURA</td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" id="f1_05_01" value="<?php echo $f1_05_01 ?>">
@@ -195,15 +222,34 @@ $g2_09_01 = $g_desarrollo_g2->g2_09_01 ? "checked" : ""; $g2_09_02 = $g_desarrol
                             </div>
                         </td>
                         <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Tx From:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_05_04_from" value="<?php echo $f1_05_04_from ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Rx To:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_05_04_to" value="<?php echo $f1_05_04_to ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_05_04" value="<?php echo $f1_05_04 ?>">
+                                <input type="text" class="form-control" id="f1_05_05" value="<?php echo $f1_05_05 ?>">
                             </div>
                         </td>
                     </tr>
 
                     <tr>
                         <td class="col-xl-1">3</td>
-                        <td class="col-xl-2">IP NGN (ASR / ATN)</td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" id="f1_06_01" value="<?php echo $f1_06_01 ?>">
@@ -220,8 +266,28 @@ $g2_09_01 = $g_desarrollo_g2->g2_09_01 ? "checked" : ""; $g2_09_02 = $g_desarrol
                             </div>
                         </td>
                         <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Tx From:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_06_04_from" value="<?php echo $f1_06_04_from ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Rx To:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_06_04_to" value="<?php echo $f1_06_04_to ?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_06_04" value="<?php echo $f1_06_04 ?>">
+                                <input type="text" class="form-control" id="f1_06_05" value="<?php echo $f1_06_05 ?>">
                             </div>
                         </td>
                     </tr>
@@ -235,24 +301,67 @@ $g2_09_01 = $g_desarrollo_g2->g2_09_01 ? "checked" : ""; $g2_09_02 = $g_desarrol
                             <td class="col-xl-1">4</td>
                             <td class="col-xl-2">Detalle de puertos ETH ópticos</td>
                             <td class="col-xl-2">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" id="f1_07_01" value="<?php echo $f1_07_01 ?>">
-                                </div>
+                                <table class="table-info">
+                                    <tr><td>Tarjeta:</td></tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_07_02" value="<?php echo $f1_07_02 ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
                             </td>
                             <td class="col-xl-2">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" id="f1_07_02" value="<?php echo $f1_07_02 ?>">
-                                </div>
+                                <table class="table-info">
+                                    <tr><td>Slot/Prto:</td></tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_07_03_a" value="<?php echo $f1_07_03_a ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_07_03_b" value="<?php echo $f1_07_03_b ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                             <td class="col-xl-2">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" id="f1_07_03" value="<?php echo $f1_07_03 ?>">
-                                </div>
+                                <table class="table-info">
+                                    <tr><td>Descripción</td></tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_07_04_a" value="<?php echo $f1_07_04_a ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_07_04_b" value="<?php echo $f1_07_04_b ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                             <td class="col-xl-2">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" id="f1_07_04" value="<?php echo $f1_07_04 ?>">
-                                </div>
+                                <table class="table-info">
+                                    <tr><td>Estado</td></tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_07_05_a" value="<?php echo $f1_07_05_a ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_07_05_b" value="<?php echo $f1_07_05_b ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
 
@@ -260,29 +369,88 @@ $g2_09_01 = $g_desarrollo_g2->g2_09_01 ? "checked" : ""; $g2_09_02 = $g_desarrol
                             <td class="col-xl-1">5</td>
                             <td class="col-xl-2">Puertos opticos en bandeja ODF</td>
                             <td class="col-xl-2">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" id="f1_08_01" value="<?php echo $f1_08_01 ?>">
-                                </div>
+                                <table class="table-info">
+                                    <tr><td>Tarjeta:</td></tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_08_02" value="<?php echo $f1_08_02 ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                             <td class="col-xl-2">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" id="f1_08_02" value="<?php echo $f1_08_02 ?>">
-                                </div>
+                                <table class="table-info">
+                                    <tr><td>Slot/Prto:</td></tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_08_03_a" value="<?php echo $f1_08_03_a ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_08_03_b" value="<?php echo $f1_08_03_b ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_08_03_c" value="<?php echo $f1_08_03_c ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                             <td class="col-xl-2">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" id="f1_08_03" value="<?php echo $f1_08_03 ?>">
-                                </div>
+                                <table class="table-info">
+                                    <tr><td>Descripción</td></tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_08_04_a" value="<?php echo $f1_08_04_a ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_08_04_b" value="<?php echo $f1_08_04_b ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_08_04_c" value="<?php echo $f1_08_04_c ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                             <td class="col-xl-2">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control" id="f1_08_04" value="<?php echo $f1_08_04 ?>">
-                                </div>
+                                <table class="table-info">
+                                    <tr><td>Tipo de Conector</td></tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_08_05_a" value="<?php echo $f1_08_05_a ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_08_05_b" value="<?php echo $f1_08_05_b ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" id="f1_08_05_c" value="<?php echo $f1_08_05_c ?>">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>
