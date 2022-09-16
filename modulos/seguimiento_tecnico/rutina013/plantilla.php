@@ -3,7 +3,7 @@ require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
 require("variable_text.php");
 
-function getPlantilla($conexion, $jsonData, $idgrupo){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idevento){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
@@ -129,19 +129,18 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                     </table>
                 </main>
                <main>
-                    <div class="notices">
+                     <div class="notices">
                         <div class="notice"><strong>'.constant('FTITLE').'</strong></div>
                     </div>
-                </main>	
-               <main>
                     <table border="1">
                         <tbody>
+                            <tr></tr>
                             <tr>
-                                <td class="col-15p">'.constant('F01').'</td>
-                                <td class="col-20p num">'.  $f_01_01 . '</td>
-                                <td class="col-15p">'.constant('F01_01').'</td>
-                                <td class="col-15p num">'.  $f_01_02 . '</td>
-                                <td class="col-15p">'.constant('F01_02').'</td>
+                                <td class="col-20p">'.constant('F01').'</td>
+                                <td class="col-15p num">'.  $f_01_01 . '</td>
+                                <td class="col-20p">'.constant('F01_01').'</td>
+                                <td class="col-10p num">'.  $f_01_02 . '</td>
+                                <td class="col-20p">'.constant('F01_02').'</td>
                                 <td class="col-15p num">'.  $f_01_03 . '</td>
                                 
                             </tr>
@@ -173,33 +172,32 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                     </table>
                </main>
                <main>
-                    <div class="notices">
+                     <div class="notices">
                         <div class="notice"><strong>'.constant('GTITLE').'</strong></div>
                     </div>
-                </main>	
-               <main>
                     <table border="1">
                         <tbody>
+                            
                             <tr>
-                                <td class="col-15p">'.constant('G01').'</td>
-                                <td class="col-20p num">'.  $g_01_01 . '</td>
-                                <td class="col-15p">'.constant('G01_01').'</td>
-                                <td class="col-15p num">'.  $g_01_02 . '</td>
+                                <td class="col-20p">'.constant('G01').'</td>
+                                <td class="col-15p num">'.  $g_01_01 . '</td>
+                                <td class="col-20p">'.constant('G01_01').'</td>
+                                <td class="col-10p num">'.  $g_01_02 . '</td>
                                 <td class="col-15p">'.constant('G01_02').'</td>
-                                <td class="col-15p num">'.  $g_01_03 . '</td>
+                                <td class="col-20p num">'.  $g_01_03 . '</td>
                              </tr>
                              <tr>
-                                <td class="col-15p">'.constant('G02').'</td>
-                                <td class="col-20p num">'.  $g_02_01 . '</td>
-                                <td class="col-15p">'.constant('G02_01').'</td>
-                                <td class="col-15p num">'.  $g_02_02 . '</td>
+                                <td class="col-20p">'.constant('G02').'</td>
+                                <td class="col-15p num">'.  $g_02_01 . '</td>
+                                <td class="col-20p">'.constant('G02_01').'</td>
+                                <td class="col-10p num">'.  $g_02_02 . '</td>
                                 <td class="col-15p">'.constant('G02_02').'</td>
-                                <td class="col-15p num">'.  $g_02_03 . '</td>
+                                <td class="col-20p num">'.  $g_02_03 . '</td>
                              </tr>
                         </tbody>        
                     </table>
                </main>
-                <main>
+               <main>
                      <div class="notices">
                         <div class="notice"><strong>'.constant('HTITLE').'</strong></div>
                     </div>
@@ -247,16 +245,170 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                              </tr>
                         </tbody>        
                     </table>
+               </main>
+               <main>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td colspan="3"><strong>'.constant('HTITLE2').'</strong></td>
+                                <td class="text-center"><strong>Observaciones</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="col-50p">'.constant('H07').'</td>
+                                <td class="col-10p">'.  $h_07_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_07_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_07_03 . '</td>
+                             </tr>
+                             <tr>
+                                <td class="col-50p">'.constant('H08').'</td>
+                                <td class="col-10p">'.  $h_08_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_08_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_08_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H09').'</td>
+                                <td class="col-10p">'.  $h_09_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_09_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_09_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H10').'</td>
+                                <td class="col-10p">'.  $h_10_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_10_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_10_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H11').'</td>
+                                <td class="col-10p">'.  $h_11_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_11_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_11_03 . '</td>
+                             </tr>
+                        </tbody>        
+                    </table>
                </main> 
-               '.$footerPlantilla.'    
+                <main>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td colspan="3"><strong>'.constant('HTITLE3').'</strong></td>
+                                <td class="text-center"><strong>Observaciones</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="col-50p">'.constant('H12').'</td>
+                                <td class="col-10p">'.  $h_12_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_12_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_12_03 . '</td>
+                             </tr>
+                             <tr>
+                                <td class="col-50p">'.constant('H13').'</td>
+                                <td class="col-10p">'.  $h_13_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_13_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_13_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H14').'</td>
+                                <td class="col-10p">'.  $h_14_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_14_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_14_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H15').'</td>
+                                <td class="col-10p">'.  $h_15_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_15_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_15_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H16').'</td>
+                                <td class="col-10p">'.  $h_16_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_16_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_16_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H17').'</td>
+                                <td class="col-10p">'.  $h_17_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_17_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_17_03 . '</td>
+                             </tr>
+                        </tbody>        
+                    </table>
+               </main>
+               <main>
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td colspan="3"><strong>'.constant('HTITLE4').'</strong></td>
+                                <td class="text-center"><strong>Observaciones</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="col-50p">'.constant('H18').'</td>
+                                <td class="col-10p">'.  $h_18_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_18_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_18_03 . '</td>
+                             </tr>
+                             <tr>
+                                <td class="col-50p">'.constant('H19').'</td>
+                                <td class="col-10p">'.  $h_19_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_19_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_19_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H20').'</td>
+                                <td class="col-10p">'.  $h_20_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_20_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_20_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H21').'</td>
+                                <td class="col-10p">'.  $h_21_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_21_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_21_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H22').'</td>
+                                <td class="col-10p">'.  $h_22_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_22_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_22_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H23').'</td>
+                                <td class="col-10p">'.  $h_23_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_23_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_23_03 . '</td>
+                             </tr>
+                             <tr>
+                                <td class="col-50p">'.constant('H24').'</td>
+                                <td class="col-10p">'.  $h_24_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_24_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_24_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H25').'</td>
+                                <td class="col-10p">'.  $h_25_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_25_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_25_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H26').'</td>
+                                <td class="col-10p">'.  $h_26_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_26_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_26_03 . '</td>
+                             </tr>
+                              <tr>
+                                <td class="col-50p">'.constant('H27').'</td>
+                                <td class="col-10p">'.  $h_27_01 . ' Si</td>
+                                <td class="col-10p">'.  $h_27_02 . ' No</td>
+                                <td class="col-30p">Obs. '.  $h_27_03 . '</td>
+                             </tr>
+                        </tbody>        
+                    </table>
+               </main> 
+               '.$footerPlantilla.'   
                 </div>
             </div>
         </div>
 	</div>
     
-</body>
-
-';
+</body>';
 
     return $plantilla;
 }

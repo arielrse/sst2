@@ -29,20 +29,44 @@ define('E14', 'D.14	Verificación del estado de coaxiales, F.O. y Vdc.');
 define('E15', 'D.15	Verificar Jumpers');
 define('E16', 'D.16	Verificar conexionado de los RETs');
 
+define('ETITLE1', 'Alarmas internas  atravez del puerto de O&M de la RBS (LMT,OMT)');
 
+define('E17', 'Puerta Abierta');
+define('E18', 'Baterías en descarga');
+define('E19', 'Corte de energía comercial');
+define('E20', 'Inundación');
+define('E21', 'Falla de protección de transcientes');
+define('E22', 'Alarma de rectificador');
+define('E23', 'Humo');
+define('E24', 'Falla de baliza');
+define('E25', 'GG. Warning');
+define('E26', 'GG. Apagado');
+define('E27', 'Bajo nivel de combustible');
+define('E28', 'GG. Encendido');
 
+define('ETITLE2', 'Pruebas de servicio');
+define('E29', 'Llamar a un teléfono móvil GSM');
+define('E30', 'Llamar a un teléfono móvil UMTS');
+define('E31', 'Llamar a un teléfono fijo');
+define('E32', 'Verificación de handovers');
+define('E33', 'SMS');
+define('E34', 'Navegación en internet');
 
+define('DTITLE1', 'D. Relevamiento de sectores');
+define('D01_01', 'Tecnologia');
+define('D01_02', 'Nombre de la BTS');
+define('D01_03', 'ID Estacion');
+define('D01_04', 'Configuracion');
 
+define('D02_01', 'Tecnologia');
+define('D02_02', 'Nombre del NODO B');
+define('D02_03', 'ID Estacion');
+define('D02_04', 'Configuracion');
 
-
-
-
-
-
-
-
-
-
+define('D03_01', 'Tecnologia');
+define('D03_02', 'Nombre del eNODO B');
+define('D03_03', 'ID Estacion');
+define('D03_04', 'Configuracion');
 
 
 

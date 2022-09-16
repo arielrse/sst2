@@ -222,11 +222,11 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
     $propertyId         = $obj->{'propertyId'};
     //$b_idenActivo       = $obj->{'b_idenActivo'};
     //$b_nroActivo        = $obj->{'b_nroActivo'};
-    $b_accSitio         = $obj->{'b_accSitio'};
-    $b_01_01 = $b_accSitio->b_01_01;
-    $b_02_01 = $b_accSitio->b_02_01; $b_02_02 = $b_accSitio->b_02_02;
-    $b_03_01 = $b_accSitio->b_03_01;
-    $b_04_01 = $b_accSitio->b_04_01 ? $check : $uncheck; $b_04_02 = $b_accSitio->b_04_02 ? $check : $uncheck;
+    $b_acceso         = $obj->{'b_acceso'};
+    $b_01_01 = $b_acceso->b_01_01;
+    $b_02_01 = $b_acceso->b_02_01; $b_02_02 = $b_acceso->b_02_02;
+    $b_03_01 = $b_acceso->b_03_01;
+    $b_04_01 = $b_acceso->b_04_01 ? $check : $uncheck; $b_04_02 = $b_acceso->b_04_02 ? $check : $uncheck;
 
     $c_fechaRealizacion = dateToLiteral($obj->{'c_fechaRealizacion'});
 
@@ -249,8 +249,9 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
     $cel3    = $dataPersMtto['cel3'];
     //---------------------------
 
-    $plantilla = '
-    <table>
+    $plantilla =
+
+    '<table>
         <tr>
             <th class="col-2">
                 <div><img src="../../../img/logo-entel.png" width="90" alt="" /></div>
