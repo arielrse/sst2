@@ -27,6 +27,11 @@ $(document).ready(function() {
     var e_personal          = $('#e_personal').val();
 
     //var f1_01_01 = $('#f1_01_01').prop('checked'); var f1_01_02 = $('#f1_01_02').prop('checked'); var f1_01_03 = $('#f1_01_03').val();
+
+    var b_01_01 = $('#b_01_01').val();
+    var b_02_01 = $('#b_02_01').val(); var b_02_02 = $('#b_02_02').val();
+    var b_03_01 = $('#b_03_01').val();
+    var b_04_01 = $('#b_04_01').prop('checked'); var b_04_02 = $('#b_04_02').prop('checked');
     /* e_contacto */
     var e_01_01 = $('#e_01_01').val(); var e_01_02 = $('#e_01_02').val();
     var e_02_01 = $('#e_02_01').val(); var e_02_02 = $('#e_02_02').val();
@@ -91,6 +96,12 @@ getDatos().then( (datos) => {
     datos.d_transcurrido     = d_transcurrido;
     datos.c_fechaRealizacion = c_fechaRealizacion;
     datos.e_personal         = e_personal;
+
+    /* b_acceso */
+    datos.b_acceso.b_01_01 = b_01_01;
+    datos.b_acceso.b_02_01 = b_02_01; datos.b_acceso.b_02_02 = b_02_02;
+    datos.b_acceso.b_03_01 = b_03_01;
+    datos.b_acceso.b_04_01 = b_04_01; datos.b_acceso.b_04_02 = b_04_02;
 
     /* e_contacto */
     datos.e_contacto.e_01_01 = e_01_01; datos.e_contacto.e_01_02 = e_01_02;

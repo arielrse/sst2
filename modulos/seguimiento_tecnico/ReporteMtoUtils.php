@@ -220,9 +220,13 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
     $cm                 = $obj->{'cm'};
     $sitioId            = $obj->{'sitioId'};
     $propertyId         = $obj->{'propertyId'};
-    $b_idenActivo       = $obj->{'b_idenActivo'};
-    $b_nroActivo        = $obj->{'b_nroActivo'};
-
+    //$b_idenActivo       = $obj->{'b_idenActivo'};
+    //$b_nroActivo        = $obj->{'b_nroActivo'};
+    $b_acceso         = $obj->{'b_acceso'};
+    $b_01_01 = $b_acceso->b_01_01;
+    $b_02_01 = $b_acceso->b_02_01; $b_02_02 = $b_acceso->b_02_02;
+    $b_03_01 = $b_acceso->b_03_01;
+    $b_04_01 = $b_acceso->b_04_01 ? $check : $uncheck; $b_04_02 = $b_acceso->b_04_02 ? $check : $uncheck;
 
     $c_fechaRealizacion = dateToLiteral($obj->{'c_fechaRealizacion'});
 
@@ -245,8 +249,9 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
     $cel3    = $dataPersMtto['cel3'];
     //---------------------------
 
-    $plantilla = '
-    <table>
+    $plantilla =
+
+    '<table>
         <tr>
             <th class="col-2">
                 <div><img src="../../../img/logo-entel.png" width="90" alt="" /></div>
@@ -306,14 +311,61 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
                 </tbody>
             </table>
     </main>
-        
+    <main>
+        <div class="notices">
+            <div class="notice"><strong>B. Acceso al sitio (desde el Centro o Subcentro de Mantenimiento)</strong></div>
+        </div>
+    </main>
+    <main>
+        <table class="tborder">
+            <tbody>
+                <tr>
+                    <td class="col-30p no">Trayecto</td>
+                    <td class="col-70p">'.$b_01_01.'</td>
+                </tr>     
+            </tbody>        
+        </table>									                        
+    </main>															  
+    <main>
+        <table class="tborder">
+            <tbody>
+                <tr>
+                    <td class="col-20p no">Distancia en Km</td>
+                    <td class="col-30p">'.$b_02_01.'</td>
+                    <td class="col-20p no">Tiempo de Viaje en Hrs.</td>
+                    <td class="col-30p">'.$b_02_02.'</td>
+                </tr>     
+            </tbody>        
+        </table>									                        
+    </main>
+    <main>
+        <table class="tborder">
+            <tbody>
+                <tr>
+                    <td class="col-30p no">Estado del camino</td>
+                    <td class="col-70p">'.$b_03_01.'</td>
+                </tr>     
+            </tbody>        
+        </table>									                        
+    </main>
+    <main>
+        <table class="tborder">
+            <tbody>
+                <tr>
+                    <td class="col-20p no">Tracking de la ruta</td>
+                    <td class="col-30p">'.$b_04_01.' Si</td>
+                    <td class="col-30p">'.$b_04_02.' No</td>
+                </tr>     
+            </tbody>        
+        </table>									                        
+    </main>    
     <main>
         <div class="notices">
             <div class="notice"><strong>C. Fecha de Realización</strong></div>
         </div>
-    </main>																  
+    </main>	
     <main>
-        <table>
+        <table class="tborder">
             <tbody>
                 <tr>
                     <td class="col-30p no">Fecha de mantenimiento:</td>
@@ -322,10 +374,8 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
             </tbody>        
         </table>									                        
     </main>
-    
-  														  
     <main>
-        <table>
+        <table class="tborder">
             <tbody>
                 <tr>
                     <td class="col-15p no">Hora de inicio:</td>

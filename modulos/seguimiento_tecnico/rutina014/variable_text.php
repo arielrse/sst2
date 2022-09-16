@@ -1,38 +1,75 @@
 <?php
 
-define('FTITLE', 'F. Verificación Visual - Estado del Activo');
-define('F01', 'F.1 	Sistema en Baja Tensión Operativo');
+define('DTITLE', 'D. Relevamiento');
+define('D01', 'Radio Bases');
+define('D02', 'Tipo de Transporte');
+define('D03', 'Salto Anterior');
+define('D04', 'Energía principal');
+define('D05', 'Vendor');
+define('D06', 'Equipo de transmisión');
+define('D07', 'Interface');
+define('D08', 'Energía Respaldo');
 
-define('GTITLE', 'G. Desarrollo de Rutina de Mantenimiento');
-define('G1', 'G.1	Verificaciones técnicas');
-define('G1_01', 'G.1.1  Verificación estado de cables AC de alimentación');
-define('G1_02', 'G.1.2	Verificación estado de cables DC de alimentación');
-define('G1_03', 'G.1.3	Verificación ordenado y peinado cables AC');
-define('G1_04', 'G.1.4	Verificación correcta instalación de módulos PDU');
-define('G1_05', 'G.1.5	Verificación Correcta de pantalla y teclas de funcionamiento');
-define('G1_06', 'G.1.6	Verificar el estado del cable de tierra y terminales del equipo');
+define('ETITLE', 'E. Desarrollo de Rutina de Mantenimiento');
 
-define('G2TITLE', 'G.2 Actividades de mantenimiento');
-define('G2_01', 'G.2.1	Pruebas de funcionalidad térmicos de habilitación');
-define('G2_02', 'G.2.2	Pruebas de funcionalidad  automática');
-define('G2_03', 'G.2.3	Etiquetado  correcto de interruptores');
-define('G2_04', 'G.2.4	Ajuste de borneras en general');
-define('G2_05', 'G.2.5	Reemplazo de terminales mal instalados');
-define('G2_06', 'G.2.6	Ajuste de conexiones sistema puesta a tierra del equipo');
+define('E01', 'D.1 	Verificar la no existencia de alarmas visuales');
+define('E02', 'D.2	Verificar la instalación de gabinetes');
+define('E03', 'D.3	Verificar la instalación de la BBU y Tarjetas');
+define('E04', 'D.4	Limpieza fuera y dentro de gabinetes');
+define('E05', 'D.5	Verificar ajuste en conexiones de aterramiento de gabinetes');
+define('E06', 'D.6	Verificar que los cables de energía y aterramiento no estén dañados o rotos');
+define('E07', 'D.7	Verificar etiquetado en gabinetes');
+define('E08', 'D.8	Verificar la instalación de las RRU’s');
+define('E09', 'D.9	Verificar la instalación de las Antenas');
+define('E10', 'D.10	Verificar ajuste en conexiones de aterramiento de RRU’s');
+define('E11', 'D.11	Verificar que cables de energía y aterramiento de RRU’s no estén dañados o rotos');
+define('E12', 'D.12	Verificar vulcanizado y sellado de conectores en Antenas y RRU’s');
+define('E13', 'D.13	Verificar etiquetado en Antenas y RRU’s');
+define('E14', 'D.14	Verificación del estado de coaxiales, F.O. y Vdc.');
+define('E15', 'D.15	Verificar Jumpers');
+define('E16', 'D.16	Verificar conexionado de los RETs');
 
-define('G3TITLE', 'G.3	Mediciones  y Configuraciones');
-define('G3_01', 'G.3.1	Registrar voltaje  AC de entrada');
-define('G3_02', 'G.3.2	Registrar de la corriente AC de entrada');
-define('G3_03', 'G.3.3	Frecuencia de entrada AC');
-define('G3_04', 'G.3.4	Registro del voltaje DC del banco de baterías'); define('G3_04_01', 'Registro del voltaje AC a la salida');
-define('G3_05', 'G.3.5	Registro de la corriente DC de salida'); define('G3_05_01', 'Registro de la corriente AC a la salida');
-define('G3_06', 'G.3.6	Verificar y controlar la distribución de AC  UPS en tableros de la estación.');
-define('G3_07', 'G.3.7	Revisión de sobrecalentamiento del cableado en AC y DC.');
-define('G3_08', 'G.3.8	Porcentaje de carga Pu/Pn');
+define('ETITLE1', 'Alarmas internas  atravez del puerto de O&M de la RBS (LMT,OMT)');
 
-define('G4TITLE', 'G.4	Verificación alarmas: Localmente y  Gestión Remota');
-define('G4_01', 'G.4.1	Corte AC');
-define('G4_02', 'G.4.2	Baterias en Descarga');
-define('G4_03', 'G.4.3	Falla Modulo');
+define('E17', 'Puerta Abierta');
+define('E18', 'Baterías en descarga');
+define('E19', 'Corte de energía comercial');
+define('E20', 'Inundación');
+define('E21', 'Falla de protección de transcientes');
+define('E22', 'Alarma de rectificador');
+define('E23', 'Humo');
+define('E24', 'Falla de baliza');
+define('E25', 'GG. Warning');
+define('E26', 'GG. Apagado');
+define('E27', 'Bajo nivel de combustible');
+define('E28', 'GG. Encendido');
+
+define('ETITLE2', 'Pruebas de servicio');
+define('E29', 'Llamar a un teléfono móvil GSM');
+define('E30', 'Llamar a un teléfono móvil UMTS');
+define('E31', 'Llamar a un teléfono fijo');
+define('E32', 'Verificación de handovers');
+define('E33', 'SMS');
+define('E34', 'Navegación en internet');
+
+define('DTITLE1', 'D. Relevamiento de sectores');
+define('D01_01', 'Tecnologia');
+define('D01_02', 'Nombre de la BTS');
+define('D01_03', 'ID Estacion');
+define('D01_04', 'Configuracion');
+
+define('D02_01', 'Tecnologia');
+define('D02_02', 'Nombre del NODO B');
+define('D02_03', 'ID Estacion');
+define('D02_04', 'Configuracion');
+
+define('D03_01', 'Tecnologia');
+define('D03_02', 'Nombre del eNODO B');
+define('D03_03', 'ID Estacion');
+define('D03_04', 'Configuracion');
+
+
+
+
 
 ?>
