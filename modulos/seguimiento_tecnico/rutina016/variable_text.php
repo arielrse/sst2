@@ -1,38 +1,62 @@
 <?php
 
-define('FTITLE', 'F. Verificación Visual - Estado del Activo');
-define('F01', 'F.1 	Sistema en Baja Tensión Operativo');
+define('DTITLE', 'D. Relevamiento');
+define('D01', 'Ubicación equipo datos');
+define('D02', 'Ubicación rack');
+define('D03', 'Tipo de Infraestructura');
 
-define('GTITLE', 'G. Desarrollo de Rutina de Mantenimiento');
-define('G1', 'G.1	Verificaciones técnicas');
-define('G1_01', 'G.1.1  Verificación estado de cables AC de alimentación');
-define('G1_02', 'G.1.2	Verificación estado de cables DC de alimentación');
-define('G1_03', 'G.1.3	Verificación ordenado y peinado cables AC');
-define('G1_04', 'G.1.4	Verificación correcta instalación de módulos PDU');
-define('G1_05', 'G.1.5	Verificación Correcta de pantalla y teclas de funcionamiento');
-define('G1_06', 'G.1.6	Verificar el estado del cable de tierra y terminales del equipo');
 
-define('G2TITLE', 'G.2 Actividades de mantenimiento');
-define('G2_01', 'G.2.1	Pruebas de funcionalidad térmicos de habilitación');
-define('G2_02', 'G.2.2	Pruebas de funcionalidad  automática');
-define('G2_03', 'G.2.3	Etiquetado  correcto de interruptores');
-define('G2_04', 'G.2.4	Ajuste de borneras en general');
-define('G2_05', 'G.2.5	Reemplazo de terminales mal instalados');
-define('G2_06', 'G.2.6	Ajuste de conexiones sistema puesta a tierra del equipo');
+define('E01', 'ASR-9010');
+define('E02', 'ASR-920');
+define('E03', 'ME-3400');
+define('E04', 'SW-HUAWEI');
+define('E05', 'SW-RAISECOM');
+define('E06', 'DSLAM-H');
+define('E07', 'DSLAM-Z');
+define('E08', 'OLT');
 
-define('G3TITLE', 'G.3	Mediciones  y Configuraciones');
-define('G3_01', 'G.3.1	Registrar voltaje  AC de entrada');
-define('G3_02', 'G.3.2	Registrar de la corriente AC de entrada');
-define('G3_03', 'G.3.3	Frecuencia de entrada AC');
-define('G3_04', 'G.3.4	Registro del voltaje DC del banco de baterías'); define('G3_04_01', 'Registro del voltaje AC a la salida');
-define('G3_05', 'G.3.5	Registro de la corriente DC de salida'); define('G3_05_01', 'Registro de la corriente AC a la salida');
-define('G3_06', 'G.3.6	Verificar y controlar la distribución de AC  UPS en tableros de la estación.');
-define('G3_07', 'G.3.7	Revisión de sobrecalentamiento del cableado en AC y DC.');
-define('G3_08', 'G.3.8	Porcentaje de carga Pu/Pn');
+define('ETITLE1', 'Equipo');
+define('E01_01', 'ASR-9010');
+define('E01_02', 'ASR-920');
+define('E01_03', 'OLT 300');
+define('E01_04', 'ASR-9010');
+define('E01_05', 'ASR-920');
+define('E01_06', 'OLT 300');
 
-define('G4TITLE', 'G.4	Verificación alarmas: Localmente y  Gestión Remota');
-define('G4_01', 'G.4.1	Corte AC');
-define('G4_02', 'G.4.2	Baterias en Descarga');
-define('G4_03', 'G.4.3	Falla Modulo');
+define('PTITLE1', 'Puertos Equipo 1');
+
+define('P01', 'Id');
+define('P02', 'Puerto');
+define('P03', 'Descripcion');
+define('P04', 'Posicion');
+define('P05', 'Observaciones');
+
+define('PTITLE2', 'Puertos Equipo 2');
+
+define('ETITLE2', 'E. Desarrollo de Rutina de Mantenimiento');
+define('E02_01', 'E.1 	Verificación y limpieza de estructura exterior (carcaza)');
+define('E02_02', 'E.2	Verificacion pintura del gabinete');
+define('E02_03', 'E.3	Verificación del estado general del equipamiento');
+define('E02_04', 'E.4	Verificación interior: MUX , SDH , MODEMS ,equipos IPNGN, etc.');
+define('E02_05', 'E.5	Verificación cableado ( fibra y cobre)');
+define('E02_06', 'E.6	Verificación de estado DDF y conectores');
+define('E02_07', 'E.7	Verificación de sensores de alarmas');
+define('E02_08', 'E.8	Verificación de protectores de transientes');
+define('E02_09', 'E.9	Verificación de protectores de líneas de abonados');
+define('E02_10', 'E.10	Limpieza de polvo interior');
+define('E02_11', 'E.11	Verificación de alarmas sobre tarjetas');
+define('E02_12', 'E.12	Verificación de alarmas de ups');
+define('E02_13', 'E.13	Verificación de alarmas de rectificador');
+define('E02_14', 'E.14	Reporte  de alarmas al NOC (AC-BAT- RECTIF)');
+define('E02_15', 'E.15	Verificación de existencia de F.O de reserva');
+define('E02_16', 'E.16	Etiquetado de equipos y cables');
+define('E02_17', 'E.17	Temperatura');
+define('E02_18', 'E.18	Estado de los LED`s');
+define('E02_19', 'E.19	Verificación cableado de Pach-Cords opticos');
+define('E02_20', 'E.20	Verificación cableado de Energia');
+define('E02_21', 'E.21	Limpieza del ambiente');
+
+define('FTITLE', 'F. Reporte fotográfico');
+
 
 ?>

@@ -472,7 +472,7 @@ $p_10_01 = $p_puerto12_p->p_10_01; $p_10_02 = $p_puerto12_p->p_10_02; $p_10_03 =
                     </tr>
 
                     <tr>
-                        <td class="col-xl-1">4</td>
+                        <td class="col-xl-1"> </td>
                         <td colspan="6"></td>
                     </tr>
 
@@ -567,7 +567,7 @@ $p_10_01 = $p_puerto12_p->p_10_01; $p_10_02 = $p_puerto12_p->p_10_02; $p_10_03 =
                     </tr>
 
                     <tr>
-                        <td class="col-xl-1">4</td>
+                        <td class="col-xl-1"></td>
                         <td colspan="6"></td>
                     </tr>
 

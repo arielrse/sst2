@@ -16,31 +16,65 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
 
     /** g_desarrollo **/
 
-    $g_desarrollo = $obj->{'g_desarrollo'};
-    $f1_01_01 = $g_desarrollo->f1_01_01 ? $check : $uncheck; $f1_01_02 = $g_desarrollo->f1_01_02 ? $check : $uncheck; $f1_01_03 = $g_desarrollo->f1_01_03;
-    $g1_01_01 = $g_desarrollo->g1_01_01 ? $check : $uncheck; $g1_01_02 = $g_desarrollo->g1_01_02 ? $check : $uncheck; $g1_01_03 = $g_desarrollo->g1_01_03;
-    $g1_02_01 = $g_desarrollo->g1_02_01 ? $check : $uncheck; $g1_02_02 = $g_desarrollo->g1_02_02 ? $check : $uncheck; $g1_02_03 = $g_desarrollo->g1_02_03;
-    $g1_03_01 = $g_desarrollo->g1_03_01 ? $check : $uncheck; $g1_03_02 = $g_desarrollo->g1_03_02 ? $check : $uncheck; $g1_03_03 = $g_desarrollo->g1_03_03;
-    $g1_04_01 = $g_desarrollo->g1_04_01 ? $check : $uncheck; $g1_04_02 = $g_desarrollo->g1_04_02 ? $check : $uncheck; $g1_04_03 = $g_desarrollo->g1_04_03;
-    $g1_05_01 = $g_desarrollo->g1_05_01 ? $check : $uncheck; $g1_05_02 = $g_desarrollo->g1_05_02 ? $check : $uncheck; $g1_05_03 = $g_desarrollo->g1_05_03;
-    $g1_06_01 = $g_desarrollo->g1_06_01 ? $check : $uncheck; $g1_06_02 = $g_desarrollo->g1_06_02 ? $check : $uncheck; $g1_06_03 = $g_desarrollo->g1_06_03;
-    $g1_07_01 = $g_desarrollo->g1_07_01 ? $check : $uncheck; $g1_07_02 = $g_desarrollo->g1_07_02;
-    $g1_08_01 = $g_desarrollo->g1_08_01 ? $check : $uncheck; $g1_08_02 = $g_desarrollo->g1_08_02;
-    $g1_09_01 = $g_desarrollo->g1_09_01 ? $check : $uncheck; $g1_09_02 = $g_desarrollo->g1_09_02 ? $check : $uncheck; $g1_09_03 = $g_desarrollo->g1_09_03;
-    $g1_10_01 = $g_desarrollo->g1_10_01 ? $check : $uncheck; $g1_10_02 = $g_desarrollo->g1_10_02;
-    $g1_11_01 = $g_desarrollo->g1_11_01 ? $check : $uncheck; $g1_11_02 = $g_desarrollo->g1_11_02 ? $check : $uncheck; $g1_11_03 = $g_desarrollo->g1_11_03;
-    $g1_12_01 = $g_desarrollo->g1_12_01 ? $check : $uncheck; $g1_12_02 = $g_desarrollo->g1_12_02 ? $check : $uncheck; $g1_12_03 = $g_desarrollo->g1_12_03;
-    $g1_13_01 = $g_desarrollo->g1_13_01;                  $g1_13_02 = $g_desarrollo->g1_13_02;                  $g1_13_03 = $g_desarrollo->g1_13_03;
-    $g1_14_01 = $g_desarrollo->g1_14_01;                  $g1_14_02 = $g_desarrollo->g1_14_02;                  $g1_14_03 = $g_desarrollo->g1_14_03;
-    $g1_15_01 = $g_desarrollo->g1_15_01;
-    $g1_16_01 = $g_desarrollo->g1_16_01;                  $g1_16_02 = $g_desarrollo->g1_16_02;
-    $g1_17_01 = $g_desarrollo->g1_17_01;                  $g1_17_02 = $g_desarrollo->g1_17_02;
-    $g1_18_01 = $g_desarrollo->g1_18_01 ? $check : $uncheck; $g1_18_02 = $g_desarrollo->g1_18_02 ? $check : $uncheck;
-    $g1_19_01 = $g_desarrollo->g1_19_01 ? $check : $uncheck; $g1_19_02 = $g_desarrollo->g1_19_02 ? $check : $uncheck;
-    $g1_20_01 = $g_desarrollo->g1_20_01;
-    $g1_21_01 = $g_desarrollo->g1_21_01 ? $check : $uncheck; $g1_21_02 = $g_desarrollo->g1_21_02 ? $check : $uncheck; $g1_21_03 = $g_desarrollo->g1_21_03 ? $check : $uncheck; $g1_21_04 = $g_desarrollo->g1_21_04 ? $check : $uncheck;
-    $g1_22_01 = $g_desarrollo->g1_22_01 ? $check : $uncheck; $g1_22_02 = $g_desarrollo->g1_22_02 ? $check : $uncheck; $g1_22_03 = $g_desarrollo->g1_22_03 ? $check : $uncheck; $g1_22_04 = $g_desarrollo->g1_22_04 ? $check : $uncheck;
-    $g1_23_01 = $g_desarrollo->g1_23_01 ? $check : $uncheck; $g1_23_02 = $g_desarrollo->g1_23_02 ? $check : $uncheck; $g1_23_03 = $g_desarrollo->g1_23_03 ? $check : $uncheck; $g1_23_04 = $g_desarrollo->g1_23_04 ? $check : $uncheck;
+   $d_relevamiento_d1 = $obj->{'d_relevamiento_d1'};
+    $d1_01_01 = $d_relevamiento_d1->d1_01_01;
+    $d1_02_01 = $d_relevamiento_d1->d1_02_01;
+    $d1_03_01 = $d_relevamiento_d1->d1_03_01;
+
+    /**  e1_equipo_e1_e1 **/
+    $e1_equipo_e1 = $obj->{'e1_equipo_e1'};
+//$e_01_01 = $e1_equipo_e1->d_01_01; $d_01_02 = $e1_equipo_e1->e_01_02;
+    $e1_01_01 = $e1_equipo_e1->e1_01_01; $e1_01_02 = $e1_equipo_e1->e1_01_02; $e1_01_03 = $e1_equipo_e1->e1_01_03; $e1_01_04 = $e1_equipo_e1->e1_01_04; $e1_01_05 = $e1_equipo_e1->e1_01_05;
+    $e1_02_01 = $e1_equipo_e1->e1_02_01; $e1_02_02 = $e1_equipo_e1->e1_02_02; $e1_02_03 = $e1_equipo_e1->e1_02_03; $e1_02_04 = $e1_equipo_e1->e1_02_04; $e1_02_05 = $e1_equipo_e1->e1_02_05;
+    $e1_03_01 = $e1_equipo_e1->e1_03_01; $e1_03_02 = $e1_equipo_e1->e1_03_02; $e1_03_03 = $e1_equipo_e1->e1_03_03; $e1_03_04 = $e1_equipo_e1->e1_03_04; $e1_03_05 = $e1_equipo_e1->e1_03_05;
+    $e1_04_01 = $e1_equipo_e1->e1_04_01; $e1_04_02 = $e1_equipo_e1->e1_04_02; $e1_04_03 = $e1_equipo_e1->e1_04_03; $e1_04_04 = $e1_equipo_e1->e1_04_04; $e1_04_05 = $e1_equipo_e1->e1_04_05;
+    $e1_05_01 = $e1_equipo_e1->e1_05_01; $e1_05_02 = $e1_equipo_e1->e1_05_02; $e1_05_03 = $e1_equipo_e1->e1_05_03; $e1_05_04 = $e1_equipo_e1->e1_05_04; $e1_05_05 = $e1_equipo_e1->e1_05_05;
+    $e1_06_01 = $e1_equipo_e1->e1_06_01; $e1_06_02 = $e1_equipo_e1->e1_06_02; $e1_06_03 = $e1_equipo_e1->e1_06_03; $e1_06_04 = $e1_equipo_e1->e1_06_04; $e1_06_05 = $e1_equipo_e1->e1_06_05;
+    $e1_07_01 = $e1_equipo_e1->e1_07_01; $e1_07_02 = $e1_equipo_e1->e1_07_02; $e1_07_03 = $e1_equipo_e1->e1_07_03; $e1_07_04 = $e1_equipo_e1->e1_07_04; $e1_07_05 = $e1_equipo_e1->e1_07_05;
+    $e1_08_01 = $e1_equipo_e1->e1_08_01; $e1_08_02 = $e1_equipo_e1->e1_08_02; $e1_08_03 = $e1_equipo_e1->e1_08_03; $e1_08_04 = $e1_equipo_e1->e1_08_04; $e1_08_05 = $e1_equipo_e1->e1_08_05;
+    $e1_09_01 = $e1_equipo_e1->e1_09_01; $e1_09_02 = $e1_equipo_e1->e1_09_02; $e1_09_03 = $e1_equipo_e1->e1_09_03; $e1_09_04 = $e1_equipo_e1->e1_09_04; $e1_09_05 = $e1_equipo_e1->e1_09_05;
+    $e1_10_01 = $e1_equipo_e1->e1_10_01; $e1_10_02 = $e1_equipo_e1->e1_10_02; $e1_10_03 = $e1_equipo_e1->e1_10_03; $e1_10_04 = $e1_equipo_e1->e1_10_04; $e1_10_05 = $e1_equipo_e1->e1_10_05;
+    $e1_11_01 = $e1_equipo_e1->e1_11_01; $e1_11_02 = $e1_equipo_e1->e1_11_02; $e1_11_03 = $e1_equipo_e1->e1_11_03; $e1_11_04 = $e1_equipo_e1->e1_11_04; $e1_11_05 = $e1_equipo_e1->e1_11_05;
+    $e1_12_01 = $e1_equipo_e1->e1_12_01; $e1_12_02 = $e1_equipo_e1->e1_12_02; $e1_12_03 = $e1_equipo_e1->e1_12_03; $e1_12_04 = $e1_equipo_e1->e1_12_04; $e1_12_05 = $e1_equipo_e1->e1_12_05;
+    $e1_13_01 = $e1_equipo_e1->e1_13_01; $e1_13_02 = $e1_equipo_e1->e1_13_02; $e1_13_03 = $e1_equipo_e1->e1_13_03; $e1_13_04 = $e1_equipo_e1->e1_13_04; $e1_13_05 = $e1_equipo_e1->e1_13_05;
+    $e1_14_01 = $e1_equipo_e1->e1_14_01; $e1_14_02 = $e1_equipo_e1->e1_14_02; $e1_14_03 = $e1_equipo_e1->e1_14_03; $e1_14_04 = $e1_equipo_e1->e1_14_04; $e1_14_05 = $e1_equipo_e1->e1_14_05;
+
+//$f1_01_01 = $g_desarrollo_g1->f1_01_01 ? $check : $uncheck; $f1_01_02 = $g_desarrollo->f1_01_02 ? $check : $uncheck; $f1_01_03 = $g_desarrollo_g1->f1_01_03;
+
+    $p_puerto12_p = $obj->{'p_puerto12_p'};
+    $p_01_01 = $p_puerto12_p->p_01_01; $p_01_02 = $p_puerto12_p->p_01_02; $p_01_03 = $p_puerto12_p->p_01_03;
+    $p_02_01 = $p_puerto12_p->p_02_01; $p_02_02 = $p_puerto12_p->p_02_02; $p_02_03 = $p_puerto12_p->p_02_03;
+    $p_03_01 = $p_puerto12_p->p_03_01; $p_03_02 = $p_puerto12_p->p_03_02; $p_03_03 = $p_puerto12_p->p_03_03;
+    $p_04_01 = $p_puerto12_p->p_04_01; $p_04_02 = $p_puerto12_p->p_04_02; $p_04_03 = $p_puerto12_p->p_04_03;
+    $p_05_01 = $p_puerto12_p->p_05_01; $p_05_02 = $p_puerto12_p->p_05_02; $p_05_03 = $p_puerto12_p->p_05_03;
+    $p_06_01 = $p_puerto12_p->p_06_01; $p_06_02 = $p_puerto12_p->p_06_02; $p_06_03 = $p_puerto12_p->p_06_03;
+    $p_07_01 = $p_puerto12_p->p_07_01; $p_07_02 = $p_puerto12_p->p_07_02; $p_07_03 = $p_puerto12_p->p_07_03;
+    $p_08_01 = $p_puerto12_p->p_08_01; $p_08_02 = $p_puerto12_p->p_08_02; $p_08_03 = $p_puerto12_p->p_08_03;
+    $p_09_01 = $p_puerto12_p->p_09_01; $p_09_02 = $p_puerto12_p->p_09_02; $p_09_03 = $p_puerto12_p->p_09_03;
+    $p_10_01 = $p_puerto12_p->p_10_01; $p_10_02 = $p_puerto12_p->p_10_02; $p_10_03 = $p_puerto12_p->p_10_03;
+
+    $g_desarrollo_g1 = $obj->{'g_desarrollo_g1'};
+    $g1_01_01 = $g_desarrollo_g1->g1_01_01 ? $check : $uncheck; $g1_01_02 = $g_desarrollo_g1->g1_01_02 ? $check : $uncheck; $g1_01_03 = $g_desarrollo_g1->g1_01_03;
+    $g1_02_01 = $g_desarrollo_g1->g1_02_01 ? $check : $uncheck; $g1_02_02 = $g_desarrollo_g1->g1_02_02 ? $check : $uncheck; $g1_02_03 = $g_desarrollo_g1->g1_02_03;
+    $g1_03_01 = $g_desarrollo_g1->g1_03_01 ? $check : $uncheck; $g1_03_02 = $g_desarrollo_g1->g1_03_02 ? $check : $uncheck; $g1_03_03 = $g_desarrollo_g1->g1_03_03;
+    $g1_04_01 = $g_desarrollo_g1->g1_04_01 ? $check : $uncheck; $g1_04_02 = $g_desarrollo_g1->g1_04_02 ? $check : $uncheck; $g1_04_03 = $g_desarrollo_g1->g1_04_03;
+    $g1_05_01 = $g_desarrollo_g1->g1_05_01 ? $check : $uncheck; $g1_05_02 = $g_desarrollo_g1->g1_05_02 ? $check : $uncheck; $g1_05_03 = $g_desarrollo_g1->g1_05_03;
+    $g1_06_01 = $g_desarrollo_g1->g1_06_01 ? $check : $uncheck; $g1_06_02 = $g_desarrollo_g1->g1_06_02 ? $check : $uncheck; $g1_06_03 = $g_desarrollo_g1->g1_06_03;
+    $g1_07_01 = $g_desarrollo_g1->g1_07_01 ? $check : $uncheck; $g1_07_02 = $g_desarrollo_g1->g1_07_02 ? $check : $uncheck; $g1_07_03 = $g_desarrollo_g1->g1_07_03;
+    $g1_08_01 = $g_desarrollo_g1->g1_08_01 ? $check : $uncheck; $g1_08_02 = $g_desarrollo_g1->g1_08_02 ? $check : $uncheck; $g1_08_03 = $g_desarrollo_g1->g1_08_03;
+    $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? $check : $uncheck; $g1_09_02 = $g_desarrollo_g1->g1_09_02 ? $check : $uncheck; $g1_09_03 = $g_desarrollo_g1->g1_09_03;
+    $g1_10_01 = $g_desarrollo_g1->g1_10_01 ? $check : $uncheck; $g1_10_02 = $g_desarrollo_g1->g1_10_02 ? $check : $uncheck; $g1_10_03 = $g_desarrollo_g1->g1_10_03;
+    $g1_11_01 = $g_desarrollo_g1->g1_11_01 ? $check : $uncheck; $g1_11_02 = $g_desarrollo_g1->g1_11_02 ? $check : $uncheck; $g1_11_03 = $g_desarrollo_g1->g1_11_03;
+    $g1_12_01 = $g_desarrollo_g1->g1_12_01 ? $check : $uncheck; $g1_12_02 = $g_desarrollo_g1->g1_12_02 ? $check : $uncheck; $g1_12_03 = $g_desarrollo_g1->g1_12_03;
+    $g1_13_01 = $g_desarrollo_g1->g1_13_01 ? $check : $uncheck; $g1_13_02 = $g_desarrollo_g1->g1_13_02 ? $check : $uncheck; $g1_13_03 = $g_desarrollo_g1->g1_13_03;
+    $g1_14_01 = $g_desarrollo_g1->g1_14_01 ? $check : $uncheck; $g1_14_02 = $g_desarrollo_g1->g1_14_02 ? $check : $uncheck; $g1_14_03 = $g_desarrollo_g1->g1_14_03;
+    $g1_15_01 = $g_desarrollo_g1->g1_15_01 ? $check : $uncheck; $g1_15_02 = $g_desarrollo_g1->g1_15_02 ? $check : $uncheck; $g1_15_03 = $g_desarrollo_g1->g1_15_03;
+    $g1_16_01 = $g_desarrollo_g1->g1_16_01 ? $check : $uncheck; $g1_16_02 = $g_desarrollo_g1->g1_16_02 ? $check : $uncheck; $g1_16_03 = $g_desarrollo_g1->g1_16_03;
+    $g1_17_01 = $g_desarrollo_g1->g1_17_01 ? $check : $uncheck; $g1_17_02 = $g_desarrollo_g1->g1_17_02 ? $check : $uncheck; $g1_17_03 = $g_desarrollo_g1->g1_17_03;
+    $g1_18_01 = $g_desarrollo_g1->g1_18_01 ? $check : $uncheck; $g1_18_02 = $g_desarrollo_g1->g1_18_02 ? $check : $uncheck; $g1_18_03 = $g_desarrollo_g1->g1_18_03;
+    $g1_19_01 = $g_desarrollo_g1->g1_19_01 ? $check : $uncheck; $g1_19_02 = $g_desarrollo_g1->g1_19_02 ? $check : $uncheck; $g1_19_03 = $g_desarrollo_g1->g1_19_03;
+    $g1_20_01 = $g_desarrollo_g1->g1_20_01 ? $check : $uncheck; $g1_20_02 = $g_desarrollo_g1->g1_20_02 ? $check : $uncheck; $g1_20_03 = $g_desarrollo_g1->g1_20_03;
+    $g1_21_01 = $g_desarrollo_g1->g1_21_01 ? $check : $uncheck; $g1_21_02 = $g_desarrollo_g1->g1_21_02 ? $check : $uncheck; $g1_21_03 = $g_desarrollo_g1->g1_21_03;
 
 
     $plantilla =
@@ -52,239 +86,129 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                 '. $cabecera .'
                 <main>
                     <div class="notices">
-                        <div class="notice"><strong>'.constant('FTITLE').'</strong></div>
+                        <div class="notice"><strong>'.constant('DTITLE').'</strong></div>
                     </div>
+                </main>
+                <main>
+                    <table>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <table class="tborder">
+                                                <tr>
+                                                    <td class="col-40p">'.constant('D01').'</td>
+                                                    <td class="col-60p">'.$d1_01_01.'</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="col-40p">'.constant('D02').'</td>
+                                                    <td class="col-60p">'.$d_02_01.'</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table class="tborder">
+                                               <tr>
+                                                    <td class="col-40p">'.constant('D03').'</td>
+                                                    <td class="col-60p">'.$d_03_01.'</td>
+                                               </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>   
+                            </td>
+                        </tr>
+                    </table>
                 </main>	
                 <main>
                     <table class="tborder">
                         <tbody>
                             <tr>
-                                <td class="col-40p">'.constant('F01').'</td>
-                                <td class="col-10p">'.$f1_01_01.' Si</td>
-                                <td class="col-10p">'.$f1_01_02.' No</td>
-                                <td class="col-10p">Obs.'.$f1_01_03.'</td>
-                               </tr>
-                             </tbody>        
-                    </table>									                        
-                </main>
-                <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td colspan="4"><strong>'.constant('G1').'</strong></td>
+                                <td class="col-10p"><strong>Id</strong></td>
+                                <td class="col-15p"><strong>Equipo</strong></td>
+                                <td class="col-15p"><strong>Existe</strong></td>
+                                <td class="col-15p"><strong>Estado</strong></td>
+                                <td class="col-15p"><strong>Energia</strong></td>
+                                <td class="col-15p"><strong>Cantidad de Puertos</strong></td>
+                                <td class="col-15p"><strong>Descripción Etiqueta Puerto UPLINK</strong></td>
                             </tr>
                             <tr>
-                                <td class="col-50p">'.constant('G1_01').'</td>
-                                <td class="col-15p">'.$g1_01_01.' Bueno</td>
-                                <td class="col-15p">'.$g1_01_02.' Deteriorado</td>
-                                <td class="col-15p">Obs. '.$g1_01_03.'</td>
+                                <td class="col-5p">1</td>
+                                <td class="col-15p">'.constant('E01').'</td>
+                                <td class="col-15p">'.$e1_01_01.'</td>
+                                <td class="col-15p">'.$e1_01_02.'</td>
+                                <td class="col-15p">'.$e1_01_03.'</td>
+                                <td class="col-15p">'.$e1_01_04.'</td>
+                                <td class="col-20p">'.$e1_01_05.'</td>
                             </tr>
                             <tr>
-                                <td class="col-50p">'.constant('G1_02').'</td>
-                                <td class="col-15p">'.$g1_02_01.' Bueno</td>
-                                <td class="col-15p">'.$g1_02_02.' Deteriorado</td>
-                                <td class="col-15p">Obs. '.$g1_02_03.'</td>
+                                <td class="col-5p">2</td>
+                                <td class="col-15p">'.constant('E02').'</td>
+                                <td class="col-15p">'.$e1_02_01.'</td>
+                                <td class="col-15p">'.$e1_02_02.'</td>
+                                <td class="col-15p">'.$e1_02_03.'</td>
+                                <td class="col-15p">'.$e1_02_04.'</td>
+                                <td class="col-20p">'.$e1_02_05.'</td>
                             </tr>
                             <tr>
-                                <td class="col-50p">'.constant('G1_03').'</td>
-                                <td class="col-15p">'.$g1_03_01.' Bueno</td>
-                                <td class="col-15p">'.$g1_03_02.' Malo</td>
-                                <td class="col-15p">Obs. '.$g1_03_03.'</td>
+                                <td class="col-5p">3</td>
+                                <td class="col-15p">'.constant('E03').'</td>
+                                <td class="col-15p">'.$e1_03_01.'</td>
+                                <td class="col-15p">'.$e1_03_02.'</td>
+                                <td class="col-15p">'.$e1_03_03.'</td>
+                                <td class="col-15p">'.$e1_03_04.'</td>
+                                <td class="col-20p">'.$e1_03_05.'</td>
                             </tr>
                             <tr>
-                                <td class="col-50p">'.constant('G1_04').'</td>
-                                <td class="col-15p">'.$g1_04_01.' Bueno</td>
-                                <td class="col-15p">'.$g1_04_02.' Malo</td>
-                                <td class="col-15p">Obs. '.$g1_04_03.'</td>
+                                <td class="col-5p">3</td>
+                                <td class="col-15p">'.constant('E04').'</td>
+                                <td class="col-15p">'.$e1_04_01.'</td>
+                                <td class="col-15p">'.$e1_04_02.'</td>
+                                <td class="col-15p">'.$e1_04_03.'</td>
+                                <td class="col-15p">'.$e1_04_04.'</td>
+                                <td class="col-20p">'.$e1_04_05.'</td>
                             </tr>
                             <tr>
-                                <td class="col-50p">'.constant('G1_05').'</td>
-                                <td class="col-15p">'.$g1_05_01.' Bueno</td>
-                                <td class="col-15p">'.$g1_05_02.' En falla</td>
-                                <td class="col-15p">Obs. '.$g1_05_03.'</td>
-                            </tr>
-                           
-                            <tr>
-                                <td class="col-50p">'.constant('G1_06').'</td>
-                                <td class="col-15p">'.$g1_06_01.' Bueno</td>
-                                <td class="col-15p">'.$g1_06_02.' Malo</td>
-                                <td class="col-15p">Obs. '.$g1_06_03.'</td>
-                            </tr>
-                        </tbody>        
-                    </table>									                        
-                </main>
-                <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td colspan="4"><strong>'.constant('G2TITLE').'</strong></td>
+                                <td class="col-5p">1</td>
+                                <td class="col-15p">'.constant('E05').'</td>
+                                <td class="col-15p">'.$e1_05_01.'</td>
+                                <td class="col-15p">'.$e1_05_02.'</td>
+                                <td class="col-15p">'.$e1_05_03.'</td>
+                                <td class="col-15p">'.$e1_05_04.'</td>
+                                <td class="col-20p">'.$e1_05_05.'</td>
                             </tr>
                             <tr>
-                                <td class="col-65p">'.constant('G2_01').'</td>
-                                <td class="col-15p">'.$g1_07_01.' Realizado</td>
-                                <td class="col-15p"></td>
-                                <td class="col-20p">Obs. '.$g1_07_02.'</td>
+                                <td class="col-5p">2</td>
+                                <td class="col-15p">'.constant('E06').'</td>
+                                <td class="col-15p">'.$e1_06_01.'</td>
+                                <td class="col-15p">'.$e1_06_02.'</td>
+                                <td class="col-15p">'.$e1_06_03.'</td>
+                                <td class="col-15p">'.$e1_06_04.'</td>
+                                <td class="col-20p">'.$e1_06_05.'</td>
                             </tr>
                             <tr>
-                                <td class="col-65p">'.constant('G2_02').'</td>
-                                <td class="col-15p">'.$g1_08_01.' Realizado</td>
-                                <td class="col-15p"></td>
-                                <td class="col-20p">Obs. '.$g1_08_02.'</td>
+                                <td class="col-5p">3</td>
+                                <td class="col-15p">'.constant('E07').'</td>
+                                <td class="col-15p">'.$e1_07_01.'</td>
+                                <td class="col-15p">'.$e1_07_02.'</td>
+                                <td class="col-15p">'.$e1_07_03.'</td>
+                                <td class="col-15p">'.$e1_07_04.'</td>
+                                <td class="col-20p">'.$e1_07_05.'</td>
                             </tr>
                             <tr>
-                                <td class="col-65p">'.constant('G2_03').'</td>
-                                <td class="col-15p">'.$g1_09_01.'No es necesario</td>
-                                <td class="col-15p">'.$g1_09_02.' Realizado</td>
-                                <td class="col-20p">Obs. '.$g1_09_03.' </td>
-                                 </tr>
-                            <tr>
-                                <td class="col-65p">'.constant('G2_04').'</td>
-                                <td class="col-15p">'.$g1_10_01.' Realizado</td>
-                                <td class="col-15p"></td>
-                                <td class="col-20p">Obs. '.$g1_10_02.'</td>
+                                <td class="col-5p">3</td>
+                                <td class="col-15p">'.constant('E08').'</td>
+                                <td class="col-15p">'.$e1_08_01.'</td>
+                                <td class="col-15p">'.$e1_08_02.'</td>
+                                <td class="col-15p">'.$e1_08_03.'</td>
+                                <td class="col-15p">'.$e1_08_04.'</td>
+                                <td class="col-20p">'.$e1_08_05.'</td>
                             </tr>
-                             <tr>
-                                <td class="col-65p">'.constant('G2_05').'</td>
-                                <td class="col-15p">'.$g1_11_01.' No es necesario</td>
-                                <td class="col-15p">'.$g1_11_02.' Realizado</td>
-                                <td class="col-20p">Obs. '.$g1_11_03.' </td>
-                             </tr>
-                             <tr>
-                                <td class="col-65p">'.constant('G2_06').'</td>
-                                <td class="col-15p">'.$g1_12_01.' No es necesario</td>
-                                <td class="col-15p">'.$g1_12_02.' Realizado</td>
-                                <td class="col-20p">Obs. '.$g1_12_03.' </td>
-                             </tr>
                         </tbody>        
                     </table>									                        
-                </main>
-                <main>
-                    <table border="1">
-                        <tbody>
-                            <tr>
-                                <td colspan="7"><strong>'.constant('G3TITLE').'</strong></td>
-                            </tr>
-                            <tr>
-                                <td class="col-25p">'.constant('G3_01').'</td>
-                                <td class="col-5p"> L1-N</td>
-                                <td class="col-20p num">'.  $g1_13_01 . '</td>
-                                <td class="col-5p"> L2-N</td>
-                                <td class="col-25p num">'.  $g1_13_02 . '</td>
-                                <td class="col-5p"> L3-N </td>
-                                 <td class="col-25p num">'.  $g1_13_03 . '</td>
-                            </tr>
-                        </tbody>        
-                    </table>
-                    <table border="1">
-                        <tbody>
-                            <tr>
-                                <td class="col-25p">'.constant('G3_02').'</td>
-                                <td class="col-20p num">'.  $g1_14_01 . '</td>
-                                <td class="col-5p"> L1</td>
-                                <td class="col-20p num">'.  $g1_14_02 . '</td>
-                                <td class="col-5p"> L2</td>
-                                <td class="col-25p num">'.  $g1_14_03 . '</td>
-                                <td class="col-5p"> L3 </td>
-                                
-                            </tr>
-                        </tbody>        
-                    </table>
-                    <table border="1">
-                        <tbody>
-                            
-                            <tr>
-                                <td class="col-40p">'.constant('G3_03').'</td>
-                                <td class="col-20p num">'.  $g1_15_01 . '</td>
-                                <td class="col-10p"> Hz </td>
-                                </tr>
-                        </tbody>        
-                    </table>
-                </main>
-                <main>
-                    <table border="1">
-                        <tbody>
-                            
-                             <tr>
-                                <td class="col-25p">'.constant('G3_04').'</td>
-                                <td class="col-20p num">'.  $g1_16_01 . '</td>
-                                <td class="col-5p"> V </td>
-                                <td class="col-20p ">'.constant('G3_04_01').'</td>
-                                <td class="col-5p num">'.  $g1_16_02 . '</td>
-                                <td class="col-5p"> A </td>
-                            </tr>
-                            <tr>
-                                <td class="col-25p">'.constant('G3_05').'</td>
-                                <td class="col-20p num">'.  $g1_17_01 . '</td>
-                                <td class="col-5p"> A </td>
-                                <td class="col-20p ">'.constant('G3_05_01').'</td>
-                                <td class="col-5p num">'.  $g1_17_02 . '</td>
-                                <td class="col-5p"> A </td>
-                                
-                            </tr>
-                        </tbody>        
-                    </table>
-                    <table border="1">
-                        <tbody>
-                             <tr>
-                                <td class="col-50p">'.constant('G3_06').'</td>
-                                <td class="col-15p">'.$g1_18_01.' Equilibrado</td>
-                                <td class="col-15p">'.$g1_18_02.' Desequilibrado</td>
-                             </tr>
-                             <tr>
-                                <td class="col-50p">'.constant('G3_07').'</td>
-                                <td class="col-15p">'.$g1_19_01.' Normal</td>
-                                <td class="col-15p">'.$g1_19_02.' Caliente</td>
-                             </tr>
-                        </tbody>        
-                    </table>
-                    <table border="1">
-                        <tbody>
-                             <tr>
-                                <td class="col-50p">'.constant('G3_08').'</td>
-                                <td class="col-15p num">'.$g1_20_01.'</td>
-                                <td class="col-15p">%</td>
-                             </tr>
-                            
-                        </tbody>        
-                    </table>
-                 </main>
-                <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td colspan="5"><strong>'.constant('G4TITLE').'</strong></td>
-                            </tr>
-                            <tr>
-                                <td class="col-40p"></td>
-                                <td class="col-15p"><strong>Local</strong></td>
-                                <td class="col-15p"></td>
-                                <td class="col-15p"><strong>Remoto</strong></td>
-                                <td class="col-15p"></td>
-                            </tr>
-                            <tr>
-                                <td class="col-40p">'.constant('G4_01').'</td>
-                                <td class="col-15p">'.$g1_21_01.' SI</td>
-                                <td class="col-15p">'.$g1_21_02.' NO</td>
-                                <td class="col-15p">'.$g1_21_03.' SI</td>
-                                <td class="col-15p">'.$g1_21_04.' NO</td>
-                            </tr>
-                            <tr>
-                                <td class="col-40p">'.constant('G4_02').'</td>
-                                <td class="col-15p">'.$g1_22_01.' SI</td>
-                                <td class="col-15p">'.$g1_22_02.' NO</td>
-                                <td class="col-15p">'.$g1_22_03.' SI</td>
-                                <td class="col-15p">'.$g1_22_04.' NO</td>
-                            </tr>22                           <tr>
-                                <td class="col-40p">'.constant('G4_03').'</td>
-                                <td class="col-15p">'.$g1_23_01.' SI</td>
-                                <td class="col-15p">'.$g1_23_02.' NO</td>
-                                <td class="col-15p">'.$g1_23_03.' SI</td>
-                                <td class="col-15p">'.$g1_23_04.' NO</td>
-                            </tr>
-                           
-                            </tbody>        
-                    </table>									                        
-                </main>
+               </main>
+               
                   '. $footerPlantilla .'    
                 </div>
             </div>
