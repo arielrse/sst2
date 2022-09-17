@@ -30,5 +30,14 @@ define('G2_04', 'G.2.4	Limpieza y ajuste perno de sujeción  varillas/ bajante d
 define('G3TITLE', 'G.3	Mediciones');
 define('G3_01', 'G.3.1	Medición de tensión salida del transformador (V)');
 define('G3_02', 'G.3.2	Medición de corriente de operación salida transformador (A)');
+define('G3_03', 'G.3.3	Medida independiente  puesta a tierra solo Varillas en  Punto  de Transformador');
+define('G3_04', 'G.3.4	Medida sistema completo puesta a tierra en Punto de Transformador');
+define('G3_05', 'G.3.5	Medida independiente  puesta a tierra solo Varillas en  Punto  de Arranque');
+define('G3_06', 'G.3.6	Medida sistema completo puesta a tierra en Punto de Arranque');
+
+
+
+
+
 
 ?>

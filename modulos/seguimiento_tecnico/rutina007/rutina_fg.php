@@ -27,9 +27,10 @@ $g1_21_01 = $g_desarrollo->g1_21_01; $g1_21_02 = $g_desarrollo->g1_21_02; $g1_21
 
 $g_desarrollo3 = $obj->{'g_desarrollo3'};
 
-$g3_01_01 = $g_desarrollo->g3_01_01; $g3_01_02 = $g_desarrollo->g3_01_02;
-$g3_02_01 = $g_desarrollo->g3_02_01; $g3_02_02 = $g_desarrollo->g3_02_02;
-$g3_03_01 = $g_desarrollo->g3_03_01; $g3_03_02 = $g_desarrollo->g3_03_02;
+$g3_01_01 = $g_desarrollo3->g3_01_01; $g3_01_02 = $g_desarrollo3->g3_01_02;
+$g3_02_01 = $g_desarrollo3->g3_02_01; $g3_02_02 = $g_desarrollo3->g3_02_02;
+$g3_03_01 = $g_desarrollo3->g3_03_01; $g3_03_02 = $g_desarrollo3->g3_03_02;
+$g3_04_01 = $g_desarrollo3->g3_04_01; $g3_04_02 = $g_desarrollo3->g3_04_02;
 
 ?>
 
@@ -508,12 +509,9 @@ $g3_03_01 = $g_desarrollo->g3_03_01; $g3_03_02 = $g_desarrollo->g3_03_02;
             <tr>
                 <td>G.3.3	Medida independiente  puesta a tierra solo Varillas en  Punto  de Transformador</td>
                 <td>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="g3_01_01" value="option1" <?php echo $g3_01_01 ?>>
-                        <label class="form-check-label" for="g3_01_01">Realizado</label>
-                    </div>
+                    <input type="text" class="form-control form-control-sm" id="g3_01_01" value="<?php echo $g3_01_01 ?>">
                 </td>
-                <td></td>
+                <td>(Ω)</td>
                 <td>
                     <input type="text" class="form-control form-control-sm" id="g3_01_02" placeholder="Obs." value="<?php echo $g3_01_02 ?>">
                 </td>
@@ -522,12 +520,9 @@ $g3_03_01 = $g_desarrollo->g3_03_01; $g3_03_02 = $g_desarrollo->g3_03_02;
             <tr>
                 <td>G.3.4	Medida sistema completo puesta a tierra en Punto de Transformador</td>
                 <td>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="g3_02_01" value="option1" <?php echo $g3_02_01 ?>>
-                        <label class="form-check-label" for="g3_02_01">(Ω)</label>
-                    </div>
+                    <input type="text" class="form-control form-control-sm" id="g3_02_01" value="<?php echo $g3_02_01 ?>">
                 </td>
-                <td></td>
+                <td>(Ω)</td>
                 <td>
                     <input type="text" class="form-control form-control-sm" id="g3_02_02" placeholder="Obs." value="<?php echo $g3_02_02 ?>">
                 </td>
@@ -536,12 +531,9 @@ $g3_03_01 = $g_desarrollo->g3_03_01; $g3_03_02 = $g_desarrollo->g3_03_02;
             <tr>
                 <td>G.3.5	Medida independiente  puesta a tierra solo Varillas en  Punto  de Arranque</td>
                 <td>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="g3_03_01" value="option1" <?php echo $g3_03_01 ?>>
-                        <label class="form-check-label" for="g3_03_01">(Ω)</label>
-                    </div>
+                    <input type="text" class="form-control form-control-sm" id="g3_03_01" value="<?php echo $g3_03_01 ?>">
                 </td>
-                <td></td>
+                <td>(Ω)</td>
                 <td>
                     <input type="text" class="form-control form-control-sm" id="g3_03_02" placeholder="Obs." value="<?php echo $g3_03_02 ?>">
                 </td>
@@ -549,12 +541,9 @@ $g3_03_01 = $g_desarrollo->g3_03_01; $g3_03_02 = $g_desarrollo->g3_03_02;
             <tr>
                 <td>G.3.6	Medida sistema completo puesta a tierra en Punto de Arranque</td>
                 <td>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="g3_04_01" value="option1" <?php echo $g3_04_01 ?>>
-                        <label class="form-check-label" for="g3_04_01">(Ω)</label>
-                    </div>
+                    <input type="text" class="form-control form-control-sm" id="g3_04_01" value="<?php echo $g3_04_01 ?>">
                 </td>
-                <td></td>
+                <td>(Ω)</td>
                 <td>
                     <input type="text" class="form-control form-control-sm" id="g3_04_02" placeholder="Obs." value="<?php echo $g3_04_02 ?>">
                 </td>
