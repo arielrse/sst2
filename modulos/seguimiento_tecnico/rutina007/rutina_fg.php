@@ -524,7 +524,7 @@ $g3_03_01 = $g_desarrollo->g3_03_01; $g3_03_02 = $g_desarrollo->g3_03_02;
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="g3_02_01" value="option1" <?php echo $g3_02_01 ?>>
-                        <label class="form-check-label" for="g3_02_01">Realizado</label>
+                        <label class="form-check-label" for="g3_02_01">(Ω)</label>
                     </div>
                 </td>
                 <td></td>
@@ -538,7 +538,7 @@ $g3_03_01 = $g_desarrollo->g3_03_01; $g3_03_02 = $g_desarrollo->g3_03_02;
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="g3_03_01" value="option1" <?php echo $g3_03_01 ?>>
-                        <label class="form-check-label" for="g3_03_01">Realizado</label>
+                        <label class="form-check-label" for="g3_03_01">(Ω)</label>
                     </div>
                 </td>
                 <td></td>
@@ -551,7 +551,7 @@ $g3_03_01 = $g_desarrollo->g3_03_01; $g3_03_02 = $g_desarrollo->g3_03_02;
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="g3_04_01" value="option1" <?php echo $g3_04_01 ?>>
-                        <label class="form-check-label" for="g3_04_01">Realizado</label>
+                        <label class="form-check-label" for="g3_04_01">(Ω)</label>
                     </div>
                 </td>
                 <td></td>
