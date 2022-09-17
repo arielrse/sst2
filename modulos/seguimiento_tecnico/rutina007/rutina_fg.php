@@ -25,6 +25,12 @@ $g1_19_01 = $g_desarrollo->g1_19_01 ? "checked" : ""; $g1_19_02 = $g_desarrollo-
 $g1_20_01 = $g_desarrollo->g1_20_01; $g1_20_02 = $g_desarrollo->g1_20_02; $g1_20_03 = $g_desarrollo->g1_20_03; $g1_20_04 = $g_desarrollo->g1_20_04; $g1_20_05 = $g_desarrollo->g1_20_05; $g1_20_06 = $g_desarrollo->g1_20_06;
 $g1_21_01 = $g_desarrollo->g1_21_01; $g1_21_02 = $g_desarrollo->g1_21_02; $g1_21_03 = $g_desarrollo->g1_21_03; $g1_21_04 = $g_desarrollo->g1_21_04; $g1_21_05 = $g_desarrollo->g1_21_05;
 
+$g_desarrollo3 = $obj->{'g_desarrollo3'};
+
+$g3_01_01 = $g_desarrollo->g3_01_01; $g3_01_02 = $g_desarrollo->g3_01_02;
+$g3_02_01 = $g_desarrollo->g3_02_01; $g3_02_02 = $g_desarrollo->g3_02_02;
+$g3_03_01 = $g_desarrollo->g3_03_01; $g3_03_02 = $g_desarrollo->g3_03_02;
+
 ?>
 
 <h6>F. Verificación Visual - Estado del Activo</h6>
@@ -455,17 +461,6 @@ $g1_21_01 = $g_desarrollo->g1_21_01; $g1_21_02 = $g_desarrollo->g1_21_02; $g1_21
 <div class="card">
     <div class="card-body">
 
-        <div class="row align-items-center row-cols-auto g-2 mb-2">
-            <div class="col">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-                </div>
-            </div>
-        </div>
-
-        <h6>G.3	Mediciones</h6>
-
         <div>
             <h7 class="mb-0">G.3.1 Medición de tensión  salida del transformador (V)</h7>
         </div>
@@ -508,6 +503,63 @@ $g1_21_01 = $g_desarrollo->g1_21_01; $g1_21_02 = $g_desarrollo->g1_21_02; $g1_21
             <span class="input-group-text">PE</span>
             <input type="text" class="form-control" id="g1_21_05" value="<?php echo $g1_21_05 ?>">
         </div>
+        <table class="table mb-0">
+            <tbody>
+            <tr>
+                <td>G.3.3	Medida independiente  puesta a tierra solo Varillas en  Punto  de Transformador</td>
+                <td>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="g3_01_01" value="option1" <?php echo $g3_01_01 ?>>
+                        <label class="form-check-label" for="g3_01_01">Realizado</label>
+                    </div>
+                </td>
+                <td></td>
+                <td>
+                    <input type="text" class="form-control form-control-sm" id="g3_01_02" placeholder="Obs." value="<?php echo $g3_01_02 ?>">
+                </td>
+            </tr>
 
+            <tr>
+                <td>G.3.4	Medida sistema completo puesta a tierra en Punto de Transformador</td>
+                <td>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="g3_02_01" value="option1" <?php echo $g3_02_01 ?>>
+                        <label class="form-check-label" for="g3_02_01">Realizado</label>
+                    </div>
+                </td>
+                <td></td>
+                <td>
+                    <input type="text" class="form-control form-control-sm" id="g3_02_02" placeholder="Obs." value="<?php echo $g3_02_02 ?>">
+                </td>
+            </tr>
+
+            <tr>
+                <td>G.3.5	Medida independiente  puesta a tierra solo Varillas en  Punto  de Arranque</td>
+                <td>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="g3_03_01" value="option1" <?php echo $g3_03_01 ?>>
+                        <label class="form-check-label" for="g3_03_01">Realizado</label>
+                    </div>
+                </td>
+                <td></td>
+                <td>
+                    <input type="text" class="form-control form-control-sm" id="g3_03_02" placeholder="Obs." value="<?php echo $g3_03_02 ?>">
+                </td>
+            </tr>
+            <tr>
+                <td>G.3.6	Medida sistema completo puesta a tierra en Punto de Arranque</td>
+                <td>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="g3_04_01" value="option1" <?php echo $g3_04_01 ?>>
+                        <label class="form-check-label" for="g3_04_01">Realizado</label>
+                    </div>
+                </td>
+                <td></td>
+                <td>
+                    <input type="text" class="form-control form-control-sm" id="g3_04_02" placeholder="Obs." value="<?php echo $g3_04_02 ?>">
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>

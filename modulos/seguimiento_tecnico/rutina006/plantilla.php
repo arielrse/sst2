@@ -567,11 +567,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                             </tr>
                             <tr>
                                 <td class="col-40p"></td>
-                                <td class="col-15p"><strong>Local</strong></td>
-                                <td class="col-15p"></td>
-                                <td class="col-15p"><strong>Remoto</strong></td>
-                                <td class="col-15p"></td>
-                            </tr>
+                                <td colspan="2"><strong>Local</strong></td>
+                                <td colspan="2"><strong>Remoto</strong></td>
+                           </tr>
                             <tr>
                                 <td class="col-40p">'.constant('G4_01').'</td>
                                 <td class="col-15p">'.$g4_01_01.' SI</td>

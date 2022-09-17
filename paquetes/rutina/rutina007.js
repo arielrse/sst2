@@ -51,6 +51,12 @@ $(document).ready(function() {
     var g1_20_01 = $('#g1_20_01').val(); var g1_20_02 = $('#g1_20_02').val(); var g1_20_03 = $('#g1_20_03').val(); var g1_20_04 = $('#g1_20_04').val(); var g1_20_05 = $('#g1_20_05').val(); var g1_20_06 = $('#g1_20_06').val();
     var g1_21_01 = $('#g1_21_01').val(); var g1_21_02 = $('#g1_21_02').val(); var g1_21_03 = $('#g1_21_03').val(); var g1_21_04 = $('#g1_21_04').val(); var g1_21_05 = $('#g1_21_05').val();
 
+    //    "g_desarrollo3":
+
+    var g3_01_01 =  $('#g3_01_01').val(); var g3_01_02 = $('#g3_01_02').val();
+    var g3_02_01 =  $('#g3_02_01').val(); var g3_02_02 = $('#g3_02_02').val();
+    var g3_03_01 =  $('#g3_03_01').val(); var g3_03_02 = $('#g3_03_02').val();
+    var g3_04_01 =  $('#g3_04_01').val(); var g3_04_02 = $('#g3_04_02').val();
 
     /** footer **/
     var h_pendientes        = $('#h_pendientes').val()
@@ -98,7 +104,10 @@ getDatos().then( (datos) => {
     datos.g_desarrollo.g1_20_01 = g1_20_01; datos.g_desarrollo.g1_20_02 = g1_20_02; datos.g_desarrollo.g1_20_03 = g1_20_03; datos.g_desarrollo.g1_20_04 = g1_20_04; datos.g_desarrollo.g1_20_05 = g1_20_05; datos.g_desarrollo.g1_20_06 = g1_20_06;
     datos.g_desarrollo.g1_21_01 = g1_21_01; datos.g_desarrollo.g1_21_02 = g1_21_02; datos.g_desarrollo.g1_21_03 = g1_21_03; datos.g_desarrollo.g1_21_04 = g1_21_04; datos.g_desarrollo.g1_21_05 = g1_21_05;
 
-
+    datos.g_desarrollo3.g3_01_01 = g3_01_01; datos.g_desarrollo3.g3_01_02 = g3_01_02;
+    datos.g_desarrollo3.g3_02_01 = g3_02_01; datos.g_desarrollo3.g3_02_02 = g3_02_02;
+    datos.g_desarrollo3.g3_03_01 = g3_03_01; datos.g_desarrollo3.g3_03_02 = g3_03_02;
+    datos.g_desarrollo3.g3_04_01 = g3_04_01; datos.g_desarrollo3.g3_04_02 = g3_04_02;
 
     datos.h_pendientes      = h_pendientes;
     datos.i_recomendaciones = i_recomendaciones;

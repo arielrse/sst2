@@ -368,17 +368,17 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                             </tr>
                             <tr>
                                 <td class="col-5p"> L1-N </td>
-                                <td class="col-10p"> '.  $g3_20_01 . '</td>
+                                <td class="col-10p"> '.  $g1_20_01 . '</td>
                                 <td class="col-5p"> L2-N </td>
-                                <td class="col-10p"> '.  $g3_20_02 . '</td>
+                                <td class="col-10p"> '.  $g1_20_02 . '</td>
                                 <td class="col-5p"> L3-N </td>
-                                <td class="col-10p"> '.  $g3_20_03 . '</td>
+                                <td class="col-10p"> '.  $g1_20_03 . '</td>
                                 <td class="col-5p"> L1-L2 </td>
-                                <td class="col-10p"> '.  $g3_20_04 . '</td>
+                                <td class="col-10p"> '.  $g1_20_04 . '</td>
                                 <td class="col-5p"> L1-L3 </td>
-                                <td class="col-10p"> '.  $g3_20_05 . '</td>
+                                <td class="col-10p"> '.  $g1_20_05 . '</td>
                                 <td class="col-5p"> L2-L2 </td>
-                                <td class="col-10p"> '.  $g3_20_06 . '</td>
+                                <td class="col-10p"> '.  $g1_20_06 . '</td>
                              </tr>
                         </tbody>        
                     </table>									                        
@@ -392,15 +392,15 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                             </tr>
                             <tr>
                                 <td class="col-5p"> L1 </td>
-                                <td class="col-15p"> '.  $g3_21_01 . '</td>
+                                <td class="col-15p"> '.  $g1_21_01 . '</td>
                                 <td class="col-5p"> L2 </td>
-                                <td class="col-15p"> '.  $g3_21_02 . '</td>
+                                <td class="col-15p"> '.  $g1_21_02 . '</td>
                                 <td class="col-5p"> L3 </td>
-                                <td class="col-15p"> '.  $g3_21_03 . '</td>
+                                <td class="col-15p"> '.  $g1_21_03 . '</td>
                                 <td class="col-5p"> N </td>
-                                <td class="col-15p"> '.  $g3_21_04 . '</td>
+                                <td class="col-15p"> '.  $g1_21_04 . '</td>
                                 <td class="col-5p"> PE </td>
-                                <td class="col-15p"> '.  $g3_21_05 . '</td>
+                                <td class="col-15p"> '.  $g1_21_05 . '</td>
                             </tr>
                             
                         </tbody>        
