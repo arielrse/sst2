@@ -15,7 +15,7 @@ define('E06', 'DSLAM-H');
 define('E07', 'DSLAM-Z');
 define('E08', 'OLT');
 
-define('ETITLE1', 'Equipo');
+//equipo
 define('E01_01', 'ASR-9010');
 define('E01_02', 'ASR-920');
 define('E01_03', 'OLT 300');
