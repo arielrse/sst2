@@ -93,7 +93,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                     <table>
                         <tr>
                             <td>
-                                <table>
+                                <table class="tborder">
                                     <tr>
                                         <td>
                                             <table class="tborder">
