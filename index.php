@@ -78,7 +78,7 @@ $sw = isset($_GET["sw"]) ? $_GET["sw"] : 0;
                                     <!--<a href="javascript:;" class="btn btn-facebook"><i class="bx bxl-facebook"></i>Sign in with Facebook</a>-->
                                 </div>
 
-                                <div class="login-separater text-center mb-4"> <span>INICIAR SESIÓN CON EL CORREO ELECTRÓNICO</span>
+                                <div class="login-separater text-center mb-4"> <span>INICIAR SESIÓN</span>
                                     <hr/>
                                 </div>
 
@@ -86,7 +86,7 @@ $sw = isset($_GET["sw"]) ? $_GET["sw"] : 0;
                                     <!--<form class="row g-3">-->
                                     <form class="row g-3" name="form" method="post" action="v0001.php">
                                         <div class="col-12">
-                                            <label for="inputEmailAddress" class="form-label">Dirección de correo electrónico</label>
+                                            <label for="inputEmailAddress" class="form-label">Nombre de usuario</label>
                                             <input type="text" class="form-control" name="santo" id="santo" placeholder="Correo electronico" value="ariel.siles@gmail.com">
 
                                         </div>

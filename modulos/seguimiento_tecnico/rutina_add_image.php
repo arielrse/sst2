@@ -74,7 +74,7 @@ function url_completa($forwarded_host = false) {
                     ?>
                     <div class="col-md-4">
                         <div class="img-thumbnail">
-                            <a href="../../fotos/dog-5357794__340.webp">
+                            <a href="../../fotos/<?php echo $row['imagen']; ?>" target="_blank">
                                 <img src="../../fotos/<?php echo $row['imagen']; ?>" alt="Lights" style="width:100%">
                                 <div class="caption">
                                     <!--<p><?php /*echo $row['nombre']; */?></p>-->
