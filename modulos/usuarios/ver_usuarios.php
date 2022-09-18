@@ -49,7 +49,8 @@ $consulta="SELECT id,CONCAT(nombre,' ',ap_pat,' ',ap_mat) AS nom,DATE_FORMAT(fec
                         <?php
                         $consulta = "SELECT u.`id`, concat(u.nombre, ' ', u.`ap_pat`, ' ', u.`ap_mat`) AS nombre, u.`cuenta`, u.`mail`, u.`nivel`, d.`nombre` as depto
                                     FROM usuarios u
-                                    LEFT JOIN departamento d ON u.`iddepartamento` = d.`iddepartamento`";
+                                    LEFT JOIN departamento d ON u.`iddepartamento` = d.`iddepartamento`
+                                    WHERE d.iddepartamento = ".$iddepartamento;
 
                         $resultado = mysqli_query($conexion, $consulta);
                         $filas	   = mysqli_num_rows($resultado);
@@ -60,6 +61,11 @@ $consulta="SELECT id,CONCAT(nombre,' ',ap_pat,' ',ap_mat) AS nom,DATE_FORMAT(fec
                             $href = $link_modulo."?path=modificar_usuario.php&id=".$dato['id'];
                             $btnEditar = "<a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>";
 
+                            $rolUsuario = "";
+                            if ($dato['nivel'] == 1) $rolUsuario = "Administrador";
+                            if ($dato['nivel'] == 2) $rolUsuario = "Tecnico";
+                            if ($dato['nivel'] == 3) $rolUsuario = "Cliente";
+
                             echo"
                             <tr>
                                 <td><center>".$dato['id']."</center></td>
@@ -67,7 +73,7 @@ $consulta="SELECT id,CONCAT(nombre,' ',ap_pat,' ',ap_mat) AS nom,DATE_FORMAT(fec
                                 <td><center>".$dato['cuenta']."</center></td>
                                 <td><center>".$dato['mail']."</center></td>
                                 <td><center>".$dato['depto']."</center></td>
-                                <td><center>".$dato['nivel']."</center></td>
+                                <td><center>".$rolUsuario."</center></td>
                                 <td><center>".$btnEditar."</center></td>
                             </tr>";
                         }

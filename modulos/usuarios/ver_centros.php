@@ -42,7 +42,8 @@
                         <?php
                         $consulta = "SELECT d.`codigo`, d.`nombre` AS nombreDepto, c.`nombre` AS nombreCentro
                                         FROM centro c
-                                        LEFT JOIN departamento d ON c.`iddepartamento` = d.`iddepartamento`";
+                                        LEFT JOIN departamento d ON c.`iddepartamento` = d.`iddepartamento`
+                                        WHERE d.iddepartamento = ".$iddepartamento;
 
                         $resultado = mysqli_query($conexion, $consulta);
 

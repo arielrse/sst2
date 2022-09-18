@@ -19,8 +19,6 @@
 
         <div class="row">
             <div class="col-xl-9 mx-auto">
-
-                <!--<div class="card">-->
                 <div class="card border-top border-0 border-4 border-primary">
 
                     <div class="card-body">
@@ -31,12 +29,19 @@
                         <form name="amper" method="post" action="<?=$link_modulo_r?>" onSubmit=" return VerifyOne ();">
                             <input type="hidden" name="path" value="nuevo_evento_r.php" />
 
-                            <!--<div class="row mb-3">
-                                <label for="inputEnterYourName" class="col-sm-3 col-form-label">Registrado por:</label>
+                            <div class="row mb-3">
+                                <label for="inputEnterYourName" class="col-sm-3 col-form-label">Centro de Mantenimiento:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputEnterYourName" value="<?/*=$nombrec;*/?>">
+                                    <select name="idcentro" id="ingreso_por" class="single-select">
+                                        <option value="0" selected class="title7"> Seleccionar... </option>
+                                        <?php
+                                        $resultado=mysqli_query($conexion, "SELECT idcentro, nombre, codigo FROM centro where iddepartamento = $iddepartamento");
+                                        while($dato=mysqli_fetch_array($resultado))
+                                            echo '<option value="'.$dato['idcentro'].'">'.$dato['nombre'].'</option>';
+                                        ?>
+                                    </select>
                                 </div>
-                            </div>-->
+                            </div>
 
                             <div class="row mb-3">
                                 <label for="inputEnterYourName" class="col-sm-3 col-form-label">Sitio:</label>
@@ -50,23 +55,9 @@
                                             $descripcion = $dato2['nombre'].' ('.$dato2['codsitio'].')';
                                             echo '<option value="'.$idsitio.'" ';
 
-                                            if( $idsitio == (!isset($dato) ? $dato['idsitio'] : '') ) echo 'selected';
+                                            //if( $idsitio == (!isset($dato) ? $dato['idsitio'] : '') ) echo 'selected';
                                             echo'>'. $descripcion .'</option>';
                                         }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="inputEnterYourName" class="col-sm-3 col-form-label">Centro de Mantenimiento:</label>
-                                <div class="col-sm-9">
-                                    <select name="idcentro" id="ingreso_por" class="single-select">
-                                        <option value="0" selected class="title7"> Seleccionar... </option>
-                                        <?php
-                                        $resultado=mysqli_query($conexion, "SELECT idcentro, nombre, codigo FROM centro where iddepartamento = $iddepartamento");
-                                        while($dato=mysqli_fetch_array($resultado))
-                                            echo '<option value="'.$dato['idcentro'].'">'.$dato['nombre'].'</option>';
                                         ?>
                                     </select>
                                 </div>
@@ -127,15 +118,20 @@
     </div>
 </div>
 
+<SCRIPT src="../../js/validador.js" type=text/javascript></SCRIPT>
+<script type=text/javascript>
+    function VerifyOne () {
+        if( validarSelect(document.amper.idcentro,'Seleccione el centro') &&
+            validarSelect(document.amper.sitio,'Seleccione el sitio') &&
+            validarSelect(document.amper.sitio,'Seleccione el sitio')&&
+            isNull( document.amper.fechainicio) &&
+            isNull( document.amper.fechafin) ) {
 
-<!--<script>
-    $(function () {
-        $('#fechainicio').bootstrapMaterialDatePicker({
-            time: false
-        });
-        $('#fechafin').bootstrapMaterialDatePicker({
-            time: false
-        });
-
-    });
-</script>-->
+            if(confirm("Las datos Son validos!\n Continuar el Registro con estos Datos?")) { return true; }
+            else { return false; }
+        }
+        else {
+            return false;
+        }
+    }
+</script>

@@ -107,15 +107,15 @@ $cel2    = $datoGp['cel2'];*/
                                 </div>
                             </a>
                         </li>
-                        <!--<li class="nav-item" role="presentation">
+                        <li class="nav-item" role="presentation">
                             <a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
                                 <div class="d-flex align-items-center">
-                                    <div class="tab-icon"><i class='bx bx-bookmark-alt font-18 me-1'></i>
+                                    <div class="tab-icon"><i class='bx bx-cabinet font-18 me-1'></i>
                                     </div>
-                                    <div class="tab-title">Archivos</div>
+                                    <div class="tab-title">Catastro</div>
                                 </div>
                             </a>
-                        </li>-->
+                        </li>
                         <!--<li class="nav-item" role="presentation">
                             <a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab" aria-selected="false">
                                 <div class="d-flex align-items-center">

@@ -1,5 +1,4 @@
 // JavaScript Document
-<!-- PROPIO DE MARCELO CHAVEZ DURAN
 var defaultEmptyOK = false
 
 
@@ -17,8 +16,8 @@ var pAlphanumeric = "ingrese un texto sin espacios que contenga solo letras, num
 var pAlphabetic   = "ingrese un texto que contenga solo letras y/o estos caracteres especiales: - . _";
 var pInteger = "ingrese un numero entero sin espacios";
 var pNumber = "ingrese un numero sin espacios";
-var pPhoneNumber = "ingrese un número de teléfono";
-var pEmail = "ingrese una dirección de correo electrónico válida";
+var pPhoneNumber = "ingrese un numero de telefono";
+var pEmail = "ingrese una direccion de correo electronico valida";
 var pName = "ingrese un texto que contenga solo letras, numeros, espacios y/o estos caracteres especiales: - . _";
 
 function makeArray(n) {
@@ -365,7 +364,7 @@ function ValidaHora( id )
         }   
         if ( !(er_fh.test( id.value )) )    
         {    
-                alert("El dato en el campo hora no es válido.");
+                alert("El dato en el campo hora no es vï¿½lido.");
 				id.focus();
                 return false   
         }              

@@ -50,7 +50,7 @@
                                     JOIN departamento d ON c.`iddepartamento` = d.`iddepartamento`
                                     JOIN usuarios u1    ON g.user1 = u1.id
                                     JOIN usuarios u2    ON g.user2 = u2.id
-                                    ";
+                                    WHERE d.iddepartamento = ".$iddepartamento;
 
                         $resultado = mysqli_query($conexion, $consulta);
 

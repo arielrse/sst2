@@ -50,7 +50,7 @@ $(function() {
 
   
 // chart 5
- var ctx = document.getElementById('chart5').getContext('2d');
+ /*var ctx = document.getElementById('chart5').getContext('2d');
 
       var gradientStroke1 = ctx.createLinearGradient(0, 0, 0, 300);
       gradientStroke1.addColorStop(0, '#17ead9');
@@ -97,7 +97,7 @@ $(function() {
             }
 
          }
-      });
+      });*/
 
 
    // chart 6
@@ -114,22 +114,13 @@ $(function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: [1, 2, 3, 4, 5, 6, 7, 8],
+          labels: ['CM_SUCRE', 'SCM_CAMARGO', 'SCM_MONTEAGUDO', 'SCM_MUYUPAMPA', 'SCM_PADILLA', 'SCM_SAN LUCAS', 'SCM_SOPACHUY'],
           datasets: [{
-            label: 'Laptops',
-            data: [40, 30, 60, 35, 60, 25, 50, 40],
+            label: 'Total',
+            data: [44, 9, 9, 9, 9, 9, 9],
             borderColor: gradientStroke3,
             backgroundColor: gradientStroke3,
             hoverBackgroundColor: gradientStroke3,
-            pointRadius: 0,
-            fill: false,
-            borderWidth: 1
-          }, {
-            label: 'Mobiles',
-            data: [50, 60, 40, 70, 35, 75, 30, 20],
-            borderColor: gradientStroke4,
-            backgroundColor: gradientStroke4,
-            hoverBackgroundColor: gradientStroke4,
             pointRadius: 0,
             fill: false,
             borderWidth: 1
@@ -168,10 +159,10 @@ $(function() {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: [1, 2, 3, 4, 5, 6, 7],
+          labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
           datasets: [{
             label: 'Views',
-            data: [3, 30, 10, 10, 22, 12, 5],
+            data: [11, 11, 11, 11, 9, 9, 9, 9, 9, 9],
             pointBorderWidth: 2,
             pointHoverBackgroundColor: gradientStroke1,
             backgroundColor: gradientStroke1,
@@ -376,7 +367,7 @@ jQuery('#dashboard-map').vectorMap(
       var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
-          labels: ["Samsung", "Apple", "Nokia"],
+          labels: ["Rural", "Urbano"],
           datasets: [{
             backgroundColor: [
               gradientStroke5,
@@ -390,7 +381,7 @@ jQuery('#dashboard-map').vectorMap(
               gradientStroke7
             ],
 
-            data: [50, 50, 50]
+            data: [21, 77]
           }]
         },
         options: {
@@ -407,7 +398,7 @@ jQuery('#dashboard-map').vectorMap(
 
 	  
 // chart 17
-var ctx = document.getElementById("chart17").getContext('2d');
+/*var ctx = document.getElementById("chart17").getContext('2d');
 
   var gradientStroke8 = ctx.createLinearGradient(0, 0, 0, 300);
       gradientStroke8.addColorStop(0, '#42e695');
@@ -450,7 +441,7 @@ var ctx = document.getElementById("chart17").getContext('2d');
 			  displayColors:false
             }
         }
-      });
+      });*/
 
 
 // chart 18
@@ -472,7 +463,7 @@ var ctx = document.getElementById("chart18").getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-          labels: ["Jeans", "T-Shirts", "Shoes"],
+          labels: ["NP", "NS"],
           datasets: [{
             backgroundColor: [
               gradientStroke11,
@@ -484,7 +475,7 @@ var ctx = document.getElementById("chart18").getContext('2d');
               gradientStroke12,
               gradientStroke13
             ],
-            data: [25, 25, 25]
+            data: [49, 49]
           }]
         },
         options: {

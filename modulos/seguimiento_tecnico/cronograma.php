@@ -41,23 +41,21 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
 
         <hr/>
 
+        <div class="row row-cols-auto g-3 mb-2">
+            <div class="col">
+                <input name="nuevoE" type="button" value="Nuevo" class="btn btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=nuevo_evento.php'" />
+            </div>
+        </div>
+
         <div class="card">
             <div class="card-body">
-
-                <div class="row row-cols-auto g-3">
-                        <div class="col">
-                            <input name="nuevoE" type="button" value="Nuevo" class="btn btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=nuevo_evento.php'" />
-                        </div>
-                </div>
-                <hr />
-
                 <div class="table-responsive">
-                    <!--<table id="example" class="table table-striped table-bordered" style="width:100%">-->
-                    <table id="table-mtto" class="table mb-0" style="width:100%">
-                        <thead class="table-light">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
                         <tr>
                             <th>Fecha</th>
-                            <th>Cod</th>
+                            <th>Centro</th>
+                            <th>ID Sitio</th>
                             <th>Sitio</th>
                             <th>Tipo</th>
                             <th>Grupo</th>
@@ -71,7 +69,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                         $res = mysqli_query($conexion, "SELECT g.idgrupo FROM grupo g WHERE g.user1 = '$id_user' OR    g.user2 = '$id_user'");
                         $dato = mysqli_fetch_array($res);
 
-                        $consulta = "SELECT e.`idevento`, s.`codsitio`, s.`nombre`, s.`tiponodo`, e.`inicio`, e.`fin`, g.idgrupo, g.`nombre` as grupo
+                        $consulta = "SELECT e.`idevento`, c.nombre as centro, s.`codsitio`, s.`nombre`, s.`tiponodo`, e.`inicio`, e.`fin`, g.idgrupo, g.`nombre` as grupo
                                      FROM evento e
                                      LEFT JOIN sitio s ON e.`idsitio` = s.`idsitio`
                                      LEFT JOIN grupo g ON e.`idgrupo` = g.`idgrupo`
@@ -97,6 +95,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                                 echo"
                                 <tr>
                                     <td>".$dato['inicio']."</td>
+                                    <td>".$dato['centro']."</td>
                                     <td>".$dato['codsitio']."</td>
                                     <td>".$dato['nombre']."</td>
                                     <td>".$dato['tiponodo']."</td>
@@ -111,23 +110,11 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                         }
 
                         ?>
-
                         </tbody>
-                        <tfoot class="table-light">
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Cod</th>
-                            <th>Sitio</th>
-                            <th>Tipo</th>
-                            <th>Grupo</th>
-                            <th>Acciones</th>
-                        </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>
         </div>
-
 
     </div>
 </div>

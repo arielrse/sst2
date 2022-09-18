@@ -8,7 +8,7 @@ $sw = isset($_GET["sw"]) ? $_GET["sw"] : 0;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--favicon-->
-    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
     <!--plugins-->
     <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
     <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
@@ -57,14 +57,14 @@ $sw = isset($_GET["sw"]) ? $_GET["sw"] : 0;
             <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
                 <div class="col mx-auto">
                     <div class="mb-4 text-center">
-                        <img src="assets/images/logo-img.png" width="180" alt="" />
+                        <img src="assets/images/logo-exsmecon.jpg" width="250" alt="" />
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <div class="border p-4 rounded">
                                 <div class="text-center">
                                     <h3 class="">Iniciar Sesión</h3>
-                                    <p>¿Aún no tienes una cuenta? <a href="#">Solicita aqui</a>
+                                    <p>Sistema de Seguimiento Técnico</a>
                                     </p>
                                 </div>
 
@@ -78,7 +78,7 @@ $sw = isset($_GET["sw"]) ? $_GET["sw"] : 0;
                                     <!--<a href="javascript:;" class="btn btn-facebook"><i class="bx bxl-facebook"></i>Sign in with Facebook</a>-->
                                 </div>
 
-                                <div class="login-separater text-center mb-4"> <span>INICIAR SESIÓN</span>
+                                <div class="login-separater text-center mb-4"> <!--<span>INICIAR SESIÓN</span>-->
                                     <hr/>
                                 </div>
 
@@ -97,14 +97,13 @@ $sw = isset($_GET["sw"]) ? $_GET["sw"] : 0;
                                                 <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <!--<div class="col-md-6">
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
                                                 <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 text-end">	<a href="#">Forgot Password ?</a>
-                                        </div>
+                                        </div>-->
+                                        <!--<div class="col-md-6 text-end">	<a href="#">Forgot Password ?</a></div>-->
                                         <div class="col-12">
                                             <div class="d-grid">
                                                 <button type="submit" class="btn btn-primary"><i class="bx bxs-lock-open"></i>Iniciar Sesi&oacute;n</button>

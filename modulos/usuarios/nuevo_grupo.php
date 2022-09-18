@@ -35,7 +35,7 @@
                                             <?php
                                                 $resultado = mysqli_query($conexion, "SELECT id,
                                                                                             concat(nombre, ' ', ap_pat, ' ', ap_mat) AS nombre  
-                                                                                            FROM usuarios where iddepartamento = '$iddepartamento'");
+                                                                                            FROM usuarios where iddepartamento = '$iddepartamento' AND nivel = 2");
                                                 while($dato=mysqli_fetch_array($resultado))
                                                     echo '<option value="'.$dato['id'].'">'.$dato['nombre'].'</option>';
                                             ?>
@@ -51,7 +51,7 @@
                                             <?php
                                             $resultado = mysqli_query($conexion, "SELECT id,
                                                                                             concat(nombre, ' ', ap_pat, ' ', ap_mat) AS nombre  
-                                                                                            FROM usuarios where iddepartamento = '$iddepartamento'");
+                                                                                            FROM usuarios where iddepartamento = '$iddepartamento' AND nivel = 2");
                                             while($dato=mysqli_fetch_array($resultado))
                                                 echo '<option value="'.$dato['id'].'">'.$dato['nombre'].'</option>';
                                             ?>
