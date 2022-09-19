@@ -87,18 +87,18 @@ $muser = "../modulos/usuarios.php?path=";
         </li>
 
         <li>
-            <a href="javascript:;">
-                <div class="parent-icon"><i class="bx bx-line-chart"></i>
+            <a href="<?=$muser?>ver_sitios.php">
+                <div class="parent-icon"><i class='bx bx-unite'></i>
                 </div>
-                <div class="menu-title">Estadisticas</div>
+                <div class="menu-title">Sitios de Mtto</div>
             </a>
         </li>
 
         <li>
-            <a href="#">
-                <div class="parent-icon"><i class='bx bx-unite'></i>
+            <a href="javascript:;">
+                <div class="parent-icon"><i class="bx bx-line-chart"></i>
                 </div>
-                <div class="menu-title">Sitios/Estaciones</div>
+                <div class="menu-title">Estadisticas</div>
             </a>
         </li>
 

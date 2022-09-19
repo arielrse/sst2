@@ -89,7 +89,6 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                         <tbody>
 
                         <?php
-                        //$fecha = '2022-07-28';
                         $consulta = "
                         SELECT *,
                             CONCAT( 
@@ -120,7 +119,6 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                             timestamp(fecha_fin_rif,hora_fin_rif)AS fecha_fin,
                             st_ticketn.observaciones
                             FROM 
-                        
                             st_ticketn
                             LEFT JOIN estacionentel ON st_ticketn.idnodo= estacionentel.idestacionentel
                             LEFT JOIN centro ON estacionentel.idcentro= centro.idcentro
@@ -131,8 +129,8 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                             LEFT JOIN ticket_equipofalla ON st_ticketn.idequipofalla= ticket_equipofalla.idequipofalla
                             LEFT JOIN ticket_tipofalla ON st_ticketn.idtipofalla= ticket_tipofalla.idtipofalla
                             LEFT JOIN ticket_solucion ON st_ticketn.idsolucion= ticket_solucion.idsolucion
-                            where
-                            st_ticketn.fecha_inicio_rif='$fecha'
+                            where st_ticketn.fecha_inicio_rif='$fecha'
+                            and centro.iddepartamento = '$iddepartamento'
                         )cn1";
 
                         $resultado = mysqli_query($conexion, $consulta);

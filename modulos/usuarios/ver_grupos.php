@@ -34,8 +34,8 @@
                                 <th>Departamento</th>
                                 <th>Centro</th>
                                 <th>Grupo</th>
-                                <th>Personal 1</th>
-                                <th>Personal 2</th>
+                                <th>Persona 1</th>
+                                <th>Persona 2</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
