@@ -134,7 +134,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                 if (data == -1)
                     noti_error_delete();
 
-                $("#table-mtto").load(window.location + " #table-mtto");
+                $("#example").load(window.location + " #example");
             }
             );
         }
