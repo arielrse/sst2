@@ -68,15 +68,7 @@ $sw = isset($_GET["sw"]) ? $_GET["sw"] : 0;
                                     </p>
                                 </div>
 
-                                <div class="d-grid">
-                                    <!--<a class="btn my-4 shadow-sm btn-white" href="javascript:;">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                            <img class="me-2" src="assets/images/icons/search.svg" width="16" alt="Image Description">
-                                            <span>Sign in with Google</span>
-										</span>
-                                    </a>-->
-                                    <!--<a href="javascript:;" class="btn btn-facebook"><i class="bx bxl-facebook"></i>Sign in with Facebook</a>-->
-                                </div>
+                                <div class="d-grid"></div>
 
                                 <div class="login-separater text-center mb-4"> <!--<span>INICIAR SESIÓN</span>-->
                                     <hr/>
