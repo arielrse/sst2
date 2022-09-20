@@ -1,4 +1,4 @@
-<?
+<?php
 session_start(); 
 require("../../funciones/motor.php");
 require("../funciones/verificar_sesion.php");

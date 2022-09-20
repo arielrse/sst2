@@ -1,4 +1,4 @@
-<?
+<?php
 if($nively=='1'){ $adm=1;}
 $nro = base64_decode($_GET["nro"]);
 $periodo = $_GET["periodo"];
@@ -9,7 +9,7 @@ Cronograma correspondiente al: <?=$periodo;?>
     &deg; PERIODO</caption>
 	<tr>
 	<td width="49%" valign="top">
-	<? 
+	<?php
 	$consulta="SELECT c.razon_social,s.declaracion_proyecto,date_format(s.fecha_inicio,'%d/%m/%Y'),date_format(s.fecha_final,'%d/%m/%Y'),concat(u.nombre, ' ', u.ap_pat),s.fecha_registro 
 FROM (st_proyecto s INNER JOIN clientes c ON s.id_cliente=c.id) INNER JOIN usuarios u ON s.id_usuario=u.id WHERE s.id_st_proyecto='".$nro."'";
 	$resultado=mysqli_query($conexion, $consulta);

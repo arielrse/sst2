@@ -116,15 +116,6 @@ $cel2    = $datoGp['cel2'];*/
                                 </div>
                             </a>
                         </li>
-                        <!--<li class="nav-item" role="presentation">
-                            <a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab" aria-selected="false">
-                                <div class="d-flex align-items-center">
-                                    <div class="tab-icon"><i class='bx bx-star font-18 me-1'></i>
-                                    </div>
-                                    <div class="tab-title">Imagen</div>
-                                </div>
-                            </a>
-                        </li>-->
                     </ul>
                     <div class="tab-content pt-3">
                         <div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
