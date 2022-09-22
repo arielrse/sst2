@@ -193,7 +193,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
                                             $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
                                             $hrefImg = "$link_modulo?path=rutina_add_image.php&rut=$idcatastro&propertyId=$propertyId&nombreForm=$nombreForm";
 
-                                            $eliminarRutina = "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutina(`$idcatastro`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
+                                            $eliminarRutina = "<a href='javascript:;' class='ms-3' id='btnEliminarCatastro' onclick='eliminarCatastro(`$idcatastro`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
                                             $addImagenes    = "<a href='$hrefImg' class='ms-3'><i class='bx bxs-image-add'></i></a>";
 
                                             echo "
@@ -246,7 +246,6 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
     }
 
     async function getDatosCatastro(codigoForm) {
-        alert(codigoForm)
         const url = "../../paquetes/catastro/data/catastro" + codigoForm +".json"
         const res = await fetch(url);
         const datosFetch = await res.json();
@@ -268,8 +267,21 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
         }
     }
 
+    function eliminarCatastro(idcatastro, codForm){
+
+        if (confirm('¿Esta seguro que desea eliminar el catastro? : ' + codForm)){
+            jQuery.post("../../paquetes/catastro/delete_catastro.php", {
+                    idcatastro: idcatastro,
+                    codForm: codForm
+                }, function(data){
+                    //alert('Data: ' + data);
+                    $("#table-catastro").load(window.location + " #table-catastro");
+                }
+            );
+        }
+    }
+
     function generarReporte(idrutina){
-        alert("Reporte PDF: " + idrutina);
         jQuery.post("../../modulos/seguimiento_tecnico/rutina001/loadReport.php", {
                 idrutina: idrutina,
             }, function(data){
@@ -322,9 +334,6 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
             var idformulario = splitForm[1];
             var evento       = <?php echo $idevento; ?>
 
-            alert('cod: ' + codigoForm);
-            alert('id: ' + idformulario);
-
             var cm = $('#cm').val();
             var sitioId = $('#sitioId').val();
             var propertyId = $('#propertyId').val();
@@ -334,8 +343,6 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
                     datos.cm = cm;
                     datos.sitioId = sitioId;
                     datos.propertyId = propertyId;
-
-                    alert('datos: ' + datos);
 
                     jQuery.post("../../paquetes/catastro/insert_catastro.php", {
                             idformulario: idformulario,
