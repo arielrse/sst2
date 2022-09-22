@@ -12,6 +12,7 @@ $codigoForm = $_GET['cform'];
         <hr/>
 
         <?php require("catastro_head.php"); ?>
+        <?php require("catastro001/catastro_d.php"); ?>
 
     </div>
 </div>

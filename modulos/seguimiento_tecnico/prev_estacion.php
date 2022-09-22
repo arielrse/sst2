@@ -246,7 +246,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
     }
 
     async function getDatosCatastro(codigoForm) {
-        alert(codigoForm)
+        //alert(codigoForm)
         const url = "../../paquetes/catastro/data/catastro" + codigoForm +".json"
         const res = await fetch(url);
         const datosFetch = await res.json();
@@ -322,8 +322,8 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
             var idformulario = splitForm[1];
             var evento       = <?php echo $idevento; ?>
 
-            alert('cod: ' + codigoForm);
-            alert('id: ' + idformulario);
+            //alert('cod: ' + codigoForm);
+            //alert('id: ' + idformulario);
 
             var cm = $('#cm').val();
             var sitioId = $('#sitioId').val();
@@ -335,7 +335,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
                     datos.sitioId = sitioId;
                     datos.propertyId = propertyId;
 
-                    alert('datos: ' + datos);
+                    //alert('datos: ' + datos);
 
                     jQuery.post("../../paquetes/catastro/insert_catastro.php", {
                             idformulario: idformulario,
