@@ -246,6 +246,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
     }
 
     async function getDatosCatastro(codigoForm) {
+        alert(codigoForm)
         const url = "../../paquetes/catastro/data/catastro" + codigoForm +".json"
         const res = await fetch(url);
         const datosFetch = await res.json();
@@ -282,6 +283,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
     }
 
     function generarReporte(idrutina){
+        alert("Reporte PDF: " + idrutina);
         jQuery.post("../../modulos/seguimiento_tecnico/rutina001/loadReport.php", {
                 idrutina: idrutina,
             }, function(data){

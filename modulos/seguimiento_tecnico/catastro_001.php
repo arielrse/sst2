@@ -11,7 +11,8 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">ENERGÍA COMERCIAL (ECM) - EXTENSIÓN DE ENERGÍA MEDIA TENSIÓN</h6>
         <hr/>
 
-        <?php require("catastro_head0.php"); ?>
+        <?php require("catastro_head.php"); ?>
+        <?php require("catastro001/catastro_d.php"); ?>
 
     </div>
 </div>

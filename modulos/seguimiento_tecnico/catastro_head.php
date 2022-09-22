@@ -47,10 +47,11 @@ $obj = json_decode($jsonCab);
 $cm                 = $obj->{'cm'};
 $sitioId            = $obj->{'sitioId'};
 $propertyId         = $obj->{'propertyId'};
-
+//falta algo el cod_activo
+$cod_activo         = $obj->{'cod_activo'};
+$indoor_outdoor     = $obj->{'indoor_outdoor'};
 $c_fechaRealizacion = $obj->{'c_fechaRealizacion'};
-$d_transcurrido     = $obj->{'d_transcurrido'};
-$e_personal         = $obj->{'e_personal'};
+
 
 /*$res4 = mysqli_query($conexion,
     "SELECT u.id, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nombre, u.`cargo`, u.`cel`
@@ -146,7 +147,7 @@ while( $data4 = mysqli_fetch_array($res4) ){
                     <td>Fecha de catastro:</td>
                     <td>
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" disabled value="<?php echo $c_fechaRealizacion ?>">
+                            <input type="date" class="form-control form-control-sm" id="c_fechaRealizacion" value="<?php echo $c_fechaRealizacion ?>">
                         </div>
                     </td>
                     <td>Localidad</td>
@@ -162,6 +163,27 @@ while( $data4 = mysqli_fetch_array($res4) ){
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control form-control-sm" disabled value="<?php echo $propertyId ?>">
                             <input type="hidden" name="propertyId" id="propertyId" value="<?=$propertyId?>" />
+                        </div>
+                    </td>
+                    <td>Indoor/Outdoor:</td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <select id="indoor_outdoor" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
+                                <option>Seleccionar...</option>
+                                <option value='INDOOR'>INDOOR</option>
+                                <option value='OUTDOOR'>OUTDOOR</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Código activo de energía:</td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="cod_activo" id="cod_activo" value="<?php echo $cod_activo ?>">
+                            <!--<input type="hidden" name="cod_activo" id="cod_activo" value="<?/*=$cod_activo*/?>" />-->
                         </div>
                     </td>
                 </tr>
