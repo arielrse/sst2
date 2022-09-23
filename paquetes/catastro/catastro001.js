@@ -18,6 +18,7 @@ var propertyId          = $('#propertyId').val();
 var c_fechaRealizacion  = $('#c_fechaRealizacion').val();
 var e_personal          = $('#e_personal').val();
 
+var indoor_outdoor      = $('#indoor_outdoor').val();
 var cod_activo          = $('#cod_activo').val();
 
 var d01_01 = $('#d01_01').val();
@@ -48,6 +49,7 @@ datos.sitioId            = sitioId;
 datos.propertyId         = propertyId;
 datos.c_fechaRealizacion = c_fechaRealizacion;
 datos.e_personal         = e_personal;
+datos.indoor_outdoor     = indoor_outdoor;
 datos.cod_activo         = cod_activo;
 
     /** desarrollo_d **/

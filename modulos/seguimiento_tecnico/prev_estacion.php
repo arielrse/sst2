@@ -25,8 +25,9 @@ $datoGp = mysqli_fetch_array($result);
 
 $propertyId  = $dato['nombre'];
 $sitioId     = $dato['codsitio'];
-$cm           = $dato['nombreCentro'];
-$fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/m/Y');
+$cm          = $dato['nombreCentro'];
+$fechaMtto   = $dato['inicio'];
+$fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y');
 ?>
 <input type="hidden" name="cm" id="cm" value="<?=$cm?>" />
 <input type="hidden" name="sitioId" id="sitioId" value="<?=$sitioId?>" />
@@ -34,6 +35,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
 <input type="hidden" id="nombre2" value="<?=$nombre2?>" />
 <input type="hidden" id="cargo2" value="<?=$cargo2?>" />
 <input type="hidden" id="cel2" value="<?=$cel2?>" />
+<input type="hidden" id="fechaMtto" value="<?=$fechaMtto?>" />
 
 
 
@@ -246,7 +248,6 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
     }
 
     async function getDatosCatastro(codigoForm) {
-        alert(codigoForm)
         const url = "../../paquetes/catastro/data/catastro" + codigoForm +".json"
         const res = await fetch(url);
         const datosFetch = await res.json();
@@ -300,6 +301,8 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
             var splitForm    = formulario.split("|");
             var codigoForm   = splitForm[0];
             var idformulario = splitForm[1];
+            var fechaMtto    = $('#fechaMtto').val();
+
             var evento       = <?php echo $idevento; ?>
 
             var cm = $('#cm').val();
@@ -311,6 +314,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
                     datos.cm = cm;
                     datos.sitioId = sitioId;
                     datos.propertyId = propertyId;
+                    datos.c_fechaRealizacion = fechaMtto;
 
                     jQuery.post("../../paquetes/rutina/insert_rutina.php", {
                         idformulario: idformulario,
@@ -334,6 +338,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
             var splitForm    = formulario.split("|");
             var codigoForm   = splitForm[0];
             var idformulario = splitForm[1];
+            var fechaMtto    = $('#fechaMtto').val();
             var evento       = <?php echo $idevento; ?>
 
             var cm = $('#cm').val();
@@ -345,6 +350,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $dato['inicio'])->format('d/
                     datos.cm = cm;
                     datos.sitioId = sitioId;
                     datos.propertyId = propertyId;
+                    datos.c_fechaRealizacion = fechaMtto;
 
                     jQuery.post("../../paquetes/catastro/insert_catastro.php", {
                             idformulario: idformulario,

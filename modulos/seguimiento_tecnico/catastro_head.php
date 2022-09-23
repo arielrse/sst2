@@ -69,6 +69,16 @@ while( $data4 = mysqli_fetch_array($res4) ){
     $hrefpdf = "../../modulos/$modulo/catastro$cform/reporte.php";
 }*/
 
+/* -------------------------------------------- */
+$inOutDoorArr = ["INDOOR", "OUTDOOR"];
+$inOutDoorOption = "<option>Seleccionar...</option>";
+foreach ($inOutDoorArr as $element){
+    $selected = "";
+    if ($indoor_outdoor == $element) $selected = "selected";
+
+    $inOutDoorOption .= "<option value='$element' $selected>".$element."</option>";
+}
+
 ?>
     <input type="hidden" id="catastroId" value="<?php echo $idcatastro ?>" />
 
@@ -90,8 +100,6 @@ while( $data4 = mysqli_fetch_array($res4) ){
             </div>
         </form>
     </div>
-
-    <h6>A. Identificación del Sitio</h6>
 
     <div class="card">
         <div class="card-body p-3">
@@ -169,9 +177,7 @@ while( $data4 = mysqli_fetch_array($res4) ){
                     <td>
                         <div class="input-group input-group-sm mb-2">
                             <select id="indoor_outdoor" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                <option>Seleccionar...</option>
-                                <option value='INDOOR'>INDOOR</option>
-                                <option value='OUTDOOR'>OUTDOOR</option>
+                                <?php echo $inOutDoorOption ?>
                             </select>
                         </div>
                     </td>
