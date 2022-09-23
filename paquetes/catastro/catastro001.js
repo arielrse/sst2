@@ -41,6 +41,7 @@ var d17_01 = $('#d17_01').val();
 var d18_01 = $('#d18_01').val(); var d18_02 = $('#d18_02').val();
 var d19_01 = $('#d19_01').val(); var d19_02 = $('#d19_02').val();
 
+var observaciones = $('#observaciones').val();
 
 getDatos().then( (datos) => {
 
@@ -51,7 +52,7 @@ datos.c_fechaRealizacion = c_fechaRealizacion;
 datos.e_personal         = e_personal;
 datos.indoor_outdoor     = indoor_outdoor;
 datos.cod_activo         = cod_activo;
-
+datos.observaciones      = observaciones;
     /** desarrollo_d **/
 datos.desarrollo_d.d01_01 = d01_01;
 datos.desarrollo_d.d02_01 = d02_01;

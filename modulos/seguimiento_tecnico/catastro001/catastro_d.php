@@ -21,6 +21,18 @@ $d16_01 = $desarrollo_d->d16_01; $d16_02 = $desarrollo_d->d16_02;
 $d17_01 = $desarrollo_d->d17_01;
 $d18_01 = $desarrollo_d->d18_01; $d18_02 = $desarrollo_d->d18_02;
 $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
+
+$observaciones = $obj->{'observaciones'};
+/* --------------------------------------------------------------------- */
+$funcionalidadArr = ["En servicio", "Fuera de servicio"];
+$funcionalidadOption = "<option>Seleccionar...</option>";
+foreach ($funcionalidadArr as $element){
+    $selected = "";
+    if ($d01_01 == $element) $selected = "selected";
+    $funcionalidadOption .= "<option value='$element' $selected>".$element."</option>";
+}
+/* --------------------------------------------------------------------- */
+
 ?>
 
 <div class="card">
@@ -39,12 +51,10 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                 <tbody>
                     <tr>
                         <td>Funcionalidad (en servicio/fuera de servicio)</td>
-                        <td>
+                        <td colspan="2">
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d01_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='En servicio'>En servicio</option>
-                                    <option value='Fuera de servicio'>Fuera de servicio</option>
+                                    <?php echo $funcionalidadOption ?>
                                 </select>
                             </div>
                         </td>
@@ -298,5 +308,13 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                     </tr>
                 </tbody>
         </table>
+
+        <h7 class="mb-0 text-uppercase">Otras observaciones</h7>
+
+        <div class="input-group">
+            <span class="input-group-text"></span>
+            <textarea class="form-control" aria-label="With textarea" id="observaciones"><?php echo $observaciones ?></textarea>
+        </div>
+
     </div>
 </div>
