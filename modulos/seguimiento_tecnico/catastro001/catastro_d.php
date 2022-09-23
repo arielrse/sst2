@@ -309,7 +309,7 @@ foreach ($funcionalidadArr as $element){
                 </tbody>
         </table>
 
-        <h7 class="mb-0 text-uppercase">Otras observaciones</h7>
+        <h7 class="mb-0 text-uppercase">Otras observaciones:</h7>
 
         <div class="input-group">
             <span class="input-group-text"></span>
