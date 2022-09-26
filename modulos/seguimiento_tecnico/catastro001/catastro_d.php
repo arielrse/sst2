@@ -21,6 +21,114 @@ $d16_01 = $desarrollo_d->d16_01; $d16_02 = $desarrollo_d->d16_02;
 $d17_01 = $desarrollo_d->d17_01;
 $d18_01 = $desarrollo_d->d18_01; $d18_02 = $desarrollo_d->d18_02;
 $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
+
+$observaciones = $obj->{'observaciones'};
+/* --------------------------------------------------------------------- */
+$funcionalidadArr = ["En servicio", "Fuera de servicio"];
+$funcionalidadOption = "<option>Seleccionar...</option>";
+foreach ($funcionalidadArr as $element){
+    $selected = "";
+    if ($d01_01 == $element) $selected = "selected";
+    $funcionalidadOption .= "<option value='$element' $selected>".$element."</option>";
+}
+/* --------------------------------------------------------------------- */
+$estadoArr = ["Obsoleto", "Falta de capacidad", "Con falla", "Sin observacion"];
+$estadoOption = "<option>Seleccionar...</option>";
+foreach ($estadoArr as $element){
+    $selected = "";
+    if ($d02_01 == $element) $selected = "selected";
+    $estadoOption .= "<option value='$element' $selected>".$element."</option>";
+}
+/* --------------------------------------------------------------------- */
+$derivacionArr = ["14,4", "19,9"];
+$derivacionOption = "<option>Seleccionar...</option>";
+foreach ($derivacionArr as $element){
+    $selected = "";
+    if ($d03_01 == $element) $selected = "selected";
+    $derivacionOption .= "<option value='$element' $selected>".$element."</option>";
+}
+/* --------------------------------------------------------------------- */
+$propiedadArr = ["ENTEL S.A.", "Empresa distribuidora"];
+$propiedadOption = "<option>Seleccionar...</option>";
+foreach ($propiedadArr as $element){
+    $selected = "";
+    if ($d04_01 == $element) $selected = "selected";
+    $propiedadOption .= "<option value='$element' $selected>".$element."</option>";
+}
+/* --------------------------------------------------------------------- */
+$tipo_posteArr = ["Madera tratada", "Concreto", "PRFV"];
+$tipo_posteOption = "<option>Seleccionar...</option>";
+foreach ($tipo_posteArr as $element){
+    $selected = "";
+    if ($d07_01 == $element) $selected = "selected";
+    $tipo_posteOption .= "<option value='$element' $selected>".$element."</option>";
+}
+/* --------------------------------------------------------------------- */
+$fusible_mt_en_partidaArr = ["Si", "No"];
+$fusible_mt_en_partidaOption = "<option>Seleccionar...</option>";
+foreach ($fusible_mt_en_partidaArr as $element){
+    $selected = "";
+    if ($d09_01 == $element) $selected = "selected";
+    $fusible_mt_en_partidaOption .= "<option value='$element' $selected>".$element."</option>";
+
+}
+/* --------------------------------------------------------------------- */
+$fusible_mt_en_transArr = ["Si", "No"];
+$fusible_mt_en_transOption = "<option>Seleccionar...</option>";
+foreach ($fusible_mt_en_transArr as $element){
+    $selected = "";
+    if ($d09_01 == $element) $selected = "selected";
+    $fusible_mt_en_transOption .= "<option value='$element' $selected>".$element."</option>";
+
+}
+/* --------------------------------------------------------------------- */
+$linea_mt_en_partidaArr = ["Si", "No"];
+$linea_mt_en_partidaOption = "<option>Seleccionar...</option>";
+foreach ($linea_mt_en_partidaArr as $element){
+    $selected = "";
+    if ($d11_01 == $element) $selected = "selected";
+    $linea_mt_en_partidaOption .= "<option value='$element' $selected>".$element."</option>";
+
+}
+/* --------------------------------------------------------------------- */
+
+$linea_mt_en_transArr = ["Si", "No"];
+$linea_mt_en_transOption = "<option>Seleccionar...</option>";
+foreach ($linea_mt_en_transArr as $element){
+    $selected = "";
+    if ($d12_01 == $element) $selected = "selected";
+    $linea_mt_en_transOption .= "<option value='$element' $selected>".$element."</option>";
+
+}
+/* --------------------------------------------------------------------- */
+$sist_transArr = ["Si", "No"];
+$sist_transOption = "<option>Seleccionar...</option>";
+foreach ($sist_transArr as $element){
+    $selected = "";
+    if ($d13_01 == $element) $selected = "selected";
+    $sist_transOption .= "<option value='$element' $selected>".$element."</option>";
+
+}
+/* --------------------------------------------------------------------- */
+$sist_de_pasoArr = ["Si", "No"];
+$sist_de_pasoOption = "<option>Seleccionar...</option>";
+foreach ($sist_de_pasoArr as $element){
+    $selected = "";
+    if ($d14_01 == $element) $selected = "selected";
+    $sist_de_pasoOption .= "<option value='$element' $selected>".$element."</option>";
+
+}
+/* --------------------------------------------------------------------- */
+$sist_de_bajaArr = ["Monofasico", "Bifasico", "Trifasico"];
+$sist_de_bajaOption = "<option>Seleccionar...</option>";
+foreach ($sist_de_bajaArr as $element){
+    $selected = "";
+    if ($d15_01 == $element) $selected = "selected";
+    $sist_de_bajaOption .= "<option value='$element' $selected>".$element."</option>";
+
+}
+/* --------------------------------------------------------------------- */
+
 ?>
 
 <div class="card">
@@ -39,57 +147,47 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                 <tbody>
                     <tr>
                         <td>Funcionalidad (en servicio/fuera de servicio)</td>
-                        <td>
+                        <td colspan="2">
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d01_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='En servicio'>En servicio</option>
-                                    <option value='Fuera de servicio'>Fuera de servicio</option>
+                                    <?php echo $funcionalidadOption ?>
                                 </select>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>Estado (obsoleto/falta de capacidad/con falla)</td>
-                        <td>
+                        <td colspan="2">
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d02_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='Obsoleto'>Obsoleto</option>
-                                    <option value='Con falla'>Falta de capacidad</option>
-                                    <option value='Con falla'>Con falla</option>
-                                    <option value='Sin observacion'>Sin observacion</option>
+                                    <?php echo $estadoOption ?>
                                 </select>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>Derivación de Media tensión  (MT), Tensión en primario - KV</td>
-                        <td>
+                        <td colspan="2">
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d03_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='14,4'>14,4</option>
-                                    <option value='19,9'>19,9</option>
+                                    <?php echo $derivacionOption ?>
                                 </select>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>Propiedad (Empresa distribuidora/ENTEL S.A.)</td>
-                        <td>
+                        <td colspan="2">
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d04_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='ENTEL S.A.'>ENTEL S.A.</option>
-                                    <option value='Empresa distribuidora'>Empresa distribuidora</option>
+                                    <?php echo $propiedadOption ?>
                                 </select>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>Empresa distribuidora de energía</td>
-                        <td>
+                        <td colspan="2">
                             <div class="input-group input-group-sm mb-2">
                                 <input type="text" class="form-control" id="d05_01" value="<?php echo $d05_01 ?>">
                             </div>
@@ -97,7 +195,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                     </tr>
                     <tr>
                         <td>Longitud de línea (MT) - Km</td>
-                        <td>
+                        <td colspan="2">
                             <div class="input-group input-group-sm mb-2">
                                 <input type="text" class="form-control" id="d06_01" value="<?php echo $d06_01 ?>">
                             </div>
@@ -108,10 +206,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d07_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='Madera tratada'>Madera tratada</option>
-                                    <option value='Concreto'>Concreto</option>
-                                    <option value='PRFV'>PRFV</option>
+                                    <?php echo $tipo_posteOption ?>
                                 </select>
                             </div>
                         </td>
@@ -123,7 +218,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                     </tr>
                     <tr>
                         <td>Largo total del poste - m</td>
-                        <td>
+                        <td colspan="2">
                             <div class="input-group input-group-sm mb-2">
                                 <input type="text" class="form-control" id="d08_01" value="<?php echo $d08_01 ?>">
                             </div>
@@ -134,9 +229,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d09_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='Si'>Si</option>
-                                    <option value='No'>No</option>
+                                    <?php echo $fusible_mt_en_partidaOption ?>
                                 </select>
                             </div>
                         </td>
@@ -151,9 +244,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d10_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='Si'>Si</option>
-                                    <option value='No'>No</option>
+                                    <?php echo $fusible_mt_en_transOption ?>
                                 </select>
                             </div>
                         </td>
@@ -168,9 +259,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d11_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='Si'>Si</option>
-                                    <option value='No'>No</option>
+                                    <?php echo $linea_mt_en_partidaOption ?>
                                 </select>
                             </div>
                         </td>
@@ -185,9 +274,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d12_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='Si'>Si</option>
-                                    <option value='No'>No</option>
+                                    <?php echo $linea_mt_en_transOption ?>
                                 </select>
                             </div>
                         </td>
@@ -202,9 +289,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d13_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='Si'>Si</option>
-                                    <option value='No'>No</option>
+                                    <?php echo $sist_transOption ?>
                                 </select>
                             </div>
                         </td>
@@ -219,9 +304,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d14_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='Si'>Si</option>
-                                    <option value='No'>No</option>
+                                    <?php echo $sist_de_pasoOption ?>
                                 </select>
                             </div>
                         </td>
@@ -236,10 +319,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <select id="d15_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                    <option>Seleccionar...</option>
-                                    <option value='Monofasico'>Monofasico</option>
-                                    <option value='Bifasico'>Bifasico</option>
-                                    <option value='Trifasico'>Trifasico</option>
+                                    <?php echo $sist_de_bajaOption ?>
                                 </select>
                             </div>
                         </td>
@@ -264,7 +344,7 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                     </tr>
                     <tr>
                         <td>Marca de transformador</td>
-                        <td>
+                        <td colspan="2">
                             <div class="input-group input-group-sm mb-2">
                                 <input type="text" class="form-control" id="d17_01" value="<?php echo $d17_01 ?>">
                             </div>
@@ -298,5 +378,13 @@ $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
                     </tr>
                 </tbody>
         </table>
+
+        <h7 class="mb-0 text-uppercase">Otras observaciones:</h7>
+
+        <div class="input-group">
+            <span class="input-group-text"></span>
+            <textarea class="form-control" aria-label="With textarea" id="observaciones"><?php echo $observaciones ?></textarea>
+        </div>
+
     </div>
 </div>
