@@ -202,7 +202,7 @@ foreach ($peinetaArr as $element){
                 <tr>
                     <td>Tipo del elemento de protección principal</td>
 
-                    <td colspan="2">
+                    <td>
                         <div class="input-group input-group-sm mb-2">
                             <select id="d10_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
                                 <?php echo $protec_principalOption ?>
@@ -212,7 +212,7 @@ foreach ($peinetaArr as $element){
                 </tr>
                 <tr>
                     <td>Protector de segundo nivel</td>
-                    <td colspan="2">
+                    <td>
                         <div class="input-group input-group-sm mb-2">
                             <select id="d11_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
                                 <?php echo $proteccionOption ?>
@@ -240,7 +240,7 @@ foreach ($peinetaArr as $element){
                 </tr>
                 <tr>
                     <td>Proyecto</td>
-                    <td colspan="2">
+                    <td>
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control" id="d14_01" value="<?php echo $d14_01 ?>">
                         </div>

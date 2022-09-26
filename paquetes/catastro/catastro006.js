@@ -1,5 +1,5 @@
 async function getDatos() {
-    const res = await fetch("../../paquetes/catastro/data/catastro004.json");
+    const res = await fetch("../../paquetes/catastro/data/catastro006.json");
     const datosFetch = await res.json();
     return datosFetch;
 }
@@ -25,22 +25,28 @@ var cod_activo          = $('#cod_activo').val();
 var d01_01 = $('#d01_01').val();
 var d02_01 = $('#d02_01').val();
 var d03_01 = $('#d03_01').val();
-var d04_01 = $('#d04_01').val();
+var d04_01 = $('#d04_01').val(); var d04_02 = $('#d04_02').val();
 var d05_01 = $('#d05_01').val();
 var d06_01 = $('#d06_01').val();
 var d07_01 = $('#d07_01').val();
 var d08_01 = $('#d08_01').val();
 var d09_01 = $('#d09_01').val();
-var d10_01 = $('#d10_01').val();
-var d11_01 = $('#d11_01').val();
-var d12_01 = $('#d12_01').val();
-var d13_01 = $('#d13_01').val();
-var d14_01 = $('#d14_01').val();
+var d10_01 = $('#d10_01').val(); var d10_02 = $('#d10_02').val();
+var d11_01 = $('#d11_01').val(); var d11_02 = $('#d11_02').val();
+var d12_01 = $('#d12_01').val(); var d12_02 = $('#d12_02').val();
+var d13_01 = $('#d13_01').val(); var d13_02 = $('#d13_02').val();
+var d14_01_01 = $('#d14_01_01').val(); var d14_01_02 = $('#d14_01_02').val();
+var d14_02_01 = $('#d14_02_01').val(); var d14_02_02 = $('#d14_02_02').val();
+var d14_03_01 = $('#d14_03_01').val(); var d14_03_02 = $('#d14_03_02').val();
+var d14_04_01 = $('#d14_04_01').val(); var d14_04_02 = $('#d14_04_02').val();
+var d14_05_01 = $('#d14_05_01').val(); var d14_05_02 = $('#d14_05_02').val();
+var d14_06_01 = $('#d14_06_01').val(); var d14_06_02 = $('#d14_06_02').val();
+var d14_07_01 = $('#d14_07_01').val(); var d14_07_02 = $('#d14_07_02').val();
+var d14_08_01 = $('#d14_08_01').val(); var d14_08_02 = $('#d14_08_02').val();
 var d15_01 = $('#d15_01').val();
 var d16_01 = $('#d16_01').val();
-
-
-        var observaciones = $('#observaciones').val();
+var d17_01 = $('#d17_01').val();
+var observaciones = $('#observaciones').val();
 
 getDatos().then( (datos) => {
 
@@ -56,19 +62,28 @@ datos.observaciones      = observaciones;
 datos.desarrollo_d.d01_01 = d01_01;
 datos.desarrollo_d.d02_01 = d02_01;
 datos.desarrollo_d.d03_01 = d03_01;
-datos.desarrollo_d.d04_01 = d04_01;
+datos.desarrollo_d.d04_01 = d04_01; datos.desarrollo_d.d04_02 = d04_02;
 datos.desarrollo_d.d05_01 = d05_01;
 datos.desarrollo_d.d06_01 = d06_01;
 datos.desarrollo_d.d07_01 = d07_01;
 datos.desarrollo_d.d08_01 = d08_01;
 datos.desarrollo_d.d09_01 = d09_01;
-datos.desarrollo_d.d10_01 = d10_01;
-datos.desarrollo_d.d11_01 = d11_01;
-datos.desarrollo_d.d12_01 = d12_01;
-datos.desarrollo_d.d13_01 = d13_01;
-datos.desarrollo_d.d14_01 = d14_01;
+datos.desarrollo_d.d10_01 = d10_01; datos.desarrollo_d.d10_02 = d10_02;
+datos.desarrollo_d.d11_01 = d11_01; datos.desarrollo_d.d11_02 = d11_02;
+datos.desarrollo_d.d12_01 = d12_01; datos.desarrollo_d.d12_02 = d12_02;
+datos.desarrollo_d.d13_01 = d13_01; datos.desarrollo_d.d13_02 = d13_02;
+datos.desarrollo_d.d14_01_01 = d14_01_01; datos.desarrollo_d.d14_01_02 = d14_01_02;
+datos.desarrollo_d.d14_02_01 = d14_02_01; datos.desarrollo_d.d14_02_02 = d14_02_02;
+datos.desarrollo_d.d14_03_01 = d14_03_01; datos.desarrollo_d.d14_03_02 = d14_03_02;
+datos.desarrollo_d.d14_04_01 = d14_04_01; datos.desarrollo_d.d14_04_02 = d14_04_02;
+datos.desarrollo_d.d14_05_01 = d14_05_01; datos.desarrollo_d.d14_05_02 = d14_05_02;
+datos.desarrollo_d.d14_06_01 = d14_06_01; datos.desarrollo_d.d14_06_02 = d14_06_02;
+datos.desarrollo_d.d14_07_01 = d14_07_01; datos.desarrollo_d.d14_07_02 = d14_07_02;
+datos.desarrollo_d.d14_08_01 = d14_08_01; datos.desarrollo_d.d14_08_02 = d14_08_02;
 datos.desarrollo_d.d15_01 = d15_01;
 datos.desarrollo_d.d16_01 = d16_01;
+datos.desarrollo_d.d17_01 = d17_01;
+
 
                 jQuery.post("../../paquetes/catastro/update_catastro.php", {
                     idcatastro: idcatastro,

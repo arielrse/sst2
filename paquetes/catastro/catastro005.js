@@ -1,5 +1,5 @@
 async function getDatos() {
-    const res = await fetch("../../paquetes/catastro/data/catastro003.json");
+    const res = await fetch("../../paquetes/catastro/data/catastro005.json");
     const datosFetch = await res.json();
     return datosFetch;
 }
