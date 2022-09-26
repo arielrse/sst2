@@ -49,9 +49,9 @@ $(document).ready(function() {
     var g1_19_01 = $('#g1_19_01').prop('checked'); var g1_19_02 = $('#g1_19_02').prop('checked'); var g1_19_03 = $('#g1_19_03').prop('checked'); var g1_19_04 = $('#g1_19_04').prop('checked');
 
     /** footer **/
-    var h_pendientes        = $('#h_pendientes').val()
-    var i_recomendaciones   = $('#i_recomendaciones').val()
-    var j_observaciones     = $('#j_observaciones').val()
+    var pendientes        = $('#pendientes').val()
+    var recomendaciones   = $('#recomendaciones').val()
+    var observaciones     = $('#observaciones').val()
 
 /** ------------------------ **/
 getDatos().then( (datos) => {
@@ -93,9 +93,9 @@ getDatos().then( (datos) => {
     datos.g_desarrollo.g1_19_01 = g1_19_01; datos.g_desarrollo.g1_19_02 = g1_19_02; datos.g_desarrollo.g1_19_03 = g1_19_03; datos.g_desarrollo.g1_19_04 = g1_19_04;
 
 
-    datos.h_pendientes      = h_pendientes;
-    datos.i_recomendaciones = i_recomendaciones;
-    datos.j_observaciones   = j_observaciones;
+    datos.pendientes      = pendientes;
+    datos.recomendaciones = recomendaciones;
+    datos.observaciones   = observaciones;
 
     //alert(JSON.stringify( datos ));
 

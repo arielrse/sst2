@@ -279,9 +279,9 @@ var g22_b13 = $('#g22_b13').val(); var g22_b14 = $('#g22_b14').val(); var g22_b1
 var g22_b19 = $('#g22_b19').val(); var g22_b20 = $('#g22_b20').val(); var g22_b21 = $('#g22_b21').val(); var g22_b22 = $('#g22_b22').val(); var g22_b23 = $('#g22_b23').val(); var g22_b24 = $('#g22_b24').val();
 
 /** footer **/
-var h_pendientes        = $('#h_pendientes').val()
-var i_recomendaciones   = $('#i_recomendaciones').val()
-var j_observaciones     = $('#j_observaciones').val()
+var pendientes        = $('#pendientes').val()
+var recomendaciones   = $('#recomendaciones').val()
+var observaciones     = $('#observaciones').val()
 
 getDatos().then( (datos) => {
 
@@ -574,9 +574,9 @@ datos.g22_medidas.g22_b07 = g22_b07; datos.g22_medidas.g22_b08 = g22_b08; datos.
 datos.g22_medidas.g22_b13 = g22_b13; datos.g22_medidas.g22_b14 = g22_b14; datos.g22_medidas.g22_b15 = g22_b15; datos.g22_medidas.g22_b16 = g22_b16; datos.g22_medidas.g22_b17 = g22_b17; datos.g22_medidas.g22_b18 = g22_b18;
 datos.g22_medidas.g22_b19 = g22_b19; datos.g22_medidas.g22_b20 = g22_b20; datos.g22_medidas.g22_b21 = g22_b21; datos.g22_medidas.g22_b22 = g22_b22; datos.g22_medidas.g22_b23 = g22_b23; datos.g22_medidas.g22_b24 = g22_b24;
 
-datos.h_pendientes      = h_pendientes;
-datos.i_recomendaciones = i_recomendaciones;
-datos.j_observaciones   = j_observaciones;
+datos.pendientes      = pendientes;
+datos.recomendaciones = recomendaciones;
+datos.observaciones   = observaciones;
 
                 jQuery.post("../../paquetes/rutina/update_rutina.php", {
                     idrutina: idrutina,

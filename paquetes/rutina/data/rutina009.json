@@ -32,7 +32,7 @@
     "g1_18_01": false, "g1_18_02": false, "g1_18_03": false, "g1_18_04": false,
     "g1_19_01": false, "g1_19_02": false, "g1_19_03": false, "g1_19_04": false
   },
-  "h_pendientes": "",
-  "i_recomendaciones": "",
-  "j_observaciones": ""
+  "pendientes": "",
+  "recomendaciones": "",
+  "observaciones": ""
 }

@@ -17,7 +17,7 @@ $d3_07_01 = $d_sectores->d3_07_01; $d3_07_02 = $d_sectores->d3_07_02; $d3_07_03 
 $d3_08_01 = $d_sectores->d3_08_01; $d3_08_02 = $d_sectores->d3_08_02; $d3_08_03 = $d_sectores->d3_08_03; $d3_08_04 = $d_sectores->d3_08_04; $d3_08_05 = $d_sectores->d3_08_05; $d3_08_06 = $d_sectores->d3_08_06; $d3_08_07 = $d_sectores->d3_08_07; $d3_08_08 = $d_sectores->d3_08_08; $d3_08_09 = $d_sectores->d3_08_09; $d3_08_10 = $d_sectores->d3_08_10; $d3_08_11 = $d_sectores->d3_08_11; $d3_08_12 = $d_sectores->d3_08_12; $d3_08_13 = $d_sectores->d3_08_13;
 $d3_09_01 = $d_sectores->d3_09_01; $d3_09_02 = $d_sectores->d3_09_02; $d3_09_03 = $d_sectores->d3_09_03; $d3_09_04 = $d_sectores->d3_09_04; $d3_09_05 = $d_sectores->d3_09_05; $d3_09_06 = $d_sectores->d3_09_06; $d3_09_07 = $d_sectores->d3_09_07; $d3_09_08 = $d_sectores->d3_09_08; $d3_09_09 = $d_sectores->d3_09_09; $d3_09_10 = $d_sectores->d3_09_10; $d3_09_11 = $d_sectores->d3_09_11; $d3_09_12 = $d_sectores->d3_09_12; $d3_09_13 = $d_sectores->d3_09_13;
 
-$g_observaciones = $obj->{'g_observaciones'};
+$observaciones = $obj->{'observaciones'};
 ?>
 
 <div class="card">
@@ -733,7 +733,7 @@ $g_observaciones = $obj->{'g_observaciones'};
 <h6 class="mb-0 text-uppercase">G. Observaciones</h6>
 <div class="input-group mb-2">
     <span class="input-group-text"></span>
-    <textarea class="form-control" aria-label="With textarea" id="g_observaciones"><?php echo $g_observaciones ?></textarea>
+    <textarea class="form-control" aria-label="With textarea" id="observaciones"><?php echo $observaciones ?></textarea>
 </div>
 
 <div class="col mb-2">

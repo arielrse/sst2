@@ -121,7 +121,7 @@ $(document).ready(function() {
     var d3_08_01 = $('#d3_08_01').val(); var d3_08_02 = $('#d3_08_02').val(); var d3_08_03 = $('#d3_08_03').val(); var d3_08_04 = $('#d3_08_04').val(); var d3_08_05 = $('#d3_08_05').val(); var d3_08_06 = $('#d3_08_06').val(); var d3_08_07 = $('#d3_08_07').val(); var d3_08_08 = $('#d3_08_08').val(); var d3_08_09 = $('#d3_08_09').val(); var d3_08_10 = $('#d3_08_10').val(); var d3_08_11 = $('#d3_08_11').val(); var d3_08_12 = $('#d3_08_12').val(); var d3_08_13 = $('#d3_08_13').val();
     var d3_09_01 = $('#d3_09_01').val(); var d3_09_02 = $('#d3_09_02').val(); var d3_09_03 = $('#d3_09_03').val(); var d3_09_04 = $('#d3_09_04').val(); var d3_09_05 = $('#d3_09_05').val(); var d3_09_06 = $('#d3_09_06').val(); var d3_09_07 = $('#d3_09_07').val(); var d3_09_08 = $('#d3_09_08').val(); var d3_09_09 = $('#d3_09_09').val(); var d3_09_10 = $('#d3_09_10').val(); var d3_09_11 = $('#d3_09_11').val(); var d3_09_12 = $('#d3_09_12').val(); var d3_09_13 = $('#d3_09_13').val();
 
-    var g_observaciones     = $('#g_observaciones').val()
+    var observaciones     = $('#observaciones').val()
 
 /** ------------------------ **/
 getDatos().then( (datos) => {
@@ -237,7 +237,7 @@ getDatos().then( (datos) => {
     datos.d_sectores.d3_08_01 = d3_08_01; datos.d_sectores.d3_08_02 = d3_08_02; datos.d_sectores.d3_08_03 = d3_08_03; datos.d_sectores.d3_08_04 = d3_08_04; datos.d_sectores.d3_08_05 = d3_08_05; datos.d_sectores.d3_08_06 = d3_08_06; datos.d_sectores.d3_08_07 = d3_08_07; datos.d_sectores.d3_08_08 = d3_08_08; datos.d_sectores.d3_08_09 = d3_08_09; datos.d_sectores.d3_08_10 = d3_08_10; datos.d_sectores.d3_08_11 = d3_08_11; datos.d_sectores.d3_08_12 = d3_08_12; datos.d_sectores.d3_08_13 = d3_08_13;
     datos.d_sectores.d3_09_01 = d3_09_01; datos.d_sectores.d3_09_02 = d3_09_02; datos.d_sectores.d3_09_03 = d3_09_03; datos.d_sectores.d3_09_04 = d3_09_04; datos.d_sectores.d3_09_05 = d3_09_05; datos.d_sectores.d3_09_06 = d3_09_06; datos.d_sectores.d3_09_07 = d3_09_07; datos.d_sectores.d3_09_08 = d3_09_08; datos.d_sectores.d3_09_09 = d3_09_09; datos.d_sectores.d3_09_10 = d3_09_10; datos.d_sectores.d3_09_11 = d3_09_11; datos.d_sectores.d3_09_12 = d3_09_12; datos.d_sectores.d3_09_13 = d3_09_13;
 
-    datos.g_observaciones   = g_observaciones;
+    datos.observaciones   = observaciones;
 
     //alert(JSON.stringify( datos ));
 

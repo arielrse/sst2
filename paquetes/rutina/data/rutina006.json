@@ -61,7 +61,7 @@
     "g4_05_01": false,"g4_05_02": false,"g4_05_03": false,"g4_05_04": false,
     "g4_06_01": false,"g4_06_02": false,"g4_06_03": false,"g4_06_04": false
   },
-  "h_pendientes": "",
-  "i_recomendaciones": "",
-  "j_observaciones": ""
+  "pendientes": "",
+  "recomendaciones": "",
+  "observaciones": ""
 }

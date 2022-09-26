@@ -68,9 +68,9 @@ $(document).ready(function() {
     var g3_09_01 = $('#g3_09_01').val(); var g3_09_02 = $('#g3_09_02').val(); var g3_09_03 = $('#g3_09_03').val();
 
     /** footer **/
-    var h_pendientes        = $('#h_pendientes').val()
-    var i_recomendaciones   = $('#i_recomendaciones').val()
-    var j_observaciones     = $('#j_observaciones').val()
+    var pendientes        = $('#pendientes').val()
+    var recomendaciones   = $('#recomendaciones').val()
+    var observaciones     = $('#observaciones').val()
 
 getDatos().then( (datos) => {
 
@@ -129,10 +129,11 @@ getDatos().then( (datos) => {
     datos.g_desarrollo_g3.g3_08_01 = g3_08_01; datos.g_desarrollo_g3.g3_08_02 = g3_08_02; datos.g_desarrollo_g3.g3_08_03 = g3_08_03;
     datos.g_desarrollo_g3.g3_09_01 = g3_09_01; datos.g_desarrollo_g3.g3_09_02 = g3_09_02; datos.g_desarrollo_g3.g3_09_03 = g3_09_03;
 
-    datos.h_pendientes      = h_pendientes;
-    datos.i_recomendaciones = i_recomendaciones;
-    datos.j_observaciones   = j_observaciones;
+    datos.pendientes      = pendientes;
+    datos.recomendaciones = recomendaciones;
+    datos.observaciones   = observaciones;
 
+    //alert(datos.h_pendientes);
     //alert(JSON.stringify( datos ));
 
                 jQuery.post("../../paquetes/rutina/update_rutina.php", {

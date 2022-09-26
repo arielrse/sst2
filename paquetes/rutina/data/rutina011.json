@@ -74,7 +74,7 @@
     "g3_02_04_01": false, "g3_02_04_02": false, "g3_02_04_03": ""
   },
 
-  "h_pendientes": "",
-  "i_recomendaciones": "",
-  "j_observaciones": ""
+  "pendientes": "",
+  "recomendaciones": "",
+  "observaciones": ""
 }

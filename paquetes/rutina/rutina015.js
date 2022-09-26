@@ -108,9 +108,9 @@ $(document).ready(function() {
     var g3_07_01 = $('#g3_07_01').prop('checked');  var g3_07_02 = $('#g3_07_02').prop('checked'); var g3_07_03 = $('#g3_07_03').val();
 
     /** footer **/
-    var h_pendientes        = $('#h_pendientes').val()
-    var i_recomendaciones   = $('#i_recomendaciones').val()
-    var j_observaciones     = $('#j_observaciones').val()
+    var pendientes        = $('#pendientes').val()
+    var recomendaciones   = $('#recomendaciones').val()
+    var observaciones     = $('#observaciones').val()
 
 /** ------------------------ **/
 getDatos().then( (datos) => {
@@ -215,9 +215,9 @@ getDatos().then( (datos) => {
 
 
 
-    datos.h_pendientes      = h_pendientes;
-    datos.i_recomendaciones = i_recomendaciones;
-    datos.j_observaciones   = j_observaciones;
+    datos.pendientes      = pendientes;
+    datos.recomendaciones = recomendaciones;
+    datos.observaciones   = observaciones;
 
     //alert(JSON.stringify( datos ));
 

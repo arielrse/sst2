@@ -38,7 +38,7 @@
     "g1_23_01": false, "g1_23_02": false, "g1_23_03": false, "g1_23_04": false
   },
 
-  "h_pendientes": "",
-  "i_recomendaciones": "",
-  "j_observaciones": ""
+  "pendientes": "",
+  "recomendaciones": "",
+  "observaciones": ""
 }
