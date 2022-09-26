@@ -466,9 +466,10 @@ function get_b1_plantilla($jsonData){
 function getFooter($jsonData){
 
     $obj = json_decode($jsonData);
-    $h_pendientes       = $obj->{'h_pendientes'};
-    $i_recomendaciones  = $obj->{'i_recomendaciones'};
-    $j_observaciones    = $obj->{'j_observaciones'};
+
+    $pendientes       = str_replace("&#10;", "<br>", $obj->{'pendientes'});
+    $recomendaciones  = str_replace("&#10;", "<br>", $obj->{'recomendaciones'});
+    $observaciones    = str_replace("&#10;", "<br>", $obj->{'observaciones'});
 
     $planilla = '
     <main>
@@ -477,7 +478,7 @@ function getFooter($jsonData){
         </div>
     </main>
     <main>
-        <div class="areatext">'. $h_pendientes .'</div>
+        <div class="areatext">'. $pendientes .'</div>
     </main>
     
     <main>
@@ -486,7 +487,7 @@ function getFooter($jsonData){
         </div>
     </main>
     <main>
-        <div class="areatext">'. $i_recomendaciones .'</div>
+        <div class="areatext">'. $recomendaciones .'</div>
     </main>
     
     <main>
@@ -495,7 +496,7 @@ function getFooter($jsonData){
         </div>
     </main>
     <main>
-        <div class="areatext">'. $j_observaciones .'</div>
+        <div class="areatext">'. $observaciones .'</div>
     </main>
     ';
 

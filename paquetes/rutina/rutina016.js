@@ -87,9 +87,9 @@ $(document).ready(function() {
     var g1_21_01 = $('#g1_21_01').prop('checked');  var g1_21_02 = $('#g1_21_02').prop('checked'); var g1_21_03 = $('#g1_21_03').val();
 
     /** footer **/
-    var h_pendientes        = $('#h_pendientes').val()
-    var i_recomendaciones   = $('#i_recomendaciones').val()
-    var j_observaciones     = $('#j_observaciones').val()
+    var pendientes        = $('#pendientes').val()
+    var recomendaciones   = $('#recomendaciones').val()
+    var observaciones     = $('#observaciones').val()
 
 /** ------------------------ **/
 getDatos().then( (datos) => {
@@ -170,9 +170,9 @@ getDatos().then( (datos) => {
 
 
 
-    datos.h_pendientes      = h_pendientes;
-    datos.i_recomendaciones = i_recomendaciones;
-    datos.j_observaciones   = j_observaciones;
+    datos.pendientes      = pendientes;
+    datos.recomendaciones = recomendaciones;
+    datos.observaciones   = observaciones;
 
     //alert(JSON.stringify( datos ));
 

@@ -78,7 +78,7 @@ $(document).ready(function() {
     var h_27_01 = $('#h_27_01').prop('checked'); var h_27_02 = $('#h_27_02').prop('checked'); var h_27_03 = $('#h_27_03').val();
 
     /** footer **/
-    var i_observaciones     = $('#i_observaciones').val()
+    var observaciones     = $('#observaciones').val()
 
 /** ------------------------ **/
 getDatos().then( (datos) => {
@@ -151,7 +151,7 @@ getDatos().then( (datos) => {
 
 
 
-    datos.i_observaciones   = i_observaciones;
+    datos.observaciones   = observaciones;
 
     //alert(JSON.stringify( datos ));
 

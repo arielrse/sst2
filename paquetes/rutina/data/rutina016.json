@@ -70,7 +70,7 @@
     "g1_20_01": false,  "g1_20_02": false, "g1_20_03": "",
     "g1_21_01": false,  "g1_21_02": false, "g1_21_03": ""
   },
-  "h_pendientes": "",
-  "i_recomendaciones": "",
-  "j_observaciones": ""
+  "pendientes": "",
+  "recomendaciones": "",
+  "observaciones": ""
 }
