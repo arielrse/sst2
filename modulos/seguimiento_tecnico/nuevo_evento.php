@@ -123,7 +123,7 @@
     function VerifyOne () {
         if( validarSelect(document.amper.idcentro,'Seleccione el centro') &&
             validarSelect(document.amper.sitio,'Seleccione el sitio') &&
-            validarSelect(document.amper.sitio,'Seleccione el sitio')&&
+            validarSelect(document.amper.idgrupo,'Seleccione el grupo')&&
             isNull( document.amper.fechainicio) &&
             isNull( document.amper.fechafin) ) {
 

@@ -93,25 +93,16 @@
 <SCRIPT src="../../js/validador.js" type=text/javascript></SCRIPT>
 <SCRIPT type=text/javascript>
 function VerifyOne () {
-    if( checkField( document.amper.nombre, isName, false ) &&
-		checkField( document.amper.ap_pat, isName, false ) &&
-		checkField( document.amper.ap_mat, isName, true ) &&
-		checkField( document.amper.cuenta, isName, false ) &&
-		checkField( document.amper.contrasena, isName, false ) &&
-		checkField( document.amper.cargo, isName, false ) &&
-		checkField( document.amper.mail, isEmail, false ) &&
-		validarSelect(document.amper.nivel,'Seleccione el Nivel de Usuario') &&	
-		validarSelect(document.amper.iddepartamento,'Seleccione el departamento') &&
-		checkField( document.amper.cel, isPhoneNumber, true )
-		)
-		{		
-			if(confirm("Las datos Son validos!\n Continuar el Registro con estos Datos?"))
-			{return true;}
-			else {return false;}															
-		}		  
-else {	
-return false;
-     }
+    if(
+        validarSelect(document.amper.idcentro,'Seleccione el centro') &&
+        validarSelect(document.amper.iduser1,'Seleccione persona 1') &&
+        validarSelect(document.amper.iduser2,'Seleccione persona 2') &&
+		checkField( document.amper.nombreGrupo, isName, false ) ) {
+			if(confirm("Las datos Son validos!\n Continuar el Registro con estos Datos?")){ return true; }
+			else { return false; }
+	} else {
+        return false;
+    }
 }
 
 function valDia(oTxt){

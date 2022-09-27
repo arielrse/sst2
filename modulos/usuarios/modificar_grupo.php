@@ -15,7 +15,7 @@ $datod=mysqli_fetch_array($resultado);
                         <form name="amper" method="post" action="<?=$link_modulo_r?>" onSubmit=" return VerifyOne ();">
                             <input type="hidden" name="path" value="modificar_grupo_r.php" />
                             <input type="hidden" name="idgrupo" value="<?=$idgrupo?>" />
-                            <h6 class="text-center">MODIFICAR DATOS DE GRUPO <?php echo $datod['user1']; ?></h6>
+                            <h6 class="text-center">MODIFICAR DATOS DE GRUPO</h6>
                             <table width="500" align="center" class="table">
 
                                 <tr>
@@ -76,28 +76,6 @@ $datod=mysqli_fetch_array($resultado);
                                     <td width="69%"><input name="nombreGrupo" type="text" class="form-control form-control-sm" id="nombreGrupo" value="<?=$datod['nombre']?>" ></td>
                                 </tr>
 
-                                <!--<tr>
-                                    <th width="31%"><span class="title4">*</span>Nombre:</th>
-                                    <td width="69%"><input name="nombre" type="text" class="form-control form-control-sm" id="nombre" size="30" maxlength="30" value="<?/*=$datod['nombre']*/?>"></td>
-                                </tr>-->
-
-                                <!--<tr>
-                                    <th width="31%" ><span class="title4">*</span>Nivel de Usuario:</th>
-                                    <td><select name="nivel" class="form-control form-control-sm" id="nivel">
-                                    <?/*
-                                        $resultado=mysqli_query($conexion, "SELECT sub_grupo,descripcion FROM parametrica WHERE grupo='nivel_usuario'");
-                                        while($dato=mysqli_fetch_array($resultado)){
-                                            echo '<option value="'.$dato['sub_grupo'].'" ';
-                                            if($datod['nivel']==$dato['sub_grupo']) echo 'selected';
-                                                echo'>'.$dato['descripcion'].'</option>';
-                                        }
-                                    */?>
-                                        </select>
-                                    </td>
-                                </tr>-->
-
-
-
                                 <tr>
                                     <td colspan="2" class="paginado"><span class="title4">(*) Campos requeridos</span>
                                         <br />
@@ -119,24 +97,18 @@ $datod=mysqli_fetch_array($resultado);
 
 <SCRIPT src="../../js/validador.js" type=text/javascript></SCRIPT>
 <SCRIPT type=text/javascript>
-function VerifyOne () {
-    if( checkField( document.amper.nombre, isName, false ) &&
-		checkField( document.amper.ap_pat, isName, false ) &&
-		checkField( document.amper.ap_mat, isName, true ) &&
-		checkField( document.amper.cuenta, isName, false ) &&
-		checkField( document.amper.contrasena, isName, true ) &&
-		checkField( document.amper.cargo, isName, false ) &&
-		checkField( document.amper.mail, isEmail, false )
-		)
-		{		
-			if(confirm("Las datos Son validos!\n Continuar el Registro con estos Datos?"))
-			{return true;}
-			else {return false;}															
-		}		  
-else {	
-return false;
-     }
-}
+    function VerifyOne () {
+        if(
+            validarSelect(document.amper.idcentro,'Seleccione el centro') &&
+            validarSelect(document.amper.iduser1,'Seleccione persona 1') &&
+            validarSelect(document.amper.iduser2,'Seleccione persona 2') &&
+            checkField( document.amper.nombreGrupo, isName, false ) ) {
+            if(confirm("Las datos Son validos!\n Continuar el Registro con estos Datos?")){ return true; }
+            else { return false; }
+        } else {
+            return false;
+        }
+    }
 
 function valDia(oTxt){
 var bOk = false;
