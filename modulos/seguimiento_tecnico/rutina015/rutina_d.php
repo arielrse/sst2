@@ -1,19 +1,5 @@
 <?php
 
-/**  $d_micro **/
-$d_micro = $obj->{'d_micro'};
-//$d_01_01 = $d_micro->d_01_01; $d_01_02 = $d_micro->d_01_02;
-$d1_01_01 = $d_micro->d1_01_01; $d1_01_02 = $d_micro->d1_01_02; $d1_01_03 = $d_micro->d1_01_03; $d1_01_04 = $d_micro->d1_01_04; $d1_01_05 = $d_micro->d1_01_05; $d1_01_06 = $d_micro->d1_01_06;
-$d1_02_01 = $d_micro->d1_02_01; $d1_02_02 = $d_micro->d1_02_02; $d1_02_03 = $d_micro->d1_02_03; $d1_02_04 = $d_micro->d1_02_04; $d1_02_05 = $d_micro->d1_02_05; $d1_02_06 = $d_micro->d1_02_06;
-$d1_03_01 = $d_micro->d1_03_01; $d1_03_02 = $d_micro->d1_03_02; $d1_03_03 = $d_micro->d1_03_03; $d1_03_04 = $d_micro->d1_03_04; $d1_03_05 = $d_micro->d1_03_05; $d1_03_06 = $d_micro->d1_03_06;
-$d1_04_01 = $d_micro->d1_04_01; $d1_04_02 = $d_micro->d1_04_02; $d1_04_03 = $d_micro->d1_04_03; $d1_04_04 = $d_micro->d1_04_04; $d1_04_05 = $d_micro->d1_04_05; $d1_04_06 = $d_micro->d1_04_06;
-$d1_05_01 = $d_micro->d1_05_01; $d1_05_02 = $d_micro->d1_05_02; $d1_05_03 = $d_micro->d1_05_03; $d1_05_04 = $d_micro->d1_05_04; $d1_05_05 = $d_micro->d1_05_05; $d1_05_06 = $d_micro->d1_05_06;
-$d1_06_01 = $d_micro->d1_06_01; $d1_06_02 = $d_micro->d1_06_02; $d1_06_03 = $d_micro->d1_06_03; $d1_06_04 = $d_micro->d1_06_04; $d1_06_05 = $d_micro->d1_06_05; $d1_06_06 = $d_micro->d1_06_06;
-$d1_07_01 = $d_micro->d1_07_01; $d1_07_02 = $d_micro->d1_07_02; $d1_07_03 = $d_micro->d1_07_03; $d1_07_04 = $d_micro->d1_07_04; $d1_07_05 = $d_micro->d1_07_05; $d1_07_06 = $d_micro->d1_07_06; $d1_07_07 = $d_micro->d1_07_07;
-$d1_08_01 = $d_micro->d1_08_01; $d1_08_02 = $d_micro->d1_08_02; $d1_08_03 = $d_micro->d1_08_03; $d1_08_04 = $d_micro->d1_08_04; $d1_08_05 = $d_micro->d1_08_05; $d1_08_06 = $d_micro->d1_08_06; $d1_08_07 = $d_micro->d1_08_07;
-$d1_09_01 = $d_micro->d1_09_01; $d1_09_02 = $d_micro->d1_09_02; $d1_09_03 = $d_micro->d1_09_03; $d1_09_04 = $d_micro->d1_09_04; $d1_09_05 = $d_micro->d1_09_05; $d1_09_06 = $d_micro->d1_09_06; $d1_09_07 = $d_micro->d1_09_07;
-//$f1_01_01 = $g_desarrollo_g1->f1_01_01 ? "checked" : ""; $f1_01_02 = $g_desarrollo->f1_01_02 ? "checked" : ""; $f1_01_03 = $g_desarrollo_g1->f1_01_03;
-
 $g_desarrollo_g1 = $obj->{'g_desarrollo_g1'};
 $g1_01_01 = $g_desarrollo_g1->g1_01_01 ? "checked" : ""; $g1_01_02 = $g_desarrollo_g1->g1_01_02 ? "checked" : ""; $g1_01_03 = $g_desarrollo_g1->g1_01_03;
 $g1_02_01 = $g_desarrollo_g1->g1_02_01 ? "checked" : ""; $g1_02_02 = $g_desarrollo_g1->g1_02_02 ? "checked" : ""; $g1_02_03 = $g_desarrollo_g1->g1_02_03;
@@ -30,132 +16,18 @@ $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? "checked" : ""; $g1_09_02 = $g_desarrol
 <h6>D. Sistema de Transporte Microondas MW</h6>
 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
     <div class="col">
-        <div class="card">
+
+
+        <?php require("rutina_d_micro1.php"); ?>
+
+        <?php require("rutina_d_micro2.php"); ?>
+
+        <?php require("rutina_d_micro3.php"); ?>
+
+
+
+        <!--<div class="card">
             <div class="card-body">
-
-                <div class="col mb-2">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                        <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-                    </div>
-                </div>
-
-                <table class="table table-bordered mb-3">
-                    <tbody>
-                    <tr>
-                        <th>IDU</th>
-                        <th>NE_Origen</th>
-                        <th>NE_Destino</th>
-                        <th>Fabricante</th>
-                        <th>Modelo</th>
-                        <th>Alarmas</th>
-                        <th>Estado ML_MW</th>
-                    </tr>
-
-                    <tr>
-                        <td class="col-xl-1">1</td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_01_01" value="<?php echo $d1_01_01 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_01_02" value="<?php echo $d1_01_02 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_01_03" value="<?php echo $d1_01_03 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_01_04" value="<?php echo $d1_01_04 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_01_05" value="<?php echo $d1_01_05 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_01_06" value="<?php echo $d1_01_06 ?>">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="col-xl-1">2</td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_02_01" value="<?php echo $d1_02_01 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_02_02" value="<?php echo $d1_02_02 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_02_03" value="<?php echo $d1_02_03 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_02_04" value="<?php echo $d1_02_04 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_02_05" value="<?php echo $d1_02_05 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_02_06" value="<?php echo $d1_02_06 ?>">
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="col-xl-1">3</td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_03_01" value="<?php echo $d1_03_01 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_03_02" value="<?php echo $d1_03_02 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_03_03" value="<?php echo $d1_03_03 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_03_04" value="<?php echo $d1_03_04 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_03_05" value="<?php echo $d1_03_05 ?>">
-                            </div>
-                        </td>
-                        <td class="col-xl-1">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_03_06" value="<?php echo $d1_03_06 ?>">
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-
                 <table class="table table-bordered mb-3">
                     <tbody>
                     <tr>
@@ -172,32 +44,32 @@ $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? "checked" : ""; $g1_09_02 = $g_desarrol
                         <td class="col-xl-1">1</td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_04_01" value="<?php echo $d1_04_01 ?>">
+                                <input type="text" class="form-control" id="d1_04_01" value="<?php /*echo $d1_04_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_04_02" value="<?php echo $d1_04_02 ?>">
+                                <input type="text" class="form-control" id="d1_04_02" value="<?php /*echo $d1_04_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_04_03" value="<?php echo $d1_04_03 ?>">
+                                <input type="text" class="form-control" id="d1_04_03" value="<?php /*echo $d1_04_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_04_04" value="<?php echo $d1_04_04 ?>">
+                                <input type="text" class="form-control" id="d1_04_04" value="<?php /*echo $d1_04_04 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_04_05" value="<?php echo $d1_04_05 ?>">
+                                <input type="text" class="form-control" id="d1_04_05" value="<?php /*echo $d1_04_05 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_04_06" value="<?php echo $d1_04_06 ?>">
+                                <input type="text" class="form-control" id="d1_04_06" value="<?php /*echo $d1_04_06 */?>">
                             </div>
                         </td>
                     </tr>
@@ -206,32 +78,32 @@ $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? "checked" : ""; $g1_09_02 = $g_desarrol
                         <td class="col-xl-1">2</td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_05_01" value="<?php echo $d1_05_01 ?>">
+                                <input type="text" class="form-control" id="d1_05_01" value="<?php /*echo $d1_05_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_05_02" value="<?php echo $d1_05_02 ?>">
+                                <input type="text" class="form-control" id="d1_05_02" value="<?php /*echo $d1_05_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_05_03" value="<?php echo $d1_05_03 ?>">
+                                <input type="text" class="form-control" id="d1_05_03" value="<?php /*echo $d1_05_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_05_04" value="<?php echo $d1_05_04 ?>">
+                                <input type="text" class="form-control" id="d1_05_04" value="<?php /*echo $d1_05_04 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_05_05" value="<?php echo $d1_05_05 ?>">
+                                <input type="text" class="form-control" id="d1_05_05" value="<?php /*echo $d1_05_05 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_05_06" value="<?php echo $d1_05_06 ?>">
+                                <input type="text" class="form-control" id="d1_05_06" value="<?php /*echo $d1_05_06 */?>">
                             </div>
                         </td>
                     </tr>
@@ -240,39 +112,43 @@ $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? "checked" : ""; $g1_09_02 = $g_desarrol
                         <td class="col-xl-1">3</td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_06_01" value="<?php echo $d1_06_01 ?>">
+                                <input type="text" class="form-control" id="d1_06_01" value="<?php /*echo $d1_06_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_06_02" value="<?php echo $d1_06_02 ?>">
+                                <input type="text" class="form-control" id="d1_06_02" value="<?php /*echo $d1_06_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_06_03" value="<?php echo $d1_06_03 ?>">
+                                <input type="text" class="form-control" id="d1_06_03" value="<?php /*echo $d1_06_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_06_04" value="<?php echo $d1_06_04 ?>">
+                                <input type="text" class="form-control" id="d1_06_04" value="<?php /*echo $d1_06_04 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_06_05" value="<?php echo $d1_06_05 ?>">
+                                <input type="text" class="form-control" id="d1_06_05" value="<?php /*echo $d1_06_05 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_06_06" value="<?php echo $d1_06_06 ?>">
+                                <input type="text" class="form-control" id="d1_06_06" value="<?php /*echo $d1_06_06 */?>">
                             </div>
                         </td>
                     </tr>
 
                     </tbody>
                 </table>
+            </div>
+        </div>-->
 
+        <!--<div class="card">
+            <div class="card-body">
                 <table class="table table-bordered mb-3">
                     <tbody>
                     <tr>
@@ -291,37 +167,37 @@ $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? "checked" : ""; $g1_09_02 = $g_desarrol
                         <td class="col-xl-1">1</td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_07_01" value="<?php echo $d1_07_01 ?>">
+                                <input type="text" class="form-control" id="d1_07_01" value="<?php /*echo $d1_07_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_07_02" value="<?php echo $d1_07_02 ?>">
+                                <input type="text" class="form-control" id="d1_07_02" value="<?php /*echo $d1_07_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_07_03" value="<?php echo $d1_07_03 ?>">
+                                <input type="text" class="form-control" id="d1_07_03" value="<?php /*echo $d1_07_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_07_04" value="<?php echo $d1_07_04 ?>">
+                                <input type="text" class="form-control" id="d1_07_04" value="<?php /*echo $d1_07_04 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_07_05" value="<?php echo $d1_07_05 ?>">
+                                <input type="text" class="form-control" id="d1_07_05" value="<?php /*echo $d1_07_05 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_07_06" value="<?php echo $d1_07_06 ?>">
+                                <input type="text" class="form-control" id="d1_07_06" value="<?php /*echo $d1_07_06 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_07_07" value="<?php echo $d1_07_07 ?>">
+                                <input type="text" class="form-control" id="d1_07_07" value="<?php /*echo $d1_07_07 */?>">
                             </div>
                         </td>
                     </tr>
@@ -330,37 +206,37 @@ $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? "checked" : ""; $g1_09_02 = $g_desarrol
                         <td class="col-xl-1">2</td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_08_01" value="<?php echo $d1_08_01 ?>">
+                                <input type="text" class="form-control" id="d1_08_01" value="<?php /*echo $d1_08_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_08_02" value="<?php echo $d1_08_02 ?>">
+                                <input type="text" class="form-control" id="d1_08_02" value="<?php /*echo $d1_08_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_08_03" value="<?php echo $d1_08_03 ?>">
+                                <input type="text" class="form-control" id="d1_08_03" value="<?php /*echo $d1_08_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_08_04" value="<?php echo $d1_08_04 ?>">
+                                <input type="text" class="form-control" id="d1_08_04" value="<?php /*echo $d1_08_04 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_08_05" value="<?php echo $d1_08_05 ?>">
+                                <input type="text" class="form-control" id="d1_08_05" value="<?php /*echo $d1_08_05 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_08_06" value="<?php echo $d1_08_06 ?>">
+                                <input type="text" class="form-control" id="d1_08_06" value="<?php /*echo $d1_08_06 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_08_07" value="<?php echo $d1_08_07 ?>">
+                                <input type="text" class="form-control" id="d1_08_07" value="<?php /*echo $d1_08_07 */?>">
                             </div>
                         </td>
                     </tr>
@@ -369,45 +245,45 @@ $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? "checked" : ""; $g1_09_02 = $g_desarrol
                         <td class="col-xl-1">3</td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_09_01" value="<?php echo $d1_09_01 ?>">
+                                <input type="text" class="form-control" id="d1_09_01" value="<?php /*echo $d1_09_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_09_02" value="<?php echo $d1_09_02 ?>">
+                                <input type="text" class="form-control" id="d1_09_02" value="<?php /*echo $d1_09_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_09_03" value="<?php echo $d1_09_03 ?>">
+                                <input type="text" class="form-control" id="d1_09_03" value="<?php /*echo $d1_09_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_09_04" value="<?php echo $d1_09_04 ?>">
+                                <input type="text" class="form-control" id="d1_09_04" value="<?php /*echo $d1_09_04 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="d1_09_05" value="<?php echo $d1_09_05 ?>">
+                                <input type="text" class="form-control" id="d1_09_05" value="<?php /*echo $d1_09_05 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control"id="d1_09_06" value="<?php echo $d1_09_06 ?>">
+                                <input type="text" class="form-control"id="d1_09_06" value="<?php /*echo $d1_09_06 */?>">
                             </div>
                         </td>
                         <td class="col-xl-1">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control"id="d1_09_07" value="<?php echo $d1_09_07 ?>">
+                                <input type="text" class="form-control"id="d1_09_07" value="<?php /*echo $d1_09_07 */?>">
                             </div>
                         </td>
                     </tr>
                     </tbody>
                 </table>
-
             </div>
-        </div>
+        </div>-->
+
     </div>
 </div>
 
