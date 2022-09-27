@@ -13,18 +13,23 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $cabecera        = getCabecera($conexion, $jsonData, $idgrupo, $titulo, false);
     $footerPlantilla = getFooter($jsonData);
     //---------------------------
-    $d_micro = $obj->{'d_micro'};
-//$d_01_01 = $d_micro->d_01_01; $d_01_02 = $d_micro->d_01_02;
-    $d1_01_01 = $d_micro->d1_01_01; $d1_01_02 = $d_micro->d1_01_02; $d1_01_03 = $d_micro->d1_01_03; $d1_01_04 = $d_micro->d1_01_04; $d1_01_05 = $d_micro->d1_01_05; $d1_01_06 = $d_micro->d1_01_06;
-    $d1_02_01 = $d_micro->d1_02_01; $d1_02_02 = $d_micro->d1_02_02; $d1_02_03 = $d_micro->d1_02_03; $d1_02_04 = $d_micro->d1_02_04; $d1_02_05 = $d_micro->d1_02_05; $d1_02_06 = $d_micro->d1_02_06;
-    $d1_03_01 = $d_micro->d1_03_01; $d1_03_02 = $d_micro->d1_03_02; $d1_03_03 = $d_micro->d1_03_03; $d1_03_04 = $d_micro->d1_03_04; $d1_03_05 = $d_micro->d1_03_05; $d1_03_06 = $d_micro->d1_03_06;
-    $d1_04_01 = $d_micro->d1_04_01; $d1_04_02 = $d_micro->d1_04_02; $d1_04_03 = $d_micro->d1_04_03; $d1_04_04 = $d_micro->d1_04_04; $d1_04_05 = $d_micro->d1_04_05; $d1_04_06 = $d_micro->d1_04_06;
-    $d1_05_01 = $d_micro->d1_05_01; $d1_05_02 = $d_micro->d1_05_02; $d1_05_03 = $d_micro->d1_05_03; $d1_05_04 = $d_micro->d1_05_04; $d1_05_05 = $d_micro->d1_05_05; $d1_05_06 = $d_micro->d1_05_06;
-    $d1_06_01 = $d_micro->d1_06_01; $d1_06_02 = $d_micro->d1_06_02; $d1_06_03 = $d_micro->d1_06_03; $d1_06_04 = $d_micro->d1_06_04; $d1_06_05 = $d_micro->d1_06_05; $d1_06_06 = $d_micro->d1_06_06;
-    $d1_07_01 = $d_micro->d1_07_01; $d1_07_02 = $d_micro->d1_07_02; $d1_07_03 = $d_micro->d1_07_03; $d1_07_04 = $d_micro->d1_07_04; $d1_07_05 = $d_micro->d1_07_05; $d1_07_06 = $d_micro->d1_07_06; $d1_07_07 = $d_micro->d1_07_07;
-    $d1_08_01 = $d_micro->d1_08_01; $d1_08_02 = $d_micro->d1_08_02; $d1_08_03 = $d_micro->d1_08_03; $d1_08_04 = $d_micro->d1_08_04; $d1_08_05 = $d_micro->d1_08_05; $d1_08_06 = $d_micro->d1_08_06; $d1_08_07 = $d_micro->d1_08_07;
-    $d1_09_01 = $d_micro->d1_09_01; $d1_09_02 = $d_micro->d1_09_02; $d1_09_03 = $d_micro->d1_09_03; $d1_09_04 = $d_micro->d1_09_04; $d1_09_05 = $d_micro->d1_09_05; $d1_09_06 = $d_micro->d1_09_06; $d1_09_07 = $d_micro->d1_09_07;
-//$f1_01_01 = $g_desarrollo_g1->f1_01_01 ? $check : $uncheck; $f1_01_02 = $g_desarrollo->f1_01_02 ? $check : $uncheck; $f1_01_03 = $g_desarrollo_g1->f1_01_03;
+    $d_micro_1 = $obj->{'d_micro_1'};
+
+    $d1_01_01 = $d_micro_1->d1_01_01; $d1_01_02 = $d_micro_1->d1_01_02; $d1_01_03 = $d_micro_1->d1_01_03; $d1_01_04 = $d_micro_1->d1_01_04; $d1_01_05 = $d_micro_1->d1_01_05; $d1_01_06 = $d_micro_1->d1_01_06;
+    $d1_02_01 = $d_micro_1->d1_02_01; $d1_02_02 = $d_micro_1->d1_02_02; $d1_02_03 = $d_micro_1->d1_02_03; $d1_02_04 = $d_micro_1->d1_02_04; $d1_02_05 = $d_micro_1->d1_02_05; $d1_02_06 = $d_micro_1->d1_02_06;
+    $d1_03_01 = $d_micro_1->d1_03_01; $d1_03_02 = $d_micro_1->d1_03_02; $d1_03_03 = $d_micro_1->d1_03_03; $d1_03_04 = $d_micro_1->d1_03_04; $d1_03_05 = $d_micro_1->d1_03_05; $d1_03_06 = $d_micro_1->d1_03_06;
+    $d1_04_01 = $d_micro_1->d1_04_01; $d1_04_02 = $d_micro_1->d1_04_02; $d1_04_03 = $d_micro_1->d1_04_03; $d1_04_04 = $d_micro_1->d1_04_04; $d1_04_05 = $d_micro_1->d1_04_05; $d1_04_06 = $d_micro_1->d1_04_06;
+    $d1_05_01 = $d_micro_1->d1_05_01; $d1_05_02 = $d_micro_1->d1_05_02; $d1_05_03 = $d_micro_1->d1_05_03; $d1_05_04 = $d_micro_1->d1_05_04; $d1_05_05 = $d_micro_1->d1_05_05; $d1_05_06 = $d_micro_1->d1_05_06;
+    $d1_06_01 = $d_micro_1->d1_06_01; $d1_06_02 = $d_micro_1->d1_06_02; $d1_06_03 = $d_micro_1->d1_06_03; $d1_06_04 = $d_micro_1->d1_06_04; $d1_06_05 = $d_micro_1->d1_06_05; $d1_06_06 = $d_micro_1->d1_06_06;
+    $d1_07_01 = $d_micro_1->d1_07_01; $d1_07_02 = $d_micro_1->d1_07_02; $d1_07_03 = $d_micro_1->d1_07_03; $d1_07_04 = $d_micro_1->d1_07_04; $d1_07_05 = $d_micro_1->d1_07_05; $d1_07_06 = $d_micro_1->d1_07_06;
+    $d1_08_01 = $d_micro_1->d1_08_01; $d1_08_02 = $d_micro_1->d1_08_02; $d1_08_03 = $d_micro_1->d1_08_03; $d1_08_04 = $d_micro_1->d1_08_04; $d1_08_05 = $d_micro_1->d1_08_05; $d1_08_06 = $d_micro_1->d1_08_06;
+    $d1_09_01 = $d_micro_1->d1_09_01; $d1_09_02 = $d_micro_1->d1_09_02; $d1_09_03 = $d_micro_1->d1_09_03; $d1_09_04 = $d_micro_1->d1_09_04; $d1_09_05 = $d_micro_1->d1_09_05; $d1_09_06 = $d_micro_1->d1_09_06;
+    $d1_10_01 = $d_micro_1->d1_10_01; $d1_10_02 = $d_micro_1->d1_10_02; $d1_10_03 = $d_micro_1->d1_10_03; $d1_10_04 = $d_micro_1->d1_10_04; $d1_10_05 = $d_micro_1->d1_10_05; $d1_10_06 = $d_micro_1->d1_10_06;
+    $d1_11_01 = $d_micro_1->d1_11_01; $d1_11_02 = $d_micro_1->d1_11_02; $d1_11_03 = $d_micro_1->d1_11_03; $d1_11_04 = $d_micro_1->d1_11_04; $d1_11_05 = $d_micro_1->d1_11_05; $d1_11_06 = $d_micro_1->d1_11_06;
+    $d1_12_01 = $d_micro_1->d1_12_01; $d1_12_02 = $d_micro_1->d1_12_02; $d1_12_03 = $d_micro_1->d1_12_03; $d1_12_04 = $d_micro_1->d1_12_04; $d1_12_05 = $d_micro_1->d1_12_05; $d1_12_06 = $d_micro_1->d1_12_06;
+    $d1_13_01 = $d_micro_1->d1_13_01; $d1_13_02 = $d_micro_1->d1_13_02; $d1_13_03 = $d_micro_1->d1_13_03; $d1_13_04 = $d_micro_1->d1_13_04; $d1_13_05 = $d_micro_1->d1_13_05; $d1_13_06 = $d_micro_1->d1_13_06;
+    $d1_14_01 = $d_micro_1->d1_14_01; $d1_14_02 = $d_micro_1->d1_14_02; $d1_14_03 = $d_micro_1->d1_14_03; $d1_14_04 = $d_micro_1->d1_14_04; $d1_14_05 = $d_micro_1->d1_14_05; $d1_14_06 = $d_micro_1->d1_14_06;
+    $d1_15_01 = $d_micro_1->d1_15_01; $d1_15_02 = $d_micro_1->d1_15_02; $d1_15_03 = $d_micro_1->d1_15_03; $d1_15_04 = $d_micro_1->d1_15_04; $d1_15_05 = $d_micro_1->d1_15_05; $d1_15_06 = $d_micro_1->d1_15_06;
 
     $g_desarrollo_g1 = $obj->{'g_desarrollo_g1'};
     $g1_01_01 = $g_desarrollo_g1->g1_01_01 ? $check : $uncheck; $g1_01_02 = $g_desarrollo_g1->g1_01_02 ? $check : $uncheck; $g1_01_03 = $g_desarrollo_g1->g1_01_03;
@@ -213,7 +218,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                                 <td class="col-15p"> '.$d1_07_04.'</td>
                                 <td class="col-15p"> '.$d1_07_05.'</td>
                                 <td class="col-15p"> '.$d1_07_06.'</td>
-                                <td class="col-15p"> '.$d1_07_07.'</td>
+                                
                             </tr>
                             <tr>
                                 <td class="col-5p"><strong> 2</strong></td>
@@ -223,7 +228,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                                 <td class="col-15p"> '.$d1_08_04.'</td>
                                 <td class="col-15p"> '.$d1_08_05.'</td>
                                 <td class="col-15p"> '.$d1_08_06.'</td>
-                                <td class="col-15p"> '.$d1_08_07.'</td>
+                                
                             </tr>
                             <tr>
                                 <td class="col-5p"><strong> 3</strong></td>
@@ -233,7 +238,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                                 <td class="col-15p"> '.$d1_09_04.'</td>
                                 <td class="col-15p"> '.$d1_09_05.'</td>
                                 <td class="col-15p"> '.$d1_09_06.'</td>
-                                <td class="col-15p"> '.$d1_09_07.'</td>
+                                
                             </tr>
                         </tbody>        
                     </table>									                        
