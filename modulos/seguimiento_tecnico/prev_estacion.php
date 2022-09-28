@@ -262,7 +262,6 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                 idrutina: idrutina,
                 codForm: codForm
                 }, function(data){
-                    //alert('Data: ' + data);
                     $("#table-routine").load(window.location + " #table-routine");
                 }
             );

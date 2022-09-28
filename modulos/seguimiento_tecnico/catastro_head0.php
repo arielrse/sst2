@@ -88,16 +88,6 @@ foreach ($inOutDoorArr as $element){
         <div class="col">
             <input type="button" class="btn btn-secondary px-5" name="Submit" value="Cancelar" onclick="history.back()" />
         </div>
-        <form action="<?php echo $hrefpdf ?>" method="post" enctype="multipart/form-data" target="_blank">
-            <input type="hidden" id="cform" name="cform" value="<?php echo $cform ?>" />
-            <input type="hidden" id="idcatastrox" name="idcatastrox" value="<?php echo $idcatastrox ?>" />
-            <input type="hidden" id="idgrupo" name="idgrupo" value="<?php echo $idgrupo ?>" />
-            <input type="hidden" id="iddepartamento" name="iddepartamento" value="<?php echo $iddepartamento ?>" />
-            <input type="hidden" id="idevento" name="idevento" value="<?php echo $idevento ?>" />
-            <div class="col">
-                <input type="submit" class="btn btn-info px-5" name="Submit" value="Generar"  />
-            </div>
-        </form>
     </div>
 
     <div class="card">
