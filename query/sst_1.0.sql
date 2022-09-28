@@ -31,3 +31,25 @@ ALTER TABLE rutina013 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
 ALTER TABLE rutina014 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
 ALTER TABLE rutina015 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
 ALTER TABLE rutina016 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
+
+ALTER TABLE catastro001 ADD FOREIGN KEY (idcatastro) REFERENCES catastro(idcatastro);
+ALTER TABLE catastro002 ADD FOREIGN KEY (idcatastro) REFERENCES catastro(idcatastro);
+ALTER TABLE catastro003 ADD FOREIGN KEY (idcatastro) REFERENCES catastro(idcatastro);
+ALTER TABLE catastro004 ADD FOREIGN KEY (idcatastro) REFERENCES catastro(idcatastro);
+ALTER TABLE catastro005 ADD FOREIGN KEY (idcatastro) REFERENCES catastro(idcatastro);
+ALTER TABLE catastro006 ADD FOREIGN KEY (idcatastro) REFERENCES catastro(idcatastro);
+ALTER TABLE catastro007 ADD FOREIGN KEY (idcatastro) REFERENCES catastro(idcatastro);
+ALTER TABLE catastro008 ADD FOREIGN KEY (idcatastro) REFERENCES catastro(idcatastro);
+ALTER TABLE catastro009 ADD FOREIGN KEY (idcatastro) REFERENCES catastro(idcatastro);
+ALTER TABLE catastro010 ADD FOREIGN KEY (idcatastro) REFERENCES catastro(idcatastro);
+
+ALTER TABLE catastro001 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
+ALTER TABLE catastro002 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
+ALTER TABLE catastro003 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
+ALTER TABLE catastro004 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
+ALTER TABLE catastro005 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
+ALTER TABLE catastro006 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
+ALTER TABLE catastro007 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
+ALTER TABLE catastro008 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
+ALTER TABLE catastro009 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
+ALTER TABLE catastro010 ADD FOREIGN KEY (idevento) REFERENCES evento(idevento);
