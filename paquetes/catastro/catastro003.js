@@ -19,6 +19,7 @@ var c_fechaRealizacion  = $('#c_fechaRealizacion').val();
 var e_personal          = $('#e_personal').val();
 
 var indoor_outdoor      = $('#indoor_outdoor').val();
+var cod_fijo            = $('#cod_fijo').val();
 var cod_activo          = $('#cod_activo').val();
 
 //var d01_01 = $('#d01_01').val();
@@ -55,6 +56,7 @@ datos.propertyId         = propertyId;
 datos.c_fechaRealizacion = c_fechaRealizacion;
 datos.e_personal         = e_personal;
 datos.indoor_outdoor     = indoor_outdoor;
+datos.cod_fijo           = cod_fijo;
 datos.cod_activo         = cod_activo;
 datos.observaciones      = observaciones;
     /** desarrollo_d **/

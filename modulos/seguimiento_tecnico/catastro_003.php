@@ -11,7 +11,7 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">GRUPO ELECTRÓGENO (GE)</h6>
         <hr/>
 
-        <?php require("catastro_head.php"); ?>
+        <?php require("catastro_head003.php"); ?>
         <?php require("catastro003/catastro_d.php"); ?>
 
     </div>

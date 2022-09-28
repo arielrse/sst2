@@ -20,7 +20,21 @@ var e_personal          = $('#e_personal').val();
 
 var indoor_outdoor      = $('#indoor_outdoor').val();
 var cod_activo          = $('#cod_activo').val();
+var cod_fijo            = $('#cod_fijo').val();
+var cod_complemento     = $('#cod_complemento').val();
 
+var reca1               = $('#reca1').val();
+var reca2               = $('#reca2').val();
+var recb1               = $('#recb1').val();
+var recb2               = $('#recb2').val();
+var upsa1               = $('#upsa1').val();
+var upsa2               = $('#upsa2').val();
+var upsb1               = $('#upsb1').val();
+var upsb2               = $('#upsb2').val();
+var ups_fuente_a        = $('#ups_fuente_a').val();
+var ups_fuente_b        = $('#ups_fuente_b').val();
+var rec_fuente_a        = $('#rec_fuente_a').val();
+var rec_fuente_b        = $('#rec_fuente_b').val();
 //var d01_01 = $('#d01_01').val();
 var d01_01 = $('#d01_01').val();
 var d02_01 = $('#d02_01').val();
@@ -48,8 +62,25 @@ datos.propertyId         = propertyId;
 datos.c_fechaRealizacion = c_fechaRealizacion;
 datos.e_personal         = e_personal;
 datos.indoor_outdoor     = indoor_outdoor;
+datos.cod_fijo           = cod_fijo;
 datos.cod_activo         = cod_activo;
+datos.cod_complemento    = cod_complemento;
 datos.observaciones      = observaciones;
+datos.reca1              = reca1;
+datos.reca2              = reca2;
+datos.recb1              = recb1;
+datos.recb2              = recb2;
+datos.upsa1              = upsa1;
+datos.upsa2              = upsa2;
+datos.upsb1              = upsb1;
+datos.upsb2              = upsb2;
+datos.ups_fuente_a       = ups_fuente_a;
+datos.ups_fuente_b       = ups_fuente_b;
+datos.rec_fuente_a       = rec_fuente_a;
+datos.rec_fuente_b       = rec_fuente_b;
+
+
+
     /** desarrollo_d **/
 datos.desarrollo_d.d01_01 = d01_01;
 datos.desarrollo_d.d02_01 = d02_01;

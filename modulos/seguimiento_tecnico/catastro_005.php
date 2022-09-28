@@ -11,7 +11,7 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">TABLERO DE DISTRIBUCIÓN (TDP)</h6>
         <hr/>
 
-        <?php require("catastro_head.php"); ?>
+        <?php require("catastro_head005.php"); ?>
         <?php require("catastro005/catastro_d.php"); ?>
 
     </div>

@@ -11,7 +11,7 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">PANTA DE RECTIFICADORES (REC)</h6>
         <hr/>
 
-        <?php require("catastro_head.php"); ?>
+        <?php require("catastro_head007.php"); ?>
         <?php require("catastro007/catastro_d.php"); ?>
 
     </div>

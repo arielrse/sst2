@@ -48,12 +48,18 @@ $cm                 = $obj->{'cm'};
 $sitioId            = $obj->{'sitioId'};
 $propertyId         = $obj->{'propertyId'};
 //falta algo el cod_activo
-
+$cod_fijo           = $obj->{'cod_fijo'};
 $cod_activo         = $obj->{'cod_activo'};
+$cod_complemento    = $obj->{'cod_complemento'};
 $indoor_outdoor     = $obj->{'indoor_outdoor'};
 $c_fechaRealizacion = $obj->{'c_fechaRealizacion'};
 
-
+$upsa1              =$obj->{'upsa1'};
+$upsa2              =$obj->{'upsa2'};
+$upsb1              =$obj->{'upsb1'};
+$upsb2              =$obj->{'upsb2'};
+$fuente_a           =$obj->{'fuente_a'};
+$fuente_b           =$obj->{'fuente_b'};
 /*$res4 = mysqli_query($conexion,
     "SELECT u.id, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nombre, u.`cargo`, u.`cel`
             FROM usuarios u
@@ -110,14 +116,14 @@ $hrefpdf = "../../modulos/$modulo/catastro$cform/catastro_d.php";
                 <tbody>
                 <tr>
                     <td>CM/SCM</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control form-control-sm" disabled value="<?php echo $cm ?>">
                             <input type="hidden" name="cm" id="cm" value="<?=$cm?>" />
                         </div>
                     </td>
                     <td>ID Sitio</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control form-control-sm" disabled value="<?php echo $sitioId ?>">
                             <input type="hidden" name="sitioId" id="sitioId" value="<?=$sitioId?>" />
@@ -127,13 +133,13 @@ $hrefpdf = "../../modulos/$modulo/catastro$cform/catastro_d.php";
                 </tr>
                 <tr>
                     <td>Nombre Responsable</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control form-control-sm mb-2" id="e_personal_nombre2" disabled value="<?php echo $nombre2 ?>">
                         </div>
                     </td>
                     <td>Departamento</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control" disabled value="<?php echo $departamento ?>">
                         </div>
@@ -141,13 +147,13 @@ $hrefpdf = "../../modulos/$modulo/catastro$cform/catastro_d.php";
                 </tr>
                 <tr>
                     <td>Nombre Responsable</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control form-control-sm mb-2" id="e_personal_nombre3" disabled value="<?php echo $nombre3 ?>">
                         </div>
                     </td>
                     <td>Provincia</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control" disabled value="<?php echo $provincia ?>">
                         </div>
@@ -156,13 +162,13 @@ $hrefpdf = "../../modulos/$modulo/catastro$cform/catastro_d.php";
                 <tr>
 
                     <td>Fecha de catastro:</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <input type="date" class="form-control form-control-sm" id="c_fechaRealizacion" value="<?php echo $c_fechaRealizacion ?>">
                         </div>
                     </td>
                     <td>Localidad</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control" disabled value="<?php echo $localidad ?>">
                         </div>
@@ -170,14 +176,14 @@ $hrefpdf = "../../modulos/$modulo/catastro$cform/catastro_d.php";
                 </tr>
                 <tr>
                     <td>Property_id</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control form-control-sm" disabled value="<?php echo $propertyId ?>">
                             <input type="hidden" name="propertyId" id="propertyId" value="<?=$propertyId?>" />
                         </div>
                     </td>
                     <td>Indoor/Outdoor:</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <select id="indoor_outdoor" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
                                 <?php echo $inOutDoorOption ?>
@@ -186,14 +192,64 @@ $hrefpdf = "../../modulos/$modulo/catastro$cform/catastro_d.php";
                     </td>
                 </tr>
                 <tr>
-
-                    <td></td>
-                    <td></td>
-
+                    <td>Código de activo fijo:</td>
+                    <td colspan="2">
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="cod_fijo" id="cod_fijo" value="<?php echo $cod_fijo ?>">
+                        </div>
+                    </td>
                     <td>Código activo de energía:</td>
-                    <td>
+                    <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control form-control-sm" name="cod_activo" id="cod_activo" value="<?php echo $cod_activo ?>">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2"></td>
+
+                    <td>Código activo complemento:</td>
+                    <td colspan="2">
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="cod_complemento" id="cod_complemento" value="<?php echo $cod_complemento ?>">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="upsa1" id="upsa1" value="<?php echo $upsa1 ?>">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="upsa2" id="upsa2" value="<?php echo $upsa2 ?>">
+                        </div>
+                    </td>
+                    <td class = "text-center"  colspan="4"><strong>REFERENCIA CÓDIGO UPS</strong></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="upsb1" id="upsb1" value="<?php echo $upsb1 ?>">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="upsb2" id="upsb2" value="<?php echo $upsb2 ?>">
+                        </div>
+                    </td>
+                    <td><strong>UPSA</strong></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="fuente_a" id="fuente_a" value="<?php echo $fuente_a ?>">
+                        </div>
+                    </td>
+                    <td><strong>UPSB</strong></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="fuente_b" id="fuente_b" value="<?php echo $fuente_b ?>">
                         </div>
                     </td>
                 </tr>

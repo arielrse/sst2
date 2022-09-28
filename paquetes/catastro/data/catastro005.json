@@ -4,8 +4,17 @@
   "propertyId": "",
   "c_fechaRealizacion": "",
   "e_personal": "",
+  "cod_fijo": "",
   "cod_activo": "",
   "indoor_outdoor": "",
+  "tdp": "",
+  "tr1": "",
+  "tds": "",
+  "tr2": "",
+  "tu1": "",
+  "tcl": "",
+  "tu2": "",
+  "tsg": "",
 
   "desarrollo_d":
   { "d01_01": "",

@@ -48,7 +48,7 @@ $cm                 = $obj->{'cm'};
 $sitioId            = $obj->{'sitioId'};
 $propertyId         = $obj->{'propertyId'};
 //falta algo el cod_activo
-
+$cod_fijo           = $obj->{'cod_fijo'};
 $cod_activo         = $obj->{'cod_activo'};
 $indoor_outdoor     = $obj->{'indoor_outdoor'};
 $c_fechaRealizacion = $obj->{'c_fechaRealizacion'};
@@ -186,9 +186,12 @@ $hrefpdf = "../../modulos/$modulo/catastro$cform/catastro_d.php";
                     </td>
                 </tr>
                 <tr>
-
-                    <td></td>
-                    <td></td>
+                  <td>Código de activo fijo:</td>
+                        <td>
+                            <div class="input-group input-group-sm mb-2">
+                                <input type="text" class="form-control form-control-sm" name="cod_fijo" id="cod_fijo" value="<?php echo $cod_fijo ?>">
+                            </div>
+                        </td>
 
                     <td>Código activo de energía:</td>
                     <td>

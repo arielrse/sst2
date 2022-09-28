@@ -11,7 +11,7 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">SISTEMA ININTERRUMPIBLE DE ENERGÍA (UPS)</h6>
         <hr/>
 
-        <?php require("catastro_head.php"); ?>
+        <?php require("catastro_head006.php"); ?>
         <?php require("catastro006/catastro_d.php"); ?>
 
     </div>

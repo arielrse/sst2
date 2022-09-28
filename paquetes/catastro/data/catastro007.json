@@ -4,8 +4,16 @@
   "propertyId": "",
   "c_fechaRealizacion": "",
   "e_personal": "",
+  "cod_fijo": "",
   "cod_activo": "",
+  "cod_complemento": "",
   "indoor_outdoor": "",
+  "reca1": "",
+  "reca2":"",
+  "recb1": "",
+  "recb2":"",
+  "fuente_a": "",
+  "fuente_b":"",
 
   "desarrollo_d":
   { "d01_01": "",
