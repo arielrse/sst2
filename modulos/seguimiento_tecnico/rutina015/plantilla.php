@@ -11,25 +11,13 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
 
     $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - BANCO DE BATERÍAS';
     $cabecera        = getCabecera($conexion, $jsonData, $idgrupo, $titulo, false);
+    $subPlantilla1   = getSubPlantilla1($jsonData);
+    $subPlantilla2   = getSubPlantilla2($jsonData);
+    $subPlantilla3   = getSubPlantilla3($jsonData);
     $footerPlantilla = getFooter($jsonData);
     //---------------------------
-    $d_micro_1 = $obj->{'d_micro_1'};
 
-    $d1_01_01 = $d_micro_1->d1_01_01; $d1_01_02 = $d_micro_1->d1_01_02; $d1_01_03 = $d_micro_1->d1_01_03; $d1_01_04 = $d_micro_1->d1_01_04; $d1_01_05 = $d_micro_1->d1_01_05; $d1_01_06 = $d_micro_1->d1_01_06;
-    $d1_02_01 = $d_micro_1->d1_02_01; $d1_02_02 = $d_micro_1->d1_02_02; $d1_02_03 = $d_micro_1->d1_02_03; $d1_02_04 = $d_micro_1->d1_02_04; $d1_02_05 = $d_micro_1->d1_02_05; $d1_02_06 = $d_micro_1->d1_02_06;
-    $d1_03_01 = $d_micro_1->d1_03_01; $d1_03_02 = $d_micro_1->d1_03_02; $d1_03_03 = $d_micro_1->d1_03_03; $d1_03_04 = $d_micro_1->d1_03_04; $d1_03_05 = $d_micro_1->d1_03_05; $d1_03_06 = $d_micro_1->d1_03_06;
-    $d1_04_01 = $d_micro_1->d1_04_01; $d1_04_02 = $d_micro_1->d1_04_02; $d1_04_03 = $d_micro_1->d1_04_03; $d1_04_04 = $d_micro_1->d1_04_04; $d1_04_05 = $d_micro_1->d1_04_05; $d1_04_06 = $d_micro_1->d1_04_06;
-    $d1_05_01 = $d_micro_1->d1_05_01; $d1_05_02 = $d_micro_1->d1_05_02; $d1_05_03 = $d_micro_1->d1_05_03; $d1_05_04 = $d_micro_1->d1_05_04; $d1_05_05 = $d_micro_1->d1_05_05; $d1_05_06 = $d_micro_1->d1_05_06;
-    $d1_06_01 = $d_micro_1->d1_06_01; $d1_06_02 = $d_micro_1->d1_06_02; $d1_06_03 = $d_micro_1->d1_06_03; $d1_06_04 = $d_micro_1->d1_06_04; $d1_06_05 = $d_micro_1->d1_06_05; $d1_06_06 = $d_micro_1->d1_06_06;
-    $d1_07_01 = $d_micro_1->d1_07_01; $d1_07_02 = $d_micro_1->d1_07_02; $d1_07_03 = $d_micro_1->d1_07_03; $d1_07_04 = $d_micro_1->d1_07_04; $d1_07_05 = $d_micro_1->d1_07_05; $d1_07_06 = $d_micro_1->d1_07_06;
-    $d1_08_01 = $d_micro_1->d1_08_01; $d1_08_02 = $d_micro_1->d1_08_02; $d1_08_03 = $d_micro_1->d1_08_03; $d1_08_04 = $d_micro_1->d1_08_04; $d1_08_05 = $d_micro_1->d1_08_05; $d1_08_06 = $d_micro_1->d1_08_06;
-    $d1_09_01 = $d_micro_1->d1_09_01; $d1_09_02 = $d_micro_1->d1_09_02; $d1_09_03 = $d_micro_1->d1_09_03; $d1_09_04 = $d_micro_1->d1_09_04; $d1_09_05 = $d_micro_1->d1_09_05; $d1_09_06 = $d_micro_1->d1_09_06;
-    $d1_10_01 = $d_micro_1->d1_10_01; $d1_10_02 = $d_micro_1->d1_10_02; $d1_10_03 = $d_micro_1->d1_10_03; $d1_10_04 = $d_micro_1->d1_10_04; $d1_10_05 = $d_micro_1->d1_10_05; $d1_10_06 = $d_micro_1->d1_10_06;
-    $d1_11_01 = $d_micro_1->d1_11_01; $d1_11_02 = $d_micro_1->d1_11_02; $d1_11_03 = $d_micro_1->d1_11_03; $d1_11_04 = $d_micro_1->d1_11_04; $d1_11_05 = $d_micro_1->d1_11_05; $d1_11_06 = $d_micro_1->d1_11_06;
-    $d1_12_01 = $d_micro_1->d1_12_01; $d1_12_02 = $d_micro_1->d1_12_02; $d1_12_03 = $d_micro_1->d1_12_03; $d1_12_04 = $d_micro_1->d1_12_04; $d1_12_05 = $d_micro_1->d1_12_05; $d1_12_06 = $d_micro_1->d1_12_06;
-    $d1_13_01 = $d_micro_1->d1_13_01; $d1_13_02 = $d_micro_1->d1_13_02; $d1_13_03 = $d_micro_1->d1_13_03; $d1_13_04 = $d_micro_1->d1_13_04; $d1_13_05 = $d_micro_1->d1_13_05; $d1_13_06 = $d_micro_1->d1_13_06;
-    $d1_14_01 = $d_micro_1->d1_14_01; $d1_14_02 = $d_micro_1->d1_14_02; $d1_14_03 = $d_micro_1->d1_14_03; $d1_14_04 = $d_micro_1->d1_14_04; $d1_14_05 = $d_micro_1->d1_14_05; $d1_14_06 = $d_micro_1->d1_14_06;
-    $d1_15_01 = $d_micro_1->d1_15_01; $d1_15_02 = $d_micro_1->d1_15_02; $d1_15_03 = $d_micro_1->d1_15_03; $d1_15_04 = $d_micro_1->d1_15_04; $d1_15_05 = $d_micro_1->d1_15_05; $d1_15_06 = $d_micro_1->d1_15_06;
+
 
     $g_desarrollo_g1 = $obj->{'g_desarrollo_g1'};
     $g1_01_01 = $g_desarrollo_g1->g1_01_01 ? $check : $uncheck; $g1_01_02 = $g_desarrollo_g1->g1_01_02 ? $check : $uncheck; $g1_01_03 = $g_desarrollo_g1->g1_01_03;
@@ -113,136 +101,10 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
                         <div class="notice"><strong>'.constant('DTITLE').'</strong></div>
                     </div>
                 </main>	
-               <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td class="col-10p"><strong> '.constant('D01').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D02').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D03').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D04').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D05').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D06').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D07').'</strong></td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p"> 1</td>
-                                <td class="col-15p"> '.$d1_01_01.'</td>
-                                <td class="col-15p"> '.$d1_01_02.'</td>
-                                <td class="col-15p"> '.$d1_01_03.'</td>
-                                <td class="col-15p"> '.$d1_01_04.'</td>
-                                <td class="col-15p"> '.$d1_01_05.'</td>
-                                <td class="col-15p"> '.$d1_01_06.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p"><strong> 2</strong></td>
-                                <td class="col-15p"> '.$d1_02_01.'</td>
-                                <td class="col-15p"> '.$d1_02_02.'</td>
-                                <td class="col-15p"> '.$d1_02_03.'</td>
-                                <td class="col-15p"> '.$d1_02_04.'</td>
-                                <td class="col-15p"> '.$d1_02_05.'</td>
-                                <td class="col-15p"> '.$d1_02_06.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p"><strong> 3</strong></td>
-                                <td class="col-15p"> '.$d1_03_01.'</td>
-                                <td class="col-15p"> '.$d1_03_02.'</td>
-                                <td class="col-15p"> '.$d1_03_03.'</td>
-                                <td class="col-15p"> '.$d1_03_04.'</td>
-                                <td class="col-15p"> '.$d1_03_05.'</td>
-                                <td class="col-15p"> '.$d1_03_06.'</td>
-                            </tr>
-                        </tbody>        
-                    </table>									                        
-               </main>
-               <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td class="col-10p"><strong> '.constant('D08').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D02').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D03').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D04').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D05').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D09').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D10').'</strong></td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p"> 1</td>
-                                <td class="col-15p"> '.$d1_04_01.'</td>
-                                <td class="col-15p"> '.$d1_04_02.'</td>
-                                <td class="col-15p"> '.$d1_04_03.'</td>
-                                <td class="col-15p"> '.$d1_04_04.'</td>
-                                <td class="col-15p"> '.$d1_04_05.'</td>
-                                <td class="col-15p"> '.$d1_04_06.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p">2</td>
-                                <td class="col-15p"> '.$d1_05_01.'</td>
-                                <td class="col-15p"> '.$d1_05_02.'</td>
-                                <td class="col-15p"> '.$d1_05_03.'</td>
-                                <td class="col-15p"> '.$d1_05_04.'</td>
-                                <td class="col-15p"> '.$d1_05_05.'</td>
-                                <td class="col-15p"> '.$d1_05_06.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p">3</td>
-                                <td class="col-15p"> '.$d1_06_01.'</td>
-                                <td class="col-15p"> '.$d1_06_02.'</td>
-                                <td class="col-15p"> '.$d1_06_03.'</td>
-                                <td class="col-15p"> '.$d1_06_04.'</td>
-                                <td class="col-15p"> '.$d1_06_05.'</td>
-                                <td class="col-15p"> '.$d1_06_06.'</td>
-                            </tr>
-                        </tbody>        
-                    </table>									                        
-               </main>
-               <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td class="col-10p"><strong> '.constant('D08').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D11').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D12').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D13').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D14').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D15').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D16').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('D17').'</strong></td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p"> 1</td>
-                                <td class="col-15p"> '.$d1_07_01.'</td>
-                                <td class="col-15p"> '.$d1_07_02.'</td>
-                                <td class="col-15p"> '.$d1_07_03.'</td>
-                                <td class="col-15p"> '.$d1_07_04.'</td>
-                                <td class="col-15p"> '.$d1_07_05.'</td>
-                                <td class="col-15p"> '.$d1_07_06.'</td>
-                                
-                            </tr>
-                            <tr>
-                                <td class="col-5p"><strong> 2</strong></td>
-                                <td class="col-15p"> '.$d1_08_01.'</td>
-                                <td class="col-15p"> '.$d1_08_02.'</td>
-                                <td class="col-15p"> '.$d1_08_03.'</td>
-                                <td class="col-15p"> '.$d1_08_04.'</td>
-                                <td class="col-15p"> '.$d1_08_05.'</td>
-                                <td class="col-15p"> '.$d1_08_06.'</td>
-                                
-                            </tr>
-                            <tr>
-                                <td class="col-5p"><strong> 3</strong></td>
-                                <td class="col-15p"> '.$d1_09_01.'</td>
-                                <td class="col-15p"> '.$d1_09_02.'</td>
-                                <td class="col-15p"> '.$d1_09_03.'</td>
-                                <td class="col-15p"> '.$d1_09_04.'</td>
-                                <td class="col-15p"> '.$d1_09_05.'</td>
-                                <td class="col-15p"> '.$d1_09_06.'</td>
-                                
-                            </tr>
-                        </tbody>        
-                    </table>									                        
-               </main>
+               '. $subPlantilla1 .'
+               '. $subPlantilla2 .'
+               '. $subPlantilla3 .'
+               
                <main>
                     <table class="tborder">
                         <tbody>
@@ -779,6 +641,536 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
 
     return $plantilla;
 }
+function getSubPlantilla1($jsonData){
+    $obj = json_decode($jsonData);
+    $d_micro_1 = $obj->{'d_micro_1'};
 
+    $d1_01_01 = $d_micro_1->d1_01_01; $d1_01_02 = $d_micro_1->d1_01_02; $d1_01_03 = $d_micro_1->d1_01_03; $d1_01_04 = $d_micro_1->d1_01_04; $d1_01_05 = $d_micro_1->d1_01_05; $d1_01_06 = $d_micro_1->d1_01_06;
+    $d1_02_01 = $d_micro_1->d1_02_01; $d1_02_02 = $d_micro_1->d1_02_02; $d1_02_03 = $d_micro_1->d1_02_03; $d1_02_04 = $d_micro_1->d1_02_04; $d1_02_05 = $d_micro_1->d1_02_05; $d1_02_06 = $d_micro_1->d1_02_06;
+    $d1_03_01 = $d_micro_1->d1_03_01; $d1_03_02 = $d_micro_1->d1_03_02; $d1_03_03 = $d_micro_1->d1_03_03; $d1_03_04 = $d_micro_1->d1_03_04; $d1_03_05 = $d_micro_1->d1_03_05; $d1_03_06 = $d_micro_1->d1_03_06;
+    $d1_04_01 = $d_micro_1->d1_04_01; $d1_04_02 = $d_micro_1->d1_04_02; $d1_04_03 = $d_micro_1->d1_04_03; $d1_04_04 = $d_micro_1->d1_04_04; $d1_04_05 = $d_micro_1->d1_04_05; $d1_04_06 = $d_micro_1->d1_04_06;
+    $d1_05_01 = $d_micro_1->d1_05_01; $d1_05_02 = $d_micro_1->d1_05_02; $d1_05_03 = $d_micro_1->d1_05_03; $d1_05_04 = $d_micro_1->d1_05_04; $d1_05_05 = $d_micro_1->d1_05_05; $d1_05_06 = $d_micro_1->d1_05_06;
+    $d1_06_01 = $d_micro_1->d1_06_01; $d1_06_02 = $d_micro_1->d1_06_02; $d1_06_03 = $d_micro_1->d1_06_03; $d1_06_04 = $d_micro_1->d1_06_04; $d1_06_05 = $d_micro_1->d1_06_05; $d1_06_06 = $d_micro_1->d1_06_06;
+    $d1_07_01 = $d_micro_1->d1_07_01; $d1_07_02 = $d_micro_1->d1_07_02; $d1_07_03 = $d_micro_1->d1_07_03; $d1_07_04 = $d_micro_1->d1_07_04; $d1_07_05 = $d_micro_1->d1_07_05; $d1_07_06 = $d_micro_1->d1_07_06;
+    $d1_08_01 = $d_micro_1->d1_08_01; $d1_08_02 = $d_micro_1->d1_08_02; $d1_08_03 = $d_micro_1->d1_08_03; $d1_08_04 = $d_micro_1->d1_08_04; $d1_08_05 = $d_micro_1->d1_08_05; $d1_08_06 = $d_micro_1->d1_08_06;
+    $d1_09_01 = $d_micro_1->d1_09_01; $d1_09_02 = $d_micro_1->d1_09_02; $d1_09_03 = $d_micro_1->d1_09_03; $d1_09_04 = $d_micro_1->d1_09_04; $d1_09_05 = $d_micro_1->d1_09_05; $d1_09_06 = $d_micro_1->d1_09_06;
+    $d1_10_01 = $d_micro_1->d1_10_01; $d1_10_02 = $d_micro_1->d1_10_02; $d1_10_03 = $d_micro_1->d1_10_03; $d1_10_04 = $d_micro_1->d1_10_04; $d1_10_05 = $d_micro_1->d1_10_05; $d1_10_06 = $d_micro_1->d1_10_06;
+    $d1_11_01 = $d_micro_1->d1_11_01; $d1_11_02 = $d_micro_1->d1_11_02; $d1_11_03 = $d_micro_1->d1_11_03; $d1_11_04 = $d_micro_1->d1_11_04; $d1_11_05 = $d_micro_1->d1_11_05; $d1_11_06 = $d_micro_1->d1_11_06;
+    $d1_12_01 = $d_micro_1->d1_12_01; $d1_12_02 = $d_micro_1->d1_12_02; $d1_12_03 = $d_micro_1->d1_12_03; $d1_12_04 = $d_micro_1->d1_12_04; $d1_12_05 = $d_micro_1->d1_12_05; $d1_12_06 = $d_micro_1->d1_12_06;
+    $d1_13_01 = $d_micro_1->d1_13_01; $d1_13_02 = $d_micro_1->d1_13_02; $d1_13_03 = $d_micro_1->d1_13_03; $d1_13_04 = $d_micro_1->d1_13_04; $d1_13_05 = $d_micro_1->d1_13_05; $d1_13_06 = $d_micro_1->d1_13_06;
+    $d1_14_01 = $d_micro_1->d1_14_01; $d1_14_02 = $d_micro_1->d1_14_02; $d1_14_03 = $d_micro_1->d1_14_03; $d1_14_04 = $d_micro_1->d1_14_04; $d1_14_05 = $d_micro_1->d1_14_05; $d1_14_06 = $d_micro_1->d1_14_06;
+    $d1_15_01 = $d_micro_1->d1_15_01; $d1_15_02 = $d_micro_1->d1_15_02; $d1_15_03 = $d_micro_1->d1_15_03; $d1_15_04 = $d_micro_1->d1_15_04; $d1_15_05 = $d_micro_1->d1_15_05; $d1_15_06 = $d_micro_1->d1_15_06;
+    $plantilla =
+        '<main>
+                    <table class="tborder">
+                        <tbody>
+                            <tr>
+                                <td class="col-10p"><strong> '.constant('D01').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D02').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D03').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D04').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D05').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D06').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D07').'</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>1</strong></td>
+                                <td class="col-15p"> '.$d1_01_01.'</td>
+                                <td class="col-15p"> '.$d1_01_02.'</td>
+                                <td class="col-15p"> '.$d1_01_03.'</td>
+                                <td class="col-15p"> '.$d1_01_04.'</td>
+                                <td class="col-15p"> '.$d1_01_05.'</td>
+                                <td class="col-15p"> '.$d1_01_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>2</strong></td>
+                                <td class="col-15p"> '.$d1_02_01.'</td>
+                                <td class="col-15p"> '.$d1_02_02.'</td>
+                                <td class="col-15p"> '.$d1_02_03.'</td>
+                                <td class="col-15p"> '.$d1_02_04.'</td>
+                                <td class="col-15p"> '.$d1_02_05.'</td>
+                                <td class="col-15p"> '.$d1_02_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>3</strong></td>
+                                <td class="col-15p"> '.$d1_03_01.'</td>
+                                <td class="col-15p"> '.$d1_03_02.'</td>
+                                <td class="col-15p"> '.$d1_03_03.'</td>
+                                <td class="col-15p"> '.$d1_03_04.'</td>
+                                <td class="col-15p"> '.$d1_03_05.'</td>
+                                <td class="col-15p"> '.$d1_03_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>4</strong></td>
+                                <td class="col-15p"> '.$d1_04_01.'</td>
+                                <td class="col-15p"> '.$d1_04_02.'</td>
+                                <td class="col-15p"> '.$d1_04_03.'</td>
+                                <td class="col-15p"> '.$d1_04_04.'</td>
+                                <td class="col-15p"> '.$d1_04_05.'</td>
+                                <td class="col-15p"> '.$d1_04_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>5</strong></td>
+                                <td class="col-15p"> '.$d1_05_01.'</td>
+                                <td class="col-15p"> '.$d1_05_02.'</td>
+                                <td class="col-15p"> '.$d1_05_03.'</td>
+                                <td class="col-15p"> '.$d1_05_04.'</td>
+                                <td class="col-15p"> '.$d1_05_05.'</td>
+                                <td class="col-15p"> '.$d1_05_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>6</strong></td>
+                                <td class="col-15p"> '.$d1_06_01.'</td>
+                                <td class="col-15p"> '.$d1_06_02.'</td>
+                                <td class="col-15p"> '.$d1_06_03.'</td>
+                                <td class="col-15p"> '.$d1_06_04.'</td>
+                                <td class="col-15p"> '.$d1_06_05.'</td>
+                                <td class="col-15p"> '.$d1_06_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>7</strong></td>
+                                <td class="col-15p"> '.$d1_07_01.'</td>
+                                <td class="col-15p"> '.$d1_07_02.'</td>
+                                <td class="col-15p"> '.$d1_07_03.'</td>
+                                <td class="col-15p"> '.$d1_07_04.'</td>
+                                <td class="col-15p"> '.$d1_07_05.'</td>
+                                <td class="col-15p"> '.$d1_07_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>8</strong></td>
+                                <td class="col-15p"> '.$d1_08_01.'</td>
+                                <td class="col-15p"> '.$d1_08_02.'</td>
+                                <td class="col-15p"> '.$d1_08_03.'</td>
+                                <td class="col-15p"> '.$d1_08_04.'</td>
+                                <td class="col-15p"> '.$d1_08_05.'</td>
+                                <td class="col-15p"> '.$d1_08_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>9</strong></td>
+                                <td class="col-15p"> '.$d1_09_01.'</td>
+                                <td class="col-15p"> '.$d1_09_02.'</td>
+                                <td class="col-15p"> '.$d1_09_03.'</td>
+                                <td class="col-15p"> '.$d1_09_04.'</td>
+                                <td class="col-15p"> '.$d1_09_05.'</td>
+                                <td class="col-15p"> '.$d1_09_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>10</strong></td>
+                                <td class="col-15p"> '.$d1_10_01.'</td>
+                                <td class="col-15p"> '.$d1_10_02.'</td>
+                                <td class="col-15p"> '.$d1_10_03.'</td>
+                                <td class="col-15p"> '.$d1_10_04.'</td>
+                                <td class="col-15p"> '.$d1_10_05.'</td>
+                                <td class="col-15p"> '.$d1_10_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>11</strong></td>
+                                <td class="col-15p"> '.$d1_11_01.'</td>
+                                <td class="col-15p"> '.$d1_11_02.'</td>
+                                <td class="col-15p"> '.$d1_11_03.'</td>
+                                <td class="col-15p"> '.$d1_11_04.'</td>
+                                <td class="col-15p"> '.$d1_11_05.'</td>
+                                <td class="col-15p"> '.$d1_11_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>12</strong></td>
+                                <td class="col-15p"> '.$d1_12_01.'</td>
+                                <td class="col-15p"> '.$d1_12_02.'</td>
+                                <td class="col-15p"> '.$d1_12_03.'</td>
+                                <td class="col-15p"> '.$d1_12_04.'</td>
+                                <td class="col-15p"> '.$d1_12_05.'</td>
+                                <td class="col-15p"> '.$d1_12_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>13</strong></td>
+                                <td class="col-15p"> '.$d1_13_01.'</td>
+                                <td class="col-15p"> '.$d1_13_02.'</td>
+                                <td class="col-15p"> '.$d1_13_03.'</td>
+                                <td class="col-15p"> '.$d1_13_04.'</td>
+                                <td class="col-15p"> '.$d1_13_05.'</td>
+                                <td class="col-15p"> '.$d1_13_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>14</strong></td>
+                                <td class="col-15p"> '.$d1_14_01.'</td>
+                                <td class="col-15p"> '.$d1_14_02.'</td>
+                                <td class="col-15p"> '.$d1_14_03.'</td>
+                                <td class="col-15p"> '.$d1_14_04.'</td>
+                                <td class="col-15p"> '.$d1_14_05.'</td>
+                                <td class="col-15p"> '.$d1_14_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>15</strong></td>
+                                <td class="col-15p"> '.$d1_15_01.'</td>
+                                <td class="col-15p"> '.$d1_15_02.'</td>
+                                <td class="col-15p"> '.$d1_15_03.'</td>
+                                <td class="col-15p"> '.$d1_15_04.'</td>
+                                <td class="col-15p"> '.$d1_15_05.'</td>
+                                <td class="col-15p"> '.$d1_15_06.'</td>
+                            </tr>
+                        </tbody>
+                    </table>
+               </main>';
+
+    return $plantilla;
+}
+function getSubPlantilla2($jsonData){
+$obj = json_decode($jsonData);
+$d_micro_2 = $obj->{'d_micro_2'};
+$d2_01_01 = $d_micro_2->d2_01_01; $d2_01_02 = $d_micro_2->d2_01_02; $d2_01_03 = $d_micro_2->d2_01_03; $d2_01_04 = $d_micro_2->d2_01_04; $d2_01_05 = $d_micro_2->d2_01_05; $d2_01_06 = $d_micro_2->d2_01_06;
+$d2_02_01 = $d_micro_2->d2_02_01; $d2_02_02 = $d_micro_2->d2_02_02; $d2_02_03 = $d_micro_2->d2_02_03; $d2_02_04 = $d_micro_2->d2_02_04; $d2_02_05 = $d_micro_2->d2_02_05; $d2_02_06 = $d_micro_2->d2_02_06;
+$d2_03_01 = $d_micro_2->d2_03_01; $d2_03_02 = $d_micro_2->d2_03_02; $d2_03_03 = $d_micro_2->d2_03_03; $d2_03_04 = $d_micro_2->d2_03_04; $d2_03_05 = $d_micro_2->d2_03_05; $d2_03_06 = $d_micro_2->d2_03_06;
+$d2_04_01 = $d_micro_2->d2_04_01; $d2_04_02 = $d_micro_2->d2_04_02; $d2_04_03 = $d_micro_2->d2_04_03; $d2_04_04 = $d_micro_2->d2_04_04; $d2_04_05 = $d_micro_2->d2_04_05; $d2_04_06 = $d_micro_2->d2_04_06;
+$d2_05_01 = $d_micro_2->d2_05_01; $d2_05_02 = $d_micro_2->d2_05_02; $d2_05_03 = $d_micro_2->d2_05_03; $d2_05_04 = $d_micro_2->d2_05_04; $d2_05_05 = $d_micro_2->d2_05_05; $d2_05_06 = $d_micro_2->d2_05_06;
+$d2_06_01 = $d_micro_2->d2_06_01; $d2_06_02 = $d_micro_2->d2_06_02; $d2_06_03 = $d_micro_2->d2_06_03; $d2_06_04 = $d_micro_2->d2_06_04; $d2_06_05 = $d_micro_2->d2_06_05; $d2_06_06 = $d_micro_2->d2_06_06;
+$d2_07_01 = $d_micro_2->d2_07_01; $d2_07_02 = $d_micro_2->d2_07_02; $d2_07_03 = $d_micro_2->d2_07_03; $d2_07_04 = $d_micro_2->d2_07_04; $d2_07_05 = $d_micro_2->d2_07_05; $d2_07_06 = $d_micro_2->d2_07_06;
+$d2_08_01 = $d_micro_2->d2_08_01; $d2_08_02 = $d_micro_2->d2_08_02; $d2_08_03 = $d_micro_2->d2_08_03; $d2_08_04 = $d_micro_2->d2_08_04; $d2_08_05 = $d_micro_2->d2_08_05; $d2_08_06 = $d_micro_2->d2_08_06;
+$d2_09_01 = $d_micro_2->d2_09_01; $d2_09_02 = $d_micro_2->d2_09_02; $d2_09_03 = $d_micro_2->d2_09_03; $d2_09_04 = $d_micro_2->d2_09_04; $d2_09_05 = $d_micro_2->d2_09_05; $d2_09_06 = $d_micro_2->d2_09_06;
+$d2_10_01 = $d_micro_2->d2_10_01; $d2_10_02 = $d_micro_2->d2_10_02; $d2_10_03 = $d_micro_2->d2_10_03; $d2_10_04 = $d_micro_2->d2_10_04; $d2_10_05 = $d_micro_2->d2_10_05; $d2_10_06 = $d_micro_2->d2_10_06;
+$d2_11_01 = $d_micro_2->d2_11_01; $d2_11_02 = $d_micro_2->d2_11_02; $d2_11_03 = $d_micro_2->d2_11_03; $d2_11_04 = $d_micro_2->d2_11_04; $d2_11_05 = $d_micro_2->d2_11_05; $d2_11_06 = $d_micro_2->d2_11_06;
+$d2_12_01 = $d_micro_2->d2_12_01; $d2_12_02 = $d_micro_2->d2_12_02; $d2_12_03 = $d_micro_2->d2_12_03; $d2_12_04 = $d_micro_2->d2_12_04; $d2_12_05 = $d_micro_2->d2_12_05; $d2_12_06 = $d_micro_2->d2_12_06;
+$d2_13_01 = $d_micro_2->d2_13_01; $d2_13_02 = $d_micro_2->d2_13_02; $d2_13_03 = $d_micro_2->d2_13_03; $d2_13_04 = $d_micro_2->d2_13_04; $d2_13_05 = $d_micro_2->d2_13_05; $d2_13_06 = $d_micro_2->d2_13_06;
+$d2_14_01 = $d_micro_2->d2_14_01; $d2_14_02 = $d_micro_2->d2_14_02; $d2_14_03 = $d_micro_2->d2_14_03; $d2_14_04 = $d_micro_2->d2_14_04; $d2_14_05 = $d_micro_2->d2_14_05; $d2_14_06 = $d_micro_2->d2_14_06;
+$d2_15_01 = $d_micro_2->d2_15_01; $d2_15_02 = $d_micro_2->d2_15_02; $d2_15_03 = $d_micro_2->d2_15_03; $d2_15_04 = $d_micro_2->d2_15_04; $d2_15_05 = $d_micro_2->d2_15_05; $d2_15_06 = $d_micro_2->d2_15_06;
+    $plantilla =
+        '<main>
+                    <table class="tborder">
+                        <tbody>
+                            <tr>
+                                <td class="col-10p"><strong> '.constant('D08').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D02').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D03').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D04').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D05').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D09').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D10').'</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"> 1</td>
+                                <td class="col-15p"> '.$d2_01_01.'</td>
+                                <td class="col-15p"> '.$d2_01_02.'</td>
+                                <td class="col-15p"> '.$d2_01_03.'</td>
+                                <td class="col-15p"> '.$d2_01_04.'</td>
+                                <td class="col-15p"> '.$d2_01_05.'</td>
+                                <td class="col-15p"> '.$d2_01_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p">2</td>
+                                <td class="col-15p"> '.$d2_02_01.'</td>
+                                <td class="col-15p"> '.$d2_02_02.'</td>
+                                <td class="col-15p"> '.$d2_02_03.'</td>
+                                <td class="col-15p"> '.$d2_02_04.'</td>
+                                <td class="col-15p"> '.$d2_02_05.'</td>
+                                <td class="col-15p"> '.$d2_02_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p">3</td>
+                                <td class="col-15p"> '.$d2_03_01.'</td>
+                                <td class="col-15p"> '.$d2_03_02.'</td>
+                                <td class="col-15p"> '.$d2_03_03.'</td>
+                                <td class="col-15p"> '.$d2_03_04.'</td>
+                                <td class="col-15p"> '.$d2_03_05.'</td>
+                                <td class="col-15p"> '.$d2_03_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"> 4</td>
+                                <td class="col-15p"> '.$d2_04_01.'</td>
+                                <td class="col-15p"> '.$d2_04_02.'</td>
+                                <td class="col-15p"> '.$d2_04_03.'</td>
+                                <td class="col-15p"> '.$d2_04_04.'</td>
+                                <td class="col-15p"> '.$d2_04_05.'</td>
+                                <td class="col-15p"> '.$d2_04_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p">5</td>
+                                <td class="col-15p"> '.$d2_05_01.'</td>
+                                <td class="col-15p"> '.$d2_05_02.'</td>
+                                <td class="col-15p"> '.$d2_05_03.'</td>
+                                <td class="col-15p"> '.$d2_05_04.'</td>
+                                <td class="col-15p"> '.$d2_05_05.'</td>
+                                <td class="col-15p"> '.$d2_05_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p">6</td>
+                                <td class="col-15p"> '.$d2_06_01.'</td>
+                                <td class="col-15p"> '.$d2_06_02.'</td>
+                                <td class="col-15p"> '.$d2_06_03.'</td>
+                                <td class="col-15p"> '.$d2_06_04.'</td>
+                                <td class="col-15p"> '.$d2_06_05.'</td>
+                                <td class="col-15p"> '.$d2_06_06.'</td>
+                            </tr>
+                             <tr>
+                                <td class="col-10p"><strong>7</strong></td>
+                                <td class="col-15p"> '.$d2_07_01.'</td>
+                                <td class="col-15p"> '.$d2_07_02.'</td>
+                                <td class="col-15p"> '.$d2_07_03.'</td>
+                                <td class="col-15p"> '.$d2_07_04.'</td>
+                                <td class="col-15p"> '.$d2_07_05.'</td>
+                                <td class="col-15p"> '.$d2_07_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>8</strong></td>
+                                <td class="col-15p"> '.$d2_08_01.'</td>
+                                <td class="col-15p"> '.$d2_08_02.'</td>
+                                <td class="col-15p"> '.$d2_08_03.'</td>
+                                <td class="col-15p"> '.$d2_08_04.'</td>
+                                <td class="col-15p"> '.$d2_08_05.'</td>
+                                <td class="col-15p"> '.$d2_08_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>9</strong></td>
+                                <td class="col-15p"> '.$d2_09_01.'</td>
+                                <td class="col-15p"> '.$d2_09_02.'</td>
+                                <td class="col-15p"> '.$d2_09_03.'</td>
+                                <td class="col-15p"> '.$d2_09_04.'</td>
+                                <td class="col-15p"> '.$d2_09_05.'</td>
+                                <td class="col-15p"> '.$d2_09_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>10</strong></td>
+                                <td class="col-15p"> '.$d2_10_01.'</td>
+                                <td class="col-15p"> '.$d2_10_02.'</td>
+                                <td class="col-15p"> '.$d2_10_03.'</td>
+                                <td class="col-15p"> '.$d2_10_04.'</td>
+                                <td class="col-15p"> '.$d2_10_05.'</td>
+                                <td class="col-15p"> '.$d2_10_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>11</strong></td>
+                                <td class="col-15p"> '.$d2_11_01.'</td>
+                                <td class="col-15p"> '.$d2_11_02.'</td>
+                                <td class="col-15p"> '.$d2_11_03.'</td>
+                                <td class="col-15p"> '.$d2_11_04.'</td>
+                                <td class="col-15p"> '.$d2_11_05.'</td>
+                                <td class="col-15p"> '.$d2_11_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>12</strong></td>
+                                <td class="col-15p"> '.$d2_12_01.'</td>
+                                <td class="col-15p"> '.$d2_12_02.'</td>
+                                <td class="col-15p"> '.$d2_12_03.'</td>
+                                <td class="col-15p"> '.$d2_12_04.'</td>
+                                <td class="col-15p"> '.$d2_12_05.'</td>
+                                <td class="col-15p"> '.$d2_12_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>13</strong></td>
+                                <td class="col-15p"> '.$d2_13_01.'</td>
+                                <td class="col-15p"> '.$d2_13_02.'</td>
+                                <td class="col-15p"> '.$d2_13_03.'</td>
+                                <td class="col-15p"> '.$d2_13_04.'</td>
+                                <td class="col-15p"> '.$d2_13_05.'</td>
+                                <td class="col-15p"> '.$d2_13_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>14</strong></td>
+                                <td class="col-15p"> '.$d2_14_01.'</td>
+                                <td class="col-15p"> '.$d2_14_02.'</td>
+                                <td class="col-15p"> '.$d2_14_03.'</td>
+                                <td class="col-15p"> '.$d2_14_04.'</td>
+                                <td class="col-15p"> '.$d2_14_05.'</td>
+                                <td class="col-15p"> '.$d2_14_06.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-10p"><strong>15</strong></td>
+                                <td class="col-15p"> '.$d2_15_01.'</td>
+                                <td class="col-15p"> '.$d2_15_02.'</td>
+                                <td class="col-15p"> '.$d2_15_03.'</td>
+                                <td class="col-15p"> '.$d2_15_04.'</td>
+                                <td class="col-15p"> '.$d2_15_05.'</td>
+                                <td class="col-15p"> '.$d2_15_06.'</td>
+                            </tr>
+                        </tbody>        
+                    </table>									                        
+               </main>';
+    return $plantilla;
+}
+function getSubPlantilla3($jsonData){
+$obj = json_decode($jsonData);
+$d_micro_3 = $obj->{'d_micro_3'};
+$d3_01_01 = $d_micro_3->d3_01_01; $d3_01_02 = $d_micro_3->d3_01_02; $d3_01_03 = $d_micro_3->d3_01_03; $d3_01_04 = $d_micro_3->d3_01_04; $d3_01_05 = $d_micro_3->d3_01_05; $d3_01_06 = $d_micro_3->d3_01_06; $d3_01_07 = $d_micro_3->d3_01_07;
+$d3_02_01 = $d_micro_3->d3_02_01; $d3_02_02 = $d_micro_3->d3_02_02; $d3_02_03 = $d_micro_3->d3_02_03; $d3_02_04 = $d_micro_3->d3_02_04; $d3_02_05 = $d_micro_3->d3_02_05; $d3_02_06 = $d_micro_3->d3_02_06; $d3_02_07 = $d_micro_3->d3_02_07;
+$d3_03_01 = $d_micro_3->d3_03_01; $d3_03_02 = $d_micro_3->d3_03_02; $d3_03_03 = $d_micro_3->d3_03_03; $d3_03_04 = $d_micro_3->d3_03_04; $d3_03_05 = $d_micro_3->d3_03_05; $d3_03_06 = $d_micro_3->d3_03_06; $d3_03_07 = $d_micro_3->d3_03_07;
+$d3_04_01 = $d_micro_3->d3_04_01; $d3_04_02 = $d_micro_3->d3_04_02; $d3_04_03 = $d_micro_3->d3_04_03; $d3_04_04 = $d_micro_3->d3_04_04; $d3_04_05 = $d_micro_3->d3_04_05; $d3_04_06 = $d_micro_3->d3_04_06; $d3_04_07 = $d_micro_3->d3_04_07;
+$d3_05_01 = $d_micro_3->d3_05_01; $d3_05_02 = $d_micro_3->d3_05_02; $d3_05_03 = $d_micro_3->d3_05_03; $d3_05_04 = $d_micro_3->d3_05_04; $d3_05_05 = $d_micro_3->d3_05_05; $d3_05_06 = $d_micro_3->d3_05_06; $d3_05_07 = $d_micro_3->d3_05_07;
+$d3_06_01 = $d_micro_3->d3_06_01; $d3_06_02 = $d_micro_3->d3_06_02; $d3_06_03 = $d_micro_3->d3_06_03; $d3_06_04 = $d_micro_3->d3_06_04; $d3_06_05 = $d_micro_3->d3_06_05; $d3_06_06 = $d_micro_3->d3_06_06; $d3_06_07 = $d_micro_3->d3_06_07;
+$d3_07_01 = $d_micro_3->d3_07_01; $d3_07_02 = $d_micro_3->d3_07_02; $d3_07_03 = $d_micro_3->d3_07_03; $d3_07_04 = $d_micro_3->d3_07_04; $d3_07_05 = $d_micro_3->d3_07_05; $d3_07_06 = $d_micro_3->d3_07_06; $d3_07_07 = $d_micro_3->d3_07_07;
+$d3_08_01 = $d_micro_3->d3_08_01; $d3_08_02 = $d_micro_3->d3_08_02; $d3_08_03 = $d_micro_3->d3_08_03; $d3_08_04 = $d_micro_3->d3_08_04; $d3_08_05 = $d_micro_3->d3_08_05; $d3_08_06 = $d_micro_3->d3_08_06; $d3_08_07 = $d_micro_3->d3_08_07;
+$d3_09_01 = $d_micro_3->d3_09_01; $d3_09_02 = $d_micro_3->d3_09_02; $d3_09_03 = $d_micro_3->d3_09_03; $d3_09_04 = $d_micro_3->d3_09_04; $d3_09_05 = $d_micro_3->d3_09_05; $d3_09_06 = $d_micro_3->d3_09_06; $d3_09_07 = $d_micro_3->d3_09_07;
+$d3_10_01 = $d_micro_3->d3_10_01; $d3_10_02 = $d_micro_3->d3_10_02; $d3_10_03 = $d_micro_3->d3_10_03; $d3_10_04 = $d_micro_3->d3_10_04; $d3_10_05 = $d_micro_3->d3_10_05; $d3_10_06 = $d_micro_3->d3_10_06; $d3_10_07 = $d_micro_3->d3_10_07;
+$d3_11_01 = $d_micro_3->d3_11_01; $d3_11_02 = $d_micro_3->d3_11_02; $d3_11_03 = $d_micro_3->d3_11_03; $d3_11_04 = $d_micro_3->d3_11_04; $d3_11_05 = $d_micro_3->d3_11_05; $d3_11_06 = $d_micro_3->d3_11_06; $d3_11_07 = $d_micro_3->d3_11_07;
+$d3_12_01 = $d_micro_3->d3_12_01; $d3_12_02 = $d_micro_3->d3_12_02; $d3_12_03 = $d_micro_3->d3_12_03; $d3_12_04 = $d_micro_3->d3_12_04; $d3_12_05 = $d_micro_3->d3_12_05; $d3_12_06 = $d_micro_3->d3_12_06; $d3_12_07 = $d_micro_3->d3_12_07;
+$d3_13_01 = $d_micro_3->d3_13_01; $d3_13_02 = $d_micro_3->d3_13_02; $d3_13_03 = $d_micro_3->d3_13_03; $d3_13_04 = $d_micro_3->d3_13_04; $d3_13_05 = $d_micro_3->d3_13_05; $d3_13_06 = $d_micro_3->d3_13_06; $d3_13_07 = $d_micro_3->d3_13_07;
+$d3_14_01 = $d_micro_3->d3_14_01; $d3_14_02 = $d_micro_3->d3_14_02; $d3_14_03 = $d_micro_3->d3_14_03; $d3_14_04 = $d_micro_3->d3_14_04; $d3_14_05 = $d_micro_3->d3_14_05; $d3_14_06 = $d_micro_3->d3_14_06; $d3_14_07 = $d_micro_3->d3_14_07;
+$d3_15_01 = $d_micro_3->d3_15_01; $d3_15_02 = $d_micro_3->d3_15_02; $d3_15_03 = $d_micro_3->d3_15_03; $d3_15_04 = $d_micro_3->d3_15_04; $d3_15_05 = $d_micro_3->d3_15_05; $d3_15_06 = $d_micro_3->d3_15_06; $d3_15_07 = $d_micro_3->d3_15_07;
+    $plantilla =
+        '<main>
+                    <table class="tborder">
+                        <tbody>
+                            <tr>
+                                <td class="col-10p"><strong> '.constant('D08').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D11').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D12').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D13').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D14').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D15').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D16').'</strong></td>
+                                <td class="col-15p"><strong> '.constant('D17').'</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong>1</strong></td>
+                                <td class="col-15p"> '.$d3_01_01.'</td>
+                                <td class="col-15p"> '.$d3_01_02.'</td>
+                                <td class="col-15p"> '.$d3_01_03.'</td>
+                                <td class="col-15p"> '.$d3_01_04.'</td>
+                                <td class="col-15p"> '.$d3_01_05.'</td>
+                                <td class="col-15p"> '.$d3_01_06.'</td>
+                                <td class="col-15p"> '.$d3_01_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong> 2</strong></td>
+                                <td class="col-15p"> '.$d3_02_01.'</td>
+                                <td class="col-15p"> '.$d3_02_02.'</td>
+                                <td class="col-15p"> '.$d3_02_03.'</td>
+                                <td class="col-15p"> '.$d3_02_04.'</td>
+                                <td class="col-15p"> '.$d3_02_05.'</td>
+                                <td class="col-15p"> '.$d3_02_06.'</td>
+                                <td class="col-15p"> '.$d3_02_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong> 3</strong></td>
+                                <td class="col-15p"> '.$d3_03_01.'</td>
+                                <td class="col-15p"> '.$d3_03_02.'</td>
+                                <td class="col-15p"> '.$d3_03_03.'</td>
+                                <td class="col-15p"> '.$d3_03_04.'</td>
+                                <td class="col-15p"> '.$d3_03_05.'</td>
+                                <td class="col-15p"> '.$d3_03_06.'</td>
+                                <td class="col-15p"> '.$d3_03_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong> 4</strong></td>
+                                <td class="col-15p"> '.$d3_04_01.'</td>
+                                <td class="col-15p"> '.$d3_04_02.'</td>
+                                <td class="col-15p"> '.$d3_04_03.'</td>
+                                <td class="col-15p"> '.$d3_04_04.'</td>
+                                <td class="col-15p"> '.$d3_04_05.'</td>
+                                <td class="col-15p"> '.$d3_04_06.'</td>
+                                <td class="col-15p"> '.$d3_04_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong> 5</strong></td>
+                                <td class="col-15p"> '.$d3_05_01.'</td>
+                                <td class="col-15p"> '.$d3_05_02.'</td>
+                                <td class="col-15p"> '.$d3_05_03.'</td>
+                                <td class="col-15p"> '.$d3_05_04.'</td>
+                                <td class="col-15p"> '.$d3_05_05.'</td>
+                                <td class="col-15p"> '.$d3_05_06.'</td>
+                                <td class="col-15p"> '.$d3_05_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong> 6</strong></td>
+                                <td class="col-15p"> '.$d3_06_01.'</td>
+                                <td class="col-15p"> '.$d3_06_02.'</td>
+                                <td class="col-15p"> '.$d3_06_03.'</td>
+                                <td class="col-15p"> '.$d3_06_04.'</td>
+                                <td class="col-15p"> '.$d3_06_05.'</td>
+                                <td class="col-15p"> '.$d3_06_06.'</td>
+                                <td class="col-15p"> '.$d3_06_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong> 7</strong></td>
+                                <td class="col-15p"> '.$d3_07_01.'</td>
+                                <td class="col-15p"> '.$d3_07_02.'</td>
+                                <td class="col-15p"> '.$d3_07_03.'</td>
+                                <td class="col-15p"> '.$d3_07_04.'</td>
+                                <td class="col-15p"> '.$d3_07_05.'</td>
+                                <td class="col-15p"> '.$d3_07_06.'</td>
+                                <td class="col-15p"> '.$d3_07_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong> 8</strong></td>
+                                <td class="col-15p"> '.$d3_08_01.'</td>
+                                <td class="col-15p"> '.$d3_08_02.'</td>
+                                <td class="col-15p"> '.$d3_08_03.'</td>
+                                <td class="col-15p"> '.$d3_08_04.'</td>
+                                <td class="col-15p"> '.$d3_08_05.'</td>
+                                <td class="col-15p"> '.$d3_08_06.'</td>
+                                <td class="col-15p"> '.$d3_08_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong> 9</strong></td>
+                                <td class="col-15p"> '.$d3_09_01.'</td>
+                                <td class="col-15p"> '.$d3_09_02.'</td>
+                                <td class="col-15p"> '.$d3_09_03.'</td>
+                                <td class="col-15p"> '.$d3_09_04.'</td>
+                                <td class="col-15p"> '.$d3_09_05.'</td>
+                                <td class="col-15p"> '.$d3_09_06.'</td>
+                                <td class="col-15p"> '.$d3_09_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong>10</strong></td>
+                                <td class="col-15p"> '.$d3_10_01.'</td>
+                                <td class="col-15p"> '.$d3_10_02.'</td>
+                                <td class="col-15p"> '.$d3_10_03.'</td>
+                                <td class="col-15p"> '.$d3_10_04.'</td>
+                                <td class="col-15p"> '.$d3_10_05.'</td>
+                                <td class="col-15p"> '.$d3_10_06.'</td>
+                                <td class="col-15p"> '.$d3_10_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong>11</strong></td>
+                                <td class="col-15p"> '.$d3_11_01.'</td>
+                                <td class="col-15p"> '.$d3_11_02.'</td>
+                                <td class="col-15p"> '.$d3_11_03.'</td>
+                                <td class="col-15p"> '.$d3_11_04.'</td>
+                                <td class="col-15p"> '.$d3_11_05.'</td>
+                                <td class="col-15p"> '.$d3_11_06.'</td>
+                                <td class="col-15p"> '.$d3_11_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong>12</strong></td>
+                                <td class="col-15p"> '.$d3_12_01.'</td>
+                                <td class="col-15p"> '.$d3_12_02.'</td>
+                                <td class="col-15p"> '.$d3_12_03.'</td>
+                                <td class="col-15p"> '.$d3_12_04.'</td>
+                                <td class="col-15p"> '.$d3_12_05.'</td>
+                                <td class="col-15p"> '.$d3_12_06.'</td>
+                                <td class="col-15p"> '.$d3_12_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong>13</strong></td>
+                                <td class="col-15p"> '.$d3_13_01.'</td>
+                                <td class="col-15p"> '.$d3_13_02.'</td>
+                                <td class="col-15p"> '.$d3_13_03.'</td>
+                                <td class="col-15p"> '.$d3_13_04.'</td>
+                                <td class="col-15p"> '.$d3_13_05.'</td>
+                                <td class="col-15p"> '.$d3_13_06.'</td>
+                                <td class="col-15p"> '.$d3_13_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong>14</strong></td>
+                                <td class="col-15p"> '.$d3_14_01.'</td>
+                                <td class="col-15p"> '.$d3_14_02.'</td>
+                                <td class="col-15p"> '.$d3_14_03.'</td>
+                                <td class="col-15p"> '.$d3_14_04.'</td>
+                                <td class="col-15p"> '.$d3_14_05.'</td>
+                                <td class="col-15p"> '.$d3_14_06.'</td>
+                                <td class="col-15p"> '.$d3_14_07.'</td>
+                            </tr>
+                            <tr>
+                                <td class="col-5p"><strong>15</strong></td>
+                                <td class="col-15p"> '.$d3_15_01.'</td>
+                                <td class="col-15p"> '.$d3_15_02.'</td>
+                                <td class="col-15p"> '.$d3_15_03.'</td>
+                                <td class="col-15p"> '.$d3_15_04.'</td>
+                                <td class="col-15p"> '.$d3_15_05.'</td>
+                                <td class="col-15p"> '.$d3_15_06.'</td>
+                                <td class="col-15p"> '.$d3_15_07.'</td>
+                            </tr>
+                        </tbody>        
+                    </table>									                        
+               </main>';
+    return $plantilla;
+}
 ?>
 
