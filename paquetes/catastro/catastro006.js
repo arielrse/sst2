@@ -19,8 +19,15 @@ var c_fechaRealizacion  = $('#c_fechaRealizacion').val();
 var e_personal          = $('#e_personal').val();
 
 var indoor_outdoor      = $('#indoor_outdoor').val();
+var cod_fijo            = $('#cod_fijo').val();
 var cod_activo          = $('#cod_activo').val();
-
+var cod_complemento     = $('#cod_complemento').val();
+var upsa1               = $('#upsa1').val();
+var upsa2               = $('#upsa2').val();
+var upsb1               = $('#upsb1').val();
+var upsb2               = $('#upsb2').val();
+var fuente_a            = $('#fuente_a').val();
+var fuente_b            = $('#fuente_b').val();
 //var d01_01 = $('#d01_01').val();
 var d01_01 = $('#d01_01').val();
 var d02_01 = $('#d02_01').val();
@@ -56,8 +63,18 @@ datos.propertyId         = propertyId;
 datos.c_fechaRealizacion = c_fechaRealizacion;
 datos.e_personal         = e_personal;
 datos.indoor_outdoor     = indoor_outdoor;
+datos.cod_fijo           = cod_fijo;
 datos.cod_activo         = cod_activo;
+datos.cod_complemento    = cod_complemento;
 datos.observaciones      = observaciones;
+
+datos.upsa1              = upsa1;
+datos.upsa2              = upsa2;
+datos.upsb1              = upsb1;
+datos.upsb2              = upsb2;
+datos.fuente_a           = fuente_a;
+datos.fuente_b           = fuente_b;
+
     /** desarrollo_d **/
 datos.desarrollo_d.d01_01 = d01_01;
 datos.desarrollo_d.d02_01 = d02_01;

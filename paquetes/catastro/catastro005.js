@@ -19,8 +19,17 @@ var c_fechaRealizacion  = $('#c_fechaRealizacion').val();
 var e_personal          = $('#e_personal').val();
 
 var indoor_outdoor      = $('#indoor_outdoor').val();
+var cod_fijo            = $('#cod_fijo').val();
 var cod_activo          = $('#cod_activo').val();
 
+var tdp                 = $('#tdp').val();
+var tr1                 = $('#tr1').val();
+var tds                 = $('#tds').val();
+var tr2                 = $('#tr2').val();
+var tu1                 = $('#tu1').val();
+var tcl                 = $('#tcl').val();
+var tu2                 = $('#tu2').val();
+var tsg                 = $('#tsg').val();
 //var d01_01 = $('#d01_01').val();
 var d01_01 = $('#d01_01').val();
 var d02_01 = $('#d02_01').val();
@@ -38,9 +47,7 @@ var d13_01 = $('#d13_01').val();
 var d14_01 = $('#d14_01').val();
 var d15_01 = $('#d15_01').val();
 
-
-
-        var observaciones = $('#observaciones').val();
+var observaciones = $('#observaciones').val();
 
 getDatos().then( (datos) => {
 
@@ -50,8 +57,17 @@ datos.propertyId         = propertyId;
 datos.c_fechaRealizacion = c_fechaRealizacion;
 datos.e_personal         = e_personal;
 datos.indoor_outdoor     = indoor_outdoor;
+datos.cod_fijo           = cod_fijo;
 datos.cod_activo         = cod_activo;
 datos.observaciones      = observaciones;
+datos.tdp                = tdp;
+datos.tr1                = tr1;
+datos.tds                = tds;
+datos.tr2                = tr2;
+datos.tu1                = tu1;
+datos.tcl                = tcl;
+datos.tu2                = tu2;
+datos.tsg                = tsg;
     /** desarrollo_d **/
 datos.desarrollo_d.d01_01 = d01_01;
 datos.desarrollo_d.d02_01 = d02_01;

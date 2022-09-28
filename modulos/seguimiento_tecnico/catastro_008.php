@@ -11,7 +11,7 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">BANCO DE BATERÍAS (BB) / UPS - PLANTA DE RECTIFICADORES - SISTEMA FOTOVOLTAICO</h6>
         <hr/>
 
-        <?php require("catastro_head.php"); ?>
+        <?php require("catastro_head008.php"); ?>
         <?php require("catastro008/catastro_d.php"); ?>
 
     </div>

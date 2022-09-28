@@ -11,7 +11,7 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">TABLERO DE TRANSFERENCIA (ATS) - BYPASS</h6>
         <hr/>
 
-        <?php require("catastro_head.php"); ?>
+        <?php require("catastro_head004.php"); ?>
         <?php require("catastro004/catastro_d.php"); ?>
 
     </div>

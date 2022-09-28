@@ -11,7 +11,7 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">SISTEMA DE CLIMATIZACIÓN (AAC)</h6>
         <hr/>
 
-        <?php require("catastro_head.php"); ?>
+        <?php require("catastro_head9-10.php"); ?>
         <?php require("catastro010/catastro_d.php"); ?>
 
     </div>

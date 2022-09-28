@@ -48,11 +48,19 @@ $cm                 = $obj->{'cm'};
 $sitioId            = $obj->{'sitioId'};
 $propertyId         = $obj->{'propertyId'};
 //falta algo el cod_activo
-
+$cod_fijo           = $obj->{'cod_fijo'};
 $cod_activo         = $obj->{'cod_activo'};
 $indoor_outdoor     = $obj->{'indoor_outdoor'};
 $c_fechaRealizacion = $obj->{'c_fechaRealizacion'};
 
+$tdp           = $obj->{'tdp'};
+$tr1           = $obj->{'tr1'};
+$tds           = $obj->{'tds'};
+$tr2           = $obj->{'tr2'};
+$tu1           = $obj->{'tu1'};
+$tcl           = $obj->{'tcl'};
+$tu2           = $obj->{'tu2'};
+$tsg           = $obj->{'tsg'};
 
 /*$res4 = mysqli_query($conexion,
     "SELECT u.id, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nombre, u.`cargo`, u.`cel`
@@ -187,13 +195,76 @@ $hrefpdf = "../../modulos/$modulo/catastro$cform/catastro_d.php";
                 </tr>
                 <tr>
 
-                    <td></td>
-                    <td></td>
+                    <td>Código de activo fijo:</td>
+                        <td>
+                            <div class="input-group input-group-sm mb-2">
+                                <input type="text" class="form-control form-control-sm" name="cod_fijo" id="cod_fijo" value="<?php echo $cod_fijo ?>">
+                            </div>
+                        </td>
 
                     <td>Código activo de energía:</td>
                     <td>
                         <div class="input-group input-group-sm mb-2">
                             <input type="text" class="form-control form-control-sm" name="cod_activo" id="cod_activo" value="<?php echo $cod_activo ?>">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>REFERENCIA CÓDIGO TABLEROS</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>TDP</strong></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="tdp" id="tdp" value="<?php echo $tdp ?>">
+                        </div>
+                    </td>
+                    <td><strong>TR1</strong></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="tr1" id="tr1" value="<?php echo $tr1 ?>">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>TDS</strong></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="tds" id="tds" value="<?php echo $tds ?>">
+                        </div>
+                    </td>
+                    <td><strong>TR2</strong></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="tr2" id="tr2" value="<?php echo $tr2 ?>">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>TU1</strong></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="tu1" id="tu1" value="<?php echo $tu1 ?>">
+                        </div>
+                    </td>
+                    <td><strong>TCL</strong></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="tcl" id="tcl" value="<?php echo $tcl ?>">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>TU2</strong></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="tu2" id="tu2" value="<?php echo $tu2 ?>">
+                        </div>
+                    </td>
+                    <td><strong>TSG</strong></td>
+                    <td>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="text" class="form-control form-control-sm" name="tsg" id="tsg" value="<?php echo $tsg ?>">
                         </div>
                     </td>
                 </tr>
