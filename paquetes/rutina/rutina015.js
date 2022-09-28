@@ -26,17 +26,56 @@ $(document).ready(function() {
     var c_fechaRealizacion  = $('#c_fechaRealizacion').val();
     var e_personal          = $('#e_personal').val();
 
-    /** "d_micro" **/
-    //var f01_1 = $('#f01_1').prop('checked'); var f01_2 = $('#f01_2').prop('checked'); var f01_3 = $('#f01_3').val();
+    /** "d_micro_1" **/
     var d1_01_01 = $('#d1_01_01').val(); var d1_01_02 = $('#d1_01_02').val(); var d1_01_03 = $('#d1_01_03').val(); var d1_01_04 = $('#d1_01_04').val(); var d1_01_05 = $('#d1_01_05').val(); var d1_01_06 = $('#d1_01_06').val();
     var d1_02_01 = $('#d1_02_01').val(); var d1_02_02 = $('#d1_02_02').val(); var d1_02_03 = $('#d1_02_03').val(); var d1_02_04 = $('#d1_02_04').val(); var d1_02_05 = $('#d1_02_05').val(); var d1_02_06 = $('#d1_02_06').val();
     var d1_03_01 = $('#d1_03_01').val(); var d1_03_02 = $('#d1_03_02').val(); var d1_03_03 = $('#d1_03_03').val(); var d1_03_04 = $('#d1_03_04').val(); var d1_03_05 = $('#d1_03_05').val(); var d1_03_06 = $('#d1_03_06').val();
     var d1_04_01 = $('#d1_04_01').val(); var d1_04_02 = $('#d1_04_02').val(); var d1_04_03 = $('#d1_04_03').val(); var d1_04_04 = $('#d1_04_04').val(); var d1_04_05 = $('#d1_04_05').val(); var d1_04_06 = $('#d1_04_06').val();
     var d1_05_01 = $('#d1_05_01').val(); var d1_05_02 = $('#d1_05_02').val(); var d1_05_03 = $('#d1_05_03').val(); var d1_05_04 = $('#d1_05_04').val(); var d1_05_05 = $('#d1_05_05').val(); var d1_05_06 = $('#d1_05_06').val();
     var d1_06_01 = $('#d1_06_01').val(); var d1_06_02 = $('#d1_06_02').val(); var d1_06_03 = $('#d1_06_03').val(); var d1_06_04 = $('#d1_06_04').val(); var d1_06_05 = $('#d1_06_05').val(); var d1_06_06 = $('#d1_06_06').val();
-    var d1_07_01 = $('#d1_07_01').val(); var d1_07_02 = $('#d1_07_02').val(); var d1_07_03 = $('#d1_07_03').val(); var d1_07_04 = $('#d1_07_04').val(); var d1_07_05 = $('#d1_07_05').val(); var d1_07_06 = $('#d1_07_06').val(); var d1_07_07 = $('#d1_07_07').val();
-    var d1_08_01 = $('#d1_08_01').val(); var d1_08_02 = $('#d1_08_02').val(); var d1_08_03 = $('#d1_08_03').val(); var d1_08_04 = $('#d1_08_04').val(); var d1_08_05 = $('#d1_08_05').val(); var d1_08_06 = $('#d1_08_06').val(); var d1_08_07 = $('#d1_08_07').val();
-    var d1_09_01 = $('#d1_09_01').val(); var d1_09_02 = $('#d1_09_02').val(); var d1_09_03 = $('#d1_09_03').val(); var d1_09_04 = $('#d1_09_04').val(); var d1_09_05 = $('#d1_09_05').val(); var d1_09_06 = $('#d1_09_06').val(); var d1_09_07 = $('#d1_09_07').val();
+    var d1_07_01 = $('#d1_07_01').val(); var d1_07_02 = $('#d1_07_02').val(); var d1_07_03 = $('#d1_07_03').val(); var d1_07_04 = $('#d1_07_04').val(); var d1_07_05 = $('#d1_07_05').val(); var d1_07_06 = $('#d1_07_06').val();
+    var d1_08_01 = $('#d1_08_01').val(); var d1_08_02 = $('#d1_08_02').val(); var d1_08_03 = $('#d1_08_03').val(); var d1_08_04 = $('#d1_08_04').val(); var d1_08_05 = $('#d1_08_05').val(); var d1_08_06 = $('#d1_08_06').val();
+    var d1_09_01 = $('#d1_09_01').val(); var d1_09_02 = $('#d1_09_02').val(); var d1_09_03 = $('#d1_09_03').val(); var d1_09_04 = $('#d1_09_04').val(); var d1_09_05 = $('#d1_09_05').val(); var d1_09_06 = $('#d1_09_06').val();
+    var d1_10_01 = $('#d1_10_01').val(); var d1_10_02 = $('#d1_10_02').val(); var d1_10_03 = $('#d1_10_03').val(); var d1_10_04 = $('#d1_10_04').val(); var d1_10_05 = $('#d1_10_05').val(); var d1_10_06 = $('#d1_10_06').val();
+    var d1_11_01 = $('#d1_11_01').val(); var d1_11_02 = $('#d1_11_02').val(); var d1_11_03 = $('#d1_11_03').val(); var d1_11_04 = $('#d1_11_04').val(); var d1_11_05 = $('#d1_11_05').val(); var d1_11_06 = $('#d1_11_06').val();
+    var d1_12_01 = $('#d1_12_01').val(); var d1_12_02 = $('#d1_12_02').val(); var d1_12_03 = $('#d1_12_03').val(); var d1_12_04 = $('#d1_12_04').val(); var d1_12_05 = $('#d1_12_05').val(); var d1_12_06 = $('#d1_12_06').val();
+    var d1_13_01 = $('#d1_13_01').val(); var d1_13_02 = $('#d1_13_02').val(); var d1_13_03 = $('#d1_13_03').val(); var d1_13_04 = $('#d1_13_04').val(); var d1_13_05 = $('#d1_13_05').val(); var d1_13_06 = $('#d1_13_06').val();
+    var d1_14_01 = $('#d1_14_01').val(); var d1_14_02 = $('#d1_14_02').val(); var d1_14_03 = $('#d1_14_03').val(); var d1_14_04 = $('#d1_14_04').val(); var d1_14_05 = $('#d1_14_05').val(); var d1_14_06 = $('#d1_14_06').val();
+    var d1_15_01 = $('#d1_15_01').val(); var d1_15_02 = $('#d1_15_02').val(); var d1_15_03 = $('#d1_15_03').val(); var d1_15_04 = $('#d1_15_04').val(); var d1_15_05 = $('#d1_15_05').val(); var d1_15_06 = $('#d1_15_06').val();
+
+    /** "d_micro_2" **/
+    var d2_01_01 = $('#d2_01_01').val(); var d2_01_02 = $('#d2_01_02').val(); var d2_01_03 = $('#d2_01_03').val(); var d2_01_04 = $('#d2_01_04').val(); var d2_01_05 = $('#d2_01_05').val(); var d2_01_06 = $('#d2_01_06').val();
+    var d2_02_01 = $('#d2_02_01').val(); var d2_02_02 = $('#d2_02_02').val(); var d2_02_03 = $('#d2_02_03').val(); var d2_02_04 = $('#d2_02_04').val(); var d2_02_05 = $('#d2_02_05').val(); var d2_02_06 = $('#d2_02_06').val();
+    var d2_03_01 = $('#d2_03_01').val(); var d2_03_02 = $('#d2_03_02').val(); var d2_03_03 = $('#d2_03_03').val(); var d2_03_04 = $('#d2_03_04').val(); var d2_03_05 = $('#d2_03_05').val(); var d2_03_06 = $('#d2_03_06').val();
+    var d2_04_01 = $('#d2_04_01').val(); var d2_04_02 = $('#d2_04_02').val(); var d2_04_03 = $('#d2_04_03').val(); var d2_04_04 = $('#d2_04_04').val(); var d2_04_05 = $('#d2_04_05').val(); var d2_04_06 = $('#d2_04_06').val();
+    var d2_05_01 = $('#d2_05_01').val(); var d2_05_02 = $('#d2_05_02').val(); var d2_05_03 = $('#d2_05_03').val(); var d2_05_04 = $('#d2_05_04').val(); var d2_05_05 = $('#d2_05_05').val(); var d2_05_06 = $('#d2_05_06').val();
+    var d2_06_01 = $('#d2_06_01').val(); var d2_06_02 = $('#d2_06_02').val(); var d2_06_03 = $('#d2_06_03').val(); var d2_06_04 = $('#d2_06_04').val(); var d2_06_05 = $('#d2_06_05').val(); var d2_06_06 = $('#d2_06_06').val();
+    var d2_07_01 = $('#d2_07_01').val(); var d2_07_02 = $('#d2_07_02').val(); var d2_07_03 = $('#d2_07_03').val(); var d2_07_04 = $('#d2_07_04').val(); var d2_07_05 = $('#d2_07_05').val(); var d2_07_06 = $('#d2_07_06').val();
+    var d2_08_01 = $('#d2_08_01').val(); var d2_08_02 = $('#d2_08_02').val(); var d2_08_03 = $('#d2_08_03').val(); var d2_08_04 = $('#d2_08_04').val(); var d2_08_05 = $('#d2_08_05').val(); var d2_08_06 = $('#d2_08_06').val();
+    var d2_09_01 = $('#d2_09_01').val(); var d2_09_02 = $('#d2_09_02').val(); var d2_09_03 = $('#d2_09_03').val(); var d2_09_04 = $('#d2_09_04').val(); var d2_09_05 = $('#d2_09_05').val(); var d2_09_06 = $('#d2_09_06').val();
+    var d2_10_01 = $('#d2_10_01').val(); var d2_10_02 = $('#d2_10_02').val(); var d2_10_03 = $('#d2_10_03').val(); var d2_10_04 = $('#d2_10_04').val(); var d2_10_05 = $('#d2_10_05').val(); var d2_10_06 = $('#d2_10_06').val();
+    var d2_11_01 = $('#d2_11_01').val(); var d2_11_02 = $('#d2_11_02').val(); var d2_11_03 = $('#d2_11_03').val(); var d2_11_04 = $('#d2_11_04').val(); var d2_11_05 = $('#d2_11_05').val(); var d2_11_06 = $('#d2_11_06').val();
+    var d2_12_01 = $('#d2_12_01').val(); var d2_12_02 = $('#d2_12_02').val(); var d2_12_03 = $('#d2_12_03').val(); var d2_12_04 = $('#d2_12_04').val(); var d2_12_05 = $('#d2_12_05').val(); var d2_12_06 = $('#d2_12_06').val();
+    var d2_13_01 = $('#d2_13_01').val(); var d2_13_02 = $('#d2_13_02').val(); var d2_13_03 = $('#d2_13_03').val(); var d2_13_04 = $('#d2_13_04').val(); var d2_13_05 = $('#d2_13_05').val(); var d2_13_06 = $('#d2_13_06').val();
+    var d2_14_01 = $('#d2_14_01').val(); var d2_14_02 = $('#d2_14_02').val(); var d2_14_03 = $('#d2_14_03').val(); var d2_14_04 = $('#d2_14_04').val(); var d2_14_05 = $('#d2_14_05').val(); var d2_14_06 = $('#d2_14_06').val();
+    var d2_15_01 = $('#d2_15_01').val(); var d2_15_02 = $('#d2_15_02').val(); var d2_15_03 = $('#d2_15_03').val(); var d2_15_04 = $('#d2_15_04').val(); var d2_15_05 = $('#d2_15_05').val(); var d2_15_06 = $('#d2_15_06').val();
+
+    /** "d_micro_3" **/
+    var d3_01_01 = $('#d3_01_01').val(); var d3_01_02 = $('#d3_01_02').val(); var d3_01_03 = $('#d3_01_03').val(); var d3_01_04 = $('#d3_01_04').val(); var d3_01_05 = $('#d3_01_05').val(); var d3_01_06 = $('#d3_01_06').val(); var d3_01_07 = $('#d3_01_07').val();
+    var d3_02_01 = $('#d3_02_01').val(); var d3_02_02 = $('#d3_02_02').val(); var d3_02_03 = $('#d3_02_03').val(); var d3_02_04 = $('#d3_02_04').val(); var d3_02_05 = $('#d3_02_05').val(); var d3_02_06 = $('#d3_02_06').val(); var d3_02_07 = $('#d3_02_07').val();
+    var d3_03_01 = $('#d3_03_01').val(); var d3_03_02 = $('#d3_03_02').val(); var d3_03_03 = $('#d3_03_03').val(); var d3_03_04 = $('#d3_03_04').val(); var d3_03_05 = $('#d3_03_05').val(); var d3_03_06 = $('#d3_03_06').val(); var d3_03_07 = $('#d3_03_07').val();
+    var d3_04_01 = $('#d3_04_01').val(); var d3_04_02 = $('#d3_04_02').val(); var d3_04_03 = $('#d3_04_03').val(); var d3_04_04 = $('#d3_04_04').val(); var d3_04_05 = $('#d3_04_05').val(); var d3_04_06 = $('#d3_04_06').val(); var d3_04_07 = $('#d3_04_07').val();
+    var d3_05_01 = $('#d3_05_01').val(); var d3_05_02 = $('#d3_05_02').val(); var d3_05_03 = $('#d3_05_03').val(); var d3_05_04 = $('#d3_05_04').val(); var d3_05_05 = $('#d3_05_05').val(); var d3_05_06 = $('#d3_05_06').val(); var d3_05_07 = $('#d3_05_07').val();
+    var d3_06_01 = $('#d3_06_01').val(); var d3_06_02 = $('#d3_06_02').val(); var d3_06_03 = $('#d3_06_03').val(); var d3_06_04 = $('#d3_06_04').val(); var d3_06_05 = $('#d3_06_05').val(); var d3_06_06 = $('#d3_06_06').val(); var d3_06_07 = $('#d3_06_07').val();
+    var d3_07_01 = $('#d3_07_01').val(); var d3_07_02 = $('#d3_07_02').val(); var d3_07_03 = $('#d3_07_03').val(); var d3_07_04 = $('#d3_07_04').val(); var d3_07_05 = $('#d3_07_05').val(); var d3_07_06 = $('#d3_07_06').val(); var d3_07_07 = $('#d3_07_07').val();
+    var d3_08_01 = $('#d3_08_01').val(); var d3_08_02 = $('#d3_08_02').val(); var d3_08_03 = $('#d3_08_03').val(); var d3_08_04 = $('#d3_08_04').val(); var d3_08_05 = $('#d3_08_05').val(); var d3_08_06 = $('#d3_08_06').val(); var d3_08_07 = $('#d3_08_07').val();
+    var d3_09_01 = $('#d3_09_01').val(); var d3_09_02 = $('#d3_09_02').val(); var d3_09_03 = $('#d3_09_03').val(); var d3_09_04 = $('#d3_09_04').val(); var d3_09_05 = $('#d3_09_05').val(); var d3_09_06 = $('#d3_09_06').val(); var d3_09_07 = $('#d3_09_07').val();
+    var d3_10_01 = $('#d3_10_01').val(); var d3_10_02 = $('#d3_10_02').val(); var d3_10_03 = $('#d3_10_03').val(); var d3_10_04 = $('#d3_10_04').val(); var d3_10_05 = $('#d3_10_05').val(); var d3_10_06 = $('#d3_10_06').val(); var d3_10_07 = $('#d3_10_07').val();
+    var d3_11_01 = $('#d3_11_01').val(); var d3_11_02 = $('#d3_11_02').val(); var d3_11_03 = $('#d3_11_03').val(); var d3_11_04 = $('#d3_11_04').val(); var d3_11_05 = $('#d3_11_05').val(); var d3_11_06 = $('#d3_11_06').val(); var d3_11_07 = $('#d3_11_07').val();
+    var d3_12_01 = $('#d3_12_01').val(); var d3_12_02 = $('#d3_12_02').val(); var d3_12_03 = $('#d3_12_03').val(); var d3_12_04 = $('#d3_12_04').val(); var d3_12_05 = $('#d3_12_05').val(); var d3_12_06 = $('#d3_12_06').val(); var d3_12_07 = $('#d3_12_07').val();
+    var d3_13_01 = $('#d3_13_01').val(); var d3_13_02 = $('#d3_13_02').val(); var d3_13_03 = $('#d3_13_03').val(); var d3_13_04 = $('#d3_13_04').val(); var d3_13_05 = $('#d3_13_05').val(); var d3_13_06 = $('#d3_13_06').val(); var d3_13_07 = $('#d3_13_07').val();
+    var d3_14_01 = $('#d3_14_01').val(); var d3_14_02 = $('#d3_14_02').val(); var d3_14_03 = $('#d3_14_03').val(); var d3_14_04 = $('#d3_14_04').val(); var d3_14_05 = $('#d3_14_05').val(); var d3_14_06 = $('#d3_14_06').val(); var d3_14_07 = $('#d3_14_07').val();
+    var d3_15_01 = $('#d3_15_01').val(); var d3_15_02 = $('#d3_15_02').val(); var d3_15_03 = $('#d3_15_03').val(); var d3_15_04 = $('#d3_15_04').val(); var d3_15_05 = $('#d3_15_05').val(); var d3_15_06 = $('#d3_15_06').val(); var d3_15_07 = $('#d3_15_07').val();
 
     /** g_desarrollo_g1 **/
     //var g1_01_01 = $('#g1_01_01').prop('checked'); var g1_01_02 = $('#g1_01_02').prop('checked'); var g1_01_03 = $('#g1_01_03').val();
@@ -129,20 +168,58 @@ getDatos().then( (datos) => {
     datos.c_fechaRealizacion = c_fechaRealizacion;
     datos.e_personal         = e_personal;
 
-    /** "d_micro" **/
-    //datos.d_micro.f01_1 = f01_1; datos.d_micro.f01_2 = f01_2; datos.d_micro.f01_3 = f01_3;
-    datos.d_micro.d1_01_01 = d1_01_01; datos.d_micro.d1_01_02 = d1_01_02; datos.d_micro.d1_01_03 = d1_01_03; datos.d_micro.d1_01_04 = d1_01_04; datos.d_micro.d1_01_05 = d1_01_05; datos.d_micro.d1_01_06 = d1_01_06;
-    datos.d_micro.d1_02_01 = d1_02_01; datos.d_micro.d1_02_02 = d1_02_02; datos.d_micro.d1_02_03 = d1_02_03; datos.d_micro.d1_02_04 = d1_02_04; datos.d_micro.d1_02_05 = d1_02_05; datos.d_micro.d1_02_06 = d1_02_06;
-    datos.d_micro.d1_03_01 = d1_03_01; datos.d_micro.d1_03_02 = d1_03_02; datos.d_micro.d1_03_03 = d1_03_03; datos.d_micro.d1_03_04 = d1_03_04; datos.d_micro.d1_03_05 = d1_03_05; datos.d_micro.d1_03_06 = d1_03_06;
-    datos.d_micro.d1_04_01 = d1_04_01; datos.d_micro.d1_04_02 = d1_04_02; datos.d_micro.d1_04_03 = d1_04_03; datos.d_micro.d1_04_04 = d1_04_04; datos.d_micro.d1_04_05 = d1_04_05; datos.d_micro.d1_04_06 = d1_04_06;
-    datos.d_micro.d1_05_01 = d1_05_01; datos.d_micro.d1_05_02 = d1_05_02; datos.d_micro.d1_05_03 = d1_05_03; datos.d_micro.d1_05_04 = d1_05_04; datos.d_micro.d1_05_05 = d1_05_05; datos.d_micro.d1_05_06 = d1_05_06;
-    datos.d_micro.d1_06_01 = d1_06_01; datos.d_micro.d1_06_02 = d1_06_02; datos.d_micro.d1_06_03 = d1_06_03; datos.d_micro.d1_06_04 = d1_06_04; datos.d_micro.d1_06_05 = d1_06_05; datos.d_micro.d1_06_06 = d1_06_06;
-    datos.d_micro.d1_07_01 = d1_07_01; datos.d_micro.d1_07_02 = d1_07_02; datos.d_micro.d1_07_03 = d1_07_03; datos.d_micro.d1_07_04 = d1_07_04; datos.d_micro.d1_07_05 = d1_07_05; datos.d_micro.d1_07_06 = d1_07_06;  datos.d_micro.d1_07_07 = d1_07_07;
-    datos.d_micro.d1_08_01 = d1_08_01; datos.d_micro.d1_08_02 = d1_08_02; datos.d_micro.d1_08_03 = d1_08_03; datos.d_micro.d1_08_04 = d1_08_04; datos.d_micro.d1_08_05 = d1_08_05; datos.d_micro.d1_08_06 = d1_08_06;  datos.d_micro.d1_08_07 = d1_08_07;
-    datos.d_micro.d1_09_01 = d1_09_01; datos.d_micro.d1_09_02 = d1_09_02; datos.d_micro.d1_09_03 = d1_09_03; datos.d_micro.d1_09_04 = d1_09_04; datos.d_micro.d1_09_05 = d1_09_05; datos.d_micro.d1_09_06 = d1_09_06;  datos.d_micro.d1_09_07 = d1_09_07;
+    /** "d_micro_1" **/
+    datos.d_micro_1.d1_01_01 = d1_01_01; datos.d_micro_1.d1_01_02 = d1_01_02; datos.d_micro_1.d1_01_03 = d1_01_03; datos.d_micro_1.d1_01_04 = d1_01_04; datos.d_micro_1.d1_01_05 = d1_01_05; datos.d_micro_1.d1_01_06 = d1_01_06;
+    datos.d_micro_1.d1_02_01 = d1_02_01; datos.d_micro_1.d1_02_02 = d1_02_02; datos.d_micro_1.d1_02_03 = d1_02_03; datos.d_micro_1.d1_02_04 = d1_02_04; datos.d_micro_1.d1_02_05 = d1_02_05; datos.d_micro_1.d1_02_06 = d1_02_06;
+    datos.d_micro_1.d1_03_01 = d1_03_01; datos.d_micro_1.d1_03_02 = d1_03_02; datos.d_micro_1.d1_03_03 = d1_03_03; datos.d_micro_1.d1_03_04 = d1_03_04; datos.d_micro_1.d1_03_05 = d1_03_05; datos.d_micro_1.d1_03_06 = d1_03_06;
+    datos.d_micro_1.d1_04_01 = d1_04_01; datos.d_micro_1.d1_04_02 = d1_04_02; datos.d_micro_1.d1_04_03 = d1_04_03; datos.d_micro_1.d1_04_04 = d1_04_04; datos.d_micro_1.d1_04_05 = d1_04_05; datos.d_micro_1.d1_04_06 = d1_04_06;
+    datos.d_micro_1.d1_05_01 = d1_05_01; datos.d_micro_1.d1_05_02 = d1_05_02; datos.d_micro_1.d1_05_03 = d1_05_03; datos.d_micro_1.d1_05_04 = d1_05_04; datos.d_micro_1.d1_05_05 = d1_05_05; datos.d_micro_1.d1_05_06 = d1_05_06;
+    datos.d_micro_1.d1_06_01 = d1_06_01; datos.d_micro_1.d1_06_02 = d1_06_02; datos.d_micro_1.d1_06_03 = d1_06_03; datos.d_micro_1.d1_06_04 = d1_06_04; datos.d_micro_1.d1_06_05 = d1_06_05; datos.d_micro_1.d1_06_06 = d1_06_06;
+    datos.d_micro_1.d1_07_01 = d1_07_01; datos.d_micro_1.d1_07_02 = d1_07_02; datos.d_micro_1.d1_07_03 = d1_07_03; datos.d_micro_1.d1_07_04 = d1_07_04; datos.d_micro_1.d1_07_05 = d1_07_05; datos.d_micro_1.d1_07_06 = d1_07_06;
+    datos.d_micro_1.d1_08_01 = d1_08_01; datos.d_micro_1.d1_08_02 = d1_08_02; datos.d_micro_1.d1_08_03 = d1_08_03; datos.d_micro_1.d1_08_04 = d1_08_04; datos.d_micro_1.d1_08_05 = d1_08_05; datos.d_micro_1.d1_08_06 = d1_08_06;
+    datos.d_micro_1.d1_09_01 = d1_09_01; datos.d_micro_1.d1_09_02 = d1_09_02; datos.d_micro_1.d1_09_03 = d1_09_03; datos.d_micro_1.d1_09_04 = d1_09_04; datos.d_micro_1.d1_09_05 = d1_09_05; datos.d_micro_1.d1_09_06 = d1_09_06;
+    datos.d_micro_1.d1_10_01 = d1_10_01; datos.d_micro_1.d1_10_02 = d1_10_02; datos.d_micro_1.d1_10_03 = d1_10_03; datos.d_micro_1.d1_10_04 = d1_10_04; datos.d_micro_1.d1_10_05 = d1_10_05; datos.d_micro_1.d1_10_06 = d1_10_06;
+    datos.d_micro_1.d1_11_01 = d1_11_01; datos.d_micro_1.d1_11_02 = d1_11_02; datos.d_micro_1.d1_11_03 = d1_11_03; datos.d_micro_1.d1_11_04 = d1_11_04; datos.d_micro_1.d1_11_05 = d1_11_05; datos.d_micro_1.d1_11_06 = d1_11_06;
+    datos.d_micro_1.d1_12_01 = d1_12_01; datos.d_micro_1.d1_12_02 = d1_12_02; datos.d_micro_1.d1_12_03 = d1_12_03; datos.d_micro_1.d1_12_04 = d1_12_04; datos.d_micro_1.d1_12_05 = d1_12_05; datos.d_micro_1.d1_12_06 = d1_12_06;
+    datos.d_micro_1.d1_13_01 = d1_13_01; datos.d_micro_1.d1_13_02 = d1_13_02; datos.d_micro_1.d1_13_03 = d1_13_03; datos.d_micro_1.d1_13_04 = d1_13_04; datos.d_micro_1.d1_13_05 = d1_13_05; datos.d_micro_1.d1_13_06 = d1_13_06;
+    datos.d_micro_1.d1_14_01 = d1_14_01; datos.d_micro_1.d1_14_02 = d1_14_02; datos.d_micro_1.d1_14_03 = d1_14_03; datos.d_micro_1.d1_14_04 = d1_14_04; datos.d_micro_1.d1_14_05 = d1_14_05; datos.d_micro_1.d1_14_06 = d1_14_06;
+    datos.d_micro_1.d1_15_01 = d1_15_01; datos.d_micro_1.d1_15_02 = d1_15_02; datos.d_micro_1.d1_15_03 = d1_15_03; datos.d_micro_1.d1_15_04 = d1_15_04; datos.d_micro_1.d1_15_05 = d1_15_05; datos.d_micro_1.d1_15_06 = d1_15_06;
+
+    /** "d_micro_2" **/
+    datos.d_micro_2.d2_01_01 = d2_01_01; datos.d_micro_2.d2_01_02 = d2_01_02; datos.d_micro_2.d2_01_03 = d2_01_03; datos.d_micro_2.d2_01_04 = d2_01_04; datos.d_micro_2.d2_01_05 = d2_01_05; datos.d_micro_2.d2_01_06 = d2_01_06;
+    datos.d_micro_2.d2_02_01 = d2_02_01; datos.d_micro_2.d2_02_02 = d2_02_02; datos.d_micro_2.d2_02_03 = d2_02_03; datos.d_micro_2.d2_02_04 = d2_02_04; datos.d_micro_2.d2_02_05 = d2_02_05; datos.d_micro_2.d2_02_06 = d2_02_06;
+    datos.d_micro_2.d2_03_01 = d2_03_01; datos.d_micro_2.d2_03_02 = d2_03_02; datos.d_micro_2.d2_03_03 = d2_03_03; datos.d_micro_2.d2_03_04 = d2_03_04; datos.d_micro_2.d2_03_05 = d2_03_05; datos.d_micro_2.d2_03_06 = d2_03_06;
+    datos.d_micro_2.d2_04_01 = d2_04_01; datos.d_micro_2.d2_04_02 = d2_04_02; datos.d_micro_2.d2_04_03 = d2_04_03; datos.d_micro_2.d2_04_04 = d2_04_04; datos.d_micro_2.d2_04_05 = d2_04_05; datos.d_micro_2.d2_04_06 = d2_04_06;
+    datos.d_micro_2.d2_05_01 = d2_05_01; datos.d_micro_2.d2_05_02 = d2_05_02; datos.d_micro_2.d2_05_03 = d2_05_03; datos.d_micro_2.d2_05_04 = d2_05_04; datos.d_micro_2.d2_05_05 = d2_05_05; datos.d_micro_2.d2_05_06 = d2_05_06;
+    datos.d_micro_2.d2_06_01 = d2_06_01; datos.d_micro_2.d2_06_02 = d2_06_02; datos.d_micro_2.d2_06_03 = d2_06_03; datos.d_micro_2.d2_06_04 = d2_06_04; datos.d_micro_2.d2_06_05 = d2_06_05; datos.d_micro_2.d2_06_06 = d2_06_06;
+    datos.d_micro_2.d2_07_01 = d2_07_01; datos.d_micro_2.d2_07_02 = d2_07_02; datos.d_micro_2.d2_07_03 = d2_07_03; datos.d_micro_2.d2_07_04 = d2_07_04; datos.d_micro_2.d2_07_05 = d2_07_05; datos.d_micro_2.d2_07_06 = d2_07_06;
+    datos.d_micro_2.d2_08_01 = d2_08_01; datos.d_micro_2.d2_08_02 = d2_08_02; datos.d_micro_2.d2_08_03 = d2_08_03; datos.d_micro_2.d2_08_04 = d2_08_04; datos.d_micro_2.d2_08_05 = d2_08_05; datos.d_micro_2.d2_08_06 = d2_08_06;
+    datos.d_micro_2.d2_09_01 = d2_09_01; datos.d_micro_2.d2_09_02 = d2_09_02; datos.d_micro_2.d2_09_03 = d2_09_03; datos.d_micro_2.d2_09_04 = d2_09_04; datos.d_micro_2.d2_09_05 = d2_09_05; datos.d_micro_2.d2_09_06 = d2_09_06;
+    datos.d_micro_2.d2_10_01 = d2_10_01; datos.d_micro_2.d2_10_02 = d2_10_02; datos.d_micro_2.d2_10_03 = d2_10_03; datos.d_micro_2.d2_10_04 = d2_10_04; datos.d_micro_2.d2_10_05 = d2_10_05; datos.d_micro_2.d2_10_06 = d2_10_06;
+    datos.d_micro_2.d2_11_01 = d2_11_01; datos.d_micro_2.d2_11_02 = d2_11_02; datos.d_micro_2.d2_11_03 = d2_11_03; datos.d_micro_2.d2_11_04 = d2_11_04; datos.d_micro_2.d2_11_05 = d2_11_05; datos.d_micro_2.d2_11_06 = d2_11_06;
+    datos.d_micro_2.d2_12_01 = d2_12_01; datos.d_micro_2.d2_12_02 = d2_12_02; datos.d_micro_2.d2_12_03 = d2_12_03; datos.d_micro_2.d2_12_04 = d2_12_04; datos.d_micro_2.d2_12_05 = d2_12_05; datos.d_micro_2.d2_12_06 = d2_12_06;
+    datos.d_micro_2.d2_13_01 = d2_13_01; datos.d_micro_2.d2_13_02 = d2_13_02; datos.d_micro_2.d2_13_03 = d2_13_03; datos.d_micro_2.d2_13_04 = d2_13_04; datos.d_micro_2.d2_13_05 = d2_13_05; datos.d_micro_2.d2_13_06 = d2_13_06;
+    datos.d_micro_2.d2_14_01 = d2_14_01; datos.d_micro_2.d2_14_02 = d2_14_02; datos.d_micro_2.d2_14_03 = d2_14_03; datos.d_micro_2.d2_14_04 = d2_14_04; datos.d_micro_2.d2_14_05 = d2_14_05; datos.d_micro_2.d2_14_06 = d2_14_06;
+    datos.d_micro_2.d2_15_01 = d2_15_01; datos.d_micro_2.d2_15_02 = d2_15_02; datos.d_micro_2.d2_15_03 = d2_15_03; datos.d_micro_2.d2_15_04 = d2_15_04; datos.d_micro_2.d2_15_05 = d2_15_05; datos.d_micro_2.d2_15_06 = d2_15_06;
+
+    /** "d_micro_3" **/
+    datos.d_micro_3.d3_01_01 = d3_01_01; datos.d_micro_3.d3_01_02 = d3_01_02; datos.d_micro_3.d3_01_03 = d3_01_03; datos.d_micro_3.d3_01_04 = d3_01_04; datos.d_micro_3.d3_01_05 = d3_01_05; datos.d_micro_3.d3_01_06 = d3_01_06; datos.d_micro_3.d3_01_07 = d3_01_07;
+    datos.d_micro_3.d3_02_01 = d3_02_01; datos.d_micro_3.d3_02_02 = d3_02_02; datos.d_micro_3.d3_02_03 = d3_02_03; datos.d_micro_3.d3_02_04 = d3_02_04; datos.d_micro_3.d3_02_05 = d3_02_05; datos.d_micro_3.d3_02_06 = d3_02_06; datos.d_micro_3.d3_02_07 = d3_02_07;
+    datos.d_micro_3.d3_03_01 = d3_03_01; datos.d_micro_3.d3_03_02 = d3_03_02; datos.d_micro_3.d3_03_03 = d3_03_03; datos.d_micro_3.d3_03_04 = d3_03_04; datos.d_micro_3.d3_03_05 = d3_03_05; datos.d_micro_3.d3_03_06 = d3_03_06; datos.d_micro_3.d3_03_07 = d3_03_07;
+    datos.d_micro_3.d3_04_01 = d3_04_01; datos.d_micro_3.d3_04_02 = d3_04_02; datos.d_micro_3.d3_04_03 = d3_04_03; datos.d_micro_3.d3_04_04 = d3_04_04; datos.d_micro_3.d3_04_05 = d3_04_05; datos.d_micro_3.d3_04_06 = d3_04_06; datos.d_micro_3.d3_04_07 = d3_04_07;
+    datos.d_micro_3.d3_05_01 = d3_05_01; datos.d_micro_3.d3_05_02 = d3_05_02; datos.d_micro_3.d3_05_03 = d3_05_03; datos.d_micro_3.d3_05_04 = d3_05_04; datos.d_micro_3.d3_05_05 = d3_05_05; datos.d_micro_3.d3_05_06 = d3_05_06; datos.d_micro_3.d3_05_07 = d3_05_07;
+    datos.d_micro_3.d3_06_01 = d3_06_01; datos.d_micro_3.d3_06_02 = d3_06_02; datos.d_micro_3.d3_06_03 = d3_06_03; datos.d_micro_3.d3_06_04 = d3_06_04; datos.d_micro_3.d3_06_05 = d3_06_05; datos.d_micro_3.d3_06_06 = d3_06_06; datos.d_micro_3.d3_06_07 = d3_06_07;
+    datos.d_micro_3.d3_07_01 = d3_07_01; datos.d_micro_3.d3_07_02 = d3_07_02; datos.d_micro_3.d3_07_03 = d3_07_03; datos.d_micro_3.d3_07_04 = d3_07_04; datos.d_micro_3.d3_07_05 = d3_07_05; datos.d_micro_3.d3_07_06 = d3_07_06; datos.d_micro_3.d3_07_07 = d3_07_07;
+    datos.d_micro_3.d3_08_01 = d3_08_01; datos.d_micro_3.d3_08_02 = d3_08_02; datos.d_micro_3.d3_08_03 = d3_08_03; datos.d_micro_3.d3_08_04 = d3_08_04; datos.d_micro_3.d3_08_05 = d3_08_05; datos.d_micro_3.d3_08_06 = d3_08_06; datos.d_micro_3.d3_08_07 = d3_08_07;
+    datos.d_micro_3.d3_09_01 = d3_09_01; datos.d_micro_3.d3_09_02 = d3_09_02; datos.d_micro_3.d3_09_03 = d3_09_03; datos.d_micro_3.d3_09_04 = d3_09_04; datos.d_micro_3.d3_09_05 = d3_09_05; datos.d_micro_3.d3_09_06 = d3_09_06; datos.d_micro_3.d3_09_07 = d3_09_07;
+    datos.d_micro_3.d3_10_01 = d3_10_01; datos.d_micro_3.d3_10_02 = d3_10_02; datos.d_micro_3.d3_10_03 = d3_10_03; datos.d_micro_3.d3_10_04 = d3_10_04; datos.d_micro_3.d3_10_05 = d3_10_05; datos.d_micro_3.d3_10_06 = d3_10_06; datos.d_micro_3.d3_10_07 = d3_10_07;
+    datos.d_micro_3.d3_11_01 = d3_11_01; datos.d_micro_3.d3_11_02 = d3_11_02; datos.d_micro_3.d3_11_03 = d3_11_03; datos.d_micro_3.d3_11_04 = d3_11_04; datos.d_micro_3.d3_11_05 = d3_11_05; datos.d_micro_3.d3_11_06 = d3_11_06; datos.d_micro_3.d3_11_07 = d3_11_07;
+    datos.d_micro_3.d3_12_01 = d3_12_01; datos.d_micro_3.d3_12_02 = d3_12_02; datos.d_micro_3.d3_12_03 = d3_12_03; datos.d_micro_3.d3_12_04 = d3_12_04; datos.d_micro_3.d3_12_05 = d3_12_05; datos.d_micro_3.d3_12_06 = d3_12_06; datos.d_micro_3.d3_12_07 = d3_12_07;
+    datos.d_micro_3.d3_13_01 = d3_13_01; datos.d_micro_3.d3_13_02 = d3_13_02; datos.d_micro_3.d3_13_03 = d3_13_03; datos.d_micro_3.d3_13_04 = d3_13_04; datos.d_micro_3.d3_13_05 = d3_13_05; datos.d_micro_3.d3_13_06 = d3_13_06; datos.d_micro_3.d3_13_07 = d3_13_07;
+    datos.d_micro_3.d3_14_01 = d3_14_01; datos.d_micro_3.d3_14_02 = d3_14_02; datos.d_micro_3.d3_14_03 = d3_14_03; datos.d_micro_3.d3_14_04 = d3_14_04; datos.d_micro_3.d3_14_05 = d3_14_05; datos.d_micro_3.d3_14_06 = d3_14_06; datos.d_micro_3.d3_14_07 = d3_14_07;
+    datos.d_micro_3.d3_15_01 = d3_15_01; datos.d_micro_3.d3_15_02 = d3_15_02; datos.d_micro_3.d3_15_03 = d3_15_03; datos.d_micro_3.d3_15_04 = d3_15_04; datos.d_micro_3.d3_15_05 = d3_15_05; datos.d_micro_3.d3_15_06 = d3_15_06; datos.d_micro_3.d3_15_07 = d3_15_07;
 
     /** g_desarrollo_g1 **/
-    //datos.g_desarrollo_g1.g1_01_01 = g1_01_01; datos.g_desarrollo_g1.g1_01_02 = g1_01_02; datos.g_desarrollo_g1.g1_01_03 = g1_01_03;
     datos.g_desarrollo_g1.g1_01_01 = g1_01_01;  datos.g_desarrollo_g1.g1_01_02 = g1_01_02; datos.g_desarrollo_g1.g1_01_03 = g1_01_03;
     datos.g_desarrollo_g1.g1_02_01 = g1_02_01;  datos.g_desarrollo_g1.g1_02_02 = g1_02_02; datos.g_desarrollo_g1.g1_02_03 = g1_02_03;
     datos.g_desarrollo_g1.g1_03_01 = g1_03_01;  datos.g_desarrollo_g1.g1_03_02 = g1_03_02; datos.g_desarrollo_g1.g1_03_03 = g1_03_03;
