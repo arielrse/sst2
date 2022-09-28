@@ -550,11 +550,8 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
 	</div>
     
 </body>
-
 ';
 
     return $plantilla;
 }
-
 ?>
-

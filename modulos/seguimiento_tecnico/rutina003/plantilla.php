@@ -702,4 +702,3 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
 }
 
 ?>
-
