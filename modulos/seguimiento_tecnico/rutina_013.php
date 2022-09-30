@@ -11,7 +11,8 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">RUTINA DE MANTENIMIENTO PREVENTIVO - INFRAESTRUCTURA DEL SITIO</h6>
         <hr/>
 
-        <?php require("rutina013/rutina_head_013.php"); ?>
+        <?php /*require("rutina013/rutina_head_013.php"); */?>
+        <?php require("rutina_head_013.php"); ?>
 
         <?php require("rutina013/rutina_efg.php"); ?>
 

@@ -37,7 +37,7 @@ $resultado=mysqli_query($conexion, $consulta);
 
 if($resultado) {
 	header("Location: ".$link_modulo."?path=ver_usuarios.php");
-	}
+}
 	else echo "<b>Ocurrio un error, revise bien la informacion insertada!</b><br>Notrifiue de este error al administrador del Sistema: ".mysqli_error()."<br><a href='javascript:history.back(1);'>[RETORNAR]</a>";
 ?>
 

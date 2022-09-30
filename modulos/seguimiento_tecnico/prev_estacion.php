@@ -64,7 +64,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                     <h6 class="card-title"><? echo $propertyId . " - " . $cm ?></h6>
                     <div class="d-flex gap-2 py-2">
                         <div class="text-secondary"><i class='bx bxs-calendar-plus align-middle'></i><?php echo " " .$fechaInicio ?></div>
-                        <div class="text-danger"><i class='bx bxs-star align-middle'></i> Pendiente</div>
+                        <!--<div class="text-danger"><i class='bx bxs-star align-middle'></i> Pendiente</div>-->
                     </div>
 
                     <ul class="nav nav-tabs nav-primary mb-0" role="tablist">
@@ -112,7 +112,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                 <table class="table mb-0 table-hover">
                                     <tbody>
                                     <?php
-                                    $query = "SELECT r.idrutina, f.idformulario, f.codigo, f.nombre
+                                    $query = "SELECT r.idrutina, f.idformulario, f.codigo, f.nombre, r.estado
                                                 FROM rutina r
                                                 LEFT JOIN formulario f ON r.idformulario = f.idformulario
                                                 WHERE r.idevento = $idevento AND f.tipo = 'PREVENTIVO'";
@@ -122,6 +122,15 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                     if ( $rows > 0 ){
                                         $i = 0;
                                         while( $data = mysqli_fetch_array($result) ){
+
+                                            $stateHtml = "";
+                                            if ($data['estado'] == 'PEN')
+                                                $stateHtml = "<div class='text-danger'><i class='bx bxs-circle align-middle'></i> Pendiente</div>";
+                                            if ($data['estado'] == 'REV')
+                                                $stateHtml = "<div class='text-warning'><i class='bx bxs-circle align-middle'></i> Revisión</div>";
+                                            if ($data['estado'] == 'APR')
+                                                $stateHtml = "<div class='text-success'><i class='bx bxs-circle align-middle'></i> Aprobado</div>";
+
                                             $i++;
                                             $codigo = $data['codigo'];
                                             $nombreForm = $data['nombre'];
@@ -135,8 +144,9 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 
                                             echo "
                                             <tr>
-                                                <th scope='row'>$i</th>
+                                                <td scope='row'>$i</td>
                                                 <td>".$nombreForm."</td>
+                                                <td>".$stateHtml."</td>
                                                 <td>
                                                     <div class='d-flex order-actions'>
                                                         <a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>
@@ -144,6 +154,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                                         ".$addImagenes."
                                                     </div>
                                                 </td>
+                                                
                                             </tr>
                                             ";
                                         }
@@ -177,7 +188,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                 <table class="table mb-0 table-hover">
                                     <tbody>
                                     <?php
-                                    $query = "SELECT c.idcatastro, f.idformulario, f.codigo, f.nombre
+                                    $query = "SELECT c.idcatastro, f.idformulario, f.codigo, f.nombre, c.estado
                                                 FROM catastro c
                                                 LEFT JOIN formulario f ON c.idformulario = f.idformulario
                                                 WHERE c.idevento = $idevento AND f.tipo = 'CATASTRO'";
@@ -187,6 +198,15 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                     if ( $rows > 0 ){
                                         $i = 0;
                                         while( $data = mysqli_fetch_array($result) ){
+
+                                            $stateCatastroHtml = "";
+                                            if ($data['estado'] == 'PEN')
+                                                $stateCatastroHtml = "<div class='text-danger'><i class='bx bxs-circle align-middle'></i> Pendiente</div>";
+                                            if ($data['estado'] == 'REV')
+                                                $stateCatastroHtml = "<div class='text-warning'><i class='bx bxs-circle align-middle'></i> Revisión</div>";
+                                            if ($data['estado'] == 'APR')
+                                                $stateCatastroHtml = "<div class='text-success'><i class='bx bxs-circle align-middle'></i> Aprobado</div>";
+
                                             $i++;
                                             $codigo = $data['codigo'];
                                             $nombreForm = $data['nombre'];
@@ -202,9 +222,11 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                             <tr>
                                                 <th scope='row'>$i</th>
                                                 <td>".$nombreForm."</td>
+                                                <td>".$stateCatastroHtml."</td>
                                                 <td>
                                                     <div class='d-flex order-actions'>
                                                         <a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>
+                                                        ".$eliminarRutina."
                                                         ".$eliminarRutina."
                                                         ".$addImagenes."
                                                     </div>
@@ -254,6 +276,10 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
         return datosFetch;
     }
 
+
+    function setReprogramacion(){
+        alert("Reprogramar...")
+    }
 
     function eliminarRutina(idrutina, codForm){
 

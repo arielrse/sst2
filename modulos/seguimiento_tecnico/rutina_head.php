@@ -70,28 +70,15 @@ while( $data4 = mysqli_fetch_array($res4) ){
 $b1View = $cform == "001";
 
 $hrefpdf = "../../modulos/$modulo/rutina$cform/reporte.php";
+$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;
+
 ?>
 <input type="hidden" name="rutinaId" id="rutinaId" value="<?php echo $idrutina ?>" />
+<input type="hidden" name="grupoId" id="grupoId" value="<?php echo $idgrupo ?>" />
+<input type="hidden" name="eventoId" id="eventoId" value="<?php echo $idevento ?>" />
+<input type="hidden" name="link_modulo" id="link_modulo" value="<?php echo $hrefrutina ?>" />
 
-    <div class="row row-cols-auto pb-2">
-        <div class="col">
-            <input type="button" id="botonHead" class="btn btn-primary px-5" value="Guardar" />
-        </div>
-        <div class="col">
-            <input type="button" class="btn btn-secondary px-5" name="Submit" value="Cancelar" onclick="history.back()" />
-        </div>
-
-        <form action="<?php echo $hrefpdf ?>" method="post" enctype="multipart/form-data" target="_blank">
-            <input type="hidden" id="cform" name="cform" value="<?php echo $cform ?>" />
-            <input type="hidden" id="idrutinax" name="idrutinax" value="<?php echo $idrutinax ?>" />
-            <input type="hidden" id="idgrupo" name="idgrupo" value="<?php echo $idgrupo ?>" />
-            <input type="hidden" id="iddepartamento" name="iddepartamento" value="<?php echo $iddepartamento ?>" />
-            <div class="col">
-                <input type="submit" class="btn btn-info px-5" name="Submit" value="Generar"  />
-            </div>
-        </form>
-
-    </div>
+    <?php require("rutina_head_button.php"); ?>
 
 
     <div class="card border-top border-0 border-4 border-primary">

@@ -9,7 +9,7 @@ require("../../funciones/motor.php");
 	$codigoForm   = $_POST['codigoForm'];
 	$jsonData     = $_POST['jsonData'];
 
-    $query = "insert into catastro(idformulario, idevento) values ($idformulario, $idevento)";
+    $query = "insert into catastro(idformulario, idevento, estado) values ($idformulario, $idevento, 'PEN')";
     $res = mysqli_query($conexion, $query);
     $resId = mysqli_insert_id($conexion);
 

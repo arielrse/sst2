@@ -9,7 +9,7 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">RUTINA DE MANTENIMIENTO PREVENTIVO - SISTEMA DE TRANSMISIÓN (MW, FO, SAT)</h6>
         <hr/>
 
-        <?php require("rutina015/rutina_head_015.php"); ?>
+        <?php require("rutina_head_015.php"); ?>
 
         <div class="row">
             <div class="col-xl-12 mx-auto">

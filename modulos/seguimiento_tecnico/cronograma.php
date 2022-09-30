@@ -83,12 +83,12 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                             while($dato=mysqli_fetch_array($resultado)){
                                 $idevento = $dato['idevento'];
                                 $nombre = $dato['nombre'];
-                                $href = "$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$dato['idgrupo'];
+
+                                $editarLink = "$link_modulo?path=evento_editar.php&event=".$idevento;
+
                                 if($nively == 1){
-                                    //$ticket_html = "<a href='$link_modulo?path=u_ticketn.php&ticket=".$dato['ticket']."'>".$dato['ticket']."</a>";
                                     $ticket_html = "";
                                 }else{
-                                    //$ticket_html = $dato['ticket'];
                                     $ticket_html = "";
                                 }
 
@@ -102,6 +102,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                                     <td>".$dato['grupo']."</td>
                                     <td>
                                         <div class='d-flex order-actions'>
+                                            <a href='$editarLink' class=''><i class='bx bxs-edit'></i></a>
                                             <a href='javascript:;' class='ms-3' onclick='eliminarMtto(`$idevento`, `$nombre`)'><i class='bx bxs-trash'></i></a>
                                         </div>
                                     </td>
