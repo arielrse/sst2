@@ -209,7 +209,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 
                                             $i++;
                                             $codigo = $data['codigo'];
-                                            $nombreForm = $data['nombre'];
+                                            $nombreForm = $data['codigo'] . ' ' . $data['nombre'];
                                             $idcatastro = $data['idcatastro'];
                                             $href    = "$link_modulo?path=catastro_$codigo.php&event=$idevento&rut=$idcatastro&cform=$codigo&gp=$idgrupo";
                                             $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
@@ -227,8 +227,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                                     <div class='d-flex order-actions'>
                                                         <a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>
                                                         ".$eliminarRutina."
-                                                        ".$eliminarRutina."
-                                                        ".$addImagenes."
+                                                        
                                                     </div>
                                                 </td>
                                             </tr>

@@ -93,17 +93,12 @@ foreach ($inOutDoorArr as $element){
     $inOutDoorOption .= "<option value='$element' $selected>".$element."</option>";
 }
 
+$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;
 ?>
-    <input type="hidden" id="catastroId" value="<?php echo $idcatastro ?>" />
+<input type="hidden" id="catastroId" value="<?php echo $idcatastro ?>" />
+<input type="hidden" name="link_modulo" id="link_modulo" value="<?php echo $hrefrutina ?>" />
 
-    <div class="row row-cols-auto pb-2">
-        <div class="col">
-            <input type="button" id="botonHead" class="btn btn-primary px-5" value="Guardar" />
-        </div>
-        <div class="col">
-            <input type="button" class="btn btn-secondary px-5" name="Submit" value="Cancelar" onclick="history.back()" />
-        </div>
-    </div>
+    <?php require("catastro_head_button.php"); ?>
 
     <div class="card">
         <div class="card-body p-3">

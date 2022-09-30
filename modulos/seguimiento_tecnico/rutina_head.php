@@ -74,8 +74,8 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
 
 ?>
 <input type="hidden" name="rutinaId" id="rutinaId" value="<?php echo $idrutina ?>" />
-<input type="hidden" name="grupoId" id="grupoId" value="<?php echo $idgrupo ?>" />
-<input type="hidden" name="eventoId" id="eventoId" value="<?php echo $idevento ?>" />
+<!--<input type="hidden" name="grupoId" id="grupoId" value="<?php /*echo $idgrupo */?>" />
+<input type="hidden" name="eventoId" id="eventoId" value="<?php /*echo $idevento */?>" />-->
 <input type="hidden" name="link_modulo" id="link_modulo" value="<?php echo $hrefrutina ?>" />
 
     <?php require("rutina_head_button.php"); ?>
