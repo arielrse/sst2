@@ -71,7 +71,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
 
                         $consulta = "";
                         /** Para nivel Tecnico **/
-                        if($nively == 2){
+                        if(isTechnical()){
                             $res = mysqli_query($conexion, "SELECT g.idgrupo FROM grupo g WHERE g.user1 = '$id_user' OR    g.user2 = '$id_user'");
                             $dato = mysqli_fetch_array($res);
 
@@ -85,7 +85,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                         /** Fin **/
 
                         /** Para nivel Administrador **/
-                        if($nively == 1){
+                        if(isAdmin() || isClient() || isExpert()){
                             $res = mysqli_query($conexion, "SELECT g.idgrupo FROM grupo g WHERE g.user1 = '$id_user' OR    g.user2 = '$id_user'");
                             $dato = mysqli_fetch_array($res);
 

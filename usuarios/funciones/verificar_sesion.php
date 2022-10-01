@@ -25,4 +25,21 @@ if($filas!=0) {
     header("Location: ../index.php?sw=2");
     exit;
 }
+
+function isAdmin(){
+    return $GLOBALS["nively"] == 1;
+}
+
+function isTechnical(){
+    return $GLOBALS["nively"] == 2;
+}
+
+function isExpert(){
+    return $GLOBALS["nively"] == 3;
+}
+
+function isClient(){
+    return $GLOBALS["nively"] == 4;
+}
+
 ?>
