@@ -38,10 +38,15 @@ $localidad      = $dataIden['localidad'];
 $municipio      = $dataIden['municipio'];
 
 /* ---------------------------------- */
-$res3 = mysqli_query($conexion, "SELECT r.id, r.data FROM catastro$cform r WHERE r.idcatastro = ".$idcatastro);
+//$res3 = mysqli_query($conexion, "SELECT r.id, r.data FROM catastro$cform r WHERE r.idcatastro = ".$idcatastro);
+$res3 = mysqli_query($conexion, "SELECT c.id, c.data, ca.estado FROM catastro$cform c
+                                        left join catastro ca on c.idcatastro = ca.idcatastro
+                                        WHERE c.idcatastro = ".$idcatastro);
+
 $data3 = mysqli_fetch_array($res3);
-$jsonCab   = $data3['data'];
+$jsonCab     = $data3['data'];
 $idcatastrox = $data3['id'];
+$estado      = $data3['estado'];
 
 $obj = json_decode($jsonCab);
 $cm                 = $obj->{'cm'};
@@ -52,23 +57,6 @@ $cod_fijo           = $obj->{'cod_fijo'};
 $cod_activo         = $obj->{'cod_activo'};
 $indoor_outdoor     = $obj->{'indoor_outdoor'};
 $c_fechaRealizacion = $obj->{'c_fechaRealizacion'};
-
-
-/*$res4 = mysqli_query($conexion,
-    "SELECT u.id, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nombre, u.`cargo`, u.`cel`
-            FROM usuarios u
-            WHERE u.nivel = 3
-            AND u.`iddepartamento` = ".$iddepartamento);
-
-$selectSupervisor = "<option>Seleccionar supervisor</option>";
-while( $data4 = mysqli_fetch_array($res4) ){
-    $userId = $data4['id'];
-    $selected = "";
-    if ($e_personal == $userId) $selected = "selected";
-
-    $selectSupervisor .= "<option value='$userId' $selected>" . $data4['nombre'] . " - " . $data4['cargo'] . "</option>";
-    $hrefpdf = "../../modulos/$modulo/catastro$cform/reporte.php";
-}*/
 
 /* -------------------------------------------- */
 $inOutDoorArr = ["INDOOR", "OUTDOOR"];

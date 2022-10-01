@@ -38,10 +38,14 @@ $localidad      = $dataIden['localidad'];
 $municipio      = $dataIden['municipio'];
 
 /* ---------------------------------- */
-$res3 = mysqli_query($conexion, "SELECT r.id, r.data FROM catastro$cform r WHERE r.idcatastro = ".$idcatastro);
+$res3 = mysqli_query($conexion, "SELECT c.id, c.data, ca.estado FROM catastro$cform c
+                                        left join catastro ca on c.idcatastro = ca.idcatastro
+                                        WHERE c.idcatastro = ".$idcatastro);
+
 $data3 = mysqli_fetch_array($res3);
 $jsonCab   = $data3['data'];
 $idcatastrox = $data3['id'];
+$estado    = $data3['estado'];
 
 $obj = json_decode($jsonCab);
 $cm                 = $obj->{'cm'};

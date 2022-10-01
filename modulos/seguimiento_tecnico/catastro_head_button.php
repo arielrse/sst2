@@ -8,21 +8,29 @@
         </div>
     </div>
 
+    <?php if ( ($estado=='PEN' && !isClient()) || ( isExpert() && $estado=='REV') && !isClient() ) { ?>
     <div class="col">
         <input type="button" id="botonHead" class="btn btn-primary px-4" value="Guardar" />
     </div>
+    <?php } ?>
 
+    <?php if ( ($estado=='PEN' && !isClient()) || (isAdmin() && $estado!='REV' ) ) { ?>
     <div class="col">
         <button type="button" id="toReview" class="btn btn-warning px-3"><i class="bx bx-right-arrow-alt mr-1"></i>A revisión</button>
     </div>
+    <?php } ?>
 
+    <?php if ( (isAdmin() || isExpert()) && $estado=='REV') { ?>
     <div class="col">
         <button type="button" id="toApprove" class="btn btn-success px-3"><i class="bx bx-check mr-1"></i>Aprobar</button>
     </div>
+    <?php } ?>
 
+    <?php if ( isAdmin() && $estado!='PEN') { ?>
     <div class="col">
         <button type="button" id="toOpen" class="btn btn-danger px-3"><i class="bx bx-lock-open-alt mr-1"></i>Reabrir</button>
     </div>
+    <?php } ?>
 </div>
 
 <script type=text/javascript>
