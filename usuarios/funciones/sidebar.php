@@ -95,7 +95,7 @@ $muser = "../modulos/usuarios.php?path=";
         </li>
 
         <li>
-            <a href="javascript:;">
+            <a href="<?=$mst?>dashboard.php">
                 <div class="parent-icon"><i class="bx bx-line-chart"></i>
                 </div>
                 <div class="menu-title">Estadisticas</div>
