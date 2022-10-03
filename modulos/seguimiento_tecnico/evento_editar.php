@@ -186,7 +186,7 @@ $checked  = $reprog ? 'checked' : '';
                 var checkValue = $('#checkReprog').val();
                 var checkReprog = $('#checkReprog').is(':checked');
 
-                alert("value: " + checkValue);
+                //alert("value: " + checkValue);
 
                 if (checkReprog){
                     document.getElementById('repro').disabled = false;

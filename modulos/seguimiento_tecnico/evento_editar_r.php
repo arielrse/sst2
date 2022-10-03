@@ -8,9 +8,11 @@ $idgrupo  = $_POST["idgrupo"];
 
 $fechainicio = $_POST["fechainicio"];
 $fechafin    = $_POST["fechafin"];
-$repro       = $_POST["repro"];
-$motivo      = $_POST["motivo"];
-$checkReprog = $_POST["checkReprog"];
+
+$checkReprog = isset($_POST["checkReprog"]) ? $_POST["checkReprog"] : 0;
+$repro       = isset($_POST["repro"])  ? $_POST["repro"] : '0000-00-00';
+$motivo      = isset($_POST["motivo"]) ? $_POST["motivo"] : '';
+
 
 //if ($checkReprog){}
 
