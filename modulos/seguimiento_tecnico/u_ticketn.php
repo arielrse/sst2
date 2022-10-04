@@ -102,7 +102,7 @@ st_ticketn
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-text">Fecha de Inicio:</span>
-                                    <input name="fecha_inicio_rif" type="text" id="fecha_inicio_rif" size="20" class="result form-control"
+                                    <input name="fecha_inicio_rif" type="date" id="fecha_inicio_rif" size="20" class="result form-control"
                                            value="<?=$dato['fecha_inicio_rif']?>" />
 
                                 </div>
@@ -111,18 +111,15 @@ st_ticketn
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-text">Hora Inicio:</span>
-                                    <input name="hora_inicio_rif" type="text" id="hora_inicio_rif" size="15"
-                                           value="<?=$dato['hora_inicio_rif']?>" class="result form-control" placeholder="hh:mm:ss" />
-
-
-
+                                    <input name="hora_inicio_rif" type="time" id="hora_inicio_rif" size="15"
+                                           value="<?=$dato['hora_inicio_rif']?>" class="form-control" placeholder="hh:mm" />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-text">Fecha de Fin:</span>
-                                    <input name="fecha_fin_rif" type="text" id="fecha_fin_rif" size="20" class="result form-control"
+                                    <input name="fecha_fin_rif" type="date" id="fecha_fin_rif" size="20" class="form-control"
                                            value="<?=$dato['fecha_fin_rif']?>" />
 
                                 </div>
@@ -131,8 +128,8 @@ st_ticketn
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-text">Hora Fin:</span>
-                                    <input name="hora_fin_rif" type="text" id="hora_fin_rif" size="15"
-                                           value="<?=$dato['hora_fin_rif']?>" class="result form-control" placeholder="hh:mm:ss" />
+                                    <input name="hora_fin_rif" type="time" id="hora_fin_rif" size="15"
+                                           value="<?=$dato['hora_fin_rif']?>" class="form-control" placeholder="hh:mm:ss" />
                                 </div>
                             </div>
 
@@ -276,7 +273,7 @@ st_ticketn
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-text">Fecha:</span>
-                                    <input name="fecha_not_dim" type="text" id="fecha_not_dim" size="20" class="result form-control"
+                                    <input name="fecha_not_dim" type="date" id="fecha_not_dim" size="20" class="form-control"
                                            value="<?=$dato['fecha_not_dim']?>" />
                                 </div>
                             </div>
@@ -284,8 +281,8 @@ st_ticketn
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-text">Hora:</span>
-                                    <input name="hora_not_dim" type="text" id="hora_not_dim" size="15" class="result form-control"
-                                           value="<?=$dato['hora_not_dim']?>" placeholder="hh:mm:ss" />
+                                    <input name="hora_not_dim" type="time" id="hora_not_dim" size="15" class="form-control"
+                                           value="<?=$dato['hora_not_dim']?>" placeholder="hh:mm" />
                                 </div>
                             </div>
 
@@ -294,7 +291,7 @@ st_ticketn
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-text">Fecha:</span>
-                                    <input name="fecha_not_sitio" type="text" id="fecha_not_sitio" size="20" class="result form-control"
+                                    <input name="fecha_not_sitio" type="date" id="fecha_not_sitio" size="20" class="form-control"
                                            value="<?=$dato['fecha_not_sitio']?>" />
                                 </div>
                             </div>
@@ -302,8 +299,8 @@ st_ticketn
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-text">Hora:</span>
-                                    <input name="hora_not_sitio" type="text" id="hora_not_sitio" size="15" class="result form-control"
-                                           value="<?=$dato['hora_not_sitio']?>" placeholder="hh:mm:ss" />
+                                    <input name="hora_not_sitio" type="time" id="hora_not_sitio" size="15" class="form-control"
+                                           value="<?=$dato['hora_not_sitio']?>" placeholder="hh:mm" />
                                 </div>
                             </div>
 
@@ -318,9 +315,11 @@ st_ticketn
                             </div>
 
                             <div class="row row-cols-auto g-3">
+                                <?php if (isAdmin() || isExpert()) { ?>
                                 <div class="col">
                                     <input type="button" id="boton" class="btn btn-primary px-5" value="Guardar" />
                                 </div>
+                                <?php } ?>
                                 <div class="col">
                                     <input type="button" class="btn btn-secondary px-5" name="Submit" value="Cancelar" onclick="location.href='<?=$link_modulo?>?path=tickets.php'" />
                                 </div>
@@ -586,41 +585,5 @@ if( checkField( document.amper.ticket, isName, false) &&
 }
 else {return false;}   	
 }
-</script>
-
-<script>
-    $(function () {
-        //fecha_inicio_rif fecha_fin_rif fecha_not_dim fecha_not_sitio
-        $('#fecha_inicio_rif').bootstrapMaterialDatePicker({
-            time: false
-        });
-        $('#fecha_fin_rif').bootstrapMaterialDatePicker({
-                    time: false
-        });
-        $('#fecha_not_dim').bootstrapMaterialDatePicker({
-                    time: false
-        });
-        $('#fecha_not_sitio').bootstrapMaterialDatePicker({
-                    time: false
-        });
-
-
-        $('#hora_inicio_rif').bootstrapMaterialDatePicker({
-            date: false,
-            format: 'HH:mm'
-        });
-        $('#hora_fin_rif').bootstrapMaterialDatePicker({
-            date: false,
-            format: 'HH:mm'
-        });
-        $('#hora_not_dim').bootstrapMaterialDatePicker({
-            date: false,
-            format: 'HH:mm'
-        });
-        $('#hora_not_sitio').bootstrapMaterialDatePicker({
-            date: false,
-            format: 'HH:mm'
-        });
-    });
 </script>
 

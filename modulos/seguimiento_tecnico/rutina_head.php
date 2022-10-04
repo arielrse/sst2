@@ -58,7 +58,7 @@ if ($b1_noAplica) $b1_noAplica_checked = "checked";
 $res4 = mysqli_query($conexion,
     "SELECT u.id, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nombre, u.`cargo`, u.`cel`
             FROM usuarios u
-            WHERE u.nivel = 3
+            WHERE u.nivel = 4
             AND u.`iddepartamento` = ".$iddepartamento); // Id de la sesion
 
 $selectSupervisor = "<option>Seleccionar supervisor</option>";

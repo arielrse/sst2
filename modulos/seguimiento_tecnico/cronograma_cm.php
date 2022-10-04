@@ -1,29 +1,30 @@
 <?php
-if($nively=='1'){ $adm=1;}
+$mes      = isset($_GET["mes"]) ? $_GET["mes"] : date("n");
+$anio     = isset($_GET["anio"]) ?  $_GET["anio"] : date("Y");
+$idcentro = isset($_GET["cm"]) ? $_GET["cm"] : 0;
 
-$anio = 2022;
-$mes = 10;
+if ($idcentro == 0) {
+    $mes      = isset($_POST["mes"]) ? $_POST["mes"] : date("n");
+    $anio     = isset($_POST["anio"]) ? $_POST["anio"] : date("Y");
+    $idcentro = $_POST["idcentro"] ? $_POST["idcentro"] : 0;
+}
 
-$codCentro = 1;
-
-if(isset($_GET["mes"]))  $mes  = $_GET["mes"];
-if(isset($_GET["anio"])) $anio = $_GET["anio"];
-if(isset($_GET["centro"])) $codCentro = $_GET["centro"];
-
-if(isset($_POST["mes"]))  $mes  = $_POST["mes"];
-if(isset($_POST["anio"])) $anio = $_POST["anio"];
-if(isset($_POST["centro"])) $codCentro = $_POST["centro"];
+if ($idcentro == 0){
+    $resCentro = mysqli_query($conexion, "select c.idcentro from centro c where c.iddepartamento = " . $iddepartamento);
+    $arrayCentro = mysqli_fetch_array($resCentro);
+    $idcentro = $arrayCentro[0];
+}
 
 //$param_volver = base64_encode("&mes=$mes&anio=$anio&centro=$codCentro");
-$param_volver ="";
+//$param_volver ="";
 
 /** ----- **/
 
 # definimos los valores iniciales para nuestro calendario
-//$month      = date("n")-1;
-$month      = $mes;
-//$year       = date("Y");
-$year       = $anio;
+$month      = date("n")-1;
+//$month      = $mes;
+$year       = date("Y");
+//$year       = $anio;
 $diaActual  = date("j");
 
 # Devuelve 0 para domingo, 6 para sabado
@@ -35,46 +36,39 @@ $meses = array(1=>"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"
 $inicio = $anio."-".$mes."-"."01";
 $fin    = $anio."-".$mes."-".$ultimoDiaMes;
 
-/*$resultado = mysqli_query($conexion, "
-SELECT ev.idevento, ev.estado, ev.inicio, ev.fin, es.codigo, es.nombre, g.codigo AS codigog, c.idcentro, c.codigo as codCentro
-FROM evento ev
-JOIN estacion es ON ev.idestacion = es.idestacion
-JOIN grupo g 	 ON ev.idgrupo = g.idgrupo
-JOIN centro c    ON ev.idcentro = c.idcentro
-WHERE ev.inicio BETWEEN '$inicio' AND '$fin'
-AND c.codigo = '$codCentro'
-");*/
-
 $resultado = mysqli_query($conexion, "
-SELECT ev.idevento, ev.estado, ev.inicio, ev.fin, s.codsitio AS codigo, s.nombre, g.codigo AS codigog, c.idcentro, c.codigo AS codCentro
+SELECT ev.idevento, ev.estado, ev.inicio, ev.fin, s.codsitio AS codigo, s.nombre, g.idgrupo, g.codigo AS codigog, c.idcentro, c.codigo AS codCentro
 FROM evento ev
 JOIN sitio s ON ev.idsitio = s.idsitio
 JOIN grupo g 	 ON ev.idgrupo = g.idgrupo
 JOIN centro c    ON ev.idcentro = c.idcentro
-WHERE ev.inicio BETWEEN '2022-10-01' AND '2022-10-31'
-AND c.idcentro = 1
-");
+WHERE ev.inicio BETWEEN '$inicio' AND '$fin'
+AND c.idcentro = " . $idcentro);
 
 $filas	   = mysqli_num_rows($resultado);
+
+$param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
 
 ?>
 <div class="page-wrapper">
     <div class="page-content">
 
-        <table border="0" width="100%">
+        <table width="100%">
             <tr>
-                <td  align="center"><span class="naranja">&nbsp;Centro de Mantenimiento:&nbsp;</span></td>
-                <td class="marco_">
-                    <form name="amper" method="post" action="#">
-                        <select name="centro" class="selectbuscar">
+                <td  align="center"><span class="naranja">&nbsp;Centro de Mantenimiento: <?php /*echo $idcentro . '-' . $mes;*/ ?></span></td>
+                <td>
+                    <form name="amper" method="post" action="<?=$link_modulo?>?path=cronograma_cm.php">
+                        <input type="hidden" name="param_volver" id="param_volver" value="<?php echo $param_volver ?>" />
+                        <select name="idcentro" class="selectbuscar">
                             <?php
-                            $res=mysqli_query($conexion, "SELECT idcentro, nombre, codigo FROM centro");
+                            $res=mysqli_query($conexion, "SELECT idcentro, nombre, codigo FROM centro where iddepartamento=".$iddepartamento);
                             while($dato=mysqli_fetch_array($res)){
                                 $nombre = $dato['nombre'];
                                 $codigo = $dato['codigo'];
+                                $idc    = $dato['idcentro'];
                                 $selected = '';
-                                if($codCentro == $codigo) $selected = "class='naranja' selected";
-                                echo"<option value='$codigo' $selected>$nombre</option>";
+                                if($idcentro == $idc) $selected = "class='naranja' selected";
+                                echo"<option value='$idc' $selected>$nombre</option>";
                             }
                             ?>
                         </select>
@@ -95,49 +89,37 @@ $filas	   = mysqli_num_rows($resultado);
                         </select>
 
                         <select name="anio" class="selectbuscar">
-                            <option value="2019" <? if($anio==2019) echo"class='naranja' selected"; ?>>2019</option>
-                            <option value="2018" <? if($anio==2018) echo"class='naranja' selected"; ?>>2018</option>
-                            <option value="2017" <? if($anio==2017) echo"class='naranja' selected"; ?>>2017</option>
-                            <option value="2016" <? if($anio==2016) echo"class='naranja' selected"; ?>>2016</option>
+                            <option value="2021" <? if($anio==2021) echo"class='naranja' selected"; ?>>2021</option>
+                            <option value="2022" <? if($anio==2022) echo"class='naranja' selected"; ?>>2022</option>
+                            <option value="2023" <? if($anio==2023) echo"class='naranja' selected"; ?>>2023</option>
+                            <option value="2024" <? if($anio==2024) echo"class='naranja' selected"; ?>>2024</option>
                         </select>&nbsp;
-                        <input class="btn_dark" name="ver" type="submit"  value=" Ver " /> &nbsp;
+                        <input class="btn btn-sm btn-secondary px-3" name="ver" type="submit"  value="Ver" />
 
-                        <input class="btn_dark" name="nuevoE" type="button" value="Nuevo Evento" onClick="location.href='<?=$link_modulo?>?path=nuevo_evento.php'" />
-                        <input class="btn_dark" name="estacion" type="button" value="Estaciones" onClick="location.href='<?=$link_modulo?>?path=estaciones.php'" />
-
+                        <?php if (isAdmin() || isExpert()) { ?>
+                        <input name="nuevoE" type="button" value="Nuevo" class="btn btn-sm btn-primary px-3"
+                               onClick="location.href='<?=$link_modulo?>?path=nuevo_evento.php<?=$param_volver?>'" />
+                        <?php } ?>
                     </form>
                 </td>
-                <!--<td>|<td/>-->
-                <!--<td class="marco"><a class="enlacebotonverde" href="<?/* echo $link_modulo . '?path=prev_cert_cba.php' */?>">&nbsp;CERTIFICADOS Y ACTAS&nbsp;</a></td>-->
-                <!--<input name="report" type="button" value="Reporte Mtto" onClick="location.href='<?/*=$link_modulo*/?>?path=reporte_mtto_prev.php'" />-->
-
-
-                <td class="" align="center"><a class="enlacebtn" href="<? echo $link_modulo . '?path=reporte_mtto_prev.php' ?>">&nbsp;Reportes x Formulario&nbsp;</a></td>
-                <!--<td class="" align="center"><a class="enlacebotonverde" href="<?/* echo $link_modulo . '?path=reporte_mtto_prev.php' */?>">&nbsp;Reportes x Formulario&nbsp;</a></td>-->
-
             </tr>
         </table>
 
-        <table width="100%" align="center" class="table4">
+        <table width="100%"  class="table table-sm mb-0 table-bordered table-hover">
         <!--<caption>CRONOGRAMA CENTRO DE MANTENIMIENTO</caption>-->
             <tr>
-                <th width="1%">Fecha</th>
-                <th width="10%">GRUPO 1</th>
-                <th width="10%">GRUPO 2</th>
-                <th width="10%">GRUPO 3</th>
-                <th width="10%">GRUPO 4</th>
-                <th width="10%">GRUPO 5</th>
-                <th width="10%">GRUPO 6</th>
-                <th width="10%">GRUPO 7</th>
-                <th width="10%">GRUPO 8</th>
-                <th width="10%">GRUPO 9</th>
-                <th width="9%">GRUPO 10</th>
+                <td width="1%"  class="small text-dark" align="center">F.</td>
+                <td width="20%" class="small text-dark" align="center">GRUPO 1</td>
+                <td width="20%" class="small text-dark" align="center">GRUPO 2</td>
+                <td width="20%" class="small text-dark" align="center">GRUPO 3</td>
+                <td width="20%" class="small text-dark" align="center">GRUPO 4</td>
+                <td width="20%" class="small text-dark" align="center">GRUPO 5</td>
             </tr>
 
         <?php
 
         // Columnas (Grupos)
-        for ($c=1; $c<=11; $c++){
+        for ($c=1; $c<=6; $c++){
             $a[0][$c]= $c;
         }
         // Filas (Fechas)
@@ -151,6 +133,7 @@ $filas	   = mysqli_num_rows($resultado);
             $idevento       = $dato['idevento'];
             $codigoEstacion = $dato['codigo'];
             $nombreEstacion = $dato['nombre'];
+            $idgrupo        = $dato['idgrupo'];
             $grupo          = $dato['codigog'];
             $fechaInicio    = $dato['inicio'];
             $fechaFin       = $dato['fin'];
@@ -158,10 +141,13 @@ $filas	   = mysqli_num_rows($resultado);
             $fecha = explode("-", $dato['inicio']);
             $estado = "";
 
+            //$editarEvento = "$link_modulo?path=evento_editar.php&event=".$idevento;
+            $href = "$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$dato['idgrupo'];
+
             $f = intval($fecha[2]);
             $c = $dato['codigog'];
 
-            $a[$f][$c] = $dato['nombre'];
+            $a[$f][$c] = "<span class='small'><a href='$href'>" . $dato['nombre'] . "</a></span>";
 
         }
 
@@ -169,29 +155,22 @@ $filas	   = mysqli_num_rows($resultado);
         $html_tr = "";
         for ($i=1;$i<=$ultimoDiaMes;$i++){
             $html_tr .= '<tr onmouseover="setPointer(this, \'#DADADA\')" onmouseout="setPointer(this, \'#FFFFFF\')">';
-            for($j=0;$j<11;$j++) {
+            for($j=0;$j<6;$j++) {
                 $var = isset($a[$i][$j]) ? $a[$i][$j] : '';
-                $html_tr .= "<td>". $var ."</td>";
+                $html_tr .= "<td class='small'>". $var ."</td>";
             }
             $html_tr .= '</tr>';
         }
         print $html_tr;
         ?>
-
             <tr>
-                <th width="1%">Fecha </th>
-                <th width="10%">GRUPO 1</th>
-                <th width="10%">GRUPO 2</th>
-                <th width="10%">GRUPO 3</th>
-                <th width="10%">GRUPO 4</th>
-                <th width="10%">GRUPO 5</th>
-                <th width="10%">GRUPO 6</th>
-                <th width="10%">GRUPO 7</th>
-                <th width="10%">GRUPO 8</th>
-                <th width="10%">GRUPO 9</th>
-                <th width="9%">GRUPO 10</th>
+                <td width="1%"  class="small text-dark" align="center">F.</td>
+                <td width="20%" class="small text-dark" align="center">GRUPO 1</td>
+                <td width="20%" class="small text-dark" align="center">GRUPO 2</td>
+                <td width="20%" class="small text-dark" align="center">GRUPO 3</td>
+                <td width="20%" class="small text-dark" align="center">GRUPO 4</td>
+                <td width="20%" class="small text-dark" align="center">GRUPO 5</td>
             </tr>
-
         </table>
     </div>
 </div>
