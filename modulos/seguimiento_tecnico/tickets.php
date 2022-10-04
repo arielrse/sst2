@@ -56,9 +56,12 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                         <input class="btn btn-dark px-5" name="Submit" type="submit" value="Buscar">
                     </div>
 
+                    <?php if (isAdmin() || isExpert()) { ?>
                     <div class="col">
                         <button type="button" class="btn btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=n_ticketn.php'">Nuevo</button>
                     </div>
+                    <?php } ?>
+
                     </form>
                 </div>
                 <hr />
@@ -140,12 +143,13 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                             $i=0;
                             while($dato=mysqli_fetch_array($resultado)){
                                 $i++;
+                                $ticket_html = "<a href='$link_modulo?path=u_ticketn.php&ticket=".$dato['ticket']."'>".$dato['ticket']."</a>";
 
-                                if($nively == 1){
+                                /*if (isAdmin() || isExpert()) {
                                     $ticket_html = "<a href='$link_modulo?path=u_ticketn.php&ticket=".$dato['ticket']."'>".$dato['ticket']."</a>";
                                 }else{
                                     $ticket_html = $dato['ticket'];
-                                }
+                                }*/
 
                                 echo"
                                 <tr>

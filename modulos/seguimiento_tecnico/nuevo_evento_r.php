@@ -8,6 +8,8 @@ $idgrupo = $_POST["idgrupo"];
 $fechainicio = $_POST["fechainicio"];
 $fechafin = $_POST["fechafin"];
 
+$param_volver = $_POST["param_volver"];
+
 $consulta="INSERT INTO evento SET 
 idgrupo='".$idgrupo."',        
 titulo='MTTO PREVENTIVO',
@@ -21,7 +23,7 @@ idsitio='".$idsitio."'";
 $resultado=mysqli_query($conexion, $consulta);
 
 if($resultado) {
-	header("Location: ".$link_modulo."?path=cronograma.php");
+	header("Location: ".$link_modulo."?path=cronograma_cm.php$param_volver");
 }
 else
     echo "<b>Ocurrio un error, revise bien la informacion insertada!</b><br>Notifique de este error al administrador del Sistema: ".mysqli_error($conexion).

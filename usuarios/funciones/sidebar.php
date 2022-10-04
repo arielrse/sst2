@@ -28,23 +28,7 @@ $muser = "../modulos/usuarios.php?path=";
             </a>
         </li>
 
-        <!--<li>
-            <a href="#">
-                <div class="parent-icon"><i class="bx bx-category"></i>
-                </div>
-                <div class="menu-title">Application</div>
-            </a>
-        </li>-->
-
         <li class="menu-label">Seguimiento</li>
-
-        <!--<li>
-            <a href="#">
-                <div class="parent-icon"><i class='bx bx-unite'></i>
-                </div>
-                <div class="menu-title">Mtto Correctivo</div>
-            </a>
-        </li>-->
 
         <li>
             <a href="<?=$mst?>tickets.php">
@@ -54,11 +38,21 @@ $muser = "../modulos/usuarios.php?path=";
             </a>
         </li>
 
+        <?php if (isAdmin() || isExpert()) { ?>
         <li>
             <a href="<?=$mst?>cronograma.php">
                 <div class="parent-icon"><i class='bx bx-calendar-plus'></i>
                 </div>
                 <div class="menu-title">Cronogramas</div>
+            </a>
+        </li>
+        <?php } ?>
+
+        <li>
+            <a href="<?=$mst?>cronograma_cm.php">
+                <div class="parent-icon"><i class='bx bx-calendar-plus'></i>
+                </div>
+                <div class="menu-title">Cronograma Centros</div>
             </a>
         </li>
 

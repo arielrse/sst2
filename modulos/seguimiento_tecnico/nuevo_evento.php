@@ -1,3 +1,12 @@
+<?php
+
+$mes  = isset($_GET["mes"]) ? $_GET["mes"] : date("n");
+$anio = isset($_GET["anio"]) ?  $_GET["anio"] : date("Y");
+$idcentro = isset($_GET["cm"]) ? $_GET["cm"] : 0;
+
+
+$param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
+?>
 <div class="page-wrapper">
     <div class="page-content">
 
@@ -28,6 +37,7 @@
 
                         <form name="amper" method="post" action="<?=$link_modulo_r?>" onSubmit=" return VerifyOne ();">
                             <input type="hidden" name="path" value="nuevo_evento_r.php" />
+                            <input type="hidden" name="param_volver" id="param_volver" value="<?php echo $param_volver ?>" />
 
                             <div class="row mb-3">
                                 <label for="inputEnterYourName" class="col-sm-3 col-form-label">Centro de Mantenimiento:</label>
@@ -106,7 +116,7 @@
                                 <!--<div class="col">-->
                                 <div class="ms-auto">
                                     <input type="submit" class="btn btn-primary px-5 mt-2 mt-lg-0" name="nuevo" value="Guardar" />
-                                    <input type="button" onClick="location.href='<?=$mst?>cronograma.php'" value="Cancelar" class="btn btn-secondary px-5 mt-2 mt-lg-0">
+                                    <input type="button" onClick="location.href='<?=$mst?>cronograma_cm.php'" value="Cancelar" class="btn btn-secondary px-5 mt-2 mt-lg-0">
                                 </div>
                             </div>
 
