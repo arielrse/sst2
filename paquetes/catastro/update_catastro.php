@@ -8,13 +8,20 @@ date_default_timezone_set('America/La_Paz');
 	$codigoForm   = $_POST['codigoForm'];
 	$jsonData     = $_POST['jsonData'];
 
-	$datos = $jsonData;
+    $jsonObj = json_decode($jsonData);
+
+    $observaciones   = filter_var($jsonObj->{'observaciones'},FILTER_SANITIZE_SPECIAL_CHARS);
+
+    $jsonObj->{'observaciones'}     = $observaciones;
+
+    $datos = json_encode($jsonObj);
+
+	//$datos = $jsonData;
 
     $res = mysqli_query($conexion,
     "update catastro$codigoForm set
             data = '$datos'
             where idcatastro = $idcatastro");
-
 
     mysqli_free_result();
     mysqli_close($conexion);

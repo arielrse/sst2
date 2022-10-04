@@ -379,8 +379,16 @@ foreach ($sist_de_bajaArr as $element){
                 </tbody>
         </table>
 
-        <h7 class="mb-0 text-uppercase">Otras observaciones:</h7>
+        <div class="row align-items-center row-cols-auto g-2 mb-2">
+            <div class="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                </div>
+            </div>
+        </div>
 
+        <h7 class="mb-0 text-uppercase">Otras observaciones:</h7>
         <div class="input-group">
             <span class="input-group-text"></span>
             <textarea class="form-control" aria-label="With textarea" id="observaciones"><?php echo $observaciones ?></textarea>

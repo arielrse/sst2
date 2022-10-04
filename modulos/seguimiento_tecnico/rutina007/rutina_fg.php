@@ -55,13 +55,13 @@ $g3_04_01 = $g_desarrollo3->g3_04_01; $g3_04_02 = $g_desarrollo3->g3_04_02;
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="f1_01_01" value="option1" <?php echo $f1_01_01 ?>>
-                        <label class="form-check-label" for="inlineCheckbox1">Si</label>
+                        <label class="form-check-label" for="f1_01_01">Si</label>
                     </div>
                 </td>
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="f1_01_02" value="option2" <?php echo $f1_01_02 ?>>
-                        <label class="form-check-label" for="inlineCheckbox2">No</label>
+                        <label class="form-check-label" for="f1_01_02">No</label>
                     </div>
                 </td>
                 <td>
