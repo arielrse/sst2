@@ -8,7 +8,7 @@ $codigoForm = $_GET['cform'];
     <div class="page-content">
 
         <h6 class="mb-0 text-uppercase">FORMULARIO DE CATASTRO SISTEMAS DE ENERGÍA</h6>
-        <h6 class="mb-0 text-uppercase">PANTA DE RECTIFICADORES (REC)</h6>
+        <h6 class="mb-0 text-uppercase">PLANTA DE RECTIFICADORES (REC)</h6>
         <hr/>
 
         <?php require("catastro_head007.php"); ?>

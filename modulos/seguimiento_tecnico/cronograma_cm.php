@@ -21,10 +21,10 @@ if ($idcentro == 0){
 /** ----- **/
 
 # definimos los valores iniciales para nuestro calendario
-$month      = date("n")-1;
-//$month      = $mes;
-$year       = date("Y");
-//$year       = $anio;
+//$month      = date("n")-1;
+$month      = $mes;
+//$year       = date("Y");
+$year       = $anio;
 $diaActual  = date("j");
 
 # Devuelve 0 para domingo, 6 para sabado
@@ -55,7 +55,7 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
 
         <table width="100%">
             <tr>
-                <td  align="center"><span class="naranja">&nbsp;Centro de Mantenimiento: <?php /*echo $idcentro . '-' . $mes;*/ ?></span></td>
+                <td  align="center"><span class="naranja">&nbsp;Centro de Mantenimiento: <?php /*echo $idcentro . ' - ' . $mes . ' - ' . $ultimoDiaMes;*/ ?></span></td>
                 <td>
                     <form name="amper" method="post" action="<?=$link_modulo?>?path=cronograma_cm.php">
                         <input type="hidden" name="param_volver" id="param_volver" value="<?php echo $param_volver ?>" />
