@@ -137,16 +137,16 @@ foreach ($protec_principalArr as $element){
                             </div>
                         </td>
                     </tr>
-                <tr>
+                <!--<tr>
                     <td>ByPass (Interno/Externo)</td>
                     <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
                             <select id="d06_01" class="form-select form-select-sm mb-2" aria-label=".form-select-sm example">
-                                <?php echo  $bypassOption ?>
+                                <?php /*echo  $bypassOption */?>
                             </select>
                         </div>
                     </td>
-                </tr>
+                </tr>-->
                 <tr>
                     <td>Tipo de uso (Indoor/Outdoor)</td>
                     <td colspan="2">
