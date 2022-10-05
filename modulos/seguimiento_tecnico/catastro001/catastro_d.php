@@ -32,7 +32,7 @@ foreach ($funcionalidadArr as $element){
     $funcionalidadOption .= "<option value='$element' $selected>".$element."</option>";
 }
 /* --------------------------------------------------------------------- */
-$estadoArr = ["Obsoleto", "Falta de capacidad", "Con falla", "Sin observacion"];
+$estadoArr = ["Obsoleto", "Falta de capacidad", "Con falla", "Sin observacion", "Bueno"];
 $estadoOption = "<option>Seleccionar...</option>";
 foreach ($estadoArr as $element){
     $selected = "";

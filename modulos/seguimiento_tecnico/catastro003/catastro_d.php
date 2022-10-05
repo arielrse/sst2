@@ -26,7 +26,7 @@ $d21_01 = $desarrollo_d->d21_01;
 
 $observaciones = $obj->{'observaciones'};
 /* --------------------------------------------------------------------- */
-$estadoArr = ["Obsoleto", "Falta de capacidad", "Con falla", "Sin observacion"];
+$estadoArr = ["Obsoleto", "Falta de capacidad", "Con falla", "Sin observacion", "Bueno"];
 $estadoOption = "<option>Seleccionar...</option>";
 foreach ($estadoArr as $element){
     $selected = "";
