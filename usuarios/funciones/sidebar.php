@@ -82,7 +82,7 @@ $muser = "../modulos/usuarios.php?path=";
 
         <li>
             <a href="<?=$muser?>ver_sitios.php">
-                <div class="parent-icon"><i class='bx bx-unite'></i>
+                <div class="parent-icon"><i class='bx bx-building-house'></i>
                 </div>
                 <div class="menu-title">Sitios de Mtto</div>
             </a>
