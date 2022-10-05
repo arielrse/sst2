@@ -83,6 +83,7 @@
                                     <option value="">Seleccionar</option>
                                     <option value="TERRESTRE">TERRESTRE</option>
                                     <option value="SATELITAL">SATELITAL</option>
+                                    <option value="FIBRA OPTICA">FIBRA OPTICA</option>
                                 </select>
                             </div>
                             <div class="col-md-6">

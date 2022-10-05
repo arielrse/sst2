@@ -97,7 +97,7 @@ $datoR   = mysqli_fetch_array($resultado);
                                 <label for="transporte" class="form-label">Tipo de Transporte</label>
                                 <select id="transporte" name="transporte" class="form-select">
                                     <?php
-                                    $transporteArr = ['SATELITAL', 'TERRESTRE'];
+                                    $transporteArr = ['SATELITAL', 'TERRESTRE', 'FIBRA OPTICA'];
                                     $options = '<option value="">Seleccionar</option>';
                                     foreach ($transporteArr as $element){
                                         $selected = $datoR['transporte']==$element ? 'selected' : '';
