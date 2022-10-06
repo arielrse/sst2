@@ -22,11 +22,13 @@ $consulta="SELECT id,CONCAT(nombre,' ',ap_pat,' ',ap_mat) AS nom,DATE_FORMAT(fec
         </div>
 
 
+        <?php if ( isAdmin() || isExpert() ) { ?>
         <div class="row row-cols-auto mb-2">
             <div class="col">
                 <button type="button" class="btn btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=nuevo_usuario.php'">Nuevo</button>
             </div>
         </div>
+        <?php } ?>
 
         <div class="card">
             <div class="card-body">
@@ -59,7 +61,7 @@ $consulta="SELECT id,CONCAT(nombre,' ',ap_pat,' ',ap_mat) AS nom,DATE_FORMAT(fec
                         while($dato=mysqli_fetch_array($resultado)){
 
                             $href = $link_modulo."?path=modificar_usuario.php&id=".$dato['id'];
-                            $btnEditar = "<a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>";
+                            $btnEditar = ( isAdmin() || isExpert() ) ? "<a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>" : "";
 
                             $rolUsuario = "";
                             if ($dato['nivel'] == 1) $rolUsuario = "Administrador";

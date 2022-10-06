@@ -129,6 +129,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
             </a>
         </li>-->
 
+        <?php if ( isAdmin() || isExpert() ) { ?>
         <li>
             <a href="<?=$muser?>ver_usuarios.php">
             <!--<a href="#">-->
@@ -137,6 +138,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
                 <div class="menu-title">Usuarios</div>
             </a>
         </li>
+        <?php } ?>
 
         <li>
             <a href="../../salir.php">
