@@ -51,7 +51,7 @@
 
                         while($dato=mysqli_fetch_array($resultado)){
                             $href = $link_modulo."?path=modificar_sitio.php&ids=".$dato['idsitio'];
-                            $btnEditar = "<a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>";
+                            $btnEditar = ( isAdmin() || isExpert() ) ? "<a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>" : "";
                             echo"
                             <tr>
                                 <td>".$dato['nombreCentro']."</td>

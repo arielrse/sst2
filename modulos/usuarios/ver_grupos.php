@@ -17,12 +17,13 @@
             </div>
         </div>
 
-
+        <?php if (isAdmin() || isExpert()) { ?>
         <div class="row row-cols-auto mb-2">
             <div class="col">
                 <button type="button" class="btn btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=nuevo_grupo.php'">Nuevo</button>
             </div>
         </div>
+        <?php } ?>
 
         <div class="card">
             <div class="card-body">
@@ -56,7 +57,7 @@
 
                         while($dato=mysqli_fetch_array($resultado)){
                             $href = $link_modulo."?path=modificar_grupo.php&idg=".$dato['idgrupo'];
-                            $btnEditar = "<a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>";
+                            $btnEditar = ( isAdmin() || isExpert() ) ? "<a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>" : "";
 
                             echo"
                             <tr>
