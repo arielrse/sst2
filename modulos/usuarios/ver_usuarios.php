@@ -66,6 +66,7 @@ $consulta="SELECT id,CONCAT(nombre,' ',ap_pat,' ',ap_mat) AS nom,DATE_FORMAT(fec
                             if ($dato['nivel'] == 2) $rolUsuario = "Tecnico";
                             if ($dato['nivel'] == 3) $rolUsuario = "Especialista";
                             if ($dato['nivel'] == 4) $rolUsuario = "Cliente";
+                            if ($dato['nivel'] == 5) $rolUsuario = "Cliente Nacional";
 
                             echo"
                             <tr>

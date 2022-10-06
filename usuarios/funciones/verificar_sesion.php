@@ -42,4 +42,8 @@ function isClient(){
     return $GLOBALS["nively"] == 4;
 }
 
+function isNationalClient(){
+    return $GLOBALS["nively"] == 5;
+}
+
 ?>

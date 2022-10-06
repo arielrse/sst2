@@ -1,7 +1,10 @@
 <?php
 $mst = "../modulos/seguimiento_tecnico.php?path=";
 $muser = "../modulos/usuarios.php?path=";
+$link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
 ?>
+<input type="hidden" name="link_home" id="link_home" value="<?php echo $link_home ?>" />
+<input type="hidden" name="id_user" id="id_user" value="<?php echo $id_user ?>" />
 
 <div class="sidebar-wrapper" data-simplebar="true">
 
@@ -28,7 +31,27 @@ $muser = "../modulos/usuarios.php?path=";
             </a>
         </li>
 
-        <li class="menu-label">Seguimiento</li>
+        <!--<li class="menu-label">-->
+            <div class="btn-group mb-2" role="group" aria-label="Basic example">
+                <?php
+                $buttonsDepto = "";
+                $resultado=mysqli_query($conexion, "SELECT iddepartamento, nombre, codigo FROM departamento");
+
+                while($dato=mysqli_fetch_array($resultado)){
+                    $codigo = $dato['codigo'];
+                    $active = $iddepartamento==$dato['iddepartamento'] ? 'active' : '';
+
+                    if (isNationalClient()){
+                        $onclick = "onclick='changeDepto(`$codigo`)'";
+                        $buttonsDepto .= "<button type='button' $onclick class='btn btn-sm btn-outline-primary $active'>$codigo</button>";
+                    } else {
+                        $buttonsDepto .= $iddepartamento==$dato['iddepartamento'] ? "<button type='button' class='btn btn-sm btn-outline-primary' disabled>$codigo</button>" : "";
+                    }
+                }
+                echo $buttonsDepto;
+                ?>
+            </div>
+        <!--</li>-->
 
         <li>
             <a href="<?=$mst?>tickets.php">
@@ -89,7 +112,7 @@ $muser = "../modulos/usuarios.php?path=";
         </li>
 
         <li>
-            <a href="<?=$mst?>dashboard.php">
+            <a href="#">
                 <div class="parent-icon"><i class="bx bx-line-chart"></i>
                 </div>
                 <div class="menu-title">Estadisticas</div>
@@ -127,3 +150,24 @@ $muser = "../modulos/usuarios.php?path=";
     </ul>
     <!--end navigation-->
 </div>
+<script type="text/javascript">
+
+    function changeDepto(depto){
+
+        if (confirm('¿Desea cambiar al Departamento ' + depto + ' ?')) {
+
+            var link_home = $('#link_home').val();
+            var id_user   = $('#id_user').val();
+
+            jQuery.post("../../modulos/usuarios/change_depto.php", {
+                    codigoDepto: depto,
+                    id_user: id_user
+                }, function(data, textStatus){
+                    window.location.href = link_home;
+                }
+            );
+        }
+
+    }
+
+</script>
