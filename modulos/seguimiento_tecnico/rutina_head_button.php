@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <?php if ( ($estado=='PEN' && !isClient()) || ( isExpert() && $estado=='REV') && !isClient() ) { ?>
+    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
     <div class="col">
         <input type="button" id="botonHead" class="btn btn-primary px-4" value="Guardar" />
     </div>
@@ -25,7 +25,7 @@
         </div>
     </form>
 
-    <?php if ( ($estado=='PEN' && !isClient()) || (isAdmin() && $estado!='REV' ) ) { ?>
+    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || (isAdmin() && $estado!='REV' ) ) { ?>
     <div class="col">
         <button type="button" id="toReview" class="btn btn-warning px-3"><i class="bx bx-right-arrow-alt mr-1"></i>A revisión</button>
     </div>

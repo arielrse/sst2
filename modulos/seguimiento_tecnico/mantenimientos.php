@@ -85,7 +85,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                         /** Fin **/
 
                         /** Para nivel Administrador **/
-                        if(isAdmin() || isClient() || isExpert()){
+                        if(isAdmin() || isClient() || isExpert() || isNationalClient()){
                             $res = mysqli_query($conexion, "SELECT g.idgrupo FROM grupo g WHERE g.user1 = '$id_user' OR    g.user2 = '$id_user'");
                             $dato = mysqli_fetch_array($res);
 

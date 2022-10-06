@@ -139,7 +139,10 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                             $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
                                             $hrefImg = "$link_modulo?path=rutina_add_image.php&rut=$idrutina&propertyId=$propertyId&nombreForm=$nombreForm";
 
-                                            $eliminarRutina = "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutina(`$idrutina`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
+                                            $eliminarRutina = "";
+                                            if (!isNationalClient() && !isClient())
+                                                $eliminarRutina .= "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutina(`$idrutina`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
+
                                             $addImagenes    = "<a href='$hrefImg' class='ms-3'><i class='bx bxs-image-add'></i></a>";
 
                                             echo "
@@ -215,7 +218,10 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                             $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
                                             $hrefImg = "$link_modulo?path=rutina_add_image.php&rut=$idcatastro&propertyId=$propertyId&nombreForm=$nombreForm";
 
-                                            $eliminarRutina = "<a href='javascript:;' class='ms-3' id='btnEliminarCatastro' onclick='eliminarCatastro(`$idcatastro`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
+                                            $eliminarRutina = "";
+                                            if (!isNationalClient() && !isClient())
+                                                $eliminarRutina .= "<a href='javascript:;' class='ms-3' id='btnEliminarCatastro' onclick='eliminarCatastro(`$idcatastro`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
+
                                             $addImagenes    = "<a href='$hrefImg' class='ms-3'><i class='bx bxs-image-add'></i></a>";
 
                                             echo "
