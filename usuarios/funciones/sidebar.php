@@ -57,7 +57,15 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
             <a href="<?=$mst?>tickets.php">
                 <div class="parent-icon"><i class='bx bx-braille'></i>
                 </div>
-                <div class="menu-title">Tickets</div>
+                <div class="menu-title">Tickets Correctivo</div>
+            </a>
+        </li>
+
+        <li>
+            <a>
+                <div class="parent-icon"><i class='bx bx-repeat'></i>
+                </div>
+                <div class="menu-title">Mtto Correctivo</div>
             </a>
         </li>
 
@@ -66,7 +74,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
             <a href="<?=$mst?>cronograma.php">
                 <div class="parent-icon"><i class='bx bx-calendar-plus'></i>
                 </div>
-                <div class="menu-title">Cronogramas</div>
+                <div class="menu-title">Lista Cronograma</div>
             </a>
         </li>
         <?php } ?>
@@ -75,7 +83,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
             <a href="<?=$mst?>cronograma_cm.php">
                 <div class="parent-icon"><i class='bx bx-calendar-plus'></i>
                 </div>
-                <div class="menu-title">Cronograma Centros</div>
+                <div class="menu-title">Mtto Preventivo</div>
             </a>
         </li>
 
@@ -83,7 +91,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
             <a href="<?=$mst?>mantenimientos.php">
                 <div class="parent-icon"><i class='bx bx-grid-alt'></i>
                 </div>
-                <div class="menu-title">Mtto Preventivo</div>
+                <div class="menu-title">Lista Preventivos</div>
             </a>
         </li>
 
