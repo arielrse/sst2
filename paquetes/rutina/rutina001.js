@@ -72,6 +72,10 @@ var g20_2_2 = $('#g20_2_2').val();
 var g20_2_3 = $('#g20_2_3').val();
 
 /** g_tiempo_tension **/
+var g_bb2_t1  = $('#g_bb2_t1').val();
+var g_bb2_t2  = $('#g_bb2_t2').val();
+var g_bb2_t3  = $('#g_bb2_t3').val();
+
 var g_bb2_b1_1  = $('#g_bb2_b1_1').val();
 var g_bb2_b1_2  = $('#g_bb2_b1_2').val();
 var g_bb2_b1_3  = $('#g_bb2_b1_3').val();
@@ -80,6 +84,10 @@ var g_bb2_b1_5  = $('#g_bb2_b1_5').val();
 var g_bb2_b1_6  = $('#g_bb2_b1_6').val();
 var g_bb2_b1_7  = $('#g_bb2_b1_7').val();
 var g_bb2_b1_8  = $('#g_bb2_b1_8').val();
+var g_bb2_b1_9  = $('#g_bb2_b1_9').val();
+var g_bb2_b1_10  = $('#g_bb2_b1_10').val();
+var g_bb2_b1_11  = $('#g_bb2_b1_11').val();
+
 var g_bb2_b2_1  = $('#g_bb2_b2_1').val();
 var g_bb2_b2_2  = $('#g_bb2_b2_2').val();
 var g_bb2_b2_3  = $('#g_bb2_b2_3').val();
@@ -370,6 +378,10 @@ datos.g_descarga.g20_2_2 = g20_2_2;
 datos.g_descarga.g20_2_3 = g20_2_3;
 
 /** g_tiempo_tension **/
+datos.g_tiempo_tension.g_bb2_t1  = g_bb2_t1;
+datos.g_tiempo_tension.g_bb2_t2  = g_bb2_t2;
+datos.g_tiempo_tension.g_bb2_t3  = g_bb2_t3;
+
 datos.g_tiempo_tension.g_bb2_b1_1  = g_bb2_b1_1;
 datos.g_tiempo_tension.g_bb2_b1_2  = g_bb2_b1_2;
 datos.g_tiempo_tension.g_bb2_b1_3  = g_bb2_b1_3;
@@ -378,6 +390,10 @@ datos.g_tiempo_tension.g_bb2_b1_5  = g_bb2_b1_5;
 datos.g_tiempo_tension.g_bb2_b1_6  = g_bb2_b1_6;
 datos.g_tiempo_tension.g_bb2_b1_7  = g_bb2_b1_7;
 datos.g_tiempo_tension.g_bb2_b1_8  = g_bb2_b1_8;
+datos.g_tiempo_tension.g_bb2_b1_9  = g_bb2_b1_9;
+datos.g_tiempo_tension.g_bb2_b1_10 = g_bb2_b1_10;
+datos.g_tiempo_tension.g_bb2_b1_11 = g_bb2_b1_11;
+
 datos.g_tiempo_tension.g_bb2_b2_1  = g_bb2_b2_1;
 datos.g_tiempo_tension.g_bb2_b2_2  = g_bb2_b2_2;
 datos.g_tiempo_tension.g_bb2_b2_3  = g_bb2_b2_3;
@@ -386,6 +402,7 @@ datos.g_tiempo_tension.g_bb2_b2_5  = g_bb2_b2_5;
 datos.g_tiempo_tension.g_bb2_b2_6  = g_bb2_b2_6;
 datos.g_tiempo_tension.g_bb2_b2_7  = g_bb2_b2_7;
 datos.g_tiempo_tension.g_bb2_b2_8  = g_bb2_b2_8;
+
 datos.g_tiempo_tension.g_bb2_b3_1  = g_bb2_b3_1;
 datos.g_tiempo_tension.g_bb2_b3_2  = g_bb2_b3_2;
 datos.g_tiempo_tension.g_bb2_b3_3  = g_bb2_b3_3;
@@ -394,6 +411,7 @@ datos.g_tiempo_tension.g_bb2_b3_5  = g_bb2_b3_5;
 datos.g_tiempo_tension.g_bb2_b3_6  = g_bb2_b3_6;
 datos.g_tiempo_tension.g_bb2_b3_7  = g_bb2_b3_7;
 datos.g_tiempo_tension.g_bb2_b3_8  = g_bb2_b3_8;
+
 datos.g_tiempo_tension.g_bb2_b4_1  = g_bb2_b4_1;
 datos.g_tiempo_tension.g_bb2_b4_2  = g_bb2_b4_2;
 datos.g_tiempo_tension.g_bb2_b4_3  = g_bb2_b4_3;
@@ -402,6 +420,7 @@ datos.g_tiempo_tension.g_bb2_b4_5  = g_bb2_b4_5;
 datos.g_tiempo_tension.g_bb2_b4_6  = g_bb2_b4_6;
 datos.g_tiempo_tension.g_bb2_b4_7  = g_bb2_b4_7;
 datos.g_tiempo_tension.g_bb2_b4_8  = g_bb2_b4_8;
+
 datos.g_tiempo_tension.g_bb2_b5_1  = g_bb2_b5_1;
 datos.g_tiempo_tension.g_bb2_b5_2  = g_bb2_b5_2;
 datos.g_tiempo_tension.g_bb2_b5_3  = g_bb2_b5_3;

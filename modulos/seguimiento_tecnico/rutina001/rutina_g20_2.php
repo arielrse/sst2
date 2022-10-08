@@ -1,5 +1,9 @@
 <?php
 $g_tiempo_tension = $obj->{'g_tiempo_tension'};
+$g_bb2_t1 = $g_tiempo_tension->g_bb2_t1;
+$g_bb2_t2 = $g_tiempo_tension->g_bb2_t2;
+$g_bb2_t3 = $g_tiempo_tension->g_bb2_t3;
+
 $g_bb2_b1_1 = $g_tiempo_tension->g_bb2_b1_1;
 $g_bb2_b1_2 = $g_tiempo_tension->g_bb2_b1_2;
 $g_bb2_b1_3 = $g_tiempo_tension->g_bb2_b1_3;
@@ -8,6 +12,10 @@ $g_bb2_b1_5 = $g_tiempo_tension->g_bb2_b1_5;
 $g_bb2_b1_6 = $g_tiempo_tension->g_bb2_b1_6;
 $g_bb2_b1_7 = $g_tiempo_tension->g_bb2_b1_7;
 $g_bb2_b1_8 = $g_tiempo_tension->g_bb2_b1_8;
+$g_bb2_b1_9 = $g_tiempo_tension->g_bb2_b1_9;
+$g_bb2_b1_10 = $g_tiempo_tension->g_bb2_b1_10;
+$g_bb2_b1_11 = $g_tiempo_tension->g_bb2_b1_11;
+
 $g_bb2_b2_1 = $g_tiempo_tension->g_bb2_b2_1;
 $g_bb2_b2_2 = $g_tiempo_tension->g_bb2_b2_2;
 $g_bb2_b2_3 = $g_tiempo_tension->g_bb2_b2_3;
@@ -16,6 +24,7 @@ $g_bb2_b2_5 = $g_tiempo_tension->g_bb2_b2_5;
 $g_bb2_b2_6 = $g_tiempo_tension->g_bb2_b2_6;
 $g_bb2_b2_7 = $g_tiempo_tension->g_bb2_b2_7;
 $g_bb2_b2_8 = $g_tiempo_tension->g_bb2_b2_8;
+
 $g_bb2_b3_1 = $g_tiempo_tension->g_bb2_b3_1;
 $g_bb2_b3_2 = $g_tiempo_tension->g_bb2_b3_2;
 $g_bb2_b3_3 = $g_tiempo_tension->g_bb2_b3_3;
@@ -24,6 +33,7 @@ $g_bb2_b3_5 = $g_tiempo_tension->g_bb2_b3_5;
 $g_bb2_b3_6 = $g_tiempo_tension->g_bb2_b3_6;
 $g_bb2_b3_7 = $g_tiempo_tension->g_bb2_b3_7;
 $g_bb2_b3_8 = $g_tiempo_tension->g_bb2_b3_8;
+
 $g_bb2_b4_1 = $g_tiempo_tension->g_bb2_b4_1;
 $g_bb2_b4_2 = $g_tiempo_tension->g_bb2_b4_2;
 $g_bb2_b4_3 = $g_tiempo_tension->g_bb2_b4_3;
@@ -32,6 +42,7 @@ $g_bb2_b4_5 = $g_tiempo_tension->g_bb2_b4_5;
 $g_bb2_b4_6 = $g_tiempo_tension->g_bb2_b4_6;
 $g_bb2_b4_7 = $g_tiempo_tension->g_bb2_b4_7;
 $g_bb2_b4_8 = $g_tiempo_tension->g_bb2_b4_8;
+
 $g_bb2_b5_1 = $g_tiempo_tension->g_bb2_b5_1;
 $g_bb2_b5_2 = $g_tiempo_tension->g_bb2_b5_2;
 $g_bb2_b5_3 = $g_tiempo_tension->g_bb2_b5_3;
@@ -40,6 +51,7 @@ $g_bb2_b5_5 = $g_tiempo_tension->g_bb2_b5_5;
 $g_bb2_b5_6 = $g_tiempo_tension->g_bb2_b5_6;
 $g_bb2_b5_7 = $g_tiempo_tension->g_bb2_b5_7;
 $g_bb2_b5_8 = $g_tiempo_tension->g_bb2_b5_8;
+
 $g_bb2_b6_1 = $g_tiempo_tension->g_bb2_b6_1;
 $g_bb2_b6_2 = $g_tiempo_tension->g_bb2_b6_2;
 $g_bb2_b6_3 = $g_tiempo_tension->g_bb2_b6_3;
@@ -194,6 +206,185 @@ $g_bb2_b24_7 = $g_tiempo_tension->g_bb2_b24_7;
 $g_bb2_b24_8 = $g_tiempo_tension->g_bb2_b24_8;
 
 ?>
+<div class="card">
+    <div class="card-body">
+
+        <div class="row align-items-center row-cols-auto g-2 mb-2">
+            <div class="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered mb-0">
+            <tbody>
+
+                     <tr>
+                         <td></td>
+                         <td></td>
+                         <td class= "text-center" colspan="10"><strong>TIEMPO MINUTOS</strong></td>
+                     </tr>
+
+                     <tr class= "text-center">
+                         <td class="col-xl-1"><strong>N° Bat.</strong></td>
+                         <td class="col-xl-1"><strong>I ADC</strong></td>
+                         <td class="col-xl-1"><strong>0</strong></td>
+                         <td class="col-xl-1"><strong>10</strong></td>
+                         <td class="col-xl-1"><strong>20</strong></td>
+                         <td class="col-xl-1"><strong>30</strong></td>
+                         <td class="col-xl-1"><strong>40</strong></td>
+                         <td class="col-xl-1"><strong>50</strong></td>
+                         <td class="col-xl-1"><strong>60</strong></td>
+                         <td class="col-xl-1">
+                             <strong>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" id="g_bb2_t1" value="<?php echo $g_bb2_t1 ?>">
+                                </div>
+                             </strong>
+                         </td>
+                         <td class="col-xl-1">
+                             <strong>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" id="g_bb2_t2" value="<?php echo $g_bb2_t2 ?>">
+                                </div>
+                             </strong>
+                         </td>
+                         <td class="col-xl-1">
+                             <strong>
+                                 <div class="input-group input-group-sm">
+                                     <input type="text" class="form-control" id="g_bb2_t3" value="<?php echo $g_bb2_t3 ?>">
+                                 </div>
+                             </strong>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td></td>
+                         <td></td>
+                         <td class= "text-center" colspan="10"><strong>TENSION VDC</strong></td>
+                     </tr>
+                     <tr>
+                         <td><strong>BB2-B1</strong></td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_1" value="<?php echo $g_bb2_b1_1 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_2" value="<?php echo $g_bb2_b1_2 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_3" value="<?php echo $g_bb2_b1_3 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_4" value="<?php echo $g_bb2_b1_4 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_5" value="<?php echo $g_bb2_b1_5 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_6" value="<?php echo $g_bb2_b1_6 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_7" value="<?php echo $g_bb2_b1_7 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_8" value="<?php echo $g_bb2_b1_8 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_9" value="<?php echo $g_bb2_b1_9 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_10" value="<?php echo $g_bb2_b1_10 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_11" value="<?php echo $g_bb2_b1_11 ?>">
+                             </div>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td><strong>BB2-B2</strong></td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_1" value="<?php echo $g_bb2_b2_1 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_2" value="<?php echo $g_bb2_b2_2 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_3" value="<?php echo $g_bb2_b2_3 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_4" value="<?php echo $g_bb2_b2_4 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_5" value="<?php echo $g_bb2_b2_5 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_6" value="<?php echo $g_bb2_b2_6 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_7" value="<?php echo $g_bb2_b2_7 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_8" value="<?php echo $g_bb2_b2_8 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_9" value="<?php echo $g_bb2_b2_9 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_10" value="<?php echo $g_bb2_b2_10 ?>">
+                             </div>
+                         </td>
+                         <td>
+                             <div class="input-group input-group-sm">
+                                 <input type="text" class="form-control" id="g_bb2_b1_11" value="<?php echo $g_bb2_b2_11 ?>">
+                             </div>
+                         </td>
+                     </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
 
 <div class="card">
     <div class="card-body">
