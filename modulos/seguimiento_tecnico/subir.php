@@ -13,7 +13,7 @@ if(isset($_POST['Guardar'])){
         $temp  = $_FILES['imagen']['tmp_name'];
 
        if( !((strpos($tipo,'gif') || strpos($tipo,'jpeg') || strpos($tipo,'webp') || strpos($tipo,'png')))){
-          $_SESSION['mensaje'] = 'solo se permite archivos jpeg, gif, webp';
+          $_SESSION['mensaje'] = 'solo se permite archivos png jpeg, gif, webp';
           $_SESSION['tipo'] = 'danger';
           //header('location:../index.php');
           $url = $link_modulo."?path=prev_estacion.php$params";

@@ -35,7 +35,8 @@ function url_completa($forwarded_host = false) {
             <div class="row">
                 <div class="col-lg-12">
                     <h6 class="text-primary"><?php echo $propertyId . " - " . $nombreForm ?></h6>
-                    <form action="../../modulos/seguimiento_tecnico/subir.php" method="post" enctype="multipart/form-data">
+                    <h6 class="text-primary"><?php echo htmlspecialchars(url_completa()); ?></h6>
+                    <form id="formSubirImg" action="../../modulos/seguimiento_tecnico/subir.php" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="urlAddImage" id="urlAddImage" value="<? echo htmlspecialchars(url_completa()); ?>" />
                         <input type="hidden" name="idrutina" id="idrutina" value="<? echo $idrutina; ?>" />
                         <div class="form-group">
@@ -88,35 +89,42 @@ function url_completa($forwarded_host = false) {
             </div>
 
 
-            <!--<div class="row mt-2">
-                <h6 class="mb-0 text-uppercase"></h6>
-                <hr/>
-                <div class="card-group shadow">
-                    <?php
-/*                            $i = 0;
-                    foreach($resultado as $row){
-                        $i++;
-                    */?>
-                        <div class="card border-end shadow-none">
-                            <img src="../../fotos/<?php /*echo $row['imagen']; */?>" class="card-img-top" alt="...">
-                            <div class="card-body"><h6 class="card-title"><?php /*echo $row['nombre']; */?></h6></div>
-                        </div>
-                    <?php
-/*                                if ($i == 2){
-                    */?>
-                    </div><div class="card-group shadow">
-                    <?php
-/*                                    $i = 0;
-                        }
-                    }*/?>
-                </div>
-            </div>-->
-
-
-
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>-->
 
     </div>
 </div>
+
+<script type=text/javascript>
+
+    $(document).ready(function () {
+
+        var frm = $("#formSubirImg");
+        frm.bind("submit", function () {
+            alert("Cargar img...");
+
+            var frmData = new FormData;
+            frmData.append("imagen", $("input[name=imagen]")[0].files[0]);
+
+            alert("action: " + frm.attr("action"));
+
+            $.ajax({
+                url: frm.attr("action"),
+                type: frm.attr("method"),
+                data: frmData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data){
+                    alert("Subido correctamente...");
+                }
+            })
+
+            return false;
+
+        });
+    });
+
+
+</script>

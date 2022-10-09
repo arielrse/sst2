@@ -127,15 +127,20 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
             </a>
         </li>
 
-        <li class="menu-label">Configuraciones</li>
-
-        <!--<li>
-            <a href="#">
-                <div class="parent-icon"><i class='bx bx-user-circle'></i>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bx bx-file"></i>
                 </div>
-                <div class="menu-title">Roles</div>
+                <div class="menu-title">Reportes</div>
             </a>
-        </li>-->
+            <ul>
+                <li> <a href="<?=$muser?>reporte_catastro.php"><i class="bx bx-right-arrow-alt"></i>Catastros</a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="menu-label">Configuraciones</li>
 
         <?php if ( isAdmin() || isExpert() ) { ?>
         <li>
