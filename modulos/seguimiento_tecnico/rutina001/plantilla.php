@@ -555,6 +555,10 @@ function getSubPlantilla1($jsonData){
 
     $obj = json_decode($jsonData);
     $g_tiempo_tension = $obj->{'g_tiempo_tension'};
+    $g_bb2_t1 = $g_tiempo_tension->g_bb2_t1;
+    $g_bb2_t2 = $g_tiempo_tension->g_bb2_t2;
+    $g_bb2_t3 = $g_tiempo_tension->g_bb2_t3;
+
     $g_bb2_b1_1 = $g_tiempo_tension->g_bb2_b1_1;
     $g_bb2_b1_2 = $g_tiempo_tension->g_bb2_b1_2;
     $g_bb2_b1_3 = $g_tiempo_tension->g_bb2_b1_3;
@@ -563,6 +567,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b1_6 = $g_tiempo_tension->g_bb2_b1_6;
     $g_bb2_b1_7 = $g_tiempo_tension->g_bb2_b1_7;
     $g_bb2_b1_8 = $g_tiempo_tension->g_bb2_b1_8;
+    $g_bb2_b1_9  = $g_tiempo_tension->g_bb2_b1_9;
+    $g_bb2_b1_10 = $g_tiempo_tension->g_bb2_b1_10;
+    $g_bb2_b1_11 = $g_tiempo_tension->g_bb2_b1_11;
+
     $g_bb2_b2_1 = $g_tiempo_tension->g_bb2_b2_1;
     $g_bb2_b2_2 = $g_tiempo_tension->g_bb2_b2_2;
     $g_bb2_b2_3 = $g_tiempo_tension->g_bb2_b2_3;
@@ -571,6 +579,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b2_6 = $g_tiempo_tension->g_bb2_b2_6;
     $g_bb2_b2_7 = $g_tiempo_tension->g_bb2_b2_7;
     $g_bb2_b2_8 = $g_tiempo_tension->g_bb2_b2_8;
+    $g_bb2_b2_9  = $g_tiempo_tension->g_bb2_b2_9;
+    $g_bb2_b2_10 = $g_tiempo_tension->g_bb2_b2_10;
+    $g_bb2_b2_11 = $g_tiempo_tension->g_bb2_b2_11;
+
     $g_bb2_b3_1 = $g_tiempo_tension->g_bb2_b3_1;
     $g_bb2_b3_2 = $g_tiempo_tension->g_bb2_b3_2;
     $g_bb2_b3_3 = $g_tiempo_tension->g_bb2_b3_3;
@@ -579,6 +591,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b3_6 = $g_tiempo_tension->g_bb2_b3_6;
     $g_bb2_b3_7 = $g_tiempo_tension->g_bb2_b3_7;
     $g_bb2_b3_8 = $g_tiempo_tension->g_bb2_b3_8;
+    $g_bb2_b3_9  = $g_tiempo_tension->g_bb2_b3_9;
+    $g_bb2_b3_10 = $g_tiempo_tension->g_bb2_b3_10;
+    $g_bb2_b3_11 = $g_tiempo_tension->g_bb2_b3_11;
+
     $g_bb2_b4_1 = $g_tiempo_tension->g_bb2_b4_1;
     $g_bb2_b4_2 = $g_tiempo_tension->g_bb2_b4_2;
     $g_bb2_b4_3 = $g_tiempo_tension->g_bb2_b4_3;
@@ -587,6 +603,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b4_6 = $g_tiempo_tension->g_bb2_b4_6;
     $g_bb2_b4_7 = $g_tiempo_tension->g_bb2_b4_7;
     $g_bb2_b4_8 = $g_tiempo_tension->g_bb2_b4_8;
+    $g_bb2_b4_9  = $g_tiempo_tension->g_bb2_b4_9;
+    $g_bb2_b4_10 = $g_tiempo_tension->g_bb2_b4_10;
+    $g_bb2_b4_11 = $g_tiempo_tension->g_bb2_b4_11;
+
     $g_bb2_b5_1 = $g_tiempo_tension->g_bb2_b5_1;
     $g_bb2_b5_2 = $g_tiempo_tension->g_bb2_b5_2;
     $g_bb2_b5_3 = $g_tiempo_tension->g_bb2_b5_3;
@@ -595,6 +615,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b5_6 = $g_tiempo_tension->g_bb2_b5_6;
     $g_bb2_b5_7 = $g_tiempo_tension->g_bb2_b5_7;
     $g_bb2_b5_8 = $g_tiempo_tension->g_bb2_b5_8;
+    $g_bb2_b5_9  = $g_tiempo_tension->g_bb2_b5_9;
+    $g_bb2_b5_10 = $g_tiempo_tension->g_bb2_b5_10;
+    $g_bb2_b5_11 = $g_tiempo_tension->g_bb2_b5_11;
+
     $g_bb2_b6_1 = $g_tiempo_tension->g_bb2_b6_1;
     $g_bb2_b6_2 = $g_tiempo_tension->g_bb2_b6_2;
     $g_bb2_b6_3 = $g_tiempo_tension->g_bb2_b6_3;
@@ -603,6 +627,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b6_6 = $g_tiempo_tension->g_bb2_b6_6;
     $g_bb2_b6_7 = $g_tiempo_tension->g_bb2_b6_7;
     $g_bb2_b6_8 = $g_tiempo_tension->g_bb2_b6_8;
+    $g_bb2_b6_9  = $g_tiempo_tension->g_bb2_b6_9;
+    $g_bb2_b6_10 = $g_tiempo_tension->g_bb2_b6_10;
+    $g_bb2_b6_11 = $g_tiempo_tension->g_bb2_b6_11;
+
     $g_bb2_b7_1 = $g_tiempo_tension->g_bb2_b7_1;
     $g_bb2_b7_2 = $g_tiempo_tension->g_bb2_b7_2;
     $g_bb2_b7_3 = $g_tiempo_tension->g_bb2_b7_3;
@@ -611,6 +639,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b7_6 = $g_tiempo_tension->g_bb2_b7_6;
     $g_bb2_b7_7 = $g_tiempo_tension->g_bb2_b7_7;
     $g_bb2_b7_8 = $g_tiempo_tension->g_bb2_b7_8;
+    $g_bb2_b7_9  = $g_tiempo_tension->g_bb2_b7_9;
+    $g_bb2_b7_10 = $g_tiempo_tension->g_bb2_b7_10;
+    $g_bb2_b7_11 = $g_tiempo_tension->g_bb2_b7_11;
+
     $g_bb2_b8_1 = $g_tiempo_tension->g_bb2_b8_1;
     $g_bb2_b8_2 = $g_tiempo_tension->g_bb2_b8_2;
     $g_bb2_b8_3 = $g_tiempo_tension->g_bb2_b8_3;
@@ -619,6 +651,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b8_6 = $g_tiempo_tension->g_bb2_b8_6;
     $g_bb2_b8_7 = $g_tiempo_tension->g_bb2_b8_7;
     $g_bb2_b8_8 = $g_tiempo_tension->g_bb2_b8_8;
+    $g_bb2_b8_9  = $g_tiempo_tension->g_bb2_b8_9;
+    $g_bb2_b8_10 = $g_tiempo_tension->g_bb2_b8_10;
+    $g_bb2_b8_11 = $g_tiempo_tension->g_bb2_b8_11;
+
     $g_bb2_b9_1 = $g_tiempo_tension->g_bb2_b9_1;
     $g_bb2_b9_2 = $g_tiempo_tension->g_bb2_b9_2;
     $g_bb2_b9_3 = $g_tiempo_tension->g_bb2_b9_3;
@@ -627,6 +663,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b9_6 = $g_tiempo_tension->g_bb2_b9_6;
     $g_bb2_b9_7 = $g_tiempo_tension->g_bb2_b9_7;
     $g_bb2_b9_8 = $g_tiempo_tension->g_bb2_b9_8;
+    $g_bb2_b9_9  = $g_tiempo_tension->g_bb2_b9_9;
+    $g_bb2_b9_10 = $g_tiempo_tension->g_bb2_b9_10;
+    $g_bb2_b9_11 = $g_tiempo_tension->g_bb2_b9_11;
+
     $g_bb2_b10_1 = $g_tiempo_tension->g_bb2_b10_1;
     $g_bb2_b10_2 = $g_tiempo_tension->g_bb2_b10_2;
     $g_bb2_b10_3 = $g_tiempo_tension->g_bb2_b10_3;
@@ -635,6 +675,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b10_6 = $g_tiempo_tension->g_bb2_b10_6;
     $g_bb2_b10_7 = $g_tiempo_tension->g_bb2_b10_7;
     $g_bb2_b10_8 = $g_tiempo_tension->g_bb2_b10_8;
+    $g_bb2_b10_9  = $g_tiempo_tension->g_bb2_b10_9;
+    $g_bb2_b10_10 = $g_tiempo_tension->g_bb2_b10_10;
+    $g_bb2_b10_11 = $g_tiempo_tension->g_bb2_b10_11;
+
     $g_bb2_b11_1 = $g_tiempo_tension->g_bb2_b11_1;
     $g_bb2_b11_2 = $g_tiempo_tension->g_bb2_b11_2;
     $g_bb2_b11_3 = $g_tiempo_tension->g_bb2_b11_3;
@@ -643,6 +687,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b11_6 = $g_tiempo_tension->g_bb2_b11_6;
     $g_bb2_b11_7 = $g_tiempo_tension->g_bb2_b11_7;
     $g_bb2_b11_8 = $g_tiempo_tension->g_bb2_b11_8;
+    $g_bb2_b11_9  = $g_tiempo_tension->g_bb2_b11_9;
+    $g_bb2_b11_10 = $g_tiempo_tension->g_bb2_b11_10;
+    $g_bb2_b11_11 = $g_tiempo_tension->g_bb2_b11_11;
+
     $g_bb2_b12_1 = $g_tiempo_tension->g_bb2_b12_1;
     $g_bb2_b12_2 = $g_tiempo_tension->g_bb2_b12_2;
     $g_bb2_b12_3 = $g_tiempo_tension->g_bb2_b12_3;
@@ -651,6 +699,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b12_6 = $g_tiempo_tension->g_bb2_b12_6;
     $g_bb2_b12_7 = $g_tiempo_tension->g_bb2_b12_7;
     $g_bb2_b12_8 = $g_tiempo_tension->g_bb2_b12_8;
+    $g_bb2_b12_9  = $g_tiempo_tension->g_bb2_b12_9;
+    $g_bb2_b12_10 = $g_tiempo_tension->g_bb2_b12_10;
+    $g_bb2_b12_11 = $g_tiempo_tension->g_bb2_b12_11;
+
     $g_bb2_b13_1 = $g_tiempo_tension->g_bb2_b13_1;
     $g_bb2_b13_2 = $g_tiempo_tension->g_bb2_b13_2;
     $g_bb2_b13_3 = $g_tiempo_tension->g_bb2_b13_3;
@@ -659,6 +711,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b13_6 = $g_tiempo_tension->g_bb2_b13_6;
     $g_bb2_b13_7 = $g_tiempo_tension->g_bb2_b13_7;
     $g_bb2_b13_8 = $g_tiempo_tension->g_bb2_b13_8;
+    $g_bb2_b13_9  = $g_tiempo_tension->g_bb2_b13_9;
+    $g_bb2_b13_10 = $g_tiempo_tension->g_bb2_b13_10;
+    $g_bb2_b13_11 = $g_tiempo_tension->g_bb2_b13_11;
+
     $g_bb2_b14_1 = $g_tiempo_tension->g_bb2_b14_1;
     $g_bb2_b14_2 = $g_tiempo_tension->g_bb2_b14_2;
     $g_bb2_b14_3 = $g_tiempo_tension->g_bb2_b14_3;
@@ -667,6 +723,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b14_6 = $g_tiempo_tension->g_bb2_b14_6;
     $g_bb2_b14_7 = $g_tiempo_tension->g_bb2_b14_7;
     $g_bb2_b14_8 = $g_tiempo_tension->g_bb2_b14_8;
+    $g_bb2_b14_9  = $g_tiempo_tension->g_bb2_b14_9;
+    $g_bb2_b14_10 = $g_tiempo_tension->g_bb2_b14_10;
+    $g_bb2_b14_11 = $g_tiempo_tension->g_bb2_b14_11;
+
     $g_bb2_b15_1 = $g_tiempo_tension->g_bb2_b15_1;
     $g_bb2_b15_2 = $g_tiempo_tension->g_bb2_b15_2;
     $g_bb2_b15_3 = $g_tiempo_tension->g_bb2_b15_3;
@@ -675,6 +735,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b15_6 = $g_tiempo_tension->g_bb2_b15_6;
     $g_bb2_b15_7 = $g_tiempo_tension->g_bb2_b15_7;
     $g_bb2_b15_8 = $g_tiempo_tension->g_bb2_b15_8;
+    $g_bb2_b15_9  = $g_tiempo_tension->g_bb2_b15_9;
+    $g_bb2_b15_10 = $g_tiempo_tension->g_bb2_b15_10;
+    $g_bb2_b15_11 = $g_tiempo_tension->g_bb2_b15_11;
+
     $g_bb2_b16_1 = $g_tiempo_tension->g_bb2_b16_1;
     $g_bb2_b16_2 = $g_tiempo_tension->g_bb2_b16_2;
     $g_bb2_b16_3 = $g_tiempo_tension->g_bb2_b16_3;
@@ -683,6 +747,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b16_6 = $g_tiempo_tension->g_bb2_b16_6;
     $g_bb2_b16_7 = $g_tiempo_tension->g_bb2_b16_7;
     $g_bb2_b16_8 = $g_tiempo_tension->g_bb2_b16_8;
+    $g_bb2_b16_9  = $g_tiempo_tension->g_bb2_b16_9;
+    $g_bb2_b16_10 = $g_tiempo_tension->g_bb2_b16_10;
+    $g_bb2_b16_11 = $g_tiempo_tension->g_bb2_b16_11;
+
     $g_bb2_b17_1 = $g_tiempo_tension->g_bb2_b17_1;
     $g_bb2_b17_2 = $g_tiempo_tension->g_bb2_b17_2;
     $g_bb2_b17_3 = $g_tiempo_tension->g_bb2_b17_3;
@@ -691,6 +759,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b17_6 = $g_tiempo_tension->g_bb2_b17_6;
     $g_bb2_b17_7 = $g_tiempo_tension->g_bb2_b17_7;
     $g_bb2_b17_8 = $g_tiempo_tension->g_bb2_b17_8;
+    $g_bb2_b17_9  = $g_tiempo_tension->g_bb2_b17_9;
+    $g_bb2_b17_10 = $g_tiempo_tension->g_bb2_b17_10;
+    $g_bb2_b17_11 = $g_tiempo_tension->g_bb2_b17_11;
+
     $g_bb2_b18_1 = $g_tiempo_tension->g_bb2_b18_1;
     $g_bb2_b18_2 = $g_tiempo_tension->g_bb2_b18_2;
     $g_bb2_b18_3 = $g_tiempo_tension->g_bb2_b18_3;
@@ -699,6 +771,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b18_6 = $g_tiempo_tension->g_bb2_b18_6;
     $g_bb2_b18_7 = $g_tiempo_tension->g_bb2_b18_7;
     $g_bb2_b18_8 = $g_tiempo_tension->g_bb2_b18_8;
+    $g_bb2_b18_9  = $g_tiempo_tension->g_bb2_b18_9;
+    $g_bb2_b18_10 = $g_tiempo_tension->g_bb2_b18_10;
+    $g_bb2_b18_11 = $g_tiempo_tension->g_bb2_b18_11;
+
     $g_bb2_b19_1 = $g_tiempo_tension->g_bb2_b19_1;
     $g_bb2_b19_2 = $g_tiempo_tension->g_bb2_b19_2;
     $g_bb2_b19_3 = $g_tiempo_tension->g_bb2_b19_3;
@@ -707,6 +783,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b19_6 = $g_tiempo_tension->g_bb2_b19_6;
     $g_bb2_b19_7 = $g_tiempo_tension->g_bb2_b19_7;
     $g_bb2_b19_8 = $g_tiempo_tension->g_bb2_b19_8;
+    $g_bb2_b19_9  = $g_tiempo_tension->g_bb2_b19_9;
+    $g_bb2_b19_10 = $g_tiempo_tension->g_bb2_b19_10;
+    $g_bb2_b19_11 = $g_tiempo_tension->g_bb2_b19_11;
+
     $g_bb2_b20_1 = $g_tiempo_tension->g_bb2_b20_1;
     $g_bb2_b20_2 = $g_tiempo_tension->g_bb2_b20_2;
     $g_bb2_b20_3 = $g_tiempo_tension->g_bb2_b20_3;
@@ -715,6 +795,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b20_6 = $g_tiempo_tension->g_bb2_b20_6;
     $g_bb2_b20_7 = $g_tiempo_tension->g_bb2_b20_7;
     $g_bb2_b20_8 = $g_tiempo_tension->g_bb2_b20_8;
+    $g_bb2_b20_9  = $g_tiempo_tension->g_bb2_b20_9;
+    $g_bb2_b20_10 = $g_tiempo_tension->g_bb2_b20_10;
+    $g_bb2_b20_11 = $g_tiempo_tension->g_bb2_b20_11;
+
     $g_bb2_b21_1 = $g_tiempo_tension->g_bb2_b21_1;
     $g_bb2_b21_2 = $g_tiempo_tension->g_bb2_b21_2;
     $g_bb2_b21_3 = $g_tiempo_tension->g_bb2_b21_3;
@@ -723,6 +807,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b21_6 = $g_tiempo_tension->g_bb2_b21_6;
     $g_bb2_b21_7 = $g_tiempo_tension->g_bb2_b21_7;
     $g_bb2_b21_8 = $g_tiempo_tension->g_bb2_b21_8;
+    $g_bb2_b21_9  = $g_tiempo_tension->g_bb2_b21_9;
+    $g_bb2_b21_10 = $g_tiempo_tension->g_bb2_b21_10;
+    $g_bb2_b21_11 = $g_tiempo_tension->g_bb2_b21_11;
+
     $g_bb2_b22_1 = $g_tiempo_tension->g_bb2_b22_1;
     $g_bb2_b22_2 = $g_tiempo_tension->g_bb2_b22_2;
     $g_bb2_b22_3 = $g_tiempo_tension->g_bb2_b22_3;
@@ -731,6 +819,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b22_6 = $g_tiempo_tension->g_bb2_b22_6;
     $g_bb2_b22_7 = $g_tiempo_tension->g_bb2_b22_7;
     $g_bb2_b22_8 = $g_tiempo_tension->g_bb2_b22_8;
+    $g_bb2_b22_9  = $g_tiempo_tension->g_bb2_b22_9;
+    $g_bb2_b22_10 = $g_tiempo_tension->g_bb2_b22_10;
+    $g_bb2_b22_11 = $g_tiempo_tension->g_bb2_b22_11;
+
     $g_bb2_b23_1 = $g_tiempo_tension->g_bb2_b23_1;
     $g_bb2_b23_2 = $g_tiempo_tension->g_bb2_b23_2;
     $g_bb2_b23_3 = $g_tiempo_tension->g_bb2_b23_3;
@@ -739,6 +831,10 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b23_6 = $g_tiempo_tension->g_bb2_b23_6;
     $g_bb2_b23_7 = $g_tiempo_tension->g_bb2_b23_7;
     $g_bb2_b23_8 = $g_tiempo_tension->g_bb2_b23_8;
+    $g_bb2_b23_9  = $g_tiempo_tension->g_bb2_b23_9;
+    $g_bb2_b23_10 = $g_tiempo_tension->g_bb2_b23_10;
+    $g_bb2_b23_11 = $g_tiempo_tension->g_bb2_b23_11;
+
     $g_bb2_b24_1 = $g_tiempo_tension->g_bb2_b24_1;
     $g_bb2_b24_2 = $g_tiempo_tension->g_bb2_b24_2;
     $g_bb2_b24_3 = $g_tiempo_tension->g_bb2_b24_3;
@@ -747,6 +843,9 @@ function getSubPlantilla1($jsonData){
     $g_bb2_b24_6 = $g_tiempo_tension->g_bb2_b24_6;
     $g_bb2_b24_7 = $g_tiempo_tension->g_bb2_b24_7;
     $g_bb2_b24_8 = $g_tiempo_tension->g_bb2_b24_8;
+    $g_bb2_b24_9  = $g_tiempo_tension->g_bb2_b24_9;
+    $g_bb2_b24_10 = $g_tiempo_tension->g_bb2_b24_10;
+    $g_bb2_b24_11 = $g_tiempo_tension->g_bb2_b24_11;
 
     $plantilla = '
     <main>
@@ -756,7 +855,7 @@ function getSubPlantilla1($jsonData){
                 <tr>
                     <td class="col-15p" rowspan="3"><b>N° Bat.</b></td>
                     <td class="col-15p" rowspan="3"><b>I ADC</b></td>
-                    <td class="col-70p" colspan="7"><b>TIEMPO MINUTOS</b></td>
+                    <td class="col-70p" colspan="10"><b>TIEMPO MINUTOS</b></td>
                 </tr>
                 <tr>
                     <td><b>0</b></td>
@@ -766,9 +865,12 @@ function getSubPlantilla1($jsonData){
                     <td><b>40</b></td>
                     <td><b>50</b></td>
                     <td><b>60</b></td>
+                    <td><b>'.$g_bb2_t1.'</b></td>
+                    <td><b>'.$g_bb2_t2.'</b></td>
+                    <td><b>'.$g_bb2_t3.'</b></td>
                 </tr>
                 <tr>
-                    <td colspan="7"><b>TENSION VDC</b></td>
+                    <td colspan="10"><b>TENSION VDC</b></td>
                 </tr>
                 <tr>
                     <td>BB2-B1</td>
@@ -780,6 +882,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b1_6.'</td>
                     <td>'.$g_bb2_b1_7.'</td>
                     <td>'.$g_bb2_b1_8.'</td>
+                    <td>'.$g_bb2_b1_9.'</td>
+                    <td>'.$g_bb2_b1_10.'</td>
+                    <td>'.$g_bb2_b1_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B2</td>
@@ -791,6 +896,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b2_6.'</td>
                     <td>'.$g_bb2_b2_7.'</td>
                     <td>'.$g_bb2_b2_8.'</td>
+                    <td>'.$g_bb2_b2_9.'</td>
+                    <td>'.$g_bb2_b2_10.'</td>
+                    <td>'.$g_bb2_b2_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B3</td>
@@ -802,6 +910,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b3_6.'</td>
                     <td>'.$g_bb2_b3_7.'</td>
                     <td>'.$g_bb2_b3_8.'</td>
+                    <td>'.$g_bb2_b3_9.'</td>
+                    <td>'.$g_bb2_b3_10.'</td>
+                    <td>'.$g_bb2_b3_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B4</td>
@@ -813,6 +924,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b4_6.'</td>
                     <td>'.$g_bb2_b4_7.'</td>
                     <td>'.$g_bb2_b4_8.'</td>
+                    <td>'.$g_bb2_b1_9.'</td>
+                    <td>'.$g_bb2_b1_10.'</td>
+                    <td>'.$g_bb2_b1_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B5</td>
@@ -824,6 +938,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b5_6.'</td>
                     <td>'.$g_bb2_b5_7.'</td>
                     <td>'.$g_bb2_b5_8.'</td>
+                    <td>'.$g_bb2_b5_9.'</td>
+                    <td>'.$g_bb2_b5_10.'</td>
+                    <td>'.$g_bb2_b5_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B6</td>
@@ -835,6 +952,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b6_6.'</td>
                     <td>'.$g_bb2_b6_7.'</td>
                     <td>'.$g_bb2_b6_8.'</td>
+                    <td>'.$g_bb2_b6_9.'</td>
+                    <td>'.$g_bb2_b6_10.'</td>
+                    <td>'.$g_bb2_b6_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B7</td>
@@ -846,6 +966,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b7_6.'</td>
                     <td>'.$g_bb2_b7_7.'</td>
                     <td>'.$g_bb2_b7_8.'</td>
+                    <td>'.$g_bb2_b7_9.'</td>
+                    <td>'.$g_bb2_b7_10.'</td>
+                    <td>'.$g_bb2_b7_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B8</td>
@@ -857,6 +980,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b8_6.'</td>
                     <td>'.$g_bb2_b8_7.'</td>
                     <td>'.$g_bb2_b8_8.'</td>
+                    <td>'.$g_bb2_b8_9.'</td>
+                    <td>'.$g_bb2_b8_10.'</td>
+                    <td>'.$g_bb2_b8_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B9</td>
@@ -868,6 +994,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b9_6.'</td>
                     <td>'.$g_bb2_b9_7.'</td>
                     <td>'.$g_bb2_b9_8.'</td>
+                    <td>'.$g_bb2_b9_9.'</td>
+                    <td>'.$g_bb2_b9_10.'</td>
+                    <td>'.$g_bb2_b9_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B10</td>
@@ -879,6 +1008,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b10_6.'</td>
                     <td>'.$g_bb2_b10_7.'</td>
                     <td>'.$g_bb2_b10_8.'</td>
+                    <td>'.$g_bb2_b10_9.'</td>
+                    <td>'.$g_bb2_b10_10.'</td>
+                    <td>'.$g_bb2_b10_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B11</td>
@@ -890,6 +1022,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b11_6.'</td>
                     <td>'.$g_bb2_b11_7.'</td>
                     <td>'.$g_bb2_b11_8.'</td>
+                    <td>'.$g_bb2_b11_9.'</td>
+                    <td>'.$g_bb2_b11_10.'</td>
+                    <td>'.$g_bb2_b11_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B12</td>
@@ -901,6 +1036,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b12_6.'</td>
                     <td>'.$g_bb2_b12_7.'</td>
                     <td>'.$g_bb2_b12_8.'</td>
+                    <td>'.$g_bb2_b12_9.'</td>
+                    <td>'.$g_bb2_b12_10.'</td>
+                    <td>'.$g_bb2_b12_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B13</td>
@@ -912,6 +1050,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b13_6.'</td>
                     <td>'.$g_bb2_b13_7.'</td>
                     <td>'.$g_bb2_b13_8.'</td>
+                    <td>'.$g_bb2_b13_9.'</td>
+                    <td>'.$g_bb2_b13_10.'</td>
+                    <td>'.$g_bb2_b13_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B14</td>
@@ -923,6 +1064,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b14_6.'</td>
                     <td>'.$g_bb2_b14_7.'</td>
                     <td>'.$g_bb2_b14_8.'</td>
+                    <td>'.$g_bb2_b14_9.'</td>
+                    <td>'.$g_bb2_b14_10.'</td>
+                    <td>'.$g_bb2_b14_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B15</td>
@@ -934,6 +1078,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b15_6.'</td>
                     <td>'.$g_bb2_b15_7.'</td>
                     <td>'.$g_bb2_b15_8.'</td>
+                    <td>'.$g_bb2_b15_9.'</td>
+                    <td>'.$g_bb2_b15_10.'</td>
+                    <td>'.$g_bb2_b15_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B16</td>
@@ -945,6 +1092,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b16_6.'</td>
                     <td>'.$g_bb2_b16_7.'</td>
                     <td>'.$g_bb2_b16_8.'</td>
+                    <td>'.$g_bb2_b16_9.'</td>
+                    <td>'.$g_bb2_b16_10.'</td>
+                    <td>'.$g_bb2_b16_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B17</td>
@@ -956,6 +1106,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b17_6.'</td>
                     <td>'.$g_bb2_b17_7.'</td>
                     <td>'.$g_bb2_b17_8.'</td>
+                    <td>'.$g_bb2_b17_9.'</td>
+                    <td>'.$g_bb2_b17_10.'</td>
+                    <td>'.$g_bb2_b17_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B18</td>
@@ -967,6 +1120,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b18_6.'</td>
                     <td>'.$g_bb2_b18_7.'</td>
                     <td>'.$g_bb2_b18_8.'</td>
+                    <td>'.$g_bb2_b18_9.'</td>
+                    <td>'.$g_bb2_b18_10.'</td>
+                    <td>'.$g_bb2_b18_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B19</td>
@@ -978,6 +1134,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b19_6.'</td>
                     <td>'.$g_bb2_b19_7.'</td>
                     <td>'.$g_bb2_b19_8.'</td>
+                    <td>'.$g_bb2_b19_9.'</td>
+                    <td>'.$g_bb2_b19_10.'</td>
+                    <td>'.$g_bb2_b19_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B20</td>
@@ -989,6 +1148,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b20_6.'</td>
                     <td>'.$g_bb2_b20_7.'</td>
                     <td>'.$g_bb2_b20_8.'</td>
+                    <td>'.$g_bb2_b20_9.'</td>
+                    <td>'.$g_bb2_b20_10.'</td>
+                    <td>'.$g_bb2_b20_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B21</td>
@@ -1000,6 +1162,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b21_6.'</td>
                     <td>'.$g_bb2_b21_7.'</td>
                     <td>'.$g_bb2_b21_8.'</td>
+                    <td>'.$g_bb2_b21_9.'</td>
+                    <td>'.$g_bb2_b21_10.'</td>
+                    <td>'.$g_bb2_b21_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B22</td>
@@ -1011,6 +1176,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b22_6.'</td>
                     <td>'.$g_bb2_b22_7.'</td>
                     <td>'.$g_bb2_b22_8.'</td>
+                    <td>'.$g_bb2_b22_9.'</td>
+                    <td>'.$g_bb2_b22_10.'</td>
+                    <td>'.$g_bb2_b22_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B23</td>
@@ -1022,6 +1190,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b23_6.'</td>
                     <td>'.$g_bb2_b23_7.'</td>
                     <td>'.$g_bb2_b23_8.'</td>
+                    <td>'.$g_bb2_b23_9.'</td>
+                    <td>'.$g_bb2_b23_10.'</td>
+                    <td>'.$g_bb2_b23_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B24</td>
@@ -1033,6 +1204,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b24_6.'</td>
                     <td>'.$g_bb2_b24_7.'</td>
                     <td>'.$g_bb2_b24_8.'</td>
+                    <td>'.$g_bb2_b24_9.'</td>
+                    <td>'.$g_bb2_b24_10.'</td>
+                    <td>'.$g_bb2_b24_11.'</td>
                 </tr>
                 
             </tbody>        
