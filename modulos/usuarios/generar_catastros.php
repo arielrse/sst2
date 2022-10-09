@@ -16,27 +16,39 @@ $codForm = $arr[0];
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
 $sheet->setTitle("Datos Catastro");
-$sheet->setCellValue('A1', 'IDEVENTO');
-$sheet->setCellValue('B1', 'IDCATASTRO');
-$sheet->setCellValue('C1', 'FECHA_INICIO');
-$sheet->setCellValue('D1', 'DATA');
+$sheet->setCellValue('A1', 'A1');
+$sheet->setCellValue('B1', 'B1');
+$sheet->setCellValue('C1', 'C1');
+$sheet->setCellValue('D1', 'D1');
 
 
-$consulta = "SELECT e.idevento, e.estado, e.inicio, e.rep, e.repro, cc.idcatastro, cc.data
+$consulta = "SELECT e.idevento, e.estado, e.inicio, e.rep, e.repro, cc.idcatastro, cc.data, s.nombre
             FROM catastro".$codForm." cc
             LEFT JOIN evento e ON cc.idevento = e.idevento
+            LEFT JOIN sitio s  ON e.idsitio = s.idsitio
             WHERE e.inicio BETWEEN '".$fechainicio."' AND '".$fechafin."'";
 
 $resultado = mysqli_query($conexion, $consulta);
 
 $fila = 2;
 
-
 while($row = mysqli_fetch_array($resultado)){
-    $sheet->setCellValue('A'.$fila, $row['idevento']);
-    $sheet->setCellValue('B'.$fila, $row['idcatastro']);
-    $sheet->setCellValue('C'.$fila, $row['inicio']);
-    $sheet->setCellValue('D'.$fila, $row['data']);
+
+    $jsonData = $row["data"];
+    $obj = json_decode($jsonData);
+    $json_OK =	json_last_error() == JSON_ERROR_NONE;
+
+    if ($json_OK){
+        $sheet->setCellValue('A'.$fila, $obj->cm);
+        $sheet->setCellValue('B'.$fila, $obj->sitioId);
+        $sheet->setCellValue('C'.$fila, $obj->propertyId);
+        $sheet->setCellValue('D'.$fila, $json_OK);
+    } else {
+        $sheet->setCellValue('A'.$fila, 'ERROR');
+        $sheet->setCellValue('B'.$fila, $row['inicio']);
+        $sheet->setCellValue('C'.$fila, $row['nombre']);
+    }
+
     $fila++;
 }
 
