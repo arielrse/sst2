@@ -137,7 +137,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                             $idrutina = $data['idrutina'];
                                             $href    = "$link_modulo?path=rutina_$codigo.php&event=$idevento&rut=$idrutina&cform=$codigo&gp=$idgrupo";
                                             $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
-                                            $hrefImg = "$link_modulo?path=rutina_add_image.php&rut=$idrutina&propertyId=$propertyId&nombreForm=$nombreForm";
+                                            $hrefImg = "$link_modulo?path=rutina_addimage.php&rut=$idrutina&propertyId=$propertyId&nombreForm=$nombreForm";
 
                                             $eliminarRutina = "";
                                             if (!isNationalClient() && !isClient())
