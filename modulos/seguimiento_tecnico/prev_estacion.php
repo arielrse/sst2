@@ -31,6 +31,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 ?>
 <input type="hidden" name="cm" id="cm" value="<?=$cm?>" />
 <input type="hidden" name="sitioId" id="sitioId" value="<?=$sitioId?>" />
+<input type="hidden" name="idevento" id="idevento" value="<?=$idevento?>" />
 <input type="hidden" name="propertyId" id="propertyId" value="<?=$propertyId?>" />
 <input type="hidden" id="nombre2" value="<?=$nombre2?>" />
 <input type="hidden" id="cargo2" value="<?=$cargo2?>" />
@@ -83,6 +84,15 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                     <div class="tab-icon"><i class='bx bx-cabinet font-18 me-1'></i>
                                     </div>
                                     <div class="tab-title">Catastro</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#primaryfiles" role="tab" aria-selected="false">
+                                <div class="d-flex align-items-center">
+                                    <div class="tab-icon"><i class='bx bx-archive-in font-18 me-1'></i>
+                                    </div>
+                                    <div class="tab-title">Docs Adjuntos <?php echo $idevento ?></div>
                                 </div>
                             </a>
                         </li>
@@ -168,6 +178,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                             </div>
 
                         </div>
+
                         <div class="tab-pane fade" id="primaryprofile" role="tabpanel">
 
                             <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
@@ -242,6 +253,46 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                     }
                                     ?>
                                     </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="primaryfiles" role="tabpanel">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input class="form-control" type="file" id="filedoc" name="filedoc">
+                                        <input id="titulodoc" name="titulodoc" class="form-control" type="text" placeholder="Titulo del archivo">
+                                        <button class="btn btn-outline-primary" type="button" id="btn-subirdoc" name="btn-subirdoc"><i class='bx bx-plus'></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="table-docs">
+                                <table class="table mb-0 table-hover">
+                                <?php
+                                $query = "SELECT id, nombre, titulo, extension, idevento FROM rutina_docs
+                                          WHERE idevento = " . $idevento;
+                                $result = mysqli_query($conexion, $query);
+                                $i = 1;
+                                while( $data = mysqli_fetch_array($result) ){
+
+                                    echo "
+                                    <tr>
+                                        <td>$i</td>
+                                        <td>".$data['nombre']."</td>
+                                        <td>".$data['titulo']."</td>
+                                        <td>
+                                            <div class='d-flex order-actions'>
+                                                <a href='#' class='ms-3'><i class='bx bxs-edit'></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    ";
+                                    $i++;
+                                }
+                                ?>
                                 </table>
                             </div>
 
@@ -392,6 +443,48 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                         }
                     );
                 })
+        });
+
+    });
+
+    $(document).ready(function () {
+
+        var btnEnviar = $("#btn-subirdoc");
+        //var textoSubiendo = "Cargando imagen...";
+        $('#btn-subirdoc').click(function(){
+
+            var idevento  = $('#idevento').val()
+            var titulodoc = $('#titulodoc').val()
+
+            alert('Add docs...id: ' + idevento);
+
+            var frmData = new FormData;
+            frmData.append("filedoc", $("input[name=filedoc]")[0].files[0]);
+            frmData.append("idevento", idevento);
+            frmData.append("titulodoc", titulodoc);
+
+            $.ajax({
+                url: 'subir_doc.php',
+                type: 'POST',
+                data: frmData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                beforeSend: function (data){
+                    btnEnviar.attr("disabled", true);
+                    //$("#loading").html('<div class="spinner-border spinner-border-sm" role="status"></div>');
+                },
+                success: function (data){
+                    $("#table-docs").load(window.location + " #table-docs");
+                    document.querySelector('#filedoc').value = "";
+                    document.querySelector('#titulodoc').value = "";
+                    btnEnviar.attr("disabled", false);
+                    //$("#loading").html('');
+                }
+            })
+
+            return false;
+
         });
 
     });
