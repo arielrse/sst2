@@ -113,7 +113,7 @@ $catastro003_titulos = [
     "X1" => "bomba de trasiego",
     "Y1" => "Automático - Manual",
     "Z1" => "Precalentador",
-    "AA1" => " Potencia, capacidad térmica - KW",
+    "AA1" => "Potencia, capacidad térmica - KW",
     "AB1" => "Fecha de inicio de operación",
     "AC1" => "Proyecto",
     "AD1" => "Fecha de vencimiento de garantía",
@@ -392,22 +392,24 @@ while($row = mysqli_fetch_array($resultado)){
             $sheet->setCellValue('L'.$fila,$d05_01);
             $sheet->setCellValue('M'.$fila,$d06_01);
             $sheet->setCellValue('N'.$fila,$d07_01);
+
             $sheet->setCellValue('O'.$fila,$d08_01);
             $sheet->setCellValue('P'.$fila,$d09_01);
             $sheet->setCellValue('Q'.$fila,$d10_01);
             $sheet->setCellValue('R'.$fila,$d11_01);
-            $sheet->setCellValue('T'.$fila,$d12_01);
-            $sheet->setCellValue('U'.$fila,$d13_01);
-            $sheet->setCellValue('V'.$fila,$d14_01);
-            $sheet->setCellValue('W'.$fila,$d15_01);
-            $sheet->setCellValue('X'.$fila,$d16_01);
-            $sheet->setCellValue('Z'.$fila,$d17_01);
-            $sheet->setCellValue('AA'.$fila,$d17_02);
-            $sheet->setCellValue('AB'.$fila,$d18_01);
-            $sheet->setCellValue('AC'.$fila,$d19_02);
-            $sheet->setCellValue('AD'.$fila,$d20_01);
-            $sheet->setCellValue('AE'.$fila,$d21_01);
-            $sheet->setCellValue('AF'.$fila, $observaciones);
+            $sheet->setCellValue('S'.$fila,$d12_01);
+            $sheet->setCellValue('T'.$fila,$d13_01);
+            $sheet->setCellValue('U'.$fila,$d14_01);
+            $sheet->setCellValue('V'.$fila,$d15_01);
+            $sheet->setCellValue('W'.$fila,$d16_01);
+            $sheet->setCellValue('X'.$fila,$d17_01);
+            $sheet->setCellValue('Y'.$fila,$d17_02);
+            $sheet->setCellValue('Z'.$fila,$d18_01);
+            $sheet->setCellValue('AA'.$fila,$d18_02);
+            $sheet->setCellValue('AB'.$fila,$d19_01);
+            $sheet->setCellValue('AC'.$fila,$d20_01);
+            $sheet->setCellValue('AD'.$fila,$d21_01);
+            $sheet->setCellValue('AE'.$fila, $observaciones);
         }
 
 
