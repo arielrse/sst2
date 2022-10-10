@@ -924,9 +924,9 @@ function getSubPlantilla1($jsonData){
                     <td>'.$g_bb2_b4_6.'</td>
                     <td>'.$g_bb2_b4_7.'</td>
                     <td>'.$g_bb2_b4_8.'</td>
-                    <td>'.$g_bb2_b1_9.'</td>
-                    <td>'.$g_bb2_b1_10.'</td>
-                    <td>'.$g_bb2_b1_11.'</td>
+                    <td>'.$g_bb2_b4_9.'</td>
+                    <td>'.$g_bb2_b4_10.'</td>
+                    <td>'.$g_bb2_b4_11.'</td>
                 </tr>
                 <tr>
                     <td>BB2-B5</td>
