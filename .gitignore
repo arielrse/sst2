@@ -5,6 +5,7 @@ dist/
 gradle/
 out/
 fotos/
+docs/
 .idea/workspace.xml
 *.iml
 build.properties
