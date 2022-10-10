@@ -7,7 +7,7 @@ async function getDatos() {
 
 $(document).ready(function() {
     $('#botonHead, #botonF, #botonFooter').click(function(){
-        alert("boton Guardar");
+        alert("Guardando...");
 
     var idrutina            = $('#rutinaId').val();
     var codigoForm          = $('#codigoForm').val();

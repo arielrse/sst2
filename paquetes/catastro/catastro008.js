@@ -7,7 +7,7 @@ async function getDatos() {
 
 $(document).ready(function() {
     $('#botonHead, #botonF, #botonFooter').click(function(){
-        alert("boton Guardar");
+        alert("Guardando...");
 
 var idcatastro          = $('#catastroId').val();
 var codigoForm          = $('#codigoForm').val();
