@@ -500,7 +500,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
             var size = document.getElementsByName("filedoc")[0].files[0].size;
             var docsize = ((size / 1024)/1000);
 
-            if ( docsize < 200) {
+            if ( docsize < 150) {
                 var frmData = new FormData;
                 frmData.append("filedoc", $("input[name=filedoc]")[0].files[0]);
                 frmData.append("idevento", idevento);
@@ -527,7 +527,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                     }
                 })
             } else{
-                alert( 'No es posible, el archivo supera los 200MB' )
+                alert( 'No es posible, el archivo supera los 150MB' )
             }
             return false;
 
