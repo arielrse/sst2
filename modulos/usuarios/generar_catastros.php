@@ -120,53 +120,65 @@ $catastro003_titulos = [
     "AE1" => "OBS.",
 ];
 $catastro004_titulos = [
-    "A1" => "CM/SCM:",
-    "B1" => "ID Sitio:",
+    "A1" => "CM/SCM",
+    "B1" => "ID Sitio",
     "C1" => "Nombre sitio",
-    "D1" => "",
-    "E1" => "",
-    "F1" => "",
-    "G1" => "",
-    "H1" => "",
-    "I1" => "",
-    "J1" => "",
-    "K1" => "",
-    "L1" => "",
-    "M1" => "",
-    "N1" => "",
-    "O1" => "",
-    "P1" => "",
-    "Q1" => "",
-    "R1" => "",
-    "S1" => "",
-    "T1" => "",
-    "U1" => "",
-    "V1" => "",
+    "D1" => "Fecha de catastro",
+    "E1" => "Indoor/Outdoor",
+    "F1" => "Cod_fijo",
+    "G1" => "cod_activo",
+    "H1" => "cod_complemento",
+    "I1" => "Equipo de pertenencia (Grupo Electrógeno/UPS)",
+    "J1" => "Funcionalidad (en servicio/fuera de servicio)",
+    "K1" => "Estado (obsoleto/falta de capacidad/con falla)",
+    "L1" => "Tablero de transferencia ATS (Integrado/Externo)",
+    "M1" => "Marca",
+    "N1" => "Modelo",
+    "O1" => "N° Serie",
+    "P1" => "Sistema en baja tensión BT (Monofásico/Bifásico/trifásico)",
+    "Q1" => "Voltaje - V",
+    "R1" => "Capacidad - KVA",
+    "S1" => "Protector de segundo nivel",
+    "T1" => "Tipo de uso (Indoor / Outdoor)",
+    "U1" => "Año de inicio de operación",
+    "V1" => "Fecha de inicio de operación",
+    "W1" => "Proyecto",
+    "X1" => "Fecha de vencimiento de garantía",
+    "Y1" => "OBS.",
 
 ];
 $catastro005_titulos = [
-    "A1" => "CM/SCM:",
-    "B1" => "ID Sitio:",
+    "A1" => "CM/SCM",
+    "B1" => "ID Sitio",
     "C1" => "Nombre sitio",
-    "D1" => "",
-    "E1" => "",
-    "F1" => "",
-    "G1" => "",
-    "H1" => "",
-    "I1" => "",
-    "J1" => "",
-    "K1" => "",
-    "L1" => "",
-    "M1" => "",
-    "N1" => "",
-    "O1" => "",
-    "P1" => "",
-    "Q1" => "",
-    "R1" => "",
-    "S1" => "",
-    "T1" => "",
-    "U1" => "",
-    "V1" => "",
+    "D1" => "Fecha de catastro",
+    "E1" => "Indoor/Outdoor",
+    "F1" => "Cod_fijo",
+    "G1" => "cod_activo",
+    "H1" => "TDP",
+    "I1" => "TR1",
+    "J1" => "TDS",
+    "K1" => "TR2",
+    "L1" => "TU1",
+    "M1" => "TCL",
+    "N1" => "TU2",
+    "O1" => "TSG",
+    "P1" => "Funcionalidad (en servicio/fuera de servicio)",
+    "Q1" => "Estado (Obsoleto/Falta de capacidad/Con falla/Bueno)",
+    "R1" => "Tipo de Tablero (REFERENCIA CÓDIGO TABLEROS)",
+    "S1" => "Marca",
+    "T1" => "N° SERIE",
+    "U1" => "Tipo de uso (Indoor/Outdoor)",
+    "V1" => "Tipo de montaje (Pared/Piso/Soporte)",
+    "W1" => "Sistema en baja tensión BT (Monofásico/Trifásico/Bifásico/Continua)",
+    "X1" => "Capacidad - A",
+    "Y1" => "Tipo del elemento de protección principal",
+    "Z1" => "Protector de segundo nivel",
+    "AA1"=> "Tipo de Distribución (Por Chicotillo/Por Peineta)",
+    "AB1"=> "Fecha de inicio de operación",
+    "AC1"=> "Proyecto",
+    "AD1"=> "Fecha de vencimiento de garantía",
+    "AE1"=> "OBS.",
 
 ];
 $sheet->setTitle("Datos Catastro");
@@ -409,6 +421,138 @@ while($row = mysqli_fetch_array($resultado)){
             $sheet->setCellValue('AB'.$fila,$d19_01);
             $sheet->setCellValue('AC'.$fila,$d20_01);
             $sheet->setCellValue('AD'.$fila,$d21_01);
+            $sheet->setCellValue('AE'.$fila, $observaciones);
+        }
+
+
+    }
+    if ($json_OK){
+
+        if ($codForm == '004'){
+            $cm = $obj->cm;
+            $sitioId = $obj->sitioId;
+            $propertyId = $obj->propertyId;
+            $c_fechaRealizacion = $obj->c_fechaRealizacion;
+            $indoor_outdoor = $obj->indoor_outdoor;
+            $cod_fijo   = $obj->cod_fijo;
+            $cod_activo = $obj->cod_activo;
+            $cod_complemento = $obj->cod_complemento;
+            $observaciones = $obj->observaciones;
+
+            $desarrollo_d = $obj->{'desarrollo_d'};
+            $d01_01 = $desarrollo_d->d01_01;
+            $d02_01 = $desarrollo_d->d02_01;
+            $d03_01 = $desarrollo_d->d03_01;
+            $d04_01 = $desarrollo_d->d04_01;
+            $d05_01 = $desarrollo_d->d05_01;
+            $d06_01 = $desarrollo_d->d06_01;
+            $d07_01 = $desarrollo_d->d07_01;
+            $d08_01 = $desarrollo_d->d08_01;
+            $d09_01 = $desarrollo_d->d09_01;
+            $d10_01 = $desarrollo_d->d10_01;
+            $d11_01 = $desarrollo_d->d11_01;
+            $d12_01 = $desarrollo_d->d12_01;
+            $d13_01 = $desarrollo_d->d13_01;
+            $d14_01 = $desarrollo_d->d14_01;
+            $d15_01 = $desarrollo_d->d15_01;
+            $d16_01 = $desarrollo_d->d16_01;
+
+            $sheet->setCellValue('A'.$fila, $cm);
+            $sheet->setCellValue('B'.$fila, $sitioId);
+            $sheet->setCellValue('C'.$fila, $propertyId);
+            $sheet->setCellValue('D'.$fila, $c_fechaRealizacion);
+            $sheet->setCellValue('E'.$fila, $indoor_outdoor);
+            $sheet->setCellValue('F'.$fila, $cod_fijo);
+            $sheet->setCellValue('G'.$fila,$cod_activo);
+            $sheet->setCellValue('H'.$fila,$cod_complemento);
+            $sheet->setCellValue('I'.$fila,$d01_01);
+            $sheet->setCellValue('J'.$fila,$d02_01);
+            $sheet->setCellValue('K'.$fila,$d03_01);
+            $sheet->setCellValue('L'.$fila,$d04_01);
+            $sheet->setCellValue('M'.$fila,$d05_01);
+            $sheet->setCellValue('N'.$fila,$d06_01);
+            $sheet->setCellValue('O'.$fila,$d07_01);
+            $sheet->setCellValue('P'.$fila,$d08_01);
+            $sheet->setCellValue('Q'.$fila,$d09_01);
+            $sheet->setCellValue('R'.$fila,$d10_01);
+            $sheet->setCellValue('S'.$fila,$d11_01);
+            $sheet->setCellValue('T'.$fila,$d12_01);
+            $sheet->setCellValue('U'.$fila,$d13_01);
+            $sheet->setCellValue('V'.$fila,$d14_01);
+            $sheet->setCellValue('W'.$fila,$d15_01);
+            $sheet->setCellValue('X'.$fila,$d16_01);
+            $sheet->setCellValue('y'.$fila, $observaciones);
+        }
+
+
+    }
+    if ($json_OK){
+
+        if ($codForm == '005'){
+            $cm = $obj->cm;
+            $sitioId = $obj->sitioId;
+            $propertyId = $obj->propertyId;
+            $c_fechaRealizacion = $obj->c_fechaRealizacion;
+            $indoor_outdoor = $obj->indoor_outdoor;
+            $cod_fijo   = $obj->cod_fijo;
+            $cod_activo = $obj->cod_activo;
+            $tdp        = $obj->tdp;
+            $tr1        = $obj->tr1;
+            $tds        = $obj->tds;
+            $tr2        = $obj->tr2;
+            $tu1        = $obj->tu1;
+            $tcl        = $obj->tcl;
+            $tu2        = $obj->tu2;
+            $tsg        = $obj->tsg;
+
+            $desarrollo_d = $obj->{'desarrollo_d'};
+            $d01_01 = $desarrollo_d->d01_01;
+            $d02_01 = $desarrollo_d->d02_01;
+            $d03_01 = $desarrollo_d->d03_01;
+            $d04_01 = $desarrollo_d->d04_01;
+            $d05_01 = $desarrollo_d->d05_01;
+            $d06_01 = $desarrollo_d->d06_01;
+            $d07_01 = $desarrollo_d->d07_01;
+            $d08_01 = $desarrollo_d->d08_01;
+            $d09_01 = $desarrollo_d->d09_01;
+            $d10_01 = $desarrollo_d->d10_01;
+            $d11_01 = $desarrollo_d->d11_01;
+            $d12_01 = $desarrollo_d->d12_01;
+            $d13_01 = $desarrollo_d->d13_01;
+            $d14_01 = $desarrollo_d->d14_01;
+            $d15_01 = $desarrollo_d->d15_01;
+            $observaciones = $obj->observaciones;
+
+            $sheet->setCellValue('A'.$fila, $cm);
+            $sheet->setCellValue('B'.$fila, $sitioId);
+            $sheet->setCellValue('C'.$fila, $propertyId);
+            $sheet->setCellValue('D'.$fila, $c_fechaRealizacion);
+            $sheet->setCellValue('E'.$fila, $indoor_outdoor);
+            $sheet->setCellValue('F'.$fila, $cod_fijo);
+            $sheet->setCellValue('G'.$fila,$cod_activo);
+            $sheet->setCellValue('H'.$fila,$tdp);
+            $sheet->setCellValue('I'.$fila,$tr1);
+            $sheet->setCellValue('J'.$fila,$tds);
+            $sheet->setCellValue('K'.$fila,$tr2);
+            $sheet->setCellValue('L'.$fila,$tu1);
+            $sheet->setCellValue('M'.$fila,$tcl);
+            $sheet->setCellValue('N'.$fila,$tu2);
+            $sheet->setCellValue('O'.$fila,$tsg);
+            $sheet->setCellValue('P'.$fila,$d01_01);
+            $sheet->setCellValue('Q'.$fila,$d02_01);
+            $sheet->setCellValue('R'.$fila,$d03_01);
+            $sheet->setCellValue('S'.$fila,$d04_01);
+            $sheet->setCellValue('T'.$fila,$d05_01);
+            $sheet->setCellValue('U'.$fila,$d06_01);
+            $sheet->setCellValue('V'.$fila,$d07_01);
+            $sheet->setCellValue('W'.$fila,$d08_01);
+            $sheet->setCellValue('X'.$fila,$d09_01);
+            $sheet->setCellValue('Y'.$fila,$d10_01);
+            $sheet->setCellValue('Z'.$fila,$d11_01);
+            $sheet->setCellValue('AA'.$fila,$d12_01);
+            $sheet->setCellValue('AB'.$fila,$d13_01);
+            $sheet->setCellValue('AC'.$fila,$d14_01);
+            $sheet->setCellValue('AD'.$fila,$d15_01);
             $sheet->setCellValue('AE'.$fila, $observaciones);
         }
 
