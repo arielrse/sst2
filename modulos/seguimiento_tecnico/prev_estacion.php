@@ -31,6 +31,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 ?>
 <input type="hidden" name="cm" id="cm" value="<?=$cm?>" />
 <input type="hidden" name="sitioId" id="sitioId" value="<?=$sitioId?>" />
+<input type="hidden" name="idevento" id="idevento" value="<?=$idevento?>" />
 <input type="hidden" name="propertyId" id="propertyId" value="<?=$propertyId?>" />
 <input type="hidden" id="nombre2" value="<?=$nombre2?>" />
 <input type="hidden" id="cargo2" value="<?=$cargo2?>" />
@@ -86,7 +87,17 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                 </div>
                             </a>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#primaryfiles" role="tab" aria-selected="false">
+                                <div class="d-flex align-items-center">
+                                    <div class="tab-icon"><i class='bx bx-archive-in font-18 me-1'></i>
+                                    </div>
+                                    <div class="tab-title">Docs Adjuntos</div>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
+
                     <div class="tab-content pt-3">
                         <div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
 
@@ -168,6 +179,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                             </div>
 
                         </div>
+
                         <div class="tab-pane fade" id="primaryprofile" role="tabpanel">
 
                             <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
@@ -247,6 +259,65 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 
                         </div>
 
+                        <div class="tab-pane fade" id="primaryfiles" role="tabpanel">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input class="form-control" type="file" id="filedoc" name="filedoc">
+                                        <input id="titulodoc" name="titulodoc" class="form-control" type="text" placeholder="Titulo del documento">
+                                        <button class="btn btn-outline-primary" type="button" id="btn-subirdoc" name="btn-subirdoc"><i class='bx bx-plus'></i></button>
+                                        <!--<button class="btn btn-outline-primary" type="button" id="btn-subirdoc" name="btn-subirdoc" disabled>
+                                            <div class="spinner-border spinner-border-sm" role="status"></div>
+                                        </button>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="table-docs">
+                                <table class="table mb-0 table-hover">
+                                <?php
+                                $query = "SELECT id, nombre, titulo, extension, idevento FROM rutina_docs
+                                          WHERE idevento = " . $idevento;
+                                $result = mysqli_query($conexion, $query);
+                                $i = 1;
+                                while( $data = mysqli_fetch_array($result) ){
+                                    $ext = $data['extension'];
+                                    $nombreDoc = $data['nombre'];
+                                    $idDoc = $data['id'];
+
+
+                                    $hrefDoc = '../../docs/' . $nombreDoc;
+                                    $sizedoc = filesize($hrefDoc)/1024/1000;
+                                    $sizedoc = round($sizedoc, 1);
+
+
+                                    $eliminarDoc = "";
+                                    if (!isNationalClient() && !isClient())
+                                        $eliminarDoc .= "<a href='javascript:;' class='ms-3' id='btnEliminarCatastro' onclick='eliminarDoc(`$idDoc`, `$nombreDoc`)'>
+                                                            <i class='bx bxs-trash'></i>
+                                                         </a>";
+
+                                    echo "
+                                    <tr>
+                                        <td>$i</td>
+                                        <td>".$data['titulo']."</td>
+                                        <td><small>$sizedoc M</small></td>
+                                        <td>
+                                            <div class='d-flex'>
+                                                <a href='$hrefDoc' download>$ext</a>
+                                                " . $eliminarDoc ."
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    ";
+                                    $i++;
+                                }
+                                ?>
+                                </table>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -266,6 +337,27 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 
 <script type=text/javascript>
 
+    function eliminarDoc(idDoc, nombreDoc){
+
+        if (confirm('¿Esta seguro que desea eliminar el documento?')) {
+
+            var frmData = new FormData;
+            frmData.append("idDoc", idDoc);
+            frmData.append("nombreDoc", nombreDoc);
+
+            $.ajax({
+                url: 'eliminar_doc.php',
+                type: 'POST',
+                data: frmData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    $("#table-docs").load(window.location + " #table-docs");
+                }
+            })
+        }
+    }
 
     async function getDatos(codigoForm) {
         const url = "../../paquetes/rutina/data/rutina" + codigoForm +".json"
@@ -392,6 +484,53 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                         }
                     );
                 })
+        });
+
+    });
+
+    $(document).ready(function () {
+
+        var btnEnviar = $("#btn-subirdoc");
+        //var textoSubiendo = "Cargando imagen...";
+        $('#btn-subirdoc').click(function(){
+
+            var idevento  = $('#idevento').val()
+            var titulodoc = $('#titulodoc').val()
+
+            var size = document.getElementsByName("filedoc")[0].files[0].size;
+            var docsize = ((size / 1024)/1000);
+
+            if ( docsize < 150) {
+                var frmData = new FormData;
+                frmData.append("filedoc", $("input[name=filedoc]")[0].files[0]);
+                frmData.append("idevento", idevento);
+                frmData.append("titulodoc", titulodoc);
+
+                $.ajax({
+                    url: 'subir_doc.php',
+                    type: 'POST',
+                    data: frmData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    beforeSend: function (data) {
+                        btnEnviar.attr("disabled", true);
+                        btnEnviar.html('<div class="spinner-border spinner-border-sm" role="status"></div>');
+                    },
+                    success: function (data) {
+                        alert(data);
+                        $("#table-docs").load(window.location + " #table-docs");
+                        document.querySelector('#filedoc').value = "";
+                        document.querySelector('#titulodoc').value = "";
+                        btnEnviar.html('<i class="bx bx-plus"></i>');
+                        btnEnviar.attr("disabled", false);
+                    }
+                })
+            } else{
+                alert( 'No es posible, el archivo supera los 150MB' )
+            }
+            return false;
+
         });
 
     });
