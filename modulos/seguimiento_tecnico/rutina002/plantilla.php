@@ -2,7 +2,7 @@
 require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
 
-function getPlantilla($conexion, $jsonData, $idgrupo){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
@@ -26,7 +26,10 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $propertyId         = $obj->{'propertyId'};
     $b_idenActivo       = $obj->{'b_idenActivo'};
     $b_nroActivo        = $obj->{'b_nroActivo'};
+
     $footerPlantilla    = getFooter($jsonData);
+    $reporteFotog    = getReporteFotog($conexion, $idrutinax, '002');
+    $footerPlantilla .= $reporteFotog;
 
     $d_horainicio   = $obj->{'d_horainicio'};
     $d_horafin      = $obj->{'d_horafin'};

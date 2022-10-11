@@ -3,7 +3,7 @@ require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
 require("variable_text.php");
 
-function getPlantilla($conexion, $jsonData, $idgrupo){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
@@ -15,6 +15,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $b_idenActivo       = $obj->{'b_idenActivo'};
     $b_nroActivo        = $obj->{'b_nroActivo'};
     $footerPlantilla    = getFooter($jsonData);
+
+    $reporteFotog    = getReporteFotog($conexion, $idrutinax, '004');
+    $footerPlantilla .= $reporteFotog;
 
     $c_fechaRealizacion = dateToLiteral($obj->{'c_fechaRealizacion'});
 
