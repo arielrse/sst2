@@ -301,6 +301,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                         <td><small>$sizedoc M</small></td>
                                         <td>
                                             <div class='d-flex'>
+                                                <i class='bx bx-download px-lg-1'></i>
                                                 <a href='$hrefDoc' download>$ext</a>
                                                 " . $eliminarDoc ."
                                             </div>
@@ -336,7 +337,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 
     function eliminarDoc(idDoc, nombreDoc){
 
-        if (confirm('¿Esta seguro que desea eliminar el documento?')) {
+        if (confirm('¿Esta seguro que desea eliminar el archivo?')) {
 
             var frmData = new FormData;
             frmData.append("idDoc", idDoc);
@@ -395,7 +396,6 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                     idcatastro: idcatastro,
                     codForm: codForm
                 }, function(data){
-                    //alert('Data: ' + data);
                     $("#table-catastro").load(window.location + " #table-catastro");
                 }
             );
