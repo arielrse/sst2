@@ -3,7 +3,7 @@ require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
 require("variable_text.php");
 
-function getPlantilla($conexion, $jsonData, $idgrupo){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
@@ -15,6 +15,10 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $subPlantilla2   = getSubPlantilla2($jsonData);
     $subPlantilla3   = getSubPlantilla3($jsonData);
     $footerPlantilla = getFooter($jsonData);
+
+    $reporteFotog    = getReporteFotog($conexion, $idrutinax, '015');
+    $footerPlantilla .= $reporteFotog;
+
     //---------------------------
 
 

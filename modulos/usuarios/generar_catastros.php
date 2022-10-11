@@ -4,6 +4,7 @@ require '../../vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Style\Fill;
 
 $iddepartamento = $_POST['iddepartamento'];
 $codeidform     = $_POST['codeidform'];
@@ -13,6 +14,11 @@ $fechafin       = $_POST['fechafin'];
 $arr = explode('|', $codeidform);
 $codForm = $arr[0];
 $idformulario = $arr[1];
+
+$tableHead = [
+    'font' => ['color' => ['rgb'=>'FFFFFF'], ],
+    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '1F618D']],
+];
 
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
@@ -333,6 +339,8 @@ $catastro008_titulos = [
 
 ];
 $sheet->setTitle("Datos Catastro");
+
+$sheet->getStyle('A1:AK1')->applyFromArray($tableHead);
 
 if ($codForm == '001'){
     foreach ($catastro001_titulos as $columna => $valor){

@@ -3,7 +3,7 @@ require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
 require("variable_text.php");
 
-function getPlantilla($conexion, $jsonData, $idgrupo){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
@@ -12,6 +12,10 @@ function getPlantilla($conexion, $jsonData, $idgrupo){
     $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - SISTEMA DE ALIMENTACION ININTERRUMPIDA';
     $cabecera        = getCabecera($conexion, $jsonData, $idgrupo, $titulo, false);
     $footerPlantilla = getFooter($jsonData);
+
+    $reporteFotog    = getReporteFotog($conexion, $idrutinax, '010');
+    $footerPlantilla .= $reporteFotog;
+
     //---------------------------
 
     /** g_desarrollo **/

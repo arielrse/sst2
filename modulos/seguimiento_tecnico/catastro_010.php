@@ -7,8 +7,8 @@ $codigoForm = $_GET['cform'];
 <div class="page-wrapper">
     <div class="page-content">
 
-        <h6 class="mb-0 text-uppercase">FORMULARIO DE CATASTRO SISTEMAS DE ENERGÍA</h6>
-        <h6 class="mb-0 text-uppercase">SISTEMA DE CLIMATIZACIÓN (AAC)</h6>
+        <h6 class="mb-0 text-uppercase">FORMULARIO DE CATASTRO SISTEMA FOTOVOLTAICO</h6>
+        <h6 class="mb-0 text-uppercase">SISTEMA FOTOVOLTAICO (SFV)</h6>
         <hr/>
 
         <?php require("catastro_head9-10.php"); ?>

@@ -503,4 +503,48 @@ function getFooter($jsonData){
     return $planilla;
 }
 
+function getReporteFotog($conexion, $idrutinax, $codRutina){
+
+    $res = mysqli_query($conexion,
+        "SELECT ri.imagen, ri.nombre FROM rutina".$codRutina." r
+                LEFT JOIN rutina_imagen ri ON r.idrutina = ri.idrutina
+                WHERE r.id = " . $idrutinax);
+
+    $result = '<br />
+    <main>
+        <div class="notices" align="center">
+            <div class="notice"><strong>REPORTE FOTOGRAFICO</strong></div>
+        </div>
+    </main>
+    <main><table><tr>';
+    $num = 1;
+    while( $data = mysqli_fetch_array($res) ){
+        if (isset($data['imagen'])) {
+            $result .= '
+            <td>
+                <table>
+                    <tr>
+                        <td align="center">
+                        </td>
+                     </tr>
+                    <tr>
+                        <td align="center">
+                            <div><img src="../../../fotos/' . $data['imagen'] . '" style="width: 50%; margin: auto;display: block;"></div>            
+                        </td>
+                    </tr>
+                    <tr><td align="center"><div>' . $data['nombre'] . '</div></td></tr>
+                </table>
+            </td>';
+
+            if (($num % 2) == 0) {
+                $result .= '</tr><tr>';
+            }
+            $num++;
+        }
+    }
+    $result .= '</tr></table></main>';
+
+    return $result;
+}
+
 ?>
