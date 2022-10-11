@@ -326,13 +326,6 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
     </div>
 </div>
 
-<!--<script type="text/javascript" src="../../paquetes/autocompletar/ajax.js"></script>
-<script type="text/javascript" src="../../paquetes/autocompletar/ajax-dynamic-list.js"></script>
-<link href="../../paquetes/autocompletar/ajax-dynamic-list.css" rel="stylesheet" type="text/css" />
-<SCRIPT src="../../js/epoch_classes.js" type=text/javascript></SCRIPT>
-<LINK href="../../css/epochprime_styles.css" type=text/css rel=stylesheet />
-<script src="../../paquetes/nicEdit/nicEdit.js" type="text/javascript"></script>
--->
 <script type=text/javascript>
 
     function eliminarDoc(idDoc, nombreDoc){
@@ -378,7 +371,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 
     function eliminarRutina(idrutina, codForm){
 
-        if (confirm('¿Esta seguro que desea eliminar la rutina? : ' + codForm)){
+        if (confirm('¿Esta seguro eliminar la rutina y todos sus archivos?')){
             jQuery.post("../../paquetes/rutina/delete_rutina.php", {
                 idrutina: idrutina,
                 codForm: codForm
