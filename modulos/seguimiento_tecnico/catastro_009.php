@@ -7,7 +7,7 @@ $codigoForm = $_GET['cform'];
 <div class="page-wrapper">
     <div class="page-content">
 
-        <h6 class="mb-0 text-uppercase">FORMULARIO DE CATASTRO SISTEMAS DE ENERGÍA</h6>
+        <h6 class="mb-0 text-uppercase">FORMULARIO DE CATASTRO SISTEMA DE CLIMATIZACIÓN</h6>
         <h6 class="mb-0 text-uppercase">SISTEMA DE CLIMATIZACIÓN (AAC)</h6>
         <hr/>
 

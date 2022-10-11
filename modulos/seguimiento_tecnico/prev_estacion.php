@@ -230,9 +230,9 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                             $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
                                             $hrefImg = "$link_modulo?path=rutina_add_image.php&rut=$idcatastro&propertyId=$propertyId&nombreForm=$nombreForm";
 
-                                            $eliminarRutina = "";
+                                            $eliminarCatastro = "";
                                             if (!isNationalClient() && !isClient())
-                                                $eliminarRutina .= "<a href='javascript:;' class='ms-3' id='btnEliminarCatastro' onclick='eliminarCatastro(`$idcatastro`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
+                                                $eliminarCatastro = "<a href='javascript:;' class='ms-3' id='btnEliminarCatastro' onclick='eliminarCatastro(`$idcatastro`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
 
                                             $addImagenes    = "<a href='$hrefImg' class='ms-3'><i class='bx bxs-image-add'></i></a>";
 
@@ -244,7 +244,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                                 <td>
                                                     <div class='d-flex order-actions'>
                                                         <a href='$href' class='ms-3'><i class='bx bxs-edit'></i></a>
-                                                        ".$eliminarRutina."
+                                                        " . $eliminarCatastro . "
                                                         
                                                     </div>
                                                 </td>
@@ -266,9 +266,6 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                         <input class="form-control" type="file" id="filedoc" name="filedoc">
                                         <input id="titulodoc" name="titulodoc" class="form-control" type="text" placeholder="Titulo del documento">
                                         <button class="btn btn-outline-primary" type="button" id="btn-subirdoc" name="btn-subirdoc"><i class='bx bx-plus'></i></button>
-                                        <!--<button class="btn btn-outline-primary" type="button" id="btn-subirdoc" name="btn-subirdoc" disabled>
-                                            <div class="spinner-border spinner-border-sm" role="status"></div>
-                                        </button>-->
                                     </div>
                                 </div>
                             </div>
@@ -293,7 +290,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 
                                     $eliminarDoc = "";
                                     if (!isNationalClient() && !isClient())
-                                        $eliminarDoc .= "<a href='javascript:;' class='ms-3' id='btnEliminarCatastro' onclick='eliminarDoc(`$idDoc`, `$nombreDoc`)'>
+                                        $eliminarDoc .= "<a href='javascript:;' class='ms-3' id='btnEliminarDoc' onclick='eliminarDoc(`$idDoc`, `$nombreDoc`)'>
                                                             <i class='bx bxs-trash'></i>
                                                          </a>";
 
@@ -328,13 +325,13 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
     </div>
 </div>
 
-<script type="text/javascript" src="../../paquetes/autocompletar/ajax.js"></script>
+<!--<script type="text/javascript" src="../../paquetes/autocompletar/ajax.js"></script>
 <script type="text/javascript" src="../../paquetes/autocompletar/ajax-dynamic-list.js"></script>
 <link href="../../paquetes/autocompletar/ajax-dynamic-list.css" rel="stylesheet" type="text/css" />
 <SCRIPT src="../../js/epoch_classes.js" type=text/javascript></SCRIPT>
 <LINK href="../../css/epochprime_styles.css" type=text/css rel=stylesheet />
 <script src="../../paquetes/nicEdit/nicEdit.js" type="text/javascript"></script>
-
+-->
 <script type=text/javascript>
 
     function eliminarDoc(idDoc, nombreDoc){
