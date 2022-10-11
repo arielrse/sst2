@@ -66,10 +66,10 @@ $reca1              =$obj->{'reca1'};
 $reca2              =$obj->{'reca2'};
 $recb1              =$obj->{'recb1'};
 $recb2              =$obj->{'recb2'};
-$rec_fuente_a           =$obj->{'rec_fuente_a'};
-$rec_fuente_b           =$obj->{'rec_fuente_b'};
-$ups_fuente_a           =$obj->{'ups_fuente_a'};
-$ups_fuente_b           =$obj->{'ups_fuente_b'};
+$rec_fuente_a       =$obj->{'rec_fuente_a'};
+$rec_fuente_b       =$obj->{'rec_fuente_b'};
+$ups_fuente_a       =$obj->{'ups_fuente_a'};
+$ups_fuente_b       =$obj->{'ups_fuente_b'};
 
 /*$res4 = mysqli_query($conexion,
     "SELECT u.id, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nombre, u.`cargo`, u.`cel`
