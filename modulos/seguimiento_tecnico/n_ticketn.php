@@ -1,4 +1,4 @@
-<?
+<?php
 $estacion_val = "";
 $filas = 0;
 if(isset($_GET["rif"])){
@@ -31,7 +31,7 @@ if(isset($_GET["rif"])){
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-text">Nro de Ticket:</span>
-                            <input name="ticket" type="text" id="ticket" class="form-control" value="<?= !isset($dato) ? $dato['ticket'] : '' ?>" size="20" maxlength="15"/>
+                            <input name="ticket" type="text" id="ticket" class="form-control" value="<?= isset($dato) ? $dato['ticket'] : '' ?>" size="20" maxlength="15"/>
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@ if(isset($_GET["rif"])){
                                     $descripcion = $dato2['nombreestacion'].' ('.$dato2['coddep'].'-'.$dato2['tipo'].')';
                                     echo '<option value="'.$idestacionentel.'" ';
 
-                                    if( $idestacionentel == (!isset($dato) ? $dato['idestacionentel'] : '') ) echo 'selected';
+                                    if( $idestacionentel == (isset($dato) ? $dato['idestacionentel'] : '') ) echo 'selected';
                                     echo'>'. $descripcion .'</option>';
                                 }
                                 ?>
@@ -62,7 +62,7 @@ if(isset($_GET["rif"])){
                         <div class="input-group">
                             <span class="input-group-text">Fecha de Inicio:</span>
                             <input name="fecha_inicio_rif" type="date" id="fecha_inicio_rif" size="20" class="result form-control"
-                                   value="<?= !isset($dato) ? $dato['fecha_inicio_rif'] : '' ?>" />
+                                   value="<?= isset($dato) ? $dato['fecha_inicio_rif'] : '' ?>" />
 
                         </div>
                     </div>
@@ -75,7 +75,7 @@ if(isset($_GET["rif"])){
                                    value="<?/*= !isset($dato) ? $dato['hora_inicio_rif'] : '' */?>" >-->
 
                             <input type="time" name="hora_inicio_rif" id="hora_inicio_rif" class="form-control" placeholder="hh:mm"
-                                   value="<?= !isset($dato) ? $dato['hora_inicio_rif'] : '' ?>" >
+                                   value="<?= isset($dato) ? $dato['hora_inicio_rif'] : '' ?>" >
 
 
                         </div>
@@ -85,7 +85,7 @@ if(isset($_GET["rif"])){
                         <div class="input-group">
                             <span class="input-group-text">Fecha de Fin:</span>
                             <input type="date" name="fecha_fin_rif" id="fecha_fin_rif" size="20" class="result form-control"
-                                   value="<?= !isset($dato) ? $dato['fecha_fin_rif'] : '' ?>" />
+                                   value="<?= isset($dato) ? $dato['fecha_fin_rif'] : '' ?>" />
 
                         </div>
                     </div>
@@ -94,7 +94,7 @@ if(isset($_GET["rif"])){
                         <div class="input-group">
                             <span class="input-group-text">Hora Fin:</span>
                             <input type="time" name="hora_fin_rif" id="hora_fin_rif" class="result form-control" placeholder="Seleccionar hora..."
-                                   value="<?= !isset($dato) ? $dato['hora_fin_rif'] : '' ?>" />
+                                   value="<?= isset($dato) ? $dato['hora_fin_rif'] : '' ?>" />
 
                         </div>
                     </div>
@@ -111,7 +111,7 @@ if(isset($_GET["rif"])){
                                     $nombretecnologia   = $dato2['nombretecnologia'];
                                     echo '<option value="'.$idtecnologia.'" ';
 
-                                    if( $idtecnologia == (!isset($dato) ? $dato['idtecnologia'] : '') ) echo 'selected';
+                                    if( $idtecnologia == (isset($dato) ? $dato['idtecnologia'] : '') ) echo 'selected';
                                     echo'>'.$nombretecnologia.'</option>';
                                 }
                                 ?>
@@ -131,7 +131,7 @@ if(isset($_GET["rif"])){
                                     $nombreafectacionservicio     = $dato2['nombreafectacionservicio'];
                                     echo '<option value="'.$idafectacionservicio.'" ';
 
-                                    if( $idafectacionservicio == (!isset($dato) ? $dato['idafectacionservicio'] : '') ) echo 'selected';
+                                    if( $idafectacionservicio == (isset($dato) ? $dato['idafectacionservicio'] : '') ) echo 'selected';
                                     echo'>'.$nombreafectacionservicio.'</option>';
                                 }
                                 ?>
@@ -151,7 +151,7 @@ if(isset($_GET["rif"])){
                                     $nombrefalla    = $dato2['nombresistemafalla'];
                                     echo '<option value="'.$idsistemafalla.'" ';
 
-                                    if( $idsistemafalla == (!isset($dato) ? $dato['idsistemafalla'] : '') ) echo 'selected';
+                                    if( $idsistemafalla == (isset($dato) ? $dato['idsistemafalla'] : '') ) echo 'selected';
                                     echo'>'.$nombrefalla.'</option>';
                                 }
                                 ?>
@@ -228,7 +228,7 @@ if(isset($_GET["rif"])){
                                     $nombreatencion      = $dato2['nombreatencion'];
                                     echo '<option value="'.$idatencion.'" ';
 
-                                    if( $idatencion == (!isset($dato) ? $dato['idatencion'] : '') ) echo 'selected';
+                                    if( $idatencion == (isset($dato) ? $dato['idatencion'] : '') ) echo 'selected';
                                     echo'>'.$nombreatencion.'</option>';
                                 }
                                 ?>
@@ -242,7 +242,7 @@ if(isset($_GET["rif"])){
                         <div class="input-group">
                             <span class="input-group-text">Fecha:</span>
                             <input name="fecha_not_dim" type="date" id="fecha_not_dim" size="20" class="result form-control"
-                                   value="<?= (!isset($dato) ? $dato['fecha_not_dim'] : '') ?>" />
+                                   value="<?= (isset($dato) ? $dato['fecha_not_dim'] : '') ?>" />
                         </div>
                     </div>
 
@@ -250,7 +250,7 @@ if(isset($_GET["rif"])){
                         <div class="input-group">
                             <span class="input-group-text">Hora:</span>
                             <input type="time" name="hora_not_dim" id="hora_not_dim" class="result form-control" placeholder="hh:mm"
-                                   value="<?= (!isset($dato) ? $dato['hora_not_dim'] : '') ?>" />
+                                   value="<?= (isset($dato) ? $dato['hora_not_dim'] : '') ?>" />
                         </div>
                     </div>
 
@@ -260,7 +260,7 @@ if(isset($_GET["rif"])){
                         <div class="input-group">
                             <span class="input-group-text">Fecha:</span>
                             <input type="date" name="fecha_not_sitio" id="fecha_not_sitio" class="result form-control"
-                                   value="<?= (!isset($dato) ? $dato['fecha_not_sitio'] : '') ?>" />
+                                   value="<?= (isset($dato) ? $dato['fecha_not_sitio'] : '') ?>" />
                         </div>
                     </div>
 
@@ -268,18 +268,18 @@ if(isset($_GET["rif"])){
                         <div class="input-group">
                             <span class="input-group-text">Hora:</span>
                             <input type="time" name="hora_not_sitio" id="hora_not_sitio" class="result form-control" placeholder="hh:mm"
-                                   value="<?= (!isset($dato) ? $dato['hora_not_sitio'] : '') ?>" />
+                                   value="<?= (isset($dato) ? $dato['hora_not_sitio'] : '') ?>" />
                         </div>
                     </div>
 
                     <div class="col-12">
                         <label for="inputAddress2" class="form-label">Descripcion de falla del servicio y medida de restitucion (350 Caracteres)</label>
-                        <textarea class="form-control" name="descripcionfalla" id="descripcionfalla" rows="3"><?= (!isset($dato) ? $dato['descripcionfalla'] : '') ?></textarea>
+                        <textarea class="form-control" name="descripcionfalla" id="descripcionfalla" rows="3"><?= (isset($dato) ? $dato['descripcionfalla'] : '') ?></textarea>
                     </div>
 
                     <div class="col-12">
                         <label for="inputAddress2" class="form-label">Observaciones (350 Caracteres)</label>
-                        <textarea class="form-control" name="observaciones" id="observaciones" rows="3"><?= (!isset($dato) ? $dato['observaciones'] : '') ?></textarea>
+                        <textarea class="form-control" name="observaciones" id="observaciones" rows="3"><?= (isset($dato) ? $dato['observaciones'] : '') ?></textarea>
                     </div>
 
                     <div class="row row-cols-auto g-3">

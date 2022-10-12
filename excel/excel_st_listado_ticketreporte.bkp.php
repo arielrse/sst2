@@ -1,6 +1,6 @@
 <?php
 require("../funciones/motor.php");
-//$nro = base64_decode($_GET["nro"]);
+$nro = base64_decode($_GET["nro"]);
 
 header("Content-type: application/vnd.ms-excel");
 header("Content-Disposition: attachment; filename=st_listado_ticketreporte".date("Y-m-d").".xls");
@@ -33,10 +33,14 @@ header("Expires: 0");
 <th width="7%">Tiempo empleado contratista (hh:mm)</th>
 <th width="7%">Observaciones</th>
 </tr>
-<?php
-    $strSql = "";
-
+<?	
 	if (isset($_GET['strSql'])) $strSql = str_replace("\'", "'", $_GET['strSql']);
+	//if (isset($_GET['ffin'])) $ffin = $_GET['ffin'];
+        
+        //echo($strSql);
+
+
+
 
 	$consulta = "SELECT *,
 	CONCAT( 
@@ -92,25 +96,31 @@ header("Expires: 0");
 	". $strSql ."
 )cn1 order by fecha_inicio desc"; 
 
-
+//echo $strSql;
 $resultado = mysqli_query($conexion, $consulta);
 $filas	   = mysqli_num_rows($resultado);
+	if($filas!=0)
+	{ 
 
-if($filas!=0) {
-    $i=0;
+	$i=0;
+	while($dato=mysqli_fetch_array($resultado))
+	 {
+	 
+	 
 
-    while($dato=mysqli_fetch_array($resultado)) {
-        $i++;
+	 $i++;
+	 
+	 
 	 
 	echo " 
-	<tr>
+	<tr bgcolor='$rowt' onmouseover=\"setPointer(this, '#DADADA')\" onmouseout=\"setPointer(this, '$rowt')\">
 	<td>".$i."</td>
 	<td><center>".$dato['centro_nombre']."</center></td>
 	<td><center>".$dato['ticket']."</center></td>
 	<td><center>".$dato['idnodo']."</center></td>
 	<td><center>".$dato['nombreestacion']."</center></td>
 	<td><center>".$dato['tiponodo']."</center></td>
-	<td><center>".$dato['nombretecnologia']."</center></td>
+	<td><center>".$dato['tecnologia']."</center></td>
 	<td><center>".$dato['AREA']."</center></td>
 	<td><center>".$dato['nombreatencion']."</center></td>
 	<td><center>".$dato['nombreafectacionservicio']."</center></td>
@@ -127,9 +137,17 @@ if($filas!=0) {
 	<td><center>".$dato['tiempo_empleado']."</center></td>
 	<td><center>".$dato['observaciones']."</center></td>
 
+
+	
+
+	<!--
+	<td><center>".$dato['plan_accion']."</center></td>
+	<td><center>".$dato['personal']."</center></td>
+	-->
 	</tr>";
 	
 	}
-}
+	 
+	}
 ?>
 </table>		  
