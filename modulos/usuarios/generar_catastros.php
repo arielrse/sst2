@@ -338,52 +338,139 @@ $catastro008_titulos = [
     "AN1"=> "OBS.",
 
 ];
+$catastro009_titulos = [
+    "A1" => "CM/SCM",
+    "B1" => "ID Sitio",
+    "C1" => "Nombre sitio",
+    "D1" => "Fecha de catastro",
+    "E1" => "Cod_fijo",
+    "F1" => "cod_activo",
+    "G1" => "Funcionalidad (en servicio/fuera de servicio)",
+    "H1" => "Estado (obsoleto/falta de capacidad/con falla)",
+    "I1" => "Tipo de equipo (Split/Mochila)",
+    "J1" => "Marca",
+    "K1" => "Modelo Unidad Interna",
+    "L1" => "Externa",
+    "M1" => "Numero de Serie Unidad Interna",
+    "N1" => "Externa",
+    "O1" => "Sistema en baja tensión BT (Monofásico/Trifásico)",
+    "P1" => "Voltaje de entrada - VCA",
+    "Q1" => "Capacidad de enfriamiento",
+    "R1" => "KBTU- Kw  (KW=KBTU/3,41)",
+    "S1" => "Tipo de Flujo de aire (Down Flow/ UP Flow / Frontal)",
+    "T1" => "Fecha de inicio de operación",
+    "U1" => "Proyecto",
+    "V1" => "Fecha de vencimiento de garantía",
+    "W1" => "OBS.",
+
+];
+$catastro010_titulos = [
+    "A1" => "CM/SCM",
+    "B1" => "ID Sitio",
+    "C1" => "Nombre sitio",
+    "D1" => "Fecha de catastro",
+    "E1" => "Cod_fijo",
+    "F1" => "cod_activo",
+    "G1" => "Funcionalidad (en servicio/fuera de servicio)",
+    "H1" => "Estado (obsoleto/falta de capacidad/con falla)",
+    "I1" => "PANELES SOLARES FOTOVOLTAICOS",
+    "J1" => "Marca",
+    "K1" => "Modelo",
+    "L1" => "Potencia máxima - WP",
+    "M1" => "Voltaje máximo - V",
+    "N1" => "Corriente máxima - A",
+    "O1" => "Tipo de panel solares (Amorfo/ Mono Cristalino/Poli Cristalino)",
+    "P1" => "Cantidad total de paneles",
+    "Q1" => "Capacidad Total - KW",
+    "R1" => "Voltaje total - VDC",
+    "S1" => "REGULADOR SOLAR",
+    "T1" => "Marca",
+    "U1" => "Modelo",
+    "V1" => "N° Serie",
+    "W1" => "Voltaje - V",
+    "X1" => "Corriente máxima - A",
+    "Y1" => "Función LVD - Corte por descarga profunda (Si/No) ",
+    "Z1" => "INVERSOR DE VOLTAJE",
+    "AA1" => "Marca",
+    "AB1" => "Modelo",
+    "AC1" => "N° Serie",
+    "AD1" => "ENTRADA DC - Voltaje máximo - V",
+    "AE1" => "Corriente máxima - A",
+    "AF1" => "ENTRADA DC - Potencia máxima - WP",
+    "AG1" => "SALIDA AC - Voltaje máximo - V",
+    "AH1" => "Corriente máxima - A",
+    "AI1" => "SALIDA AC - Potencia máxima - W",
+    "AJ1" => "SISTEMA DE CONTROL HÍBRIDO FOTOVOLTAICO-HÍBRIDO",
+    "AK1" => "Marca",
+    "AL1" => "Modelo",
+    "AM1" => "N° Serie",
+    "AN1" => "Sistema híbrido en operación (Si/No)",
+    "AO1" => "GE-Red Comercial",
+    "AP1" => "OBS.",
+
+];
 $sheet->setTitle("Datos Catastro");
 
-$sheet->getStyle('A1:AK1')->applyFromArray($tableHead);
-
 if ($codForm == '001'){
+    $sheet->getStyle('A1:AK1')->applyFromArray($tableHead);
     foreach ($catastro001_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
 }
-
 if ($codForm == '002'){
+    $sheet->getStyle('A1:Z1')->applyFromArray($tableHead);
     foreach ($catastro002_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
 }
 if ($codForm == '003'){
+    $sheet->getStyle('A1:AE1')->applyFromArray($tableHead);
     foreach ($catastro003_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
 }
 if ($codForm == '004'){
+    $sheet->getStyle('A1:Y1')->applyFromArray($tableHead);
     foreach ($catastro004_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
 }
 if ($codForm == '005'){
+    $sheet->getStyle('A1:AE1')->applyFromArray($tableHead);
     foreach ($catastro005_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
 }
 if ($codForm == '006'){
+    $sheet->getStyle('A1:AZ1')->applyFromArray($tableHead);
     foreach ($catastro006_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
 }
 if ($codForm == '007'){
+    $sheet->getStyle('A1:AY1')->applyFromArray($tableHead);
     foreach ($catastro007_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
 }
 if ($codForm == '008'){
+    $sheet->getStyle('A1:AN1')->applyFromArray($tableHead);
     foreach ($catastro008_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
 }
-
+if ($codForm == '009'){
+    $sheet->getStyle('A1:W1')->applyFromArray($tableHead);
+    foreach ($catastro009_titulos as $columna => $valor){
+        $sheet->setCellValue($columna, $valor);
+    }
+}
+if ($codForm == '010'){
+    $sheet->getStyle('A1:AP1')->applyFromArray($tableHead);
+    foreach ($catastro010_titulos as $columna => $valor){
+        $sheet->setCellValue($columna, $valor);
+    }
+}
 // Recuperando catastros de la bd
 $consulta = "SELECT e.idevento, e.estado, e.inicio, e.rep, e.repro, cc.idcatastro, cc.data, s.nombre
             FROM catastro".$codForm." cc
@@ -1015,6 +1102,130 @@ while($row = mysqli_fetch_array($resultado)){
             $sheet->setCellValue('AM'.$fila,$d14_01);
             $sheet->setCellValue('AN'.$fila,$observaciones);
 
+        }
+    }
+    if ($json_OK){
+
+        if ($codForm == '009'){
+            $cm = $obj->cm;
+            $sitioId = $obj->sitioId;
+            $propertyId = $obj->propertyId;
+            $c_fechaRealizacion = $obj->c_fechaRealizacion;
+            $cod_fijo   = $obj->cod_fijo;
+            $cod_activo = $obj->cod_activo;
+            $desarrollo_d = $obj->{'desarrollo_d'};
+            $d01_01 = $desarrollo_d->d01_01;
+            $d02_01 = $desarrollo_d->d02_01;
+            $d03_01 = $desarrollo_d->d03_01;
+            $d04_01 = $desarrollo_d->d04_01;
+            $d05_01 = $desarrollo_d->d05_01; $d05_02 = $desarrollo_d->d05_02;
+            $d06_01 = $desarrollo_d->d06_01; $d06_02 = $desarrollo_d->d06_02;
+            $d07_01 = $desarrollo_d->d07_01;
+            $d08_01 = $desarrollo_d->d08_01;
+            $d09_01 = $desarrollo_d->d09_01; $d09_02 = $desarrollo_d->d09_02;
+            $d10_01 = $desarrollo_d->d10_01;
+            $d11_01 = $desarrollo_d->d11_01;
+            $d12_01 = $desarrollo_d->d12_01;
+            $d13_01 = $desarrollo_d->d13_01;
+            $observaciones = $obj->observaciones;
+
+            $sheet->setCellValue('A'.$fila, $cm);
+            $sheet->setCellValue('B'.$fila, $sitioId);
+            $sheet->setCellValue('C'.$fila, $propertyId);
+            $sheet->setCellValue('D'.$fila, $c_fechaRealizacion);
+            $sheet->setCellValue('E'.$fila, $cod_fijo);
+            $sheet->setCellValue('F'.$fila, $cod_activo);
+            $sheet->setCellValue('G'.$fila, $d01_01);
+            $sheet->setCellValue('H'.$fila, $d02_01);
+            $sheet->setCellValue('I'.$fila, $d03_01);
+            $sheet->setCellValue('J'.$fila, $d04_01);
+            $sheet->setCellValue('K'.$fila, $d05_01);
+            $sheet->setCellValue('L'.$fila, $d05_02);
+            $sheet->setCellValue('M'.$fila, $d06_01);
+            $sheet->setCellValue('N'.$fila, $d06_02);
+            $sheet->setCellValue('O'.$fila, $d07_01);
+            $sheet->setCellValue('P'.$fila, $d08_01);
+            $sheet->setCellValue('Q'.$fila, $d09_01);
+            $sheet->setCellValue('R'.$fila, $d09_02);
+            $sheet->setCellValue('S'.$fila, $d10_01);
+            $sheet->setCellValue('T'.$fila, $d11_01);
+            $sheet->setCellValue('U'.$fila, $d12_01);
+            $sheet->setCellValue('V'.$fila, $d13_01);
+            $sheet->setCellValue('W'.$fila, $observaciones);
+        }
+    }
+    if ($json_OK){
+
+        if ($codForm == '010'){
+            $cm = $obj->cm;
+            $sitioId = $obj->sitioId;
+            $propertyId = $obj->propertyId;
+            $c_fechaRealizacion = $obj->c_fechaRealizacion;
+            $cod_fijo   = $obj->cod_fijo;
+            $cod_activo = $obj->cod_activo;
+            $desarrollo_d = $obj->{'desarrollo_d'};
+            $d01_01 = $desarrollo_d->d01_01;
+            $d02_01 = $desarrollo_d->d02_01;
+            $d03_01 = $desarrollo_d->d03_01; $d03_02 = $desarrollo_d->d03_02;
+            $d04_01 = $desarrollo_d->d04_01; $d04_02 = $desarrollo_d->d04_02;
+            $d05_01 = $desarrollo_d->d05_01;
+            $d06_01 = $desarrollo_d->d06_01;
+            $d07_01 = $desarrollo_d->d07_01; $d07_02 = $desarrollo_d->d07_02;
+            $d08_01 = $desarrollo_d->d08_01;
+            $d09_01 = $desarrollo_d->d09_01; $d09_02 = $desarrollo_d->d09_02;
+            $d10_01 = $desarrollo_d->d10_01;
+            $d11_01 = $desarrollo_d->d11_01; $d11_02 = $desarrollo_d->d11_02;
+            $d12_01 = $desarrollo_d->d12_01;
+            $d13_01 = $desarrollo_d->d13_01; $d13_02 = $desarrollo_d->d13_02;
+            $d14_01 = $desarrollo_d->d14_01;
+            $d15_01 = $desarrollo_d->d15_01; $d15_02 = $desarrollo_d->d15_02;
+            $d16_01 = $desarrollo_d->d16_01;
+            $d17_01 = $desarrollo_d->d17_01; $d17_02 = $desarrollo_d->d17_02;
+            $d18_01 = $desarrollo_d->d18_01;
+            $d19_01 = $desarrollo_d->d19_01;
+            $d20_01 = $desarrollo_d->d20_01;
+            $d21_01 = $desarrollo_d->d21_01;
+            $d22_01 = $desarrollo_d->d22_01; $d22_02 = $desarrollo_d->d22_02;
+            $observaciones = $obj->observaciones;
+
+            $sheet->setCellValue('A'.$fila, $cm);
+            $sheet->setCellValue('B'.$fila, $sitioId);
+            $sheet->setCellValue('C'.$fila, $propertyId);
+            $sheet->setCellValue('D'.$fila, $c_fechaRealizacion);
+            $sheet->setCellValue('E'.$fila, $cod_fijo);
+            $sheet->setCellValue('F'.$fila, $cod_activo);
+            $sheet->setCellValue('G'.$fila, $d01_01);
+            $sheet->setCellValue('H'.$fila, $d02_01);
+            $sheet->setCellValue('J'.$fila, $d03_01);
+            $sheet->setCellValue('K'.$fila, $d03_02);
+            $sheet->setCellValue('L'.$fila, $d04_01);
+            $sheet->setCellValue('M'.$fila, $d04_02);
+            $sheet->setCellValue('N'.$fila, $d05_01);
+            $sheet->setCellValue('O'.$fila, $d06_01);
+            $sheet->setCellValue('P'.$fila, $d07_01);
+            $sheet->setCellValue('Q'.$fila, $d07_02);
+            $sheet->setCellValue('R'.$fila, $d08_01);
+            $sheet->setCellValue('T'.$fila, $d09_01);
+            $sheet->setCellValue('U'.$fila, $d09_02);
+            $sheet->setCellValue('V'.$fila, $d10_01);
+            $sheet->setCellValue('W'.$fila, $d11_01);
+            $sheet->setCellValue('X'.$fila, $d11_02);
+            $sheet->setCellValue('Y'.$fila, $d12_01);
+            $sheet->setCellValue('AA'.$fila, $d13_01);
+            $sheet->setCellValue('AB'.$fila, $d13_02);
+            $sheet->setCellValue('AC'.$fila, $d14_01);
+            $sheet->setCellValue('AD'.$fila, $d15_01);
+            $sheet->setCellValue('AE'.$fila, $d15_02);
+            $sheet->setCellValue('AF'.$fila, $d16_01);
+            $sheet->setCellValue('AG'.$fila, $d17_01);
+            $sheet->setCellValue('AH'.$fila, $d17_02);
+            $sheet->setCellValue('AI'.$fila, $d18_01);
+            $sheet->setCellValue('AK'.$fila, $d19_01);
+            $sheet->setCellValue('AL'.$fila, $d20_01);
+            $sheet->setCellValue('AM'.$fila, $d21_01);
+            $sheet->setCellValue('AN'.$fila, $d22_01);
+            $sheet->setCellValue('AO'.$fila, $d22_02);
+            $sheet->setCellValue('AP'.$fila,  $observaciones);
         }
     }
     else {
