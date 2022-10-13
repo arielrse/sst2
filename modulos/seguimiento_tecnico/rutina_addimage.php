@@ -57,26 +57,34 @@ $resultado = mysqli_query($conexion, $query);
                     <?php
                     foreach($resultado as $row){
                         $idImg = $row['id'];
+                        $ruta_img = "../../fotos/".$row['imagen'];
+                        $extension = pathinfo($ruta_img, PATHINFO_EXTENSION);
                     ?>
                     <div class="col-md-4">
                         <div class="img-thumbnail">
-                            <a href="../../fotos/<?php echo $row['imagen']; ?>" target="_blank">
-                                <img src="../../fotos/<?php echo $row['imagen']; ?>" alt="Lights" style="width:100%">
-                            </a>
-                            <p class="card-text"><?php echo $row['nombre']; ?>
+                            <?php if ( exif_imagetype($ruta_img) ){ ?>
+                                <a href="<?php echo $ruta_img ?>" target="_blank"><img src="<?php echo $ruta_img ?>" alt="img" style="width:100%"></a>
+                                <p class="card-text"><?php echo $row['nombre']; ?>
+                            <?php } else { ?>
+                                <p class="card-text">
+                                    <i class="bx bx-file"></i>
+                                    <a href="<?php echo $ruta_img ?>" target="_blank"><?php echo $row['nombre']; ?></a>
+                                    <?php echo '(' . $extension . ')' ?>
+
+                            <?php } ?>
+
+
+
+
                             <?php if ( !isClient() || !isNationalClient() ) { ?>
                                 <a href='' id="link-eliminar" onclick="eliminarImagen(<?php echo $idImg ?>); return false;"><i class="lni lni-close"></i></a>
                             <?php } ?>
+
                             </p>
                         </div>
                     </div>
                     <?php } ?>
             </div>
-
-
-            <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>-->
 
     </div>
 </div>
