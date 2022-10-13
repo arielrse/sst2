@@ -17,10 +17,7 @@ $g1_08_01 = $g_desarrollo_g1->g1_08_01 ? "checked" : ""; $g1_08_02 = $g_desarrol
 
         <div class="row align-items-center row-cols-auto g-2 mb-2">
             <div class="col">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-                </div>
+                <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
             </div>
         </div>
 

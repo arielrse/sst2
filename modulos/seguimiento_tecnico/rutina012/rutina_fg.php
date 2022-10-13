@@ -52,10 +52,7 @@ $g5_08_01 = $g_desarrollo->g5_08_01; $g5_08_02 = $g_desarrollo->g5_08_02;
     <div class="card-body">
         <div class="row align-items-center row-cols-auto g-2 mb-2">
             <div class="col">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-                </div>
+                <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
             </div>
         </div>
         <table class="table mb-0">
@@ -132,10 +129,7 @@ $g5_08_01 = $g_desarrollo->g5_08_01; $g5_08_02 = $g_desarrollo->g5_08_02;
 
         <div class="row align-items-center row-cols-auto g-2 mb-2">
             <div class="col">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-                </div>
+                <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
             </div>
         </div>
 
@@ -175,10 +169,7 @@ $g5_08_01 = $g_desarrollo->g5_08_01; $g5_08_02 = $g_desarrollo->g5_08_02;
 
         <div class="row align-items-center row-cols-auto g-2 mb-2">
             <div class="col">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-                </div>
+                <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
             </div>
         </div>
 
@@ -313,10 +304,7 @@ $g5_08_01 = $g_desarrollo->g5_08_01; $g5_08_02 = $g_desarrollo->g5_08_02;
 
         <div class="row align-items-center row-cols-auto g-2 mb-2">
             <div class="col">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-                </div>
+                <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
             </div>
         </div>
 
@@ -413,10 +401,7 @@ $g5_08_01 = $g_desarrollo->g5_08_01; $g5_08_02 = $g_desarrollo->g5_08_02;
 
         <div class="row align-items-center row-cols-auto g-2 mb-2">
             <div class="col">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-                </div>
+                <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
             </div>
         </div>
 
@@ -761,10 +746,7 @@ $g5_08_01 = $g_desarrollo->g5_08_01; $g5_08_02 = $g_desarrollo->g5_08_02;
 
         <div class="row align-items-center row-cols-auto g-2 mb-2">
             <div class="col">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-                </div>
+                <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
             </div>
         </div>
 

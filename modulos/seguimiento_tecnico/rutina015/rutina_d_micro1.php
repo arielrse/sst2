@@ -24,10 +24,7 @@ $d1_15_01 = $d_micro_1->d1_15_01; $d1_15_02 = $d_micro_1->d1_15_02; $d1_15_03 = 
     <div class="card-body">
 
         <div class="col mb-2">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-            </div>
+            <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
         </div>
 
         <table class="table table-bordered mb-3">

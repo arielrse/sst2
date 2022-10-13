@@ -138,11 +138,11 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
                 </li>
 
             </ul>
-            <ul>
-                <li> <a href="<?=$muser?>reporte_tickets.php"><i class="bx bx-right-arrow-alt"></i>Tickets</a>
+            <!--<ul>
+                <li> <a href="<?/*=$muser*/?>reporte_tickets.php"><i class="bx bx-right-arrow-alt"></i>Tickets</a>
                 </li>
 
-            </ul>
+            </ul>-->
         </li>
 
         <li class="menu-label">Configuraciones</li>

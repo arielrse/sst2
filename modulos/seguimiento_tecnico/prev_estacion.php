@@ -112,8 +112,11 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                                 echo '<option value="'.$dato['codigo'].'|'.$dato['idformulario'].'">'.$dato['codigo'].' - '.$dato['nombre'].'</option>';
                                             ?>
                                         </select>
-                                        <button class="btn btn-outline-primary" type="button" id="add-rutina"><i class='bx bx-plus'></i>
-                                        </button>
+
+                                        <?php if ( !isClient() && !isNationalClient() ) { ?>
+                                        <button class="btn btn-outline-primary" type="button" id="add-rutina"><i class='bx bx-plus'></i></button>
+                                        <?php } ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -193,8 +196,9 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                                 echo '<option value="'.$dato['codigo'].'|'.$dato['idformulario'].'">'.$dato['codigo'].' - '.$dato['nombre'].'</option>';
                                             ?>
                                         </select>
-                                        <button class="btn btn-outline-primary" type="button" id="add-catastro"><i class='bx bx-plus'></i>
-                                        </button>
+                                        <?php if ( !isClient() && !isNationalClient() ) { ?>
+                                        <button class="btn btn-outline-primary" type="button" id="add-catastro"><i class='bx bx-plus'></i></button>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -260,6 +264,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                         </div>
 
                         <div class="tab-pane fade" id="primaryfiles" role="tabpanel">
+                            <?php if ( !isClient() && !isNationalClient() ) { ?>
                             <div class="row">
                                 <div class="col">
                                     <div class="input-group">
@@ -269,6 +274,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                     </div>
                                 </div>
                             </div>
+                            <?php } ?>
 
                             <div id="table-docs">
                                 <table class="table mb-0 table-hover">

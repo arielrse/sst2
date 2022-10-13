@@ -39,10 +39,7 @@ $g3_07_01 = $g_desarrollo_g3->g3_07_01 ? "checked" : "";  $g3_07_02 = $g_desarro
     <div class="card-body">
 
         <div class="col mb-2">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-            </div>
+            <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
@@ -270,10 +267,7 @@ $g3_07_01 = $g_desarrollo_g3->g3_07_01 ? "checked" : "";  $g3_07_02 = $g_desarro
     <div class="card-body">
 
         <div class="col mb-2">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-            </div>
+            <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
         </div>
         <table class="table">
             <tr>

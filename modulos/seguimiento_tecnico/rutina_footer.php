@@ -32,11 +32,9 @@ $observaciones    = $obj->{'observaciones'};
 
         <div class="row row-cols-auto pt-3">
             <div class="col">
-                <input type="button" id="botonFooter" class="btn btn-primary px-5" value="Guardar" />
+                <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
             </div>
-            <div class="col">
-                <input type="button" class="btn btn-secondary px-5" name="Submit" value="Cancelar" onclick="history.back()" />
-            </div>
+
         </div>
 
     </div>

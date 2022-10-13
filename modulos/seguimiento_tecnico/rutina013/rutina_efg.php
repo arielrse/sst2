@@ -26,10 +26,7 @@ $g_02_01 = $g_estructura->g_02_01; $g_02_02 = $g_estructura->g_02_02; $g_02_03 =
     <div class="card-body">
 
         <div class="col">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-            </div>
+            <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
         </div>
 
         <table class="table mb-0">
@@ -104,10 +101,7 @@ $g_02_01 = $g_estructura->g_02_01; $g_02_02 = $g_estructura->g_02_02; $g_02_03 =
 <div class="card">
     <div class="card-body">
         <div class="col mb-2">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-            </div>
+            <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
         </div>
 
         <div class="input-group input-group-sm mb-2">
@@ -141,10 +135,7 @@ $g_02_01 = $g_estructura->g_02_01; $g_02_02 = $g_estructura->g_02_02; $g_02_03 =
     <div class="card-body">
 
         <div class="col mb-2">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-            </div>
+            <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
         </div>
 
         <div class="input-group input-group-sm mb-2">
