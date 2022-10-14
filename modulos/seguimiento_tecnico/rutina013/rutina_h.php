@@ -30,7 +30,7 @@ $h_25_01 = $h_desarrollo->h_25_01 ? "checked" : ""; $h_25_02 = $h_desarrollo->h_
 $h_26_01 = $h_desarrollo->h_26_01 ? "checked" : ""; $h_26_02 = $h_desarrollo->h_26_02 ? "checked" : ""; $h_26_03 = $h_desarrollo->h_26_03;
 $h_27_01 = $h_desarrollo->h_27_01 ? "checked" : ""; $h_27_02 = $h_desarrollo->h_27_02 ? "checked" : ""; $h_27_03 = $h_desarrollo->h_27_03;
 
-$observaciones = $obj->{'observaciones'};
+//$observaciones = $obj->{'observaciones'};
 
 ?>
 <h6>H. Desarrollo de Rutina de Mantenimiento</h6>
@@ -634,11 +634,11 @@ $observaciones = $obj->{'observaciones'};
     </div>
 </div>
 
-<h7 class="mb-0 text-uppercase">I. Observaciones</h7>
+<!--<h7 class="mb-0 text-uppercase">I. Observaciones</h7>
 <div class="input-group mb-2">
     <span class="input-group-text"></span>
-    <textarea class="form-control" aria-label="With textarea" id="observaciones"><?php echo $observaciones ?></textarea>
-</div>
+    <textarea class="form-control" aria-label="With textarea" id="observaciones"><?php /*echo $observaciones */?></textarea>
+</div>-->
 
 <div class="col mb-2">
     <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>

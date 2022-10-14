@@ -1,7 +1,7 @@
 <?php
-$pendientes       = $obj->{'pendientes'};
-$recomendaciones  = $obj->{'recomendaciones'};
-$observaciones    = $obj->{'observaciones'};
+$pendientes       = isset($obj->{'pendientes'}) ? $obj->{'pendientes'} : '';
+$recomendaciones  = isset($obj->{'recomendaciones'}) ? $obj->{'recomendaciones'} : '';
+$observaciones    = isset($obj->{'observaciones'}) ? $obj->{'observaciones'} : '';
 
 ?>
 

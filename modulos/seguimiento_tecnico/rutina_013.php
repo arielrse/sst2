@@ -18,6 +18,8 @@ $codigoForm = $_GET['cform'];
 
         <?php require("rutina013/rutina_h.php"); ?>
 
+        <?php require("rutina_footer.php"); ?>
+
     </div>
 </div>
 
