@@ -231,7 +231,7 @@ foreach ($peinetaArr as $element){
                     <td>Fecha de inicio de consumo de energía</td>
                     <td>
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d13_01" value="<?php echo $d13_01 ?>">
+                            <input type="date" class="form-control" id="d13_01" value="<?php echo $d13_01 ?>">
                         </div>
                     </td>
                 </tr>
@@ -247,7 +247,7 @@ foreach ($peinetaArr as $element){
                     <td>Fecha vencimiento de garantía</td>
                     <td>
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d15_01" value="<?php echo $d15_01 ?>">
+                            <input type="date" class="form-control" id="d15_01" value="<?php echo $d15_01 ?>">
                         </div>
                     </td>
                 </tr>

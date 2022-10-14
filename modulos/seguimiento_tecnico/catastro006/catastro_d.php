@@ -344,7 +344,7 @@ foreach ($protec_principalArr as $element){
                     <td>Fecha de inicio de consumo de energía</td>
                     <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d15_01" value="<?php echo $d15_01 ?>">
+                            <input type="date" class="form-control" id="d15_01" value="<?php echo $d15_01 ?>">
                         </div>
                     </td>
                 </tr>
@@ -360,7 +360,7 @@ foreach ($protec_principalArr as $element){
                     <td>Fecha vencimiento de garantía</td>
                     <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d17_01" value="<?php echo $d17_01 ?>">
+                            <input type="date" class="form-control" id="d17_01" value="<?php echo $d17_01 ?>">
                         </div>
                     </td>
                 </tr>

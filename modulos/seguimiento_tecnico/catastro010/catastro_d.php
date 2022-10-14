@@ -69,7 +69,7 @@ foreach ($sist_hibridoArr as $element){
     $sist_hibridoOption .= "<option value='$element' $selected>".$element."</option>";
 }
 /* --------------------------------------------------------------------- */
-$red_comercialArr = ["Ninguno", "Grupo Electrógeno","Red Comercial"];
+$red_comercialArr = ["Ninguno", "Grupo Electrogeno","Red Comercial"];
 $red_comercialOption = "<option>Seleccionar...</option>";
 foreach ($red_comercialArr as $element){
     $selected = "";

@@ -180,7 +180,7 @@ foreach ($inoutdoorArr as $element){
                     <td>Fecha de inicio de operación</td>
                     <td colspan = "3">
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d12_01" value="<?php echo $d12_01 ?>">
+                            <input type="date" class="form-control" id="d12_01" value="<?php echo $d12_01 ?>">
                         </div>
                     </td>
                 </tr>
@@ -196,7 +196,7 @@ foreach ($inoutdoorArr as $element){
                     <td>Fecha de vencimiento de garantía</td>
                     <td colspan = "3">
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_01" value="<?php echo $d14_01 ?>">
+                            <input type="date" class="form-control" id="d14_01" value="<?php echo $d14_01 ?>">
                         </div>
                     </td>
                 </tr>

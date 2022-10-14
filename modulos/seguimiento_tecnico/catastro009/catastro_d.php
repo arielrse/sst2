@@ -185,7 +185,7 @@ foreach ($flujo_aireArr as $element){
                     <td>Fecha de inicio de operación</td>
                     <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d11_01" value="<?php echo $d11_01 ?>">
+                            <input type="date" class="form-control" id="d11_01" value="<?php echo $d11_01 ?>">
                         </div>
                     </td>
                 </tr>
@@ -201,7 +201,7 @@ foreach ($flujo_aireArr as $element){
                     <td>Fecha vencimiento de garantía</td>
                     <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d13_01" value="<?php echo $d13_01 ?>">
+                            <input type="date" class="form-control" id="d13_01" value="<?php echo $d13_01 ?>">
                         </div>
                     </td>
                 </tr>

@@ -302,7 +302,7 @@ foreach ($precalArr as $element){
                     <td>Fecha de inicio de consumo de energía</td>
                     <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d19_01" value="<?php echo $d19_01 ?>">
+                            <input type="date" class="form-control" id="d19_01" value="<?php echo $d19_01 ?>">
                         </div>
                     </td>
                 </tr>
@@ -318,7 +318,7 @@ foreach ($precalArr as $element){
                     <td>Fecha vencimiento de garantía</td>
                     <td colspan="2">
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d21_01" value="<?php echo $d21_01 ?>">
+                            <input type="date" class="form-control" id="d21_01" value="<?php echo $d21_01 ?>">
                         </div>
                     </td>
                 </tr>

@@ -356,7 +356,7 @@ foreach ($sist_de_bajaArr as $element){
                         </td>
                         <td>
                             <div class="input-group input-group-sm mb-2">
-                                <input type="text" class="form-control" id="d18_02" value="<?php echo $d18_02 ?>">
+                                <input type="date" class="form-control" id="d18_02" value="<?php echo $d18_02 ?>">
                             </div>
                         </td>
                     </tr>
@@ -369,7 +369,7 @@ foreach ($sist_de_bajaArr as $element){
                         </td>
                         <td>
                             <div class="input-group input-group-sm mb-2">
-                                <input type="text" class="form-control" id="d19_02" value="<?php echo $d19_02 ?>">
+                                <input type="date" class="form-control" id="d19_02" value="<?php echo $d19_02 ?>">
                             </div>
                         </td>
                     </tr>
