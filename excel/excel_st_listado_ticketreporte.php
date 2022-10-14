@@ -2,6 +2,26 @@
 require("../funciones/motor.php");
 //$nro = base64_decode($_GET["nro"]);
 
+$iddepartamento = isset($_POST['iddepartamento']) ? $_POST['iddepartamento'] : '';
+$idcentro       = isset($_POST['idcentro']) ? $_POST['idcentro'] : '';;
+$fechainicio    = isset($_POST['fechainicio']) ? $_POST['fechainicio'] : '';;
+$fechafin       = isset($_POST['fechafin']) ? $_POST['fechafin'] : '';;
+
+$strSql = '';
+
+
+if ($iddepartamento != '')
+    $strSql .= ' and centro.iddepartamento = ' . $iddepartamento;
+if ($idcentro != '')
+    $strSql .= ' and centro.idcentro = ' . $idcentro;
+
+$strSql .= " and fecha_inicio_rif  BETWEEN '" . $fechainicio . "' AND '". $fechafin . "'";
+
+/*if ($fechainicio != '')
+    $strSql .= " and fecha_inicio_rif >= '" . $fechainicio . "'";
+if ($fechainicio != '')
+    $strSql .= " and fechafin <= '" . $fechafin . "'";*/
+
 header("Content-type: application/vnd.ms-excel");
 header("Content-Disposition: attachment; filename=st_listado_ticketreporte".date("Y-m-d").".xls");
 header("Pragma: no-cache");
@@ -34,9 +54,6 @@ header("Expires: 0");
 <th width="7%">Observaciones</th>
 </tr>
 <?php
-    $strSql = "";
-
-	if (isset($_GET['strSql'])) $strSql = str_replace("\'", "'", $_GET['strSql']);
 
 	$consulta = "SELECT *,
 	CONCAT( 
@@ -79,8 +96,7 @@ header("Expires: 0");
 	ticket_equipofalla,
 	ticket_tipofalla,
 	ticket_solucion
-	WHERE 	
-	st_ticketn.idnodo=estacionentel.idestacionentel
+	WHERE st_ticketn.idnodo=estacionentel.idestacionentel
 	and estacionentel.idcentro=centro.idcentro
 	and st_ticketn.idatencion=ticket_atencion.idatencion
 	AND st_ticketn.idtecnologia=tecnologia.idtecnologia

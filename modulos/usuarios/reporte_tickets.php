@@ -20,7 +20,7 @@
                             <div class="col-md-12">
                                 <label for="iddepartamento" class="form-label">Departamento</label>
                                 <select name="iddepartamento" class="form-select" id="iddepartamento">
-                                    <option value="0" selected> Seleccionar... </option>
+                                    <option value="" selected> Seleccionar... </option>
                                     <?
                                     $resultado=mysqli_query($conexion, "SELECT iddepartamento, nombre, codigo FROM departamento");
                                     while($dato=mysqli_fetch_array($resultado))
@@ -30,24 +30,24 @@
                             </div>
 
                             <div class="col-md-12">
-                                <label for="codeidform" class="form-label">Centro</label>
+                                <label for="idcentro" class="form-label">Centro</label>
                                 <select name="idcentro" class="single-select" id="idcentro">
-                                    <option value="0" selected class="title7"> Seleccionar... </option>
+                                    <option value="" selected class="title7"> Seleccionar... </option>
                                     <?php
-                                    $resultado=mysqli_query($conexion, "SELECT idcentro, nombre FROM centro where iddepartamento = '$iddepartamento'");
+                                    $resultado=mysqli_query($conexion, "SELECT idcentro, nombre, coddep FROM centro");
                                     while($dato=mysqli_fetch_array($resultado))
-                                        echo '<option value="'.$dato['idcentro'].'">'.$dato['nombre'].'</option>';
+                                        echo '<option value="'.$dato['idcentro'].'">' . '(' . $dato['coddep'] . ') ' . $dato['nombre'].'</option>';
                                     ?>
                                 </select>
                             </div>
 
                             <div class="col-md-6">
                                 <label for="fechainicio" class="form-label">Fecha Inicio</label>
-                                <input type="date" class="form-control" id="fechainicio" name="fechainicio">
+                                <input type="date" class="form-control" id="fechainicio" name="fechainicio" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="fechafin" class="form-label">Fecha Fin</label>
-                                <input type="date" class="form-control" id="fechafin" name="fechafin">
+                                <input type="date" class="form-control" id="fechafin" name="fechafin" required>
                             </div>
 
                             <div class="col-12">
