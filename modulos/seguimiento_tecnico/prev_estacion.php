@@ -146,16 +146,17 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                                 $stateHtml = "<div class='text-success'><i class='bx bxs-circle align-middle'></i> Aprobado</div>";
 
                                             $i++;
-                                            $codigo = $data['codigo'];
+                                            $codigo     = $data['codigo'];
                                             $nombreForm = $data['nombre'];
-                                            $idrutina = $data['idrutina'];
+                                            $idrutina   = $data['idrutina'];
+                                            $estado     = $data['estado'];
+
                                             $href    = "$link_modulo?path=rutina_$codigo.php&event=$idevento&rut=$idrutina&cform=$codigo&gp=$idgrupo";
                                             $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
-                                            $hrefImg = "$link_modulo?path=rutina_addimage.php&rut=$idrutina&propertyId=$propertyId&nombreForm=$nombreForm";
+                                            $hrefImg = "$link_modulo?path=rutina_addimage.php&rut=$idrutina&propertyId=$propertyId&nombreForm=$nombreForm&estado=$estado";
 
-                                            $eliminarRutina = "";
-                                            if (!isNationalClient() && !isClient())
-                                                $eliminarRutina .= "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutina(`$idrutina`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
+                                            $eliminarRutina = ($data['estado']=='PEN') ? "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutina(`$idrutina`, `$codigo`)'><i class='bx bxs-trash'></i></a>" : "";
+                                            $eliminarRutina = (!isClient() && !isNationalClient()) ? $eliminarRutina : "";
 
                                             $addImagenes    = "<a href='$hrefImg' class='ms-3'><i class='bx bxs-image-add'></i></a>";
 

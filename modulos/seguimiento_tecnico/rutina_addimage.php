@@ -2,6 +2,7 @@
 $idrutina = $_GET['rut'];
 $propertyId = $_GET['propertyId'];
 $nombreForm = $_GET['nombreForm'];
+$estado = $_GET['estado'];
 
 $query = "select * from rutina_imagen where idrutina='$idrutina'";
 $resultado = mysqli_query($conexion, $query);
@@ -31,11 +32,14 @@ $resultado = mysqli_query($conexion, $query);
                         </div>
 
                         <div class="row row-cols-auto pb-2">
-                            <?php if ( !isClient() || !isNationalClient() ) { ?>
+                            <?php /*if ( !isClient() || !isNationalClient() )*/
+                            $botonCargar = ($estado == 'PEN') ? '<input type="submit" value="Cargar Imagen" class="btn btn-primary" id="cargar" name="cargar" />' : '';
+                            $botonCargar = (!isClient() && !isNationalClient()) ? $botonCargar : "";
+                            ?>
                             <div class="col">
-                                <input type="submit" value="Cargar Imagen" class="btn btn-primary" id="cargar" name="cargar" />
+                                <?php echo $botonCargar; ?>
                             </div>
-                            <?php } ?>
+
                             <div class="col">
                                 <input type="button" class="btn btn-secondary px-5" value="Cancelar" onclick="history.back()" />
                             </div>
