@@ -419,7 +419,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
                     <table>
                         <tr>
                             <td>
-                                <table class="tborder">
+                                <table>
                                     <tr>
                                         <td>
                                             <table class="tborder">
@@ -517,71 +517,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
                         </tr>
                     </table>
                 </main>
-                 <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td class="text-center" colspan="3"><strong>'.constant('ETITLE1').'</strong></td>
-                                 <td class="text-center"><strong>Observaciones</strong></td>
-                            </tr>
-                            <tr>
-                                <td class="col-40p">'.constant('E01_01').'</td>
-                                <td class="col-15p">'.$g2_01_01.' Si</td>
-                                <td class="col-15p">'.$g2_01_02.' No</td>
-                                <td class="col-25p">Obs. '.$g2_01_03.'</td>
-                            </tr>
-                             <tr>
-                                <td class="col-40p">'.constant('E01_02').'</td>
-                                <td class="col-15p">'.$g2_02_01.' Si</td>
-                                <td class="col-15p">'.$g2_02_02.' No</td>
-                                <td class="col-25p">Obs. '.$g2_02_03.'</td>
-                            </tr>
-                              <tr>
-                                <td class="col-40p">'.constant('E01_03').'</td>
-                                <td class="col-15p">'.$g2_03_01.' Si</td>
-                                <td class="col-15p">'.$g2_03_02.' No</td>
-                                <td class="col-25p">Obs. '.$g2_03_03.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-40p">'.constant('E01_04').'</td>
-                                <td class="col-15p">'.$g2_04_01.' Si</td>
-                                <td class="col-15p">'.$g2_04_02.' No</td>
-                                <td class="col-25p">Obs. '.$g2_04_03.'</td>
-                            </tr>
-                             <tr>
-                                <td class="col-40p">'.constant('E01_05').'</td>
-                                <td class="col-15p">'.$g2_05_01.' Si</td>
-                                <td class="col-15p">'.$g2_05_02.' No</td>
-                                <td class="col-25p">Obs. '.$g2_05_03.'</td>
-                            </tr>
-                              <tr>
-                                <td class="col-40p">'.constant('E01_06').'</td>
-                                <td class="col-15p">'.$g2_06_01.' Si</td>
-                                <td class="col-15p">'.$g2_06_02.' No</td>
-                                <td class="col-25p">Obs. '.$g2_06_03.'</td>
-                            </tr>
-                             <tr>
-                                <td class="col-40p">'.constant('E01_07').'</td>
-                                <td class="col-15p">'.$g2_07_01.' Si</td>
-                                <td class="col-15p">'.$g2_07_02.' No</td>
-                                <td class="col-25p">Obs. '.$g2_07_03.'</td>
-                            </tr>
-                             <tr>
-                                <td class="col-40p">'.constant('E01_08').'</td>
-                                <td class="col-15p">'.$g2_08_01.' Si</td>
-                                <td class="col-15p">'.$g2_08_02.' No</td>
-                                <td class="col-25p">Obs. '.$g2_08_03.'</td>
-                            </tr>
-                              <tr>
-                                <td class="col-40p">'.constant('E01_09').'</td>
-                                <td class="col-15p">'.$g2_09_01.' Si</td>
-                                <td class="col-15p">'.$g2_09_02.' No</td>
-                                <td class="col-25p">Obs. '.$g2_09_03.'</td>
-                            </tr>
-                        </tbody>        
-                    </table>									                        
-               </main>
-               <main>
+                <main>
                     <table class="tborder">
                         <tbody>
                             <tr>
