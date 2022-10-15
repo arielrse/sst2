@@ -201,7 +201,7 @@ function getCabecera($conexion, $jsonData, $idgrupo, $titulo, $activoMadre=false
 function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento){
 
     $resIden = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`,
-                                                d.`nombre` AS departamento, s.`provincia`, s.`localidad`, s.`municipio`
+                                                d.`nombre` AS departamento, s.`provincia`, s.`localidad`, s.`municipio`, s.latitud, s.longitud
                                                 FROM evento e 
                                                 LEFT JOIN sitio s 	 ON e.`idsitio` = s.`idsitio`
                                                 LEFT JOIN centro c 	 ON s.`idcentro` = c.`idcentro`
@@ -212,6 +212,8 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
     $provincia      = $dataIden['provincia'];
     $localidad      = $dataIden['localidad'];
     $municipio      = $dataIden['municipio'];
+    $latitud        = $dataIden['latitud'];
+    $longitud       = $dataIden['longitud'];
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
@@ -303,9 +305,9 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
                     <td class="col-25p no">CM/SCM:</td>
                     <td class="col-25p">'. $cm .'</td>
                     <td class="col-10p no">Lat.:</td>
-                    <td class="col-15p"></td>
+                    <td class="col-15p">'. $latitud .'</td>
                     <td class="col-10p no">Long.:</td>
-                    <td class="col-15p"></td>
+                    <td class="col-15p">'. $longitud .'</td>
                 </tr>
 
                 </tbody>
