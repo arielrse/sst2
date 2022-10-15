@@ -26,7 +26,7 @@ $cel3    = $data2['cel3'];
 
 /* ---------------------------------- */
 $resIden = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`,
-                                        s.`departamento`, s.`provincia`, s.`localidad`, s.`municipio`
+                                        s.`departamento`, s.`provincia`, s.`localidad`, s.`municipio`, s.latitud, s.longitud
                                         FROM evento e 
                                         LEFT JOIN sitio s ON e.`idsitio` = s.`idsitio`
                                         LEFT JOIN centro c ON s.`idcentro` = c.`idcentro`
@@ -36,6 +36,8 @@ $departamento   = $dataIden['departamento'];
 $provincia      = $dataIden['provincia'];
 $localidad      = $dataIden['localidad'];
 $municipio      = $dataIden['municipio'];
+$latitud        = $dataIden['latitud'];
+$longitud       = $dataIden['longitud'];
 
 /* ---------------------------------- */
 //$res3 = mysqli_query($conexion, "SELECT r.id, r.cabecera FROM rutina$cform r WHERE r.idrutina = ".$idrutina);
@@ -151,13 +153,13 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
                     <td>Lat.</td>
                     <td>
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" disabled>
+                            <input type="text" class="form-control" value="<?=$latitud?>" disabled>
                         </div>
                     </td>
                     <td>Long.</td>
                     <td>
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" disabled>
+                            <input type="text" class="form-control" value="<?=$longitud?>"disabled>
                         </div>
                     </td>
                 </tr>
