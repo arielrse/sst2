@@ -9,7 +9,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
     $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
-    $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - BANCO DE BATERÍAS';
+    $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - SISTEMA DE TRANSMISIÓN (MW, FO, SAT)';
     $cabecera        = getCabecera($conexion, $jsonData, $idgrupo, $titulo, false);
     $subPlantilla1   = getSubPlantilla1($jsonData);
     $subPlantilla2   = getSubPlantilla2($jsonData);

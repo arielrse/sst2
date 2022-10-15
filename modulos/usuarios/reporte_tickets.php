@@ -19,7 +19,7 @@
                             <!--<input type="hidden" name="path" value="generar_catastros.php" />-->
                             <div class="col-md-12">
                                 <label for="iddepartamento" class="form-label">Departamento</label>
-                                <select name="iddepartamento" class="form-select" id="iddepartamento">
+                                <select name="iddepartamento" class="form-select" id="iddepartamento" required>
                                     <option value="" selected> Seleccionar... </option>
                                     <?
                                     $resultado=mysqli_query($conexion, "SELECT iddepartamento, nombre, codigo FROM departamento");

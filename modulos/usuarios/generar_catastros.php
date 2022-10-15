@@ -476,7 +476,8 @@ $consulta = "SELECT e.idevento, e.estado, e.inicio, e.rep, e.repro, cc.idcatastr
             FROM catastro".$codForm." cc
             LEFT JOIN evento e ON cc.idevento = e.idevento
             LEFT JOIN sitio s  ON e.idsitio = s.idsitio
-            WHERE e.inicio BETWEEN '".$fechainicio."' AND '".$fechafin."'";
+            WHERE e.inicio BETWEEN '".$fechainicio."' AND '".$fechafin."' 
+            AND s.iddepartamento = " . $iddepartamento;
 
 $resultado = mysqli_query($conexion, $consulta);
 $fila = 2;

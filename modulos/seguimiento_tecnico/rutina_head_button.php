@@ -37,7 +37,7 @@
     </div>
     <?php } ?>
 
-    <?php if ( isAdmin() && $estado!='PEN') { ?>
+    <?php if ((isAdmin() || isExpert()) && $estado!='PEN') { ?>
     <div class="col">
         <button type="button" id="toOpen" class="btn btn-danger px-3"><i class="bx bx-lock-open-alt mr-1"></i>Reabrir</button>
     </div>

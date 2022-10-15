@@ -10,8 +10,9 @@ $fechafin       = isset($_POST['fechafin']) ? $_POST['fechafin'] : '';;
 $strSql = '';
 
 
-if ($iddepartamento != '')
-    $strSql .= ' and centro.iddepartamento = ' . $iddepartamento;
+/*if ($iddepartamento != '')
+    $strSql .= ' and centro.iddepartamento = ' . $iddepartamento;*/
+
 if ($idcentro != '')
     $strSql .= ' and centro.idcentro = ' . $idcentro;
 
@@ -105,6 +106,7 @@ header("Expires: 0");
 	AND st_ticketn.idequipofalla=ticket_equipofalla.idequipofalla
 	AND st_ticketn.idtipofalla=ticket_tipofalla.idtipofalla
 	AND st_ticketn.idsolucion=ticket_solucion.idsolucion
+	AND centro.iddepartamento = ".$iddepartamento."
 	". $strSql ."
 )cn1 order by fecha_inicio desc"; 
 
