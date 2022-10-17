@@ -109,8 +109,8 @@ $link_modulo_r=$modulo."_r.php";
 <script src="../../assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 <script src="../../assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
 <script src="../../assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
-<script src="../../assets/plugins/chartjs/js/Chart.min.js"></script>
-<script src="../../assets/plugins/chartjs/js/Chart.extension.js"></script>
+<!--<script src="../../assets/plugins/chartjs/js/Chart.min.js"></script>-->
+<!--<script src="../../assets/plugins/chartjs/js/Chart.extension.js"></script>-->
 <script src="../../assets/plugins/sparkline-charts/jquery.sparkline.min.js"></script>
 
 <script src="../../assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
@@ -129,6 +129,8 @@ $link_modulo_r=$modulo."_r.php";
 <script src="../../assets/plugins/datetimepicker/js/picker.date.js"></script>
 <script src="../../assets/plugins/bootstrap-material-datetimepicker/js/moment.min.js"></script>
 <script src="../../assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 
 <script src="../../assets/plugins/select2/js/select2.min.js"></script>
 

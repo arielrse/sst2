@@ -1,5 +1,5 @@
 // JavaScript Document
-<!--
+//<!--
 
 /**
  * Try to reload the free download iframe, setting a new active_link
