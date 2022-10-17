@@ -445,6 +445,13 @@ foreach ($tipo_fumigadoraArr as $element){
                             </div>
                         </td>
                     </tr>
+                    <tr>
+                        <td colspan="7">Terreno Interno desmalezado A6=A1-A2-A3-A4
+                            Total Terreno desmalezado (Interno+externo) A7=A5+A6
+                            Total Terreno aplicado con herbicida A9=A6+A8
+                            * Para calcular el area del terreno externo, se considera 4 metros circundantes alrededor del predio desde la malla o muro perimetral, no contabilizando la propiedad privada.
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
