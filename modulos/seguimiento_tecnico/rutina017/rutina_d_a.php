@@ -460,6 +460,7 @@ foreach ($tipo_fumigadoraArr as $element){
 
             <div class="col">
                 <h6 class="mb-2">F: Diagrama del sitio</h6>
+                <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                 <div class="input-group mb-2">
                     <input class="form-control form-control-sm" type="file" id="imagen" name="imagen">
                     <button class="btn btn-sm btn-outline-primary" type="button" id="btn-subirimagen" name="btn-subirimagen"><i class='bx bx-plus'></i></button>
@@ -467,6 +468,7 @@ foreach ($tipo_fumigadoraArr as $element){
                     <input type="hidden" name="idrutina" id="idrutina" value="<? echo $idrutina; ?>" />
                     <input type="hidden" name="cform" id="cform" value="<? echo $cform; ?>" />
                 </div>
+                <?php } ?>
 
                 <div class="card" id="diagramaDiv">
                     <?php

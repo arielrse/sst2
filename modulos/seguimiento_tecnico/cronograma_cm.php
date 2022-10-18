@@ -151,7 +151,15 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
             if ($estado == "EJE") $stateClass = "text-primary";
             if ($estado == "REP") $stateClass = "text-warning";
 
-            $a[$f][$c] = "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
+
+            if ( isset($a[$f][$c]) ){
+                $a[$f][$c] .= "<br />";
+                $a[$f][$c] .= "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
+            }
+            else{
+                $a[$f][$c] = "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
+
+            }
 
         }
 
