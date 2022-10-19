@@ -2802,3 +2802,7 @@ div.b {
 	height: 50px;
 	border: 1px solid black;
 }
+
+.tborde-foto td{
+	border: 1px solid #979797;
+}

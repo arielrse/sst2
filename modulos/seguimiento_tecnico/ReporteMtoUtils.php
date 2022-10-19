@@ -1,4 +1,5 @@
 <?php
+require("../../../funciones/ImageUtils.php");
 
 function getPersonalOyM($conexion, $idusuario){
     $res = mysqli_query($conexion, "SELECT u.id, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nombre, u.`cargo`, u.`cel`
@@ -518,33 +519,31 @@ function getReporteFotog($conexion, $idrutinax, $codRutina){
             <div class="notice"><strong>REPORTE FOTOGRAFICO</strong></div>
         </div>
     </main>
-    <main><table><tr>';
+    <div class="tborde-foto"><table ><tr>';
     $num = 1;
     while( $data = mysqli_fetch_array($res) ){
         if (isset($data['imagen'])) {
-            $result .= '
-            <td>
-                <table>
-                    <tr>
-                        <td align="center">
-                        </td>
-                     </tr>
-                    <tr>
-                        <td align="center">
-                            <div><img src="../../../fotos/' . $data['imagen'] . '" style="width: 50%; margin: auto;display: block;"></div>            
-                        </td>
-                    </tr>
-                    <tr><td align="center"><div>' . $data['nombre'] . '</div></td></tr>
-                </table>
+            $file_image = "../../../fotos/" . $data['imagen'];
+            if ( exif_imagetype($file_image) == IMAGETYPE_JPEG || exif_imagetype($file_image) == IMAGETYPE_PNG ) {
+
+                adjustPhotoOrientation($file_image);
+                $result .= '
+            <td align="center">
+                <div>
+                    <img src="' . $file_image . '" style="width: auto; height: 400px; margin: auto;display: block;" />
+                    <div style="font-size: 14px; margin-top: 5px" >' . $data['nombre'] . '</div>
+                </div>
+               
             </td>';
 
-            if (($num % 2) == 0) {
-                $result .= '</tr><tr>';
+                if (($num % 2) == 0) {
+                    $result .= '</tr><tr style="margin-top: 10px;">';
+                }
+                $num++;
             }
-            $num++;
         }
     }
-    $result .= '</tr></table></main>';
+    $result .= '</tr></table></div>';
 
     return $result;
 }

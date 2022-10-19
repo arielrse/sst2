@@ -4,7 +4,7 @@ $propertyId = $_GET['propertyId'];
 $nombreForm = $_GET['nombreForm'];
 $estado = $_GET['estado'];
 
-$query = "select * from rutina_imagen where idrutina='$idrutina'";
+$query = "select * from rutina_imagen where idrutina='$idrutina' order by id desc ";
 $resultado = mysqli_query($conexion, $query);
 
 ?>
@@ -16,7 +16,7 @@ $resultado = mysqli_query($conexion, $query);
             <div class="row">
                 <div class="col-lg-12">
                     <h6 class="text-primary"><?php echo $propertyId . " - " . $nombreForm ?></h6>
-                    <form id="formSubirImg" action="subir_imagen.php" method="POST" enctype="multipart/form-data">
+                    <!--<form id="formSubirImg" action="subir_imagen.php" method="POST" enctype="multipart/form-data">-->
                         <input type="hidden" name="idrutina" id="idrutina" value="<? echo $idrutina; ?>" />
                         <div class="form-group">
 
@@ -33,7 +33,7 @@ $resultado = mysqli_query($conexion, $query);
 
                         <div class="row row-cols-auto pb-2">
                             <?php /*if ( !isClient() || !isNationalClient() )*/
-                            $botonCargar = ($estado == 'PEN') ? '<input type="submit" value="Cargar Imagen" class="btn btn-primary" id="cargar" name="cargar" />' : '';
+                            $botonCargar = ($estado == 'PEN') ? '<button type="button" class="btn btn-primary" id="cargar" name="cargar">Cargar Imagen</button>' : '';
                             $botonCargar = (!isClient() && !isNationalClient()) ? $botonCargar : "";
                             ?>
                             <div class="col">
@@ -49,7 +49,7 @@ $resultado = mysqli_query($conexion, $query);
 
                         </div>
 
-                    </form>
+                    <!--</form>-->
                 </div>
 
             </div>
@@ -95,6 +95,19 @@ $resultado = mysqli_query($conexion, $query);
 
 <script type=text/javascript>
 
+    function fileValidation(){
+        var fileInput = document.getElementById('imagen');
+        var filePath = fileInput.value;
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+        if(!allowedExtensions.exec(filePath)){
+            alert('Por favor cargar imagenes solo con formato  jpeg  jpg  png');
+            fileInput.value = '';
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     function eliminarImagen(idImg){
 
         if (confirm('¿Esta seguro que desea eliminar la imagen? : ' + idImg)) {
@@ -118,12 +131,13 @@ $resultado = mysqli_query($conexion, $query);
 
     $(document).ready(function () {
 
-        var frm = $("#formSubirImg");
+        /*var frm = $("#formSubirImg");*/
         var btnEnviar = $("#cargar");
         var textoSubir    = document.querySelector('#cargar').value;
         var textoSubiendo = "Cargando imagen...";
 
-        frm.bind("submit", function () {
+        $('#cargar').click(function(){
+
 
             var idrutina = $('#idrutina').val()
             var titulo   = $('#titulo').val()
@@ -133,32 +147,36 @@ $resultado = mysqli_query($conexion, $query);
             frmData.append("idrutina", idrutina);
             frmData.append("titulo", titulo);
 
-            $.ajax({
-                url: frm.attr("action"),
-                type: frm.attr("method"),
-                data: frmData,
-                processData: false,
-                contentType: false,
-                cache: false,
-                beforeSend: function (data){
-                    document.querySelector('#cargar').value = textoSubiendo;
-                    btnEnviar.attr("disabled", true);
-                    $("#loading").html('<div class="spinner-border spinner-border-sm" role="status"></div>');
-                },
-                success: function (data){
+            if (fileValidation()) {
+                $.ajax({
+                    url: 'subir_imagen.php',
+                    type: 'POST',
+                    data: frmData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    beforeSend: function (data) {
+                        document.querySelector('#cargar').value = textoSubiendo;
+                        btnEnviar.attr("disabled", true);
+                        $("#loading").html('<div class="spinner-border spinner-border-sm" role="status"></div>');
+                    },
+                    success: function (data) {
+                        console.log('log: ' + data);
+                        /*if (data=='imagen-ok')
+                            alert('Imagen cargada');*/
 
-                    $("#imagenesDiv").load(window.location + " #imagenesDiv");
+                        $("#imagenesDiv").load(window.location + " #imagenesDiv");
 
-                    document.querySelector('#imagen').value = "";
-                    document.querySelector('#titulo').value = "";
+                        document.querySelector('#imagen').value = "";
+                        document.querySelector('#titulo').value = "";
 
-                    document.querySelector('#cargar').value = textoSubir;
-                    btnEnviar.attr("disabled", false);
+                        document.querySelector('#cargar').value = textoSubir;
+                        btnEnviar.attr("disabled", false);
 
-                    $("#loading").html('');
-                }
-            })
-
+                        $("#loading").html('');
+                    }
+                })
+            }
             return false;
 
         });
