@@ -24,6 +24,10 @@ define('E10', 'Terreno Externo aplicado con herbicida m2:');
 define('E11', 'Total Terreno aplicado con herbicida m2:');
 define('E12', 'Cantidad lados propiedad privada:');
 define('E13', 'Cantidad lados terreno externo:');
-
+define('E14', 'Terreno Interno desmalezado A6=A1-A2-A3-A4													
+Total Terreno desmalezado (Interno+externo) A7=A5+A6													
+Total Terreno aplicado con herbicida A9=A6+A8													
+* Para calcular el area del terreno externo, 
+se considera 4 metros circundantes alrededor del predio desde la malla o muro perimetral, no contabilizando la propiedad privada.');
 define('FTITLE', 'F: Diagrama del sitio');
 ?>

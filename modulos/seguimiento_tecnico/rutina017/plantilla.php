@@ -283,6 +283,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax){
                                         <td colspan="5">'.constant('E13').'</td>
                                         <td><strong>'.$a_13_01.'</strong></td>
                                      </tr>
+                                      <tr>
+                                        <td colspan="6">'.constant('E14').'</td>
+                                       </tr>
                                 </table>
                             </td>
                              <td>
@@ -297,6 +300,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax){
                         </tr>
                     </table>
                </main>
+               
                '.$footerPlantilla.'   
                 </div>
             </div>
