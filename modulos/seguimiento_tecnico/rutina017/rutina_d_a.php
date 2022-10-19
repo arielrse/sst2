@@ -61,7 +61,7 @@ foreach ($tipo_fumigadoraArr as $element){
             <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
         </div>
 
-        <table class="table mb-0">
+        <table class="table mb-2">
             <tbody>
             <tr>
                 <td>Marca del Herbicida</td>
@@ -142,7 +142,7 @@ foreach ($tipo_fumigadoraArr as $element){
                         <input type="text" class="form-control" id="d_06_01" value="<?php echo $d_06_01 ?>">
                     </div>
                 </td>
-                <td></td>
+                <td colspan="2"></td>
             </tr>
             <tr>
                 <td>Cantidad Utilizada [ml]</td>
@@ -151,29 +151,30 @@ foreach ($tipo_fumigadoraArr as $element){
                         <input type="text" class="form-control" id="d_07_01" value="<?php echo $d_07_01 ?>">
                     </div>
                 </td>
-                <td></td>
+                <td colspan="2"></td>
              </tr>
             </tbody>
         </table>
-        <div class="row row-cols-4 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
 
-            <div>
+        <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 row-cols-xl-3">
+
+            <div class="col">
 
                 <table class="table table-bordered mb-0">
                     <tbody>
                     <tr>
                         <td class="text-center" rowspan="2">Clima Ayer</td>
-                        <td>
+                        <td align="center">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="d_08_01" value="option2" <?php echo $d_08_01 ?>>
                             </div>
                         </td>
-                        <td>
+                        <td align="center">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="d_08_02" value="option2" <?php echo $d_08_02 ?>>
                             </div>
                         </td>
-                        <td>
+                        <td align="center">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="d_08_03" value="option2" <?php echo $d_08_03 ?>>
                             </div>
@@ -195,17 +196,17 @@ foreach ($tipo_fumigadoraArr as $element){
                     <tbody>
                     <tr>
                         <td class="text-center" rowspan="2">Clima de Hoy</td>
-                        <td>
+                        <td align="center">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="d_08_04" value="option2" <?php echo $d_08_04 ?>>
                             </div>
                         </td>
-                        <td>
+                        <td align="center">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="d_08_05" value="option2" <?php echo $d_08_05 ?>>
                             </div>
                         </td>
-                        <td>
+                        <td align="center">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="d_08_06" value="option2" <?php echo $d_08_06 ?>>
                             </div>
@@ -226,17 +227,17 @@ foreach ($tipo_fumigadoraArr as $element){
                     <tbody>
                     <tr>
                         <td class="text-center" rowspan="2">Clima de Mañana</td>
-                        <td>
+                        <td align="center">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="d_08_07" value="option2" <?php echo $d_08_07 ?>>
                             </div>
                         </td>
-                        <td>
+                        <td align="center">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="d_08_08" value="option2" <?php echo $d_08_08 ?>>
                             </div>
                         </td>
-                        <td>
+                        <td align="center">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="d_08_09" value="option2" <?php echo $d_08_09 ?>>
                             </div>
@@ -370,10 +371,11 @@ foreach ($tipo_fumigadoraArr as $element){
                             </div>
                         </td>
                         <td></td>
+                        <td colspan="3"></td>
                     </tr>
                     <tr>
                         <td><strong>A6</strong></td>
-                        <td>Terreno Interno desmalezado m2</td>
+                        <td colspan="5">Terreno Interno desmalezado m2</td>
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <input type="text" class="form-control" id="a_06_01" value="<?php echo $a_06_01 ?>">
@@ -383,7 +385,7 @@ foreach ($tipo_fumigadoraArr as $element){
                     </tr>
                     <tr>
                         <td><strong>A5</strong></td>
-                        <td>Terreno Externo desmalezado m2</td>
+                        <td colspan="5">Terreno Externo desmalezado m2</td>
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <input type="text" class="form-control" id="a_07_01" value="<?php echo $a_07_01 ?>">
@@ -393,7 +395,7 @@ foreach ($tipo_fumigadoraArr as $element){
                     </tr>
                     <tr>
                         <td><strong>A7</strong></td>
-                        <td>Total Terreno desmalezado (Interno+externo) m2</td>
+                        <td colspan="5">Total Terreno desmalezado (Interno+externo) m2</td>
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <input type="text" class="form-control" id="a_08_01" value="<?php echo $a_08_01 ?>">
@@ -403,7 +405,7 @@ foreach ($tipo_fumigadoraArr as $element){
                     </tr>
                     <tr>
                         <td><strong>A6</strong></td>
-                        <td>Terreno Interno aplicado con herbicida m2</td>
+                        <td colspan="5">Terreno Interno aplicado con herbicida m2</td>
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <input type="text" class="form-control" id="a_09_01" value="<?php echo $a_09_01 ?>">
@@ -413,7 +415,7 @@ foreach ($tipo_fumigadoraArr as $element){
                     </tr>
                     <tr>
                         <td><strong>A8</strong></td>
-                        <td>Terreno Externo aplicado con herbicida m2</td>
+                        <td colspan="5">Terreno Externo aplicado con herbicida m2</td>
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <input type="text" class="form-control" id="a_10_01" value="<?php echo $a_10_01 ?>">
@@ -422,7 +424,7 @@ foreach ($tipo_fumigadoraArr as $element){
                     </tr>
                     <tr>
                         <td><strong>A9</strong></td>
-                        <td>Total Terreno aplicado con herbicida m2</td>
+                        <td colspan="5">Total Terreno aplicado con herbicida m2</td>
                         <td>
                             <div class="input-group input-group-sm mb-2">
                                 <input type="text" class="form-control" id="a_11_01" value="<?php echo $a_11_01 ?>">
@@ -457,12 +459,40 @@ foreach ($tipo_fumigadoraArr as $element){
             </div>
 
             <div class="col">
-                <h6 class="mb-0">F: Diagrama del sitio</h6>
-                <table class="table table-bordered mb-0">
-                    <tbody>
+                <h6 class="mb-2">F: Diagrama del sitio</h6>
+                <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
+                <div class="input-group mb-2">
+                    <input class="form-control form-control-sm" type="file" id="imagen" name="imagen">
+                    <button class="btn btn-sm btn-outline-primary" type="button" id="btn-subirimagen" name="btn-subirimagen"><i class='bx bx-plus'></i></button>
 
-                    </tbody>
-                </table>
+                    <input type="hidden" name="idrutina" id="idrutina" value="<? echo $idrutina; ?>" />
+                    <input type="hidden" name="cform" id="cform" value="<? echo $cform; ?>" />
+                </div>
+                <?php } ?>
+
+                <div class="card" id="diagramaDiv">
+                    <?php
+                    $res3 = mysqli_query($conexion, "SELECT r.id, r.cabecera, ru.estado, r.imagen FROM rutina$cform r
+                                                            left join rutina ru on r.idrutina = ru.idrutina
+                                                            WHERE r.idrutina = ".$idrutina);
+                    $data3 = mysqli_fetch_array($res3);
+
+                    $imgDiagrama = '';
+                    $imagenAnt = '';
+                    $imagenNombre = '';
+                    if ( isset($data3['imagen']) ){
+                        $imagen = $data3['imagen'];
+                        $imgDiagrama  = "<img src='../../fotos/$imagen' alt='img'>";
+                        $imagenNombre = $imagen;
+                    }
+                    $imagenAnt = "<input type='hidden' name='imagenAnt' id='imagenAnt' value='$imagenNombre' />";
+
+                    echo $imagenAnt;
+                    echo $imgDiagrama;
+
+                    ?>
+                </div>
+
 
             </div>
 
@@ -470,3 +500,53 @@ foreach ($tipo_fumigadoraArr as $element){
 
     </div>
 </div>
+
+<script type=text/javascript>
+    $(document).ready(function () {
+
+        var btnEnviar = $("#btn-subirimagen");
+
+        $('#btn-subirimagen').click(function(){
+
+            var idrutina  = $('#idrutina').val()
+            var cform     = $('#cform').val()
+            var imagenAnt = $('#imagenAnt').val()
+
+            var size = document.getElementsByName("imagen")[0].files[0].size;
+            var docsize = ((size / 1024)/1000);
+
+            if ( docsize < 5) {
+                var frmData = new FormData;
+                frmData.append("imagen", $("input[name=imagen]")[0].files[0]);
+                frmData.append("idrutina", idrutina);
+                frmData.append("cform", cform);
+                frmData.append("imagenAnt", imagenAnt);
+
+                $.ajax({
+                    url: 'subir_diagrama.php',
+                    type: 'POST',
+                    data: frmData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    beforeSend: function (data) {
+                        btnEnviar.attr("disabled", true);
+                        btnEnviar.html('<div class="spinner-border spinner-border-sm" role="status"></div>');
+                    },
+                    success: function (data) {
+                        alert(data);
+                        $("#diagramaDiv").load(window.location + " #diagramaDiv");
+                        document.querySelector('#imagen').value = "";
+                        btnEnviar.html('<i class="bx bx-plus"></i>');
+                        btnEnviar.attr("disabled", false);
+                    }
+                })
+            } else{
+                alert( 'No es posible, el archivo supera los 5MB' )
+            }
+            return false;
+
+        });
+
+    });
+</script>

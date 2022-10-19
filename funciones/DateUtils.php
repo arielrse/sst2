@@ -20,4 +20,9 @@ function timeDiff($time1, $time2){
     return $diff->format('%H hrs %i min');
 }
 
+function currentMonthLiteral(){
+    $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+    return $meses[date('n')-1];
+}
+
 ?>

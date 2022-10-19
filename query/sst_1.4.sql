@@ -12,3 +12,5 @@ CREATE TABLE `rutina017` (
   CONSTRAINT `rutina017_ibfk_1` FOREIGN KEY (`idrutina`) REFERENCES `rutina` (`idrutina`),
   CONSTRAINT `rutina017_ibfk_2` FOREIGN KEY (`idevento`) REFERENCES `evento` (`idevento`)
 ); 
+
+ALTER TABLE rutina017 ADD COLUMN imagen VARCHAR(100);

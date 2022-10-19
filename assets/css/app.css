@@ -799,6 +799,11 @@ a {
   height:40px;
 }
 
+.chart-container-14{
+	position:relative;
+	height:400px;
+}
+
 .w_chart {
 	position: relative;
 	display: inline-block;

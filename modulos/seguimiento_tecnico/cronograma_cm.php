@@ -107,7 +107,7 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
 
         <table width="100%"  class="table table-sm mb-0 table-bordered table-hover">
         <!--<caption>CRONOGRAMA CENTRO DE MANTENIMIENTO</caption>-->
-            <tr>
+            <tr bgcolor="#d3d3d3">
                 <td width="1%"  class="small text-dark" align="center">F.</td>
                 <td width="20%" class="small text-dark" align="center">GRUPO 1</td>
                 <td width="20%" class="small text-dark" align="center">GRUPO 2</td>
@@ -137,9 +137,9 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
             $grupo          = $dato['codigog'];
             $fechaInicio    = $dato['inicio'];
             $fechaFin       = $dato['fin'];
+            $estado         = $dato['estado'];
 
             $fecha = explode("-", $dato['inicio']);
-            $estado = "";
 
             //$editarEvento = "$link_modulo?path=evento_editar.php&event=".$idevento;
             $href = "$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$dato['idgrupo'];
@@ -147,14 +147,26 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
             $f = intval($fecha[2]);
             $c = $dato['codigog'];
 
-            $a[$f][$c] = "<span class='small'><a href='$href'>" . $dato['nombre'] . "</a></span>";
+            if ($estado == "PEN") $stateClass = "text-danger";
+            if ($estado == "EJE") $stateClass = "text-primary";
+            if ($estado == "REP") $stateClass = "text-warning";
+
+
+            if ( isset($a[$f][$c]) ){
+                $a[$f][$c] .= "<br />";
+                $a[$f][$c] .= "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
+            }
+            else{
+                $a[$f][$c] = "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
+
+            }
 
         }
 
         // Mostrando matriz con datos pcargados previamente
         $html_tr = "";
         for ($i=1;$i<=$ultimoDiaMes;$i++){
-            $html_tr .= '<tr onmouseover="setPointer(this, \'#DADADA\')" onmouseout="setPointer(this, \'#FFFFFF\')">';
+            $html_tr .= '<tr>';
             for($j=0;$j<6;$j++) {
                 $var = isset($a[$i][$j]) ? $a[$i][$j] : '';
                 $html_tr .= "<td class='small'>". $var ."</td>";
@@ -163,7 +175,7 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
         }
         print $html_tr;
         ?>
-            <tr>
+            <tr bgcolor="#d3d3d3">
                 <td width="1%"  class="small text-dark" align="center">F.</td>
                 <td width="20%" class="small text-dark" align="center">GRUPO 1</td>
                 <td width="20%" class="small text-dark" align="center">GRUPO 2</td>

@@ -5,7 +5,7 @@ $idevento = $_GET['event'];
 $idgrupo = $_GET['gp'];
 
 
-$resultado = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep` 
+$resultado = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`, e.estado
                                             FROM evento e 
                                             LEFT JOIN sitio s ON e.`idsitio` = s.`idsitio`
                                             LEFT JOIN centro c ON s.`idcentro` = c.`idcentro`
@@ -26,6 +26,7 @@ $datoGp = mysqli_fetch_array($result);
 $propertyId  = $dato['nombre'];
 $sitioId     = $dato['codsitio'];
 $cm          = $dato['nombreCentro'];
+$estado      = $dato['estado'];
 $fechaMtto   = $dato['inicio'];
 $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y');
 ?>
@@ -65,7 +66,21 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                     <h6 class="card-title"><? echo $propertyId . " - " . $cm ?></h6>
                     <div class="d-flex gap-2 py-2">
                         <div class="text-secondary"><i class='bx bxs-calendar-plus align-middle'></i><?php echo " " .$fechaInicio ?></div>
-                        <!--<div class="text-danger"><i class='bx bxs-star align-middle'></i> Pendiente</div>-->
+                        <?php if ( isAdmin() || isExpert() ) { ?>
+                        <div>
+                            <select id="select-estado">
+                                <?php
+                                $stateArr = ["PEN" => "Pendiente", "EJE" => "Ejecutado", "REP" => "Reprogramado ejecutado"];
+                                $optionsState = "";
+                                foreach ($stateArr as $estadoParam => $valor){
+                                    $selected = ($estado == $estadoParam) ? 'selected' : '';
+                                    $optionsState .= "<option value='$estadoParam' $selected>$valor</option>";
+                                }
+                                echo $optionsState;
+                                ?>
+                            </select>
+                        </div>
+                        <?php } ?>
                     </div>
 
                     <ul class="nav nav-tabs nav-primary mb-0" role="tablist">
@@ -530,5 +545,33 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 
         });
 
+    });
+
+    $(document).ready(function () {
+        $('#select-estado').change(function(){
+
+            //var id = $(this).find(':selected')[0].id;
+            var idevento = $('#idevento').val()
+            var estado   = $('#select-estado').val();
+
+            alert('Actualizando... ');
+
+            var frmData = new FormData;
+            frmData.append("idevento", idevento);
+            frmData.append("estado", estado);
+
+            $.ajax({
+                url: 'cambiar_estadoevento.php',
+                type: 'POST',
+                data: frmData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    alert(data);
+                }
+            })
+            return false;
+        });
     });
 </script>
