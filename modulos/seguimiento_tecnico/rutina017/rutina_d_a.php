@@ -67,7 +67,7 @@ foreach ($tipo_fumigadoraArr as $element){
                 <td>Marca del Herbicida</td>
                 <td>
                     <div class="input-group input-group-sm mb-2">
-                        <input type="text" class="form-control" id="$d_01_01" value="<?php echo $d_01_01 ?>">
+                        <input type="text" class="form-control" id="d_01_01" value="<?php echo $d_01_01 ?>">
                     </div>
                 </td>
                 <td>Cantidad Utilizada x tanque de fumigado [ml o gr]</td>

@@ -432,32 +432,181 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
     return $plantilla;
 }
 
-function get_b1_plantilla($jsonData){
+function getCabeceraRutina17($conexion, $jsonData, $idgrupo, $titulo, $idevento){
+
+    $resIden = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`,
+                                                d.`nombre` AS departamento, s.`provincia`, s.`localidad`, s.`municipio`
+                                                FROM evento e 
+                                                LEFT JOIN sitio s 	 ON e.`idsitio` = s.`idsitio`
+                                                LEFT JOIN centro c 	 ON s.`idcentro` = c.`idcentro`
+                                                LEFT JOIN departamento d ON c.`iddepartamento` = d.`iddepartamento`
+                                                WHERE e.`idevento` = ".$idevento);
+    $dataIden = mysqli_fetch_array($resIden);
+    $departamento   = $dataIden['departamento'];
+    $provincia      = $dataIden['provincia'];
+    $localidad      = $dataIden['localidad'];
+    $municipio      = $dataIden['municipio'];
+    //$latitud        = $dataIden['latitud'];
+    //$longitud       = $dataIden['longitud'];
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
     $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
-    $b1_noAplica   = $obj->{'b1_noAplica'} ? $check : $uncheck;
-    $b1_idenActivo = $obj->{'b1_idenActivo'} ? $obj->{'b1_idenActivo'} : "";
-    $b1_nroActivo  = $obj->{'b1_nroActivo'} ? $obj->{'b1_nroActivo'} : "";
 
-    $plantilla = '
+    //$cm                 = $obj->{'cm'};
+    $sitioId            = $obj->{'sitioId'};
+    $propertyId         = $obj->{'propertyId'};
+    //$b_idenActivo       = $obj->{'b_idenActivo'};
+    //$b_nroActivo        = $obj->{'b_nroActivo'};
+
+    $c_fechadesmelazado = dateToLiteral($obj->{'c_fechadesmelazado'});
+    $c_fechaherbicida = dateToLiteral($obj->{'c_fechaherbicida'});
+    $d_horainicio   = $obj->{'d_horainicio'};
+    $d_horafin      = $obj->{'d_horafin'};
+    $tiempoTrans    = timeDiff($d_horainicio, $d_horafin);
+    $d_horainicio1   = $obj->{'d_horainicio1'};
+    $d_horafin1      = $obj->{'d_horafin1'};
+    $tiempoTrans1    = timeDiff($d_horainicio1, $d_horafin1);
+    //---------------------------
+    $dataPers = getPersonalOyM($conexion, $obj->{'e_personal'});
+    $nombre1 = $dataPers['nombre'];
+    $cargo1  = $dataPers['cargo'];
+    $cel1    = $dataPers['cel'];
+
+    $dataPersMtto = getPersonalMtto($conexion, $idgrupo);
+    $nombre2 = $dataPersMtto['nombre2'];
+    $nombre3 = $dataPersMtto['nombre3'];
+    $cargo2  = $dataPersMtto['cargo2'];
+    $cargo3  = $dataPersMtto['cargo3'];
+    $cel2    = $dataPersMtto['cel2'];
+    $cel3    = $dataPersMtto['cel3'];
+    //---------------------------
+
+    $plantilla =
+
+        '<table>
+        <tr>
+            <th class="col-2">
+                <div><img src="../../../img/logo-entel.png" width="90" alt="" /></div>
+            </th>
+            <th class="col-10 company-details">
+                <div>
+                    <div>RMP-DYAH-006/2022</div>
+                    <div>Subgerencia de Operación y Mantenimiento</div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th class="text-center" colspan="2">
+                <h4>'. $titulo .'</h4>
+            </th>
+        </tr>
+    </table>
     <main>
         <div class="notices">
-            <div class="notice"><strong>B1. Identificación del Activo Madre</strong></div>
+            <div class="notice"><strong>A. Identificación del Sitio</strong></div>
         </div>
     </main>
     <main>
-        <table>
-            <tbody>
+        <table class="table tborder mb-0">
+              <tbody>
+                    <tr>
+                        <td class="col-25p no">Departamento:</td>
+                        <td class="col-25p">'. $departamento .'</td>
+                        
+                        <td class="col-15p no">Provincia:</td>
+                        <td class="col-25p" colspan="3">'. $provincia .'</td>
+                    </tr>
+                    <tr>
+                        <td class="col-25p no">Localidad:</td>
+                        <td class="col-25p">'. $localidad .'</td>
+                        
+                        <td class="col-15p no">Municipio:</td>
+                        <td class="col-25p" colspan="3">'. $municipio .'</td>
+                    </tr>
+                    <tr>
+                        <td class="col-25p no">ID Sitio:</td>
+                        <td class="col-25p">'. $sitioId .'</td>
+                        
+                        <td class="col-15p no">Property_id:</td>
+                        <td class="col-25p" colspan="3">'. $propertyId .'</td>
+                    </tr>
+              </tbody>
+        </table>
+    </main>
+    <main>
+        <div class="notices">
+            <div class="notice"><strong>B. Datos de la Intervencion</strong></div>
+        </div>
+    </main>
+      <main>
+        <table class="table tborder mb-0">
+              <tbody>
+                    <tr>
+                        <td class="col-25p no">Fecha de desmalezado:</td>
+                        <td class="col-25p">'.$c_fechadesmelazado.'</td>
+                        
+                        <td class="col-15p no">Fecha de aplicación de herbicida:</td>
+                        <td class="col-25p">'.$c_fechaherbicida.'</td>
+                    </tr>
+                    <tr>
+                        <td class="col-25p no">Hora Inicio:</td>
+                        <td class="col-25p">'.$d_horainicio.'</td>
+                        
+                        <td class="col-15p no">Hora Inicio:</td>
+                        <td class="col-25p">'.$d_horainicio1.'</td>
+                    </tr>
+                     <tr>
+                        <td class="col-25p no">Hora Fin:</td>
+                        <td class="col-25p">'.$d_horafin.'</td>
+                        
+                        <td class="col-15p no">Hora Fin:</td>
+                        <td class="col-25p">'.$d_horafin1.'</td>
+                    </tr>
+                     <tr>
+                        <td class="col-25p no">Tiempo Transcurrido:</td>
+                        <td class="col-25p">'.$tiempoTrans.'</td>
+                        
+                        <td class="col-15p no">Tiempo Transcurrido:</td>
+                        <td class="col-25p">'.$tiempoTrans1.'</td>
+                    </tr>
+              </tbody>
+        </table>
+    </main>
+    <main>
+        <div class="notices">
+            <div class="notice"><strong>C. Personal Técnico Responsable</strong></div>
+        </div>
+    </main>	
+    <main>
+        <table class="tborder">
+            <tbody> 
                 <tr>
-                    <td class="col-10p no">NO APLICA</td>
-                    <td class="col-5p" align="center">'.$b1_noAplica.'</td>
-                    <td class="col-13p no">Identificación:</td>
-                    <td>'.$b1_idenActivo.'</td>
-                    <td class="col-13p no">N° Activo Fijo:</td>
-                    <td>'.$b1_nroActivo.'</td>
-                </tr>     
+                    <td class="col-8p no">Nombre:</td>
+                    <td class="col-30p">'.$nombre1.'</td>
+                    <td class="col-7p no">Cargo:</td>
+                    <td class="col-35p">'.$cargo1.'</td>
+                    <td class="col-10p no">Teléfono:</td>
+                    <td class="col-8p">'.$cel1.'</td>
+                </tr>
+                <tr>
+                    <td class="col-8p no">Nombre:</td>
+                    <td class="col-30p">'.$nombre2.'</td>
+                    <td class="col-7p no">Cargo:</td>
+                    <td class="col-35p">'.$cargo2.'</td>
+                    <td class="col-10p no">Teléfono:</td>
+                    <td class="col-8p">'.$cel2.'</td>
+                </tr>
+                <tr>
+                    <td class="col-8p no">Nombre:</td>
+                    <td class="col-30p">'.$nombre3.'</td>
+                    <td class="col-7p no">Cargo:</td>
+                    <td class="col-35p">'.$cargo3.'</td>
+                    <td class="col-10p no">Teléfono:</td>
+                    <td class="col-8p">'.$cel3.'</td>
+                </tr>
+                
+                
             </tbody>        
         </table>									                        
     </main>
