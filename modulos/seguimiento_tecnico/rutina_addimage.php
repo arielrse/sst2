@@ -149,25 +149,8 @@ $resultado = mysqli_query($conexion, $query);
         $('#select-titulo').change(function(){
 
             var titulo   = $('#select-titulo').val();
-            alert('Titulo: ' + titulo);
 
             document.querySelector('#titulo').value = titulo;
-
-            /*var frmData = new FormData;
-            frmData.append("idevento", idevento);
-            frmData.append("estado", estado);*/
-
-            /*$.ajax({
-                url: 'cambiar_estadoevento.php',
-                type: 'POST',
-                data: frmData,
-                processData: false,
-                contentType: false,
-                cache: false,
-                success: function (data) {
-                    alert(data);
-                }
-            })*/
 
             return false;
         });
