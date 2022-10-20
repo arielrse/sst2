@@ -16,7 +16,13 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax){
     $reporteFotog    = getReporteFotog($conexion, $idrutinax, '017');
     //$footerPlantilla .= $reporteFotog;
 
-    //---------------------------
+    /** Diagrama */
+    $query = "select id, imagen from rutina017 where id='$idrutinax'";
+    $resultado = mysqli_query($conexion, $query);
+    $resArr = mysqli_fetch_array($resultado);
+    $nombreImagen = $resArr['imagen'];
+
+
 
     /** g_desarrollo **/
 
@@ -292,10 +298,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax){
                                 <div class="notices">
                                     <div class="notice"><strong>'.constant('FTITLE').'</strong></div>
                                 </div>
-                                <table class="tborder">
-                                  
-                                   
-                                </table>
+                                <div>
+                                    <img src="../../../fotos/'.$nombreImagen.'" style="width: auto; height: 400px; margin: auto;display: block;" />
+                                </div>
                             </td>
                         </tr>
                     </table>

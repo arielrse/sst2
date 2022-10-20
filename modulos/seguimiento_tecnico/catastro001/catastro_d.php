@@ -40,7 +40,7 @@ foreach ($estadoArr as $element){
     $estadoOption .= "<option value='$element' $selected>".$element."</option>";
 }
 /* --------------------------------------------------------------------- */
-$derivacionArr = ["14,4", "19,9"];
+$derivacionArr = [ "34,4"," 24.9","19,9","18","14,4", "12", "6"];
 $derivacionOption = "<option>Seleccionar...</option>";
 foreach ($derivacionArr as $element){
     $selected = "";
