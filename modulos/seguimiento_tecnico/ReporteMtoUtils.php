@@ -615,6 +615,39 @@ function getCabeceraRutina17($conexion, $jsonData, $idgrupo, $titulo, $idevento)
     return $plantilla;
 }
 
+function get_b1_plantilla($jsonData){
+
+    $obj = json_decode($jsonData);
+    $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
+    $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
+    $b1_noAplica   = $obj->{'b1_noAplica'} ? $check : $uncheck;
+    $b1_idenActivo = $obj->{'b1_idenActivo'} ? $obj->{'b1_idenActivo'} : "";
+    $b1_nroActivo  = $obj->{'b1_nroActivo'} ? $obj->{'b1_nroActivo'} : "";
+
+    $plantilla = '
+    <main>
+        <div class="notices">
+            <div class="notice"><strong>B1. Identificación del Activo Madre</strong></div>
+        </div>
+    </main>
+    <main>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col-10p no">NO APLICA</td>
+                    <td class="col-5p" align="center">'.$b1_noAplica.'</td>
+                    <td class="col-13p no">Identificación:</td>
+                    <td>'.$b1_idenActivo.'</td>
+                    <td class="col-13p no">N° Activo Fijo:</td>
+                    <td>'.$b1_nroActivo.'</td>
+                </tr>     
+            </tbody>        
+        </table>									                        
+    </main>
+    ';
+    return $plantilla;
+}
+
 function getFooter($jsonData){
 
     $obj = json_decode($jsonData);
