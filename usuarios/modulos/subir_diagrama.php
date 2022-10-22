@@ -1,5 +1,6 @@
 <?php
 require("../../funciones/motor.php");
+require("../../funciones/ImageUtils.php");
 
     $idrutina   = $_POST['idrutina'];
     $cform      = $_POST['cform'];
@@ -15,6 +16,8 @@ require("../../funciones/motor.php");
     if (move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_guardar_archivo)){
         $query = "update rutina$cform set imagen = '$nombre_archivo' where idrutina = $idrutina";
         $resultado = mysqli_query($conexion, $query);
+
+        adjustPhotoOrientation($ruta_guardar_archivo);
 
         if ($imagenAnt != ''){
             unlink($ruta_carpeta . $imagenAnt);

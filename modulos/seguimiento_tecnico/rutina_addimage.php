@@ -1,8 +1,10 @@
 <?php
+
 $idrutina = $_GET['rut'];
 $propertyId = $_GET['propertyId'];
 $nombreForm = $_GET['nombreForm'];
 $estado = $_GET['estado'];
+$codform = $_GET['codform'];
 
 $query = "select * from rutina_imagen where idrutina='$idrutina' order by id desc ";
 $resultado = mysqli_query($conexion, $query);
@@ -16,7 +18,6 @@ $resultado = mysqli_query($conexion, $query);
             <div class="row">
                 <div class="col-lg-12">
                     <h6 class="text-primary"><?php echo $propertyId . " - " . $nombreForm ?></h6>
-                    <!--<form id="formSubirImg" action="subir_imagen.php" method="POST" enctype="multipart/form-data">-->
                         <input type="hidden" name="idrutina" id="idrutina" value="<? echo $idrutina; ?>" />
                         <div class="form-group">
 
@@ -28,11 +29,27 @@ $resultado = mysqli_query($conexion, $query);
                         </div>
                         <div class="form-group mb-2">
                             <label for="titulo">Titulo de la Imagen</label>
+
+                            <?php
+                            $res = mysqli_query($conexion, "select titulo, codform from rutina_titulos where codform = '$codform'");
+
+                            $selectTitulos = '<select id="select-titulo" class="form-control form-control-sm">
+                                                <option value="">Seleccionar</option>';
+
+                            while( $data = mysqli_fetch_array($res) ){
+                                $selectTitulos .= '<option value="'.$data['titulo'].'">'.$data['titulo'].'</option>';
+                            }
+                            $selectTitulos .= '</select>';
+                            echo $selectTitulos;
+                            ?>
+                        </div>
+
+                        <div class="form-group mb-2">
                             <input id="titulo" name="titulo" class="form-control form-control-sm" type="text">
                         </div>
 
                         <div class="row row-cols-auto pb-2">
-                            <?php /*if ( !isClient() || !isNationalClient() )*/
+                            <?php
                             $botonCargar = ($estado == 'PEN') ? '<button type="button" class="btn btn-primary" id="cargar" name="cargar">Cargar Imagen</button>' : '';
                             $botonCargar = (!isClient() && !isNationalClient()) ? $botonCargar : "";
                             ?>
@@ -49,7 +66,6 @@ $resultado = mysqli_query($conexion, $query);
 
                         </div>
 
-                    <!--</form>-->
                 </div>
 
             </div>
@@ -80,7 +96,7 @@ $resultado = mysqli_query($conexion, $query);
 
 
 
-                            <?php if ( !isClient() || !isNationalClient() ) { ?>
+                                <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                                 <a href='' id="link-eliminar" onclick="eliminarImagen(<?php echo $idImg ?>); return false;"><i class="lni lni-close"></i></a>
                             <?php } ?>
 
@@ -128,6 +144,17 @@ $resultado = mysqli_query($conexion, $query);
             })
         }
     }
+
+    $(document).ready(function () {
+        $('#select-titulo').change(function(){
+
+            var titulo   = $('#select-titulo').val();
+
+            document.querySelector('#titulo').value = titulo;
+
+            return false;
+        });
+    });
 
     $(document).ready(function () {
 
