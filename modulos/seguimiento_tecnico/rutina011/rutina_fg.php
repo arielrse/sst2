@@ -57,11 +57,11 @@ $g2_04_01 = $g_desarrollo_g2->g2_04_01 ? "checked" : "";  $g2_04_02 = $g_desarro
 
 $g_desarrollo_g3 = $obj->{'g_desarrollo_g3'};
 $g3_01_01_01 = $g_desarrollo_g3->g3_01_01_01; $g3_01_01_02 = $g_desarrollo_g3->g3_01_01_01; $g3_01_01_03 = $g_desarrollo_g3->g3_01_01_03;
-$g3_01_02_01 = $g_desarrollo_g3->g3_01_02_01; $g3_01_02_02 = $g_desarrollo_g3->g3_01_02_01; $g3_01_02_03 = $g_desarrollo_g3->g3_01_02_03;
-$g3_02_01_01 = $g_desarrollo_g3->g3_02_01_01 ? "checked" : ""; $g3_02_01_02 = $g_desarrollo_g3->g3_02_01_01 ? "checked" : ""; $g3_02_01_03 = $g_desarrollo_g3->g3_02_01_03;
-$g3_02_02_01 = $g_desarrollo_g3->g3_02_02_01 ? "checked" : ""; $g3_02_02_02 = $g_desarrollo_g3->g3_02_02_01 ? "checked" : ""; $g3_02_02_03 = $g_desarrollo_g3->g3_02_02_03;
-$g3_02_03_01 = $g_desarrollo_g3->g3_02_03_01 ? "checked" : ""; $g3_02_03_02 = $g_desarrollo_g3->g3_02_03_01 ? "checked" : ""; $g3_02_03_03 = $g_desarrollo_g3->g3_02_03_03;
-$g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_03 = $g_desarrollo_g3->g3_02_04_03;
+$g3_01_02_01 = $g_desarrollo_g3->g3_01_02_01; $g3_01_02_02 = $g_desarrollo_g3->g3_01_02_02; $g3_01_02_03 = $g_desarrollo_g3->g3_01_02_03;
+$g3_02_01_01 = $g_desarrollo_g3->g3_02_01_01 ? "checked" : ""; $g3_02_01_02 = $g_desarrollo_g3->g3_02_01_02 ? "checked" : ""; $g3_02_01_03 = $g_desarrollo_g3->g3_02_01_03;
+$g3_02_02_01 = $g_desarrollo_g3->g3_02_02_01 ? "checked" : ""; $g3_02_02_02 = $g_desarrollo_g3->g3_02_02_02 ? "checked" : ""; $g3_02_02_03 = $g_desarrollo_g3->g3_02_02_03;
+$g3_02_03_01 = $g_desarrollo_g3->g3_02_03_01 ? "checked" : ""; $g3_02_03_02 = $g_desarrollo_g3->g3_02_03_02 ? "checked" : ""; $g3_02_03_03 = $g_desarrollo_g3->g3_02_03_03;
+$g3_02_04_01 = $g_desarrollo_g3->g3_02_04_01 ? "checked" : ""; $g3_02_04_02 = $g_desarrollo_g3->g3_02_04_02 ? "checked" : ""; $g3_02_04_03 = $g_desarrollo_g3->g3_02_04_03;
 ?>
 <div class="row">
     <div class="col-xl-12 mx-auto">

@@ -471,8 +471,8 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
                                 <td colspan="2">'.constant('G3_05').'</td>
                             </tr>
                             <tr>
-                                <td class="col-15p">'.$g3_05_01.' Equilibrado</td>
-                                <td class="col-15p">'.$g3_05_02.' Desquilibrado </td>
+                                <td class="col-15p">'.$g3_05_01.' Caliente</td>
+                                <td class="col-15p">'.$g3_05_02.' Normal </td>
                             </tr>
                         </tbody>        
                     </table>
