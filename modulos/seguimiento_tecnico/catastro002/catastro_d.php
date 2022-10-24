@@ -68,7 +68,7 @@ foreach ($termomagneticoArr as $element){
 
 }
 /* --------------------------------------------------------------------- */
-$protec_principalArr = ["Termomagnético", "Breiker"];
+$protec_principalArr = ["Termomagnetico", "Breiker"];
 $protec_principalOption = "<option>Seleccionar...</option>";
 foreach ($protec_principalArr as $element){
     $selected = "";
