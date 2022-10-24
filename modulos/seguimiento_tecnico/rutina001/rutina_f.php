@@ -105,7 +105,7 @@ $f09_3 = $f_verificacion[8]->f09_3;
                 </td>
                 <td>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="f03_2" <?php echo $f03_3 ?> value="option2">
+                        <input class="form-check-input" type="checkbox" id="f03_2" <?php echo $f03_2 ?> value="option2">
                         <label class="form-check-label" for="f03_2">No</label>
                     </div>
                 </td>
