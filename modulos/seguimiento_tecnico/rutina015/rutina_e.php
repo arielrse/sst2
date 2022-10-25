@@ -32,9 +32,18 @@ $g2_07_01 = $g_desarrollo_g2->g2_07_01 ? "checked" : ""; $g2_07_02 = $g_desarrol
 $g2_08_01 = $g_desarrollo_g2->g2_08_01 ? "checked" : ""; $g2_08_02 = $g_desarrollo_g2->g2_08_02 ? "checked" : ""; $g2_08_03 = $g_desarrollo_g2->g2_08_03;
 $g2_09_01 = $g_desarrollo_g2->g2_09_01 ? "checked" : ""; $g2_09_02 = $g_desarrollo_g2->g2_09_02 ? "checked" : ""; $g2_09_03 = $g_desarrollo_g2->g2_09_03;
 
+$obj = json_decode($jsonCab);
+
 ?>
 
 <h6>E. Sistema de Transporte FIBRA OPTICA</h6>
+
+<?php require("rutina_e_tabla1.php"); ?>
+
+<?php require("rutina_e_tabla2.php"); ?>
+
+<?php require("rutina_e_tabla3.php"); ?>
+
 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
     <div class="col">
         <div class="card">
