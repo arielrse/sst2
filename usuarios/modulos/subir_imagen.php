@@ -4,11 +4,12 @@ require("../../funciones/ImageUtils.php");
 
     $idrutina = $_POST['idrutina'];
     $titulo = $_POST['titulo'];
+    $coddep = $_POST['coddep'];
 
     $ruta_carpeta = "../../fotos/";
     $imagen = $_FILES['imagen']['name'];
 
-    $nombre_archivo = "IMG_".date("dHis") . "." . pathinfo($imagen, PATHINFO_EXTENSION);
+    $nombre_archivo = "IMG_".$coddep."_".$idrutina."_".date("dHis") . "." . pathinfo($imagen, PATHINFO_EXTENSION);
     $ruta_guardar_archivo = $ruta_carpeta . $nombre_archivo;
 
 
