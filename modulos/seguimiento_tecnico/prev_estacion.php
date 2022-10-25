@@ -504,7 +504,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
     $(document).ready(function () {
 
         var btnEnviar = $("#btn-subirdoc");
-        //var textoSubiendo = "Cargando imagen...";
+
         $('#btn-subirdoc').click(function(){
 
             var idevento  = $('#idevento').val()
