@@ -9,7 +9,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax){
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
     $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
-    $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - SISTEMA DE ALIMENTACION ININTERRUMPIDA';
+    $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - INFRAESTRUCTURA DEL SITIO';
     $cabecera        = getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento);
     $footerPlantilla = getFooter($jsonData);
 

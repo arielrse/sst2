@@ -1,19 +1,24 @@
-{
-  "cm": "",
-  "sitioId": "",
-  "propertyId": "",
-  "b_idenActivo": "001",
-  "b_nroActivo": "",
-  "b1_noAplica": false,
-  "b1_idenActivo": "",
-  "b1_nroActivo": "",
-  "d_horainicio": "",
-  "d_horafin": "",
-  "d_transcurrido": "",
-  "c_fechaRealizacion": "",
-  "e_personal": [
-    { "nombre": "Mario","cargo": "","telefono": "" },
-    { "nombre": "Juan","cargo": "","telefono": "" },
-    { "nombre": "Pepe","cargo": "","telefono": "" }
-  ]
-}
+[
+  {
+    "det_puertos": "Detalle puertos ETH",
+    "tarjetas": [
+      {
+        "nombre": "ASR 920",
+        "puertos": [
+          { "puerto": "26", "descripcion": "UPLINK ASR 920", "estado":  "ACTIVO"},
+          { "puerto": "27", "descripcion": "UPLINK ASR 920", "estado":  "ACTIVO"}
+          { "puerto": "28", "descripcion": "UPLINK ASR 920", "estado":  "ACTIVO"}
+        ]
+      },
+      {
+        "nombre": "NCS 540",
+        "puertos": [
+          { "puerto": "11", "descripcion": "BBU 5900 PATACOM GUL", "estado":  "ACTIVO"},
+          { "puerto": "12", "descripcion": "TX NORI ALTA GUL", "estado":  "ACTIVO"},
+          { "puerto": "13", "descripcion": "TX STADIUM PATRIA", "estado":  "ACTIVO"}
+        ]
+      }
+    ]
+  }
+]
+

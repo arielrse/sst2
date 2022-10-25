@@ -5,6 +5,7 @@ $propertyId = $_GET['propertyId'];
 $nombreForm = $_GET['nombreForm'];
 $estado = $_GET['estado'];
 $codform = $_GET['codform'];
+$coddep = $_GET['coddep'];
 
 $query = "select * from rutina_imagen where idrutina='$idrutina' order by id desc ";
 $resultado = mysqli_query($conexion, $query);
@@ -19,6 +20,7 @@ $resultado = mysqli_query($conexion, $query);
                 <div class="col-lg-12">
                     <h6 class="text-primary"><?php echo $propertyId . " - " . $nombreForm ?></h6>
                         <input type="hidden" name="idrutina" id="idrutina" value="<? echo $idrutina; ?>" />
+                        <input type="hidden" name="coddep" id="coddep" value="<? echo $coddep; ?>" />
                         <div class="form-group">
 
                             <div class="mb-3">
@@ -168,11 +170,13 @@ $resultado = mysqli_query($conexion, $query);
 
             var idrutina = $('#idrutina').val()
             var titulo   = $('#titulo').val()
+            var coddep   = $('#coddep').val()
 
             var frmData = new FormData;
             frmData.append("imagen", $("input[name=imagen]")[0].files[0]);
             frmData.append("idrutina", idrutina);
             frmData.append("titulo", titulo);
+            frmData.append("coddep", coddep);
 
             if (fileValidation()) {
                 $.ajax({

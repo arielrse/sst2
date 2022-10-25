@@ -4,11 +4,13 @@ require("../../funciones/motor.php");
     $idevento  = $_POST['idevento'];
     $titulodoc = $_POST['titulodoc'];
 
+    $uid = uniqid();
+
     $ruta_carpeta = "../../docs/";
     $doc = $_FILES['filedoc']['name'];
 
     $extension = pathinfo($doc, PATHINFO_EXTENSION);
-    $nombre_archivo = "DOC_".date("dHis") . "." . $extension;
+    $nombre_archivo = "DOC_".$uid."_".$idevento."_".date("dHis") . "." . $extension;
     $ruta_guardar_archivo = $ruta_carpeta . $nombre_archivo;
 
 

@@ -39,7 +39,7 @@ $municipio      = $dataIden['municipio'];
 
 /* ---------------------------------- */
 //$res3 = mysqli_query($conexion, "SELECT r.id, r.cabecera FROM rutina$cform r WHERE r.idrutina = ".$idrutina);
-$res3 = mysqli_query($conexion, "SELECT r.id, r.cabecera, ru.estado FROM rutina$cform r
+$res3 = mysqli_query($conexion, "SELECT r.id, r.cabecera, ru.estado, r.table_e1, r.table_e2 FROM rutina$cform r
                                         left join rutina ru on r.idrutina = ru.idrutina
                                         WHERE r.idrutina = ".$idrutina);
 
@@ -47,6 +47,9 @@ $data3 = mysqli_fetch_array($res3);
 $jsonCab   = $data3['cabecera'];
 $idrutinax = $data3['id'];
 $estado    = $data3['estado'];
+
+$table_e1  = $data3['table_e1'];
+$table_e2  = $data3['table_e2'];
 
 $obj = json_decode($jsonCab);
 $cm                 = $obj->{'cm'};
