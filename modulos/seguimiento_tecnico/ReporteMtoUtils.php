@@ -70,7 +70,7 @@ function getCabecera($conexion, $jsonData, $idgrupo, $titulo, $activoMadre=false
             </th>
             <th class="col-10 company-details">
                 <div>
-                    <div>RMP-BB-001/2021</div>
+                    <div>RMP-BB-001/2022</div>
                     <div>Subgerencia de Operación y Mantenimiento</div>
                     <div>Sistemas de Energía y Climatización</div>
                 </div>
@@ -261,9 +261,8 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
             </th>
             <th class="col-10 company-details">
                 <div>
-                    <div>RMP-BB-001/2021</div>
+                    <div>RMP-IS-001/2022</div>
                     <div>Subgerencia de Operación y Mantenimiento</div>
-                    <div>Sistemas de Energía y Climatización</div>
                 </div>
             </th>
         </tr>
