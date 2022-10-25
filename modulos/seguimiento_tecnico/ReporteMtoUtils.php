@@ -460,7 +460,7 @@ function getCabeceraRutina17($conexion, $jsonData, $idgrupo, $titulo, $idevento)
     //$b_idenActivo       = $obj->{'b_idenActivo'};
     //$b_nroActivo        = $obj->{'b_nroActivo'};
 
-    $c_fechadesmelazado = dateToLiteral($obj->{'c_fechadesmelazado'});
+    $c_fechaRealizacion = dateToLiteral($obj->{'c_fechaRealizacion'});
     $c_fechaherbicida = dateToLiteral($obj->{'c_fechaherbicida'});
     $d_horainicio   = $obj->{'d_horainicio'};
     $d_horafin      = $obj->{'d_horafin'};
@@ -468,6 +468,9 @@ function getCabeceraRutina17($conexion, $jsonData, $idgrupo, $titulo, $idevento)
     $d_horainicio1   = $obj->{'d_horainicio1'};
     $d_horafin1      = $obj->{'d_horafin1'};
     $tiempoTrans1    = timeDiff($d_horainicio1, $d_horafin1);
+    //---------------------------
+
+
     //---------------------------
     $dataPers = getPersonalOyM($conexion, $obj->{'e_personal'});
     $nombre1 = $dataPers['nombre'];
@@ -545,7 +548,7 @@ function getCabeceraRutina17($conexion, $jsonData, $idgrupo, $titulo, $idevento)
               <tbody>
                     <tr>
                         <td class="col-25p no">Fecha de desmalezado:</td>
-                        <td class="col-25p">'.$c_fechadesmelazado.'</td>
+                        <td class="col-25p">'.$c_fechaRealizacion.'</td>
                         
                         <td class="col-15p no">Fecha de aplicación de herbicida:</td>
                         <td class="col-25p">'.$c_fechaherbicida.'</td>

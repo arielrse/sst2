@@ -22,10 +22,14 @@ $(document).ready(function() {
     //var b1_nroActivo        = $('#b1_nroActivo').val();
     var d_horainicio        = $('#d_horainicio').val();
     var d_horafin           = $('#d_horafin').val();
-    var t_transcurrido      = $('#t_transcurrido').val();
+    //var t_transcurrido      = $('#t_transcurrido').val();
+    var t_transcurrido      = '';
     var c_fechaRealizacion  = $('#c_fechaRealizacion').val();
     var e_personal          = $('#e_personal').val();
 
+    var d_horainicio1        = $('#d_horainicio1').val();
+    var d_horafin1           = $('#d_horafin1').val();
+    var c_fechaherbicida  = $('#c_fechaherbicida').val();
     //var f1_01_01 = $('#f1_01_01').prop('checked'); var f1_01_02 = $('#f1_01_02').prop('checked'); var f1_01_03 = $('#f1_01_03').val();
   //d_herbicida
 var d_01_01 = $('#d_01_01').val(); var d_01_02 = $('#d_01_02').val();
@@ -82,6 +86,9 @@ getDatos().then( (datos) => {
     datos.c_fechaRealizacion = c_fechaRealizacion;
     datos.e_personal         = e_personal;
 
+    datos.d_horainicio1       = d_horainicio1;
+    datos.d_horafin1          = d_horafin1;
+    datos.c_fechaherbicida = c_fechaherbicida;
     /* d_herbicida */
 // datos.b_acceso.b_01_01 = b_01_01;
     datos.d_herbicida.d_01_01 = d_01_01; datos.d_herbicida.d_01_02 = d_01_02;

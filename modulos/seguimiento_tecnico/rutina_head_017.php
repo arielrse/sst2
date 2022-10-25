@@ -1,4 +1,6 @@
 <?php
+require("../../funciones/DateUtils.php");
+
 $idevento = $_GET['event'];
 $idrutina = $_GET['rut'];
 $cform    = $_GET['cform'];
@@ -66,6 +68,16 @@ $d_horainicio       = $obj->{'d_horainicio'};
 $d_horafin          = $obj->{'d_horafin'};
 $t_transcurrido     = $obj->{'t_transcurrido'};
 $e_personal         = $obj->{'e_personal'};
+
+
+$tiempoTrans    = timeDiff($d_horainicio, $d_horafin);
+
+$c_fechaherbicida  = isset($obj->c_fechaherbicida) ? $obj->c_fechaherbicida : "";
+$d_horainicio1      = isset($obj->d_horainicio1) ? $obj->d_horainicio1 : "";
+$d_horafin1         = isset($obj->d_horafin1) ? $obj->d_horafin1 : "";
+$tiempoTrans1    = timeDiff($d_horainicio1, $d_horafin1);
+
+
 
 $res4 = mysqli_query($conexion,
     "SELECT u.id, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nombre, u.`cargo`, u.`cel`
@@ -193,7 +205,7 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
                         <td class="col-xl-4">Tiempo Transcurrido:</td>
                         <td class="col-xl-4">
                             <div class="col-auto">
-                                <input type="time" class="form-control form-control-sm" id="t_transcurrido" value="<?php echo $t_transcurrido ?>">
+                                <?php echo $tiempoTrans ?>
                             </div>
                         </td>
                     </tr>
@@ -212,7 +224,7 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
                         <td class="col-xl-4">Fecha de aplicación de herbicida:</td>
                         <td class="col-xl-4">
                             <div class="col-auto">
-                                <input type="date" class="form-control form-control-sm" id="c_fechaRealizacion" value="<?php echo $c_fechaRealizacion ?>">
+                                <input type="date" class="form-control form-control-sm" id="c_fechaherbicida" value="<?php echo $c_fechaherbicida ?>">
                             </div>
                         </td>
                     </tr>
@@ -221,7 +233,7 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
                         <td class="col-xl-4">Hora de inicio:</td>
                         <td class="col-xl-4">
                             <div class="col-auto">
-                                <input type="time" class="form-control form-control-sm" id="d_horainicio" value="<?php echo $d_horainicio ?>">
+                                <input type="time" class="form-control form-control-sm" id="d_horainicio1" value="<?php echo $d_horainicio1 ?>">
                             </div>
                         </td>
                     </tr>
@@ -230,7 +242,7 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
                         <td class="col-xl-4">Hora Fin:</td>
                         <td class="col-xl-4">
                             <div class="col-auto">
-                                <input type="time" class="form-control form-control-sm" id="d_horafin" value="<?php echo $d_horafin ?>">
+                                <input type="time" class="form-control form-control-sm" id="d_horafin1" value="<?php echo $d_horafin1 ?>">
                             </div>
                         </td>
                     </tr>
@@ -239,7 +251,7 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
                         <td class="col-xl-4">Tiempo Transcurrido:</td>
                         <td class="col-xl-4">
                             <div class="col-auto">
-                                <input type="time" class="form-control form-control-sm" id="t_transcurrido" value="<?php echo $t_transcurrido ?>">
+                                <?php echo $tiempoTrans1 ?>
                             </div>
                         </td>
                     </tr>

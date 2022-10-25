@@ -11,7 +11,7 @@ $codigoForm = $_GET['cform'];
         <h6 class="mb-0 text-uppercase">RUTINA DE MANTENIMIENTO PREVENTIVO - DESMALEZADO Y APLICACIÓN DE HERBICIDA</h6>
         <hr/>
 
-        <?php /*require("rutina013/rutina_head_013.php"); */?>
+
         <?php require("rutina_head_017.php"); ?>
         <?php require("rutina017/rutina_d_a.php"); ?>
 

@@ -14,7 +14,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax){
     $footerPlantilla = getFooter($jsonData);
 
     $reporteFotog    = getReporteFotog($conexion, $idrutinax, '017');
-    //$footerPlantilla .= $reporteFotog;
+    $footerPlantilla .= $reporteFotog;
 
     /** Diagrama */
     $query = "select id, imagen from rutina017 where id='$idrutinax'";
@@ -248,37 +248,37 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax){
                                     </tr>
                                      <tr>
                                         <td><strong>A5</strong></td>
-                                        <td>'.constant('E05').'</td>
+                                        <td colspan="4">'.constant('E05').'</td>
                                         <td><strong>'.$a_05_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A6</strong></td>
-                                        <td>'.constant('E06').'</td>
+                                        <td colspan="4">'.constant('E06').'</td>
                                         <td><strong>'.$a_06_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A5</strong></td>
-                                        <td>'.constant('E07').'</td>
+                                        <td colspan="4">'.constant('E07').'</td>
                                         <td><strong>'.$a_07_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A7</strong></td>
-                                        <td>'.constant('E08').'</td>
+                                        <td colspan="4">'.constant('E08').'</td>
                                         <td><strong>'.$a_08_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A6</strong></td>
-                                        <td>'.constant('E09').'</td>
+                                        <td colspan="4">'.constant('E09').'</td>
                                         <td><strong>'.$a_09_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A8</strong></td>
-                                        <td>'.constant('E10').'</td>
+                                        <td colspan="4">'.constant('E10').'</td>
                                         <td><strong>'.$a_10_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A9</strong></td>
-                                        <td>'.constant('E11').'</td>
+                                        <td colspan="4">'.constant('E11').'</td>
                                         <td><strong>'.$a_11_01.'</strong></td>
                                      </tr>
                                      <tr>
