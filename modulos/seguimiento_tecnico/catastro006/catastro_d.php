@@ -72,7 +72,7 @@ foreach ($inoutdoorArr as $element){
     $inoutdoorOption .= "<option value='$element' $selected>".$element."</option>";
 }
 /* --------------------------------------------------------------------- */
-$protec_principalArr = ["Termomagnético", "Breiker"];
+$protec_principalArr = ["Termomagnetico", "Breiker"];
 $protec_principalOption = "<option>Seleccionar...</option>";
 foreach ($protec_principalArr as $element){
     $selected = "";
