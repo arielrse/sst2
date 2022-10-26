@@ -22,7 +22,7 @@ $d16_01 = $desarrollo_d->d16_01;
 
 $observaciones = $obj->{'observaciones'};
 /* --------------------------------------------------------------------- */
-$grup_electArr = ["Grupo Electrógeno 1", "UPSA", "Grupo Electrógeno 2", "UPSB"];
+$grup_electArr = ["Grupo Electrogeno 1", "UPSA", "Grupo Electrogeno 2", "UPSB"];
 $grup_electOption = "<option>Seleccionar...</option>";
 foreach ($grup_electArr as $element){
     $selected = "";
