@@ -80,7 +80,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
                         </th>
                         <th class="col-10 company-details">
                             <div>
-                                <div>RMP-BB-001/2021</div>
+                                <div>RMP-BB-001/2022</div>
                                 <div>Subgerencia de Operación y Mantenimiento</div>
                                 <div>Sistemas de Energía y Climatización</div>
                             </div>
