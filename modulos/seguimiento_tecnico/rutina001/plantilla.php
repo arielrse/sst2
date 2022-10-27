@@ -3,14 +3,13 @@ require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
 require("variable_text.php");
 
-function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
     $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
-    $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - BANCO DE BATERÍAS';
-    $cabecera        = getCabecera($conexion, $jsonData, $idgrupo, $titulo, true);
+    $cabecera        = getCabecera($conexion, $jsonData, $idgrupo, true, $titulosArr);
     $subPlantilla1   = getSubPlantilla1($jsonData);
     $subPlantilla2   = getSubPlantilla2($jsonData);
     $footerPlantilla = getFooter($jsonData);

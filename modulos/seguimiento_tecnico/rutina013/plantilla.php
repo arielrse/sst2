@@ -3,14 +3,13 @@ require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
 require("variable_text.php");
 
-function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $titulosArr){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
     $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
-    $titulo = 'RUTINA DE MANTENIMIENTO PREVENTIVO - INFRAESTRUCTURA DEL SITIO';
-    $cabecera        = getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento);
+    $cabecera        = getCabeceraRutina13($conexion, $jsonData, $idgrupo, $idevento, $titulosArr);
     $footerPlantilla = getFooter($jsonData);
 
     $reporteFotog    = getReporteFotog($conexion, $idrutinax, '013');

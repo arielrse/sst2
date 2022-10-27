@@ -3,7 +3,7 @@ require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
 require("variable_text.php");
 
-function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
@@ -114,15 +114,15 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax){
                         </th>
                         <th class="col-10 company-details">
                             <div>
-                                <div>RMP-BB-001/2022</div>
-                                <div>Subgerencia de Operación y Mantenimiento</div>
-                                <div>Sistemas de Energía y Climatización</div>
+                                <div><b>'.$titulosArr[1].'</b></div>
+                                <div><b>'.$titulosArr[2].'</b></div>
+                                <div><b>'.$titulosArr[3].'</b></div>
                             </div>
                         </th>
                     </tr>
                     <tr>
                         <th class="text-center" colspan="2">
-                            <h4>RUTINA DE MANTENIMIENTO PREVENTIVO - AIRES ACONDICIONADOS GABINETES</h4>
+                            <h4>'. $titulosArr[0] .'</h4>
                         </th>
                     </tr>
                 </table>

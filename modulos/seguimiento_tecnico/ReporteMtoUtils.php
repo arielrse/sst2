@@ -27,7 +27,7 @@ function getPersonalMtto($conexion, $idgrupo){
     );
 }
 
-function getCabecera($conexion, $jsonData, $idgrupo, $titulo, $activoMadre=false){
+function getCabecera($conexion, $jsonData, $idgrupo, $activoMadre=false, $titulosArr){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
@@ -70,15 +70,15 @@ function getCabecera($conexion, $jsonData, $idgrupo, $titulo, $activoMadre=false
             </th>
             <th class="col-10 company-details">
                 <div>
-                    <div>RMP-BB-001/2022</div>
-                    <div>Subgerencia de Operación y Mantenimiento</div>
-                    <div>Sistemas de Energía y Climatización</div>
+                    <div><b>'.$titulosArr[1].'</b></div>
+                    <div><b>'.$titulosArr[2].'</b></div>
+                    <div><b>'.$titulosArr[3].'</b></div>
                 </div>
             </th>
         </tr>
         <tr>
             <th class="text-center" colspan="2">
-                <h4>'. $titulo .'</h4>
+                <h4>'. $titulosArr[0] .'</h4>
             </th>
         </tr>
     </table>
@@ -199,7 +199,7 @@ function getCabecera($conexion, $jsonData, $idgrupo, $titulo, $activoMadre=false
     return $plantilla;
 }
 
-function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento){
+function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $idevento, $titulosArr){
 
     $resIden = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`,
                                                 d.`nombre` AS departamento, s.`provincia`, s.`localidad`, s.`municipio`, s.latitud, s.longitud
@@ -261,14 +261,15 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
             </th>
             <th class="col-10 company-details">
                 <div>
-                    <div>RMP-IS-001/2022</div>
-                    <div>Subgerencia de Operación y Mantenimiento</div>
+                    <div><b>'.$titulosArr[1].'</b></div>
+                    <div><b>'.$titulosArr[2].'</b></div>
+                    <div><b>'.$titulosArr[3].'</b></div>
                 </div>
             </th>
         </tr>
         <tr>
             <th class="text-center" colspan="2">
-                <h4>'. $titulo .'</h4>
+                <h4>'. $titulosArr[0] .'</h4>
             </th>
         </tr>
     </table>
@@ -432,7 +433,7 @@ function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $titulo, $idevento)
     return $plantilla;
 }
 
-function getCabeceraRutina17($conexion, $jsonData, $idgrupo, $titulo, $idevento){
+function getCabeceraRutina17($conexion, $jsonData, $idgrupo, $idevento, $titulosArr){
 
     $resIden = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`,
                                                 d.`nombre` AS departamento, s.`provincia`, s.`localidad`, s.`municipio`
@@ -494,14 +495,15 @@ function getCabeceraRutina17($conexion, $jsonData, $idgrupo, $titulo, $idevento)
             </th>
             <th class="col-10 company-details">
                 <div>
-                    <div>RMP-DYAH-006/2022</div>
-                    <div>Subgerencia de Operación y Mantenimiento</div>
+                    <div><b>'.$titulosArr[1].'</b></div>
+                    <div><b>'.$titulosArr[2].'</b></div>
+                    <div><b>'.$titulosArr[3].'</b></div>
                 </div>
             </th>
         </tr>
         <tr>
             <th class="text-center" colspan="2">
-                <h4>'. $titulo .'</h4>
+                <h4>'. $titulosArr[0] .'</h4>
             </th>
         </tr>
     </table>
