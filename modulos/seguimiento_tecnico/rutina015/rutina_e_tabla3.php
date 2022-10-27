@@ -37,59 +37,10 @@ $table_e2_arr = json_decode($table_e2, true);
                                                     <th>Descripción</th>
                                                     <th>Estado</th>
                                                 </tr>
-                                                <tr class='align-middle'>
-                                                    <td>26</td>
-                                                    <td>UPLINK ASR 920</td>
-                                                    <td>ACTIVO</td>
-                                                </tr>
-                                                <tr class='align-middle'>
-                                                    <td>27</td>
-                                                    <td>UPLINK ASR 920</td>
-                                                    <td>ACTIVO</td>
-                                                </tr>
-                                                <tr class='align-middle'>
-                                                    <td>28</td>
-                                                    <td>UPLINK ASR 920</td>
-                                                    <td>ACTIVO</td>
-                                                </tr>
                                             </table>
                                         </td>
                                     </tr>
 
-                                    <!--<tr class='align-middle'>
-                                        <td width="15%">
-                                            <div>
-                                                <input type='text' class='form-control form-control-sm' id='' value='NCS 540'>
-                                            </div>
-                                            <div class="text-center mt-1">
-                                                <button type="button" class="btn btn-sm btn-outline-success mb-1" id="btn_add_tpuertos"><i class="bx bx-plus me-0"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <table class="table table-bordered" id="tabla_puertos">
-                                                <tr class='align-middle'>
-                                                    <th width="12%">Slot/Prto</th>
-                                                    <th>Descripción</th>
-                                                    <th>Estado</th>
-                                                </tr>
-                                                <tr class='align-middle'>
-                                                    <td>26</td>
-                                                    <td>UPLINK ASR 920</td>
-                                                    <td>ACTIVO</td>
-                                                </tr>
-                                                <tr class='align-middle'>
-                                                    <td>27</td>
-                                                    <td>UPLINK ASR 920</td>
-                                                    <td>ACTIVO</td>
-                                                </tr>
-                                                <tr class='align-middle'>
-                                                    <td>28</td>
-                                                    <td>UPLINK ASR 920</td>
-                                                    <td>ACTIVO</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>-->
 
                                 </table>
                             </td>
@@ -212,6 +163,24 @@ $table_e2_arr = json_decode($table_e2, true);
         cantT2 = dataT2.length+1;
     }
 
+    function get_uuid() {
+        let uuid =  self.crypto.randomUUID();
+        console.log('uuid: ' + uuid);
+        return uuid;
+    }
+
+    function agregarFilaPuertos(id_table_puertos) {
+        console.log(id_table_puertos);
+
+        var fila =
+        "<tr class='align-middle'>" +
+        "   <td><input type='text' class='form-control form-control-sm' id='"+get_uuid()+"'></td>" +
+        "   <td><input type='text' class='form-control form-control-sm' id='"+get_uuid()+"'></td>" +
+        "   <td><input type='text' class='form-control form-control-sm' id='"+get_uuid()+"'></td>" +
+        "</tr>";
+        $("#"+id_table_puertos).append(fila);
+    }
+
     function agregarFilaEquiposT3() {
 
         var id = new Date().getTime();
@@ -221,18 +190,18 @@ $table_e2_arr = json_decode($table_e2, true);
            "nro": ""
         });
 
-
         var id_row = 'row'+id;
 
         var id_row_equipos   = 'row_eq_' + id;
-        var id_table_puertos = 'row_tab_pto_' + id;
+        var id_table_puertos = 'row_tab_prto_' + id;
+        var id_equipo_name = id_row_equipos + '_' +  (new Date().getTime());
 
         var fila =
             "<tr class='align-middle' id='"+id_row_equipos+"'>" +
             "    <td>" +
-            "        <div><input type='text' class='form-control form-control-sm' id='' value=''></div>" +
+            "        <div><input type='text' class='form-control form-control-sm' id='"+get_uuid()+"'></div>" +
             "        <div class='text-center mt-1'>" +
-            "            <button type='button' class='btn btn-sm btn-outline-success mb-1' id='btn_add_puertos'><i class='bx bx-plus me-0'></i></button>" +
+            "            <button type='button' class='btn btn-sm btn-outline-success mb-1' id='btn_add_puertos' onclick='agregarFilaPuertos(`"+id_table_puertos+"`)'><i class='bx bx-plus me-0'></i></button>" +
             "        </div>" +
             "    </td>" +
             "    <td>" +
@@ -242,11 +211,7 @@ $table_e2_arr = json_decode($table_e2, true);
             "                <th>Descripción</th>" +
             "                <th width='20%'>Estado</th>" +
             "            </tr>" +
-            "            <tr class='align-middle'>" +
-            "                <td><input type='text' class='form-control form-control-sm' id='' value=''></td>" +
-            "                <td><input type='text' class='form-control form-control-sm' id='' value=''></td>" +
-            "                <td><input type='text' class='form-control form-control-sm' id='' value=''></td>" +
-            "            </tr>" +
+
             "        </table>" +
             "    </td>" +
             "</tr>";

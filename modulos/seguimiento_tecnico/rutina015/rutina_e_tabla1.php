@@ -90,7 +90,7 @@ $table_e1_arr = json_decode($table_e1, true);
             "<td><input type='text' class='form-control form-control-sm' id='modelo"+id+"' value=''></td>" +
             "<td><input type='text' class='form-control form-control-sm' id='puertoEth"+id+"' value=''></td>" +
             "<td><input type='text' class='form-control form-control-sm' id='posicionOdf"+id+"' value=''></td>" +
-            "<td><a href='javascript:;' id='btnEliminar' onclick='eliminar("+id+")'><i class='bx bxs-trash'></i></a></td>" +
+            "<td><a href='javascript:;' id='btnEliminar' onclick='eliminar("+id+")'><i class='bx bx-x'></i></a></td>" +
             "</tr>";
         $("#lista_fibra").append(fila);
         cant++;
