@@ -1,5 +1,5 @@
 <?php
-$table_e2_arr = json_decode($table_e2, true);
+$table_e3_arr = json_decode($table_e3, true);
 ?>
 <input type="hidden" name="idrutina" id="idrutina" value="<?=$idrutina?>" />
 
@@ -110,33 +110,6 @@ $table_e2_arr = json_decode($table_e2, true);
                             </td>
                         </tr>-->
 
-                        <?php
-/*                        $rowHtml = '';
-                        if ($table_e2_arr)
-                            foreach ($table_e2_arr as $objVal) {
-                                $idrow = $objVal['id'];
-                                $rowHtml .= "
-                                <tr id='row$idrow' class='align-middle'>
-                                    <td width='6%'><input type='text' class='form-control form-control-sm' id='nro$idrow' value='".$objVal['nro']."'></td>
-                                    <td><input type='text' class='form-control form-control-sm' id='modelo$idrow' value='".$objVal['modelo']."'></td>
-                                    <td width='12%'><input type='text' class='form-control form-control-sm' id='estadoTx$idrow' value='".$objVal['estadoTx']."'></td>
-                                    <td width='10%'><input type='text' class='form-control form-control-sm' id='cantPtos$idrow' value='".$objVal['cantPtos']."'></td>
-                                    <td width='10%'>
-                                        <div><small>H. Tx From:</small></div>
-                                        <div><small>H. Rx To:</small></div>
-                                    </td>
-                                    <td>
-                                        <input type='text' class='form-control form-control-sm' id='txFrom$idrow' value='".$objVal['txFrom']."'>
-                                        <input type='text' class='form-control form-control-sm' id='rxTo$idrow' value='".$objVal['rxTo']."'>
-                                    </td>
-                                    <td><input type='text' class='form-control form-control-sm' id='descripcion$idrow' value='".$objVal['descripcion']."'></td>
-                                    <td><a href='javascript:;' id='btnEliminar' onclick='eliminarFilaT2($idrow)'><i class='bx bx-x'></i></a></td>
-                                </tr>
-                                ";
-                            }
-                        echo $rowHtml;
-                        */?>
-
                     </table>
                 </div>
             </div>
@@ -152,15 +125,15 @@ $table_e2_arr = json_decode($table_e2, true);
     btn_add_equipos.addEventListener("click", agregarFilaEquiposT3);
     //btn_save_t2.addEventListener("click", guardarFilasT2);
 
-    var table_e2 = '<?php echo $table_e2; ?>';
+    var table_e3 = '<?php echo $table_e3; ?>';
 
 
-    var dataT2 = [];
-    var cantT2 = 1;
+    var dataT3 = [];
+    var cantT3 = 1;
 
-    if ( table_e2 ){
-        dataT2 = JSON.parse(table_e2);
-        cantT2 = dataT2.length+1;
+    if ( table_e3 ){
+        dataT3 = JSON.parse(table_e2);
+        cantT3 = dataT3.length+1;
     }
 
     function get_uuid() {
@@ -183,23 +156,22 @@ $table_e2_arr = json_decode($table_e2, true);
 
     function agregarFilaEquiposT3() {
 
-        var id = new Date().getTime();
+        var id_row_eq = 'row_' + get_uuid();
+        var id_nom = 'nom_' + get_uuid();
+        var id_table_puertos = 'row_tab_prto_' + get_uuid();
 
-        dataT2.push({
-           "id": id,
-           "nro": ""
+        dataT3.push({
+            "id_row_eq": id_row_eq,
+            "id_nom": id_nom,
+            "puertos": []
         });
 
-        var id_row = 'row'+id;
-
-        var id_row_equipos   = 'row_eq_' + id;
-        var id_table_puertos = 'row_tab_prto_' + id;
-        var id_equipo_name = id_row_equipos + '_' +  (new Date().getTime());
+        console.log('---> ' + JSON.stringify(dataT3) );
 
         var fila =
-            "<tr class='align-middle' id='"+id_row_equipos+"'>" +
+            "<tr class='align-middle' id='"+id_row_eq+"'>" +
             "    <td>" +
-            "        <div><input type='text' class='form-control form-control-sm' id='"+get_uuid()+"'></div>" +
+            "        <div><input type='text' class='form-control form-control-sm' id='"+id_nom+"'></div>" +
             "        <div class='text-center mt-1'>" +
             "            <button type='button' class='btn btn-sm btn-outline-success mb-1' id='btn_add_puertos' onclick='agregarFilaPuertos(`"+id_table_puertos+"`)'><i class='bx bx-plus me-0'></i></button>" +
             "        </div>" +
