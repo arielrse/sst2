@@ -258,9 +258,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                             </tr>
                             <tr>
                                 <td class="col-50p">'.constant('G1_03').'</td>
-                                <td class="col-15p">'.$g1_03_02.' Bueno</td>
-                                <td class="col-15p">'.$g1_03_03.' Malo</td>
-                                <td class="col-15p">Obs. '.$g1_03_04.'</td>
+                                <td class="col-15p">'.$g1_03_01.' Bueno</td>
+                                <td class="col-15p">'.$g1_03_02.' Malo</td>
+                                <td class="col-15p">Obs. '.$g1_03_03.'</td>
                             </tr>
                             <tr>
                                 <td class="col-50p">'.constant('G1_04').'</td>
