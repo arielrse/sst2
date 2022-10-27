@@ -225,10 +225,10 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                     <table class="tborder">
                         <tbody>
                             <tr>
-                                <td class="col-40p">'.constant('F01').'</td>
-                                <td class="col-10p">'.$f01_1.' Si</td>
-                                <td class="col-10p">'.$f01_2.' No</td>
-                                <td class="col-40p">Obs. '.$f01_3.'</td>
+                                <td class="col-40p">F.1 Sistema en Baja Tensión Bueno</td>
+                                <td class="col-10p">'.$f1_01_01.' Si</td>
+                                <td class="col-10p">'.$f1_01_02.' No</td>
+                                <td class="col-40p">Obs. '.$f1_01_03.'</td>
                             </tr>
                         </tbody>        
                     </table>									                        

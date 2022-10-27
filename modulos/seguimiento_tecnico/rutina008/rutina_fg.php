@@ -54,7 +54,7 @@ $g3_06_01 = $g_desarrollo_g3->g3_06_01;
         <table class="table mb-0">
             <tbody>
             <tr>
-                <td>F.1 	Sistema en Baja Tensión Bueno</td>
+                <td>F.1 Sistema en Baja Tensión Bueno</td>
                 <td>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="f1_01_01" value="option1" <?php echo $f1_01_01 ?>>
