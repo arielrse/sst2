@@ -79,8 +79,8 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
     $g3_05_01 = $g_desarrollo_g3->g3_05_01; $g3_05_02 = $g_desarrollo_g3->g3_05_02; $g3_05_03 = $g_desarrollo_g3->g3_05_03; $g3_05_04 = $g_desarrollo_g3->g3_05_04; $g3_05_05 = $g_desarrollo_g3->g3_05_05;
     $g3_06_01 = $g_desarrollo_g3->g3_06_01;
     $g3_07_01 = $g_desarrollo_g3->g3_07_01;
-    $g3_08_01 = $g_desarrollo_g3->g3_08_01; $g3_08_02 = $g_desarrollo_g3->g3_08_02; $g3_08_03 = $g_desarrollo_g3->g3_08_03;
-    $g3_09_01 = $g_desarrollo_g3->g3_09_01; $g3_09_02 = $g_desarrollo_g3->g3_09_02; $g3_09_03 = $g_desarrollo_g3->g3_09_03;
+    $g3_08_01 = $g_desarrollo_g3->g3_08_01; $g3_08_02 = $g_desarrollo_g3->g3_08_02; $g3_08_03 = $g_desarrollo_g3->g3_08_03; $g3_08_04 = $g_desarrollo_g3->g3_08_04;
+    $g3_09_01 = $g_desarrollo_g3->g3_09_01; $g3_09_02 = $g_desarrollo_g3->g3_09_02; $g3_09_03 = $g_desarrollo_g3->g3_09_03; $g3_09_04 = $g_desarrollo_g3->g3_09_04;
     $plantilla =
 '<body>    
     <div class="card-">
@@ -514,15 +514,17 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                     <table border="1">
                         <tbody>
                             <tr>
-                                <td colspan="6">G.3.8 Corriente de carga a un Banco de baterías</td>
+                                <td colspan="8">G.3.8 Corriente de carga a un Banco de baterías</td>
                             </tr>
                             <tr>
-                                <td class="col-15p"> '.  $g3_08_01 . '</td>
-                                <td class="col-15p"> A Banco 1</td>
-                                <td class="col-15p"> '.  $g3_08_02 . '</td>
-                                <td class="col-15p"> A Banco 2</td>
-                                <td class="col-15p"> '.  $g3_08_03 . '</td>
-                                <td class="col-15p"> A Banco 3</td>
+                                <td class="col-12p"> '.  $g3_08_01 . '</td>
+                                <td class="col-12p"> A Banco 1</td>
+                                <td class="col-12p"> '.  $g3_08_02 . '</td>
+                                <td class="col-12p"> A Banco 2</td>
+                                <td class="col-12p"> '.  $g3_08_03 . '</td>
+                                <td class="col-12p"> A Banco 3</td>
+                                <td class="col-12p"> '.  $g3_08_04 . '</td>
+                                <td class="col-12p"> A Banco 4</td>
                              </tr>
                             
                         </tbody>        
@@ -532,15 +534,17 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                     <table border="1">
                         <tbody>
                             <tr>
-                                <td colspan="6">G.3.9 Medición de voltaje de flotación de cada banco de baterías</td>
+                                <td colspan="8">G.3.9 Medición de voltaje de flotación de cada banco de baterías</td>
                             </tr>
                             <tr>
-                                <td class="col-15p"> '.  $g3_09_01 . '</td>
-                                <td class="col-15p"> V DC Banco 1</td>
-                                <td class="col-15p"> '.  $g3_09_02 . '</td>
-                                <td class="col-15p"> V DC Banco 2</td>
-                                <td class="col-15p"> '.  $g3_09_03 . '</td>
-                                <td class="col-15p"> V DC Banco 3</td>
+                                <td class="col-12p"> '.  $g3_09_01 . '</td>
+                                <td class="col-12p"> V DC Banco 1</td>
+                                <td class="col-12p"> '.  $g3_09_02 . '</td>
+                                <td class="col-12p"> V DC Banco 2</td>
+                                <td class="col-12p"> '.  $g3_09_03 . '</td>
+                                <td class="col-12p"> V DC Banco 3</td>
+                                <td class="col-12p"> '.  $g3_09_04 . '</td>
+                                <td class="col-12p"> V DC Banco 4</td>
                              </tr>
                             
                         </tbody>        

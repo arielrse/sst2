@@ -7,8 +7,8 @@ $g3_04_01 = $g_desarrollo_g3->g3_04_01; $g3_04_02 = $g_desarrollo_g3->g3_04_02; 
 $g3_05_01 = $g_desarrollo_g3->g3_05_01; $g3_05_02 = $g_desarrollo_g3->g3_05_02; $g3_05_03 = $g_desarrollo_g3->g3_05_03; $g3_05_04 = $g_desarrollo_g3->g3_05_04; $g3_05_05 = $g_desarrollo_g3->g3_05_05;
 $g3_06_01 = $g_desarrollo_g3->g3_06_01;
 $g3_07_01 = $g_desarrollo_g3->g3_07_01;
-$g3_08_01 = $g_desarrollo_g3->g3_08_01; $g3_08_02 = $g_desarrollo_g3->g3_08_02; $g3_08_03 = $g_desarrollo_g3->g3_08_03;
-$g3_09_01 = $g_desarrollo_g3->g3_09_01; $g3_09_02 = $g_desarrollo_g3->g3_09_02; $g3_09_03 = $g_desarrollo_g3->g3_09_03;
+$g3_08_01 = $g_desarrollo_g3->g3_08_01; $g3_08_02 = $g_desarrollo_g3->g3_08_02; $g3_08_03 = $g_desarrollo_g3->g3_08_03; $g3_08_04 = isset($g_desarrollo_g3->g3_08_04) ? $g_desarrollo_g3->g3_08_04 : "";
+$g3_09_01 = $g_desarrollo_g3->g3_09_01; $g3_09_02 = $g_desarrollo_g3->g3_09_02; $g3_09_03 = $g_desarrollo_g3->g3_09_03; $g3_09_04 = isset($g_desarrollo_g3->g3_09_04) ? $g_desarrollo_g3->g3_09_04 : "";
 ?>
 
 <h6>G.3 Mediciones y configuraciones durante y/o después del mantenimiento</h6>
@@ -128,6 +128,9 @@ $g3_09_01 = $g_desarrollo_g3->g3_09_01; $g3_09_02 = $g_desarrollo_g3->g3_09_02; 
 
             <input type="text" class="form-control" id="g3_08_03" value="<?php echo $g3_08_03 ?>">
             <span class="input-group-text">A Banco 3</span>
+
+            <input type="text" class="form-control" id="g3_08_04" value="<?php echo $g3_08_04 ?>">
+            <span class="input-group-text">A Banco 4</span>
         </div>
 
         <div>
@@ -142,6 +145,9 @@ $g3_09_01 = $g_desarrollo_g3->g3_09_01; $g3_09_02 = $g_desarrollo_g3->g3_09_02; 
 
             <input type="text" class="form-control" id="g3_09_03" value="<?php echo $g3_09_03 ?>">
             <span class="input-group-text">V DC Banco 3</span>
+
+            <input type="text" class="form-control" id="g3_09_04" value="<?php echo $g3_09_04 ?>">
+            <span class="input-group-text">V DC Banco 4</span>
         </div>
 
 

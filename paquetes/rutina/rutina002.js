@@ -64,8 +64,8 @@ $(document).ready(function() {
     var g3_05_01 = $('#g3_05_01').val(); var g3_05_02 = $('#g3_05_02').val(); var g3_05_03 = $('#g3_05_03').val(); var g3_05_04 = $('#g3_05_04').val(); var g3_05_05 = $('#g3_05_05').val();
     var g3_06_01 = $('#g3_06_01').val();
     var g3_07_01 = $('#g3_07_01').val();
-    var g3_08_01 = $('#g3_08_01').val(); var g3_08_02 = $('#g3_08_02').val(); var g3_08_03 = $('#g3_08_03').val();
-    var g3_09_01 = $('#g3_09_01').val(); var g3_09_02 = $('#g3_09_02').val(); var g3_09_03 = $('#g3_09_03').val();
+    var g3_08_01 = $('#g3_08_01').val(); var g3_08_02 = $('#g3_08_02').val(); var g3_08_03 = $('#g3_08_03').val(); var g3_08_04 = $('#g3_08_04').val();
+    var g3_09_01 = $('#g3_09_01').val(); var g3_09_02 = $('#g3_09_02').val(); var g3_09_03 = $('#g3_09_03').val(); var g3_09_04 = $('#g3_09_04').val();
 
     /** footer **/
     var pendientes        = $('#pendientes').val()
@@ -126,8 +126,8 @@ getDatos().then( (datos) => {
     datos.g_desarrollo_g3.g3_05_01 = g3_05_01; datos.g_desarrollo_g3.g3_05_02 = g3_05_02; datos.g_desarrollo_g3.g3_05_03 = g3_05_03; datos.g_desarrollo_g3.g3_05_04 = g3_05_04; datos.g_desarrollo_g3.g3_05_05 = g3_05_05;
     datos.g_desarrollo_g3.g3_06_01 = g3_06_01;
     datos.g_desarrollo_g3.g3_07_01 = g3_07_01;
-    datos.g_desarrollo_g3.g3_08_01 = g3_08_01; datos.g_desarrollo_g3.g3_08_02 = g3_08_02; datos.g_desarrollo_g3.g3_08_03 = g3_08_03;
-    datos.g_desarrollo_g3.g3_09_01 = g3_09_01; datos.g_desarrollo_g3.g3_09_02 = g3_09_02; datos.g_desarrollo_g3.g3_09_03 = g3_09_03;
+    datos.g_desarrollo_g3.g3_08_01 = g3_08_01; datos.g_desarrollo_g3.g3_08_02 = g3_08_02; datos.g_desarrollo_g3.g3_08_03 = g3_08_03; datos.g_desarrollo_g3.g3_08_04 = g3_08_04;
+    datos.g_desarrollo_g3.g3_09_01 = g3_09_01; datos.g_desarrollo_g3.g3_09_02 = g3_09_02; datos.g_desarrollo_g3.g3_09_03 = g3_09_03; datos.g_desarrollo_g3.g3_09_04 = g3_09_04;
 
     datos.pendientes      = pendientes;
     datos.recomendaciones = recomendaciones;
