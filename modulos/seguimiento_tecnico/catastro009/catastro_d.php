@@ -45,7 +45,7 @@ foreach ($tipo_equipoArr as $element){
     $tipo_equipoOption .= "<option value='$element' $selected>".$element."</option>";
 }
 /* --------------------------------------------------------------------- */
-$baja_tensionArr = ["Monofásico", "Trifásico"];
+$baja_tensionArr = ["Monofasico", "Trifasico"];
 $baja_tensionOption = "<option>Seleccionar...</option>";
 foreach ($baja_tensionArr as $element){
     $selected = "";

@@ -93,7 +93,7 @@ foreach ($bombaArr as $element){
     $bombaOption .= "<option value='$element' $selected>".$element."</option>";
 }
 /* --------------------------------------------------------------------- */
-$auto_manualArr = ["Automático", "Manual"];
+$auto_manualArr = ["Automatico", "Manual"];
 $auto_manualOption = "<option>Seleccionar...</option>";
 foreach ($auto_manualArr as $element){
     $selected = "";
