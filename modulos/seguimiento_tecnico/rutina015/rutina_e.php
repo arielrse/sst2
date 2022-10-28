@@ -44,6 +44,428 @@ $obj = json_decode($jsonCab);
 
 <?php require("rutina_e_tabla3.php"); ?>
 
+<!--
+<h6>E. Sistema de Transporte FIBRA OPTICA (Ant.)</h6>
+<div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="col mb-2">
+                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                </div>
+
+                <table class="table table-bordered mb-3">
+                    <tbody>
+                    <tr>
+                        <th>N.</th>
+                        <th>NE_Origen</th>
+                        <th>NE_Destino</th>
+                        <th>Modelo equipo FO</th>
+                        <th>Puerto ETH en equipo de FO</th>
+                        <th>Posición en bandeja ODF</th>
+                    </tr>
+
+                    <tr>
+                        <td class="col-xl-1">1</td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_01_01" value="<?php /*echo $f1_01_01 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_01_02" value="<?php /*echo $f1_01_02 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_01_03" value="<?php /*echo $f1_01_03 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_01_04" value="<?php /*echo $f1_01_04 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_01_05" value="<?php /*echo $f1_01_05 */?>">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-xl-1">2</td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_02_01" value="<?php /*echo $f1_02_01 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_02_02" value="<?php /*echo $f1_02_02 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_02_03" value="<?php /*echo $f1_02_03 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_02_04" value="<?php /*echo $f1_02_04 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_02_05" value="<?php /*echo $f1_02_05 */?>">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-xl-1">3</td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_03_01" value="<?php /*echo $f1_03_01 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_03_02" value="<?php /*echo $f1_03_02 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_03_03" value="<?php /*echo $f1_03_03 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_03_04" value="<?php /*echo $f1_03_04 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_03_05" value="<?php /*echo $f1_03_05 */?>">
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered mb-3">
+                    <tbody>
+                    <tr>
+                        <th>N.</th>
+                        <th>Modelo equipo FO</th>
+                        <th>Estado del equipo de Tx</th>
+                        <th>Cantidad de puertos RBS</th>
+                        <th>Descripción etiquetado de puerto en RBS (UP LINK)</th>
+                        <th>Descripción del Servicio</th>
+                    </tr>
+
+                    <tr>
+                        <td class="col-xl-1">1</td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_04_01" value="<?php /*echo $f1_04_01 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_04_02" value="<?php /*echo $f1_04_02 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_04_03" value="<?php /*echo $f1_04_03 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Tx From:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_04_04_from" value="<?php /*echo $f1_04_04_from */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Rx To:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_04_04_to" value="<?php /*echo $f1_04_04_to */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_04_05" value="<?php /*echo $f1_04_05 */?>">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-xl-1">2</td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_05_01" value="<?php /*echo $f1_05_01 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_05_02" value="<?php /*echo $f1_05_02 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_05_03" value="<?php /*echo $f1_05_03 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Tx From:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_05_04_from" value="<?php /*echo $f1_05_04_from */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Rx To:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_05_04_to" value="<?php /*echo $f1_05_04_to */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_05_05" value="<?php /*echo $f1_05_05 */?>">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-xl-1">3</td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_06_01" value="<?php /*echo $f1_06_01 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_06_02" value="<?php /*echo $f1_06_02 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_06_03" value="<?php /*echo $f1_06_03 */?>">
+                            </div>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Tx From:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_06_04_from" value="<?php /*echo $f1_06_04_from */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><p class="card-text"><small class="text-muted">Hilo Rx To:</small></td>
+                                    <td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_06_04_to" value="<?php /*echo $f1_06_04_to */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="f1_06_05" value="<?php /*echo $f1_06_05 */?>">
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered mb-3">
+                    <tbody>
+                    <tr>
+                        <td class="col-xl-1">4</td>
+                        <td class="col-xl-2">Detalle de puertos ETH ópticos</td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Tarjeta:</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_02" value="<?php /*echo $f1_07_02 */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Slot/Prto:</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_03_a" value="<?php /*echo $f1_07_03_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_03_b" value="<?php /*echo $f1_07_03_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Descripción</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_04_a" value="<?php /*echo $f1_07_04_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_04_b" value="<?php /*echo $f1_07_04_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Estado</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_05_a" value="<?php /*echo $f1_07_05_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_05_b" value="<?php /*echo $f1_07_05_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-xl-1">5</td>
+                        <td class="col-xl-2">Puertos opticos en bandeja ODF</td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Tarjeta:</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_02" value="<?php /*echo $f1_08_02 */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Slot/Prto:</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_03_a" value="<?php /*echo $f1_08_03_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_03_b" value="<?php /*echo $f1_08_03_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_03_c" value="<?php /*echo $f1_08_03_c */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Descripción</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_04_a" value="<?php /*echo $f1_08_04_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_04_b" value="<?php /*echo $f1_08_04_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_04_c" value="<?php /*echo $f1_08_04_c */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Tipo de Conector</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_05_a" value="<?php /*echo $f1_08_05_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_05_b" value="<?php /*echo $f1_08_05_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_05_c" value="<?php /*echo $f1_08_05_c */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
 <div class="card">
     <div class="card-body">
 
