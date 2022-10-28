@@ -1,6 +1,8 @@
 /* 22.10.2022 */
 ALTER TABLE `rutina015` ADD COLUMN table_e1 LONGTEXT;
 ALTER TABLE `rutina015` ADD COLUMN table_e2 LONGTEXT;
+ALTER TABLE `rutina015` ADD COLUMN table_e3 LONGTEXT;
+ALTER TABLE `rutina015` ADD COLUMN table_e4 LONGTEXT;
 
 DELETE FROM rutina_titulos WHERE codform = '001';
 insert into rutina_titulos (titulo, codform) values ('Fotografia N.1 - Panorámica de gabinete de baterías puerta cerrada.', '001');

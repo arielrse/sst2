@@ -3,22 +3,22 @@
 /** f_fibra **/
 $f_fibra = $obj->{'f_fibra'};
 
-$f1_01_01 = $f_fibra->f1_01_01; $f1_01_02 = $f_fibra->f1_01_02; $f1_01_03 = $f_fibra->f1_01_03; $f1_01_04 = $f_fibra->f1_01_04; $f1_01_05 = $f_fibra->f1_01_05;
-$f1_02_01 = $f_fibra->f1_02_01; $f1_02_02 = $f_fibra->f1_02_02; $f1_02_03 = $f_fibra->f1_02_03; $f1_02_04 = $f_fibra->f1_02_04; $f1_02_05 = $f_fibra->f1_02_05;
-$f1_03_01 = $f_fibra->f1_03_01; $f1_03_02 = $f_fibra->f1_03_02; $f1_03_03 = $f_fibra->f1_03_03; $f1_03_04 = $f_fibra->f1_03_04; $f1_03_05 = $f_fibra->f1_03_05;
+$f1_01_01 = isset($f_fibra->f1_01_01) ? $f_fibra->f1_01_01 : ''; $f1_01_02 = isset($f_fibra->f1_01_02) ? $f_fibra->f1_01_02 : ''; $f1_01_03 = isset($f_fibra->f1_01_03) ? $f_fibra->f1_01_03 : ''; $f1_01_04 = isset($f_fibra->f1_01_04) ? $f_fibra->f1_01_04 : ''; $f1_01_05 = isset($f_fibra->f1_01_05) ? $f_fibra->f1_01_05 : '';
+$f1_02_01 = isset($f_fibra->f1_02_01) ? $f_fibra->f1_02_01 : ''; $f1_02_02 = isset($f_fibra->f1_02_02) ? $f_fibra->f1_02_02 : ''; $f1_02_03 = isset($f_fibra->f1_02_03) ? $f_fibra->f1_02_03 : ''; $f1_02_04 = isset($f_fibra->f1_02_04) ? $f_fibra->f1_02_04 : ''; $f1_02_05 = isset($f_fibra->f1_02_05) ? $f_fibra->f1_02_05 : '';
+$f1_03_01 = isset($f_fibra->f1_03_01) ? $f_fibra->f1_03_01 : ''; $f1_03_02 = isset($f_fibra->f1_03_02) ? $f_fibra->f1_03_02 : ''; $f1_03_03 = isset($f_fibra->f1_03_03) ? $f_fibra->f1_03_03 : ''; $f1_03_04 = isset($f_fibra->f1_03_04) ? $f_fibra->f1_03_04 : ''; $f1_03_05 = isset($f_fibra->f1_03_05) ? $f_fibra->f1_03_05 : '';
 
-$f1_04_01 = $f_fibra->f1_04_01; $f1_04_02 = $f_fibra->f1_04_02; $f1_04_03 = $f_fibra->f1_04_03; $f1_04_04_from = $f_fibra->f1_04_04_from; $f1_04_05 = $f_fibra->f1_04_05;
-                                                                                                $f1_04_04_to   = $f_fibra->f1_04_04_to;
-$f1_05_01 = $f_fibra->f1_05_01; $f1_05_02 = $f_fibra->f1_05_02; $f1_05_03 = $f_fibra->f1_05_03; $f1_05_04_from = $f_fibra->f1_05_04_from; $f1_05_05 = $f_fibra->f1_05_05;
-                                                                                                $f1_05_04_to   = $f_fibra->f1_05_04_to;
-$f1_06_01 = $f_fibra->f1_06_01; $f1_06_02 = $f_fibra->f1_06_02; $f1_06_03 = $f_fibra->f1_06_03; $f1_06_04_from = $f_fibra->f1_06_04_from; $f1_06_05 = $f_fibra->f1_06_05;
-                                                                                                $f1_06_04_to   = $f_fibra->f1_06_04_to;
+$f1_04_01 = isset($f_fibra->f1_04_01) ? $f_fibra->f1_04_01 : ''; $f1_04_02 = isset($f_fibra->f1_04_02) ? $f_fibra->f1_04_02 : ''; $f1_04_03 = isset($f_fibra->f1_04_03) ? $f_fibra->f1_04_03 : ''; $f1_04_04_from = isset($f_fibra->f1_04_04_from) ? $f_fibra->f1_04_04_from : ''; $f1_04_05 = isset($f_fibra->f1_04_05) ? $f_fibra->f1_04_05 : '';
+                                                                                                $f1_04_04_to   = isset($f_fibra->f1_04_04_to) ? $f_fibra->f1_04_04_to : '';
+$f1_05_01 = isset($f_fibra->f1_05_01) ? $f_fibra->f1_05_01 : ''; $f1_05_02 = isset($f_fibra->f1_05_02) ? $f_fibra->f1_05_02 : ''; $f1_05_03 = isset($f_fibra->f1_05_03) ? $f_fibra->f1_05_03 : ''; $f1_05_04_from = isset($f_fibra->f1_05_04_from) ? $f_fibra->f1_05_04_from : ''; $f1_05_05 = isset($f_fibra->f1_05_05) ? $f_fibra->f1_05_05 : '';
+                                                                                                $f1_05_04_to   = isset($f_fibra->f1_05_04_to) ? $f_fibra->f1_05_04_to : '';
+$f1_06_01 = isset($f_fibra->f1_06_01) ? $f_fibra->f1_06_01 : ''; $f1_06_02 = isset($f_fibra->f1_06_02) ? $f_fibra->f1_06_02 : ''; $f1_06_03 = isset($f_fibra->f1_06_03) ? $f_fibra->f1_06_03 : ''; $f1_06_04_from = isset($f_fibra->f1_06_04_from) ? $f_fibra->f1_06_04_from : ''; $f1_06_05 = isset($f_fibra->f1_06_05) ? $f_fibra->f1_06_05 : '';
+                                                                                                $f1_06_04_to   = isset($f_fibra->f1_06_04_to) ? $f_fibra->f1_06_04_to : '';
 
-                                $f1_07_02 = $f_fibra->f1_07_02; $f1_07_03_a = $f_fibra->f1_07_03_a; $f1_07_04_a = $f_fibra->f1_07_04_a; $f1_07_05_a = $f_fibra->f1_07_05_a;
-                                                                $f1_07_03_b = $f_fibra->f1_07_03_b; $f1_07_04_b = $f_fibra->f1_07_04_b; $f1_07_05_b = $f_fibra->f1_07_05_b;
-                                $f1_08_02 = $f_fibra->f1_08_02; $f1_08_03_a = $f_fibra->f1_08_03_a; $f1_08_04_a = $f_fibra->f1_08_04_a; $f1_08_05_a = $f_fibra->f1_08_05_a;
-                                                                $f1_08_03_b = $f_fibra->f1_08_03_b; $f1_08_04_b = $f_fibra->f1_08_04_b; $f1_08_05_b = $f_fibra->f1_08_05_b;
-                                                                $f1_08_03_c = $f_fibra->f1_08_03_c; $f1_08_04_c = $f_fibra->f1_08_04_c; $f1_08_05_c = $f_fibra->f1_08_05_c;
+                                $f1_07_02 = isset($f_fibra->f1_07_02) ? $f_fibra->f1_07_02 : ''; $f1_07_03_a = isset($f_fibra->f1_07_03_a) ? $f_fibra->f1_07_03_a : ''; $f1_07_04_a = isset($f_fibra->f1_07_04_a) ? $f_fibra->f1_07_04_a : ''; $f1_07_05_a = isset($f_fibra->f1_07_05_a) ? $f_fibra->f1_07_05_a : '';
+                                                                $f1_07_03_b = isset($f_fibra->f1_07_03_b) ? $f_fibra->f1_07_03_b : ''; $f1_07_04_b = isset($f_fibra->f1_07_04_b) ? $f_fibra->f1_07_04_b : ''; $f1_07_05_b = isset($f_fibra->f1_07_05_b) ? $f_fibra->f1_07_05_b : '';
+                                $f1_08_02 = isset($f_fibra->f1_08_02) ? $f_fibra->f1_08_02 : ''; $f1_08_03_a = isset($f_fibra->f1_08_03_a) ? $f_fibra->f1_08_03_a : ''; $f1_08_04_a = isset($f_fibra->f1_08_04_a) ? $f_fibra->f1_08_04_a : ''; $f1_08_05_a = isset($f_fibra->f1_08_05_a) ? $f_fibra->f1_08_05_a : '';
+                                                                $f1_08_03_b = isset($f_fibra->f1_08_03_b) ? $f_fibra->f1_08_03_b : ''; $f1_08_04_b = isset($f_fibra->f1_08_04_b) ? $f_fibra->f1_08_04_b : ''; $f1_08_05_b = isset($f_fibra->f1_08_05_b) ? $f_fibra->f1_08_05_b : '';
+                                                                $f1_08_03_c = isset($f_fibra->f1_08_03_c) ? $f_fibra->f1_08_03_c : ''; $f1_08_04_c = isset($f_fibra->f1_08_04_c) ? $f_fibra->f1_08_04_c : ''; $f1_08_05_c = isset($f_fibra->f1_08_05_c) ? $f_fibra->f1_08_05_c : '';
 
 //$e_01_01 = $d_sectores->e_01_01;
 $g_desarrollo_g2 = $obj->{'g_desarrollo_g2'};
@@ -44,13 +44,16 @@ $obj = json_decode($jsonCab);
 
 <?php require("rutina_e_tabla3.php"); ?>
 
+<!--
+<h6>E. Sistema de Transporte FIBRA OPTICA (Ant.)</h6>
 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
     <div class="col">
         <div class="card">
             <div class="card-body">
 
                 <div class="col mb-2">
-                    <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
+                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
                 </div>
 
                 <table class="table table-bordered mb-3">
@@ -68,27 +71,27 @@ $obj = json_decode($jsonCab);
                         <td class="col-xl-1">1</td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_01_01" value="<?php echo $f1_01_01 ?>">
+                                <input type="text" class="form-control" id="f1_01_01" value="<?php /*echo $f1_01_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_01_02" value="<?php echo $f1_01_02 ?>">
+                                <input type="text" class="form-control" id="f1_01_02" value="<?php /*echo $f1_01_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_01_03" value="<?php echo $f1_01_03 ?>">
+                                <input type="text" class="form-control" id="f1_01_03" value="<?php /*echo $f1_01_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_01_04" value="<?php echo $f1_01_04 ?>">
+                                <input type="text" class="form-control" id="f1_01_04" value="<?php /*echo $f1_01_04 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_01_05" value="<?php echo $f1_01_05 ?>">
+                                <input type="text" class="form-control" id="f1_01_05" value="<?php /*echo $f1_01_05 */?>">
                             </div>
                         </td>
                     </tr>
@@ -97,27 +100,27 @@ $obj = json_decode($jsonCab);
                         <td class="col-xl-1">2</td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_02_01" value="<?php echo $f1_02_01 ?>">
+                                <input type="text" class="form-control" id="f1_02_01" value="<?php /*echo $f1_02_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_02_02" value="<?php echo $f1_02_02 ?>">
+                                <input type="text" class="form-control" id="f1_02_02" value="<?php /*echo $f1_02_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_02_03" value="<?php echo $f1_02_03 ?>">
+                                <input type="text" class="form-control" id="f1_02_03" value="<?php /*echo $f1_02_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_02_04" value="<?php echo $f1_02_04 ?>">
+                                <input type="text" class="form-control" id="f1_02_04" value="<?php /*echo $f1_02_04 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_02_05" value="<?php echo $f1_02_05 ?>">
+                                <input type="text" class="form-control" id="f1_02_05" value="<?php /*echo $f1_02_05 */?>">
                             </div>
                         </td>
                     </tr>
@@ -126,27 +129,27 @@ $obj = json_decode($jsonCab);
                         <td class="col-xl-1">3</td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_03_01" value="<?php echo $f1_03_01 ?>">
+                                <input type="text" class="form-control" id="f1_03_01" value="<?php /*echo $f1_03_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_03_02" value="<?php echo $f1_03_02 ?>">
+                                <input type="text" class="form-control" id="f1_03_02" value="<?php /*echo $f1_03_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_03_03" value="<?php echo $f1_03_03 ?>">
+                                <input type="text" class="form-control" id="f1_03_03" value="<?php /*echo $f1_03_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_03_04" value="<?php echo $f1_03_04 ?>">
+                                <input type="text" class="form-control" id="f1_03_04" value="<?php /*echo $f1_03_04 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_03_05" value="<?php echo $f1_03_05 ?>">
+                                <input type="text" class="form-control" id="f1_03_05" value="<?php /*echo $f1_03_05 */?>">
                             </div>
                         </td>
                     </tr>
@@ -169,17 +172,17 @@ $obj = json_decode($jsonCab);
                         <td class="col-xl-1">1</td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_04_01" value="<?php echo $f1_04_01 ?>">
+                                <input type="text" class="form-control" id="f1_04_01" value="<?php /*echo $f1_04_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_04_02" value="<?php echo $f1_04_02 ?>">
+                                <input type="text" class="form-control" id="f1_04_02" value="<?php /*echo $f1_04_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_04_03" value="<?php echo $f1_04_03 ?>">
+                                <input type="text" class="form-control" id="f1_04_03" value="<?php /*echo $f1_04_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
@@ -188,7 +191,7 @@ $obj = json_decode($jsonCab);
                                     <td><p class="card-text"><small class="text-muted">Hilo Tx From:</small></td>
                                     <td>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control" id="f1_04_04_from" value="<?php echo $f1_04_04_from ?>">
+                                            <input type="text" class="form-control" id="f1_04_04_from" value="<?php /*echo $f1_04_04_from */?>">
                                         </div>
                                     </td>
                                 </tr>
@@ -196,7 +199,7 @@ $obj = json_decode($jsonCab);
                                     <td><p class="card-text"><small class="text-muted">Hilo Rx To:</small></td>
                                     <td>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control" id="f1_04_04_to" value="<?php echo $f1_04_04_to ?>">
+                                            <input type="text" class="form-control" id="f1_04_04_to" value="<?php /*echo $f1_04_04_to */?>">
                                         </div>
                                     </td>
                                 </tr>
@@ -205,7 +208,7 @@ $obj = json_decode($jsonCab);
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_04_05" value="<?php echo $f1_04_05 ?>">
+                                <input type="text" class="form-control" id="f1_04_05" value="<?php /*echo $f1_04_05 */?>">
                             </div>
                         </td>
                     </tr>
@@ -214,17 +217,17 @@ $obj = json_decode($jsonCab);
                         <td class="col-xl-1">2</td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_05_01" value="<?php echo $f1_05_01 ?>">
+                                <input type="text" class="form-control" id="f1_05_01" value="<?php /*echo $f1_05_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_05_02" value="<?php echo $f1_05_02 ?>">
+                                <input type="text" class="form-control" id="f1_05_02" value="<?php /*echo $f1_05_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_05_03" value="<?php echo $f1_05_03 ?>">
+                                <input type="text" class="form-control" id="f1_05_03" value="<?php /*echo $f1_05_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
@@ -233,7 +236,7 @@ $obj = json_decode($jsonCab);
                                     <td><p class="card-text"><small class="text-muted">Hilo Tx From:</small></td>
                                     <td>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control" id="f1_05_04_from" value="<?php echo $f1_05_04_from ?>">
+                                            <input type="text" class="form-control" id="f1_05_04_from" value="<?php /*echo $f1_05_04_from */?>">
                                         </div>
                                     </td>
                                 </tr>
@@ -241,7 +244,7 @@ $obj = json_decode($jsonCab);
                                     <td><p class="card-text"><small class="text-muted">Hilo Rx To:</small></td>
                                     <td>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control" id="f1_05_04_to" value="<?php echo $f1_05_04_to ?>">
+                                            <input type="text" class="form-control" id="f1_05_04_to" value="<?php /*echo $f1_05_04_to */?>">
                                         </div>
                                     </td>
                                 </tr>
@@ -249,7 +252,7 @@ $obj = json_decode($jsonCab);
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_05_05" value="<?php echo $f1_05_05 ?>">
+                                <input type="text" class="form-control" id="f1_05_05" value="<?php /*echo $f1_05_05 */?>">
                             </div>
                         </td>
                     </tr>
@@ -258,17 +261,17 @@ $obj = json_decode($jsonCab);
                         <td class="col-xl-1">3</td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_06_01" value="<?php echo $f1_06_01 ?>">
+                                <input type="text" class="form-control" id="f1_06_01" value="<?php /*echo $f1_06_01 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_06_02" value="<?php echo $f1_06_02 ?>">
+                                <input type="text" class="form-control" id="f1_06_02" value="<?php /*echo $f1_06_02 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_06_03" value="<?php echo $f1_06_03 ?>">
+                                <input type="text" class="form-control" id="f1_06_03" value="<?php /*echo $f1_06_03 */?>">
                             </div>
                         </td>
                         <td class="col-xl-2">
@@ -277,7 +280,7 @@ $obj = json_decode($jsonCab);
                                     <td><p class="card-text"><small class="text-muted">Hilo Tx From:</small></td>
                                     <td>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control" id="f1_06_04_from" value="<?php echo $f1_06_04_from ?>">
+                                            <input type="text" class="form-control" id="f1_06_04_from" value="<?php /*echo $f1_06_04_from */?>">
                                         </div>
                                     </td>
                                 </tr>
@@ -285,7 +288,7 @@ $obj = json_decode($jsonCab);
                                     <td><p class="card-text"><small class="text-muted">Hilo Rx To:</small></td>
                                     <td>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control" id="f1_06_04_to" value="<?php echo $f1_06_04_to ?>">
+                                            <input type="text" class="form-control" id="f1_06_04_to" value="<?php /*echo $f1_06_04_to */?>">
                                         </div>
                                     </td>
                                 </tr>
@@ -293,7 +296,7 @@ $obj = json_decode($jsonCab);
                         </td>
                         <td class="col-xl-2">
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" id="f1_06_05" value="<?php echo $f1_06_05 ?>">
+                                <input type="text" class="form-control" id="f1_06_05" value="<?php /*echo $f1_06_05 */?>">
                             </div>
                         </td>
                     </tr>
@@ -303,170 +306,173 @@ $obj = json_decode($jsonCab);
 
                 <table class="table table-bordered mb-3">
                     <tbody>
-                        <tr>
-                            <td class="col-xl-1">4</td>
-                            <td class="col-xl-2">Detalle de puertos ETH ópticos</td>
-                            <td class="col-xl-2">
-                                <table class="table-info">
-                                    <tr><td>Tarjeta:</td></tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_07_02" value="<?php echo $f1_07_02 ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                    <tr>
+                        <td class="col-xl-1">4</td>
+                        <td class="col-xl-2">Detalle de puertos ETH ópticos</td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Tarjeta:</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_02" value="<?php /*echo $f1_07_02 */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
 
-                            </td>
-                            <td class="col-xl-2">
-                                <table class="table-info">
-                                    <tr><td>Slot/Prto:</td></tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_07_03_a" value="<?php echo $f1_07_03_a ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_07_03_b" value="<?php echo $f1_07_03_b ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td class="col-xl-2">
-                                <table class="table-info">
-                                    <tr><td>Descripción</td></tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_07_04_a" value="<?php echo $f1_07_04_a ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_07_04_b" value="<?php echo $f1_07_04_b ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td class="col-xl-2">
-                                <table class="table-info">
-                                    <tr><td>Estado</td></tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_07_05_a" value="<?php echo $f1_07_05_a ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_07_05_b" value="<?php echo $f1_07_05_b ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Slot/Prto:</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_03_a" value="<?php /*echo $f1_07_03_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_03_b" value="<?php /*echo $f1_07_03_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Descripción</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_04_a" value="<?php /*echo $f1_07_04_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_04_b" value="<?php /*echo $f1_07_04_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Estado</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_05_a" value="<?php /*echo $f1_07_05_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_07_05_b" value="<?php /*echo $f1_07_05_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
 
-                        <tr>
-                            <td class="col-xl-1">5</td>
-                            <td class="col-xl-2">Puertos opticos en bandeja ODF</td>
-                            <td class="col-xl-2">
-                                <table class="table-info">
-                                    <tr><td>Tarjeta:</td></tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_08_02" value="<?php echo $f1_08_02 ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td class="col-xl-2">
-                                <table class="table-info">
-                                    <tr><td>Slot/Prto:</td></tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_08_03_a" value="<?php echo $f1_08_03_a ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_08_03_b" value="<?php echo $f1_08_03_b ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_08_03_c" value="<?php echo $f1_08_03_c ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td class="col-xl-2">
-                                <table class="table-info">
-                                    <tr><td>Descripción</td></tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_08_04_a" value="<?php echo $f1_08_04_a ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_08_04_b" value="<?php echo $f1_08_04_b ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_08_04_c" value="<?php echo $f1_08_04_c ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td class="col-xl-2">
-                                <table class="table-info">
-                                    <tr><td>Tipo de Conector</td></tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_08_05_a" value="<?php echo $f1_08_05_a ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_08_05_b" value="<?php echo $f1_08_05_b ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr><td>
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control" id="f1_08_05_c" value="<?php echo $f1_08_05_c ?>">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td class="col-xl-1">5</td>
+                        <td class="col-xl-2">Puertos opticos en bandeja ODF</td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Tarjeta:</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_02" value="<?php /*echo $f1_08_02 */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Slot/Prto:</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_03_a" value="<?php /*echo $f1_08_03_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_03_b" value="<?php /*echo $f1_08_03_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_03_c" value="<?php /*echo $f1_08_03_c */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Descripción</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_04_a" value="<?php /*echo $f1_08_04_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_04_b" value="<?php /*echo $f1_08_04_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_04_c" value="<?php /*echo $f1_08_04_c */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="col-xl-2">
+                            <table class="table-info">
+                                <tr><td>Tipo de Conector</td></tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_05_a" value="<?php /*echo $f1_08_05_a */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_05_b" value="<?php /*echo $f1_08_05_b */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr><td>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" id="f1_08_05_c" value="<?php /*echo $f1_08_05_c */?>">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
+-->
 
 <div class="card">
     <div class="card-body">
 
         <div class="col mb-2">
-            <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
+            <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+            <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+            <?php /*require("../../modulos/seguimiento_tecnico/single_save.php"); */?>
         </div>
 
         <table class="table">

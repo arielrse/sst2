@@ -15,9 +15,7 @@ $codigoForm = $_GET['cform'];
             <div class="col-xl-12 mx-auto">
 
                 <?php require("rutina015/rutina_d.php"); ?>
-
                 <?php require("rutina015/rutina_e.php"); ?>
-
                 <?php require("rutina015/rutina_f.php"); ?>
 
             </div>
