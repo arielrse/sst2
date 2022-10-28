@@ -3,12 +3,13 @@ $table_e2_arr = json_decode($table_e2, true);
 ?>
 <input type="hidden" name="idrutina" id="idrutina" value="<?=$idrutina?>" />
 
-<div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
-    <div class="col">
-        <div class="card">
-            <div class="card-body">
-                <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_add_t2"><i class="bx bx-plus me-0"></i></button>
+<div class="card">
+    <div class="card-body">
+        <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
+            <div class="col">
+
                 <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_save_t2"><i class="bx bx-save me-0"></i></button>
+                <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_add_t2"><i class="bx bx-plus me-0"></i></button>
                 <div id="fibra-t2">
                     <table class="table table-bordered mb-3" id="lista_fibra_t2">
                         <tr class='align-middle'>
@@ -40,7 +41,7 @@ $table_e2_arr = json_decode($table_e2, true);
                                         <input type='text' class='form-control form-control-sm' id='rxTo$idrow' value='".$objVal['rxTo']."'>
                                     </td>
                                     <td><input type='text' class='form-control form-control-sm' id='descripcion$idrow' value='".$objVal['descripcion']."'></td>
-                                    <td><a href='javascript:;' id='btnEliminar' onclick='eliminarFilaT2($idrow)'><i class='bx bx-x'></i></a></td>
+                                    <td><a href='javascript:;' id='btnEliminar' onclick='eliminarFilaT2(`$idrow`)'><i class='bx bx-x'></i></a></td>
                                 </tr>
                                 ";
                             }
@@ -78,7 +79,9 @@ $table_e2_arr = json_decode($table_e2, true);
 
     function agregarFilaT2() {
 
-        var id = new Date().getTime();
+        //var id = new Date().getTime();
+        var id = get_uuid();
+
         dataT2.push({
            "id": id,
            "nro": "",
@@ -106,7 +109,7 @@ $table_e2_arr = json_decode($table_e2, true);
                 "<input type='text' class='form-control form-control-sm' id='rxTo"+id+"' value=''>" +
                 "</td>" +
                 "<td><input type='text' class='form-control form-control-sm' id='descripcion"+id+"' value=''></td>" +
-                "<td><a href='javascript:;' id='btnEliminar' onclick='eliminarFilaT2("+id+")'><i class='bx bx-x'></i></a></td>" +
+                "<td><a href='javascript:;' id='btnEliminar' onclick='eliminarFilaT2(`"+id+"`)'><i class='bx bx-x'></i></a></td>" +
             "</tr>";
 
 
@@ -140,7 +143,7 @@ $table_e2_arr = json_decode($table_e2, true);
             obj.descripcion = $("#descripcion"+obj.id).val();
         }
 
-        console.log('...mostrando...')
+        //console.log('...mostrando...')
         /*for (obj of dataT2){
             console.log('Origen: ' + obj.origen + ' - ' + 'Destino: ' + obj.destino)
         }*/

@@ -3,12 +3,13 @@ $table_e1_arr = json_decode($table_e1, true);
 ?>
 <input type="hidden" name="idrutina" id="idrutina" value="<?=$idrutina?>" />
 
-<div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
-    <div class="col">
-        <div class="card">
-            <div class="card-body">
+<div class="card">
+    <div class="card-body">
+        <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
+            <div class="col">
+
+                <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_save_t1"><i class="bx bx-save me-0"></i></button>
                 <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_add_ori_dest"><i class="bx bx-plus me-0"></i></button>
-                <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_save"><i class="bx bx-save me-0"></i></button>
                 <div id="fibra-ori-des">
                     <table class="table table-bordered mb-3" id="lista_fibra">
                         <tr>
@@ -50,11 +51,11 @@ $table_e1_arr = json_decode($table_e1, true);
 <script type="text/javascript">
 
     var btn_add_ori_dest = document.getElementById('btn_add_ori_dest');
-    var btn_save         = document.getElementById('btn_save');
+    var btn_save_t1         = document.getElementById('btn_save_t1');
     var lista_fibra      = document.getElementById('lista_fibra');
 
     btn_add_ori_dest.addEventListener("click", agregar);
-    btn_save.addEventListener("click", guardarFilas);
+    btn_save_t1.addEventListener("click", guardarFilas);
 
     var table_e1 = '<?php echo $table_e1; ?>';
 
@@ -69,9 +70,22 @@ $table_e1_arr = json_decode($table_e1, true);
         cant = data.length+1;
     }
 
+    function get_uuid() {
+        var dt = new Date().getTime();
+        var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = (dt + Math.random()*16)%16 | 0;
+            dt = Math.floor(dt/16);
+            return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+        });
+        //console.log('uuid: ' + uuid);
+        return uuid;
+    }
+
     function agregar() {
 
-        var id = new Date().getTime();
+        //var id = new Date().getTime();
+        var id = get_uuid();
+
         data.push({
            "id": id,
            "nro": "",
@@ -90,18 +104,19 @@ $table_e1_arr = json_decode($table_e1, true);
             "<td><input type='text' class='form-control form-control-sm' id='modelo"+id+"' value=''></td>" +
             "<td><input type='text' class='form-control form-control-sm' id='puertoEth"+id+"' value=''></td>" +
             "<td><input type='text' class='form-control form-control-sm' id='posicionOdf"+id+"' value=''></td>" +
-            "<td><a href='javascript:;' id='btnEliminar' onclick='eliminar("+id+")'><i class='bx bx-x'></i></a></td>" +
+            "<td><a href='javascript:;' id='btnEliminar' onclick='eliminar(`"+id+"`)'><i class='bx bx-x'></i></a></td>" +
             "</tr>";
         $("#lista_fibra").append(fila);
         cant++;
     }
 
     function eliminar(row) {
+        //console.log('eliminar: ' + "#row"+row);
         $("#row"+row).remove();
         var i=0;
         var pos=0;
         for (obj of data){
-            if (obj.id == row){
+            if (obj.id === row){
                 pos = i;
             }
             i++;
@@ -121,10 +136,10 @@ $table_e1_arr = json_decode($table_e1, true);
             obj.posicionOdf = $("#posicionOdf"+obj.id).val();
         }
 
-        console.log('...mostrando...')
-        for (obj of data){
+        //console.log('...mostrando...')
+        /*for (obj of data){
             console.log('Origen: ' + obj.origen + ' - ' + 'Destino: ' + obj.destino)
-        }
+        }*/
 
         var idrutina = $("#idrutina").val();
         var jsonStr = JSON.stringify(data);
