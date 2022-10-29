@@ -25,4 +25,14 @@ function getNombreArchivoReporte($jsonData, $titulo0){
     return $fecha . " " . $titulo0 . " " . $propertyId;
 }
 
+function getJsonData_fibra_r15($conexion, $idrutinax){
+
+    $res3 = mysqli_query($conexion, "SELECT r.id, r.table_e1, r.table_e2, r.table_e3, r.table_e4
+                                        FROM rutina015 r
+                                        WHERE r.id = ".$idrutinax);
+    $data3 = mysqli_fetch_array($res3);
+
+    return [ $data3['table_e1'], $data3['table_e2'], $data3['table_e3'], $data3['table_e4'] ];
+}
+
 ?>

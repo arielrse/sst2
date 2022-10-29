@@ -1,5 +1,6 @@
 <?php
 require("../../../funciones/DateUtils.php");
+
 require("../ReporteMtoUtils.php");
 require("variable_text.php");
 
@@ -10,9 +11,25 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
     $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
     $cabecera        = getCabecera($conexion, $jsonData, $idgrupo, false, $titulosArr);
+    $tablasFibraArr  = getJsonData_fibra_r15($conexion, $idrutinax);
+
     $subPlantilla1   = getSubPlantilla1($jsonData);
     $subPlantilla2   = getSubPlantilla2($jsonData);
     $subPlantilla3   = getSubPlantilla3($jsonData);
+
+
+    $subPlantillaFibraAnt = '
+        <br />
+        <main>
+            <div class="notices">
+                <div class="notice"><strong>'.constant('ETITLE').'</strong></div>
+            </div>
+        </main>	';
+
+    //$subPlantillaFibraAnt .= getSubPlantillaFibraAnt($jsonData);
+
+    $subPlantillaFibra    = getSubPlantillaFibra($tablasFibraArr);
+
     $footerPlantilla = getFooter($jsonData);
 
     $reporteFotog    = getReporteFotog($conexion, $idrutinax, '015');
@@ -33,26 +50,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
     $g1_08_01 = $g_desarrollo_g1->g1_08_01 ? $check : $uncheck; $g1_08_02 = $g_desarrollo_g1->g1_08_02 ? $check : $uncheck; $g1_08_03 = $g_desarrollo_g1->g1_08_03;
     $g1_09_01 = $g_desarrollo_g1->g1_09_01 ? $check : $uncheck; $g1_09_02 = $g_desarrollo_g1->g1_09_02 ? $check : $uncheck; $g1_09_03 = $g_desarrollo_g1->g1_09_03;
 
-    $f_fibra = $obj->{'f_fibra'};
 
-    $f1_01_01 = $f_fibra->f1_01_01; $f1_01_02 = $f_fibra->f1_01_02; $f1_01_03 = $f_fibra->f1_01_03; $f1_01_04 = $f_fibra->f1_01_04; $f1_01_05 = $f_fibra->f1_01_05;
-    $f1_02_01 = $f_fibra->f1_02_01; $f1_02_02 = $f_fibra->f1_02_02; $f1_02_03 = $f_fibra->f1_02_03; $f1_02_04 = $f_fibra->f1_02_04; $f1_02_05 = $f_fibra->f1_02_05;
-    $f1_03_01 = $f_fibra->f1_03_01; $f1_03_02 = $f_fibra->f1_03_02; $f1_03_03 = $f_fibra->f1_03_03; $f1_03_04 = $f_fibra->f1_03_04; $f1_03_05 = $f_fibra->f1_03_05;
-
-    $f1_04_01 = $f_fibra->f1_04_01; $f1_04_02 = $f_fibra->f1_04_02; $f1_04_03 = $f_fibra->f1_04_03; $f1_04_04_from = $f_fibra->f1_04_04_from; $f1_04_05 = $f_fibra->f1_04_05;
-    $f1_04_04_to   = $f_fibra->f1_04_04_to;
-    $f1_05_01 = $f_fibra->f1_05_01; $f1_05_02 = $f_fibra->f1_05_02; $f1_05_03 = $f_fibra->f1_05_03; $f1_05_04_from = $f_fibra->f1_05_04_from; $f1_05_05 = $f_fibra->f1_05_05;
-    $f1_05_04_to   = $f_fibra->f1_05_04_to;
-    $f1_06_01 = $f_fibra->f1_06_01; $f1_06_02 = $f_fibra->f1_06_02; $f1_06_03 = $f_fibra->f1_06_03; $f1_06_04_from = $f_fibra->f1_06_04_from; $f1_06_05 = $f_fibra->f1_06_05;
-    $f1_06_04_to   = $f_fibra->f1_06_04_to;
-
-    $f1_07_02 = $f_fibra->f1_07_02; $f1_07_03_a = $f_fibra->f1_07_03_a; $f1_07_04_a = $f_fibra->f1_07_04_a; $f1_07_05_a = $f_fibra->f1_07_05_a;
-    $f1_07_03_b = $f_fibra->f1_07_03_b; $f1_07_04_b = $f_fibra->f1_07_04_b; $f1_07_05_b = $f_fibra->f1_07_05_b;
-    $f1_08_02 = $f_fibra->f1_08_02; $f1_08_03_a = $f_fibra->f1_08_03_a; $f1_08_04_a = $f_fibra->f1_08_04_a; $f1_08_05_a = $f_fibra->f1_08_05_a;
-    $f1_08_03_b = $f_fibra->f1_08_03_b; $f1_08_04_b = $f_fibra->f1_08_04_b; $f1_08_05_b = $f_fibra->f1_08_05_b;
-    $f1_08_03_c = $f_fibra->f1_08_03_c; $f1_08_04_c = $f_fibra->f1_08_04_c; $f1_08_05_c = $f_fibra->f1_08_05_c;
-
-//$e_01_01 = $d_sectores->e_01_01;
     $g_desarrollo_g2 = $obj->{'g_desarrollo_g2'};
     $g2_01_01 = $g_desarrollo_g2->g2_01_01 ? $check : $uncheck; $g2_01_02 = $g_desarrollo_g2->g2_01_02 ? $check : $uncheck; $g2_01_03 = $g_desarrollo_g2->g2_01_03;
     $g2_02_01 = $g_desarrollo_g2->g2_02_01 ? $check : $uncheck; $g2_02_02 = $g_desarrollo_g2->g2_02_02 ? $check : $uncheck; $g2_02_03 = $g_desarrollo_g2->g2_02_03;
@@ -105,7 +103,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                     </div>
                 </main>	
                '. $subPlantilla1 .'
+               <br />
                '. $subPlantilla2 .'
+               <br />&nbsp;<br />&nbsp;<br />&nbsp;<br />
                '. $subPlantilla3 .'
                
                <main>
@@ -172,179 +172,11 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                         </tbody>        
                     </table>									                        
                </main>
-               <main>
-                    <div class="notices">
-                        <div class="notice"><strong>'.constant('ETITLE').'</strong></div>
-                    </div>
-                </main>	
-               <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td class="col-10p"><strong> N. </strong></td>
-                                <td class="col-10p"><strong> '.constant('E01').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E02').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E03').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E04').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E05').'</strong></td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p"> 1</td>
-                                <td class="col-15p"> '.$f1_01_01.'</td>
-                                <td class="col-15p"> '.$f1_01_02.'</td>
-                                <td class="col-15p"> '.$f1_01_03.'</td>
-                                <td class="col-15p"> '.$f1_01_04.'</td>
-                                <td class="col-15p"> '.$f1_01_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p">2</td>
-                                <td class="col-15p"> '.$f1_02_01.'</td>
-                                <td class="col-15p"> '.$f1_02_02.'</td>
-                                <td class="col-15p"> '.$f1_02_03.'</td>
-                                <td class="col-15p"> '.$f1_02_04.'</td>
-                                <td class="col-15p"> '.$f1_02_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p">3</td>
-                                <td class="col-15p"> '.$f1_03_01.'</td>
-                                <td class="col-15p"> '.$f1_03_02.'</td>
-                                <td class="col-15p"> '.$f1_03_03.'</td>
-                                <td class="col-15p"> '.$f1_03_04.'</td>
-                                <td class="col-15p"> '.$f1_03_05.'</td>
-                            </tr>
-                        </tbody>        
-                    </table>									                        
-               </main>
-               <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td class="col-10p"><strong> N. </strong></td>
-                                <td class="col-10p"><strong> '.constant('E03').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E06').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E07').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E08').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E09').'</strong></td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p"> 1</td>
-                                <td class="col-15p"> '.$f1_04_01.'</td>
-                                <td class="col-15p"> '.$f1_04_02.'</td>
-                                <td class="col-15p"> '.$f1_04_03.'</td>
-                                <td class="col-25p"> Hilo Tx From:' .$f1_04_04_from.'</td>
-                                <td class="col-25p"> '.$f1_04_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p"> </td>
-                                <td class="col-15p">  </td>
-                                <td class="col-15p">  </td>
-                                <td class="col-15p">  </td>
-                                <td class="col-25p"> Hilo Tx To:' .$f1_04_04_to.'</td>
-                                <td class="col-25p">  </td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">2</td>
-                                <td class="col-15p"> '.$f1_05_01.'</td>
-                                <td class="col-15p"> '.$f1_05_02.'</td>
-                                <td class="col-15p"> '.$f1_05_03.'</td>
-                                <td class="col-25p">Hilo Tx From:  '.$f1_05_04_from.'</td>
-                                <td class="col-25p"> '.$f1_05_05.'</td>
-                            </tr>
-                             <tr>
-                                <td class="col-5p"> </td>
-                                <td class="col-15p">  </td>
-                                <td class="col-15p">  </td>
-                                <td class="col-15p">  </td>
-                                <td class="col-25p"> Hilo Tx To:' .$f1_05_04_to.'</td>
-                                <td class="col-25p">  </td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">3</td>
-                                <td class="col-15p"> '.$f1_06_01.'</td>
-                                <td class="col-15p"> '.$f1_06_02.'</td>
-                                <td class="col-15p"> '.$f1_06_03.'</td>
-                                <td class="col-25p">Hilo Tx From:  '.$f1_06_04_from.'</td>
-                                <td class="col-25p"> '.$f1_06_05.'</td>
-                            </tr>
-                             <tr>
-                                <td class="col-5p"> </td>
-                                <td class="col-15p">  </td>
-                                <td class="col-15p">  </td>
-                                <td class="col-15p">  </td>
-                                <td class="col-25p"> Hilo Tx To:' .$f1_06_04_to.'</td>
-                                <td class="col-25p">  </td>
-                            </tr>
-                        </tbody>        
-                    </table>									                        
-               </main>
-               <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td class="col-10p"><strong> 4</strong></td>
-                                <td class="col-15p"><strong> '.constant('E10').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E12').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E13').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E14').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E15').'</strong></td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p"> </td>
-                                <td class="col-15p"> </td>
-                                <td class="col-15p"> '.$f1_07_02.'</td>
-                                <td class="col-15p"> '.$f1_07_03_a.'</td>
-                                <td class="col-15p"> '.$f1_07_04_a.'</td>
-                                <td class="col-15p"> '.$f1_07_05_a.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p"> </td>
-                                <td class="col-15p"> </td>
-                                <td class="col-15p"> </td>
-                                <td class="col-15p"> '.$f1_07_03_b.'</td>
-                                <td class="col-15p"> '.$f1_07_04_b.'</td>
-                                <td class="col-15p"> '.$f1_07_05_b.'</td>
-                            </tr>
-                        </tbody>        
-                    </table>									                        
-               </main>
-                <main>
-                    <table class="tborder">
-                        <tbody>
-                            <tr>
-                                <td class="col-10p"><strong>5</strong></td>
-                                <td class="col-15p"><strong> '.constant('E10').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E11').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E13').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E14').'</strong></td>
-                                <td class="col-15p"><strong> '.constant('E16').'</strong></td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p"> </td>
-                                <td class="col-15p"> </td>
-                                <td class="col-15p"> '.$f1_08_02.'</td>
-                                <td class="col-15p"> '.$f1_08_03_a.'</td>
-                                <td class="col-15p"> '.$f1_08_04_a.'</td>
-                                <td class="col-15p"> '.$f1_08_05_a.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p"> </td>
-                                <td class="col-15p"> </td>
-                                <td class="col-15p"> </td>
-                                <td class="col-15p"> '.$f1_08_03_b.'</td>
-                                <td class="col-15p"> '.$f1_08_04_b.'</td>
-                                <td class="col-15p"> '.$f1_08_05_b.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-10p"> </td>
-                                <td class="col-15p"> </td>
-                                <td class="col-15p"> </td>
-                                <td class="col-15p"> '.$f1_08_03_c.'</td>
-                                <td class="col-15p"> '.$f1_08_04_c.'</td>
-                                <td class="col-15p"> '.$f1_08_05_c.'</td>
-                            </tr>
-                        </tbody>        
-                    </table>									                        
-               </main>
+               
+               ' . $subPlantillaFibraAnt . '
+                              
+               ' . $subPlantillaFibra . '               
+               
                <main>
                     <table class="tborder">
                         <tbody>
@@ -580,6 +412,389 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
 
     return $plantilla;
 }
+
+function getSubPlantillaFibra($tablasFibraArr){
+
+    $tabla_e1 = json_decode( $tablasFibraArr[0], true );
+    $tabla_e2 = json_decode( $tablasFibraArr[1], true );
+    $tabla_e3 = json_decode( $tablasFibraArr[2], true );
+    $tabla_e4 = json_decode( $tablasFibraArr[3], true );
+
+    $plantilla = '';
+
+    /** ----------------------Tabla 1------------------------ **/
+
+    if ($tabla_e1) {
+        $plantilla .= '
+        <table class="tborder">
+            <tr>
+                <td class="col-5p" align="center"><strong> N. </strong></td>
+                <td class="col-20p" align="center"><strong> ' . constant('E01') . '</strong></td>
+                <td class="col-20p" align="center"><strong> ' . constant('E02') . '</strong></td>
+                <td class="col-20p" align="center"><strong> ' . constant('E03') . '</strong></td>
+                <td class="col-15p" align="center"><strong> ' . constant('E04') . '</strong></td>
+                <td class="col-20p" align="center"><strong> ' . constant('E05') . '</strong></td>
+            </tr>';
+
+        foreach ($tabla_e1 as $obj) {
+            $plantilla .= '
+            <tr>
+                <td align="center"> '.$obj['nro'].'</td>
+                <td> '.$obj['origen'].'</td>
+                <td> '.$obj['destino'].'</td>
+                <td> '.$obj['modelo'].'</td>
+                <td> '.$obj['puertoEth'].'</td>
+                <td> '.$obj['posicionOdf'].'</td>
+            </tr>
+            ';
+        }
+        $plantilla .= '</table><br />';
+    }
+
+    /** ----------------------Tabla 2------------------------ **/
+
+    if ($tabla_e2) {
+        $plantilla .= '
+        <table class="tborder">
+            <tr>
+                <td class="col-5p" align="center"><strong> N. </strong></td>
+                <td class="col-15p" align="center"><strong> '.constant('E03').'</strong></td>
+                <td class="col-10p" align="center"><strong> '.constant('E06').'</strong></td>
+                <td class="col-10p" align="center"><strong> '.constant('E07').'</strong></td>
+                <td class="col-30p" align="center"><strong> '.constant('E08').'</strong></td>
+                <td class="col-30p" align="center"><strong> '.constant('E09').'</strong></td>
+            </tr>';
+        foreach ($tabla_e2 as $obj) {
+            $plantilla .= '
+            <tr>
+                <td align="center">'.$obj['nro'].'</td>
+                <td>'.$obj['modelo'].'</td>
+                <td align="center">'.$obj['estadoTx'].'</td>
+                <td align="center">'.$obj['cantPtos'].'</td>
+                <td>
+                    <div>H. Tx From: '.$obj['txFrom'].'</div>
+                    <div>H. Rx To: '.$obj['rxTo'].'</div>
+                </td>
+                <td>'.$obj['descripcion'].'</td>
+            </tr>';
+        }
+        $plantilla .= '</table><br />';
+    }
+
+    /** ----------------------Tabla 3------------------------ **/
+
+    if ($tabla_e3) {
+        $plantilla .= '
+        <table class="tborder">
+        <tr>
+            <td width="20%" align="center"><strong>Detalle de puertos ETH ópticos</strong></td>
+            <td width="80%">
+            
+                <table class="tborder">';
+                foreach ($tabla_e3 as $obj) {
+                    $nomEq = $obj['id_nom'];
+                    $plantilla .=
+                        "<tr>" .
+                        "    <td width='15%' align='center'>" .
+                        "        <p><strong>Tarjeta</strong></p><br />" .
+                        "        <p>". $nomEq . "</p>" .
+                        "    </td>" .
+                        "    <td>" .
+                        "        <table class='table table-bordered'>" .
+                        "            <tr class='align-middle'>" .
+                        "                <th width='12%'>Slot/Prto</th>" .
+                        "                <th>Descripción</th>" .
+                        "                <th width='20%'>Estado</th>" .
+                        "            </tr>";
+
+
+                    foreach ($obj['puertos'] as $objPrto) {
+
+                        $puerto = $objPrto['id_puerto'];
+                        $descri = $objPrto['id_descri'];
+                        $estado = $objPrto['id_estado'];
+
+                        $plantilla .=
+                            "<tr>" .
+                            "   <td align='center'>" . $puerto . "</td>" .
+                            "   <td>" . $descri . "</td>" .
+                            "   <td align='center'>" . $estado . "</td>" .
+                            "</tr>";
+                    }
+                    $plantilla .=
+                        "        </table>" .
+                        "    </td>" .
+                        "</tr>";
+                }
+
+                $plantilla .= '</table>';
+                $plantilla .= '</td></tr></table><br />';
+    }
+
+    /** ----------------------Tabla 4------------------------ **/
+
+    if ($tabla_e4) {
+        $plantilla .= '
+        <table class="tborder">
+        <tr>
+            <td width="20%" align="center"><strong>Puertos opticos en bandeja ODF</strong></td>
+            <td width="80%">
+            
+                <table class="tborder">';
+        foreach ($tabla_e4 as $obj) {
+            $nomEq = $obj['id_nom'];
+            $plantilla .=
+                "<tr>" .
+                "    <td width='15%' align='center'>" .
+                "        <p><strong>No. Bandeja</strong></p><br />" .
+                "        <p>". $nomEq . "</p>" .
+                "    </td>" .
+                "    <td>" .
+                "        <table class='table table-bordered'>" .
+                "            <tr class='align-middle'>" .
+                "                <th width='12%'>Prto.</th>" .
+                "                <th>Descripción</th>" .
+                "                <th width='20%'>Tipo de Conector</th>" .
+                "            </tr>";
+
+
+            foreach ($obj['puertos'] as $objPrto) {
+
+                $puerto = $objPrto['id_puerto'];
+                $descri = $objPrto['id_descri'];
+                $estado = $objPrto['id_estado'];
+
+                $plantilla .=
+                    "<tr>" .
+                    "   <td align='center'>" . $puerto . "</td>" .
+                    "   <td>" . $descri . "</td>" .
+                    "   <td align='center'>" . $estado . "</td>" .
+                    "</tr>";
+            }
+            $plantilla .=
+                "        </table>" .
+                "    </td>" .
+                "</tr>";
+        }
+
+        $plantilla .= '</table>';
+        $plantilla .= '</td></tr></table><br />';
+    }
+
+    return $plantilla;
+}
+
+function getSubPlantillaFibraAnt($jsonData){
+
+    $obj = json_decode($jsonData);
+
+    $f_fibra = $obj->{'f_fibra'};
+
+    $f1_01_01 = $f_fibra->f1_01_01; $f1_01_02 = $f_fibra->f1_01_02; $f1_01_03 = $f_fibra->f1_01_03; $f1_01_04 = $f_fibra->f1_01_04; $f1_01_05 = $f_fibra->f1_01_05;
+    $f1_02_01 = $f_fibra->f1_02_01; $f1_02_02 = $f_fibra->f1_02_02; $f1_02_03 = $f_fibra->f1_02_03; $f1_02_04 = $f_fibra->f1_02_04; $f1_02_05 = $f_fibra->f1_02_05;
+    $f1_03_01 = $f_fibra->f1_03_01; $f1_03_02 = $f_fibra->f1_03_02; $f1_03_03 = $f_fibra->f1_03_03; $f1_03_04 = $f_fibra->f1_03_04; $f1_03_05 = $f_fibra->f1_03_05;
+
+    $f1_04_01 = $f_fibra->f1_04_01; $f1_04_02 = $f_fibra->f1_04_02; $f1_04_03 = $f_fibra->f1_04_03; $f1_04_04_from = $f_fibra->f1_04_04_from; $f1_04_05 = $f_fibra->f1_04_05;
+    $f1_04_04_to   = $f_fibra->f1_04_04_to;
+    $f1_05_01 = $f_fibra->f1_05_01; $f1_05_02 = $f_fibra->f1_05_02; $f1_05_03 = $f_fibra->f1_05_03; $f1_05_04_from = $f_fibra->f1_05_04_from; $f1_05_05 = $f_fibra->f1_05_05;
+    $f1_05_04_to   = $f_fibra->f1_05_04_to;
+    $f1_06_01 = $f_fibra->f1_06_01; $f1_06_02 = $f_fibra->f1_06_02; $f1_06_03 = $f_fibra->f1_06_03; $f1_06_04_from = $f_fibra->f1_06_04_from; $f1_06_05 = $f_fibra->f1_06_05;
+    $f1_06_04_to   = $f_fibra->f1_06_04_to;
+
+    $f1_07_02 = $f_fibra->f1_07_02; $f1_07_03_a = $f_fibra->f1_07_03_a; $f1_07_04_a = $f_fibra->f1_07_04_a; $f1_07_05_a = $f_fibra->f1_07_05_a;
+    $f1_07_03_b = $f_fibra->f1_07_03_b; $f1_07_04_b = $f_fibra->f1_07_04_b; $f1_07_05_b = $f_fibra->f1_07_05_b;
+    $f1_08_02 = $f_fibra->f1_08_02; $f1_08_03_a = $f_fibra->f1_08_03_a; $f1_08_04_a = $f_fibra->f1_08_04_a; $f1_08_05_a = $f_fibra->f1_08_05_a;
+    $f1_08_03_b = $f_fibra->f1_08_03_b; $f1_08_04_b = $f_fibra->f1_08_04_b; $f1_08_05_b = $f_fibra->f1_08_05_b;
+    $f1_08_03_c = $f_fibra->f1_08_03_c; $f1_08_04_c = $f_fibra->f1_08_04_c; $f1_08_05_c = $f_fibra->f1_08_05_c;
+
+    /*$plantilla = '
+        <main>
+            <div class="notices">
+                <div class="notice"><strong>'.constant('ETITLE').'</strong></div>
+            </div>
+        </main>	';*/
+
+
+    $plantilla = '
+        <main>
+            <table class="tborder">
+                <tbody>
+                    <tr>
+                        <td class="col-10p"><strong> N. </strong></td>
+                        <td class="col-10p"><strong> ' . constant('E01') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E02') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E03') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E04') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E05') . '</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="col-10p"> 1</td>
+                        <td class="col-15p"> ' . $f1_01_01 . '</td>
+                        <td class="col-15p"> ' . $f1_01_02 . '</td>
+                        <td class="col-15p"> ' . $f1_01_03 . '</td>
+                        <td class="col-15p"> ' . $f1_01_04 . '</td>
+                        <td class="col-15p"> ' . $f1_01_05 . '</td>
+                    </tr>
+                    <tr>
+                        <td class="col-10p">2</td>
+                        <td class="col-15p"> ' . $f1_02_01 . '</td>
+                        <td class="col-15p"> ' . $f1_02_02 . '</td>
+                        <td class="col-15p"> ' . $f1_02_03 . '</td>
+                        <td class="col-15p"> ' . $f1_02_04 . '</td>
+                        <td class="col-15p"> ' . $f1_02_05 . '</td>
+                    </tr>
+                    <tr>
+                        <td class="col-10p">3</td>
+                        <td class="col-15p"> ' . $f1_03_01 . '</td>
+                        <td class="col-15p"> ' . $f1_03_02 . '</td>
+                        <td class="col-15p"> ' . $f1_03_03 . '</td>
+                        <td class="col-15p"> ' . $f1_03_04 . '</td>
+                        <td class="col-15p"> ' . $f1_03_05 . '</td>
+                    </tr>
+                </tbody>        
+            </table>									                        
+       </main>';
+
+    $plantilla .= '
+        <main>
+            <table class="tborder">
+                <tbody>
+                    <tr>
+                        <td class="col-10p"><strong> N. </strong></td>
+                        <td class="col-10p"><strong> '.constant('E03').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E06').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E07').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E08').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E09').'</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="col-5p"> 1</td>
+                        <td class="col-15p"> '.$f1_04_01.'</td>
+                        <td class="col-15p"> '.$f1_04_02.'</td>
+                        <td class="col-15p"> '.$f1_04_03.'</td>
+                        <td class="col-25p"> Hilo Tx From:' .$f1_04_04_from.'</td>
+                        <td class="col-25p"> '.$f1_04_05.'</td>
+                    </tr>
+                    <tr>
+                        <td class="col-5p"> </td>
+                        <td class="col-15p">  </td>
+                        <td class="col-15p">  </td>
+                        <td class="col-15p">  </td>
+                        <td class="col-25p"> Hilo Tx To:' .$f1_04_04_to.'</td>
+                        <td class="col-25p">  </td>
+                    </tr>
+                    <tr>
+                        <td class="col-5p">2</td>
+                        <td class="col-15p"> '.$f1_05_01.'</td>
+                        <td class="col-15p"> '.$f1_05_02.'</td>
+                        <td class="col-15p"> '.$f1_05_03.'</td>
+                        <td class="col-25p">Hilo Tx From:  '.$f1_05_04_from.'</td>
+                        <td class="col-25p"> '.$f1_05_05.'</td>
+                    </tr>
+                     <tr>
+                        <td class="col-5p"> </td>
+                        <td class="col-15p">  </td>
+                        <td class="col-15p">  </td>
+                        <td class="col-15p">  </td>
+                        <td class="col-25p"> Hilo Tx To:' .$f1_05_04_to.'</td>
+                        <td class="col-25p">  </td>
+                    </tr>
+                    <tr>
+                        <td class="col-5p">3</td>
+                        <td class="col-15p"> '.$f1_06_01.'</td>
+                        <td class="col-15p"> '.$f1_06_02.'</td>
+                        <td class="col-15p"> '.$f1_06_03.'</td>
+                        <td class="col-25p">Hilo Tx From:  '.$f1_06_04_from.'</td>
+                        <td class="col-25p"> '.$f1_06_05.'</td>
+                    </tr>
+                     <tr>
+                        <td class="col-5p"> </td>
+                        <td class="col-15p">  </td>
+                        <td class="col-15p">  </td>
+                        <td class="col-15p">  </td>
+                        <td class="col-25p"> Hilo Tx To:' .$f1_06_04_to.'</td>
+                        <td class="col-25p">  </td>
+                    </tr>
+                </tbody>        
+            </table>									                        
+       </main>';
+
+    $plantilla .= '
+        <main>
+            <table class="tborder">
+                <tbody>
+                    <tr>
+                        <td class="col-10p"><strong> 4</strong></td>
+                        <td class="col-15p"><strong> '.constant('E10').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E12').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E13').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E14').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E15').'</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="col-10p"> </td>
+                        <td class="col-15p"> </td>
+                        <td class="col-15p"> '.$f1_07_02.'</td>
+                        <td class="col-15p"> '.$f1_07_03_a.'</td>
+                        <td class="col-15p"> '.$f1_07_04_a.'</td>
+                        <td class="col-15p"> '.$f1_07_05_a.'</td>
+                    </tr>
+                    <tr>
+                        <td class="col-10p"> </td>
+                        <td class="col-15p"> </td>
+                        <td class="col-15p"> </td>
+                        <td class="col-15p"> '.$f1_07_03_b.'</td>
+                        <td class="col-15p"> '.$f1_07_04_b.'</td>
+                        <td class="col-15p"> '.$f1_07_05_b.'</td>
+                    </tr>
+                </tbody>        
+            </table>									                        
+       </main>';
+
+    $plantilla .= '
+        <main>
+            <table class="tborder">
+                <tbody>
+                    <tr>
+                        <td class="col-10p"><strong>5</strong></td>
+                        <td class="col-15p"><strong> '.constant('E10').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E11').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E13').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E14').'</strong></td>
+                        <td class="col-15p"><strong> '.constant('E16').'</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="col-10p"> </td>
+                        <td class="col-15p"> </td>
+                        <td class="col-15p"> '.$f1_08_02.'</td>
+                        <td class="col-15p"> '.$f1_08_03_a.'</td>
+                        <td class="col-15p"> '.$f1_08_04_a.'</td>
+                        <td class="col-15p"> '.$f1_08_05_a.'</td>
+                    </tr>
+                    <tr>
+                        <td class="col-10p"> </td>
+                        <td class="col-15p"> </td>
+                        <td class="col-15p"> </td>
+                        <td class="col-15p"> '.$f1_08_03_b.'</td>
+                        <td class="col-15p"> '.$f1_08_04_b.'</td>
+                        <td class="col-15p"> '.$f1_08_05_b.'</td>
+                    </tr>
+                    <tr>
+                        <td class="col-10p"> </td>
+                        <td class="col-15p"> </td>
+                        <td class="col-15p"> </td>
+                        <td class="col-15p"> '.$f1_08_03_c.'</td>
+                        <td class="col-15p"> '.$f1_08_04_c.'</td>
+                        <td class="col-15p"> '.$f1_08_05_c.'</td>
+                    </tr>
+                </tbody>        
+            </table>									                        
+       </main>
+    ';
+
+    return $plantilla;
+}
+
 function getSubPlantilla1($jsonData){
     $obj = json_decode($jsonData);
     $d_micro_1 = $obj->{'d_micro_1'};
