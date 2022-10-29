@@ -26,7 +26,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
             </div>
         </main>	';
 
-    //$subPlantillaFibraAnt .= getSubPlantillaFibraAnt($jsonData);
+    $subPlantillaFibraAnt .= getSubPlantillaFibraAnt($jsonData);
 
     $subPlantillaFibra    = getSubPlantillaFibra($tablasFibraArr);
 
@@ -614,8 +614,8 @@ function getSubPlantillaFibraAnt($jsonData){
             </div>
         </main>	';*/
 
-
-    $plantilla = '
+    if ($f1_01_01 != '') {
+        $plantilla = '
         <main>
             <table class="tborder">
                 <tbody>
@@ -654,143 +654,149 @@ function getSubPlantillaFibraAnt($jsonData){
                 </tbody>        
             </table>									                        
        </main>';
+    }
 
-    $plantilla .= '
+    if ($f1_04_01 != '') {
+        $plantilla .= '
         <main>
             <table class="tborder">
                 <tbody>
                     <tr>
                         <td class="col-10p"><strong> N. </strong></td>
-                        <td class="col-10p"><strong> '.constant('E03').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E06').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E07').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E08').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E09').'</strong></td>
+                        <td class="col-10p"><strong> ' . constant('E03') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E06') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E07') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E08') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E09') . '</strong></td>
                     </tr>
                     <tr>
                         <td class="col-5p"> 1</td>
-                        <td class="col-15p"> '.$f1_04_01.'</td>
-                        <td class="col-15p"> '.$f1_04_02.'</td>
-                        <td class="col-15p"> '.$f1_04_03.'</td>
-                        <td class="col-25p"> Hilo Tx From:' .$f1_04_04_from.'</td>
-                        <td class="col-25p"> '.$f1_04_05.'</td>
+                        <td class="col-15p"> ' . $f1_04_01 . '</td>
+                        <td class="col-15p"> ' . $f1_04_02 . '</td>
+                        <td class="col-15p"> ' . $f1_04_03 . '</td>
+                        <td class="col-25p"> Hilo Tx From:' . $f1_04_04_from . '</td>
+                        <td class="col-25p"> ' . $f1_04_05 . '</td>
                     </tr>
                     <tr>
                         <td class="col-5p"> </td>
                         <td class="col-15p">  </td>
                         <td class="col-15p">  </td>
                         <td class="col-15p">  </td>
-                        <td class="col-25p"> Hilo Tx To:' .$f1_04_04_to.'</td>
+                        <td class="col-25p"> Hilo Tx To:' . $f1_04_04_to . '</td>
                         <td class="col-25p">  </td>
                     </tr>
                     <tr>
                         <td class="col-5p">2</td>
-                        <td class="col-15p"> '.$f1_05_01.'</td>
-                        <td class="col-15p"> '.$f1_05_02.'</td>
-                        <td class="col-15p"> '.$f1_05_03.'</td>
-                        <td class="col-25p">Hilo Tx From:  '.$f1_05_04_from.'</td>
-                        <td class="col-25p"> '.$f1_05_05.'</td>
+                        <td class="col-15p"> ' . $f1_05_01 . '</td>
+                        <td class="col-15p"> ' . $f1_05_02 . '</td>
+                        <td class="col-15p"> ' . $f1_05_03 . '</td>
+                        <td class="col-25p">Hilo Tx From:  ' . $f1_05_04_from . '</td>
+                        <td class="col-25p"> ' . $f1_05_05 . '</td>
                     </tr>
                      <tr>
                         <td class="col-5p"> </td>
                         <td class="col-15p">  </td>
                         <td class="col-15p">  </td>
                         <td class="col-15p">  </td>
-                        <td class="col-25p"> Hilo Tx To:' .$f1_05_04_to.'</td>
+                        <td class="col-25p"> Hilo Tx To:' . $f1_05_04_to . '</td>
                         <td class="col-25p">  </td>
                     </tr>
                     <tr>
                         <td class="col-5p">3</td>
-                        <td class="col-15p"> '.$f1_06_01.'</td>
-                        <td class="col-15p"> '.$f1_06_02.'</td>
-                        <td class="col-15p"> '.$f1_06_03.'</td>
-                        <td class="col-25p">Hilo Tx From:  '.$f1_06_04_from.'</td>
-                        <td class="col-25p"> '.$f1_06_05.'</td>
+                        <td class="col-15p"> ' . $f1_06_01 . '</td>
+                        <td class="col-15p"> ' . $f1_06_02 . '</td>
+                        <td class="col-15p"> ' . $f1_06_03 . '</td>
+                        <td class="col-25p">Hilo Tx From:  ' . $f1_06_04_from . '</td>
+                        <td class="col-25p"> ' . $f1_06_05 . '</td>
                     </tr>
                      <tr>
                         <td class="col-5p"> </td>
                         <td class="col-15p">  </td>
                         <td class="col-15p">  </td>
                         <td class="col-15p">  </td>
-                        <td class="col-25p"> Hilo Tx To:' .$f1_06_04_to.'</td>
+                        <td class="col-25p"> Hilo Tx To:' . $f1_06_04_to . '</td>
                         <td class="col-25p">  </td>
                     </tr>
                 </tbody>        
             </table>									                        
        </main>';
+    }
 
-    $plantilla .= '
+    if ($f1_07_02 != '') {
+        $plantilla .= '
         <main>
             <table class="tborder">
                 <tbody>
                     <tr>
                         <td class="col-10p"><strong> 4</strong></td>
-                        <td class="col-15p"><strong> '.constant('E10').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E12').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E13').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E14').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E15').'</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E10') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E12') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E13') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E14') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E15') . '</strong></td>
                     </tr>
                     <tr>
                         <td class="col-10p"> </td>
                         <td class="col-15p"> </td>
-                        <td class="col-15p"> '.$f1_07_02.'</td>
-                        <td class="col-15p"> '.$f1_07_03_a.'</td>
-                        <td class="col-15p"> '.$f1_07_04_a.'</td>
-                        <td class="col-15p"> '.$f1_07_05_a.'</td>
+                        <td class="col-15p"> ' . $f1_07_02 . '</td>
+                        <td class="col-15p"> ' . $f1_07_03_a . '</td>
+                        <td class="col-15p"> ' . $f1_07_04_a . '</td>
+                        <td class="col-15p"> ' . $f1_07_05_a . '</td>
                     </tr>
                     <tr>
                         <td class="col-10p"> </td>
                         <td class="col-15p"> </td>
                         <td class="col-15p"> </td>
-                        <td class="col-15p"> '.$f1_07_03_b.'</td>
-                        <td class="col-15p"> '.$f1_07_04_b.'</td>
-                        <td class="col-15p"> '.$f1_07_05_b.'</td>
+                        <td class="col-15p"> ' . $f1_07_03_b . '</td>
+                        <td class="col-15p"> ' . $f1_07_04_b . '</td>
+                        <td class="col-15p"> ' . $f1_07_05_b . '</td>
                     </tr>
                 </tbody>        
             </table>									                        
        </main>';
+    }
 
-    $plantilla .= '
+    if ($f1_08_02 != '') {
+        $plantilla .= '
         <main>
             <table class="tborder">
                 <tbody>
                     <tr>
                         <td class="col-10p"><strong>5</strong></td>
-                        <td class="col-15p"><strong> '.constant('E10').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E11').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E13').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E14').'</strong></td>
-                        <td class="col-15p"><strong> '.constant('E16').'</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E10') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E11') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E13') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E14') . '</strong></td>
+                        <td class="col-15p"><strong> ' . constant('E16') . '</strong></td>
                     </tr>
                     <tr>
                         <td class="col-10p"> </td>
                         <td class="col-15p"> </td>
-                        <td class="col-15p"> '.$f1_08_02.'</td>
-                        <td class="col-15p"> '.$f1_08_03_a.'</td>
-                        <td class="col-15p"> '.$f1_08_04_a.'</td>
-                        <td class="col-15p"> '.$f1_08_05_a.'</td>
-                    </tr>
-                    <tr>
-                        <td class="col-10p"> </td>
-                        <td class="col-15p"> </td>
-                        <td class="col-15p"> </td>
-                        <td class="col-15p"> '.$f1_08_03_b.'</td>
-                        <td class="col-15p"> '.$f1_08_04_b.'</td>
-                        <td class="col-15p"> '.$f1_08_05_b.'</td>
+                        <td class="col-15p"> ' . $f1_08_02 . '</td>
+                        <td class="col-15p"> ' . $f1_08_03_a . '</td>
+                        <td class="col-15p"> ' . $f1_08_04_a . '</td>
+                        <td class="col-15p"> ' . $f1_08_05_a . '</td>
                     </tr>
                     <tr>
                         <td class="col-10p"> </td>
                         <td class="col-15p"> </td>
                         <td class="col-15p"> </td>
-                        <td class="col-15p"> '.$f1_08_03_c.'</td>
-                        <td class="col-15p"> '.$f1_08_04_c.'</td>
-                        <td class="col-15p"> '.$f1_08_05_c.'</td>
+                        <td class="col-15p"> ' . $f1_08_03_b . '</td>
+                        <td class="col-15p"> ' . $f1_08_04_b . '</td>
+                        <td class="col-15p"> ' . $f1_08_05_b . '</td>
+                    </tr>
+                    <tr>
+                        <td class="col-10p"> </td>
+                        <td class="col-15p"> </td>
+                        <td class="col-15p"> </td>
+                        <td class="col-15p"> ' . $f1_08_03_c . '</td>
+                        <td class="col-15p"> ' . $f1_08_04_c . '</td>
+                        <td class="col-15p"> ' . $f1_08_05_c . '</td>
                     </tr>
                 </tbody>        
             </table>									                        
-       </main>
-    ';
+       </main>';
+    }
 
     return $plantilla;
 }
