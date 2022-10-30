@@ -52,7 +52,6 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
         array("id" => "7", "equipo" => "DSLAM-Z", "existe" => $e1_07_01, "estado" => $e1_07_02, "energia" => $e1_07_03, "prtos" => $e1_07_04, "desc" => $e1_07_05),
         array("id" => "8", "equipo" => "OLT", "existe" => $e1_08_01, "estado" => $e1_08_02, "energia" => $e1_08_03, "prtos" => $e1_08_04, "desc" => $e1_08_05)
     );
-    $equipos_filas = getEquiposR16($equipos_ant);
 
     $fuentes_ant = array(
         array("id" => "1", "equipo" => "ASR-9010", "fuenteA" => $e1_09_01, "origen1" => $e1_09_02, "fuenteB" => $e1_09_03, "origen2" => $e1_09_04, "obs" => $e1_09_05),
@@ -62,7 +61,6 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
         array("id" => "2", "equipo" => "ASR-920", "fuenteA" => $e1_13_01, "origen1" => $e1_13_02, "fuenteB" => $e1_13_03, "origen2" => $e1_13_04, "obs" => $e1_13_05),
         array("id" => "3", "equipo" => "OLT 300", "fuenteA" => $e1_14_01, "origen1" => $e1_14_02, "fuenteB" => $e1_14_03, "origen2" => $e1_14_04, "obs" => $e1_14_05)
     );
-    $fuentes_filas = getFuentesR16($fuentes_ant);
 
     $p_puerto12_p = $obj->{'p_puerto12_p'};
     $p_01_01 = $p_puerto12_p->p_01_01; $p_01_02 = $p_puerto12_p->p_01_02; $p_01_03 = $p_puerto12_p->p_01_03;
@@ -78,7 +76,6 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
         array("id" => "4", "puerto" => "3", "descri" => $p_04_01, "posicion" => $p_04_02, "obs" => $p_04_03),
         array("id" => "5", "puerto" => "4", "descri" => $p_05_01, "posicion" => $p_05_02, "obs" => $p_05_03),
     );
-    $puertos1_filas = getPuertos1R16($puertos1_ant);
 
     $p_06_01 = $p_puerto12_p->p_06_01; $p_06_02 = $p_puerto12_p->p_06_02; $p_06_03 = $p_puerto12_p->p_06_03;
     $p_07_01 = $p_puerto12_p->p_07_01; $p_07_02 = $p_puerto12_p->p_07_02; $p_07_03 = $p_puerto12_p->p_07_03;
@@ -93,7 +90,13 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
         array("id" => "4", "puerto" => "3", "descri" => $p_09_01, "posicion" => $p_09_02, "obs" => $p_09_03),
         array("id" => "5", "puerto" => "4", "descri" => $p_10_01, "posicion" => $p_10_02, "obs" => $p_10_03),
     );
-    $puertos2_filas = getPuertos2R16($puertos2_ant);
+
+    $equipos_filas  = getEquiposR16Ant($equipos_ant)    .   getEquiposR16($conexion, $idrutinax);
+    $fuentes_filas  = getFuentesR16Ant($fuentes_ant)    .   getFuentesR16($conexion, $idrutinax);
+    $puertos1_filas = getPuertos1R16Ant($puertos1_ant)  .   getPuertos1R16($conexion, $idrutinax);
+    $puertos2_filas = getPuertos2R16Ant($puertos2_ant)  .   getPuertos2R16($conexion, $idrutinax);
+
+
 
     $g_desarrollo_g1 = $obj->{'g_desarrollo_g1'};
     $g1_01_01 = $g_desarrollo_g1->g1_01_01 ? $check : $uncheck; $g1_01_02 = $g_desarrollo_g1->g1_01_02 ? $check : $uncheck; $g1_01_03 = $g_desarrollo_g1->g1_01_03;

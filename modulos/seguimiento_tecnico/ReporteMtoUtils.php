@@ -734,7 +734,7 @@ function getReporteFotog($conexion, $idrutinax, $codRutina){
     return $result;
 }
 
-function getEquiposR16($equiposArr){
+function getEquiposR16Ant($equiposArr){
     $result = '';
     foreach ($equiposArr as $obj) {
         if ( $obj['existe'] != '' ) {
@@ -753,7 +753,31 @@ function getEquiposR16($equiposArr){
     return $result;
 }
 
-function getFuentesR16($fuentesArr){
+function getEquiposR16($conexion, $idrutinax){
+
+    $res = mysqli_query($conexion, "SELECT r.id, r.tabla_1 FROM rutina016 r
+                                           WHERE r.id = ".$idrutinax);
+    $data = mysqli_fetch_array($res);
+    $tabla_1   = $data['tabla_1'];
+    $tabla_1_arr = json_decode($tabla_1, true);
+
+    $result = '';
+    foreach ($tabla_1_arr as $obj) {
+        $result .= '
+        <tr>
+            <td class="col-5p">' . $obj['id'] . '</td>
+            <td class="col-15p">' . $obj['equipo'] . '</td>
+            <td class="col-15p">' . $obj['existe'] . '</td>
+            <td class="col-15p">' . $obj['estado'] . '</td>
+            <td class="col-15p">' . $obj['energia'] . '</td>
+            <td class="col-15p">' . $obj['prtos'] . '</td>
+            <td class="col-20p">' . $obj['desc'] . '</td>
+        </tr>';
+    }
+    return $result;
+}
+
+function getFuentesR16Ant($fuentesArr){
     $result = '';
     foreach ($fuentesArr as $obj) {
         if ( $obj['fuenteA'] != '' ) {
@@ -772,7 +796,33 @@ function getFuentesR16($fuentesArr){
     return $result;
 }
 
-function getPuertos1R16($puertos1Arr){
+function getFuentesR16($conexion, $idrutinax){
+
+    $res = mysqli_query($conexion, "SELECT r.id, r.tabla_2 FROM rutina016 r
+                                           WHERE r.id = ".$idrutinax);
+    $data = mysqli_fetch_array($res);
+    $tabla_2   = $data['tabla_2'];
+    $tabla_2_arr = json_decode($tabla_2, true);
+
+    $result = '';
+    foreach ($tabla_2_arr as $obj) {
+        if ( $obj['fuenteA'] != '' ) {
+            $result .= '
+            <tr>
+                <td class="col-5p">' . $obj['id'] . '</td>
+                <td class="col-15p">' . $obj['equipo'] . '</td>
+                <td class="col-15p">' . $obj['fuenteA'] . '</td>
+                <td class="col-15p">' . $obj['origen1'] . '</td>
+                <td class="col-15p">' . $obj['fuenteB'] . '</td>
+                <td class="col-15p">' . $obj['origen2'] . '</td>
+                <td class="col-20p">' . $obj['obs'] . '</td>
+            </tr>';
+        }
+    }
+    return $result;
+}
+
+function getPuertos1R16Ant($puertos1Arr){
     $result = '';
     foreach ($puertos1Arr as $obj) {
         if ( $obj['descri'] != '' ) {
@@ -789,9 +839,54 @@ function getPuertos1R16($puertos1Arr){
     return $result;
 }
 
-function getPuertos2R16($puertos2Arr){
+function getPuertos1R16($conexion, $idrutinax){
+    $res = mysqli_query($conexion, "SELECT r.id, r.tabla_3 FROM rutina016 r
+                                           WHERE r.id = ".$idrutinax);
+    $data = mysqli_fetch_array($res);
+    $tabla_3   = $data['tabla_3'];
+    $tabla_3_arr = json_decode($tabla_3, true);
+
+    $result = '';
+    foreach ($tabla_3_arr as $obj) {
+        if ( $obj['descri'] != '' ) {
+            $result .= '
+            <tr>
+                <td class="col-5p">' . $obj['id'] . '</td>
+                <td class="col-5p">' . $obj['puerto'] . '</td>
+                <td class="col-30p">' . $obj['descri'] . '</td>
+                <td class="col-30p">' . $obj['posicion'] . '</td>
+                <td class="col-30p">' . $obj['obs'] . '</td>
+            </tr>';
+        }
+    }
+    return $result;
+}
+
+function getPuertos2R16Ant($puertos2Arr){
     $result = '';
     foreach ($puertos2Arr as $obj) {
+        if ( $obj['descri'] != '' ) {
+            $result .= '
+            <tr>
+                <td class="col-5p">' . $obj['id'] . '</td>
+                <td class="col-5p">' . $obj['puerto'] . '</td>
+                <td class="col-30p">' . $obj['descri'] . '</td>
+                <td class="col-30p">' . $obj['posicion'] . '</td>
+                <td class="col-30p">' . $obj['obs'] . '</td>
+            </tr>';
+        }
+    }
+    return $result;
+}
+function getPuertos2R16($conexion, $idrutinax){
+    $res = mysqli_query($conexion, "SELECT r.id, r.tabla_4 FROM rutina016 r
+                                           WHERE r.id = ".$idrutinax);
+    $data = mysqli_fetch_array($res);
+    $tabla_4   = $data['tabla_4'];
+    $tabla_4_arr = json_decode($tabla_4, true);
+
+    $result = '';
+    foreach ($tabla_4_arr as $obj) {
         if ( $obj['descri'] != '' ) {
             $result .= '
             <tr>
