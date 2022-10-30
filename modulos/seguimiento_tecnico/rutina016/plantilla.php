@@ -26,7 +26,6 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
 
     /**  e1_equipo_e1_e1 **/
     $e1_equipo_e1 = $obj->{'e1_equipo_e1'};
-//$e_01_01 = $e1_equipo_e1->d_01_01; $d_01_02 = $e1_equipo_e1->e_01_02;
     $e1_01_01 = $e1_equipo_e1->e1_01_01; $e1_01_02 = $e1_equipo_e1->e1_01_02; $e1_01_03 = $e1_equipo_e1->e1_01_03; $e1_01_04 = $e1_equipo_e1->e1_01_04; $e1_01_05 = $e1_equipo_e1->e1_01_05;
     $e1_02_01 = $e1_equipo_e1->e1_02_01; $e1_02_02 = $e1_equipo_e1->e1_02_02; $e1_02_03 = $e1_equipo_e1->e1_02_03; $e1_02_04 = $e1_equipo_e1->e1_02_04; $e1_02_05 = $e1_equipo_e1->e1_02_05;
     $e1_03_01 = $e1_equipo_e1->e1_03_01; $e1_03_02 = $e1_equipo_e1->e1_03_02; $e1_03_03 = $e1_equipo_e1->e1_03_03; $e1_03_04 = $e1_equipo_e1->e1_03_04; $e1_03_05 = $e1_equipo_e1->e1_03_05;
@@ -35,6 +34,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
     $e1_06_01 = $e1_equipo_e1->e1_06_01; $e1_06_02 = $e1_equipo_e1->e1_06_02; $e1_06_03 = $e1_equipo_e1->e1_06_03; $e1_06_04 = $e1_equipo_e1->e1_06_04; $e1_06_05 = $e1_equipo_e1->e1_06_05;
     $e1_07_01 = $e1_equipo_e1->e1_07_01; $e1_07_02 = $e1_equipo_e1->e1_07_02; $e1_07_03 = $e1_equipo_e1->e1_07_03; $e1_07_04 = $e1_equipo_e1->e1_07_04; $e1_07_05 = $e1_equipo_e1->e1_07_05;
     $e1_08_01 = $e1_equipo_e1->e1_08_01; $e1_08_02 = $e1_equipo_e1->e1_08_02; $e1_08_03 = $e1_equipo_e1->e1_08_03; $e1_08_04 = $e1_equipo_e1->e1_08_04; $e1_08_05 = $e1_equipo_e1->e1_08_05;
+
     $e1_09_01 = $e1_equipo_e1->e1_09_01; $e1_09_02 = $e1_equipo_e1->e1_09_02; $e1_09_03 = $e1_equipo_e1->e1_09_03; $e1_09_04 = $e1_equipo_e1->e1_09_04; $e1_09_05 = $e1_equipo_e1->e1_09_05;
     $e1_10_01 = $e1_equipo_e1->e1_10_01; $e1_10_02 = $e1_equipo_e1->e1_10_02; $e1_10_03 = $e1_equipo_e1->e1_10_03; $e1_10_04 = $e1_equipo_e1->e1_10_04; $e1_10_05 = $e1_equipo_e1->e1_10_05;
     $e1_11_01 = $e1_equipo_e1->e1_11_01; $e1_11_02 = $e1_equipo_e1->e1_11_02; $e1_11_03 = $e1_equipo_e1->e1_11_03; $e1_11_04 = $e1_equipo_e1->e1_11_04; $e1_11_05 = $e1_equipo_e1->e1_11_05;
@@ -42,7 +42,27 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
     $e1_13_01 = $e1_equipo_e1->e1_13_01; $e1_13_02 = $e1_equipo_e1->e1_13_02; $e1_13_03 = $e1_equipo_e1->e1_13_03; $e1_13_04 = $e1_equipo_e1->e1_13_04; $e1_13_05 = $e1_equipo_e1->e1_13_05;
     $e1_14_01 = $e1_equipo_e1->e1_14_01; $e1_14_02 = $e1_equipo_e1->e1_14_02; $e1_14_03 = $e1_equipo_e1->e1_14_03; $e1_14_04 = $e1_equipo_e1->e1_14_04; $e1_14_05 = $e1_equipo_e1->e1_14_05;
 
-//$f1_01_01 = $g_desarrollo_g1->f1_01_01 ? $check : $uncheck; $f1_01_02 = $g_desarrollo->f1_01_02 ? $check : $uncheck; $f1_01_03 = $g_desarrollo_g1->f1_01_03;
+    $equipos_ant = array(
+        array("id" => "1", "equipo" => "ASR-9010", "existe" => $e1_01_01, "estado" => $e1_01_02, "energia" => $e1_01_03, "prtos" => $e1_01_04, "desc" => $e1_01_05),
+        array("id" => "2", "equipo" => "ASR-920", "existe" => $e1_02_01, "estado" => $e1_02_02, "energia" => $e1_02_03, "prtos" => $e1_02_04, "desc" => $e1_02_05),
+        array("id" => "3", "equipo" => "ME-3400", "existe" => $e1_03_01, "estado" => $e1_03_02, "energia" => $e1_03_03, "prtos" => $e1_03_04, "desc" => $e1_03_05),
+        array("id" => "4", "equipo" => "SW-HUAWEI", "existe" => $e1_04_01, "estado" => $e1_04_02, "energia" => $e1_04_03, "prtos" => $e1_04_04, "desc" => $e1_04_05),
+        array("id" => "5", "equipo" => "SW-RAISECOM", "existe" => $e1_05_01, "estado" => $e1_05_02, "energia" => $e1_05_03, "prtos" => $e1_05_04, "desc" => $e1_05_05),
+        array("id" => "6", "equipo" => "DSLAM-H", "existe" => $e1_06_01, "estado" => $e1_06_02, "energia" => $e1_06_03, "prtos" => $e1_06_04, "desc" => $e1_06_05),
+        array("id" => "7", "equipo" => "DSLAM-Z", "existe" => $e1_07_01, "estado" => $e1_07_02, "energia" => $e1_07_03, "prtos" => $e1_07_04, "desc" => $e1_07_05),
+        array("id" => "8", "equipo" => "OLT", "existe" => $e1_08_01, "estado" => $e1_08_02, "energia" => $e1_08_03, "prtos" => $e1_08_04, "desc" => $e1_08_05)
+    );
+    $equipos_filas = getEquiposR16($equipos_ant);
+
+    $fuentes_ant = array(
+        array("id" => "1", "equipo" => "ASR-9010", "fuenteA" => $e1_09_01, "origen1" => $e1_09_02, "fuenteB" => $e1_09_03, "origen2" => $e1_09_04, "obs" => $e1_09_05),
+        array("id" => "2", "equipo" => "ASR-920", "fuenteA" => $e1_10_01, "origen1" => $e1_10_02, "fuenteB" => $e1_10_03, "origen2" => $e1_10_04, "obs" => $e1_10_05),
+        array("id" => "3", "equipo" => "OLT 300", "fuenteA" => $e1_11_01, "origen1" => $e1_11_02, "fuenteB" => $e1_11_03, "origen2" => $e1_11_04, "obs" => $e1_11_05),
+        array("id" => "1", "equipo" => "ASR-9010", "fuenteA" => $e1_12_01, "origen1" => $e1_12_02, "fuenteB" => $e1_12_03, "origen2" => $e1_12_04, "obs" => $e1_12_05),
+        array("id" => "2", "equipo" => "ASR-920", "fuenteA" => $e1_13_01, "origen1" => $e1_13_02, "fuenteB" => $e1_13_03, "origen2" => $e1_13_04, "obs" => $e1_13_05),
+        array("id" => "3", "equipo" => "OLT 300", "fuenteA" => $e1_14_01, "origen1" => $e1_14_02, "fuenteB" => $e1_14_03, "origen2" => $e1_14_04, "obs" => $e1_14_05)
+    );
+    $fuentes_filas = getFuentesR16($fuentes_ant);
 
     $p_puerto12_p = $obj->{'p_puerto12_p'};
     $p_01_01 = $p_puerto12_p->p_01_01; $p_01_02 = $p_puerto12_p->p_01_02; $p_01_03 = $p_puerto12_p->p_01_03;
@@ -50,11 +70,30 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
     $p_03_01 = $p_puerto12_p->p_03_01; $p_03_02 = $p_puerto12_p->p_03_02; $p_03_03 = $p_puerto12_p->p_03_03;
     $p_04_01 = $p_puerto12_p->p_04_01; $p_04_02 = $p_puerto12_p->p_04_02; $p_04_03 = $p_puerto12_p->p_04_03;
     $p_05_01 = $p_puerto12_p->p_05_01; $p_05_02 = $p_puerto12_p->p_05_02; $p_05_03 = $p_puerto12_p->p_05_03;
+
+    $puertos1_ant = array(
+        array("id" => "1", "puerto" => "0", "descri" => $p_01_01, "posicion" => $p_01_02, "obs" => $p_01_03),
+        array("id" => "2", "puerto" => "1", "descri" => $p_02_01, "posicion" => $p_02_02, "obs" => $p_02_03),
+        array("id" => "3", "puerto" => "2", "descri" => $p_03_01, "posicion" => $p_03_02, "obs" => $p_03_03),
+        array("id" => "4", "puerto" => "3", "descri" => $p_04_01, "posicion" => $p_04_02, "obs" => $p_04_03),
+        array("id" => "5", "puerto" => "4", "descri" => $p_05_01, "posicion" => $p_05_02, "obs" => $p_05_03),
+    );
+    $puertos1_filas = getPuertos1R16($puertos1_ant);
+
     $p_06_01 = $p_puerto12_p->p_06_01; $p_06_02 = $p_puerto12_p->p_06_02; $p_06_03 = $p_puerto12_p->p_06_03;
     $p_07_01 = $p_puerto12_p->p_07_01; $p_07_02 = $p_puerto12_p->p_07_02; $p_07_03 = $p_puerto12_p->p_07_03;
     $p_08_01 = $p_puerto12_p->p_08_01; $p_08_02 = $p_puerto12_p->p_08_02; $p_08_03 = $p_puerto12_p->p_08_03;
     $p_09_01 = $p_puerto12_p->p_09_01; $p_09_02 = $p_puerto12_p->p_09_02; $p_09_03 = $p_puerto12_p->p_09_03;
     $p_10_01 = $p_puerto12_p->p_10_01; $p_10_02 = $p_puerto12_p->p_10_02; $p_10_03 = $p_puerto12_p->p_10_03;
+
+    $puertos2_ant = array(
+        array("id" => "1", "puerto" => "0", "descri" => $p_06_01, "posicion" => $p_06_02, "obs" => $p_06_03),
+        array("id" => "2", "puerto" => "1", "descri" => $p_07_01, "posicion" => $p_07_02, "obs" => $p_07_03),
+        array("id" => "3", "puerto" => "2", "descri" => $p_08_01, "posicion" => $p_08_02, "obs" => $p_08_03),
+        array("id" => "4", "puerto" => "3", "descri" => $p_09_01, "posicion" => $p_09_02, "obs" => $p_09_03),
+        array("id" => "5", "puerto" => "4", "descri" => $p_10_01, "posicion" => $p_10_02, "obs" => $p_10_03),
+    );
+    $puertos2_filas = getPuertos2R16($puertos2_ant);
 
     $g_desarrollo_g1 = $obj->{'g_desarrollo_g1'};
     $g1_01_01 = $g_desarrollo_g1->g1_01_01 ? $check : $uncheck; $g1_01_02 = $g_desarrollo_g1->g1_01_02 ? $check : $uncheck; $g1_01_03 = $g_desarrollo_g1->g1_01_03;
@@ -96,7 +135,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                     <table>
                         <tr>
                             <td>
-                                <table class="tborder">
+                                <table>
                                     <tr>
                                         <td>
                                             <table class="tborder">
@@ -106,7 +145,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                                                 </tr>
                                                 <tr>
                                                     <td class="col-40p">'.constant('D02').'</td>
-                                                    <td class="col-60p">'.$d_02_01.'</td>
+                                                    <td class="col-60p">'.$d1_02_01.'</td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -114,7 +153,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                                             <table class="tborder">
                                                <tr>
                                                     <td class="col-40p">'.constant('D03').'</td>
-                                                    <td class="col-60p">'.$d_03_01.'</td>
+                                                    <td class="col-60p">'.$d1_03_01.'</td>
                                                </tr>
                                             </table>
                                         </td>
@@ -136,78 +175,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                                 <td class="col-15p"><strong>Cantidad de Puertos</strong></td>
                                 <td class="col-15p"><strong>Descripción Etiqueta Puerto UPLINK</strong></td>
                             </tr>
-                            <tr>
-                                <td class="col-5p">1</td>
-                                <td class="col-15p">'.constant('E01').'</td>
-                                <td class="col-15p">'.$e1_01_01.'</td>
-                                <td class="col-15p">'.$e1_01_02.'</td>
-                                <td class="col-15p">'.$e1_01_03.'</td>
-                                <td class="col-15p">'.$e1_01_04.'</td>
-                                <td class="col-20p">'.$e1_01_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">2</td>
-                                <td class="col-15p">'.constant('E02').'</td>
-                                <td class="col-15p">'.$e1_02_01.'</td>
-                                <td class="col-15p">'.$e1_02_02.'</td>
-                                <td class="col-15p">'.$e1_02_03.'</td>
-                                <td class="col-15p">'.$e1_02_04.'</td>
-                                <td class="col-20p">'.$e1_02_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">3</td>
-                                <td class="col-15p">'.constant('E03').'</td>
-                                <td class="col-15p">'.$e1_03_01.'</td>
-                                <td class="col-15p">'.$e1_03_02.'</td>
-                                <td class="col-15p">'.$e1_03_03.'</td>
-                                <td class="col-15p">'.$e1_03_04.'</td>
-                                <td class="col-20p">'.$e1_03_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">4</td>
-                                <td class="col-15p">'.constant('E04').'</td>
-                                <td class="col-15p">'.$e1_04_01.'</td>
-                                <td class="col-15p">'.$e1_04_02.'</td>
-                                <td class="col-15p">'.$e1_04_03.'</td>
-                                <td class="col-15p">'.$e1_04_04.'</td>
-                                <td class="col-20p">'.$e1_04_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">5</td>
-                                <td class="col-15p">'.constant('E05').'</td>
-                                <td class="col-15p">'.$e1_05_01.'</td>
-                                <td class="col-15p">'.$e1_05_02.'</td>
-                                <td class="col-15p">'.$e1_05_03.'</td>
-                                <td class="col-15p">'.$e1_05_04.'</td>
-                                <td class="col-20p">'.$e1_05_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">6</td>
-                                <td class="col-15p">'.constant('E06').'</td>
-                                <td class="col-15p">'.$e1_06_01.'</td>
-                                <td class="col-15p">'.$e1_06_02.'</td>
-                                <td class="col-15p">'.$e1_06_03.'</td>
-                                <td class="col-15p">'.$e1_06_04.'</td>
-                                <td class="col-20p">'.$e1_06_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">7</td>
-                                <td class="col-15p">'.constant('E07').'</td>
-                                <td class="col-15p">'.$e1_07_01.'</td>
-                                <td class="col-15p">'.$e1_07_02.'</td>
-                                <td class="col-15p">'.$e1_07_03.'</td>
-                                <td class="col-15p">'.$e1_07_04.'</td>
-                                <td class="col-20p">'.$e1_07_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">8</td>
-                                <td class="col-15p">'.constant('E08').'</td>
-                                <td class="col-15p">'.$e1_08_01.'</td>
-                                <td class="col-15p">'.$e1_08_02.'</td>
-                                <td class="col-15p">'.$e1_08_03.'</td>
-                                <td class="col-15p">'.$e1_08_04.'</td>
-                                <td class="col-20p">'.$e1_08_05.'</td>
-                            </tr>
+                            '.$equipos_filas.'
                         </tbody>        
                     </table>									                        
                </main>
@@ -223,64 +191,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                                 <td class="col-15p"><strong>Origen 2</strong></td>
                                 <td class="col-15p"><strong>Observaciones</strong></td>
                             </tr>
-                            <tr>
-                                <td class="col-5p">1</td>
-                                <td class="col-15p">'.constant('E01_01').'</td>
-                                <td class="col-15p">'.$e1_09_01.'</td>
-                                <td class="col-15p">'.$e1_09_02.'</td>
-                                <td class="col-15p">'.$e1_09_03.'</td>
-                                <td class="col-15p">'.$e1_09_04.'</td>
-                                <td class="col-20p">'.$e1_09_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">2</td>
-                                <td class="col-15p">'.constant('E01_02').'</td>
-                                <td class="col-15p">'.$e1_10_01.'</td>
-                                <td class="col-15p">'.$e1_10_02.'</td>
-                                <td class="col-15p">'.$e1_10_03.'</td>
-                                <td class="col-15p">'.$e1_10_04.'</td>
-                                <td class="col-20p">'.$e1_10_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">3</td>
-                                <td class="col-15p">'.constant('E01_03').'</td>
-                                <td class="col-15p">'.$e1_11_01.'</td>
-                                <td class="col-15p">'.$e1_11_02.'</td>
-                                <td class="col-15p">'.$e1_11_03.'</td>
-                                <td class="col-15p">'.$e1_11_04.'</td>
-                                <td class="col-20p">'.$e1_11_05.'</td>
-                            </tr>
-                            <tr>
-                            <td></td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">1</td>
-                                <td class="col-15p">'.constant('E01_04').'</td>
-                                <td class="col-15p">'.$e1_12_01.'</td>
-                                <td class="col-15p">'.$e1_12_02.'</td>
-                                <td class="col-15p">'.$e1_12_03.'</td>
-                                <td class="col-15p">'.$e1_12_04.'</td>
-                                <td class="col-20p">'.$e1_12_05.'</td>
-                            </tr>
                             
-                            <tr>
-                                <td class="col-5p">2</td>
-                                <td class="col-15p">'.constant('E01_05').'</td>
-                                <td class="col-15p">'.$e1_13_01.'</td>
-                                <td class="col-15p">'.$e1_13_02.'</td>
-                                <td class="col-15p">'.$e1_13_03.'</td>
-                                <td class="col-15p">'.$e1_13_04.'</td>
-                                <td class="col-20p">'.$e1_13_05.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">3</td>
-                                <td class="col-15p">'.constant('E01_06').'</td>
-                                <td class="col-15p">'.$e1_14_01.'</td>
-                                <td class="col-15p">'.$e1_14_02.'</td>
-                                <td class="col-15p">'.$e1_14_03.'</td>
-                                <td class="col-15p">'.$e1_14_04.'</td>
-                                <td class="col-20p">'.$e1_14_05.'</td>
-                            </tr>
+                            '.$fuentes_filas.'
+                            
                         </tbody>        
                     </table>									                        
                </main>
@@ -297,41 +210,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                                 <td class="col-30p"><strong>'.constant('P04').'</strong></td>
                                 <td class="col-30p"><strong>'.constant('P05').'</strong></td>
                             </tr>
-                            <tr>
-                                <td class="col-5p">1</td>
-                                <td class="col-5p">0</td>
-                                <td class="col-30p">'.$p_01_01.'</td>
-                                <td class="col-30p">'.$p_01_02.'</td>
-                                <td class="col-30p">'.$p_01_03.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">2</td>
-                                <td class="col-5p">1</td>
-                                <td class="col-30p">'.$p_02_01.'</td>
-                                <td class="col-30p">'.$p_02_02.'</td>
-                                <td class="col-30p">'.$p_02_03.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">3</td>
-                                <td class="col-5p">2</td>
-                                <td class="col-30p">'.$p_03_01.'</td>
-                                <td class="col-30p">'.$p_03_02.'</td>
-                                <td class="col-30p">'.$p_03_03.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">4</td>
-                                <td class="col-5p">3</td>
-                                <td class="col-30p">'.$p_04_01.'</td>
-                                <td class="col-30p">'.$p_04_02.'</td>
-                                <td class="col-30p">'.$p_04_03.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">5</td>
-                                <td class="col-5p">4</td>
-                                <td class="col-30p">'.$p_05_01.'</td>
-                                <td class="col-30p">'.$p_05_02.'</td>
-                                <td class="col-30p">'.$p_05_03.'</td>
-                            </tr>
+                            
+                            '.$puertos1_filas.'
+                            
                         </tbody>        
                     </table>									                        
                </main>
@@ -348,41 +229,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                                 <td class="col-30p"><strong>'.constant('P04').'</strong></td>
                                 <td class="col-30p"><strong>'.constant('P05').'</strong></td>
                             </tr>
-                            <tr>
-                                <td class="col-5p">1</td>
-                                <td class="col-5p">0</td>
-                                <td class="col-30p">'.$p_06_01.'</td>
-                                <td class="col-30p">'.$p_06_02.'</td>
-                                <td class="col-30p">'.$p_06_03.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">2</td>
-                                <td class="col-5p">1</td>
-                                <td class="col-30p">'.$p_07_01.'</td>
-                                <td class="col-30p">'.$p_07_02.'</td>
-                                <td class="col-30p">'.$p_07_03.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">3</td>
-                                <td class="col-5p">2</td>
-                                <td class="col-30p">'.$p_08_01.'</td>
-                                <td class="col-30p">'.$p_08_02.'</td>
-                                <td class="col-30p">'.$p_08_03.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">4</td>
-                                <td class="col-5p">3</td>
-                                <td class="col-30p">'.$p_09_01.'</td>
-                                <td class="col-30p">'.$p_09_02.'</td>
-                                <td class="col-30p">'.$p_09_03.'</td>
-                            </tr>
-                            <tr>
-                                <td class="col-5p">5</td>
-                                <td class="col-5p">4</td>
-                                <td class="col-30p">'.$p_10_01.'</td>
-                                <td class="col-30p">'.$p_10_02.'</td>
-                                <td class="col-30p">'.$p_10_03.'</td>
-                            </tr>
+                            
+                            '.$puertos2_filas.'
+                            
                         </tbody>        
                     </table>									                        
                </main>

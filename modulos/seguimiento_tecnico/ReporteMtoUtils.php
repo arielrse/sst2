@@ -734,4 +734,76 @@ function getReporteFotog($conexion, $idrutinax, $codRutina){
     return $result;
 }
 
+function getEquiposR16($equiposArr){
+    $result = '';
+    foreach ($equiposArr as $obj) {
+        if ( $obj['existe'] != '' ) {
+            $result .= '
+            <tr>
+                <td class="col-5p">' . $obj['id'] . '</td>
+                <td class="col-15p">' . $obj['equipo'] . '</td>
+                <td class="col-15p">' . $obj['existe'] . '</td>
+                <td class="col-15p">' . $obj['estado'] . '</td>
+                <td class="col-15p">' . $obj['energia'] . '</td>
+                <td class="col-15p">' . $obj['prtos'] . '</td>
+                <td class="col-20p">' . $obj['desc'] . '</td>
+            </tr>';
+        }
+    }
+    return $result;
+}
+
+function getFuentesR16($fuentesArr){
+    $result = '';
+    foreach ($fuentesArr as $obj) {
+        if ( $obj['fuenteA'] != '' ) {
+            $result .= '
+            <tr>
+                <td class="col-5p">' . $obj['id'] . '</td>
+                <td class="col-15p">' . $obj['equipo'] . '</td>
+                <td class="col-15p">' . $obj['fuenteA'] . '</td>
+                <td class="col-15p">' . $obj['origen1'] . '</td>
+                <td class="col-15p">' . $obj['fuenteB'] . '</td>
+                <td class="col-15p">' . $obj['origen2'] . '</td>
+                <td class="col-20p">' . $obj['obs'] . '</td>
+            </tr>';
+        }
+    }
+    return $result;
+}
+
+function getPuertos1R16($puertos1Arr){
+    $result = '';
+    foreach ($puertos1Arr as $obj) {
+        if ( $obj['descri'] != '' ) {
+            $result .= '
+            <tr>
+                <td class="col-5p">' . $obj['id'] . '</td>
+                <td class="col-5p">' . $obj['puerto'] . '</td>
+                <td class="col-30p">' . $obj['descri'] . '</td>
+                <td class="col-30p">' . $obj['posicion'] . '</td>
+                <td class="col-30p">' . $obj['obs'] . '</td>
+            </tr>';
+        }
+    }
+    return $result;
+}
+
+function getPuertos2R16($puertos2Arr){
+    $result = '';
+    foreach ($puertos2Arr as $obj) {
+        if ( $obj['descri'] != '' ) {
+            $result .= '
+            <tr>
+                <td class="col-5p">' . $obj['id'] . '</td>
+                <td class="col-5p">' . $obj['puerto'] . '</td>
+                <td class="col-30p">' . $obj['descri'] . '</td>
+                <td class="col-30p">' . $obj['posicion'] . '</td>
+                <td class="col-30p">' . $obj['obs'] . '</td>
+            </tr>';
+        }
+    }
+    return $result;
+}
+
 ?>
