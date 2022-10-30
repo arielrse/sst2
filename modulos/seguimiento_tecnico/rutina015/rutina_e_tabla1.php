@@ -59,9 +59,6 @@ $table_e1_arr = json_decode($table_e1, true);
 
     var table_e1 = '<?php echo $table_e1; ?>';
 
-    //console.log('stringify: ' + JSON.stringify(table_e1));
-    //console.log('parse:' + JSON.parse(table_e1));
-
     var data = [];
     var cant = 1;
 
