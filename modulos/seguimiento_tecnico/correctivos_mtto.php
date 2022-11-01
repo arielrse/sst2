@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 
 <div class="page-wrapper">
     <div class="page-content">
@@ -53,7 +49,7 @@
                                      LEFT JOIN centro c        ON r.idcentro    = c.idcentro
                                      LEFT JOIN estacionentel e ON r.idestacione = e.idestacionentel
                                      LEFT JOIN departamento d  ON r.iddepartamento = d.iddepartamento 
-                                     LEFT JOIN ticket_sistemafalla s ON r.sistemafalla = s.idsistemafalla
+                                     LEFT JOIN ticket_sistemafalla s ON r.sistemafalla COLLATE utf8_general_ci = s.idsistemafalla COLLATE utf8_general_ci
                                      WHERE r.iddepartamento = " . $iddepartamento . "
                                      ORDER BY r.id desc";
                         $resultado = mysqli_query($conexion, $consulta);
@@ -88,30 +84,10 @@
             </div>
         </div>
 
-
     </div>
 </div>
 
-<!--<link href="../../paquetes/greybox/gb_styles.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript">var GB_ROOT_DIR = "./../../paquetes/greybox/";</script>
-<script type="text/javascript" src="../../paquetes/greybox/AJS.js"></script>
-<script type="text/javascript" src="../../paquetes/greybox/AJS_fx.js"></script>
-<script type="text/javascript" src="../../paquetes/greybox/gb_scripts_no_reload.js"></script>-->
 <script type=text/javascript>
-    function eliminarMtto(idevento, nombre){
-
-        if (confirm( '¿Seguro que desea eliminar? : ' + nombre)){
-            jQuery.post("../../paquetes/rutina/delete_mtto.php", {
-                idevento: idevento,
-            }, function(data){
-                if (data == -1)
-                    noti_error_delete();
-
-                $("#table-mtto").load(window.location + " #table-mtto");
-            }
-            );
-        }
-    }
 
     $(document).ready(function() {
         $('#table-correctivos').DataTable( {
