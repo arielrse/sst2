@@ -458,7 +458,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                             </tr>
                             <tr>
                                 <td class="col-15p">'.$g3_04_01.' Equilibrado</td>
-                                <td class="col-15p">'.$g3_04_02.' Desquilibrado </td>
+                                <td class="col-15p">'.$g3_04_02.' Desequilibrado </td>
                             </tr>
                         </tbody>        
                     </table>
