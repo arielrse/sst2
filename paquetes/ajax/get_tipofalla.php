@@ -3,7 +3,10 @@
 
 	$idequipofalla=filter_input(INPUT_POST,'idequipofalla');
 	//$letters = preg_replace("/[^a-z0-9 ]/si","",$letters);
-	$res = mysqli_query($conexion, "SELECT ticket_tipofalla.idtipofalla, ticket_tipofalla.nombretipofalla FROM ticket_tipofalla,ticket_equipofallatipofalla WHERE ticket_tipofalla.idtipofalla=ticket_equipofallatipofalla.idtipofalla and ticket_equipofallatipofalla.idequipofalla= '".$idequipofalla."'") ;
+	$res = mysqli_query($conexion, "SELECT ticket_tipofalla.idtipofalla, ticket_tipofalla.nombretipofalla 
+                                          FROM ticket_tipofalla,ticket_equipofallatipofalla 
+                                          WHERE ticket_tipofalla.idtipofalla=ticket_equipofallatipofalla.idtipofalla 
+                                          and ticket_equipofallatipofalla.idequipofalla= '".$idequipofalla."' order by ticket_tipofalla.nombretipofalla") ;
 	//$filas=mysqli_fetch_array($res);
 
 	//echo ('alert("asdf");')

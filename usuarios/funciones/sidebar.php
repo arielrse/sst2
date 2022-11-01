@@ -62,7 +62,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
         </li>
 
         <li>
-            <a>
+            <a href="<?=$mst?>correctivos_mtto.php">
                 <div class="parent-icon"><i class='bx bx-repeat'></i>
                 </div>
                 <div class="menu-title">Mtto Correctivo</div>
