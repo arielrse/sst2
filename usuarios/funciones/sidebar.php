@@ -119,13 +119,25 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
             </a>
         </li>
 
+        <?php if ( isAdmin() || isExpert() ) { ?>
         <li>
-            <a href="#">
+            <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class="bx bx-line-chart"></i>
                 </div>
                 <div class="menu-title">Estadisticas</div>
             </a>
+            <ul>
+                <li> <a href="<?=$mst?>estadistica_preventivo.php"><i class="bx bx-right-arrow-alt"></i>Mtto. Preventivo</a>
+                </li>
+
+            </ul>
+            <ul>
+                <li> <a href="<?=$mst?>estadistica_preventivo.php"><i class="bx bx-right-arrow-alt"></i>Mtto. Correctivo</a>
+                </li>
+
+            </ul>
         </li>
+        <?php } ?>
 
         <li>
             <a class="has-arrow" href="javascript:;">

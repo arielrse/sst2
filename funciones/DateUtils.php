@@ -25,4 +25,10 @@ function currentMonthLiteral(){
     return $meses[date('n')-1];
 }
 
+function monthLiteral($date){
+    $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+    $mes = date('n', $date)-1;
+    return $meses[$mes];
+}
+
 ?>
