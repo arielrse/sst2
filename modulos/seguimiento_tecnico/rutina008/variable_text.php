@@ -37,6 +37,6 @@ define('G3_02', 'G.3.2	Medición de corriente en operación medidor(A)');
 define('G3_03', 'G.3.3	Medición de Voltaje Neutro-Tierra (V)');
 define('G3_04', 'G.3.4	Verificar  distribución Energía AC, para prevenir sobrecargas en térmicos.');
 define('G3_05', 'G.3.5	Revisión de calentamiento del cableado en AC por sobrecarga.');
-define('G3_06', 'G.3.6	Medición de Voltaje Neutro-Tierra (V)');
+define('G3_06', 'G.3.6	Medida puesta a tierra Pilastra');
 
 ?>
