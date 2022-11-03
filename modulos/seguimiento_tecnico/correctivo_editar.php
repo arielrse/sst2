@@ -89,6 +89,15 @@ $notas = $dato['notas'];
                 </a>
             </li>
             <li class="nav-item" role="presentation">
+                <a class="nav-link" data-bs-toggle="tab" href="#adjuntosTab" role="tab" aria-selected="false">
+                    <div class="d-flex align-items-center">
+                        <div class="tab-icon"><i class='bx bx-archive-in font-18 me-1'></i>
+                        </div>
+                        <div class="tab-title">Fotos</div>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
                 <a class="nav-link" data-bs-toggle="tab" href="#repuestosTab" role="tab" aria-selected="false">
                     <div class="d-flex align-items-center">
                         <div class="tab-icon"><i class='bx bx-cabinet font-18 me-1'></i>
@@ -103,15 +112,6 @@ $notas = $dato['notas'];
                         <div class="tab-icon"><i class='bx bx-cabinet font-18 me-1'></i>
                         </div>
                         <div class="tab-title">Insumos</div>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" data-bs-toggle="tab" href="#adjuntosTab" role="tab" aria-selected="false">
-                    <div class="d-flex align-items-center">
-                        <div class="tab-icon"><i class='bx bx-archive-in font-18 me-1'></i>
-                        </div>
-                        <div class="tab-title">Adjuntos</div>
                     </div>
                 </a>
             </li>
@@ -673,7 +673,73 @@ $notas = $dato['notas'];
 
                     <div class="tab-pane fade" id="repuestosTab" role="tabpanel"></div>
                     <div class="tab-pane fade" id="insumosTab" role="tabpanel"></div>
-                    <div class="tab-pane fade" id="adjuntosTab" role="tabpanel"></div>
+
+                    <div class="tab-pane fade" id="adjuntosTab" role="tabpanel">
+                        <?php if ( !isClient() && !isNationalClient() ) { ?>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="col-md-4">
+                                            <input class="form-control form-control-sm" type="file" id="imagen" name="imagen">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <input id="titulodoc" name="titulodoc" class="form-control form-control-sm" type="text" placeholder="Titulo">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button class="btn btn-sm btn-outline-primary" type="button" id="btn-subirimg" name="btn-subirimg"><i class='bx bx-plus'></i></button>
+                                        </div>
+                                    </div>
+                                    <!--<div class="input-group">
+                                        <input class="form-control form-control-sm" type="file" id="imagen" name="imagen">
+                                        <input id="titulodoc" name="titulodoc" class="form-control form-control-sm" type="text" placeholder="Titulo">
+                                        <button class="btn btn-sm btn-outline-primary" type="button" id="btn-subirimg" name="btn-subirimg"><i class='bx bx-plus'></i></button>
+                                    </div>-->
+                                </div>
+                            </div>
+                        <?php } ?>
+
+                        <div id="table-docs">
+                            <table class="table mb-0 table-hover">
+                                <?php
+                                $query = "SELECT id, nombre, titulo, idrutinacorrectivo FROM rutina_correctivo_img
+                                          WHERE idrutinacorrectivo = " . $id;
+                                $result = mysqli_query($conexion, $query);
+                                $i = 1;
+                                while( $data = mysqli_fetch_array($result) ){
+                                    $nombreImg = $data['nombre'];
+                                    $idImg = $data['id'];
+                                    $extension = pathinfo($nombreImg, PATHINFO_EXTENSION);
+
+                                    $hrefImg = '../../fotos/correctivo/' . $nombreImg;
+                                    /*$sizedoc = filesize($hrefImg)/1024/1000;
+                                    $sizedoc = round($sizedoc, 1);*/
+
+
+                                    $eliminarImg = "";
+                                    if (!isNationalClient() && !isClient())
+                                        $eliminarImg .= "<a href='javascript:;' class='ms-3' id='btnEliminarDoc' onclick='eliminarImagenCorrectivo(`$idImg`, `$nombreImg`)'>
+                                                            <i class='bx bxs-trash'></i>
+                                                         </a>";
+
+                                    echo "
+                                    <tr>
+                                        <td width='5%'>$i</td>
+                                        <td width='85%'><a href='$hrefImg' target='_blank'>".$data['titulo']."</a></td>
+                                        <td width='10%'>
+                                            <div class='d-flex'>
+                                                <a href='$hrefImg'></a> $extension
+                                                " . $eliminarImg ."
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    ";
+                                    $i++;
+                                }
+                                ?>
+                            </table>
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -837,5 +903,95 @@ $notas = $dato['notas'];
         }
         //$('#equipofalla')
     });
+
+    $(document).ready(function () {
+
+        var btnEnviar = $("#btn-subirimg");
+
+        $('#btn-subirimg').click(function(){
+
+            var idrutinacorrectivo  = $('#idc').val()
+            var iddepartamento      = $('#iddepartamento').val()
+            var titulodoc           = $('#titulodoc').val()
+
+            var size = document.getElementsByName("imagen")[0].files[0].size;
+            var docsize = ((size / 1024)/1000);
+
+            if ( docsize < 10) {
+                var frmData = new FormData;
+                frmData.append("imagen", $("input[name=imagen]")[0].files[0]);
+                frmData.append("idrutinacorrectivo", idrutinacorrectivo);
+                frmData.append("iddepartamento", iddepartamento);
+                frmData.append("titulodoc", titulodoc);
+
+
+                if (fileValidation()) {
+                    $.ajax({
+                        url: 'subir_imagen_correctivo.php',
+                        type: 'POST',
+                        data: frmData,
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        beforeSend: function (data) {
+                            btnEnviar.attr("disabled", true);
+                            btnEnviar.html('<div class="spinner-border spinner-border-sm" role="status"></div>');
+                        },
+                        success: function (data) {
+                            alert(data);
+                            $("#table-docs").load(window.location + " #table-docs");
+                            document.querySelector('#imagen').value = "";
+                            document.querySelector('#titulodoc').value = "";
+                            btnEnviar.html('<i class="bx bx-plus"></i>');
+                            btnEnviar.attr("disabled", false);
+                        }
+                    })
+                } else {
+                    document.querySelector('#imagen').value = "";
+                    document.querySelector('#titulodoc').value = "";
+                }
+
+            } else{
+                alert( 'No es posible, el archivo supera los 10MB' )
+            }
+            return false;
+
+        });
+
+    });
+
+    function eliminarImagenCorrectivo(idImg){
+
+        if (confirm('¿Esta seguro que desea eliminar la imagen? : ' + idImg)) {
+
+            var frmData = new FormData;
+            frmData.append("idImg", idImg);
+
+            $.ajax({
+                url: 'eliminar_imagen_correctivo.php',
+                type: 'POST',
+                data: frmData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    $("#table-docs").load(window.location + " #table-docs");
+                }
+            })
+        }
+    }
+
+    function fileValidation(){
+        var fileInput = document.getElementById('imagen');
+        var filePath = fileInput.value;
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+        if(!allowedExtensions.exec(filePath)){
+            alert('Por favor cargar imagenes solo con formato  jpeg  jpg  png');
+            fileInput.value = '';
+            return false;
+        } else {
+            return true;
+        }
+    }
 
 </script>
