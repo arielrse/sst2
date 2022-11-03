@@ -420,25 +420,25 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                     <table class="tborder">
                         <tbody>
                            <tr>
-                                <td class="col-60p">'.constant('G3_01').'</td>
+                                <td class="col-60p">'.constant('G3_03').'</td>
                                 <td class="col-10p num">'.$g3_01_01.'</td>
                                 <td class="col-5p"> (Ω)</td>
                                 <td class="col-30p">Obs. '.$g3_01_02.'</td>
                             </tr>
                             <tr>
-                                <td class="col-60p">'.constant('G3_02').'</td>
+                                <td class="col-60p">'.constant('G3_04').'</td>
                                 <td class="col-10p num">'.$g3_02_01.'</td>
                                 <td class="col-5p"> (Ω)</td>
                                 <td class="col-30p">Obs. '.$g3_02_02.'</td>
                             </tr>
                             <tr>
-                                <td class="col-60p">'.constant('G3_03').'</td>
+                                <td class="col-60p">'.constant('G3_05').'</td>
                                 <td class="col-10p num">'.$g3_03_01.' </td>
                                 <td class="col-5p"> (Ω)</td>
                                 <td class="col-30p">Obs. '.$g3_03_02.' </td>
                                  </tr>
                             <tr>
-                                <td class="col-60p">'.constant('G3_04').'</td>
+                                <td class="col-60p">'.constant('G3_06').'</td>
                                 <td class="col-10p num">'.$g3_04_01.'</td>
                                 <td class="col-5p"> (Ω)</td>
                                 <td class="col-30p">Obs. '.$g3_04_02.'</td>
