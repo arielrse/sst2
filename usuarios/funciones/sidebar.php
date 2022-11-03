@@ -119,7 +119,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
             </a>
         </li>
 
-        <?php if ( isAdmin() || isExpert() ) { ?>
+        <?php if ( isAdmin() || isExpert() || isClient() || isNationalClient() ) { ?>
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class="bx bx-line-chart"></i>
@@ -132,7 +132,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
 
             </ul>
             <ul>
-                <li> <a href="<?=$mst?>estadistica_preventivo.php"><i class="bx bx-right-arrow-alt"></i>Mtto. Correctivo</a>
+                <li> <a href="<?=$mst?>estadistica_correctivo.php"><i class="bx bx-right-arrow-alt"></i>Mtto. Correctivo</a>
                 </li>
 
             </ul>
