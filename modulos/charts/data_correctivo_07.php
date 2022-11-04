@@ -8,7 +8,7 @@ $fechafin = $_POST['fechafin'];
 $res = mysqli_query($conexion,
     "SELECT ticket_tipofalla.nombretipofalla as nombre, count(st_ticketn.ticket) as cantidad
             FROM st_ticketn, estacionentel, centro, ticket_tipofalla
-            WHERE st_ticketn.idnodo    = estacionentel.idestacionentel
+            WHERE st_ticketn.idestacion    = estacionentel.idestacionentel
             AND estacionentel.idcentro = centro.idcentro
             AND st_ticketn.idtipofalla = ticket_tipofalla.idtipofalla
             AND centro.iddepartamento  = $iddepartamento

@@ -20,7 +20,7 @@ function cargar_grafico_correctivo_05(iddepartamento, fechainicio, fechafin) {
 
 let myChart5;
 function show_grafico_correctivo_05(datos) {
-    console.log('datos 5: ' + datos)
+
     var json = JSON.parse(datos);
     var etiquetas = json.etiquetas;
     var datos = json.datos;

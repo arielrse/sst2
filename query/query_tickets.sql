@@ -105,7 +105,7 @@
       AND fecha_inicio_rif  BETWEEN '2022-08-01' AND '2022-11-31'
     ;
 
---
+-- CANTIDAD DE INTERVENCIONES POR TIPO DE FALLA
     SELECT
         ticket_tipofalla.nombretipofalla as nombre, count(st_ticketn.ticket) as cantidad
     FROM
@@ -117,4 +117,38 @@
       AND fecha_inicio_rif  BETWEEN '2022-08-01' AND '2022-11-31'
     group by ticket_tipofalla.nombretipofalla
     order by cantidad desc
+    ;
+
+-- Por Tecnologia
+    SELECT
+        tecnologia.nombretecnologia as nombre,
+        count(st_ticketn.ticket) as cantidad
+    FROM
+        st_ticketn,
+        estacionentel,
+        tecnologia,
+        centro
+    WHERE st_ticketn.idestacion   = estacionentel.idestacionentel
+      AND estacionentel.idcentro  = centro.idcentro
+      AND st_ticketn.idtecnologia = tecnologia.idtecnologia
+      AND centro.iddepartamento   = 1
+      AND fecha_inicio_rif  BETWEEN '2022-08-01' AND '2022-11-31'
+    group by tecnologia.nombretecnologia
+    ;
+
+-- Por Sistema
+    SELECT
+        ticket_sistemafalla.nombresistemafalla as nombre,
+        count(st_ticketn.ticket) as cantidad
+    FROM
+        st_ticketn,
+        estacionentel,
+        centro,
+        ticket_sistemafalla
+    WHERE st_ticketn.idestacion = estacionentel.idestacionentel
+      AND estacionentel.idcentro=centro.idcentro
+      AND st_ticketn.idsistemafalla=ticket_sistemafalla.idsistemafalla
+      AND centro.iddepartamento = 1
+      AND fecha_inicio_rif  BETWEEN '2022-08-01' AND '2022-11-31'
+    group by ticket_sistemafalla.nombresistemafalla
     ;

@@ -90,3 +90,48 @@ and ta.nombreatencion = 'EN SITIO'
 and a.idafectacionservicio is not null
 group by a.nombreafectacionservicio
 ;
+
+-- 7. CANTIDAD DE INTERVENCIONES POR TIPO DE FALLA
+SELECT
+    ticket_tipofalla.nombretipofalla as nombre, count(st_ticketn.ticket) as cantidad
+FROM
+    st_ticketn, estacionentel, centro, ticket_tipofalla
+WHERE st_ticketn.idnodo      = estacionentel.idestacionentel
+  AND estacionentel.idcentro = centro.idcentro
+  AND st_ticketn.idtipofalla = ticket_tipofalla.idtipofalla
+  AND centro.iddepartamento  =  1
+  AND fecha_inicio_rif  BETWEEN '2022-08-01' AND '2022-11-31'
+group by ticket_tipofalla.nombretipofalla
+order by cantidad desc
+;
+
+-- 8. Por Tecnologia
+SELECT
+    tecnologia.nombretecnologia as nombre,
+    count(st_ticketn.ticket) as cantidad
+FROM
+    st_ticketn,
+    estacionentel,
+    tecnologia,
+    centro
+WHERE st_ticketn.idestacion   = estacionentel.idestacionentel
+  AND estacionentel.idcentro  = centro.idcentro
+  AND st_ticketn.idtecnologia = tecnologia.idtecnologia
+  AND centro.iddepartamento   = 1
+  AND fecha_inicio_rif  BETWEEN '2022-08-01' AND '2022-11-31'
+group by tecnologia.nombretecnologia
+;
+
+-- 9. Por Sistema
+SELECT
+    ticket_sistemafalla.nombresistemafalla as nombre,
+    count(st_ticketn.ticket) as cantidad
+FROM
+    st_ticketn, estacionentel, centro, ticket_sistemafalla
+WHERE st_ticketn.idestacion = estacionentel.idestacionentel
+  AND estacionentel.idcentro=centro.idcentro
+  AND st_ticketn.idsistemafalla=ticket_sistemafalla.idsistemafalla
+  AND centro.iddepartamento = 1
+  AND fecha_inicio_rif  BETWEEN '2022-08-01' AND '2022-11-31'
+group by ticket_sistemafalla.nombresistemafalla
+;
