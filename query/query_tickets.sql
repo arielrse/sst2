@@ -152,3 +152,27 @@
       AND fecha_inicio_rif  BETWEEN '2022-08-01' AND '2022-11-31'
     group by ticket_sistemafalla.nombresistemafalla
     ;
+
+--
+-- Por Area, Sistema, Equipo
+    SELECT
+        ticket_sistemafalla.nombresistemafalla as sistema,
+        ticket_equipofalla.nombreequipofalla as equipo,
+           count(st_ticketn.ticket) as cantidad
+    FROM
+        st_ticketn,
+        estacionentel,
+        tecnologia,
+        centro,
+        ticket_sistemafalla,
+        ticket_equipofalla
+    WHERE st_ticketn.idestacion     = estacionentel.idestacionentel
+      AND estacionentel.idcentro    = centro.idcentro
+      AND st_ticketn.idtecnologia   = tecnologia.idtecnologia
+      AND st_ticketn.idsistemafalla = ticket_sistemafalla.idsistemafalla
+      AND st_ticketn.idequipofalla  = ticket_equipofalla.idequipofalla
+      AND centro.iddepartamento = 1
+      AND fecha_inicio_rif  BETWEEN '2022-08-01' AND '2022-11-31'
+    group by ticket_sistemafalla.nombresistemafalla, ticket_equipofalla.nombreequipofalla
+    order by ticket_sistemafalla.nombresistemafalla, cantidad desc
+    ;
