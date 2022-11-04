@@ -87,13 +87,13 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                                 <td class="col-10p">Obs. '.$f1_01_03.'</td>
                             </tr>
                             <tr>
-                                <td class="col-40p">'.constant('F01').'</td>
+                                <td class="col-40p">'.constant('F02').'</td>
                                 <td class="col-10p">'.$f1_02_01.' Si</td>
                                 <td class="col-10p">'.$f1_02_02.' No</td>
                                 <td class="col-10p">Obs. '.$f1_02_03.'</td>
                             </tr>
                             <tr>
-                                <td class="col-40p">'.constant('F01').'</td>
+                                <td class="col-40p">'.constant('F03').'</td>
                                 <td class="col-10p">'.$f1_03_01.' Si</td>
                                 <td class="col-10p">'.$f1_03_02.' No</td>
                                 <td class="col-10p">Obs. '.$f1_03_03.'</td>
