@@ -205,7 +205,7 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
                                 <h6 class="mb-0">Cantidad de Intervenciones por Tipo de Falla</h6>
                             </div>
                         </div>
-                        <div class="chart-container-14 mt-2">
+                        <div style="position:relative;height:550px;" class="mt-2">
                             <canvas id="myChart07"></canvas>
                         </div>
                     </div>
