@@ -65,10 +65,28 @@ and e.tiponodo is not null
 group by c.nombre, ta.idatencion, ta.nombreatencion, e.tiponodo
 ;
 
-/*
-UPDATE `st_ticketn` t SET
-t.fecha_inicio_rif = DATE_ADD(t.fecha_inicio_rif, INTERVAL 1 MONTH),
-t.fecha_fin_rif = DATE_ADD(t.fecha_fin_rif, INTERVAL 1 MONTH),
-t.fecha_not_dim = DATE_ADD(t.fecha_not_dim, INTERVAL 1 MONTH),
-t.fecha_not_sitio = DATE_ADD(t.fecha_not_sitio, INTERVAL 1 MONTH)
-*/
+-- 5. Por Afectación de Servicio: Con corte, Sin corte
+select ta.nombreafectacionservicio as nombre, count(t.id_st_ticket) as cantidad
+from st_ticketn t
+left join estacionentel e on t.idestacion = e.idestacionentel
+left join centro c on e.idcentro = c.idcentro
+left join ticket_afectacionservicio ta on t.idafectacionservicio = ta.idafectacionservicio
+where t.fecha_inicio_rif between '2022-11-01' and '2022-11-31'
+and c.iddepartamento = 1
+and t.idafectacionservicio > 0
+group by ta.nombreafectacionservicio
+;
+
+-- 6 Atencion en sitio por afectacion:  Con corte, Sin corte
+select a.nombreafectacionservicio as nombre, count(t.id_st_ticket) as cantidad
+from st_ticketn t
+left join estacionentel e on t.idestacion = e.idestacionentel
+left join centro c on e.idcentro = c.idcentro
+left join ticket_afectacionservicio a on t.idafectacionservicio = a.idafectacionservicio
+left join ticket_atencion ta on t.idatencion = ta.idatencion
+where t.fecha_inicio_rif between '2022-09-01' and '2022-11-31'
+and c.iddepartamento = 2
+and ta.nombreatencion = 'EN SITIO'
+and a.idafectacionservicio is not null
+group by a.nombreafectacionservicio
+;

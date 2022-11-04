@@ -167,20 +167,36 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
                 </div>
             </div>
 
-            <!--<div class="col-12 col-lg-12">
+            <div class="col-12 col-lg-6">
                 <div class="card radius-10">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div>
-                                <h6 class="mb-0">Mantenimientos por grupo de trabajo</h6>
+                                <h6 class="mb-0">Tickets por Afectación de Servicio</h6>
                             </div>
                         </div>
-                        <div class="chart-container-14 mt-2">
+                        <div class="chart-container-1 mt-4">
                             <canvas id="myChart05"></canvas>
                         </div>
                     </div>
                 </div>
-            </div>-->
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="card radius-10">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h6 class="mb-0">Atención en Sitio por Afectación de Servicio</h6>
+                            </div>
+                        </div>
+                        <div class="chart-container-1 mt-4">
+                            <canvas id="myChart06"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
 
@@ -193,10 +209,9 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
 <script type="text/javascript" src="../../js/chart_correctivo_02.js"></script>
 <script type="text/javascript" src="../../js/chart_correctivo_03.js"></script>
 <script type="text/javascript" src="../../js/chart_correctivo_04.js"></script>
-<!--<script type="text/javascript" src="../../js/chart_preventivo_02.js"></script>-->
-<!--<script type="text/javascript" src="../../js/chart_preventivo_03.js"></script>
-<script type="text/javascript" src="../../js/chart_preventivo_04.js"></script>
-<script type="text/javascript" src="../../js/chart_preventivo_05.js"></script>-->
+<script type="text/javascript" src="../../js/chart_correctivo_05.js"></script>
+<script type="text/javascript" src="../../js/chart_correctivo_06.js"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -208,6 +223,8 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
         cargar_grafico_correctivo_02(iddepartamento, fechainicio, fechafin);
         cargar_grafico_correctivo_03(iddepartamento, fechainicio, fechafin);
         cargar_grafico_correctivo_04(iddepartamento, fechainicio, fechafin);
+        cargar_grafico_correctivo_05(iddepartamento, fechainicio, fechafin);
+        cargar_grafico_correctivo_06(iddepartamento, fechainicio, fechafin);
 
 
         $("#btn-actualizar").click(function(e) {
@@ -220,6 +237,8 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
             cargar_grafico_correctivo_02(iddepartamento, fechainicio, fechafin);
             cargar_grafico_correctivo_03(iddepartamento, fechainicio, fechafin);
             cargar_grafico_correctivo_04(iddepartamento, fechainicio, fechafin);
+            cargar_grafico_correctivo_05(iddepartamento, fechainicio, fechafin);
+            cargar_grafico_correctivo_06(iddepartamento, fechainicio, fechafin);
 
         });
 
