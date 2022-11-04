@@ -158,3 +158,16 @@ WHERE st_ticketn.idestacion     = estacionentel.idestacionentel
 group by ticket_sistemafalla.nombresistemafalla, ticket_equipofalla.nombreequipofalla
 order by ticket_sistemafalla.nombresistemafalla, cantidad desc
 ;
+
+-- 11. CANTIDAD DE INTERVENCIONES POR TIPO DE FALLA (TOP 10)
+SELECT ticket_tipofalla.nombretipofalla as nombre, count(st_ticketn.ticket) as cantidad
+FROM st_ticketn, estacionentel, centro, ticket_tipofalla
+WHERE st_ticketn.idnodo      = estacionentel.idestacionentel
+AND estacionentel.idcentro = centro.idcentro
+AND st_ticketn.idtipofalla = ticket_tipofalla.idtipofalla
+AND centro.iddepartamento  =  1
+AND fecha_inicio_rif  BETWEEN '2022-08-01' AND '2022-11-31'
+group by ticket_tipofalla.nombretipofalla
+order by cantidad desc
+LIMIT 10
+;

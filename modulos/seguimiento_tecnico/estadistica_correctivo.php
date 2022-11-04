@@ -257,6 +257,21 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
                 </div>
             </div>
 
+            <div class="col-12 col-lg-12">
+                <div class="card radius-10">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h6 class="mb-0">Top Ten Fallas mas recurrentes</h6>
+                            </div>
+                        </div>
+                        <div style="position:relative;height:400px;" class="mt-2">
+                            <canvas id="myChart11"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 
@@ -274,6 +289,7 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
 <script type="text/javascript" src="../../js/chart_correctivo_08.js"></script>
 <script type="text/javascript" src="../../js/chart_correctivo_09.js"></script>
 <script type="text/javascript" src="../../js/chart_correctivo_10.js"></script>
+<script type="text/javascript" src="../../js/chart_correctivo_11.js"></script>
 
 
 <script type="text/javascript">
@@ -292,6 +308,7 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
         cargar_grafico_correctivo_08(iddepartamento, fechainicio, fechafin);
         cargar_grafico_correctivo_09(iddepartamento, fechainicio, fechafin);
         cargar_grafico_correctivo_10(iddepartamento, fechainicio, fechafin);
+        cargar_grafico_correctivo_11(iddepartamento, fechainicio, fechafin);
 
 
         $("#btn-actualizar").click(function(e) {
@@ -310,6 +327,7 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
             cargar_grafico_correctivo_08(iddepartamento, fechainicio, fechafin);
             cargar_grafico_correctivo_09(iddepartamento, fechainicio, fechafin);
             cargar_grafico_correctivo_10(iddepartamento, fechainicio, fechafin);
+            cargar_grafico_correctivo_11(iddepartamento, fechainicio, fechafin);
 
         });
 
