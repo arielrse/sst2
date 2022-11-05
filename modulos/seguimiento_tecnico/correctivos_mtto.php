@@ -44,7 +44,7 @@
                         <tbody>
 
                         <?php
-                        $consulta = "SELECT r.id, r.fecha_eje, r.razon, c.nombre as centro, e.nombreestacion, s.nombresistemafalla, r.servicio_afecta as afectacion 
+                        $consulta = "SELECT r.id, r.estado, r.fecha_eje, r.razon, c.nombre as centro, e.nombreestacion, s.nombresistemafalla, r.servicio_afecta as afectacion 
                                      FROM rutina_correctivo r
                                      LEFT JOIN centro c        ON r.idcentro    = c.idcentro
                                      LEFT JOIN estacionentel e ON r.idestacione = e.idestacionentel
@@ -57,8 +57,12 @@
 
                         if($filas!=0){
                             while($dato=mysqli_fetch_array($resultado)){
+                                $idrutinacorrectivo = $dato['id'];
                                 $href = "$link_modulo?path=correctivo_editar.php&idc=".$dato['id'];
                                 $ticket_html = "";
+
+                                $eliminarRutina = ($dato['estado']=='PEN') ? "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutinaCorrectivo(`$idrutinacorrectivo`)'><i class='bx bx-trash'></i></a>" : "";
+                                $eliminarRutina = (!isClient() && !isNationalClient()) ? $eliminarRutina : "";
 
                                 echo"
                                 <tr>
@@ -71,6 +75,7 @@
                                     <td>
                                         <div class='d-flex order-actions'>
                                             <a href='$href' class=''><i class='bx bx-edit'></i></a>
+                                            ".$eliminarRutina."
                                         </div>
                                     </td>
                                 </tr>";
@@ -94,5 +99,17 @@
             "order": [[ 0, "desc" ]]
         } );
     } );
+
+    function eliminarRutinaCorrectivo(idrutinacorrectivo){
+
+        if (confirm('¿Esta seguro eliminar la rutina correctivo y todos sus archivos?')){
+            jQuery.post("../../paquetes/rutina/delete_correctivo.php", {
+                idrutinacorrectivo: idrutinacorrectivo
+                }, function(data){
+                    $("#table-correctivos").load(window.location + " #table-correctivos");
+                }
+            );
+        }
+    }
 
 </script>
