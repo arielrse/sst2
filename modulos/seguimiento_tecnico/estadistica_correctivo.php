@@ -272,6 +272,36 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
                 </div>
             </div>
 
+            <div class="col-12 col-lg-6">
+                <div class="card radius-10">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h6 class="mb-0">Tiempo Promedio de Atención en Sitio</h6>
+                            </div>
+                        </div>
+                        <div class="chart-container-1 mt-4">
+                            <canvas id="myChart12"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="card radius-10">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h6 class="mb-0">Cantidad de Mantenimientos Correctivos por Grupo</h6>
+                            </div>
+                        </div>
+                        <div class="chart-container-1 mt-4">
+                            <canvas id="myChart13"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 
@@ -290,6 +320,8 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
 <script type="text/javascript" src="../../js/chart_correctivo_09.js"></script>
 <script type="text/javascript" src="../../js/chart_correctivo_10.js"></script>
 <script type="text/javascript" src="../../js/chart_correctivo_11.js"></script>
+<script type="text/javascript" src="../../js/chart_correctivo_12.js"></script>
+<script type="text/javascript" src="../../js/chart_correctivo_13.js"></script>
 
 
 <script type="text/javascript">
@@ -309,6 +341,8 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
         cargar_grafico_correctivo_09(iddepartamento, fechainicio, fechafin);
         cargar_grafico_correctivo_10(iddepartamento, fechainicio, fechafin);
         cargar_grafico_correctivo_11(iddepartamento, fechainicio, fechafin);
+        cargar_grafico_correctivo_12(iddepartamento, fechainicio, fechafin);
+        cargar_grafico_correctivo_13(iddepartamento, fechainicio, fechafin);
 
 
         $("#btn-actualizar").click(function(e) {
@@ -328,6 +362,8 @@ $porcentajeEje = ($cantMttos > 0) ? round(($cantMttosEje/$cantMttos)*100, 1) : 0
             cargar_grafico_correctivo_09(iddepartamento, fechainicio, fechafin);
             cargar_grafico_correctivo_10(iddepartamento, fechainicio, fechafin);
             cargar_grafico_correctivo_11(iddepartamento, fechainicio, fechafin);
+            cargar_grafico_correctivo_12(iddepartamento, fechainicio, fechafin);
+            cargar_grafico_correctivo_13(iddepartamento, fechainicio, fechafin);
 
         });
 

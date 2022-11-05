@@ -51,3 +51,6 @@ CREATE TABLE `rutina_correctivo` (
 alter table rutina_correctivo add foreign key (idcentro) references centro(idcentro);
 alter table rutina_correctivo add foreign key (iddepartamento) references departamento(iddepartamento);
 -- alter table rutina_correctivo add foreign key (idestacione) references estacionentel(idestacionentel); ERROR
+
+alter table rutina_correctivo add column idgrupo bigint(20) after pendiente_5;
+alter table rutina_correctivo add foreign key  (idgrupo) references grupo(idgrupo);
