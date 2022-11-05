@@ -44,8 +44,7 @@ $pendiente_2 = $_POST['pendiente_2'];
 $pendiente_3 = $_POST['pendiente_3'];
 $pendiente_4 = $_POST['pendiente_4'];
 $pendiente_5 = $_POST['pendiente_5'];
-$usr_tec1 = $_POST['usr_tec1'];
-$usr_tec2 = $_POST['usr_tec2'];
+$idgrupo = $_POST['idgrupo'];
 $notas = $_POST['notas'];
 
 $query = "update rutina_correctivo set 
@@ -90,8 +89,7 @@ pendiente_2 = '$pendiente_2',
 pendiente_3 = '$pendiente_3',
 pendiente_4 = '$pendiente_4',
 pendiente_5 = '$pendiente_5',
-usr_tec1 = '$usr_tec1',
-usr_tec2 = '$usr_tec2',
+idgrupo = '$idgrupo',
 notas = '$notas'
 where id = ".$idc;
 

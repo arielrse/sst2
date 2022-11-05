@@ -488,28 +488,17 @@ $fecha_fin = date("Y-m-d H:i");
                             </tr>
                             <tr>
                                 <td class="col-xl-8">
-                                    <select id="usr_tec1" name="usr_tec1" class="single-select">
-                                        <option value="" selected class="title7"> Seleccionar... </option>
+                                    <select name="idgrupo" class="single-select" id="idgrupo">
+                                        <option value="0" selected class="title7"> Seleccionar... </option>
                                         <?php
-                                        $resultado = mysqli_query($conexion, "SELECT id,
-                                                                                    concat(nombre, ' ', ap_pat, ' ', ap_mat) AS nombre  
-                                                                                    FROM usuarios where iddepartamento = '$iddepartamento' AND nivel = 2");
+                                        $resultado=mysqli_query($conexion, "
+                                                SELECT g.idgrupo, g.codigo, g.nombre, c.nombre AS nombreCentro, d.iddepartamento
+                                                FROM grupo g 
+                                                JOIN centro c       ON g.idcentro = c.idcentro
+                                                JOIN departamento d ON c.iddepartamento = d.iddepartamento
+                                                WHERE d.`iddepartamento` = $iddepartamento ");
                                         while($dato=mysqli_fetch_array($resultado))
-                                            echo '<option value="'.$dato['id'].'">'.$dato['nombre'].'</option>';
-                                        ?>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-xl-8">
-                                    <select id="usr_tec2" name="usr_tec2" class="single-select">
-                                        <option value="" selected class="title7"> Seleccionar... </option>
-                                        <?php
-                                        $resultado = mysqli_query($conexion, "SELECT id,
-                                                                                            concat(nombre, ' ', ap_pat, ' ', ap_mat) AS nombre  
-                                                                                            FROM usuarios where iddepartamento = '$iddepartamento' AND nivel = 2");
-                                        while($dato=mysqli_fetch_array($resultado))
-                                            echo '<option value="'.$dato['id'].'">'.$dato['nombre'].'</option>';
+                                            echo '<option value="'.$dato['idgrupo'].'">'.$dato['nombre'].' ('.$dato['nombreCentro'].')</option>';
                                         ?>
                                     </select>
                                 </td>
@@ -530,12 +519,24 @@ $fecha_fin = date("Y-m-d H:i");
             </div>
         </div>
 
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="ms-auto">
+                <div>
+                    <input type="button" id="btn-save-mttoc2" class="btn btn-primary px-4" value="Guardar" />
+                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
 <script type="text/javascript">
     var btn_save_mttoc = document.getElementById('btn-save-mttoc');
     btn_save_mttoc.addEventListener("click", saveMttoCorrectivo);
+
+    var btn_save_mttoc2 = document.getElementById('btn-save-mttoc2');
+    btn_save_mttoc2.addEventListener("click", saveMttoCorrectivo);
 
     function saveMttoCorrectivo() {
 
@@ -585,8 +586,7 @@ $fecha_fin = date("Y-m-d H:i");
         frmData.append('pendiente_3', $("#pendiente_3").val());
         frmData.append('pendiente_4', $("#pendiente_4").val());
         frmData.append('pendiente_5', $("#pendiente_5").val());
-        frmData.append('usr_tec1', $("#usr_tec1").val());
-        frmData.append('usr_tec2', $("#usr_tec2").val());
+        frmData.append('idgrupo', $("#idgrupo").val());
         frmData.append('notas', $("#notas").val());
 
         $.ajax({
