@@ -478,9 +478,8 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                     <table class="tborder">
                         <tbody>
                             <tr>
-                                <td class="col-75p">G.20 Medidas por descarga BB:</td>
-                                <td class="col-5p">Obs.</td>
-                                <td class="col-20p"></td>
+                                <td class="col-100p">G.20 Medidas por descarga BB:</td>
+                               
                             </tr>
                         </tbody>        
                     </table>									                        
@@ -1266,7 +1265,7 @@ function getSubPlantilla2($jsonData){
                     <table class="tborder">
                         <tr>
                             <td><strong>N° Bat.</strong></td>
-                            <td><strong>VDC</strong></td>
+                            <td><strong>mΩ</strong></td>
                         </tr>
                         <tr>
                             <td>BB2-B1</td>
@@ -1298,7 +1297,7 @@ function getSubPlantilla2($jsonData){
                     <table class="tborder">
                         <tr>
                             <td><strong>N° Bat.</strong></td>
-                            <td><strong>VDC</strong></td>
+                            <td><strong>mΩ</strong></td>
                         </tr>
                         <tr>
                             <td>BB2-B7</td>
@@ -1330,7 +1329,7 @@ function getSubPlantilla2($jsonData){
                     <table class="tborder">
                         <tr>
                             <td><strong>N° Bat.</strong></td>
-                            <td><strong>VDC</strong></td>
+                            <td><strong>mΩ</strong></td>
                         </tr>
                         <tr>
                             <td>BB2-B13</td>
@@ -1362,7 +1361,7 @@ function getSubPlantilla2($jsonData){
                     <table class="tborder">
                         <tr>
                             <td><strong>N° Bat.</strong></td>
-                            <td><strong>VDC</strong></td>
+                            <td><strong>mΩ</strong></td>
                         </tr>
                         <tr>
                             <td>BB2-B19</td>
