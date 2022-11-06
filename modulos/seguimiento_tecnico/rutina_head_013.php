@@ -199,7 +199,7 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
                     <td>Tiempo de Viaje en Hrs.</td>
                     <td>
                         <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control"  id="b_02_02" value="<?php echo $b_02_02 ?>">
+                            <input type="time" class="form-control"  id="b_02_02" value="<?php echo $b_02_02 ?>">
                         </div>
                     </td>
                 </tr>
