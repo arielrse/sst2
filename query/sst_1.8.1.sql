@@ -7,3 +7,5 @@ CREATE TABLE `rutina_correctivo_img` (
 );
 
 alter table rutina_correctivo_img add foreign key (idrutinacorrectivo) references rutina_correctivo (id);
+
+alter table rutina_correctivo add column estado varchar(10) after titulo;

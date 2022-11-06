@@ -34,6 +34,8 @@ $fecha_fin = date("Y-m-d H:i");
         <div class="card">
             <div class="card-body">
 
+                <form class="row g-3">
+
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
 
                     <div class="col">
@@ -48,7 +50,7 @@ $fecha_fin = date("Y-m-d H:i");
                             <tr>
                                 <td class="col-xl-5 bg-light">Centro de Mtto:</td>
                                 <td class="col-xl-7">
-                                    <select name="idcentro" id="idcentro" class="single-select">
+                                    <select name="idcentro" id="idcentro" class="single-select" required>
                                         <option value="0" selected class="title7"> Seleccionar... </option>
                                         <?php
                                         $resultado=mysqli_query($conexion, "SELECT idcentro, nombre, codigo FROM centro where iddepartamento = $iddepartamento");
@@ -516,6 +518,7 @@ $fecha_fin = date("Y-m-d H:i");
                     </div>
                 </div>
 
+                </form>
             </div>
         </div>
 
@@ -538,71 +541,86 @@ $fecha_fin = date("Y-m-d H:i");
     var btn_save_mttoc2 = document.getElementById('btn-save-mttoc2');
     btn_save_mttoc2.addEventListener("click", saveMttoCorrectivo);
 
+     function verifyValues() {
+         var result = false;
+         idcentro = $("#idcentro").val();
+         idgrupo  = $("#idgrupo").val();
+
+         if (idgrupo > 0 && idcentro > 0)  result = true;
+
+         return result;
+     }
+
     function saveMttoCorrectivo() {
 
-        var frmData = new FormData;
-        frmData.append('razon', $("#razon").val());
-        frmData.append('idcentro', $("#idcentro").val());
-        frmData.append('iddepartamento', $("#iddepartamento").val());
-        frmData.append('idestacione', $("#idestacione").val());
-        frmData.append('usr_resp', $("#usr_resp").val());
-        frmData.append('fecha_eje', $("#fecha_eje").val());
-        frmData.append('tipo_solucion', $("#tipo_solucion").val());
-        frmData.append('fecha_corte', $("#fecha_corte").val());
-        frmData.append('fecha_aviso', $("#fecha_aviso").val());
-        frmData.append('fecha_salida', $("#fecha_salida").val());
-        frmData.append('fecha_llegada', $("#fecha_llegada").val());
-        frmData.append('fecha_superada', $("#fecha_superada").val());
-        frmData.append('fecha_fin', $("#fecha_fin").val());
-        frmData.append('usr_coord', $("#usr_coord").val());
-        frmData.append('ticket_principal', $("#ticket_principal").val());
-        frmData.append('ticket_relacion', $("#ticket_relacion").val());
-        frmData.append('atencion', $("#atencion").val());
-        frmData.append('servicio_afecta', $("#servicio_afecta").val());
-        frmData.append('estado_ticket', $("#estado_ticket").val());
-        frmData.append('en_plazo', $("#en_plazo").val());
+         if ( verifyValues() ) {
+             var frmData = new FormData;
+             frmData.append('razon', $("#razon").val());
+             frmData.append('idcentro', $("#idcentro").val());
+             frmData.append('iddepartamento', $("#iddepartamento").val());
+             frmData.append('idestacione', $("#idestacione").val());
+             frmData.append('usr_resp', $("#usr_resp").val());
+             frmData.append('fecha_eje', $("#fecha_eje").val());
+             frmData.append('tipo_solucion', $("#tipo_solucion").val());
+             frmData.append('fecha_corte', $("#fecha_corte").val());
+             frmData.append('fecha_aviso', $("#fecha_aviso").val());
+             frmData.append('fecha_salida', $("#fecha_salida").val());
+             frmData.append('fecha_llegada', $("#fecha_llegada").val());
+             frmData.append('fecha_superada', $("#fecha_superada").val());
+             frmData.append('fecha_fin', $("#fecha_fin").val());
+             frmData.append('usr_coord', $("#usr_coord").val());
+             frmData.append('ticket_principal', $("#ticket_principal").val());
+             frmData.append('ticket_relacion', $("#ticket_relacion").val());
+             frmData.append('atencion', $("#atencion").val());
+             frmData.append('servicio_afecta', $("#servicio_afecta").val());
+             frmData.append('estado_ticket', $("#estado_ticket").val());
+             frmData.append('en_plazo', $("#en_plazo").val());
 
-        frmData.append('sistemafalla', $("#sistemafalla").val());
-        frmData.append('equipofalla', $("#equipofalla").val());
-        frmData.append('tipofalla', $("#tipofalla").val());
-        frmData.append('solucion', $("#solucion").val());
+             frmData.append('sistemafalla', $("#sistemafalla").val());
+             frmData.append('equipofalla', $("#equipofalla").val());
+             frmData.append('tipofalla', $("#tipofalla").val());
+             frmData.append('solucion', $("#solucion").val());
 
 
-        frmData.append('descripcion_falla', $("#descripcion_falla").val());
-        frmData.append('medidas_restituir', $("#medidas_restituir").val());
-        frmData.append('estado_final', $("#estado_final").val());
-        frmData.append('causas', $("#causas").val());
-        frmData.append('partes_afectadas', $("#partes_afectadas").val());
-        frmData.append('estaciones_afectadas', $("#estaciones_afectadas").val());
-        frmData.append('desc_solucion', $("#desc_solucion").val());
-        frmData.append('descripcion_solucion', $("#descripcion_solucion").val());
-        frmData.append('aclarativos', $("#aclarativos").val());
-        frmData.append('acciones_preventivas', $("#acciones_preventivas").val());
-        frmData.append('observaciones_fueraplazo', $("#observaciones_fueraplazo").val());
-        frmData.append('observaciones', $("#observaciones").val());
+             frmData.append('descripcion_falla', $("#descripcion_falla").val());
+             frmData.append('medidas_restituir', $("#medidas_restituir").val());
+             frmData.append('estado_final', $("#estado_final").val());
+             frmData.append('causas', $("#causas").val());
+             frmData.append('partes_afectadas', $("#partes_afectadas").val());
+             frmData.append('estaciones_afectadas', $("#estaciones_afectadas").val());
+             frmData.append('desc_solucion', $("#desc_solucion").val());
+             frmData.append('descripcion_solucion', $("#descripcion_solucion").val());
+             frmData.append('aclarativos', $("#aclarativos").val());
+             frmData.append('acciones_preventivas', $("#acciones_preventivas").val());
+             frmData.append('observaciones_fueraplazo', $("#observaciones_fueraplazo").val());
+             frmData.append('observaciones', $("#observaciones").val());
 
-        frmData.append('pendiente_1', $("#pendiente_1").val());
-        frmData.append('pendiente_2', $("#pendiente_2").val());
-        frmData.append('pendiente_3', $("#pendiente_3").val());
-        frmData.append('pendiente_4', $("#pendiente_4").val());
-        frmData.append('pendiente_5', $("#pendiente_5").val());
-        frmData.append('idgrupo', $("#idgrupo").val());
-        frmData.append('notas', $("#notas").val());
+             frmData.append('pendiente_1', $("#pendiente_1").val());
+             frmData.append('pendiente_2', $("#pendiente_2").val());
+             frmData.append('pendiente_3', $("#pendiente_3").val());
+             frmData.append('pendiente_4', $("#pendiente_4").val());
+             frmData.append('pendiente_5', $("#pendiente_5").val());
+             frmData.append('idgrupo', $("#idgrupo").val());
+             frmData.append('notas', $("#notas").val());
 
-        $.ajax({
-            url: 'save_mtto_correctivo.php',
-            type: 'POST',
-            data: frmData,
-            processData: false,
-            contentType: false,
-            cache: false,
-            success: function (resp) {
-                alert(resp);
-                //info_notify('Datos insertados correctamente', 'info');
-                setTimeout( function() { window.location.href = '<?=$link_modulo?>?path=correctivos_mtto.php'; }, 1000 );
-            }
-        });
-
+             $.ajax({
+                 url: 'save_mtto_correctivo.php',
+                 type: 'POST',
+                 data: frmData,
+                 processData: false,
+                 contentType: false,
+                 cache: false,
+                 success: function (resp) {
+                     alert(resp);
+                     //info_notify('Datos insertados correctamente', 'info');
+                     setTimeout(function () {
+                         window.location.href = '<?=$link_modulo?>?path=correctivos_mtto.php';
+                     }, 1000);
+                 }
+             });
+         } else {
+             alert('Registrar al menos Centro de Mtto. y Personal Técnico');
+         }
     }
 
     //-------------------------------------------------------------------------------

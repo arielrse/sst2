@@ -46,6 +46,7 @@ $idgrupo = $_POST['idgrupo'];
 $notas = $_POST['notas'];
 
 $query = "insert into rutina_correctivo (
+estado,
 razon,
 idcentro,
 iddepartamento,
@@ -90,6 +91,7 @@ pendiente_5,
 idgrupo,
 notas
 ) values (
+'PEN',
 '$razon',
 '$idcentro',
 '$iddepartamento',
