@@ -250,7 +250,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                                 <td class="col-40p">'.constant('F03').'</td>
                                 <td class="col-10p">'.$f03_1.' Si tiene</td>
                                 <td class="col-10p">'.$f03_2.' No tiene</td>
-                                <td class="col-40p">Obs. '.$f02_3.'</td>
+                                <td class="col-40p">Obs. '.$f03_3.'</td>
                             </tr>
                         </tbody>        
                     </table>									                        

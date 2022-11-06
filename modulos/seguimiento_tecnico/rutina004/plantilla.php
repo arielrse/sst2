@@ -48,7 +48,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
 
     $g_desarrollo_g1 = $obj->{'g_desarrollo_g1'};
     $g1_01_01 = $g_desarrollo_g1->g1_01_01 ? $check : $uncheck; $g1_01_02 = $g_desarrollo_g1->g1_01_02 ? $check : $uncheck; $g1_01_03 = $g_desarrollo_g1->g1_01_03;
-    $g1_02_01 = $g_desarrollo_g1->g1_02_01 ? $check : $uncheck; $g1_02_02 = $g_desarrollo_g1->g1_02_02 ? $check : $uncheck; $g1_02_03 = $g_desarrollo_g1->g1_02_02 ? $check : $uncheck; $g1_02_04 = $g_desarrollo_g1->g1_02_04;
+    $g1_02_01 = $g_desarrollo_g1->g1_02_01 ? $check : $uncheck; $g1_02_02 = $g_desarrollo_g1->g1_02_02 ? $check : $uncheck; $g1_02_03 = $g_desarrollo_g1->g1_02_03 ? $check : $uncheck; $g1_02_04 = $g_desarrollo_g1->g1_02_04;
     $g1_03_01 = $g_desarrollo_g1->g1_03_01 ? $check : $uncheck; $g1_03_02 = $g_desarrollo_g1->g1_03_02 ? $check : $uncheck; $g1_03_03 = $g_desarrollo_g1->g1_03_03 ? $check : $uncheck; $g1_03_04 = $g_desarrollo_g1->g1_03_04;
     $g1_04_01 = $g_desarrollo_g1->g1_04_01 ? $check : $uncheck; $g1_04_02 = $g_desarrollo_g1->g1_04_02 ? $check : $uncheck; $g1_04_03 = $g_desarrollo_g1->g1_04_03;
     $g1_05_01 = $g_desarrollo_g1->g1_05_01 ? $check : $uncheck; $g1_05_02 = $g_desarrollo_g1->g1_05_02 ? $check : $uncheck; $g1_05_03 = $g_desarrollo_g1->g1_05_03;
@@ -664,10 +664,10 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                                 <td class="col-5p"> MV1 </td>
                                 <td class="col-10p num"> '.  $g3_19_01 . '</td>
                                 <td class="col-5p"> uf </td>
-                                <td class="col-5p"> MV1 </td>
+                                <td class="col-5p"> MV2 </td>
                                 <td class="col-10p num"> '.  $g3_19_02 . '</td>
                                 <td class="col-5p"> uf </td>
-                                <td class="col-5p"> MV1 </td>
+                                <td class="col-5p"> MV3 </td>
                                 <td class="col-10p num"> '.  $g3_19_03 . '</td>
                                 <td class="col-5p"> uf </td>
                                 <td class="col-10p num"> '.  $g3_19_04 . '</td>
