@@ -8,6 +8,7 @@ $idrutinax = $_POST['idrutinax'];
 $cform = $_POST['cform'];
 $idgrupo = $_POST['idgrupo'];
 $iddepartamento = $_POST['iddepartamento'];
+$idevento = $_POST['idevento'];
 
 $css = file_get_contents('../../../assets/css/report.css');
 
@@ -15,7 +16,7 @@ $datosArr     = getJsonData_rutinaArr($conexion, $idrutinax, $cform);
 $idformulario = $datosArr[0];
 $jsonData     = $datosArr[1];
 $titulosArr   = getTitulosRutinas($conexion, $idformulario);
-$plantilla    = getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr);
+$plantilla    = getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $titulosArr);
 $nombreFile   = getNombreArchivoReporte($jsonData, $titulosArr[0]);
 $nombreFile   = getNombreArchivoReporte($jsonData, $titulosArr[0]);
 

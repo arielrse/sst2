@@ -660,15 +660,15 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                             </tr>
                             <tr>
                                 <td class="col-5p"> MV1 </td>
-                                <td class="col-10p num"> '.  $g3_19_01 . '</td>
+                                <td class="col-10p num"> '.$g3_19_01. '</td>
                                 <td class="col-5p"> uf </td>
-                                <td class="col-5p"> MV1 </td>
-                                <td class="col-10p num"> '.  $g3_19_02 . '</td>
+                                <td class="col-5p"> MV2 </td>
+                                <td class="col-10p num"> '.$g3_19_02. '</td>
                                 <td class="col-5p"> uf </td>
-                                <td class="col-5p"> MV1 </td>
-                                <td class="col-10p num"> '.  $g3_019_03 . '</td>
+                                <td class="col-5p"> MV3 </td>
+                                <td class="col-10p num"> '.$g3_19_03. '</td>
                                 <td class="col-5p"> uf </td>
-                                <td class="col-10p num"> '.  $g3_19_04 . '</td>
+                                <td class="col-10p num"> '.$g3_19_04. '</td>
                                 <td class="col-5p"> registro voltaje nominal </td>
                                
                              </tr>

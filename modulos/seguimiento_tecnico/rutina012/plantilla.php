@@ -114,8 +114,8 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                             </tr>
                             <tr>
                                 <td class="col-50p">'.constant('G1_01').'</td>
-                                <td class="col-15p">'.$g1_01_01.' Funcional</td>
-                                <td class="col-15p">'.$g1_01_02.' En falla</td>
+                                <td class="col-15p">'.$g1_01_01.' Operativo</td>
+                                <td class="col-15p">'.$g1_01_02.' No operativo</td>
                                 <td class="col-15p">Obs. '.$g1_01_03.'</td>
                             </tr>
                             </tbody>        
@@ -187,13 +187,13 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                             <tr>
                                 <td class="col-65p">'.constant('G3_03').'</td>
                                 <td class="col-15p">'.$g3_03_01.' No es necesario</td>
-                                <td class="col-20p">'.$g3_03_02.' Realizadoo</td>
+                                <td class="col-20p">'.$g3_03_02.' Realizado</td>
                                 <td class="col-20p">Obs. '.$g3_03_03.'</td>
                             </tr>
                             <tr>
                                 <td class="col-65p">'.constant('G3_04').'</td>
                                <td class="col-15p">'.$g3_04_01.' No es necesario</td>
-                                <td class="col-20p">'.$g3_04_02.'Realizado</td>
+                                <td class="col-20p">'.$g3_04_02.' Realizado</td>
                                 <td class="col-20p">Obs. '.$g3_04_03.'</td>
                             </tr>
                         </tbody>        
@@ -208,7 +208,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                             <tr>
                                 <td class="col-65p">'.constant('G4_01').'</td>
                                 <td class="col-15p">'.$g4_01_01.' No es necesario</td>
-                                <td class="col-20p">'.$g4_01_02.' No operativo</td>
+                                <td class="col-20p">'.$g4_01_02.' Realizado</td>
                                 <td class="col-20p">Obs. '.$g4_01_03.'</td>
                             </tr>
                             <tr>

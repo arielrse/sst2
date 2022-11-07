@@ -33,7 +33,7 @@ $g2_12_01 = $g_desarrollo_g2->g2_12_01 ? "checked" : ""; $g2_12_02 = $g_desarrol
                         <input class="form-check-input" type="checkbox" id="g2_01_01" value="option1" <?php echo $g2_01_01 ?> >
                         <label class="form-check-label" for="g2_01_01">Realizado</label>
                     </td>
-
+                    <td></td>
                     <td>
                         <input type="text" class="form-control form-control-sm" id="g2_01_02" placeholder="Obs." value="<?php echo $g2_01_02 ?>">
                     </td>
@@ -81,7 +81,7 @@ $g2_12_01 = $g_desarrollo_g2->g2_12_01 ? "checked" : ""; $g2_12_02 = $g_desarrol
                         <input class="form-check-input" type="checkbox" id="g2_04_01" value="option1" <?php echo $g2_04_01 ?> >
                         <label class="form-check-label" for="g2_04_01">Realizado</label>
                     </td>
-
+                    <td></td>
                     <td>
                         <input type="text" class="form-control form-control-sm" id="g2_04_02" placeholder="Obs." value="<?php echo $g2_04_02 ?>">
                     </td>
@@ -95,7 +95,7 @@ $g2_12_01 = $g_desarrollo_g2->g2_12_01 ? "checked" : ""; $g2_12_02 = $g_desarrol
                         <input class="form-check-input" type="checkbox" id="g2_05_01" value="option1" <?php echo $g2_05_01 ?> >
                         <label class="form-check-label" for="g2_05_01">Realizado</label>
                     </td>
-
+                    <td></td>
                     <td>
                         <input type="text" class="form-control form-control-sm" id="g2_05_02" placeholder="Obs." value="<?php echo $g2_05_02 ?>">
                     </td>
@@ -109,7 +109,7 @@ $g2_12_01 = $g_desarrollo_g2->g2_12_01 ? "checked" : ""; $g2_12_02 = $g_desarrol
                         <input class="form-check-input" type="checkbox" id="g2_06_01" value="option1" <?php echo $g2_06_01 ?> >
                         <label class="form-check-label" for="g2_06_01">Realizado</label>
                     </td>
-
+                    <td></td>
                     <td>
                         <input type="text" class="form-control form-control-sm" id="g2_06_02" placeholder="Obs." value="<?php echo $g2_06_02 ?>">
                     </td>
@@ -123,7 +123,7 @@ $g2_12_01 = $g_desarrollo_g2->g2_12_01 ? "checked" : ""; $g2_12_02 = $g_desarrol
                         <input class="form-check-input" type="checkbox" id="g2_07_01" value="option1" <?php echo $g2_07_01 ?> >
                         <label class="form-check-label" for="g2_07_01">Realizado</label>
                     </td>
-
+                    <td></td>
                     <td>
                         <input type="text" class="form-control form-control-sm" id="g2_07_02" placeholder="Obs." value="<?php echo $g2_07_02 ?>">
                     </td>
@@ -137,7 +137,7 @@ $g2_12_01 = $g_desarrollo_g2->g2_12_01 ? "checked" : ""; $g2_12_02 = $g_desarrol
                         <input class="form-check-input" type="checkbox" id="g2_08_01" value="option1" <?php echo $g2_08_01 ?> >
                         <label class="form-check-label" for="g2_08_01">Realizado</label>
                     </td>
-
+                <td></td>
                     <td>
                         <input type="text" class="form-control form-control-sm" id="g2_08_02" placeholder="Obs." value="<?php echo $g2_08_02 ?>">
                     </td>
@@ -151,7 +151,7 @@ $g2_12_01 = $g_desarrollo_g2->g2_12_01 ? "checked" : ""; $g2_12_02 = $g_desarrol
                         <input class="form-check-input" type="checkbox" id="g2_09_01" value="option1" <?php echo $g2_09_01 ?> >
                         <label class="form-check-label" for="g2_09_01">Realizado</label>
                     </td>
-
+                <td></td>
                     <td>
                         <input type="text" class="form-control form-control-sm" id="g2_09_02" placeholder="Obs." value="<?php echo $g2_09_02 ?>">
                     </td>
@@ -165,7 +165,7 @@ $g2_12_01 = $g_desarrollo_g2->g2_12_01 ? "checked" : ""; $g2_12_02 = $g_desarrol
                         <input class="form-check-input" type="checkbox" id="g2_10_01" value="option1" <?php echo $g2_10_01 ?> >
                         <label class="form-check-label" for="g2_10_01">Realizado</label>
                     </td>
-
+                <td></td>
                     <td>
                         <input type="text" class="form-control form-control-sm" id="g2_10_02" placeholder="Obs." value="<?php echo $g2_10_02 ?>">
                     </td>
@@ -179,7 +179,7 @@ $g2_12_01 = $g_desarrollo_g2->g2_12_01 ? "checked" : ""; $g2_12_02 = $g_desarrol
                         <input class="form-check-input" type="checkbox" id="g2_11_01" value="option1" <?php echo $g2_11_01 ?> >
                         <label class="form-check-label" for="g2_11_01">Realizado</label>
                     </td>
-
+                <td></td>
                     <td>
                         <input type="text" class="form-control form-control-sm" id="g2_11_02" placeholder="Obs." value="<?php echo $g2_11_02 ?>">
                     </td>
@@ -193,7 +193,7 @@ $g2_12_01 = $g_desarrollo_g2->g2_12_01 ? "checked" : ""; $g2_12_02 = $g_desarrol
                         <input class="form-check-input" type="checkbox" id="g2_12_01" value="option1" <?php echo $g2_12_01 ?> >
                         <label class="form-check-label" for="g2_12_01">Realizado</label>
                     </td>
-
+                <td></td>
                     <td>
                         <input type="text" class="form-control form-control-sm" id="g2_12_02" placeholder="Obs." value="<?php echo $g2_12_02 ?>">
                     </td>

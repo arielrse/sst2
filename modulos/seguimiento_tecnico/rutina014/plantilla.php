@@ -3,13 +3,13 @@ require("../../../funciones/DateUtils.php");
 require("../ReporteMtoUtils.php");
 require("variable_text.php");
 
-function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $titulosArr){
 
     $obj = json_decode($jsonData);
     $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
     $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
-    $cabecera        = getCabecera($conexion, $jsonData, $idgrupo, false, $titulosArr);
+    $cabecera        = getCabecera2($conexion, $jsonData, $idgrupo, $idevento, $titulosArr);
     $footerPlantilla = getFooter($jsonData);
 
     $reporteFotog    = getReporteFotog($conexion, $idrutinax, '014');
@@ -343,22 +343,22 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                                 <td class="col-40p">'.$e3_08_02.'</td>
                             </tr>
                              <tr>
-                                <td class="col-40p">'.constant('E19').'</td>
+                                <td class="col-40p">'.constant('E25').'</td>
                                 <td class="col-20p">'.$e3_09_01.'</td>
                                 <td class="col-40p">'.$e3_09_02.'</td>
                              </tr>
                              <tr>
-                                <td class="col-40p">'.constant('E17').'</td>
+                                <td class="col-40p">'.constant('E26').'</td>
                                 <td class="col-20p">'.$e3_10_01.'</td>
                                 <td class="col-40p">'.$e3_10_02.'</td>
                             </tr>
                             <tr>
-                                <td class="col-40p">'.constant('E18').'</td>
+                                <td class="col-40p">'.constant('E27').'</td>
                                 <td class="col-20p">'.$e3_11_01.'</td>
                                 <td class="col-40p">'.$e3_11_02.'</td>
                             </tr>
                              <tr>
-                                <td class="col-40p">'.constant('E19').'</td>
+                                <td class="col-40p">'.constant('E28').'</td>
                                 <td class="col-20p">'.$e3_12_01.'</td>
                                 <td class="col-40p">'.$e3_12_02.'</td>
                              </tr>

@@ -301,30 +301,26 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idrutinax, $titulosArr){
                     <table class="tborder">
                         <tbody>
                             <tr>
-                                <td colspan="5"><strong>'.constant('G2TITLE').'</strong></td>
+                                <td colspan="3"><strong>'.constant('G2TITLE').'</strong></td>
                             </tr>
                             <tr>
                                 <td class="col-50p">'.constant('G2_01').'</td>
                                 <td class="col-15p">'.$g2_01_01.' Realizado</td>
-                                <td class="col-10p"></td>
                                 <td class="col-25p">Obs. '.$g2_01_02.'</td>
                             </tr>
                             <tr>
                                 <td class="col-50p">'.constant('G2_02').'</td>
                                 <td class="col-15p">'.$g2_02_01.' Realizado</td>
-                                <td class="col-10p"></td>
                                 <td class="col-25p">Obs. '.$g2_02_02.'</td>
                             </tr>
                             <tr>
                                 <td class="col-50p">'.constant('G2_03').'</td>
                                 <td class="col-15p">'.$g2_03_01.' Realizado</td>
-                                <td class="col-10p">'.$g2_03_02.' Realizado</td>
-                                <td class="col-25p">Obs. '.$g2_03_03.'</td>
+                                <td class="col-25p">Obs. '.$g2_03_02.'</td>
                             </tr>
                             <tr>
                                 <td class="col-50p">'.constant('G2_04').'</td>
                                 <td class="col-15p">'.$g2_04_01.' Realizado</td>
-                                <td class="col-10p"></td>
                                 <td class="col-25p">Obs. '.$g2_04_02.'</td>
                             </tr>
                             
