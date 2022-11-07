@@ -199,6 +199,166 @@ function getCabecera($conexion, $jsonData, $idgrupo, $activoMadre=false, $titulo
     return $plantilla;
 }
 
+//Cabeceras 14, 15, 16
+function getCabecera2($conexion, $jsonData, $idgrupo, $idevento, $titulosArr){
+
+    $resIden = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`,
+                                                d.`nombre` AS departamento, s.`provincia`, s.`localidad`, s.`municipio`, s.latitud, s.longitud
+                                                FROM evento e 
+                                                LEFT JOIN sitio s 	 ON e.`idsitio` = s.`idsitio`
+                                                LEFT JOIN centro c 	 ON s.`idcentro` = c.`idcentro`
+                                                LEFT JOIN departamento d ON c.`iddepartamento` = d.`iddepartamento`
+                                                WHERE e.`idevento` = ".$idevento);
+    $dataIden = mysqli_fetch_array($resIden);
+    $departamento   = $dataIden['departamento'];
+    $provincia      = $dataIden['provincia'];
+    $localidad      = $dataIden['localidad'];
+
+
+
+    $obj = json_decode($jsonData);
+    $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
+    $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
+
+    $cm                 = $obj->{'cm'};
+    $sitioId            = $obj->{'sitioId'};
+    $propertyId         = $obj->{'propertyId'};
+
+    $c_fechaRealizacion = dateToLiteral($obj->{'c_fechaRealizacion'});
+
+    $d_horainicio   = $obj->{'d_horainicio'};
+    $d_horafin      = $obj->{'d_horafin'};
+    $tiempoTrans    = timeDiff($d_horainicio, $d_horafin);
+
+    //---------------------------
+    $dataPers = getPersonalOyM($conexion, $obj->{'e_personal'});
+    $nombre1 = $dataPers['nombre'];
+    $cargo1  = $dataPers['cargo'];
+    $cel1    = $dataPers['cel'];
+
+    $dataPersMtto = getPersonalMtto($conexion, $idgrupo);
+    $nombre2 = $dataPersMtto['nombre2'];
+    $nombre3 = $dataPersMtto['nombre3'];
+    $cargo2  = $dataPersMtto['cargo2'];
+    $cargo3  = $dataPersMtto['cargo3'];
+    $cel2    = $dataPersMtto['cel2'];
+    $cel3    = $dataPersMtto['cel3'];
+    //---------------------------
+
+    $plantilla = '
+    <table>
+        <tr>
+            <th class="col-2">
+                <div><img src="../../../img/logo-entel.png" width="90" alt="" /></div>
+            </th>
+            <th class="col-10 company-details">
+                <div>
+                    <div><b>'.$titulosArr[1].'</b></div>
+                    <div><b>'.$titulosArr[2].'</b></div>
+                    <div><b>'.$titulosArr[3].'</b></div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th class="text-center" colspan="2">
+                <h4>'. $titulosArr[0] .'</h4>
+            </th>
+        </tr>
+    </table>
+    <main>
+        <div class="notices">
+            <div class="notice"><strong>A. Identificación del Sitio</strong></div>
+        </div>
+    </main>																  
+    <main>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col-10p no">Departamento</td>
+                    <td class="col-20p">'. $departamento .'</td>
+                    <td class="col-10p no">Provincia</td>
+                    <td class="col-10p">'. $provincia .'</td>
+                    <td class="col-12p no">Localidad</td>
+                    <td class="col-40p">'. $localidad .'</td>
+                </tr>
+                <tr>
+                    <td class="col-10p no">CM/SCM</td>
+                    <td class="col-20p">'. $cm .'</td>
+                    <td class="col-10p no">ID Sitio</td>
+                    <td class="col-10p">'. $sitioId .'</td>
+                    <td class="col-12p no">Property_id</td>
+                    <td class="col-40p">'. $propertyId .'</td>
+                </tr>     
+            </tbody>        
+        </table>									                        
+    </main>
+    
+    <main>
+        <div class="notices">
+            <div class="notice"><strong>B. Datos de la Intervencion</strong></div>
+        </div>
+    </main>																  
+    <main>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col-15p no" colspan="2" >Fecha de mantenimiento:</td>
+                    <td colspan="4" >'.$c_fechaRealizacion.'</td>
+                </tr>     
+            <tr>
+                    <td class="col-15p no">Hora de inicio:</td>
+                    <td>'.$d_horainicio.'</td>
+                    <td class="col-20p no">Hora de Culminación:</td>
+                    <td>'.$d_horafin.'</td>
+                    <td class="col-20p no">Tiempo Transcurrido:</td>
+                    <td>'.$tiempoTrans.'</td>
+                </tr>
+            </tbody>        
+        </table>									                        
+    </main>
+    
+   
+    <main>
+        <div class="notices">
+            <div class="notice"><strong>C. Personal Técnico Responsable</strong></div>
+        </div>
+    </main>	
+    <main>
+        <table class="tborder">
+            <tbody> 
+                <tr>
+                    <td class="col-8p no">Nombre:</td>
+                    <td class="col-30p">'.$nombre1.'</td>
+                    <td class="col-7p no">Cargo:</td>
+                    <td class="col-35p">'.$cargo1.'</td>
+                    <td class="col-10p no">Teléfono:</td>
+                    <td class="col-8p">'.$cel1.'</td>
+                </tr>
+                <tr>
+                    <td class="col-8p no">Nombre:</td>
+                    <td class="col-30p">'.$nombre2.'</td>
+                    <td class="col-7p no">Cargo:</td>
+                    <td class="col-35p">'.$cargo2.'</td>
+                    <td class="col-10p no">Teléfono:</td>
+                    <td class="col-8p">'.$cel2.'</td>
+                </tr>
+                <tr>
+                    <td class="col-8p no">Nombre:</td>
+                    <td class="col-30p">'.$nombre3.'</td>
+                    <td class="col-7p no">Cargo:</td>
+                    <td class="col-35p">'.$cargo3.'</td>
+                    <td class="col-10p no">Teléfono:</td>
+                    <td class="col-8p">'.$cel3.'</td>
+                </tr>
+                
+                
+            </tbody>        
+        </table>									                        
+    </main>
+    ';
+    return $plantilla;
+}
+
 function getCabeceraRutina13($conexion, $jsonData, $idgrupo, $idevento, $titulosArr){
 
     $resIden = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`,
