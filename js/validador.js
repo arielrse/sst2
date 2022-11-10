@@ -3,8 +3,8 @@ var defaultEmptyOK = false
 
 
 var digits = "0123456789";
-var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz-._";
-var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ-._";
+var lowercaseLetters = "abcdefghijklmnñopqrstuvwxyzáéíóú-._";
+var uppercaseLetters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ-._";
 var whitespace = " \t\n\r";
 
 var phoneChars = "()-+ ";
