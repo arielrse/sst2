@@ -126,6 +126,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento){
                             <tr>
                                  <td class="col-100p no"><strong>Observaciones</strong></td>
                             </tr>
+                            
                             <tr>
                                <td>'.$observaciones.'</td>
                            </tr>
