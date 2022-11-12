@@ -124,8 +124,8 @@ function getCabecera1($conexion, $jsonData, $idgrupo, $idevento){
                     <td class="col-25p">'.$indoor_outdoor.'</td>
                  </tr>
                 <tr>
-                    <td class="col-25p"></td>
-                    <td class="col-25p"></td>
+                    
+                    <td colspan="2"></td>
                     <td class="col-25p no">Código activo de energía:</td>
                     <td class="col-25p">'.$cod_activo.'</td>
                 </tr>
