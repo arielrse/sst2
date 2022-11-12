@@ -9,7 +9,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento){
    // $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
    // $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
-    $cabecera        = getCabecera1($conexion, $jsonData, $idgrupo, $idevento);
+    $cabecera        = getCabecera002($conexion, $jsonData, $idgrupo, $idevento);
 
     //$reporteFotog    = getReporteFotog($conexion, $idrutinax, '001');
 
@@ -51,100 +51,80 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento){
                     <table class="tborder">
                         <tbody>
                            <tr>
-                                <td class="col-50p">Funcionalidad (en servicio/fuera de servicio)</td>
+                                <td class="col-50p">Empresa distribuidora de energía</td>
                                 <td class="col-25p" colspan="2">'.$d01_01.'</td>
                            </tr>
                             <tr>
-                                <td class="col-50p">Estado (obsoleto/falta de capacidad/con falla)</td>
-                                <td class="col-25p" colspan="2">'.$d02_01.'</td>
+                                <td class="col-50p">Sistema en baja tensión (BT) / Tensión - V</td>
+                                <td class="col-25p">'.$d02_01.'</td>
+                                <td class="col-25p">'.$d02_02.'</td>
                            </tr>
                             <tr>
-                                <td class="col-50p">Derivación de Media tensión  (MT), Tensión en primario - KV</td>
+                                <td class="col-50p">Longitud de acometida - m</td>
                                 <td class="col-25p" colspan="2">'.$d03_01.'</td>
                            </tr>
                             <tr>
-                                <td class="col-50p">Propiedad (Empresa distribuidora/ENTEL S.A.)</td>
+                                <td class="col-50p">N° de medidor</td>
                                 <td class="col-25p" colspan="2">'.$d04_01.'</td>
                            </tr>
                             <tr>
-                                <td class="col-50p">Empresa distribuidora de energía</td>
+                                <td class="col-50p">N° de CLIENTE</td>
                                 <td class="col-25p" colspan="2">'.$d05_01.'</td>
                            </tr>
                             <tr>
-                                <td class="col-50p">Longitud de línea (MT) - Km</td>
+                                <td class="col-50p">Reja de seguridad con candado</td>
                                 <td class="col-25p" colspan="2">'.$d06_01.'</td>
                            </tr>
                            <tr>
-                                <td class="col-50p">Funcionalidad (en servicio/fuera de servicio)</td>
-                                <td class="col-25p">'.$d07_01.'</td>
-                                <td class="col-25p">'.$d07_02.'</td>
+                                <td class="col-50p">Protector de transciendes de primer nivel</td>
+                                <td class="col-25p" colspan="2">'.$d07_01.'</td>
+                                
                            </tr>
                             <tr>
-                                <td class="col-50p">Largo total del poste - m</td>
+                                <td class="col-50p">Fusible de protección</td>
                                 <td class="col-25p" colspan="2">'.$d08_01.'</td>
                            </tr>
                             <tr>
-                                <td class="col-50p">Seccionador fusible MT en Partida (Si/No) / Capacidad - KV</td>
+                                <td class="col-50p">Termomagnético principal de protección / Capacidad - A</td>
                                 <td class="col-25p">'.$d09_01.'</td>
                                 <td class="col-25p">'.$d09_02.'</td>
                            </tr>
                             <tr>
-                                <td class="col-50p">Seccionador fusible MT en transformador (Si/No) / Capacidad - KV</td>
-                                <td class="col-25p">'.$d10_01.'</td>
-                                <td class="col-25p">'.$d10_02.'</td>
+                                <td class="col-50p">Tipo del elemento de protección principal</td>
+                                <td class="col-25p" colspan="2">'.$d10_01.'</td>
                            </tr>
                            <tr>
-                                <td class="col-50p">Pararrayo de línea MT en partida (Si/No) / Capacidad - KV</td>
-                                <td class="col-25p">'.$d11_01.'</td>
-                                <td class="col-25p">'.$d11_02.'</td>
+                                <td class="col-50p">Barra de distribución</td>
+                                <td class="col-25p" colspan="2">'.$d11_01.'</td>
                            </tr>
                            <tr>
-                                <td class="col-50p">Pararrayo de línea MT en transformador (Si/No) / Capacidad - KV</td>
-                                <td class="col-25p">'.$d12_01.'</td>
-                                <td class="col-25p">'.$d12_02.'</td>
+                                <td class="col-50p">Barra de tierra</td>
+                                <td class="col-25p" colspan="2">'.$d12_01.'</td>
                            </tr>
                            <tr>
-                                <td class="col-50p">Sistema de puesta a tierra en puesto de transformación / medida - ohm (*)</td>
-                                <td class="col-25p">'.$d13_01.'</td>
-                                <td class="col-25p">'.$d13_02.'</td>
+                                <td class="col-50p">Cámara de tierra de pilastra</td>
+                                <td class="col-25p" colspan="2">'.$d13_01.'</td>
                            </tr>
                            <tr>
-                                <td class="col-50p">Sistema de puesta a tierra de paso / cantidad</td>
-                                <td class="col-25p">'.$d14_01.'</td>
-                                <td class="col-25p">'.$d14_02.'</td>
+                                <td class="col-50p">Fecha de inicio de consumo de energía</td>
+                                <td class="col-25p" colspan="2">'.$d14_01.'</td>
                            </tr>
                           <tr>
-                                <td class="col-50p">Sistema en baja tensión (BT) / Tensión - V</td>
-                                <td class="col-25p">'.$d15_01.'</td>
-                                <td class="col-25p">'.$d15_02.'</td>
-                           </tr>
+                                <td class="col-50p">Proyecto</td>
+                                <td class="col-25p" colspan="2">'.$d15_01.'</td>
+                          </tr>
                           <tr>
-                                <td class="col-50p">Capacidad del transformador - KVA / Frecuencia - Hz</td>
-                                <td class="col-25p">'.$d16_01.'</td>
-                                <td class="col-25p">'.$d16_02.'</td>
-                           </tr>
-                           <tr>
-                                <td class="col-50p">Largo total del poste - m</td>
-                                <td class="col-25p" colspan="2">'.$d17_01.'</td>
-                           </tr>
-                           <tr>
-                                <td class="col-50p">Modelo de transformador / Fecha de verificación (dd/mm/aaaa)</td>
-                                <td class="col-25p">'.$d18_01.'</td>
-                                <td class="col-25p">'.$d18_02.'</td>
-                           </tr>
-                           <tr>
-                                <td class="col-50p">N° Serie de transformador / Fecha de verificación (dd/mm/aaaa)</td>
-                                <td class="col-25p">'.$d19_01.'</td>
-                                <td class="col-25p">'.$d19_02.'</td>
-                           </tr>
-                        </tbody>        
+                                <td class="col-50p">Fecha vencimiento de garantía</td>
+                                <td class="col-25p" colspan="2">'.$d16_01.'</td>
+                          </tr>
+                         </tbody>        
                     </table>									                        
                </main>
                <main>
                     <table class="tborder">
                         <tbody>
                             <tr>
-                                <td class="col-100p">Observaciones</td>
+                                 <td class="col-100p no"><strong>Observaciones</strong></td>
                             </tr>
                             <tr>
                                <td>'.$observaciones.'</td>
