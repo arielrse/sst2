@@ -119,6 +119,14 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
             </a>
         </li>
 
+        <li>
+            <a href="<?=$muser?>ver_estaciones.php">
+                <div class="parent-icon"><i class='bx bx-station'></i>
+                </div>
+                <div class="menu-title">Estaciones de Mtto</div>
+            </a>
+        </li>
+
         <?php if ( isAdmin() || isExpert() || isClient() || isNationalClient() ) { ?>
         <li>
             <a class="has-arrow" href="javascript:;">
