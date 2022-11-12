@@ -35,4 +35,15 @@ function getJsonData_fibra_r15($conexion, $idrutinax){
     return [ $data3['table_e1'], $data3['table_e2'], $data3['table_e3'], $data3['table_e4'] ];
 }
 
+/** Para Catastros **/
+function getJsonData_catastroArr($conexion, $idcatastrox, $cform){
+    $res3 = mysqli_query($conexion, "SELECT c.id, c.data, ca.idformulario
+                                        FROM catastro$cform c
+                                        LEFT JOIN catastro ca ON c.idcatastro = ca.idcatastro
+                                        WHERE c.id = ".$idcatastrox);
+    $data3 = mysqli_fetch_array($res3);
+
+    return [$data3['idformulario'], $data3['data']];
+}
+
 ?>
