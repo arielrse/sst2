@@ -72,10 +72,13 @@ $notas = $dato['notas'];
                 </nav>
             </div>
             <div class="ms-auto">
-                <div>
+                <form id="frm-generar" action="reporteCorrectivo.php" method="post" enctype="multipart/form-data" target="_blank">
+                    <input type="submit" id="btn-generar" class="btn btn-secondary px-4" value="Generar" />
+                    <input type="hidden" name="idcorrectivo" id="idcorrectivo" value="<?=$id?>" />
+
                     <input type="button" id="btn-save-mttoc" class="btn btn-primary px-4" value="Guardar" />
                     <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-                </div>
+                </form>
             </div>
         </div>
 
@@ -1012,5 +1015,12 @@ $notas = $dato['notas'];
             return true;
         }
     }
+
+    $('#btn-generar').click(function(){
+        var idc  = $('#idc').val()
+        $('#frm-generar').submit();
+    });
+
+
 
 </script>
