@@ -1,5 +1,6 @@
 <?php
 require("../../funciones/DateUtils.php");
+require("../../funciones/ImageUtils.php");
 
 function getPlantilla($conexion, $idcorrectivo){
 
@@ -14,6 +15,8 @@ function getPlantilla($conexion, $idcorrectivo){
     foreach ($tickets_arr as $value){
         $tickets_rel .= '<p>'.$value.'</p>';
     }
+
+    $reporteFotos = getReporteFotografico($conexion, $idcorrectivo);
 
     $plantilla =
 '<body>
@@ -240,10 +243,10 @@ function getPlantilla($conexion, $idcorrectivo){
                         </table>
                     </main>
         
+                    '.$reporteFotos.'
+                    
                 </div>
             </div>
-            
-            
             
         </div>
 	</div>
@@ -291,6 +294,45 @@ function getDatos($conexion, $idcorrectivo){
     $data["tecnico2"] = $data2['nombre3'];
 
     return $data;
+}
+
+function getReporteFotografico($conexion, $idcorrectivo){
+
+    $res = mysqli_query($conexion,
+        "SELECT r.nombre, r.titulo FROM rutina_correctivo_img r WHERE r.idrutinacorrectivo = " . $idcorrectivo);
+
+    $result = '<br />
+    <main>
+        <div class="notices" align="center">
+            <div class="notice"><strong>REPORTE FOTOGRAFICO</strong></div>
+        </div>
+    </main>
+    <div class="tborde-foto"><table><tr>';
+    $num = 1;
+    while( $data = mysqli_fetch_array($res) ){
+        if (isset($data['nombre'])) {
+            $file_image = "../../fotos/correctivo/" . $data['nombre'];
+            if ( exif_imagetype($file_image) == IMAGETYPE_JPEG || exif_imagetype($file_image) == IMAGETYPE_PNG ) {
+
+                adjustPhotoOrientation($file_image);
+                $result .= '
+                <td width="300px" height="300px" align="center">
+                    <div>
+                        <img src="' . $file_image . '" style="width: auto; height: auto; display: block;" />
+                    </div>                                       
+                    <div style="font-size: 3em; margin-top: 5px;">'.$data['titulo'].'</div>
+                </td>';
+
+                if (($num % 3) == 0) {
+                    $result .= '</tr><tr style="margin-top: 10px;">';
+                }
+                $num++;
+            }
+        }
+    }
+    $result .= '</tr></table></div>';
+
+    return $result;
 }
 
 ?>
