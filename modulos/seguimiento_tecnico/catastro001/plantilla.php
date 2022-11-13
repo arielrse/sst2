@@ -41,7 +41,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento){
     $d18_01 = $desarrollo_d->d18_01; $d18_02 = $desarrollo_d->d18_02;
     $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
 
-    $observaciones = $obj->{'observaciones'};
+    $observaciones = str_replace("&#10;", "<br>", $obj->{'observaciones'});
     $plantilla =
 '<body>
     <div class="card-">
