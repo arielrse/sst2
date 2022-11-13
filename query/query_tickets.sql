@@ -1,3 +1,4 @@
+-- Tickets Original
 SELECT *,
 	CONCAT( 
     	TIMESTAMPDIFF(HOUR, fecha_inicio, fecha_fin), ':', 
@@ -50,10 +51,60 @@ SELECT *,
 	AND st_ticketn.idsolucion	= ticket_solucion.idsolucion
 	AND centro.iddepartamento = 1
 	AND fecha_inicio_rif  BETWEEN '2022-10-01' AND '2022-10-31'
-)cn1 ORDER BY fecha_inicio DESC; 
+)cn1 ORDER BY fecha_inicio DESC;
 
-SELECT *
-FROM st_ticketn t WHERE t.`fecha_inicio_rif` BETWEEN '2022-10-01' AND '2022-10-31';
+-- Tickets LEFT JOIN
+SELECT *,
+       CONCAT(
+               TIMESTAMPDIFF(HOUR, fecha_inicio, fecha_fin), ':',
+               MOD(TIMESTAMPDIFF(MINUTE, fecha_inicio, fecha_fin), 60), ''
+           )AS tiempo_interrupcion,
+       CONCAT(
+               TIMESTAMPDIFF(HOUR, fecha_notificacion, fecha_fin), ':',
+               MOD(TIMESTAMPDIFF(MINUTE, fecha_notificacion, fecha_fin), 60), ''
+           )AS tiempo_empleado
+FROM(
+        SELECT
+            c.nombre AS centro_nombre,
+            t.ticket,
+            t.idnodo,
+            es.nombreestacion,
+            es.tiponodo,
+            tec.nombretecnologia,
+            es.area,
+            ta.nombreatencion,
+            tas.nombreafectacionservicio,
+            tsf.nombresistemafalla,
+            te.nombreequipofalla,
+            tf.nombretipofalla,
+            ts.nombresolucion,
+            t.descripcionfalla,
+            timestamp(fecha_inicio_rif,hora_inicio_rif)AS fecha_inicio,
+            timestamp(fecha_not_dim,hora_not_dim)AS fecha_notificacion,
+            timestamp(fecha_not_sitio,hora_not_sitio)AS fecha_sitio,
+            timestamp(fecha_fin_rif,hora_fin_rif)AS fecha_fin,
+            t.observaciones
+        FROM st_ticketn t
+        left join estacionentel es   on t.`idestacion` 	= es.idestacionentel
+        left join ticket_atencion ta on t.idatencion	= ta.idatencion
+        left join tecnologia tec     on t.idtecnologia	= tec.idtecnologia
+        left join ticket_afectacionservicio tas on t.idafectacionservicio = tas.idafectacionservicio
+        left join ticket_sistemafalla tsf       on t.idsistemafalla       = tsf.idsistemafalla
+        left join ticket_equipofalla te         on t.idequipofalla        = te.idequipofalla
+        left join ticket_tipofalla tf           on t.idtipofalla	      = tf.idtipofalla
+        left join ticket_solucion ts            on t.idsolucion	          = ts.idsolucion
+        left join centro c           on es.idcentro	= c.idcentro
+        WHERE c.iddepartamento = 1
+        AND fecha_inicio_rif  BETWEEN '2022-10-01' AND '2022-10-31'
+    )cn1 ORDER BY fecha_inicio DESC;
+
+SELECT t.id_st_ticket, t.fecha_inicio_rif, es.nombreestacion, t.idsolucion
+FROM st_ticketn t
+left join estacionentel es on t.idestacion = es.idestacionentel
+left join centro c         on es.idcentro  = c.idcentro
+WHERE t.`fecha_inicio_rif` BETWEEN '2022-10-01' AND '2022-10-31'
+and c.iddepartamento = 1
+;
 
 
 -- Promedio tiempo

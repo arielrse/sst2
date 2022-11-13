@@ -22,13 +22,14 @@ $strSql .= " and fecha_inicio_rif  BETWEEN '" . $fechainicio . "' AND '". $fecha
     $strSql .= " and fecha_inicio_rif >= '" . $fechainicio . "'";
 if ($fechainicio != '')
     $strSql .= " and fechafin <= '" . $fechafin . "'";*/
-
-header("Content-type: application/vnd.ms-excel");
+;
+header("Content-Type: application/vnd.ms-excel charset=iso-8859-1");
 header("Content-Disposition: attachment; filename=st_listado_ticketreporte".date("Y-m-d").".xls");
 header("Pragma: no-cache");
 header("Expires: 0");
 
 ?>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1 " />
 <table border="1">
 <tr>
 <th width="2%">N&deg;</th>
@@ -56,59 +57,52 @@ header("Expires: 0");
 </tr>
 <?php
 
-	$consulta = "SELECT *,
-	CONCAT( 
-    	TIMESTAMPDIFF(HOUR, fecha_inicio, fecha_fin), ':', 
-    	MOD(TIMESTAMPDIFF(MINUTE, fecha_inicio, fecha_fin), 60), '' 
-		 )AS tiempo_interrupcion,
-	CONCAT( 
-    	TIMESTAMPDIFF(HOUR, fecha_notificacion, fecha_fin), ':', 
-    	MOD(TIMESTAMPDIFF(MINUTE, fecha_notificacion, fecha_fin), 60), '' 
-		 )AS tiempo_empleado    	
- FROM(
-	SELECT 
-	centro.nombre as centro_nombre,
-	st_ticketn.ticket,
-	st_ticketn.idnodo,
-	estacionentel.nombreestacion,
-	estacionentel.tiponodo,	
-	tecnologia.nombretecnologia,
-	estacionentel.AREA,
-	ticket_atencion.nombreatencion,
-	ticket_afectacionservicio.nombreafectacionservicio,
-	ticket_sistemafalla.nombresistemafalla,
-	ticket_equipofalla.nombreequipofalla,
-	ticket_tipofalla.nombretipofalla,
-	ticket_solucion.nombresolucion,
-	st_ticketn.descripcionfalla,
-	timestamp(fecha_inicio_rif,hora_inicio_rif)AS fecha_inicio,
-	timestamp(fecha_not_dim,hora_not_dim)AS fecha_notificacion,
-	timestamp(fecha_not_sitio,hora_not_sitio)AS fecha_sitio,
-	timestamp(fecha_fin_rif,hora_fin_rif)AS fecha_fin,
-	st_ticketn.observaciones
-	FROM 
-	st_ticketn,
-	estacionentel,
-	tecnologia,
-	centro,
-	ticket_atencion,
-	ticket_afectacionservicio,
-	ticket_sistemafalla,
-	ticket_equipofalla,
-	ticket_tipofalla,
-	ticket_solucion
-	WHERE st_ticketn.idnodo=estacionentel.idestacionentel
-	and estacionentel.idcentro=centro.idcentro
-	and st_ticketn.idatencion=ticket_atencion.idatencion
-	AND st_ticketn.idtecnologia=tecnologia.idtecnologia
-	AND st_ticketn.idafectacionservicio=ticket_afectacionservicio.idafectacionservicio
-	AND st_ticketn.idsistemafalla=ticket_sistemafalla.idsistemafalla
-	AND st_ticketn.idequipofalla=ticket_equipofalla.idequipofalla
-	AND st_ticketn.idtipofalla=ticket_tipofalla.idtipofalla
-	AND st_ticketn.idsolucion=ticket_solucion.idsolucion
-	AND centro.iddepartamento = ".$iddepartamento."
-	". $strSql ."
-)cn1 order by fecha_inicio desc"; 
+$consulta = "
+SELECT *,
+       CONCAT(
+               TIMESTAMPDIFF(HOUR, fecha_inicio, fecha_fin), ':',
+               MOD(TIMESTAMPDIFF(MINUTE, fecha_inicio, fecha_fin), 60), ''
+           )AS tiempo_interrupcion,
+       CONCAT(
+               TIMESTAMPDIFF(HOUR, fecha_notificacion, fecha_fin), ':',
+               MOD(TIMESTAMPDIFF(MINUTE, fecha_notificacion, fecha_fin), 60), ''
+           )AS tiempo_empleado
+FROM(
+        SELECT
+            c.nombre AS centro_nombre,
+            t.ticket,
+            t.idnodo,
+            es.nombreestacion,
+            es.tiponodo,
+            tec.nombretecnologia,
+            es.area,
+            ta.nombreatencion,
+            tas.nombreafectacionservicio,
+            tsf.nombresistemafalla,
+            te.nombreequipofalla,
+            tf.nombretipofalla,
+            ts.nombresolucion,
+            t.descripcionfalla,
+            timestamp(fecha_inicio_rif,hora_inicio_rif)AS fecha_inicio,
+            timestamp(fecha_not_dim,hora_not_dim)AS fecha_notificacion,
+            timestamp(fecha_not_sitio,hora_not_sitio)AS fecha_sitio,
+            timestamp(fecha_fin_rif,hora_fin_rif)AS fecha_fin,
+            t.observaciones
+        FROM st_ticketn t
+        left join estacionentel es   on t.`idestacion` 	= es.idestacionentel
+        left join ticket_atencion ta on t.idatencion	= ta.idatencion
+        left join tecnologia tec     on t.idtecnologia	= tec.idtecnologia
+        left join ticket_afectacionservicio tas on t.idafectacionservicio = tas.idafectacionservicio
+        left join ticket_sistemafalla tsf       on t.idsistemafalla       = tsf.idsistemafalla
+        left join ticket_equipofalla te         on t.idequipofalla        = te.idequipofalla
+        left join ticket_tipofalla tf           on t.idtipofalla	      = tf.idtipofalla
+        left join ticket_solucion ts            on t.idsolucion	          = ts.idsolucion
+        left join centro c           on es.idcentro	= c.idcentro
+        where c.iddepartamento = ".$iddepartamento."
+	    ". $strSql ."
+    
+    )cn1 ORDER BY fecha_inicio DESC;
+";
 
 
 $resultado = mysqli_query($conexion, $consulta);
@@ -129,21 +123,21 @@ if($filas!=0) {
 	<td><center>".$dato['nombreestacion']."</center></td>
 	<td><center>".$dato['tiponodo']."</center></td>
 	<td><center>".$dato['nombretecnologia']."</center></td>
-	<td><center>".$dato['AREA']."</center></td>
+	<td><center>".$dato['area']."</center></td>
 	<td><center>".$dato['nombreatencion']."</center></td>
 	<td><center>".$dato['nombreafectacionservicio']."</center></td>
 	<td><center>".$dato['nombresistemafalla']."</center></td>
 	<td><center>".$dato['nombreequipofalla']."</center></td>
 	<td><center>".$dato['nombretipofalla']."</center></td>
 	<td><center>".$dato['nombresolucion']."</center></td>
-	<td><center>".$dato['descripcionfalla']."</center></td>
+	<td><center>".utf8_decode($dato['descripcionfalla'])."</center></td>
 	<td><center>".$dato['fecha_inicio']."</center></td>
 	<td><center>".$dato['fecha_notificacion']."</center></td>
 	<td><center>".$dato['fecha_sitio']."</center></td>
 	<td><center>".$dato['fecha_fin']."</center></td>
 	<td><center>".$dato['tiempo_interrupcion']."</center></td>
 	<td><center>".$dato['tiempo_empleado']."</center></td>
-	<td><center>".$dato['observaciones']."</center></td>
+	<td><center>".utf8_decode($dato['observaciones'])."</center></td>
 
 	</tr>";
 	
