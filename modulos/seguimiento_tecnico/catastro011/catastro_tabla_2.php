@@ -14,13 +14,13 @@
         <table id="tabla_fuentes" class="table table-sm table-bordered mb-3">
             <tr>
                 <td width="5%" align="center">Cant Fuentes</td>
-                <td width="10%" align="center">Enegia ac/dc</td>
-                <td width="10%" align="center">Voltaje</td>
-                <td width="10%" align="center">Estado</td>
-                <td width="15%" align="center" colspan="2">Origen Fuente A</td>
-                <td width="15%" align="center" colspan="2">Origen Fuente B</td>
-                <td width="18%" align="center">Voltaje Fuente A</td>
-                <td width="10%" align="center">Voltaje Fuente B</td>
+                <td width="7%" align="center">Enegia ac/dc</td>
+                <td width="8%" align="center">Voltaje</td>
+                <td width="8%" align="center">Estado</td>
+                <td width="27%" align="center" colspan="2">Origen Fuente A</td>
+                <td width="27%" align="center" colspan="2">Origen Fuente B</td>
+                <td width="8%" align="center"><small>Voltaje Fuente A</small></td>
+                <td width="8%" align="center"><small>Voltaje Fuente B</small></td>
                 <td width="2%" align="center"></td>
             </tr>
 
@@ -36,16 +36,16 @@
 
                     $rowHtml .=
                         "<tr id='$rowid'>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='cant$rowid' value='".$objVal['equipo']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='energia$rowid' value='".$objVal['modelo']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='voltaje$rowid' value='".$objVal['marca']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='cant$rowid' value='".$objVal['cant']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='energia$rowid' value='".$objVal['energia']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='voltaje$rowid' value='".$objVal['voltaje']."'></td>" .
                         "<td><input type='text' class='form-control form-control-sm' id='estado$rowid' value='".$objVal['estado']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='origena1$rowid' value='".$objVal['puertos']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='origena2$rowid' value='".$objVal['patch']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='origenb1$rowid' value='".$objVal['destino1']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='origenb2$rowid' value='".$objVal['destino2']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='fuentea$rowid' value='".$objVal['tipo']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='fuenteb$rowid' value='".$objVal['temp']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='origena1$rowid' value='".$objVal['origena1']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='origena2$rowid' value='".$objVal['origena2']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='origenb1$rowid' value='".$objVal['origenb1']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='origenb2$rowid' value='".$objVal['origenb2']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='fuentea$rowid' value='".$objVal['fuentea']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='fuenteb$rowid' value='".$objVal['fuenteb']."'></td>" .
                         "<td>".$btn_eliminar."</td>" .
                         "</tr>";
                 }
@@ -124,16 +124,16 @@
         console.log("Save: " + JSON.stringify(dataFuentes));
 
         for (obj of dataFuentes){
-            obj.equipo = $("#cant" + obj.rowid).val();
-            obj.modelo = $("#energia" + obj.rowid).val();
-            obj.marca = $("#voltaje" + obj.rowid).val();
+            obj.cant = $("#cant" + obj.rowid).val();
+            obj.energia = $("#energia" + obj.rowid).val();
+            obj.voltaje = $("#voltaje" + obj.rowid).val();
             obj.estado = $("#estado" + obj.rowid).val();
-            obj.puertos = $("#origena1" + obj.rowid).val();
-            obj.patch = $("#origena2" + obj.rowid).val();
-            obj.destino1 = $("#origenb1" + obj.rowid).val();
-            obj.destino2 = $("#origenb2" + obj.rowid).val();
-            obj.tipo = $("#fuentea" + obj.rowid).val();
-            obj.temp = $("#fuenteb" + obj.rowid).val();
+            obj.origena1 = $("#origena1" + obj.rowid).val();
+            obj.origena2 = $("#origena2" + obj.rowid).val();
+            obj.origenb1 = $("#origenb1" + obj.rowid).val();
+            obj.origenb2 = $("#origenb2" + obj.rowid).val();
+            obj.fuentea = $("#fuentea" + obj.rowid).val();
+            obj.fuenteb = $("#fuenteb" + obj.rowid).val();
         }
         var idcatastro = $("#idcatastro").val();
         var dataJsonStr = JSON.stringify(dataFuentes);
