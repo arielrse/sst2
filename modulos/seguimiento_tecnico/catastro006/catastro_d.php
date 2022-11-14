@@ -241,7 +241,7 @@ foreach ($protec_principalArr as $element){
                 <td colspan="6"><strong>Numero de Serie / Modelo de módulos de Potencia</strong></td>
             </tr>
             <tr>
-                <td class = "col-5p no"><strong>1</strong></td>
+                <td class = "col-5p no"><strong>1.-</strong></td>
                 <td>
                     <div class="input-group input-group-sm mb-2">
                         <input type="text" class="form-control" id="d14_01_01" value="<?php echo $d14_01_01 ?>">
@@ -252,7 +252,7 @@ foreach ($protec_principalArr as $element){
                         <input type="text" class="form-control" id="d14_01_02" value="<?php echo $d14_01_02 ?>">
                     </div>
                 </td>
-                <td class = "col-5p no"><strong>2</strong></td>
+                <td class = "col-5p no"><strong>2.-</strong></td>
                 <td>
                     <div class="input-group input-group-sm mb-2">
                         <input type="text" class="form-control" id="d14_02_01" value="<?php echo $d14_02_01 ?>">
@@ -265,7 +265,7 @@ foreach ($protec_principalArr as $element){
                 </td>
             </tr>
             <tr>
-                <td class = "col-5p"><strong>3</strong></td>
+                <td class = "col-5p"><strong>3.-</strong></td>
                 <td>
                     <div class="input-group input-group-sm mb-2">
                         <input type="text" class="form-control" id="d14_03_01" value="<?php echo $d14_03_01 ?>">
@@ -276,7 +276,7 @@ foreach ($protec_principalArr as $element){
                         <input type="text" class="form-control" id="d14_03_02" value="<?php echo $d14_03_02 ?>">
                     </div>
                 </td>
-                <td class = "col-5p"><strong>4</strong></td>
+                <td class = "col-5p"><strong>4.-</strong></td>
                 <td>
                     <div class="input-group input-group-sm mb-2">
                         <input type="text" class="form-control" id="d14_04_01" value="<?php echo $d14_04_01 ?>">
@@ -289,7 +289,7 @@ foreach ($protec_principalArr as $element){
                 </td>
             </tr>
             <tr>
-                <td class = "col-5p"><strong>5</strong></td>
+                <td class = "col-5p"><strong>5.-</strong></td>
                 <td>
                     <div class="input-group input-group-sm mb-2">
                         <input type="text" class="form-control" id="d14_05_01" value="<?php echo $d14_05_01 ?>">
@@ -300,7 +300,7 @@ foreach ($protec_principalArr as $element){
                         <input type="text" class="form-control" id="d14_05_02" value="<?php echo $d14_05_02 ?>">
                     </div>
                 </td>
-                <td class = "col-5p"><strong>6</strong></td>
+                <td class = "col-5p"><strong>6.-</strong></td>
                 <td>
                     <div class="input-group input-group-sm mb-2">
                         <input type="text" class="form-control" id="d14_06_01" value="<?php echo $d14_06_01 ?>">
@@ -313,7 +313,7 @@ foreach ($protec_principalArr as $element){
                 </td>
             </tr>
             <tr>
-                <td class = "col-5p"><strong>7</strong></td>
+                <td class = "col-5p"><strong>7.-</strong></td>
                 <td>
                     <div class="input-group input-group-sm mb-2">
                         <input type="text" class="form-control" id="d14_07_01" value="<?php echo $d14_07_01 ?>">
@@ -325,7 +325,7 @@ foreach ($protec_principalArr as $element){
                     </div>
                 </td>
 
-                <td class = "col-5p"><strong>8</strong></td>
+                <td class = "col-5p"><strong>8.-</strong></td>
                 <td>
                     <div class="input-group input-group-sm mb-2">
                         <input type="text" class="form-control" id="d14_08_01" value="<?php echo $d14_08_01 ?>">
