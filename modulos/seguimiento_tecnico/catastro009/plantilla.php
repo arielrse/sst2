@@ -9,7 +9,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento){
    // $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
    // $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
-    $cabecera        = getCabecera009y10($conexion, $jsonData, $idgrupo, $idevento);
+    $cabecera        = getCabecera009($conexion, $jsonData, $idgrupo, $idevento);
 
 
     /** desarrollo_d **/
