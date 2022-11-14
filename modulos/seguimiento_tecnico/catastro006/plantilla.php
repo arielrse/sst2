@@ -119,34 +119,34 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento){
                                 <td colspan="6"><strong>Numero de Serie / Modelo de módulos de Potencia</strong></td>
                            </tr>
                            <tr>
-                                <td class="col-5p no">1</td>
+                                <td class="col-5p no" align="center">1.-</td>
                                 <td class="col-20p">'.$d14_01_01.'</td>
                                 <td class="col-20p">'.$d14_01_02.'</td>
-                                <td class="col-5p no">2</td>
+                                <td class="col-5p no" align="center">2.-</td>
                                 <td class="col-20p">'.$d14_02_01.'</td>
                                 <td class="col-20p">'.$d14_02_02.'</td>
                            </tr>
                            <tr>
-                                <td class="col-5p no">3</td>
+                                <td class="col-5p no" align="center">3.-</td>
                                 <td class="col-20p">'.$d14_03_01.'</td>
                                 <td class="col-20p">'.$d14_03_02.'</td>
-                                <td class="col-5p no">4</td>
+                                <td class="col-5p no" align="center">4.-</td>
                                 <td class="col-20p">'.$d14_04_01.'</td>
                                 <td class="col-20p">'.$d14_04_02.'</td>
                            </tr>
                            <tr>
-                                <td class="col-5p no">5</td>
+                                <td class="col-5p no" align="center">5.-</td>
                                 <td class="col-20p">'.$d14_05_01.'</td>
                                 <td class="col-20p">'.$d14_05_02.'</td>
-                                <td class="col-5p no">6</td>
+                                <td class="col-5p no" align="center">6.-</td>
                                 <td class="col-20p">'.$d14_06_01.'</td>
                                 <td class="col-20p">'.$d14_06_02.'</td>
                            </tr>
                            <tr>
-                                <td class="col-5p no">7</td>
+                                <td class="col-5p no" align="center">7.-</td>
                                 <td class="col-20p">'.$d14_07_01.'</td>
                                 <td class="col-20p">'.$d14_07_02.'</td>
-                                <td class="col-5p no">8</td>
+                                <td class="col-5p no" align="center">8.-</td>
                                 <td class="col-20p">'.$d14_08_01.'</td>
                                 <td class="col-20p">'.$d14_08_02.'</td>
                            </tr>
