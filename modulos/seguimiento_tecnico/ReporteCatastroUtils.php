@@ -874,5 +874,159 @@ function getCabecera007($conexion, $jsonData, $idgrupo, $idevento){
     ';
     return $plantilla;
 }
+function getCabecera008($conexion, $jsonData, $idgrupo, $idevento){
+
+    $resIden = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`,
+                                                d.`nombre` AS departamento, s.`provincia`, s.`localidad`
+                                                FROM evento e 
+                                                LEFT JOIN sitio s 	 ON e.`idsitio` = s.`idsitio`
+                                                LEFT JOIN centro c 	 ON s.`idcentro` = c.`idcentro`
+                                                LEFT JOIN departamento d ON c.`iddepartamento` = d.`iddepartamento`
+                                                WHERE e.`idevento` = ".$idevento);
+    $dataIden = mysqli_fetch_array($resIden);
+    $departamento   = $dataIden['departamento'];
+    $provincia      = $dataIden['provincia'];
+    $localidad      = $dataIden['localidad'];
+
+
+    $obj = json_decode($jsonData);
+    $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
+    $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
+
+    $cm                 = $obj->{'cm'};
+    $sitioId            = $obj->{'sitioId'};
+    $propertyId         = $obj->{'propertyId'};
+    $cod_activo         = $obj->{'cod_activo'};
+    $cod_fijo           = $obj->{'cod_fijo'};
+    $c_fechaRealizacion = dateToLiteral($obj->{'c_fechaRealizacion'});
+    $indoor_outdoor     = $obj->{'indoor_outdoor'};
+    $cod_complemento    = $obj->{'cod_complemento'};
+    //$d_horainicio   = $obj->{'d_horainicio'};
+    //$d_horafin      = $obj->{'d_horafin'};
+    // $tiempoTrans    = timeDiff($d_horainicio, $d_horafin);
+    $upsa1              =$obj->{'upsa1'};
+    $upsa2              =$obj->{'upsa2'};
+    $upsb1              =$obj->{'upsb1'};
+    $upsb2              =$obj->{'upsb2'};
+    $reca1              =$obj->{'reca1'};
+    $reca2              =$obj->{'reca2'};
+    $recb1              =$obj->{'recb1'};
+    $recb2              =$obj->{'recb2'};
+    $rec_fuente_a       =$obj->{'rec_fuente_a'};
+    $rec_fuente_b       =$obj->{'rec_fuente_b'};
+    $ups_fuente_a       =$obj->{'ups_fuente_a'};
+    $ups_fuente_b       =$obj->{'ups_fuente_b'};
+
+
+
+    $dataPersMtto = getPersonalMtto($conexion, $idgrupo);
+    $nombre2 = $dataPersMtto['nombre2'];
+    $nombre3 = $dataPersMtto['nombre3'];
+    //$cargo2  = $dataPersMtto['cargo2'];
+    //$cargo3  = $dataPersMtto['cargo3'];
+    //$cel2    = $dataPersMtto['cel2'];
+    //$cel3    = $dataPersMtto['cel3'];
+    //---------------------------
+
+    $plantilla = '
+    <table>
+        <tr>
+            <th class="col-2">
+                <div><img src="../../../img/logo-entel.png" width="90" alt="" /></div>
+            </th>
+            <th class="col-10 company-details">
+                <div>
+                    <div><b>FORMULARIO DE CATASTRO SISTEMAS DE ENERGÍA </b></div>
+                    <div><b>BANCO DE BATERÍAS (BB) / UPS - PLANTA DE RECTIFICADORES - SISTEMA FOTOVOLTAICO</b></div>
+                   
+                </div>
+            </th>
+        </tr>
+       
+    </table>
+   												  
+    <main>
+        <table class="tborder">
+            <tbody>
+                <tr>
+                    <td class="col-25p no">CM/SCM:</td>
+                    <td class="col-25p">'.$cm.'</td>
+                    <td class="col-25p no">ID Sitio:</td>
+                    <td class="col-25p">'.$sitioId.'</td>
+                </tr>
+                <tr>
+                    <td class="col-25p no">Nombre:</td>
+                    <td class="col-25p">'.$nombre2.'</td>
+                    <td class="col-25p no">DEPARTAMENTO:</td>
+                    <td class="col-25p">'.$departamento.'</td>
+                </tr>  
+                 <tr>
+                    <td class="col-25p no">Nombre:</td>
+                    <td class="col-30p">'.$nombre3.'</td>
+                    <td class="col-25p no">PROVINCIA:</td>
+                    <td class="col-25p">'.$provincia.'</td>
+                </tr>  
+                <tr>
+                    <td class="col-30p no">Fecha de catastro:</td>
+                    <td class="col-25p">'.$c_fechaRealizacion.'</td>
+                    <td class="col-25p no">LOCALIDAD:</td>
+                    <td class="col-25p">'.$localidad.'</td>
+                </tr>
+                <tr>
+                    <td class="col-25p no">Property_id:</td>
+                    <td class="col-25p">'.$propertyId.'</td>
+                    <td class="col-25p no">Indoor/Outdoor:</td>
+                    <td class="col-25p">'.$indoor_outdoor.'</td>
+                 </tr>
+                <tr>
+                    <td class="col-25p no">Código activo fijo:</td>
+                    <td class="col-25p">'.$cod_fijo.'</td>
+                    <td class="col-25p no">Código activo de energía:</td>
+                    <td class="col-25p">'.$cod_activo.'</td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td class="col-25p no">Código activo complemento:</td>
+                    <td class="col-25p">'.$cod_complemento.'</td>
+                </tr>
+           </tbody>        
+        </table>									                        
+    </main>
+    <main>
+        <table class="tborder">
+            <tbody>
+                <tr>
+                   <td class="col-15p">'.$reca1.'</td>
+                   <td class="col-15p">'.$upsa1.'</td>
+                   <td class="col-70p no" colspan="4" align="center">REFERENCIA CÓDIGO RECTIFICADORES - UPS</td>
+               </tr>
+               <tr>
+                   <td class="col-15p">'.$recb1.'</td>
+                   <td class="col-15p">'.$upsb1.'</td>
+                   <td class="col-15p no">RECA</td>
+                   <td class="col-15p">'. $rec_fuente_a.'</td>
+                   <td class="col-15p no">UPSA</td>
+                   <td class="col-15p">'. $ups_fuente_a.'</td>
+               </tr>
+                <tr>
+                   <td class="col-15p">'.$reca2.'</td>
+                   <td class="col-15p">'.$upsa2.'</td>
+                   <td class="col-15p no">RECA</td>
+                   <td class="col-15p">'. $rec_fuente_b.'</td>
+                   <td class="col-15p no">UPSA</td>
+                   <td class="col-15p">'. $ups_fuente_b.'</td>
+               </tr>
+               <tr>
+                   <td class="col-15p">'.$recb2.'.</td>
+                   <td class="col-15p">'.$upsb2.'.</td>
+                   
+               </tr>
+           </tbody>        
+        </table>									                        
+    </main>
+  
+    ';
+    return $plantilla;
+}
 
 ?>
