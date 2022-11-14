@@ -233,113 +233,114 @@ foreach ($protec_principalArr as $element){
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="4">Numero de Serie / Modelo de módulos de Potencia</td>
-                </tr>
-                <tr>
-                  <td class = "col-5p">1</td>
-                  <td>
-                       <div class="input-group input-group-sm mb-2">
-                           <input type="text" class="form-control" id="d14_01_01" value="<?php echo $d14_01_01 ?>">
-                       </div>
-                  </td>
-                  <td>
-                      <div class="input-group input-group-sm mb-2">
-                          <input type="text" class="form-control" id="d14_01_02" value="<?php echo $d14_01_02 ?>">
-                      </div>
-                  </td>
-                </tr>
-                <tr>
-                    <td class = "col-5p">2</td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_02_01" value="<?php echo $d14_02_01 ?>">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_02_02" value="<?php echo $d14_02_02 ?>">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class = "col-5p">3</td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_03_01" value="<?php echo $d14_03_01 ?>">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_03_02" value="<?php echo $d14_03_02 ?>">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class = "col-5p">4</td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_04_01" value="<?php echo $d14_04_01 ?>">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_04_02" value="<?php echo $d14_04_02 ?>">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class = "col-5p">5</td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_05_01" value="<?php echo $d14_05_01 ?>">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_05_02" value="<?php echo $d14_05_02 ?>">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class = "col-5p">6</td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_06_01" value="<?php echo $d14_06_01 ?>">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_06_02" value="<?php echo $d14_06_02 ?>">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class = "col-5p">7</td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_07_01" value="<?php echo $d14_07_01 ?>">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_07_02" value="<?php echo $d14_07_02 ?>">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class = "col-5p">8</td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_08_01" value="<?php echo $d14_08_01 ?>">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="text" class="form-control" id="d14_08_02" value="<?php echo $d14_08_02 ?>">
-                        </div>
-                    </td>
-                </tr>
+            </tbody>
+        </table>
+        <table class="table mb-0">
+            <tbody>
+            <tr>
+                <td colspan="6"><strong>Numero de Serie / Modelo de módulos de Potencia</strong></td>
+            </tr>
+            <tr>
+                <td class = "col-5p no"><strong>1</strong></td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_01_01" value="<?php echo $d14_01_01 ?>">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_01_02" value="<?php echo $d14_01_02 ?>">
+                    </div>
+                </td>
+                <td class = "col-5p no"><strong>2</strong></td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_02_01" value="<?php echo $d14_02_01 ?>">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_02_02" value="<?php echo $d14_02_02 ?>">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class = "col-5p"><strong>3</strong></td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_03_01" value="<?php echo $d14_03_01 ?>">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_03_02" value="<?php echo $d14_03_02 ?>">
+                    </div>
+                </td>
+                <td class = "col-5p"><strong>4</strong></td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_04_01" value="<?php echo $d14_04_01 ?>">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_04_02" value="<?php echo $d14_04_02 ?>">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class = "col-5p"><strong>5</strong></td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_05_01" value="<?php echo $d14_05_01 ?>">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_05_02" value="<?php echo $d14_05_02 ?>">
+                    </div>
+                </td>
+                <td class = "col-5p"><strong>6</strong></td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_06_01" value="<?php echo $d14_06_01 ?>">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_06_02" value="<?php echo $d14_06_02 ?>">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class = "col-5p"><strong>7</strong></td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_07_01" value="<?php echo $d14_07_01 ?>">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_07_02" value="<?php echo $d14_07_02 ?>">
+                    </div>
+                </td>
+
+                <td class = "col-5p"><strong>8</strong></td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_08_01" value="<?php echo $d14_08_01 ?>">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="d14_08_02" value="<?php echo $d14_08_02 ?>">
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table mb-0">
+            <tbody>
                 <tr>
                     <td>Fecha de inicio de consumo de energía</td>
                     <td colspan="2">
