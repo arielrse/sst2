@@ -49,7 +49,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                 <div class="row row-cols-auto g-3">
                     <form name="form1" method="post" class="row g-3">
                     <div class="col">
-                        <input name="fecha" type="text" class="result form-control" id="fecha" value="<?=substr($fecha,0,10);?>">
+                        <input name="fecha" type="date" class="result form-control" id="fecha" value="<?=substr($fecha,0,10);?>">
                     </div>
 
                     <div class="col">
@@ -205,11 +205,3 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
         </div>
     </div>
 </div>
-
-<script>
-    $(function () {
-        $('#fecha').bootstrapMaterialDatePicker({
-            time: false
-        });
-    });
-</script>
