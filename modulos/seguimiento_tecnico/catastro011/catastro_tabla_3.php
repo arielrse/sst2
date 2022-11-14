@@ -13,12 +13,12 @@
 
         <table id="tabla_redes" class="table table-sm table-bordered mb-3">
             <tr>
-                <td width="18%" align="center">nombre</td>
-                <td width="18%" align="center">capa</td>
-                <td width="18%" align="center">topologia</td>
-                <td width="18%" align="center">equipoa</td>
-                <td width="18%" align="center">equipob</td>
-                <td width="7%" align="center">proteccion</td>
+                <td width="18%" align="center">Nombre de equipo</td>
+                <td width="18%" align="center">Capa de red</td>
+                <td width="18%" align="center">Topologia</td>
+                <td width="18%" align="center">Equipo vecino a</td>
+                <td width="18%" align="center">Equipo vecino b</td>
+                <td width="7%"  align="center">Proteccion</td>
                 <td width="3%" align="center"></td>
             </tr>
 
@@ -34,12 +34,12 @@
 
                     $rowHtml .=
                         "<tr id='$rowid'>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='nombre$rowid' value='".$objVal['equipo']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='capa$rowid' value='".$objVal['modelo']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='topologia$rowid' value='".$objVal['marca']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='equipoa$rowid' value='".$objVal['estado']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='equipob$rowid' value='".$objVal['puertos']."'></td>" .
-                        "<td><input type='text' class='form-control form-control-sm' id='proteccion$rowid' value='".$objVal['patch']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='nombre$rowid' value='".$objVal['nombre']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='capa$rowid' value='".$objVal['capa']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='topologia$rowid' value='".$objVal['topologia']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='equipoa$rowid' value='".$objVal['equipoa']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='equipob$rowid' value='".$objVal['equipob']."'></td>" .
+                        "<td><input type='text' class='form-control form-control-sm' id='proteccion$rowid' value='".$objVal['proteccion']."'></td>" .
                         "<td>".$btn_eliminar."</td>" .
                         "</tr>";
                 }
@@ -110,12 +110,12 @@
         console.log("Save: " + JSON.stringify(dataRedes));
 
         for (obj of dataRedes){
-            obj.equipo = $("#nombre" + obj.rowid).val();
-            obj.modelo = $("#capa" + obj.rowid).val();
-            obj.marca = $("#topologia" + obj.rowid).val();
-            obj.estado = $("#equipoa" + obj.rowid).val();
-            obj.puertos = $("#equipob" + obj.rowid).val();
-            obj.patch = $("#proteccion" + obj.rowid).val();
+            obj.nombre      = $("#nombre" + obj.rowid).val();
+            obj.capa        = $("#capa" + obj.rowid).val();
+            obj.topologia   = $("#topologia" + obj.rowid).val();
+            obj.equipoa     = $("#equipoa" + obj.rowid).val();
+            obj.equipob     = $("#equipob" + obj.rowid).val();
+            obj.proteccion  = $("#proteccion" + obj.rowid).val();
         }
         var idcatastro = $("#idcatastro").val();
         var dataJsonStr = JSON.stringify(dataRedes);

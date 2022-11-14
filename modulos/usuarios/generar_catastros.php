@@ -409,6 +409,49 @@ $catastro010_titulos = [
     "AP1" => "OBS.",
 
 ];
+
+$catastro011_titulos = [
+    "A1"  => "CM/SCM",
+    "B1"  => "ID Sitio",
+    "C1"  => "Nombre sitio",
+    "D1"  => "Fecha de catastro",
+
+    "E1"  => "Tipo de equipo",
+    "F1"  => "Modelo",
+    "G1"  => "Marca",
+    "H1"  => "Estado",
+    "I1"  => "Puertos Uplink",
+    "J1"  => "Patch Cord",
+    "K1"  => "Destino Uplink",
+    "L1"  => "Destino Uplink",
+    "M1"  => "Tipo de Puerto",
+    "N1"  => "Temp. Ambiente",
+    "O1"  => "Observaciones",
+
+    "P1"  => "Cant Fuentes",
+    "Q1"  => "Enegia ac/dc",
+    "R1"  => "Voltaje",
+    "S1"  => "Estado",
+    "T1"  => "Origen Fuente A",
+    "U1"  => "Origen Fuente A",
+    "V1"  => "Origen Fuente B",
+    "W1"  => "Origen Fuente B",
+    "X1"  => "Voltaje Fuente A",
+    "Y1"  => "Voltaje Fuente B",
+    "Z1"  => "Observaciones",
+
+    "AA1" => "nombre",
+    "AB1" => "capa",
+    "AC1" => "topologia",
+    "AD1" => "equipoa",
+    "AE1" => "equipob",
+    "AF1" => "proteccion",
+    "AG1" => "Observaciones",
+    "AH1" => "OBSERVACIONES",
+    "AI1" => "TRABAJOS PENDIENTES",
+
+];
+
 $sheet->setTitle("Datos Catastro");
 
 if ($codForm == '001'){
@@ -471,8 +514,18 @@ if ($codForm == '010'){
         $sheet->setCellValue($columna, $valor);
     }
 }
+
+$sql11 = "";
+if ($codForm == '011'){
+    $sheet->getStyle('A1:AI1')->applyFromArray($tableHead);
+    foreach ($catastro011_titulos as $columna => $valor){
+        $sheet->setCellValue($columna, $valor);
+    }
+    $sql11 .= ", cc.tabla_1, cc.tabla_2, cc.tabla_3 ";
+}
+
 // Recuperando catastros de la bd
-$consulta = "SELECT e.idevento, e.estado, e.inicio, e.rep, e.repro, cc.idcatastro, cc.data, s.nombre
+$consulta = "SELECT e.idevento, e.estado, e.inicio, e.rep, e.repro, cc.idcatastro, cc.data, s.nombre ".$sql11."
             FROM catastro".$codForm." cc
             LEFT JOIN evento e ON cc.idevento = e.idevento
             LEFT JOIN sitio s  ON e.idsitio = s.idsitio
@@ -1193,42 +1246,109 @@ while($row = mysqli_fetch_array($resultado)){
             $sheet->setCellValue('B'.$fila, $sitioId);
             $sheet->setCellValue('C'.$fila, $propertyId);
             $sheet->setCellValue('D'.$fila, $c_fechaRealizacion);
-            $sheet->setCellValue('E'.$fila, $cod_fijo);
-            $sheet->setCellValue('F'.$fila, $cod_activo);
-            $sheet->setCellValue('G'.$fila, $d01_01);
-            $sheet->setCellValue('H'.$fila, $d02_01);
-            $sheet->setCellValue('J'.$fila, $d03_01);
-            $sheet->setCellValue('K'.$fila, $d03_02);
-            $sheet->setCellValue('L'.$fila, $d04_01);
-            $sheet->setCellValue('M'.$fila, $d04_02);
-            $sheet->setCellValue('N'.$fila, $d05_01);
-            $sheet->setCellValue('O'.$fila, $d06_01);
-            $sheet->setCellValue('P'.$fila, $d07_01);
-            $sheet->setCellValue('Q'.$fila, $d07_02);
-            $sheet->setCellValue('R'.$fila, $d08_01);
-            $sheet->setCellValue('T'.$fila, $d09_01);
-            $sheet->setCellValue('U'.$fila, $d09_02);
-            $sheet->setCellValue('V'.$fila, $d10_01);
-            $sheet->setCellValue('W'.$fila, $d11_01);
-            $sheet->setCellValue('X'.$fila, $d11_02);
-            $sheet->setCellValue('Y'.$fila, $d12_01);
-            $sheet->setCellValue('AA'.$fila, $d13_01);
-            $sheet->setCellValue('AB'.$fila, $d13_02);
-            $sheet->setCellValue('AC'.$fila, $d14_01);
-            $sheet->setCellValue('AD'.$fila, $d15_01);
-            $sheet->setCellValue('AE'.$fila, $d15_02);
-            $sheet->setCellValue('AF'.$fila, $d16_01);
-            $sheet->setCellValue('AG'.$fila, $d17_01);
-            $sheet->setCellValue('AH'.$fila, $d17_02);
-            $sheet->setCellValue('AI'.$fila, $d18_01);
-            $sheet->setCellValue('AK'.$fila, $d19_01);
-            $sheet->setCellValue('AL'.$fila, $d20_01);
-            $sheet->setCellValue('AM'.$fila, $d21_01);
-            $sheet->setCellValue('AN'.$fila, $d22_01);
-            $sheet->setCellValue('AO'.$fila, $d22_02);
-            $sheet->setCellValue('AP'.$fila,  $observaciones);
+
         }
     }
+
+    if ($json_OK){
+        if ($codForm == '011'){
+
+            $cm = $obj->cm;
+            $sitioId = $obj->sitioId;
+            $propertyId = $obj->propertyId;
+            $c_fechaRealizacion = $obj->c_fechaRealizacion;
+
+            $observaciones1 = $obj->observaciones1;
+            $observaciones2 = $obj->observaciones2;
+            $observaciones3 = $obj->observaciones3;
+            $observaciones  = $obj->observaciones;
+            $pendientes     = $obj->pendientes;
+
+            $sheet->setCellValue('A'.$fila, $cm);
+            $sheet->setCellValue('B'.$fila, $sitioId);
+            $sheet->setCellValue('C'.$fila, $propertyId);
+            $sheet->setCellValue('D'.$fila, $c_fechaRealizacion);
+
+            $tabla_1_arr = json_decode($row["tabla_1"], true);
+            $i = 0;
+            $row1 = $fila;
+            if ($tabla_1_arr) {
+                foreach ($tabla_1_arr as $objVal) {
+                    $sheet->setCellValue('A'.($row1 + $i), $cm);
+                    $sheet->setCellValue('B'.($row1 + $i), $sitioId);
+                    $sheet->setCellValue('C'.($row1 + $i), $propertyId);
+                    $sheet->setCellValue('D'.($row1 + $i), $c_fechaRealizacion);
+
+                    $sheet->setCellValue('E' . ($row1 + $i), $objVal['equipo']);
+                    $sheet->setCellValue('F' . ($row1 + $i), $objVal['modelo']);
+                    $sheet->setCellValue('G' . ($row1 + $i), $objVal['marca']);
+                    $sheet->setCellValue('H' . ($row1 + $i), $objVal['estado']);
+                    $sheet->setCellValue('I' . ($row1 + $i), $objVal['puertos']);
+                    $sheet->setCellValue('J' . ($row1 + $i), $objVal['patch']);
+                    $sheet->setCellValue('K' . ($row1 + $i), $objVal['destino1']);
+                    $sheet->setCellValue('L' . ($row1 + $i), $objVal['destino2']);
+                    $sheet->setCellValue('M' . ($row1 + $i), $objVal['tipo']);
+                    $sheet->setCellValue('N' . ($row1 + $i), $objVal['temp']);
+                    $sheet->setCellValue('O' . ($row1 + $i), $observaciones1);
+
+                    $i++;
+                }
+            }
+
+            $tabla_2_arr = json_decode($row["tabla_2"], true);
+            $i = 0;
+            $row2 = $fila;
+            if ($tabla_2_arr) {
+                foreach ($tabla_2_arr as $objVal) {
+                    $sheet->setCellValue('P' . ($row2 + $i), $objVal['cant']);
+                    $sheet->setCellValue('Q' . ($row2 + $i), $objVal['energia']);
+                    $sheet->setCellValue('R' . ($row2 + $i), $objVal['voltaje']);
+                    $sheet->setCellValue('S' . ($row2 + $i), $objVal['estado']);
+                    $sheet->setCellValue('T' . ($row2 + $i), $objVal['origena1']);
+                    $sheet->setCellValue('U' . ($row2 + $i), $objVal['origena2']);
+                    $sheet->setCellValue('V' . ($row2 + $i), $objVal['origenb1']);
+                    $sheet->setCellValue('W' . ($row2 + $i), $objVal['origenb2']);
+                    $sheet->setCellValue('X' . ($row2 + $i), $objVal['fuentea']);
+                    $sheet->setCellValue('Y' . ($row2 + $i), $objVal['fuenteb']);
+                    $sheet->setCellValue('Z' . ($row2 + $i), $observaciones2);
+
+                    $i++;
+                }
+            }
+
+            $tabla_3_arr = json_decode($row["tabla_3"], true);
+            $i = 0;
+            $row3 = $fila;
+            if ($tabla_3_arr) {
+                foreach ($tabla_3_arr as $objVal) {
+                    $sheet->setCellValue('AA' . ($row3 + $i), $objVal['nombre']);
+                    $sheet->setCellValue('AB' . ($row3 + $i), $objVal['capa']);
+                    $sheet->setCellValue('AC' . ($row3 + $i), $objVal['topologia']);
+                    $sheet->setCellValue('AD' . ($row3 + $i), $objVal['equipoa']);
+                    $sheet->setCellValue('AE' . ($row3 + $i), $objVal['equipob']);
+                    $sheet->setCellValue('AF' . ($row3 + $i), $objVal['proteccion']);
+                    $sheet->setCellValue('AG' . ($row3 + $i), $observaciones3);
+                    $sheet->setCellValue('AH' . ($row3 + $i), $observaciones);
+                    $sheet->setCellValue('AI' . ($row3 + $i), $pendientes);
+
+                    $i++;
+                }
+            }
+
+            $count = max($row1, $row2, $row3);
+            $fila  = $fila + $count - 1;
+
+            /*if ($row1 >= $row2)
+                $fila = $fila + $row1 - 1;
+            else
+                $fila = $fila + $row2 - 1;*/
+
+
+
+
+        }
+    }
+
     else {
         $sheet->setCellValue('A'.$fila, 'ERROR');
         $sheet->setCellValue('B'.$fila, $row['inicio']);
