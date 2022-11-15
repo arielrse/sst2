@@ -320,7 +320,7 @@ function getReporteFotografico($conexion, $idcorrectivo){
                     <div>
                         <img src="' . $file_image . '" style="width: auto; height: auto; display: block;" />
                     </div>                                       
-                    <div style="font-size: 3em; margin-top: 5px;">'.$data['titulo'].'</div>
+                    <p style="font-size: 14px;">'.$data['titulo'].'</p>
                 </td>';
 
                 if (($num % 3) == 0) {
