@@ -112,7 +112,7 @@ foreach ($red_comercialArr as $element){
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">PANELES SOLARES FOTOVOLTAICOS</td>
+                    <td colspan="3"><strong>PANELES SOLARES FOTOVOLTAICOS</strong></td>
                 </tr>
                 <tr>
                     <td>Marca / Modelo</td>
@@ -180,7 +180,7 @@ foreach ($red_comercialArr as $element){
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">REGULADOR SOLAR</td>
+                    <td colspan="3"><strong>REGULADOR SOLAR</strong></td>
                 </tr>
                 <tr>
                     <td>Marca / Modelo</td>
@@ -227,7 +227,7 @@ foreach ($red_comercialArr as $element){
                     </td>
                 </tr>
                 <tr>
-                    <td>INVERSOR DE VOLTAJE</td>
+                    <td><strong>INVERSOR DE VOLTAJE</strong></td>
                 </tr>
                 <tr>
                     <td>Marca / Modelo</td>
@@ -293,7 +293,7 @@ foreach ($red_comercialArr as $element){
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">SISTEMA DE CONTROL HIBRIDO FOTOVOLTAICO-HIBRIDO</td>
+                    <td colspan="3"><strong>SISTEMA DE CONTROL HIBRIDO FOTOVOLTAICO-HIBRIDO</strong></td>
                 </tr>
                 <tr>
                     <td>Marca</td>
