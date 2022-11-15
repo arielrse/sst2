@@ -1,4 +1,5 @@
 <?php
+require("CharsUtils.php");
 
 $desarrollo_d = $obj->{'desarrollo_d'};
 //$f01_1 = $f_verificacion->f01_1 ? "checked" : ""; $f01_2 = $f_verificacion->f01_2 ? "checked" : ""; $f01_3 = $f_verificacion->f01_3;
@@ -22,7 +23,8 @@ $d17_01 = $desarrollo_d->d17_01;
 $d18_01 = $desarrollo_d->d18_01; $d18_02 = $desarrollo_d->d18_02;
 $d19_01 = $desarrollo_d->d19_01; $d19_02 = $desarrollo_d->d19_02;
 
-$observaciones = $obj->{'observaciones'};
+$observaciones = convertSpecialChars($obj->observaciones);
+
 /* --------------------------------------------------------------------- */
 $funcionalidadArr = ["En servicio", "Fuera de servicio"];
 $funcionalidadOption = "<option>Seleccionar...</option>";

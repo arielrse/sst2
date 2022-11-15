@@ -1,4 +1,5 @@
 <?php
+require("CharsUtils.php");
 
 $desarrollo_d = $obj->{'desarrollo_d'};
 //$f01_1 = $f_verificacion->f01_1 ? "checked" : ""; $f01_2 = $f_verificacion->f01_2 ? "checked" : ""; $f01_3 = $f_verificacion->f01_3;
@@ -19,7 +20,7 @@ $d14_01 = $desarrollo_d->d14_01;
 $d15_01 = $desarrollo_d->d15_01;
 $d16_01 = $desarrollo_d->d16_01;
 
-$observaciones = $obj->{'observaciones'};
+$observaciones = convertSpecialChars($obj->observaciones);
 
 /* --------------------------------------------------------------------- */
 $sist_de_bajaArr = ["Monofasico", "Bifasico", "Trifasico"];

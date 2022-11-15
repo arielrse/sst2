@@ -1,4 +1,6 @@
 <?php
+require("CharsUtils.php");
+
 $idevento = $_GET['event'];
 $idcatastro = $_GET['rut'];
 $cform    = $_GET['cform'];
@@ -57,6 +59,12 @@ $observaciones3     = $obj->{'observaciones3'};
 
 $observaciones = $obj->{'observaciones'};
 $pendientes    = $obj->{'pendientes'};
+
+$pendientes      = convertSpecialChars($pendientes);
+$observaciones   = convertSpecialChars($observaciones);
+$observaciones1  = convertSpecialChars($observaciones1);
+$observaciones2  = convertSpecialChars($observaciones2);
+$observaciones3  = convertSpecialChars($observaciones3);
 
 $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;
 

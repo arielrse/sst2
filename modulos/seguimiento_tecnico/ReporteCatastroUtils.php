@@ -1,6 +1,12 @@
 <?php
 require("../../../funciones/ImageUtils.php");
 
+function convertSpecialChars($text){
+    $text = str_replace("&#10;", "<br>", $text);
+    $str     = str_replace('\u','u', $text);
+    return preg_replace('/u([\da-fA-F]{4})/', '&#x\1;', $str);
+}
+
 function getPersonalOyM($conexion, $idusuario){
     $res = mysqli_query($conexion, "SELECT u.id, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nombre, u.`cargo`, u.`cel`
                                           FROM usuarios u
