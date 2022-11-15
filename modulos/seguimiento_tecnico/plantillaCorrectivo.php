@@ -71,7 +71,7 @@ function getPlantilla($conexion, $idcorrectivo){
                             <td width="25%">
                                 <table class="tborder">
                                     <tr><td class="bg-col1" colspan="2">PERSONAL DE COORDINACIÓN ENTEL:</td></tr>
-                                    <tr><td colspan="2">'.$data['nomResponsable'].'</td></tr>
+                                    <tr><td colspan="2">'.$data['nomCoord'].'</td></tr>
                                     <tr><td class="bg-col1">Ticket GFM principal:</td><td>'.$data['ticket_principal'].'</td></tr>
                                     <tr><td class="bg-col1">Tickets relacionados:</td><td>'.$tickets_rel.'</td></tr>
                                 
@@ -260,7 +260,7 @@ function getDatos($conexion, $idcorrectivo){
     $res = mysqli_query($conexion, "
             SELECT
             r.id, r.razon, c.nombre AS nomCentro , d.nombre AS  nomDepartamento, es.nombreestacion, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nomResponsable, r.fecha_eje, r.tipo_solucion,
-            r.fecha_corte, r.fecha_aviso, r.fecha_salida, r.fecha_llegada, r.fecha_superada, r.fecha_fin, concat(u2.nombre, ' ', u2.ap_pat) AS nomCoord,
+            r.fecha_corte, r.fecha_aviso, r.fecha_salida, r.fecha_llegada, r.fecha_superada, r.fecha_fin, concat(u2.nombre, ' ', u2.ap_pat, ' ', u2.ap_mat) AS nomCoord,
             r.ticket_principal, r.ticket_relacion, r.atencion, r.servicio_afecta, r.estado_ticket, r.en_plazo,
             s.nombresistemafalla, e.nombreequipofalla, t.nombretipofalla, so.nombresolucion, r.descripcion_falla, r.medidas_restituir, r.estado_final,
             r.causas, r.partes_afectadas, r.estaciones_afectadas, r.desc_solucion, r.descripcion_solucion, r.aclarativos, r.acciones_preventivas, 
