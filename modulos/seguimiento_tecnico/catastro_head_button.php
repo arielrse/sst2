@@ -21,12 +21,9 @@
         <input type="hidden" id="iddepartamento" name="iddepartamento" value="<?php echo $iddepartamento ?>" />
         <input type="hidden" id="idevento" name="idevento" value="<?php echo $idevento ?>" />
 
-        <?php if ($cform != '011') { ?>
         <div class="col">
             <button type="submit" class="btn btn-secondary px-4" name="Submit" value="Generar"><i class="bx bx-file mr-1"></i>Generar</button>
         </div>
-        <?php } ?>
-
     </form>
 
     <?php if ( ($estado=='PEN' && !isClient()) || (isAdmin() && $estado!='REV' ) ) { ?>

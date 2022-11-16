@@ -1246,4 +1246,146 @@ function getCabecera010($conexion, $jsonData, $idgrupo, $idevento){
     ';
     return $plantilla;
 }
+
+function getCabecera011($conexion, $jsonData, $idgrupo, $idevento){
+
+    $resIden = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`,
+                                                d.`nombre` AS departamento, s.`provincia`, s.`localidad`
+                                                FROM evento e 
+                                                LEFT JOIN sitio s 	 ON e.`idsitio` = s.`idsitio`
+                                                LEFT JOIN centro c 	 ON s.`idcentro` = c.`idcentro`
+                                                LEFT JOIN departamento d ON c.`iddepartamento` = d.`iddepartamento`
+                                                WHERE e.`idevento` = ".$idevento);
+    $dataIden = mysqli_fetch_array($resIden);
+    $departamento   = $dataIden['departamento'];
+    $provincia      = $dataIden['provincia'];
+    $localidad      = $dataIden['localidad'];
+
+
+    $obj = json_decode($jsonData);
+    $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
+    $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
+
+    $cm                 = $obj->{'cm'};
+    $sitioId            = $obj->{'sitioId'};
+    $propertyId         = $obj->{'propertyId'};
+    $cod_activo         = $obj->{'cod_activo'};
+    $cod_fijo           = $obj->{'cod_fijo'};
+    $c_fechaRealizacion = date("d/m/Y", strtotime($obj->{'c_fechaRealizacion'}) );
+    $indoor_outdoor     = $obj->{'indoor_outdoor'};
+    //$cod_complemento    = $obj->{'cod_complemento'};
+    //$d_horainicio   = $obj->{'d_horainicio'};
+    //$d_horafin      = $obj->{'d_horafin'};
+    // $tiempoTrans    = timeDiff($d_horainicio, $d_horafin);
+
+
+
+    $dataPersMtto = getPersonalMtto($conexion, $idgrupo);
+    $nombre2 = $dataPersMtto['nombre2'];
+    $nombre3 = $dataPersMtto['nombre3'];
+    $cargo2  = $dataPersMtto['cargo2'];
+    $cargo3  = $dataPersMtto['cargo3'];
+    //$cel2    = $dataPersMtto['cel2'];
+    //$cel3    = $dataPersMtto['cel3'];
+    //---------------------------
+
+
+
+    $plantilla = '
+    <table>
+        <tr>
+            <th class="col-2">
+                <div><img src="../../../img/logo-entel.png" width="90" alt="" /></div>
+            </th>
+            <th class="col-10 company-details">
+                <div>
+                    <div><b>FORMULARIO DE CATASTRO EQUIPOS DATOS/IP</b></div>
+                    <div><b>EQUIPOS NETWORKING CAPA 2/3</b></div>
+                   
+                </div>
+            </th>
+        </tr>
+       
+    </table>
+   												  
+    <main>
+        <table class="no" style="margin-top: 5px;">
+            <tr><td class="col-100p no"><strong>I. DATOS TECNICOS </strong></td></tr>
+        </table>
+    </main>
+    <main>
+        <table class="tborder">
+            <tbody>
+                <tr>
+                    <td class="col-25p no">ESTACION / SITIO:</td>
+                    <td class="col-25p">'. $propertyId .'</td>
+                    <td class="col-25p no">ID Sitio:</td>
+                    <td class="col-25p">'. $sitioId .'</td>
+                </tr>
+                <tr>
+                    <td class="col-25p no">FECHA DE ACTUALIZACION:</td>
+                    <td class="col-25p">'. $c_fechaRealizacion .'</td>
+                    <td class="col-25p no">CM/SCM:</td>
+                    <td class="col-25p">'. $cm .'</td>
+                </tr>
+                <tr>
+                    <td class="col-30p no">Nombre del Responsable:</td>
+                    <td class="col-25p">'. $nombre2 .'</td>
+                    <td class="col-25p no">Cargo:</td>
+                    <td class="col-25p">'. $cargo2 .'</td>
+                </tr>
+                <tr>
+                    <td class="col-30p no">Nombre del Responsable:</td>
+                    <td class="col-25p">'. $nombre3 .'</td>
+                    <td class="col-25p no">Cargo:</td>
+                    <td class="col-25p">'. $cargo3 .'</td>
+                </tr>
+           </tbody>        
+        </table>									                        
+    </main>
+   
+    ';
+    return $plantilla;
+}
+
+function getReporteFotoCatastro($conexion, $idcatastrox, $codRutina){
+
+    $res = mysqli_query($conexion,
+        "SELECT ci.nombre, ci.titulo FROM catastro".$codRutina." c
+                LEFT JOIN catastroimg ci ON c.idcatastro = ci.idcatastro
+                WHERE c.id = " . $idcatastrox);
+
+    $result = '
+    <div class="tborde-foto">
+    <table>
+    
+    <tr><td class="col-100p no" colspan="2"><h2>REPORTE FOTOGRAFICO</h2></td></tr>
+    <tr>';
+    $num = 1;
+    while( $data = mysqli_fetch_array($res) ){
+        if (isset($data['nombre'])) {
+            $file_image = "../../../fotos/catastro/" . $data['nombre'];
+            if ( exif_imagetype($file_image) == IMAGETYPE_JPEG || exif_imagetype($file_image) == IMAGETYPE_PNG ) {
+
+                adjustPhotoOrientation($file_image);
+                $result .= '
+            <td align="center">
+                <div>
+                    <img src="' . $file_image . '" style="width: auto; height: 400px; margin: auto;display: block;" />
+                    <div style="font-size: 14px; margin-top: 5px" >' . $data['titulo'] . '</div>
+                </div>
+               
+            </td>';
+
+                if (($num % 2) == 0) {
+                    $result .= '</tr><tr style="margin-top: 10px;">';
+                }
+                $num++;
+            }
+        }
+    }
+    $result .= '</tr></table></div>';
+
+    return $result;
+}
 ?>

@@ -14,7 +14,7 @@
     </div>
 </div>
 
-<h6>AMBIENTE</h6>
+<h6>AMBIENTE - REPORTE FOTOGRÁFICO</h6>
 
 <?php if ( !isClient() && !isNationalClient() ) { ?>
     <div class="row">
@@ -51,7 +51,7 @@
             $eliminarDoc = "";
             if (!isNationalClient() && !isClient())
                 $eliminarDoc .= "<a href='javascript:;' class='ms-3' id='btnEliminarDoc' onclick='eliminarImagenCatastro(`$idcatastroimg`)'>
-                                    <i class='bx bxs-trash'></i>
+                                    <i class='bx bx-x'></i>
                                  </a>";
             echo "
                     <tr>

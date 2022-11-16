@@ -46,4 +46,14 @@ function getJsonData_catastroArr($conexion, $idcatastrox, $cform){
     return [$data3['idformulario'], $data3['data']];
 }
 
+function getJsonData_catastro11Arr($conexion, $idcatastrox, $cform){
+    $res3 = mysqli_query($conexion, "SELECT c.id, c.data, c.tabla_1, c.tabla_2, c.tabla_3, ca.idformulario
+                                        FROM catastro011 c
+                                        LEFT JOIN catastro ca ON c.idcatastro = ca.idcatastro
+                                        WHERE c.id = ".$idcatastrox);
+    $data3 = mysqli_fetch_array($res3);
+
+    return [$data3['idformulario'], $data3['data'], $data3['tabla_1'], $data3['tabla_2'], $data3['tabla_3']];
+}
+
 ?>
