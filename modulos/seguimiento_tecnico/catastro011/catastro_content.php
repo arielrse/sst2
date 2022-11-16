@@ -14,6 +14,7 @@
     </div>
 </div>
 
+<!-- Reporte Fotografico -->
 <h6>AMBIENTE - REPORTE FOTOGRÁFICO</h6>
 
 <?php if ( !isClient() && !isNationalClient() ) { ?>
@@ -69,6 +70,7 @@
         ?>
     </table>
 </div>
+<!-- End Reporte Fotografico -->
 
 <div class="row mt-3">
     <div class="col-12">
