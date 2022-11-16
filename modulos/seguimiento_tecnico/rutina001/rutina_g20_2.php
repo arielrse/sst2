@@ -1687,57 +1687,57 @@ $g_bb2_b24_11 = isset($g_tiempo_tension->g_bb2_b24_11) ? $g_tiempo_tension->g_bb
                          <td><strong>BB2-B24</strong></td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_1"  value="<?php echo $g_bb2_b10_1 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_1"  value="<?php echo $g_bb2_b24_1 ?>">
                              </div>
                          </td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_2"  value="<?php echo $g_bb2_b10_2 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_2"  value="<?php echo $g_bb2_b24_2 ?>">
                              </div>
                          </td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_3"  value="<?php echo $g_bb2_b10_3 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_3"  value="<?php echo $g_bb2_b24_3 ?>">
                              </div>
                          </td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_4"  value="<?php echo $g_bb2_b10_4 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_4"  value="<?php echo $g_bb2_b24_4 ?>">
                              </div>
                          </td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_5"  value="<?php echo $g_bb2_b10_5 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_5"  value="<?php echo $g_bb2_b24_5 ?>">
                              </div>
                          </td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_6"  value="<?php echo $g_bb2_b10_6 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_6"  value="<?php echo $g_bb2_b24_6 ?>">
                              </div>
                          </td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_7"  value="<?php echo $g_bb2_b10_7 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_7"  value="<?php echo $g_bb2_b24_7 ?>">
                              </div>
                          </td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_8"  value="<?php echo $g_bb2_b10_8 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_8"  value="<?php echo $g_bb2_b24_8 ?>">
                              </div>
                          </td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_9"  value="<?php echo $g_bb2_b10_9 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_9"  value="<?php echo $g_bb2_b24_9 ?>">
                              </div>
                          </td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_10" value="<?php echo $g_bb2_b10_10 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_10" value="<?php echo $g_bb2_b24_10 ?>">
                              </div>
                          </td>
                          <td>
                              <div class="input-group input-group-sm">
-                                 <input type="text" class="form-control" id="g_bb2_b24_11" value="<?php echo $g_bb2_b10_11 ?>">
+                                 <input type="text" class="form-control" id="g_bb2_b24_11" value="<?php echo $g_bb2_b24_11 ?>">
                              </div>
                          </td>
                      </tr>
