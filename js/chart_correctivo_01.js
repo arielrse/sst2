@@ -35,7 +35,7 @@ function show_grafico_correctivo_01(datos) {
         data: {
             labels: etiquetas,
             datasets: [{
-                label: "Tickets",
+                label: "Tickets de Intervención",
                 backgroundColor: ["#46BFBD"],
                 data: datos
             }]

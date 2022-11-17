@@ -37,10 +37,12 @@ header("Expires: 0");
 <th width="7%">NRO TICKET GFM</th>
 <th width="7%">ID ESTACION</th>
 <th width="7%">ESTACION</th>
+<th width="7%">GRUPO</th>
 <th width="7%">NP/NS</th>
 <th width="7%">TECNOLOGIA</th>
 <th width="5%">AREA </th>
 <th width="7%">ATENCION</th>
+<th width="7%">CUMPLIMIENTO</th>
 <th width="5%">AFECTACION AL SERVICIO</th>
 <th width="7%">SISTEMA EN FALLA</th>
 <th width="7%">EQUIPO EN FALLA</th>
@@ -73,10 +75,12 @@ FROM(
             t.ticket,
             t.idnodo,
             es.nombreestacion,
+            concat('GRUPO ', G.codigo) as grupo,   
             es.tiponodo,
             tec.nombretecnologia,
             es.area,
             ta.nombreatencion,
+            t.cumplimiento,
             tas.nombreafectacionservicio,
             tsf.nombresistemafalla,
             te.nombreequipofalla,
@@ -97,7 +101,8 @@ FROM(
         left join ticket_equipofalla te         on t.idequipofalla        = te.idequipofalla
         left join ticket_tipofalla tf           on t.idtipofalla	      = tf.idtipofalla
         left join ticket_solucion ts            on t.idsolucion	          = ts.idsolucion
-        left join centro c           on es.idcentro	= c.idcentro
+        left join centro c          on es.idcentro	= c.idcentro
+        left join grupo g           on t.idgrupo = g.idgrupo
         where c.iddepartamento = ".$iddepartamento."
 	    ". $strSql ."
     
@@ -121,10 +126,12 @@ if($filas!=0) {
 	<td><center>".$dato['ticket']."</center></td>
 	<td><center>".$dato['idnodo']."</center></td>
 	<td><center>".$dato['nombreestacion']."</center></td>
+	<td><center>".$dato['grupo']."</center></td>
 	<td><center>".$dato['tiponodo']."</center></td>
 	<td><center>".$dato['nombretecnologia']."</center></td>
 	<td><center>".$dato['area']."</center></td>
 	<td><center>".$dato['nombreatencion']."</center></td>
+	<td><center>".$dato['cumplimiento']."</center></td>
 	<td><center>".$dato['nombreafectacionservicio']."</center></td>
 	<td><center>".$dato['nombresistemafalla']."</center></td>
 	<td><center>".$dato['nombreequipofalla']."</center></td>

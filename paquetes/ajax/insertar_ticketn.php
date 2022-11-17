@@ -24,6 +24,8 @@ require("../../funciones/motor.php");
 	$idatencion		= $_POST['idatencion'];
 	$idestacion		= $_POST['idestacion'];
 	$idsolucion		= $_POST['idsolucion'];
+	$cumplimiento	= $_POST['cumplimiento'];
+	$idgrupo		= $_POST['idgrupo'];
 
 	$Hoy = date("Y-m-d H:i:s");
 	$texto="insert into st_ticketn(
@@ -37,6 +39,8 @@ require("../../funciones/motor.php");
 	hora_not_dim,
 	fecha_not_sitio,
 	hora_not_sitio,
+	cumplimiento,
+	idgrupo,
 	observaciones,
 	descripcionfalla,
 	idtecnologia,
@@ -59,6 +63,8 @@ require("../../funciones/motor.php");
 	'$hora_not_dim',
 	'$fecha_not_sitio',
 	'$hora_not_sitio',
+	'$cumplimiento',
+	'$idgrupo',
 	'$observaciones',
 	'$descripcionfalla',
 	$idtecnologia,

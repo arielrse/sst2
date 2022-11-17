@@ -10,7 +10,9 @@ $res = mysqli_query($conexion,
 from st_ticketn t
 left join estacionentel e on t.idestacion = e.idestacionentel
 left join centro c on e.idcentro = c.idcentro
+left join ticket_atencion ta on t.idatencion = ta.idatencion
 where t.fecha_inicio_rif BETWEEN '$fechainicio' AND '$fechafin' AND c.iddepartamento = $iddepartamento
+and ta.nombreatencion = 'EN SITIO'
 and e.tiponodo is not null
 group by e.tiponodo");
 

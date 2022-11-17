@@ -1,4 +1,4 @@
-function cargar_grafico_correctivo_04(iddepartamento, fechainicio, fechafin) {
+function cargar_grafico_correctivo_14(iddepartamento, fechainicio, fechafin) {
 
     var frmData = new FormData;
     frmData.append('iddepartamento', iddepartamento);
@@ -6,39 +6,37 @@ function cargar_grafico_correctivo_04(iddepartamento, fechainicio, fechafin) {
     frmData.append('fechafin', fechafin);
 
     $.ajax({
-        url: '../../modulos/charts/data_correctivo_04.php',
+        url: '../../modulos/charts/data_correctivo_14.php',
         type: 'POST',
         data: frmData,
         processData: false,
         contentType: false,
         cache: false,
         success: function (resp) {
-            show_grafico_correctivo_04(resp);
+            show_grafico_correctivo_14(resp);
         }
     });
 }
 
-let myChart4;
-function show_grafico_correctivo_04(datos) {
+let myChart14;
+function show_grafico_correctivo_14(datos) {
 
     var json = JSON.parse(datos);
     var etiquetas = json.etiquetas;
     var datos = json.datos;
 
-    if (myChart4)
-        myChart4.destroy();
+    if (myChart14)
+        myChart14.destroy();
 
-    var ctx = document.getElementById("myChart04");
+    var ctx = document.getElementById("myChart14");
 
-    myChart4 = new Chart(ctx, {
+    myChart14 = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: etiquetas,
             datasets: [{
                 label: "Tickets de Intervención",
-                backgroundColor: ['rgba(54, 162, 235, 0.2)','rgba(255, 99, 132, 0.2)','rgba(255, 206, 86, 0.2)',],
-                borderColor: ['rgba(54, 162, 235, 1)','rgba(255, 99, 132, 1)','rgba(255, 206, 86, 1)'],
-                borderWidth: 1,
+                backgroundColor: ["#17a00e", "#f41127", "#212529", "#0d6efd", "#ffc107", "#62088A", "#46BFBD"],
                 data: datos
             }]
         },

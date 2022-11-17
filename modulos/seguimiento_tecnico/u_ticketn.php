@@ -25,7 +25,9 @@ if(isset($_GET["ticket"])){
 	hora_not_sitio,
 	fecha_fin_rif,
 	hora_fin_rif,
-	st_ticketn.observaciones
+	st_ticketn.observaciones,
+	st_ticketn.cumplimiento,
+	st_ticketn.idgrupo
 	from
 
 st_ticketn
@@ -268,6 +270,44 @@ st_ticketn
                                 </div>
                             </div>
 
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Cumplimiento:</span>
+                                    <?php
+                                    $optionsArr = ['EN_PLAZO'=>'EN PLAZO', 'NO_PLAZO'=>'FUERA DE PLAZO', 'JUSTIFICA'=>'FUERA DE PLAZO JUSTIFICADO'];
+                                    $options = "<option value=''>Seleccionar...</option>";
+                                    foreach ($optionsArr as $clave => $element){
+                                        $selected = ($dato['cumplimiento'] == $clave) ? 'selected' : '';
+                                        $options .= '<option value="'.$clave.'" '.$selected.'>'.$element.'</option>';
+                                    }
+                                    ?>
+                                    <select id="cumplimiento" name="cumplimiento" class="form-select form-select-sm">
+                                        <?php echo $options ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">Grupo Mtto.:</span>
+                                    <select name="idgrupo" class="single-select" id="idgrupo">
+                                        <option value="0" selected class="title7"> Seleccionar... </option>
+                                        <?php
+                                        $resultado=mysqli_query($conexion, "
+                                            SELECT g.idgrupo, g.codigo, g.nombre, c.nombre AS nombreCentro, d.iddepartamento
+                                            FROM grupo g 
+                                            JOIN centro c       ON g.idcentro = c.idcentro
+                                            JOIN departamento d ON c.iddepartamento = d.iddepartamento
+                                            WHERE d.`iddepartamento` = $iddepartamento ");
+                                        while($dato2 = mysqli_fetch_array($resultado)) {
+                                            $selected = ($dato['idgrupo'] == $dato2['idgrupo']) ? 'selected' : '';
+                                            echo '<option value="' . $dato2['idgrupo'] . '" '.$selected.'>' . $dato2['nombre'] . ' (' . $dato2['nombreCentro'] . ')</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
                             <h6 class="mb-0 text-uppercase">Notificacion</h6>
 
                             <div class="col-md-6">
@@ -388,6 +428,8 @@ st_ticketn
 					var idatencion=$('#atencion').val();//idtipointervencion,
 					var idestacion=$('#estacion').val();//idestacionentel,
 					var idsolucion=$('#solucion').val();//idsolucion
+                    var cumplimiento=$('#cumplimiento').val();
+                    var idgrupo=$('#idgrupo').val();
 					
 
 	    		jQuery.post("../../paquetes/ajax/update_ticketn.php", {
@@ -411,7 +453,9 @@ st_ticketn
 					idequipofalla:idequipofalla,
 					idatencion:idatencion,
 					idestacion:idestacion,
-					idsolucion:idsolucion
+					idsolucion:idsolucion,
+                    cumplimiento:cumplimiento,
+                    idgrupo:idgrupo
 				}, function(data, textStatus){
 					if(data == 1){
 						$('#res').html('Datos insertados correctamente');
