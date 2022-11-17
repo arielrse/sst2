@@ -18,6 +18,7 @@ $jsonData     = $datosArr[1];
 //$titulosArr   = getTitulosRutinas($conexion, $idformulario);
 $titulosArr   = [];
 $plantilla    = getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idcatastrox, $cform);
+
 $nombreFile   = getNombreArchivoReporte($jsonData, $titulosArr[0]);
 
 $mpdf = new \Mpdf\Mpdf(['format' => 'Letter']);

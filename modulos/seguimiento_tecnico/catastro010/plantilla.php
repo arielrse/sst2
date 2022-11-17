@@ -176,7 +176,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idcatastrox, $
                         </tbody>
                     </table>
                 </main>
+                
                  '.$reporteFoto.'
+                
                 </div>
             </div>
         </div>

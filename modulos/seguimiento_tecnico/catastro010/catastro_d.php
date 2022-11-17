@@ -352,7 +352,6 @@ foreach ($red_comercialArr as $element){
             <span class="input-group-text"></span>
             <textarea class="form-control" aria-label="With textarea" id="observaciones"><?php echo $observaciones ?></textarea>
         </div>
-
         <!-- Reporte Fotografico --> <!-- ***** -->
         <h6 class="mt-3">AMBIENTE - REPORTE FOTOGRÁFICO</h6>
 
