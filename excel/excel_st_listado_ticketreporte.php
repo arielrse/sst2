@@ -75,7 +75,6 @@ FROM(
             t.ticket,
             t.idnodo,
             es.nombreestacion,
-            concat('GRUPO ', G.codigo) as grupo,   
             es.tiponodo,
             tec.nombretecnologia,
             es.area,
@@ -102,7 +101,6 @@ FROM(
         left join ticket_tipofalla tf           on t.idtipofalla	      = tf.idtipofalla
         left join ticket_solucion ts            on t.idsolucion	          = ts.idsolucion
         left join centro c          on es.idcentro	= c.idcentro
-        left join grupo g           on t.idgrupo = g.idgrupo
         where c.iddepartamento = ".$iddepartamento."
 	    ". $strSql ."
     
@@ -126,7 +124,6 @@ if($filas!=0) {
 	<td><center>".$dato['ticket']."</center></td>
 	<td><center>".$dato['idnodo']."</center></td>
 	<td><center>".$dato['nombreestacion']."</center></td>
-	<td><center>".$dato['grupo']."</center></td>
 	<td><center>".$dato['tiponodo']."</center></td>
 	<td><center>".$dato['nombretecnologia']."</center></td>
 	<td><center>".$dato['area']."</center></td>
