@@ -254,13 +254,13 @@ if(isset($_GET["rif"])){
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <!--<div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-text">Grupo Mtto.:</span>
                             <select name="idgrupo" class="single-select" id="idgrupo">
                                 <option value="0" selected class="title7"> Seleccionar... </option>
                                 <?php
-                                $resultado=mysqli_query($conexion, "
+/*                                $resultado=mysqli_query($conexion, "
                                             SELECT g.idgrupo, g.codigo, g.nombre, c.nombre AS nombreCentro, d.iddepartamento
                                             FROM grupo g 
                                             JOIN centro c       ON g.idcentro = c.idcentro
@@ -268,10 +268,10 @@ if(isset($_GET["rif"])){
                                             WHERE d.`iddepartamento` = $iddepartamento ");
                                 while($dato=mysqli_fetch_array($resultado))
                                     echo '<option value="'.$dato['idgrupo'].'">'.$dato['nombre'].' ('.$dato['nombreCentro'].')</option>';
-                                ?>
+                                */?>
                             </select>
                         </div>
-                    </div>
+                    </div>-->
 
                     <h6 class="mb-0 text-uppercase">Notificacion</h6>
 

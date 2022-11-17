@@ -25,7 +25,6 @@ require("../../funciones/motor.php");
 	$idestacion=$_POST['idestacion'];
 	$idsolucion=$_POST['idsolucion'];
     $cumplimiento	= $_POST['cumplimiento'];
-    $idgrupo		= $_POST['idgrupo'];
 
 	//$Hoy = date("Y-m-d H:i:s");
 	$texto="update st_ticketn set ticket='$ticket',
@@ -39,7 +38,6 @@ require("../../funciones/motor.php");
 	fecha_not_sitio='$fecha_not_sitio',
 	hora_not_sitio='$hora_not_sitio',
 	cumplimiento='$cumplimiento',
-	idgrupo='$idgrupo',
 	observaciones='$observaciones',
 	descripcionfalla='$descripcionfalla',
 	idtecnologia=$idtecnologia,

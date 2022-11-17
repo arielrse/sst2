@@ -287,13 +287,13 @@ st_ticketn
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <!--<div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-text">Grupo Mtto.:</span>
                                     <select name="idgrupo" class="single-select" id="idgrupo">
                                         <option value="0" selected class="title7"> Seleccionar... </option>
                                         <?php
-                                        $resultado=mysqli_query($conexion, "
+/*                                        $resultado=mysqli_query($conexion, "
                                             SELECT g.idgrupo, g.codigo, g.nombre, c.nombre AS nombreCentro, d.iddepartamento
                                             FROM grupo g 
                                             JOIN centro c       ON g.idcentro = c.idcentro
@@ -303,10 +303,10 @@ st_ticketn
                                             $selected = ($dato['idgrupo'] == $dato2['idgrupo']) ? 'selected' : '';
                                             echo '<option value="' . $dato2['idgrupo'] . '" '.$selected.'>' . $dato2['nombre'] . ' (' . $dato2['nombreCentro'] . ')</option>';
                                         }
-                                        ?>
+                                        */?>
                                     </select>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <h6 class="mb-0 text-uppercase">Notificacion</h6>
 
