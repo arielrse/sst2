@@ -390,7 +390,7 @@ foreach ($sist_de_bajaArr as $element){
             <textarea class="form-control" aria-label="With textarea" id="observaciones"><?php echo $observaciones ?></textarea>
         </div>
 
-        <!-- Reporte Fotografico -->
+        <!-- Reporte Fotografico --> <!-- ***** -->
         <h6 class="mt-3">AMBIENTE - REPORTE FOTOGRÁFICO</h6>
 
         <?php if ( !isClient() && !isNationalClient() ) { ?>
@@ -451,7 +451,7 @@ foreach ($sist_de_bajaArr as $element){
     </div>
 </div>
 
-<script type="text/javascript">
+<script type="text/javascript"> /* **** */
     $(document).ready(function () {
 
         var btnEnviar = $("#btn-subirimg");

@@ -3,13 +3,14 @@ require("../../../funciones/DateUtils.php");
 require("../ReporteCatastroUtils.php");
 
 
-function getPlantilla($conexion, $jsonData, $idgrupo, $idevento){
+function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idcatastrox, $cform){
 
     $obj = json_decode($jsonData);
    // $check   = "<img style='vertical-align:middle' src='../../../img/checked.png'>";
    // $uncheck = "<img style='vertical-align:middle' src='../../../img/unchecked.png'>";
 
     $cabecera        = getCabecera010($conexion, $jsonData, $idgrupo, $idevento);
+    $reporteFoto = getReporteFotoCatastro($conexion, $idcatastrox, $cform);
 
 
     /** desarrollo_d **/
@@ -175,6 +176,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento){
                         </tbody>
                     </table>
                 </main>
+                
+                 '.$reporteFoto.'
+                
                 </div>
             </div>
         </div>
