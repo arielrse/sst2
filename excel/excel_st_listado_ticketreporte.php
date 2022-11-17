@@ -37,7 +37,6 @@ header("Expires: 0");
 <th width="7%">NRO TICKET GFM</th>
 <th width="7%">ID ESTACION</th>
 <th width="7%">ESTACION</th>
-<th width="7%">GRUPO</th>
 <th width="7%">NP/NS</th>
 <th width="7%">TECNOLOGIA</th>
 <th width="5%">AREA </th>
