@@ -417,7 +417,7 @@ if(isset($_GET["rif"])){
 						$('#res').css('color','green');
 
 						info_notify('Datos insertados correctamente', 'info');
-                        setTimeout( function() { window.location.href = '<?=$link_modulo?>?path=tickets.php'; }, 2000 );
+                        setTimeout( function() { window.location.href = '<?=$link_modulo?>?path=tickets.php'; }, 1500 );
 					}
 					else{
 						$('#res').html(data);

@@ -41,7 +41,7 @@ st_ticketn
 	LEFT JOIN ticket_tipofalla ON st_ticketn.idtipofalla= ticket_tipofalla.idtipofalla
 	LEFT JOIN ticket_solucion ON st_ticketn.idsolucion= ticket_solucion.idsolucion
 	where	
-	st_ticketn.ticket='$ticket'";
+	st_ticketn.id_st_ticket='$ticket'";
 	$resultado 	= mysqli_query($conexion, $consulta);
 	$filas	   	= mysqli_num_rows($resultado);
 	$dato		= mysqli_fetch_array($resultado);
@@ -465,13 +465,13 @@ st_ticketn
                         //setTimeout( function() { window.location.href = '../../usuarios/modulos/seguimiento_tecnico.php?path=tickets.php'; }, 3000 );
 
                         info_notify('Datos actualizados correctamente', 'info');
-                        setTimeout( function() { window.location.href = '<?=$link_modulo?>?path=tickets.php'; }, 3000 );
+                        setTimeout( function() { window.location.href = '<?=$link_modulo?>?path=tickets.php'; }, 1500 );
 
 					} else{
 
 					    if (data == 0){
                             info_notify('Datos actualizados correctamente', 'info');
-                            setTimeout( function() { window.location.href = '<?=$link_modulo?>?path=tickets.php'; }, 3000 );
+                            setTimeout( function() { window.location.href = '<?=$link_modulo?>?path=tickets.php'; }, 1500 );
                         }
 
                         if (data == -1){

@@ -101,7 +101,8 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                                     TIMESTAMPDIFF(HOUR, fecha_notificacion, fecha_fin), ':', 
                                     MOD(TIMESTAMPDIFF(MINUTE, fecha_notificacion, fecha_fin), 60), '' )AS tiempo_empleado    	
                         FROM(
-                            SELECT 
+                            SELECT
+                            st_ticketn.id_st_ticket,
                             centro.nombre as centro_nombre,
                             st_ticketn.ticket,
                             st_ticketn.idnodo,
@@ -143,7 +144,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                             $i=0;
                             while($dato=mysqli_fetch_array($resultado)){
                                 $i++;
-                                $ticket_html = "<a href='$link_modulo?path=u_ticketn.php&ticket=".$dato['ticket']."'>".$dato['ticket']."</a>";
+                                $ticket_html = "<a href='$link_modulo?path=u_ticketn.php&ticket=".$dato['id_st_ticket']."'>".$dato['ticket']."</a>";
 
                                 /*if (isAdmin() || isExpert()) {
                                     $ticket_html = "<a href='$link_modulo?path=u_ticketn.php&ticket=".$dato['ticket']."'>".$dato['ticket']."</a>";
