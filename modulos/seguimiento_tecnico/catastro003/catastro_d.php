@@ -340,5 +340,150 @@ foreach ($precalArr as $element){
             <textarea class="form-control" aria-label="With textarea" id="observaciones"><?php echo $observaciones ?></textarea>
         </div>
 
+        <!-- Reporte Fotografico --> <!-- ***** -->
+        <h6 class="mt-3">AMBIENTE - REPORTE FOTOGRÁFICO</h6>
+
+        <?php if ( !isClient() && !isNationalClient() ) { ?>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="col-md-4">
+                            <input class="form-control form-control-sm" type="file" id="imagen" name="imagen">
+                        </div>
+                        <div class="col-md-7">
+                            <input id="tituloimagen" name="tituloimagen" class="form-control form-control-sm" type="text" placeholder="Titulo">
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-sm btn-outline-primary" type="button" id="btn-subirimg" name="btn-subirimg"><i class='bx bx-plus'></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        <?php } ?>
+
+        <div id="table-imgs">
+            <table class="table mb-0 table-hover">
+                <?php
+                $query = "SELECT * FROM catastroimg WHERE idcatastro = " . $idcatastro;
+                $result = mysqli_query($conexion, $query);
+                $i = 1;
+                while( $data = mysqli_fetch_array($result) ){
+
+                    $nombre = $data['nombre'];
+                    $idcatastroimg  = $data['idcatastroimg'];
+
+                    $hrefDoc = '../../fotos/catastro/' . $nombre;
+
+                    $eliminarDoc = "";
+                    if (!isNationalClient() && !isClient())
+                        $eliminarDoc .= "<a href='javascript:;' class='ms-3' id='btnEliminarDoc' onclick='eliminarImagenCatastro(`$idcatastroimg`)'>
+                                    <i class='bx bx-x'></i>
+                                 </a>";
+                    echo "
+                    <tr>
+                        <td width='5%'>$i</td>
+                        <td width='88%'><a href='$hrefDoc' target='_blank'>".$data['titulo']."</a></td>
+                        <td width='7%'>
+                            <div class='d-flex'>
+                                " . $eliminarDoc ."
+                            </div>
+                        </td>
+                    </tr>
+                    ";
+                    $i++;
+                }
+                ?>
+            </table>
+        </div>
     </div>
 </div>
+
+<script type="text/javascript"> /* **** */
+    $(document).ready(function () {
+
+        var btnEnviar = $("#btn-subirimg");
+
+        $('#btn-subirimg').click(function(){
+
+            var idcatastro  = $('#catastroId').val()
+            var tituloimagen = $('#tituloimagen').val()
+
+            var size = document.getElementsByName("imagen")[0].files[0].size;
+            var docsize = ((size / 1024)/1000);
+
+            if ( docsize < 10) {
+                var frmData = new FormData;
+                frmData.append("imagen", $("input[name=imagen]")[0].files[0]);
+                frmData.append("idcatastro", idcatastro);
+                frmData.append("tituloimagen", tituloimagen);
+
+                if (fileValidation()) {
+                    $.ajax({
+                        url: 'subir_imagenCatastro.php',
+                        type: 'POST',
+                        data: frmData,
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        beforeSend: function (data) {
+                            btnEnviar.attr("disabled", true);
+                            btnEnviar.html('<div class="spinner-border spinner-border-sm" role="status"></div>');
+                        },
+                        success: function (data) {
+                            alert(data);
+                            $("#table-imgs").load(window.location + " #table-imgs");
+                            document.querySelector('#imagen').value = "";
+                            document.querySelector('#tituloimagen').value = "";
+                            btnEnviar.html('<i class="bx bx-plus"></i>');
+                            btnEnviar.attr("disabled", false);
+                        }
+                    })
+                } else {
+                    document.querySelector('#imagen').value = "";
+                    document.querySelector('#tituloimagen').value = "";
+                }
+            } else{
+                alert( 'No es posible, el archivo supera los 10MB' )
+            }
+            return false;
+
+        });
+
+    });
+
+    function eliminarImagenCatastro(idImg){
+
+        if (confirm('¿Esta seguro que desea eliminar la imagen? : ' + idImg)) {
+
+            var frmData = new FormData;
+            frmData.append("idImg", idImg);
+
+            $.ajax({
+                url: 'eliminar_imagen_catastro.php',
+                type: 'POST',
+                data: frmData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    $("#table-imgs").load(window.location + " #table-imgs");
+                }
+            })
+        }
+    }
+
+    function fileValidation(){
+        var fileInput = document.getElementById('imagen');
+        var filePath = fileInput.value;
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+        if(!allowedExtensions.exec(filePath)){
+            alert('Por favor cargar imagenes solo con formato  jpeg  jpg  png');
+            fileInput.value = '';
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+</script>
