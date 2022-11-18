@@ -1,4 +1,11 @@
+<?php
+$mes      = isset($_POST["mes"]) ? $_POST["mes"] : date("n");
+$anio     = isset($_POST["anio"]) ?  $_POST["anio"] : date("Y");
 
+$ultimoDiaMes = date("d",(mktime(0,0,0,$mes+1,1,$anio)-1));
+$inicio = $anio."-".$mes."-"."01";
+$fin    = $anio."-".$mes."-".$ultimoDiaMes;
+?>
 <div class="page-wrapper">
     <div class="page-content">
 
@@ -21,12 +28,39 @@
         <div class="card">
             <div class="card-body">
 
+                <form name="amper" method="post" action="<?=$link_modulo?>?path=correctivos_mtto.php">
                 <div class="row row-cols-auto g-3">
+
                         <div class="col">
                             <input name="nuevoE" type="button" value="Nuevo" class="btn btn-sm btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=correctivo_nuevo.php'" />
                         </div>
+                        <div class="col">
+                            <select name="anio" class="form-select form-select-sm">
+                                <option value="2021" <? if($anio==2021) echo"class='naranja' selected"; ?>>2021</option>
+                                <option value="2022" <? if($anio==2022) echo"class='naranja' selected"; ?>>2022</option>
+                                <option value="2023" <? if($anio==2023) echo"class='naranja' selected"; ?>>2023</option>
+                                <option value="2024" <? if($anio==2024) echo"class='naranja' selected"; ?>>2024</option>
+                            </select>&nbsp;
+                        </div>
+                        <div class="col">
+                            <?php
+                            $meses = ["01"=>"Enero","02"=>"Febrero","03"=>"Marzo","04"=>"Abril","05"=>"Mayo","06"=>"Junio","07"=>"Julio","08"=>"Agosto","09"=>"Septiembre","10"=>"Octubre","11"=>"Noviembre","12"=>"Diciembre"];
+                            $options = "<option value=''>Meses<option>";
+                            foreach ($meses as $clave => $element){
+                                $selected = $mes == $clave ? 'selected' : '';
+                                $options .= '<option value="'.$clave.'" '.$selected.'>'.$element.'</option>';
+                            }
+                            ?>
+                            <select id="mes" name="mes" class="form-select form-select-sm">
+                                <?php echo $options ?>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <!--<button class="btn btn-sm btn-dark px-4" id="btn-buscar">Buscar</button>-->
+                            <input class="btn btn-sm btn-secondary px-3" name="ver" type="submit"  value="Buscar" />
+                        </div>
                 </div>
-                <hr />
+                </form>
 
                 <div class="table-responsive">
                     <table id="table-correctivos" class="table table-sm table-striped table-bordered">
@@ -51,6 +85,7 @@
                                      LEFT JOIN departamento d  ON r.iddepartamento = d.iddepartamento 
                                      LEFT JOIN ticket_sistemafalla s ON r.sistemafalla COLLATE utf8_general_ci = s.idsistemafalla COLLATE utf8_general_ci
                                      WHERE r.iddepartamento = " . $iddepartamento . "
+                                     AND r.fecha_eje BETWEEN '$inicio' AND '$fin'
                                      ORDER BY r.id desc";
                         $resultado = mysqli_query($conexion, $consulta);
                         $filas	   = mysqli_num_rows($resultado);

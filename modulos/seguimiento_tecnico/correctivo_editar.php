@@ -77,7 +77,7 @@ $notas = $dato['notas'];
                     <input type="hidden" name="idcorrectivo" id="idcorrectivo" value="<?=$id?>" />
 
                     <input type="button" id="btn-save-mttoc" class="btn btn-primary px-4" value="Guardar" />
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>
                 </form>
             </div>
         </div>
@@ -773,7 +773,7 @@ $notas = $dato['notas'];
             <div class="ms-auto">
                 <div>
                     <input type="button" id="btn-save-mttoc2" class="btn btn-primary px-4" value="Guardar" />
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>
                 </div>
             </div>
         </div>
