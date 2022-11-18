@@ -363,6 +363,11 @@ st_ticketn
                                 <div class="col">
                                     <input type="button" class="btn btn-secondary px-5" name="Submit" value="Cancelar" onclick="location.href='<?=$link_modulo?>?path=tickets.php'" />
                                 </div>
+                                <?php if (isAdmin() || isExpert()) { ?>
+                                    <div class="col">
+                                        <input type="button" id="btn-eliminar" class="btn btn-danger px-5" value="Eliminar" />
+                                    </div>
+                                <?php } ?>
                             </div>
 
                         </form>
@@ -398,15 +403,34 @@ st_ticketn
 <script type="text/javascript">
 
 	$(document).ready(function() {
-        //$('textarea.resizable:not(.processed)').TextAreaResizer();
+
+        $('#btn-eliminar').click(function(){
+
+            var id_st_ticket  = $('#id_st_ticket').val()
+
+            if (confirm('Esta seguro de eliminar el Ticket')) {
+                var frmData = new FormData;
+                frmData.append("id_st_ticket", id_st_ticket);
+
+                $.ajax({
+                    url: 'eliminar_ticket.php',
+                    type: 'POST',
+                    data: frmData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    success: function (data) {
+                        info_notify(data, 'info');
+                        setTimeout( function() { window.location.href = '<?=$link_modulo?>?path=tickets.php'; }, 750 );
+                    }
+                })
+            }
+        });
+
 		$('#boton').click(function(){
 			var mensaje;
 	    	var opcion = confirm("Guardar los cambios?");
-	    	if (opcion == true) {	
-
-	    	    		
-
-					
+	    	if (opcion == true) {
 					var id_st_ticket=$('#id_st_ticket').val();//ticket,
 	    			var ticket=$('#ticket').val();//ticket,
 					//var idnodo=$('#idnodo').val();//idnodo,
