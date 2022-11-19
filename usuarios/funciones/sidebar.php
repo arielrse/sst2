@@ -81,7 +81,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
 
         <li>
             <a href="<?=$mst?>cronograma_cm.php">
-                <div class="parent-icon"><i class='bx bx-calendar-plus'></i>
+                <div class="parent-icon"><i class='bx bx-calendar-star'></i>
                 </div>
                 <div class="menu-title">Mtto Preventivo</div>
             </a>
@@ -94,6 +94,16 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
                 <div class="menu-title">Lista Preventivos</div>
             </a>
         </li>
+
+        <?php if (isAdmin() || isExpert()) { ?>
+        <li>
+            <a href="<?=$mst?>extraworks.php">
+                <div class="parent-icon"><i class='bx bx-bullseye'></i>
+                </div>
+                <div class="menu-title">Extrawork</div>
+            </a>
+        </li>
+        <?php } ?>
 
         <li>
             <a href="<?=$muser?>ver_centros.php">
