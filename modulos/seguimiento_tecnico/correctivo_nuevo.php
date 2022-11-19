@@ -2,12 +2,12 @@
 date_default_timezone_set('America/La_Paz');
 
 $fecha_eje = date("Y-m-d");
-$fecha_corte = date("Y-m-d H:i");
-$fecha_aviso = date("Y-m-d H:i");
-$fecha_salida = date("Y-m-d H:i");
-$fecha_llegada = date("Y-m-d H:i");
-$fecha_superada = date("Y-m-d H:i");
-$fecha_fin = date("Y-m-d H:i");
+//$fecha_corte = date("Y-m-d H:i");
+//$fecha_aviso = date("Y-m-d H:i");
+//$fecha_salida = date("Y-m-d H:i");
+//$fecha_llegada = date("Y-m-d H:i");
+//$fecha_superada = date("Y-m-d H:i");
+//$fecha_fin = date("Y-m-d H:i");
 ?>
 <div class="page-wrapper">
     <div class="page-content">
@@ -25,7 +25,9 @@ $fecha_fin = date("Y-m-d H:i");
             </div>
             <div class="ms-auto">
                 <div>
+                    <?php if (isAdmin() || isExpert()) { ?>
                     <input type="button" id="btn-save-mttoc" class="btn btn-primary px-4" value="Guardar" />
+                    <?php } ?>
                     <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
                 </div>
             </div>
@@ -105,7 +107,7 @@ $fecha_fin = date("Y-m-d H:i");
                                         <?php
                                         $resultado = mysqli_query($conexion, "SELECT id,
                                                                                     concat(nombre, ' ', ap_pat, ' ', ap_mat) AS nombre  
-                                                                                    FROM usuarios where iddepartamento = '$iddepartamento' AND nivel in (1, 2)");
+                                                                                    FROM usuarios where iddepartamento = '$iddepartamento' AND nivel in (1, 2, 3)");
                                         while($dato=mysqli_fetch_array($resultado))
                                             echo '<option value="'.$dato['id'].'">'.$dato['nombre'].'</option>';
                                         ?>
@@ -525,7 +527,9 @@ $fecha_fin = date("Y-m-d H:i");
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
             <div class="ms-auto">
                 <div>
+                    <?php if (isAdmin() || isExpert()) { ?>
                     <input type="button" id="btn-save-mttoc2" class="btn btn-primary px-4" value="Guardar" />
+                    <?php } ?>
                     <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
                 </div>
             </div>
@@ -552,6 +556,8 @@ $fecha_fin = date("Y-m-d H:i");
      }
 
     function saveMttoCorrectivo() {
+
+         alert('fecha: ' + $("#fecha_corte").val());
 
          if ( verifyValues() ) {
              var frmData = new FormData;
@@ -611,6 +617,7 @@ $fecha_fin = date("Y-m-d H:i");
                  contentType: false,
                  cache: false,
                  success: function (resp) {
+                     console.log('Resp: ' + resp);
                      alert(resp);
                      //info_notify('Datos insertados correctamente', 'info');
                      setTimeout(function () {

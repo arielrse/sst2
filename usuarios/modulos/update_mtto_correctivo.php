@@ -9,14 +9,38 @@ $iddepartamento = $_POST['iddepartamento'];
 $usr_resp = $_POST['usr_resp'];
 $idestacione = $_POST['idestacione'];
 $fecha_eje = $_POST['fecha_eje'];
-$fecha_corte = $_POST['fecha_corte'];
 $tipo_solucion = $_POST['tipo_solucion'];
+
+$fecha_corte = $_POST['fecha_corte'];
 $fecha_aviso = $_POST['fecha_aviso'];
 $fecha_llegada = $_POST['fecha_llegada'];
 $fecha_salida = $_POST['fecha_salida'];
 $fecha_superada = $_POST['fecha_superada'];
-$usr_coord = $_POST['usr_coord'];
 $fecha_fin = $_POST['fecha_fin'];
+
+//fecha_corte = '$fecha_corte',
+
+$paramValues = "";
+if ($fecha_corte != ''){
+    $paramValues .= "fecha_corte = '".$fecha_corte."',";
+}
+if ($fecha_aviso != ''){
+    $paramValues .= "fecha_aviso = '".$fecha_aviso."',";
+}
+if ($fecha_llegada != ''){
+    $paramValues .= "fecha_llegada = '".$fecha_llegada."',";
+}
+if ($fecha_salida != ''){
+    $paramValues .= "fecha_salida = '".$fecha_salida."',";
+}
+if ($fecha_superada != ''){
+    $paramValues .= "fecha_superada = '".$fecha_superada."',";
+}
+if ($fecha_fin != ''){
+    $paramValues .= "fecha_fin = '".$fecha_fin."',";
+}
+
+$usr_coord = $_POST['usr_coord'];
 $ticket_principal = $_POST['ticket_principal'];
 $atencion = $_POST['atencion'];
 $ticket_relacion = $_POST['ticket_relacion'];
@@ -55,12 +79,7 @@ idestacione = '$idestacione',
 usr_resp = '$usr_resp',
 fecha_eje = '$fecha_eje',
 tipo_solucion = '$tipo_solucion',
-fecha_corte = '$fecha_corte',
-fecha_aviso = '$fecha_aviso',
-fecha_salida = '$fecha_salida',
-fecha_llegada = '$fecha_llegada',
-fecha_superada = '$fecha_superada',
-fecha_fin = '$fecha_fin',
+".$paramValues."
 usr_coord = '$usr_coord',
 ticket_principal = '$ticket_principal',
 ticket_relacion = '$ticket_relacion',

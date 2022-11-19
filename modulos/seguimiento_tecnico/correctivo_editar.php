@@ -76,7 +76,9 @@ $notas = $dato['notas'];
                     <input type="submit" id="btn-generar" class="btn btn-secondary px-4" value="Generar" />
                     <input type="hidden" name="idcorrectivo" id="idcorrectivo" value="<?=$id?>" />
 
+                    <?php if (isAdmin() || isExpert()) { ?>
                     <input type="button" id="btn-save-mttoc" class="btn btn-primary px-4" value="Guardar" />
+                    <?php } ?>
                     <button type="button" class="btn btn-outline-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>
                 </form>
             </div>
@@ -200,7 +202,7 @@ $notas = $dato['notas'];
                                                 <?php
                                                 $resultado = mysqli_query($conexion, "SELECT id,
                                                                                             concat(nombre, ' ', ap_pat, ' ', ap_mat) AS nombre  
-                                                                                            FROM usuarios where iddepartamento = '$iddepartamento' AND nivel in (1,2)");
+                                                                                            FROM usuarios where iddepartamento = '$iddepartamento' AND nivel in (1,2, 3)");
                                                 while($dato=mysqli_fetch_array($resultado)) {
                                                     $selected = ($usr_resp == $dato['id']) ? 'selected' : '';
                                                     echo '<option value="' . $dato['id'] . '" '.$selected.'>' . $dato['nombre'] . '</option>';
@@ -772,7 +774,9 @@ $notas = $dato['notas'];
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
             <div class="ms-auto">
                 <div>
-                    <input type="button" id="btn-save-mttoc2" class="btn btn-primary px-4" value="Guardar" />
+                    <?php if (isAdmin() || isExpert()) { ?>
+                        <input type="button" id="btn-save-mttoc2" class="btn btn-primary px-4" value="Guardar" />
+                    <?php } ?>
                     <button type="button" class="btn btn-outline-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>
                 </div>
             </div>

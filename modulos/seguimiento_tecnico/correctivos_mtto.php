@@ -31,9 +31,11 @@ $fin    = $anio."-".$mes."-".$ultimoDiaMes;
                 <form name="amper" method="post" action="<?=$link_modulo?>?path=correctivos_mtto.php">
                 <div class="row row-cols-auto g-3">
 
+                    <?php if (isAdmin() || isExpert()) { ?>
                         <div class="col">
                             <input name="nuevoE" type="button" value="Nuevo" class="btn btn-sm btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=correctivo_nuevo.php'" />
                         </div>
+                    <?php } ?>
                         <div class="col">
                             <select name="anio" class="form-select form-select-sm">
                                 <option value="2021" <? if($anio==2021) echo"class='naranja' selected"; ?>>2021</option>
