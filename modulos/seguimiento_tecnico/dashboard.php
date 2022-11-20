@@ -33,28 +33,7 @@ $porcentajeEje = round(($cantMttosEje/$cantMttos)*100, 1);
 <div class="page-wrapper">
     <div class="page-content">
 
-        <!--<div class="row">
-            <div class="col-xl-12 mx-auto">
-                <div class="card">
-                    <div class="row" style="flex: .5 .5 auto; padding: .5rem .5rem;">
-
-                        <div class="col-md-4">
-                            <select id="inputState" class="form-select form-select-sm">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-4">
-                            <button class="btn btn-sm btn-secondary" id="next-btn" type="button">Actualizar</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>-->
-
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-2 row-cols-xxl-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-2 row-cols-xxl-2">
             <div class="col">
                 <div class="card radius-10 bg-gradient-cosmic">
                     <div class="card-body">
