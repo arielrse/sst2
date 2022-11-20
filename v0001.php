@@ -1,7 +1,6 @@
 <?php
 require("funciones/motor.php");
-
-ini_set("session.gc_maxlifetime","43200");
+ini_set("session.gc_maxlifetime","28800");
 session_start();
 
 $santox = $_POST["santo"];
