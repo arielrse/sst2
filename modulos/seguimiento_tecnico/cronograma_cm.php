@@ -6,7 +6,7 @@ $idcentro = isset($_GET["cm"]) ? $_GET["cm"] : 0;
 if ($idcentro == 0) {
     $mes      = isset($_POST["mes"]) ? $_POST["mes"] : date("n");
     $anio     = isset($_POST["anio"]) ? $_POST["anio"] : date("Y");
-    $idcentro = $_POST["idcentro"] ? $_POST["idcentro"] : 0;
+    $idcentro = isset($_POST["idcentro"]) ? $_POST["idcentro"] : 0;
 }
 
 if ($idcentro == 0){
