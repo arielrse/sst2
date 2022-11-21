@@ -311,35 +311,35 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $ti
                                                     <td class="col-55p"><strong>Lectura</strong></td>
                                                </tr>
                                                 <tr>
-                                                    <td class="col-50p">'.constant('F1_01').'</td>
+                                                    <td class="col-50p">Potencia de transmisión</td>
                                                     <td class="col-50p">'.$f2_09_01.'</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="col-50p">'.constant('F1_02').'</td>
+                                                    <td class="col-50p">Nivel de apuntamiento/enlace</td>
                                                     <td class="col-50p">'.$f2_10_01.'</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="col-50p">'.constant('F1_03').'</td>
+                                                    <td class="col-50p">Nivel croospol</td>
                                                     <td class="col-50p">'.$f2_11_01.'</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="col-50p">'.constant('F1_04').'</td>
+                                                    <td class="col-50p">Up (kbps)</td>
                                                     <td class="col-50p">'.$f2_12_01.'</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="col-50p">'.constant('F1_05').'</td>
+                                                    <td class="col-50p">Down (kbps)</td>
                                                     <td class="col-50p">'.$f2_13_01.'</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="col-50p">'.constant('F1_06').'</td>
+                                                    <td class="col-50p">Configuración</td>
                                                     <td class="col-50p">'.$f2_14_01.'</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="col-50p">'.constant('F1_07').'</td>
+                                                    <td class="col-50p">Azimut</td>
                                                     <td class="col-50p">'.$f2_15_01.'</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="col-50p">'.constant('F1_08').'</td>
+                                                    <td class="col-50p">Elevación</td>
                                                     <td class="col-50p">'.$f2_16_01.'</td>
                                                 </tr>
                                             </table>
