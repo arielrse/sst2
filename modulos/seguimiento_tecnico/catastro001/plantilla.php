@@ -122,7 +122,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idcatastrox, $
                                 <td class="col-25p">'.$d16_02.'</td>
                            </tr>
                            <tr>
-                                <td class="col-50p">Largo total del poste - m</td>
+                                <td class="col-50p">Marca de transformador</td>
                                 <td class="col-25p" colspan="2">'.$d17_01.'</td>
                            </tr>
                            <tr>
