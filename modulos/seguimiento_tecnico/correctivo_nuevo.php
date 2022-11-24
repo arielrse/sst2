@@ -25,7 +25,7 @@ $fecha_eje = date("Y-m-d");
             </div>
             <div class="ms-auto">
                 <div>
-                    <?php if (isAdmin() || isExpert()) { ?>
+                    <?php if (isAdmin() || isExpert() || isTechnical()) { ?>
                     <input type="button" id="btn-save-mttoc" class="btn btn-primary px-4" value="Guardar" />
                     <?php } ?>
                     <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
@@ -527,7 +527,7 @@ $fecha_eje = date("Y-m-d");
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
             <div class="ms-auto">
                 <div>
-                    <?php if (isAdmin() || isExpert()) { ?>
+                    <?php if (isAdmin() || isExpert() || isTechnical()) { ?>
                     <input type="button" id="btn-save-mttoc2" class="btn btn-primary px-4" value="Guardar" />
                     <?php } ?>
                     <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
