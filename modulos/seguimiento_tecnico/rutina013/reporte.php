@@ -27,5 +27,4 @@ $mpdf->writeHtml($css, \Mpdf\HTMLParserMode::HEADER_CSS);
 $mpdf->writeHtml($plantilla, \Mpdf\HTMLParserMode::HTML_BODY);
 $mpdf->output($nombreFile.".pdf", "I");
 
-generate($css, $plantilla);
 ?>
