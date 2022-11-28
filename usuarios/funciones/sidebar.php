@@ -95,7 +95,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
             </a>
         </li>
 
-        <?php if (isAdmin() || isExpert()) { ?>
+        <?php if (isAdmin() || isExpert() || isNationalClient() || isClient()) { ?>
         <li>
             <a href="<?=$mst?>extraworks.php">
                 <div class="parent-icon"><i class='bx bx-bullseye'></i>
@@ -174,6 +174,16 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
 
             </ul>
         </li>
+
+        <?php if ( isAdmin() || isExpert() ) { ?>
+        <li>
+            <a href="<?=$muser?>ver_materiales.php">
+                <div class="parent-icon"><i class='bx bx-collection'></i>
+                </div>
+                <div class="menu-title">Materiales</div>
+            </a>
+        </li>
+        <?php } ?>
 
         <li class="menu-label">Configuraciones</li>
 

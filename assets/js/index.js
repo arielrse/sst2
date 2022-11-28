@@ -101,7 +101,7 @@ $(function() {
 
 
    // chart 6
-    var ctx = document.getElementById("chart6").getContext('2d');
+    /*var ctx = document.getElementById("chart6").getContext('2d');
    
       var gradientStroke3 = ctx.createLinearGradient(0, 0, 0, 300);
       gradientStroke3.addColorStop(0, '#42e695');
@@ -144,13 +144,13 @@ $(function() {
 			  }]
 		     }
 		}
-      });
+      });*/
 	  
 	  
 	  
 	  
   // chart 7
- var ctx = document.getElementById('chart7').getContext('2d');
+ /*var ctx = document.getElementById('chart7').getContext('2d');
 
   var gradientStroke1 = ctx.createLinearGradient(0, 0, 0, 300);
       gradientStroke1.addColorStop(0, '#ee0979');
@@ -205,7 +205,7 @@ $(function() {
 		     }
 
          }
-      });  
+      });  */
 	  
 	  
 	  
@@ -349,7 +349,7 @@ jQuery('#dashboard-map').vectorMap(
 	
 
   // chart 16
-  var ctx = document.getElementById("chart16").getContext('2d');
+  /*var ctx = document.getElementById("chart16").getContext('2d');
 
     var gradientStroke5 = ctx.createLinearGradient(0, 0, 0, 300);
       gradientStroke5.addColorStop(0, '#7f00ff');
@@ -393,7 +393,7 @@ jQuery('#dashboard-map').vectorMap(
 			  displayColors:false
             }
         }
-      });
+      });*/
 
 
 	  
@@ -445,7 +445,7 @@ jQuery('#dashboard-map').vectorMap(
 
 
 // chart 18
-var ctx = document.getElementById("chart18").getContext('2d');
+/*var ctx = document.getElementById("chart18").getContext('2d');
 
     var gradientStroke11 = ctx.createLinearGradient(0, 0, 0, 300);
       gradientStroke11.addColorStop(0, '#ba8b02');
@@ -487,7 +487,7 @@ var ctx = document.getElementById("chart18").getContext('2d');
 			  displayColors:false
             }
         }
-      });
+      });*/
 	  
 	  
 	  

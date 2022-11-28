@@ -54,6 +54,8 @@ $idgrupo = $dato['idgrupo'];
 /*$usr_tec1 = $dato['usr_tec1'];
 $usr_tec2 = $dato['usr_tec2'];*/
 $notas = $dato['notas'];
+$insumos = $dato['insumos'];
+$repuestos = $dato['repuestos'];
 
 ?>
 <input type="hidden" name="idc" id="idc" value="<?=$id?>" />
@@ -649,38 +651,6 @@ $notas = $dato['notas'];
                                             </select>
                                         </td>
                                     </tr>
-                                    <!--<tr>
-                                        <td class="col-xl-8">
-                                            <select id="usr_tec1" name="usr_tec1" class="single-select">
-                                                <option value="" selected class="title7"> Seleccionar... </option>
-                                                <?php
-/*                                                $resultado = mysqli_query($conexion, "SELECT id,
-                                                                                            concat(nombre, ' ', ap_pat, ' ', ap_mat) AS nombre  
-                                                                                            FROM usuarios where iddepartamento = '$iddepartamento' AND nivel = 2");
-                                                while($dato=mysqli_fetch_array($resultado)) {
-                                                    $selected = ($usr_tec1 == $dato['id']) ? 'selected' : '';
-                                                    echo '<option value="' . $dato['id'] . '" '.$selected.'>' . $dato['nombre'] . '</option>';
-                                                }
-                                                */?>
-                                            </select>
-                                        </td>
-                                    </tr>-->
-                                    <!--<tr>
-                                        <td class="col-xl-8">
-                                            <select id="usr_tec2" name="usr_tec2" class="single-select">
-                                                <option value="" selected class="title7"> Seleccionar... </option>
-                                                <?php
-/*                                                $resultado = mysqli_query($conexion, "SELECT id,
-                                                                                                    concat(nombre, ' ', ap_pat, ' ', ap_mat) AS nombre  
-                                                                                                    FROM usuarios where iddepartamento = '$iddepartamento' AND nivel = 2");
-                                                while($dato=mysqli_fetch_array($resultado)) {
-                                                    $selected = ($usr_tec2 == $dato['id']) ? 'selected' : '';
-                                                    echo '<option value="' . $dato['id'] . '" '.$selected.'>' . $dato['nombre'] . '</option>';
-                                                }
-                                                */?>
-                                            </select>
-                                        </td>
-                                    </tr>-->
 
                                     </tbody>
                                 </table>
@@ -696,8 +666,13 @@ $notas = $dato['notas'];
 
                     </div>
 
-                    <div class="tab-pane fade" id="repuestosTab" role="tabpanel"></div>
-                    <div class="tab-pane fade" id="insumosTab" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="repuestosTab" role="tabpanel">
+                        <?php require("../../modulos/seguimiento_tecnico/correctivo_repuestos.php"); ?>
+                    </div>
+
+                    <div class="tab-pane fade" id="insumosTab" role="tabpanel">
+                        <?php require("../../modulos/seguimiento_tecnico/correctivo_materiales.php"); ?>
+                    </div>
 
                     <div class="tab-pane fade" id="adjuntosTab" role="tabpanel">
                         <?php if ( !isClient() && !isNationalClient() ) { ?>
@@ -714,11 +689,6 @@ $notas = $dato['notas'];
                                             <button class="btn btn-sm btn-outline-primary" type="button" id="btn-subirimg" name="btn-subirimg"><i class='bx bx-plus'></i></button>
                                         </div>
                                     </div>
-                                    <!--<div class="input-group">
-                                        <input class="form-control form-control-sm" type="file" id="imagen" name="imagen">
-                                        <input id="titulodoc" name="titulodoc" class="form-control form-control-sm" type="text" placeholder="Titulo">
-                                        <button class="btn btn-sm btn-outline-primary" type="button" id="btn-subirimg" name="btn-subirimg"><i class='bx bx-plus'></i></button>
-                                    </div>-->
                                 </div>
                             </div>
                         <?php } ?>
@@ -852,7 +822,8 @@ $notas = $dato['notas'];
                 alert(resp);
             }
         });
-
+        guardarMaterial();
+        guardarRepuesto();
     }
 
     //-------------------------------------------------------------------------------

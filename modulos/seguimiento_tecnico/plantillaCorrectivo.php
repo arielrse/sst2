@@ -16,6 +16,8 @@ function getPlantilla($conexion, $idcorrectivo){
         $tickets_rel .= '<p>'.$value.'</p>';
     }
 
+    $reporteMateriales = getReporteMateriales($conexion, $idcorrectivo);
+
     $reporteFotos = getReporteFotografico($conexion, $idcorrectivo);
 
     $plantilla =
@@ -243,6 +245,8 @@ function getPlantilla($conexion, $idcorrectivo){
                         </table>
                     </main>
         
+                   '.$reporteMateriales.'
+        
                     '.$reporteFotos.'
                     
                 </div>
@@ -331,6 +335,86 @@ function getReporteFotografico($conexion, $idcorrectivo){
         }
     }
     $result .= '</tr></table></div>';
+
+    return $result;
+}
+
+function getReporteMateriales($conexion, $idcorrectivo){
+    $res  = mysqli_query($conexion,"SELECT r.insumos, r.repuestos FROM rutina_correctivo r WHERE r.id = " . $idcorrectivo);
+    $dato = mysqli_fetch_array($res);
+    $insumosDatos   = $dato['insumos'];
+    $repuestosDatos = $dato['repuestos'];
+
+    $tabla_insumos   = json_decode($insumosDatos, true);
+    $tabla_repuestos = json_decode($repuestosDatos, true);
+    $result = '
+        <main>
+            <table class="tborder">
+                <tr>
+                    <td class="bg-col1" colspan="3" align="center">LISTA DE REPUESTOS UTILIZADOS</td>
+                </tr>
+                <tr>
+                    <td class="bg-col1" width="34%">DESCRIPCIÓN DE REPUESTOS </td>
+                    <td class="bg-col1" width="33%">PROVISTOS POR ENTEL (No DE SERIE)</td>
+                    <td class="bg-col1" width="33%">REPUESTOS DAÑADOS (No DE SERIE)</td>
+                </tr>
+    ';
+
+    if ($tabla_repuestos)
+        foreach ($tabla_repuestos as $objVal) {
+            $result .= '
+            <tr>
+                <td>'.$objVal['repuesto'].'</td>
+                <td>'.$objVal['provisto'].'</td>
+                <td>'.$objVal['danado'].'</td>
+            </tr>
+            ';
+        }
+    $result .= '</table></main>';
+
+    $result .= '
+        <main>
+            <table class="tborder">
+                <thead>
+                <tr>
+                    <td class="bg-col1" colspan="7" align="center">LISTA DE INSUMOS UTILIZADOS</td>
+                </tr>
+                <tr>
+                    <td class="bg-col1" width="7%">Cod</td>
+                    <td class="bg-col1" width="30%">Material</td>
+                    <td class="bg-col1" width="8%">Unidad</td>
+                    <td class="bg-col1" width="10%">Precio</td>
+                    <td class="bg-col1" width="10%">Cantidad</td>
+                    <td class="bg-col1" width="13%">Total</td>
+                    <td class="bg-col1" width="20%">Observaciones</td>
+                </tr>
+                </thead>
+    ';
+    if ($tabla_insumos)
+        $totalMonto = 0;
+        foreach ($tabla_insumos as $objVal) {
+            $totalMonto += $objVal['total'];
+            $result .= '
+            <tr>
+                <td>'.$objVal['codigo'].'</td>
+                <td>'.$objVal['nombre'].'</td>
+                <td>'.$objVal['unidad'].'</td>
+                <td align="right">'.$objVal['precio'].'</td>
+                <td align="center">'.$objVal['cantidad'].'</td>
+                <td align="right">'.number_format($objVal['total'], 2, '.', ',').'</td>
+                <td>'.$objVal['observacion'].'</td>
+            </tr>
+            ';
+        }
+    $result .= '
+        <tr>
+            <td colspan="4"></td>
+            <td align="right">TOTAL:</td>
+            <td align="right">'.number_format($totalMonto, 2, '.', ',').'</td>
+            <td></td>
+        </tr>
+    ';
+    $result .= '</table></main>';
 
     return $result;
 }
