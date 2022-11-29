@@ -33,7 +33,7 @@ date_default_timezone_set('America/La_Paz');
             data = '$datos'
             where idcatastro = $idcatastro");
 
-    mysqli_free_result();
+    //mysqli_free_result();
     mysqli_close($conexion);
 
 ?>
