@@ -10,16 +10,7 @@ $coddep = $_GET['coddep'];
 $query = "select * from rutina_imagen where idrutina='$idrutina' order by id desc ";
 $resultado = mysqli_query($conexion, $query);
 
-$sizeimgage = 0;
-foreach($resultado as $row) {
-    $idImg = $row['id'];
-    $ruta_img = "../../fotos/" . $row['imagen'];
-    $sizeimgage += filesize($ruta_img);
-}
-$sizeimgage /= (1024*1024);
-$sizeimgage = round($sizeimgage, 2);
 ?>
-
 
 <div class="page-wrapper">
     <div class="page-content">
@@ -33,7 +24,7 @@ $sizeimgage = round($sizeimgage, 2);
                         <div class="form-group">
 
                             <div class="mb-3">
-                                <label for="formFile" class="form-label">Imagenes para reporte fotográfico <?php echo '('.$sizeimgage.')' ?></label>
+                                <label for="formFile" class="form-label">Imagenes para reporte fotográfico</label>
                                 <input class="form-control form-control-sm" type="file" id="imagen" name="imagen">
                             </div>
 
@@ -61,7 +52,7 @@ $sizeimgage = round($sizeimgage, 2);
 
                         <div class="row row-cols-auto pb-2">
                             <?php
-                            $botonCargar = ($estado == 'PEN') ? '<button type="button" class="btn btn-primary px-4" id="cargar" name="cargar">Cargar Imagen</button>' : '';
+                            $botonCargar = ($estado == 'PEN') ? '<button type="button" class="btn btn-primary" id="cargar" name="cargar">Cargar Imagen</button>' : '';
                             $botonCargar = (!isClient() && !isNationalClient()) ? $botonCargar : "";
                             ?>
                             <div class="col">
@@ -69,15 +60,8 @@ $sizeimgage = round($sizeimgage, 2);
                             </div>
 
                             <div class="col">
-                                <input type="button" class="btn btn-secondary px-4" value="Cancelar" onclick="history.back()" />
+                                <input type="button" class="btn btn-secondary px-5" value="Cancelar" onclick="history.back()" />
                             </div>
-
-                            <?php if (isAdmin() || isExpert()){ ?>
-                            <div class="col">
-                                <button type="button" class="btn btn-danger px-4" id="btn-resize" name="btn-resize">Reducir IMG</button>
-                            </div>
-                            <?php } ?>
-
                             <div class="col">
                                 <div id="loading"></div>
                             </div>
@@ -128,37 +112,6 @@ $sizeimgage = round($sizeimgage, 2);
 </div>
 
 <script type=text/javascript>
-
-    $('#btn-resize').click(function(){
-        if (confirm('Esta seguro de continuar?, esta operacion reduce la calidad de las imagenes.')) {
-
-            var btn_resize = $("#btn-resize");
-
-            var idrutina = $('#idrutina').val()
-            var frmData = new FormData;
-            frmData.append("idrutina", idrutina);
-
-            $.ajax({
-                url: 'rutina_imageresize.php',
-                type: 'POST',
-                data: frmData,
-                processData: false,
-                contentType: false,
-                cache: false,
-                beforeSend: function (data) {
-                    btn_resize.attr("disabled", true);
-                    $("#loading").html('<div class="spinner-border spinner-border-sm" role="status"></div>');
-                },
-                success: function (data) {
-                    alert(data)
-                    $("#imagenesDiv").load(window.location + " #imagenesDiv");
-                    //document.querySelector('#cargar').value = textoSubir;
-                    btn_resize.attr("disabled", false);
-                    $("#loading").html('');
-                }
-            })
-        }
-    });
 
     function fileValidation(){
         var fileInput = document.getElementById('imagen');
