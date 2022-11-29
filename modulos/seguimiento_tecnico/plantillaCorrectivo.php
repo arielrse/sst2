@@ -320,11 +320,11 @@ function getReporteFotografico($conexion, $idcorrectivo){
 
                 adjustPhotoOrientation($file_image);
                 $result .= '
-                <td width="300px" height="300px" align="center">
+                <td align="center">
                     <div>
-                        <img src="' . $file_image . '" style="width: auto; height: auto; display: block;" />
-                    </div>                                       
-                    <p style="font-size: 14px;">'.$data['titulo'].'</p>
+                        <img src="' . $file_image . '" style="width: auto; height: 400px; margin: auto; display: block;" />
+                        <div style="font-size: 14px; margin-top: 5px" >' . $data['titulo'] . '</div>
+                    </div>
                 </td>';
 
                 if (($num % 3) == 0) {
