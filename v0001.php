@@ -1,6 +1,7 @@
 <?php
 require("funciones/motor.php");
-ini_set("session.gc_maxlifetime","28800");
+session_set_cookie_params(36000);
+ini_set("session.gc_maxlifetime","36000");
 session_start();
 
 $santox = $_POST["santo"];
@@ -23,6 +24,7 @@ if( $filas!=0 ) {
     $_SESSION["remitente"] = "st@encens.net";
     $_SESSION["nombre_remitente"] = "Sistema de Seguimiento Tecnico";
     $_SESSION["web"] = "http://exsmecon.encens.net";
+    $_SESSION["time"] = time();
 
     $_SESSION["gestion"] = date("Y");
     $id_usuario = $dato['id'];
