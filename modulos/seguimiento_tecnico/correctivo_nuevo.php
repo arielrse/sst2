@@ -211,7 +211,7 @@ $fecha_eje = date("Y-m-d");
                         </select>
                     </div>
                     <div class="col">
-                        <label for="ticket_principal" class="form-label">Ticket GFM principal:</label>
+                        <label for="ticket_principal" class="form-label">Ticket principal:</label>
                         <select id="ticket_principal" name="ticket_principal" class="single-select">
                             <option value="" selected class="title7"> Seleccionar... </option>
                             <?php
@@ -350,7 +350,7 @@ $fecha_eje = date("Y-m-d");
                             <tr>
                                 <td class="col-xl-4 bg-light">Solucion</td>
                                 <td class="col-xl-8">
-                                    <select name="solucion" id="solucion" class="form-select form-select-sm">
+                                    <select name="solucion" id="solucion" class="single-select">
                                         <option value="">Seleccionar...</option>
                                     </select>
                                 </td>
@@ -685,15 +685,16 @@ $fecha_eje = date("Y-m-d");
 
         var idtipofalla=$(this).val();
         var idequipofalla=$('#equipofalla').val();
-        //alert(idequipofalla);
+        var idsistemafalla = $('#sistemafalla').val();
+        //alert('Sistema: ' + idsistemafalla);
 
         if (idtipofalla!==''){
             //alert('funciona');
             $.ajax({
-                data:{idtipofalla:idtipofalla, idequipofalla:idequipofalla},
+                data:{idtipofalla:idtipofalla, idequipofalla:idequipofalla, idsistemafalla:idsistemafalla},
                 dataType:'html',
                 type:'POST',
-                url:'../../paquetes/ajax/get_solucion.php'
+                url:'../../paquetes/ajax/get_solucion_todo.php'
             }).done(function(data){
                 solucion.html(data);
                 solucion.prop('disabled',false);

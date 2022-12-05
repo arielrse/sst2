@@ -74,7 +74,7 @@ function getPlantilla($conexion, $idcorrectivo){
                                 <table class="tborder">
                                     <tr><td class="bg-col1" colspan="2">PERSONAL DE COORDINACIÓN ENTEL:</td></tr>
                                     <tr><td colspan="2">'.$data['nomCoord'].'</td></tr>
-                                    <tr><td class="bg-col1">Ticket GFM principal:</td><td>'.$data['ticket_principal'].'</td></tr>
+                                    <tr><td class="bg-col1">Ticket principal:</td><td>'.$data['ticket_principal'].'</td></tr>
                                     <tr><td class="bg-col1">Tickets relacionados:</td><td>'.$tickets_rel.'</td></tr>
                                 
                                 </table>

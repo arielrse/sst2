@@ -312,7 +312,7 @@ $repuestos = $dato['repuestos'];
                                 </select>
                             </div>
                             <div class="col">
-                                <label for="ticket_principal" class="form-label">Ticket GFM principal:</label>
+                                <label for="ticket_principal" class="form-label">Ticket principal:</label>
                                 <select id="ticket_principal" name="ticket_principal" class="single-select">
                                     <option value="" selected class="title7"> Seleccionar... </option>
                                     <?php
@@ -483,13 +483,13 @@ $repuestos = $dato['repuestos'];
                                     <tr>
                                         <td class="col-xl-4 bg-light">Solucion</td>
                                         <td class="col-xl-8">
-                                            <select name="solucion" id="solucion" class="form-select form-select-sm">
+                                            <select name="solucion" id="solucion" class="single-select">
                                                 <option value="">Seleccionar...</option>
                                                 <?php
-                                                $res2=mysqli_query($conexion, "SELECT idsolucion, nombresolucion FROM ticket_solucion"	);
+                                                $res2=mysqli_query($conexion, "SELECT idsolucion, nombresolucion FROM ticket_solucion order by idsolucion, nombresolucion");
                                                 while($dato2=mysqli_fetch_array($res2)){
                                                     $idsolucion = $dato2['idsolucion'];
-                                                    $nombre     = $dato2['nombresolucion'];
+                                                    $nombre     = $dato2['idsolucion'] .' '.$dato2['nombresolucion'];
                                                     $selected = ($solucion == $idsolucion) ? 'selected' : '';
                                                     echo '<option value="'.$idsolucion.'" '.$selected.'>'.$nombre.'</option>';
                                                 }
@@ -881,15 +881,16 @@ $repuestos = $dato['repuestos'];
 
         var idtipofalla=$(this).val();
         var idequipofalla=$('#equipofalla').val();
+        var idsistemafalla = $('#sistemafalla').val();
         //alert(idequipofalla);
 
         if (idtipofalla!==''){
             //alert('funciona');
             $.ajax({
-                data:{idtipofalla:idtipofalla, idequipofalla:idequipofalla},
+                data:{idtipofalla:idtipofalla, idequipofalla:idequipofalla, idsistemafalla:idsistemafalla},
                 dataType:'html',
                 type:'POST',
-                url:'../../paquetes/ajax/get_solucion.php'
+                url:'../../paquetes/ajax/get_solucion_todo.php'
             }).done(function(data){
                 solucion.html(data);
                 solucion.prop('disabled',false);
