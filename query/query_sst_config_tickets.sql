@@ -1,5 +1,8 @@
 SELECT * FROM ticket_solucion s
-WHERE s.`idsolucion` LIKE '%TRS%';
+WHERE s.`idsolucion` LIKE '%ES%';
+
+SELECT * FROM ticket_tipofalla t
+WHERE t.idtipofalla LIKE '%EF%';
 
 -- EQUIPOFALLA
 -- TRE-024 MODEM
@@ -30,3 +33,9 @@ INSERT INTO `ticket_equipofallatipofalla` (`idequipofalla`, `idtipofalla`) VALUE
 
 -- TRS-033 FUSION DE FO
 INSERT INTO ticket_tipofallasolucion (`idtipofalla`, `idsolucion`, `idequipofalla`) VALUES('TRF-053','TRS-033','TRE-029');
+
+-- 07.12.2022
+INSERT INTO `ticket_tipofalla` (`idtipofalla`, `nombretipofalla`, `idsistemafalla`) VALUES('EF-065','Exposición solar insuficiente','2');
+INSERT INTO `ticket_solucion` (`idsolucion`, `nombresolucion`, `idsistemafalla`) VALUES('ES-050','Otros','2');
+INSERT INTO `ticket_equipofallatipofalla` (`idequipofalla`, `idtipofalla`) VALUES('EE-007','EF-065');
+INSERT INTO `ticket_tipofallasolucion` (`idtipofalla`, `idsolucion`, `idequipofalla`) VALUES('EF-065','ES-050','EE-007');

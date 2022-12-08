@@ -70,6 +70,7 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
 $hrefpdf = "../../modulos/$modulo/catastro$cform/reporte.php";
 ?>
     <input type="hidden" id="idcatastro" value="<?php echo $idcatastro ?>" />
+    <input type="hidden" id="catastroId" value="<?php echo $idcatastro ?>" />
     <input type="hidden" name="link_modulo" id="link_modulo" value="<?php echo $hrefrutina ?>" />
 
     <?php require("catastro_head_button.php"); ?>
