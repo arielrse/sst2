@@ -187,7 +187,7 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
 
         <li class="menu-label">Configuraciones</li>
 
-        <?php if ( isAdmin() || isExpert() ) { ?>
+        <?php if ( isAdmin() ) { ?>
         <li>
             <a href="<?=$muser?>ver_usuarios.php">
             <!--<a href="#">-->
@@ -196,6 +196,16 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
                 <div class="menu-title">Usuarios</div>
             </a>
         </li>
+        <?php } ?>
+
+        <?php if ( isAdmin() ) { ?>
+            <li>
+                <a href="<?=$muser?>periodos.php">
+                    <div class="parent-icon"><i class='bx bx-ruler'></i>
+                    </div>
+                    <div class="menu-title">Periodos</div>
+                </a>
+            </li>
         <?php } ?>
 
         <li>
