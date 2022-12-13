@@ -55,7 +55,7 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
 
         <table width="100%">
             <tr>
-                <td  align="center"><span class="naranja">&nbsp;Centro de Mantenimiento: <?php /*echo $idcentro . ' - ' . $mes . ' - ' . $ultimoDiaMes;*/ ?></span></td>
+                <td  align="center"><span class="naranja">&nbsp;CM/SCM: <?php /*echo $idcentro . ' - ' . $mes . ' - ' . $ultimoDiaMes;*/ ?></span></td>
                 <td>
                     <form name="amper" method="post" action="<?=$link_modulo?>?path=cronograma_cm.php">
                         <input type="hidden" name="param_volver" id="param_volver" value="<?php echo $param_volver ?>" />
@@ -101,6 +101,13 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
                                onClick="location.href='<?=$link_modulo?>?path=nuevo_evento.php<?=$param_volver?>'" />
                         <?php } ?>
                     </form>
+                </td>
+                <td>
+                    <div>
+                        <i class='bx bxs-circle text-danger align-middle'><small>Pendiente</small></i>
+                        <i class='bx bxs-circle text-primary align-middle'><small>Ejecutado</small></i>
+                        <i class='bx bxs-circle text-warning align-middle'><small>Reprogramado</small></i>
+                    </div>
                 </td>
             </tr>
         </table>
