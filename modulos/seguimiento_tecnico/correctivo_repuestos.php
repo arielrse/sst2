@@ -6,7 +6,8 @@ $tabla_repuestos = json_decode($repuestosDatos, true);
 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
     <div class="col mb-2">
         <div class="input-group">
-            <?php if ( !isClient() && !isNationalClient() ) { ?>
+            <?php /*if ( !isClient() && !isNationalClient() ) { */?>
+            <?php if ( $permissions ) { ?>
                 <button class="btn btn-sm btn-outline-primary" type="button" id="add-repuesto"><i class='bx bx-plus'></i></button>
             <?php } ?>
 

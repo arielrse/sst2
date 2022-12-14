@@ -17,7 +17,8 @@ $tabla_insumos = json_decode($insumosDatos, true);
                 ?>
             </select>
 
-            <?php if ( !isClient() && !isNationalClient() ) { ?>
+            <?php /*if ( !isClient() && !isNationalClient() ) { */?>
+            <?php if ( $permissions ) { ?>
                 <button class="btn btn-outline-primary" type="button" id="add-material"><i class='bx bx-plus'></i></button>
             <?php } ?>
 

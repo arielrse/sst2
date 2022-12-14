@@ -8,6 +8,7 @@ $consulta = "SELECT r.*
 
 $resultado = mysqli_query($conexion, $consulta);
 $dato = mysqli_fetch_array($resultado);
+$estado = $dato['estado'];
 
 $idcentro = $dato['idcentro'];
 $razon = $dato['razon'];
@@ -57,28 +58,49 @@ $notas = $dato['notas'];
 $insumos = $dato['insumos'];
 $repuestos = $dato['repuestos'];
 
+$permissions = ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient());
+
 ?>
 <input type="hidden" name="idc" id="idc" value="<?=$id?>" />
 <div class="page-wrapper">
     <div class="page-content">
 
-        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-2">
             <div class="breadcrumb-title pe-3">Mtto. Correctivo</div>
 
-            <div class="ps-3">
+            <!--<div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"></li>
                         <li class="breadcrumb-item active" aria-current="page">Nuevo Mantenimiento</li>
                     </ol>
                 </nav>
+            </div>-->
+            <div class="row row-cols-auto pb-2">
+                <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || (isAdmin() && $estado!='REV' ) ) { ?>
+                    <div class="col">
+                        <button type="button" id="toReview" class="btn btn-warning px-3"><i class="bx bx-right-arrow-alt mr-1"></i>A revisión</button>
+                    </div>
+                <?php } ?>
+
+                <?php if ( (isAdmin() || isExpert()) && $estado=='REV') { ?>
+                    <div class="col">
+                        <button type="button" id="toApprove" class="btn btn-success px-3"><i class="bx bx-check mr-1"></i>Aprobar</button>
+                    </div>
+                <?php } ?>
+
+                <?php if ((isAdmin() || isExpert()) && $estado!='PEN') { ?>
+                    <div class="col">
+                        <button type="button" id="toOpen" class="btn btn-danger px-3"><i class="bx bx-lock-open-alt mr-1"></i>Abrir</button>
+                    </div>
+                <?php } ?>
             </div>
             <div class="ms-auto">
                 <form id="frm-generar" action="reporteCorrectivo.php" method="post" enctype="multipart/form-data" target="_blank">
                     <input type="submit" id="btn-generar" class="btn btn-secondary px-4" value="Generar" />
                     <input type="hidden" name="idcorrectivo" id="idcorrectivo" value="<?=$id?>" />
 
-                    <?php if (isAdmin() || isExpert() || isTechnical()) { ?>
+                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                     <input type="button" id="btn-save-mttoc" class="btn btn-primary px-4" value="Guardar" />
                     <?php } ?>
                     <button type="button" class="btn btn-outline-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>
@@ -685,9 +707,11 @@ $repuestos = $dato['repuestos'];
                                         <div class="col-md-7">
                                             <input id="titulodoc" name="titulodoc" class="form-control form-control-sm" type="text" placeholder="Titulo">
                                         </div>
+                                        <?php if ( $permissions ) { ?>
                                         <div class="col-md-1">
                                             <button class="btn btn-sm btn-outline-primary" type="button" id="btn-subirimg" name="btn-subirimg"><i class='bx bx-plus'></i></button>
                                         </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -744,7 +768,7 @@ $repuestos = $dato['repuestos'];
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
             <div class="ms-auto">
                 <div>
-                    <?php if (isAdmin() || isExpert() || isTechnical()) { ?>
+                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                         <input type="button" id="btn-save-mttoc2" class="btn btn-primary px-4" value="Guardar" />
                     <?php } ?>
                     <button type="button" class="btn btn-outline-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>
@@ -756,10 +780,16 @@ $repuestos = $dato['repuestos'];
 </div>
 
 <script type="text/javascript">
+
+    var exists  = !!document.getElementById('btn-save-mttoc');
+    var exists2 = !!document.getElementById('btn-save-mttoc2');
+
     var btn_save_mttoc = document.getElementById('btn-save-mttoc');
     var btn_save_mttoc2 = document.getElementById('btn-save-mttoc2');
-    btn_save_mttoc.addEventListener("click", saveMttoCorrectivo);
-    btn_save_mttoc2.addEventListener("click", saveMttoCorrectivo);
+
+    if (exists)  btn_save_mttoc.addEventListener("click", saveMttoCorrectivo);
+    if (exists2) btn_save_mttoc2.addEventListener("click", saveMttoCorrectivo);
+
 
     function saveMttoCorrectivo() {
 
@@ -998,5 +1028,56 @@ $repuestos = $dato['repuestos'];
     });
 
 
+    /** ----------------------------------------- **/
+    var link_modulo = '../../usuarios/modulos/seguimiento_tecnico.php?path=correctivos_mtto.php';
+    $(document).ready(function() {
+        $('#toReview').click(function(){
+            if (confirm('¿Desea enviar a revisión?')) {
+                var idrutinacorrectivo  = $('#idc').val()
+                var estado = 'REV';
 
+                jQuery.post("../../modulos/seguimiento_tecnico/update_estadoCorrectivo.php", {
+                        idrutinacorrectivo: idrutinacorrectivo,
+                        estado: estado
+                    }, function(data, textStatus){
+                        window.location.href = link_modulo;
+                    }
+                );
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $('#toApprove').click(function(){
+            if (confirm('¿Desea aprobar el Mantenimiento?')) {
+                var idrutinacorrectivo  = $('#idc').val()
+                var estado = 'APR';
+
+                jQuery.post("../../modulos/seguimiento_tecnico/update_estadoCorrectivo.php", {
+                        idrutinacorrectivo: idrutinacorrectivo,
+                        estado: estado
+                    }, function(data, textStatus){
+                        window.location.href = link_modulo;
+                    }
+                );
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $('#toOpen').click(function(){
+            if (confirm('¿Desea abrir el Mantenimiento?')) {
+                var idrutinacorrectivo  = $('#idc').val()
+                var estado = 'PEN';
+
+                jQuery.post("../../modulos/seguimiento_tecnico/update_estadoCorrectivo.php", {
+                        idrutinacorrectivo: idrutinacorrectivo,
+                        estado: estado
+                    }, function(data, textStatus){
+                        window.location.href = link_modulo;
+                    }
+                );
+            }
+        });
+    });
 </script>

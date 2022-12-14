@@ -8,7 +8,7 @@ function getPlantilla($conexion, $idcorrectivo){
     $fecha = $data['fecha_eje'];
     $fecha = date("m/Y", strtotime($fecha) );
 
-    $tiempoTrans    = timeDiff($data['fecha_corte'], $data['fecha_superada']);
+    $tiempoTrans    = ($data['fecha_corte'] != '' && $data['fecha_superada'] != '') ? timeDiff($data['fecha_corte'], $data['fecha_superada']) : '-';
 
     $tickets_arr = explode (",", $data['ticket_relacion']);
     $tickets_rel = '';
@@ -19,6 +19,13 @@ function getPlantilla($conexion, $idcorrectivo){
     $reporteMateriales = getReporteMateriales($conexion, $idcorrectivo);
 
     $reporteFotos = getReporteFotografico($conexion, $idcorrectivo);
+
+    $fecha_corte  = $data['fecha_corte'] != '' ? date("d/m/Y H:i", strtotime($data['fecha_corte']) ) : '';
+    $fecha_aviso  = $data['fecha_aviso'] != '' ? date("d/m/Y H:i", strtotime($data['fecha_aviso']) ) : '';
+    $fecha_salida = $data['fecha_salida'] != '' ?  date("d/m/Y H:i", strtotime($data['fecha_salida'])) : '';
+    $fecha_llegada = $data['fecha_llegada'] != '' ?  date("d/m/Y H:i", strtotime($data['fecha_llegada'])) : '';
+    $fecha_superada = $data['fecha_superada'] != '' ?  date("d/m/Y H:i", strtotime($data['fecha_superada'])) : '';
+    $fecha_fin = $data['fecha_fin'] != '' ?  date("d/m/Y H:i", strtotime($data['fecha_fin'])) : '';
 
     $plantilla =
 '<body>
@@ -62,12 +69,12 @@ function getPlantilla($conexion, $idcorrectivo){
                             <td width="30%">
                                 <table class="tborder">
                                     <tr><td class="bg-col1"></td><td class="bg-col1" align="center">FECHA</td></tr>
-                                    <tr><td class="bg-col1">CORTE SERVICIO TICKET:</td><td>'.date("d/m/Y h:i:s", strtotime($data['fecha_corte']) ).'</td></tr>
-                                    <tr><td class="bg-col1">AVISADO POR ENTEL:</td><td>'.date("d/m/Y h:i:s", strtotime($data['fecha_aviso']) ).'</td></tr>
-                                    <tr><td class="bg-col1">SALIDA DE CM / SCM :</td><td>'.date("d/m/Y h:i:s", strtotime($data['fecha_salida']) ).'</td></tr>
-                                    <tr><td class="bg-col1">LLEGADA A ESTACIÓN :</td><td>'.date("d/m/Y h:i:s", strtotime($data['fecha_llegada']) ).'</td></tr>
-                                    <tr><td class="bg-col1">FALLA SUPERADA :</td><td>'.date("d/m/Y h:i:s", strtotime($data['fecha_superada']) ).'</td></tr>
-                                    <tr><td class="bg-col1">FIN DE TRABAJO :</td><td>'.date("d/m/Y h:i:s", strtotime($data['fecha_fin']) ).'</td></tr>
+                                    <tr><td class="bg-col1">CORTE SERVICIO TICKET:</td><td>'.$fecha_corte.'</td></tr>
+                                    <tr><td class="bg-col1">AVISADO POR ENTEL:</td><td>'.$fecha_aviso.'</td></tr>
+                                    <tr><td class="bg-col1">SALIDA DE CM / SCM :</td><td>'.$fecha_salida.'</td></tr>
+                                    <tr><td class="bg-col1">LLEGADA A ESTACIÓN :</td><td>'.$fecha_llegada.'</td></tr>
+                                    <tr><td class="bg-col1">FALLA SUPERADA :</td><td>'.$fecha_superada.'</td></tr>
+                                    <tr><td class="bg-col1">FIN DE TRABAJO :</td><td>'.$fecha_fin.'</td></tr>
                                 </table>
                             </td>
                             <td width="25%">

@@ -61,19 +61,27 @@ $fin    = $anio."-".$mes."-".$ultimoDiaMes;
                             <!--<button class="btn btn-sm btn-dark px-4" id="btn-buscar">Buscar</button>-->
                             <input class="btn btn-sm btn-secondary px-3" name="ver" type="submit"  value="Buscar" />
                         </div>
+                        <!--<div class="col">
+                            <div>
+                                <span class="text-danger"><i class='bx bxs-circle'>Pendiente</i></span>
+                                <span class="text-warning"><i class='bx bxs-circle'>Revisión</i></span>
+                                <span class="text-success"><i class='bx bxs-circle'>Aprobado</i></span>
+                            </div>
+                        </div>-->
                 </div>
                 </form>
 
                 <div class="table-responsive">
-                    <table id="table-correctivos" class="table table-sm table-striped table-bordered">
-                        <thead class="table-light">
+                    <table id="table-correctivos" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
                         <tr>
                             <th width="5%">Fecha</th>
-                            <th width="30%">Razon</th>
+                            <th width="10%">Razon</th>
                             <th width="20%">Centro</th>
                             <th width="20%">Estacion</th>
                             <th width="15%">Sistema</th>
                             <th width="10%">Afectacion</th>
+                            <th width="5%"></th>
                             <th width="5%"></th>
                         </tr>
                         </thead>
@@ -98,8 +106,16 @@ $fin    = $anio."-".$mes."-".$ultimoDiaMes;
                                 $href = "$link_modulo?path=correctivo_editar.php&idc=".$dato['id'];
                                 $ticket_html = "";
 
-                                $eliminarRutina = ($dato['estado']=='PEN') ? "<a href='javascript:;' class='ms-3' id='btnEliminarRutina' onclick='eliminarRutinaCorrectivo(`$idrutinacorrectivo`)'><i class='bx bx-trash'></i></a>" : "";
+                                $eliminarRutina = ( $dato['estado']=='PEN' && (isAdmin() || isExpert()) ) ?
+                                    "<a href='javascript:;' class='ms-1' id='btnEliminarRutina' onclick='eliminarRutinaCorrectivo(`$idrutinacorrectivo`)'><i class='bx bx-trash'></i></a>" :
+                                    "";
+
                                 $eliminarRutina = (!isClient() && !isNationalClient()) ? $eliminarRutina : "";
+
+                                $estado_mtto = "";
+                                if ($dato['estado'] == 'PEN') $estado_mtto = "<div class='d-flex order-actions text-danger'><a><i class='bx bxs-circle'></i></a></div>";
+                                if ($dato['estado'] == 'REV') $estado_mtto = "<div class='d-flex order-actions text-warning'><a><i class='bx bxs-circle'></i></a></div>";
+                                if ($dato['estado'] == 'APR') $estado_mtto = "<div class='d-flex order-actions text-success'><a><i class='bx bxs-circle'></i></a></div>";
 
                                 echo"
                                 <tr>
@@ -114,6 +130,9 @@ $fin    = $anio."-".$mes."-".$ultimoDiaMes;
                                             <a href='$href' class=''><i class='bx bx-edit'></i></a>
                                             ".$eliminarRutina."
                                         </div>
+                                    </td>
+                                    <td>
+                                     <div class='d-flex'>".$estado_mtto."</div>
                                     </td>
                                 </tr>";
                             }
