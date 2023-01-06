@@ -251,9 +251,11 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                             $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
                                             $hrefImg = "$link_modulo?path=rutina_add_image.php&rut=$idcatastro&propertyId=$propertyId&nombreForm=$nombreForm";
 
-                                            $eliminarCatastro = "";
-                                            if (!isNationalClient() && !isClient())
-                                                $eliminarCatastro = "<a href='javascript:;' class='ms-3' id='btnEliminarCatastro' onclick='eliminarCatastro(`$idcatastro`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
+                                            $eliminarCatastro = ($data['estado']=='PEN') ? "<a href='javascript:;' class='ms-3' id='btnEliminarCatastro' onclick='eliminarCatastro(`$idcatastro`, `$codigo`)'><i class='bx bxs-trash'></i></a>" : "";
+                                            $eliminarRutina   = (!isNationalClient() && !isClient()) ? $eliminarCatastro : "";
+
+                                            //if (!isNationalClient() && !isClient())
+                                                //$eliminarCatastro = "<a href='javascript:;' class='ms-3' id='btnEliminarCatastro' onclick='eliminarCatastro(`$idcatastro`, `$codigo`)'><i class='bx bxs-trash'></i></a>";
 
                                             $addImagenes    = "<a href='$hrefImg' class='ms-3'><i class='bx bxs-image-add'></i></a>";
 
