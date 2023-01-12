@@ -73,7 +73,7 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idcatastrox, $
                                 <td class="col-25p" colspan="2">'.$d06_01.'</td>
                            </tr>
                            <tr>
-                                <td class="col-50p">Funcionalidad (en servicio/fuera de servicio)</td>
+                                <td class="col-50p">Tipo de Poste / cantidad total</td>
                                 <td class="col-25p">'.$d07_01.'</td>
                                 <td class="col-25p">'.$d07_02.'</td>
                            </tr>
