@@ -17,7 +17,7 @@ function timeDiff($time1, $time2){
     $fin    = new DateTime($time2);
     $diff = $inicio->diff($fin);
 
-    return $diff->format('%H hrs %i min');
+    return $diff->format('%d d %H hr %i min');
 }
 
 function currentMonthLiteral(){
