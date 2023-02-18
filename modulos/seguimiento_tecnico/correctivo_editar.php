@@ -60,13 +60,16 @@ $repuestos = $dato['repuestos'];
 
 $permissions = ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient());
 
+$volver = "";
+if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
+
 ?>
 <input type="hidden" name="idc" id="idc" value="<?=$id?>" />
 <div class="page-wrapper">
     <div class="page-content">
 
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-2">
-            <div class="breadcrumb-title pe-3">Mtto. Correctivo</div>
+            <div class="breadcrumb-title pe-3"><!--Mtto. Correctivo--></div>
 
             <!--<div class="ps-3">
                 <nav aria-label="breadcrumb">
@@ -77,6 +80,7 @@ $permissions = ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExp
                 </nav>
             </div>-->
             <div class="row row-cols-auto pb-2">
+                <button type="button" class="btn btn-outline-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php<?=$volver?>'"><i class="bx bx-arrow-back me-0"></i></button>
                 <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || (isAdmin() && $estado!='REV' ) ) { ?>
                     <div class="col">
                         <button type="button" id="toReview" class="btn btn-warning px-3"><i class="bx bx-right-arrow-alt mr-1"></i>A revisión</button>
@@ -103,7 +107,7 @@ $permissions = ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExp
                     <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                     <input type="button" id="btn-save-mttoc" class="btn btn-primary px-4" value="Guardar" />
                     <?php } ?>
-                    <button type="button" class="btn btn-outline-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>
+                    <!--<button type="button" class="btn btn-outline-primary" onclick="location.href='<?/*=$link_modulo*/?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>-->
                 </form>
             </div>
         </div>
@@ -771,7 +775,6 @@ $permissions = ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExp
                     <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                         <input type="button" id="btn-save-mttoc2" class="btn btn-primary px-4" value="Guardar" />
                     <?php } ?>
-                    <button type="button" class="btn btn-outline-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>
                 </div>
             </div>
         </div>

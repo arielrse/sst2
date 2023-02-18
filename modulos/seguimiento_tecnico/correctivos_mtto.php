@@ -1,10 +1,18 @@
 <?php
-$mes      = isset($_POST["mes"]) ? $_POST["mes"] : date("n");
-$anio     = isset($_POST["anio"]) ?  $_POST["anio"] : date("Y");
+$mes    = isset($_GET["mes"]) ? $_GET["mes"] : date("n");
+$anio   = isset($_GET["anio"]) ?  $_GET["anio"] : date("Y");
+$b      = isset($_GET["b"]) ?  $_GET["b"] : 0;
+
+if ($b == 0){
+    $mes      = isset($_POST["mes"]) ? $_POST["mes"] : date("n");
+    $anio     = isset($_POST["anio"]) ?  $_POST["anio"] : date("Y");
+}
 
 $ultimoDiaMes = date("d",(mktime(0,0,0,$mes+1,1,$anio)-1));
 $inicio = $anio."-".$mes."-"."01";
 $fin    = $anio."-".$mes."-".$ultimoDiaMes;
+
+$param_volver = "&mes=$mes&anio=$anio&b=1";
 ?>
 <div class="page-wrapper">
     <div class="page-content">
@@ -58,7 +66,6 @@ $fin    = $anio."-".$mes."-".$ultimoDiaMes;
                             </select>
                         </div>
                         <div class="col">
-                            <!--<button class="btn btn-sm btn-dark px-4" id="btn-buscar">Buscar</button>-->
                             <input class="btn btn-sm btn-secondary px-3" name="ver" type="submit"  value="Buscar" />
                         </div>
                         <!--<div class="col">
@@ -103,7 +110,7 @@ $fin    = $anio."-".$mes."-".$ultimoDiaMes;
                         if($filas!=0){
                             while($dato=mysqli_fetch_array($resultado)){
                                 $idrutinacorrectivo = $dato['id'];
-                                $href = "$link_modulo?path=correctivo_editar.php&idc=".$dato['id'];
+                                $href = "$link_modulo?path=correctivo_editar.php&idc=".$dato['id']."&volver=".base64_encode($param_volver);;
                                 $ticket_html = "";
 
                                 $eliminarRutina = ( $dato['estado']=='PEN' && (isAdmin() || isExpert()) ) ?
