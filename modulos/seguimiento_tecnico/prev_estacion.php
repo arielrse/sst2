@@ -1,6 +1,9 @@
 <?php
 $web=$_SESSION["web"];
-//if (isset($_GET['event'])) $idevento = $_GET['event'];
+
+$volver = "";
+if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
+
 $idevento = $_GET['event'];
 $idgrupo = $_GET['gp'];
 
@@ -45,26 +48,13 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 <div class="page-wrapper">
     <div class="page-content">
 
-        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-
-            <div class="breadcrumb-title pe-3">SST</div>
-            <div class="ps-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Mantenimiento  </li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-
-        <hr/>
-
         <div class="card">
             <div class="row g-0">
                 <div class="card-body">
-                    <h6 class="card-title"><? echo $propertyId . " - " . $cm ?></h6>
+                    <h6 class="card-title">
+                        <button type="button" class="btn btn-sm btn-outline-primary" onClick="location.href='<?=$link_modulo?>?path=cronograma_cm.php<?=$volver?>'"><i class="bx bx-arrow-back me-0"></i></button>
+                        <? echo $propertyId . " - " . $cm ?>
+                    </h6>
                     <div class="d-flex gap-2 py-2">
                         <div class="text-secondary"><i class='bx bxs-calendar-plus align-middle'></i><?php echo " " .$fechaInicio ?></div>
                         <?php if ( isAdmin() || isExpert() ) { ?>

@@ -148,8 +148,7 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
 
             $fecha = explode("-", $dato['inicio']);
 
-            //$editarEvento = "$link_modulo?path=evento_editar.php&event=".$idevento;
-            $href = "$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$dato['idgrupo'];
+            $href = "$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$dato['idgrupo']."&volver=".base64_encode($param_volver);
 
             $f = intval($fecha[2]);
             $c = $dato['codigog'];
