@@ -1,10 +1,14 @@
 <?php
+$event = isset($_GET["event"]) ? $_GET["event"] : 0;
+$gp = isset($_GET["gp"]) ? $_GET["gp"] : 0;
+$volver = isset($_GET["volver"]) ? $_GET["volver"] : 0;
 
+$params_volver = "&event=$event&gp=$gp&tr=0&tc=1&volver=$volver";
 ?>
 <div class="row row-cols-auto pb-2">
     <div class="col">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+            <button type="button" class="btn btn-inverse-primary" onclick="location.href='<?=$link_modulo?>?path=prev_estacion.php<?=$params_volver?>'"><i class="bx bx-arrow-back me-0"></i></button>
         </div>
     </div>
 

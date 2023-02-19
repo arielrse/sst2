@@ -80,7 +80,7 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
                 </nav>
             </div>-->
             <div class="row row-cols-auto pb-2">
-                <button type="button" class="btn btn-outline-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php<?=$volver?>'"><i class="bx bx-arrow-back me-0"></i></button>
+                <button type="button" class="btn btn-inverse-primary" onclick="location.href='<?=$link_modulo?>?path=correctivos_mtto.php<?=$volver?>'"><i class="bx bx-arrow-back me-0"></i></button>
                 <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || (isAdmin() && $estado!='REV' ) ) { ?>
                     <div class="col">
                         <button type="button" id="toReview" class="btn btn-warning px-3"><i class="bx bx-right-arrow-alt mr-1"></i>A revisión</button>

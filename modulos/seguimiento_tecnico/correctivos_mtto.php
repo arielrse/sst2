@@ -110,7 +110,7 @@ $param_volver = "&mes=$mes&anio=$anio&b=1";
                         if($filas!=0){
                             while($dato=mysqli_fetch_array($resultado)){
                                 $idrutinacorrectivo = $dato['id'];
-                                $href = "$link_modulo?path=correctivo_editar.php&idc=".$dato['id']."&volver=".base64_encode($param_volver);;
+                                $href = "$link_modulo?path=correctivo_editar.php&idc=".$dato['id']."&volver=".base64_encode($param_volver);
                                 $ticket_html = "";
 
                                 $eliminarRutina = ( $dato['estado']=='PEN' && (isAdmin() || isExpert()) ) ?

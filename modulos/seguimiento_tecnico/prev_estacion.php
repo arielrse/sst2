@@ -4,9 +4,29 @@ $web=$_SESSION["web"];
 $volver = "";
 if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
 
+/* --- --- */
+$tr = isset($_GET["tr"]) ?  $_GET["tr"] : 0;
+$tc = isset($_GET["tc"]) ?  $_GET["tc"] : 0;
+
+$tr_active = "";
+$tc_active = "";
+
+if ($tr == 1){
+    $tr_active = "active";
+    $tc_active = "";
+}
+
+if ($tc == 1){
+    $tr_active = "";
+    $tc_active = "active";
+}
+
+
+
+/* --- --- */
+
 $idevento = $_GET['event'];
 $idgrupo = $_GET['gp'];
-
 
 $resultado = mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, s.`nombre`, s.`codsitio`, s.`tiponodo`, c.`nombre` AS nombreCentro, c.`coddep`, e.estado
                                             FROM evento e 
@@ -52,7 +72,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
             <div class="row g-0">
                 <div class="card-body">
                     <h6 class="card-title">
-                        <button type="button" class="btn btn-sm btn-outline-primary" onClick="location.href='<?=$link_modulo?>?path=cronograma_cm.php<?=$volver?>'"><i class="bx bx-arrow-back me-0"></i></button>
+                        <button type="button" class="btn btn-inverse-primary" onClick="location.href='<?=$link_modulo?>?path=cronograma_cm.php<?=$volver?>'"><i class="bx bx-arrow-back me-0"></i></button>
                         <? echo $propertyId . " - " . $cm ?>
                     </h6>
                     <div class="d-flex gap-2 py-2">
@@ -76,7 +96,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 
                     <ul class="nav nav-tabs nav-primary mb-0" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link active" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
+                            <a class="nav-link <?php echo $tr_active ?>" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
                                 <div class="d-flex align-items-center">
                                     <div class="tab-icon"><i class='bx bx-cog font-18 me-1'></i>
                                     </div>
@@ -85,7 +105,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
+                            <a class="nav-link <?php echo $tc_active ?>" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
                                 <div class="d-flex align-items-center">
                                     <div class="tab-icon"><i class='bx bx-cabinet font-18 me-1'></i>
                                     </div>
@@ -105,7 +125,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                     </ul>
 
                     <div class="tab-content pt-3">
-                        <div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
+                        <div class="tab-pane fade show <?php echo $tr_active ?>" id="primaryhome" role="tabpanel">
 
                             <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
                                 <div class="col mb-2">
@@ -157,7 +177,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                             $idrutina   = $data['idrutina'];
                                             $estado     = $data['estado'];
 
-                                            $href    = "$link_modulo?path=rutina_$codigo.php&event=$idevento&rut=$idrutina&cform=$codigo&gp=$idgrupo";
+                                            $href    = "$link_modulo?path=rutina_$codigo.php&event=$idevento&rut=$idrutina&cform=$codigo&gp=$idgrupo&volver=".base64_encode($volver);
                                             $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
                                             $hrefImg = "$link_modulo?path=rutina_addimage.php&codform=$codigo&rut=$idrutina&propertyId=$propertyId&nombreForm=$nombreForm&estado=$estado&coddep=$coddep";
 
@@ -190,7 +210,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
 
                         </div>
 
-                        <div class="tab-pane fade" id="primaryprofile" role="tabpanel">
+                        <div class="tab-pane fade show <?php echo $tc_active ?>" id="primaryprofile" role="tabpanel">
 
                             <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
                                 <div class="col mb-2">
@@ -237,7 +257,7 @@ $fechaInicio  = DateTime::createFromFormat('Y-m-d', $fechaMtto)->format('d/m/Y')
                                             $codigo = $data['codigo'];
                                             $nombreForm = $data['codigo'] . ' ' . $data['nombre'];
                                             $idcatastro = $data['idcatastro'];
-                                            $href    = "$link_modulo?path=catastro_$codigo.php&event=$idevento&rut=$idcatastro&cform=$codigo&gp=$idgrupo";
+                                            $href    = "$link_modulo?path=catastro_$codigo.php&event=$idevento&rut=$idcatastro&cform=$codigo&gp=$idgrupo&volver=".base64_encode($volver);
                                             $hrefpdf = "../../modulos/$modulo/rutina$codigo/reporte.php&event=$idevento";
                                             $hrefImg = "$link_modulo?path=rutina_add_image.php&rut=$idcatastro&propertyId=$propertyId&nombreForm=$nombreForm";
 
