@@ -251,7 +251,7 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
                                         <td class="col-xl-5 bg-light">Tipo de Solución:</td>
                                         <td class="col-xl-7">
                                             <?php
-                                            $tipoArr = ['DEFINITIVA', 'PROVISIONAL'];
+                                            $tipoArr = ['DEFINITIVA', 'PROVISIONAL', 'PENDIENTE'];
                                             $options = "<option value=''>Seleccionar...</option>";
                                             foreach ($tipoArr as $element){
                                                 $selected = ($tipo_solucion == $element) ? 'selected' : '';
@@ -420,7 +420,7 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
                                         <td class="col-xl-6 bg-light">Estado de ticket</td>
                                         <td class="col-xl-6">
                                             <?php
-                                            $optionsArr = ['Abierto', 'Cerrado'];
+                                            $optionsArr = ['Abierto', 'Cerrado', 'No Aplica'];
                                             $options = "<option value=''>Seleccionar...</option>";
                                             foreach ($optionsArr as $element){
                                                 $selected = ($estado_ticket == $element) ? 'selected' : '';
@@ -436,7 +436,7 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
                                         <td class="col-xl-6 bg-light">En Plazo</td>
                                         <td class="col-xl-6">
                                             <?php
-                                            $optionsArr = ['SI', 'NO'];
+                                            $optionsArr = ['SI', 'NO', 'No Aplica'];
                                             $options = "<option value=''>Seleccionar...</option>";
                                             foreach ($optionsArr as $element){
                                                 $selected = ($en_plazo == $element) ? 'selected' : '';
