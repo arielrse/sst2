@@ -58,23 +58,6 @@ $cod_complemento    = $obj->{'cod_complemento'};
 $indoor_outdoor     = $obj->{'indoor_outdoor'};
 $c_fechaRealizacion = $obj->{'c_fechaRealizacion'};
 
-
-/*$res4 = mysqli_query($conexion,
-    "SELECT u.id, concat(u.nombre, ' ', u.ap_pat, ' ', u.ap_mat) AS nombre, u.`cargo`, u.`cel`
-            FROM usuarios u
-            WHERE u.nivel = 3
-            AND u.`iddepartamento` = ".$iddepartamento);
-
-$selectSupervisor = "<option>Seleccionar supervisor</option>";
-while( $data4 = mysqli_fetch_array($res4) ){
-    $userId = $data4['id'];
-    $selected = "";
-    if ($e_personal == $userId) $selected = "selected";
-
-    $selectSupervisor .= "<option value='$userId' $selected>" . $data4['nombre'] . " - " . $data4['cargo'] . "</option>";
-    $hrefpdf = "../../modulos/$modulo/catastro$cform/reporte.php";
-}*/
-
 /* -------------------------------------------- */
 $inOutDoorArr = ["INDOOR", "OUTDOOR"];
 $inOutDoorOption = "<option>Seleccionar...</option>";
@@ -85,11 +68,11 @@ foreach ($inOutDoorArr as $element){
     $inOutDoorOption .= "<option value='$element' $selected>".$element."</option>";
 }
 
-$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;
+/*$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;*/
 $hrefpdf = "../../modulos/$modulo/catastro$cform/reporte.php";
 ?>
     <input type="hidden" id="catastroId" value="<?php echo $idcatastro ?>" />
-    <input type="hidden" name="link_modulo" id="link_modulo" value="<?php echo $hrefrutina ?>" />
+    <!--<input type="hidden" name="link_modulo" id="link_modulo" value="<?php /*echo $hrefrutina */?>" />-->
 
     <?php require("catastro_head_button.php"); ?>
 

@@ -72,14 +72,20 @@ while( $data4 = mysqli_fetch_array($res4) ){
 
 $b1View = $cform == "001";
 
+/* ------------------------------------ */
+/*$volver = isset($_GET["volver"]) ? $_GET["volver"] : 0;
+$params_volver = "&event=$idevento&gp=$idgrupo&tr=1&tc=0&volver=$volver";*/
+/* ------------------------------------ */
+
 $hrefpdf = "../../modulos/$modulo/rutina$cform/reporte.php";
-$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;
+/*$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;*/
+/*$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo."&tr=1&tc=0&volver=$volver";*/
 
 ?>
 <input type="hidden" name="rutinaId" id="rutinaId" value="<?php echo $idrutina ?>" />
 <!--<input type="hidden" name="grupoId" id="grupoId" value="<?php /*echo $idgrupo */?>" />
 <input type="hidden" name="eventoId" id="eventoId" value="<?php /*echo $idevento */?>" />-->
-<input type="hidden" name="link_modulo" id="link_modulo" value="<?php echo $hrefrutina ?>" />
+<!--<input type="hidden" name="link_modulo" id="link_modulo" value="<?php /*echo $hrefrutina */?>" />-->
 
     <?php require("rutina_head_button.php"); ?>
 

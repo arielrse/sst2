@@ -58,11 +58,11 @@ $cod_activo         = $obj->{'cod_activo'};
 $c_fechaRealizacion = $obj->{'c_fechaRealizacion'};
 
 
-$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;
+/*$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;*/
 $hrefpdf = "../../modulos/$modulo/catastro$cform/reporte.php";
 ?>
 <input type="hidden" id="catastroId" value="<?php echo $idcatastro ?>" />
-<input type="hidden" name="link_modulo" id="link_modulo" value="<?php echo $hrefrutina ?>" />
+<!--<input type="hidden" name="link_modulo" id="link_modulo" value="<?php /*echo $hrefrutina */?>" />-->
 
     <?php require("catastro_head_button.php"); ?>
 

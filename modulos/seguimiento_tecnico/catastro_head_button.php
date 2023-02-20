@@ -1,10 +1,13 @@
 <?php
-$event = isset($_GET["event"]) ? $_GET["event"] : 0;
-$gp = isset($_GET["gp"]) ? $_GET["gp"] : 0;
+//$event = isset($_GET["event"]) ? $_GET["event"] : 0;
+//$gp = isset($_GET["gp"]) ? $_GET["gp"] : 0;
 $volver = isset($_GET["volver"]) ? $_GET["volver"] : 0;
 
-$params_volver = "&event=$event&gp=$gp&tr=0&tc=1&volver=$volver";
+//$params_volver = "&event=$event&gp=$gp&tr=0&tc=1&volver=$volver";
+$params_volver = "&event=$idevento&gp=$idgrupo&tr=0&tc=1&volver=$volver";
+$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo."&tr=0&tc=1&volver=$volver";
 ?>
+<input type="hidden" name="link_modulo" id="link_modulo" value="<?php echo $hrefrutina ?>" />
 <div class="row row-cols-auto pb-2">
     <div class="col">
         <div class="btn-group" role="group" aria-label="Basic example">
