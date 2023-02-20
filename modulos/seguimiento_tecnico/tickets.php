@@ -1,24 +1,12 @@
 
 <?php
-if(isset($_POST["fecha"])) $fecha = $_POST["fecha"]." 00:00:00";
-else {
-    $dato=mysqli_fetch_array(mysqli_query($conexion, "select now()"));
-    $fecha=$dato[0];
-}
 
-if(isset($_POST["menos"])) {
-    $dato=mysqli_fetch_array(mysqli_query($conexion, "SELECT DATE_SUB('$fecha',INTERVAL 1 DAY)"));
-    $fecha=$dato[0];
-}
+$fecha = isset($_POST["fecha"]) ? $_POST["fecha"] : date('Y-m-d');
 
-if(isset($_POST["mas"])){
-    $dato=mysqli_fetch_array(mysqli_query($conexion, "SELECT DATE_ADD('$fecha',INTERVAL 1 DAY)"));
-    $fecha=$dato[0];
-}
+if ( !isset($_POST["fecha"]) )
+    $fecha = isset($_GET["fecha"]) ?  $_GET["fecha"]  : date('Y-m-d');
 
-$fecha=substr($fecha,0,10);
-$fini= substr($fecha,0,4)."-". substr($fecha,5,2)."-01";
-$ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
+
 
 ?>
 
@@ -32,7 +20,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Gestión de Tickets</li>
+                        <li class="breadcrumb-item active" aria-current="page">Gestión de Tickets <?php echo $fecha ?></li>
                     </ol>
                 </nav>
             </div>
@@ -49,16 +37,16 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                 <div class="row row-cols-auto g-3">
                     <form name="form1" method="post" class="row g-3">
                     <div class="col">
-                        <input name="fecha" type="date" class="result form-control" id="fecha" value="<?=substr($fecha,0,10);?>">
+                        <input name="fecha" type="date" class="result form-control form-control-sm" id="fecha" value="<?=substr($fecha,0,10);?>">
                     </div>
 
                     <div class="col">
-                        <input class="btn btn-dark px-5" name="Submit" type="submit" value="Buscar">
+                        <input class="btn btn-sm btn-dark px-5" name="Submit" type="submit" value="Buscar">
                     </div>
 
                     <?php if (isAdmin() || isExpert()) { ?>
                     <div class="col">
-                        <button type="button" class="btn btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=n_ticketn.php'">Nuevo</button>
+                        <button type="button" class="btn btn-sm btn-primary px-5" onClick="location.href='<?=$link_modulo?>?path=n_ticketn.php'">Nuevo</button>
                     </div>
                     <?php } ?>
 
@@ -144,7 +132,7 @@ $ffin= substr($fecha,0,4)."-". substr($fecha,5,2)."-31";
                             $i=0;
                             while($dato=mysqli_fetch_array($resultado)){
                                 $i++;
-                                $ticket_html = "<a href='$link_modulo?path=u_ticketn.php&ticket=".$dato['id_st_ticket']."'>".$dato['ticket']."</a>";
+                                $ticket_html = "<a href='$link_modulo?path=u_ticketn.php&ticket=".$dato['id_st_ticket']."&fecha=".$fecha."'>".$dato['ticket']."</a>";
 
                                 /*if (isAdmin() || isExpert()) {
                                     $ticket_html = "<a href='$link_modulo?path=u_ticketn.php&ticket=".$dato['ticket']."'>".$dato['ticket']."</a>";

@@ -1,4 +1,5 @@
-<?
+<?php
+$fecha = isset($_GET["fecha"]) ?  $_GET["fecha"]  : date('Y-m-d');
 $estacion_val = "";
 $filas = 0;
 if(isset($_GET["ticket"])){
@@ -58,7 +59,10 @@ st_ticketn
         <!--<div class="row">
             <div class="col-xl-10 mx-auto">-->
 
-                <h6 class="mb-0 text-uppercase">Editar Ticket</h6>
+                <h6 class="mb-0 text-uppercase">
+                    <button type="button" class="btn btn-inverse-primary" onClick="location.href='<?=$link_modulo?>?path=tickets.php&fecha=<?=$fecha?>'"><i class="bx bx-arrow-back me-0"></i></button>
+                    Editar Ticket
+                </h6>
                 <hr/>
 
                 <div class="card border-top border-0 border-4 border-primary">
@@ -361,7 +365,7 @@ st_ticketn
                                 </div>
                                 <?php } ?>
                                 <div class="col">
-                                    <input type="button" class="btn btn-secondary px-5" name="Submit" value="Cancelar" onclick="location.href='<?=$link_modulo?>?path=tickets.php'" />
+                                    <input type="button" class="btn btn-secondary px-5" name="Submit" value="Cancelar" onclick="location.href='<?=$link_modulo?>?path=tickets.php&fecha=<?=$fecha?>'" />
                                 </div>
                                 <?php if (isAdmin() || isExpert()) { ?>
                                     <div class="col">
