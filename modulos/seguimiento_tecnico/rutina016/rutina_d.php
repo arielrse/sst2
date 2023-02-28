@@ -5,7 +5,7 @@ $d_relevamiento_d1 = $obj->{'d_relevamiento_d1'};
 //$d_01_01 = $d_relevamiento->d_01_01; $d_01_02 = $d_relevamiento->d_01_02;
 $d1_01_01 = $d_relevamiento_d1->d1_01_01; 
 $d1_02_01 = $d_relevamiento_d1->d1_02_01; 
-$d1_03_01 = $d_relevamiento_d1->d1_03_01;
+$d1_03_01 = isset($d_relevamiento_d1->d1_03_01) ? $d_relevamiento_d1->d1_03_01 : "";
 
 /**  e1_equipo_e1_e1 **/
 $e1_equipo_e1 = $obj->{'e1_equipo_e1'};
