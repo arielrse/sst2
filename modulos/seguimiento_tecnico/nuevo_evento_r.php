@@ -119,20 +119,21 @@ function copyDataCatastro($conexion, $selectIdevento, $newIdevento){
 
         $resultR = mysqli_query($conexion, "SELECT * FROM catastro".$codigoForm." where idcatastro = " . $idcatastro);
         $datoR   = mysqli_fetch_array($resultR);
+        $data    = "'" . $datoR['data'] . "'";
 
         if ( $codigoForm == "011" ) {
             $tabla_1 = "'" . $datoR['tabla_1'] . "'";
             $tabla_2 = "'" . $datoR['tabla_2'] . "'";
             $tabla_3 = "'" . $datoR['tabla_3'] . "'";
 
-            $queryInsert = "insert into catastro$codigoForm(idcatastro, idevento, data, tabla_1, tabla_2, tabla_3)  
-                            values ($resIdcatastro, $newIdevento, '". $datoR['data'] ."', $tabla_1, $tabla_2, $tabla_3)";
+            $queryInsert = "insert into catastro$codigoForm (idcatastro, idevento, data, tabla_1, tabla_2, tabla_3)  
+                            values ($resIdcatastro, $newIdevento, $data, $tabla_1, $tabla_2, $tabla_3)";
             $result = mysqli_query($conexion, $queryInsert);
 
         }
 
-        if ( $codigoForm =! "011" ) {
-            $queryInsert = "insert into catastro$codigoForm(idcatastro, idevento, data) values ($resIdcatastro, $newIdevento, '". $datoR['data'] ."')";
+        if ( $codigoForm != "011" ) {
+            $queryInsert = "insert into catastro$codigoForm (idcatastro, idevento, data) values ($resIdcatastro, $newIdevento, $data)";
             $result = mysqli_query($conexion, $queryInsert);
         }
 

@@ -179,12 +179,13 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
                 },*/
                 success: function (data) {
 
-                    var resp = JSON.parse(data);
+                    var respDates = JSON.parse(data);
                     var htmlResult = '<option value="0" selected class="title7"> Seleccionar fecha de cronograma </option>';
-                    for ( const key in resp ){
-                        htmlResult += '<option value="'+key+'">'+resp[key]+'</option>';
+
+                    for ( let i=0 ; i < respDates.length; i++ ){
+                        evento = respDates[i];
+                        htmlResult += '<option value="' + evento.id + '">' + evento.fecha + '</option>';
                     }
-                    //htmlResult += '</select>';
 
                     $("#ideventoSelect").html(htmlResult);
                     $("#ideventoSelect").attr("disabled", false);

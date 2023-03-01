@@ -9,8 +9,9 @@ $resultado=mysqli_query($conexion, "SELECT e.`idevento`, e.`inicio`, e.`idcentro
 $result = array();
 
 while($dato=mysqli_fetch_array($resultado)){
+    $result [] =  [ "id" => $dato['idevento'], "fecha" => $dato['inicio'] ];
     //$result [] =  [ $dato['idevento'] => $dato['inicio'] ];
-    $result[ $dato['idevento'] ] = $dato['inicio'];
+    //$result[ $dato['idevento'] ] = $dato['inicio'];
 }
 
 echo json_encode($result);
