@@ -14,7 +14,7 @@ $strSql = '';
     $strSql .= ' and centro.iddepartamento = ' . $iddepartamento;*/
 
 if ($idcentro != '')
-    $strSql .= ' and centro.idcentro = ' . $idcentro;
+    $strSql .= ' and c.idcentro = ' . $idcentro;
 
 $strSql .= " and fecha_inicio_rif  BETWEEN '" . $fechainicio . "' AND '". $fechafin . "'";
 
