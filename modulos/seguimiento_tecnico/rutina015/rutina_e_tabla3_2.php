@@ -4,7 +4,9 @@ $dataT4 = [];
 $dataT4Str = '';
 
 ?>
+<?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
 <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_save_ODF"><i class="bx bx-save me-0"></i></button>
+<?php } ?>
 <table class="table table-bordered" id="tabla_ODF">
     <tr class='align-middle'>
 
@@ -108,8 +110,8 @@ $dataT4Str = '';
     var tabla_equiposODF   = document.getElementById('tabla_equipos_ODF');
     var btn_save_ODF       = document.getElementById('btn_save_ODF');
 
-    btn_add_equiposODF.addEventListener("click", agregarFilaEquiposT4);
-    btn_save_ODF.addEventListener("click", guardarTablaODF);
+    if ( btn_add_equiposODF !== null) btn_add_equiposODF.addEventListener("click", agregarFilaEquiposT4);
+    if ( btn_save_ODF !== null) btn_save_ODF.addEventListener("click", guardarTablaODF);
 
     var table_e4 = '<?php echo $table_e4; ?>';
     var dataT4 = <?php echo $dataT4Str; ?>;

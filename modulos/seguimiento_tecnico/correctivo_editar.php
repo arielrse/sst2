@@ -104,7 +104,7 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
                     <input type="submit" id="btn-generar" class="btn btn-secondary px-4" value="Generar" />
                     <input type="hidden" name="idcorrectivo" id="idcorrectivo" value="<?=$id?>" />
 
-                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
+                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                     <input type="button" id="btn-save-mttoc" class="btn btn-primary px-4" value="Guardar" />
                     <?php } ?>
                     <!--<button type="button" class="btn btn-outline-primary" onclick="location.href='<?/*=$link_modulo*/?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>-->
@@ -772,7 +772,7 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
             <div class="ms-auto">
                 <div>
-                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
+                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                         <input type="button" id="btn-save-mttoc2" class="btn btn-primary px-4" value="Guardar" />
                     <?php } ?>
                 </div>

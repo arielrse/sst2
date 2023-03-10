@@ -42,8 +42,9 @@ $obj = json_decode($jsonCab);
             <div class="card-body">
 
                 <div class="col mb-2">
-                    <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
+                    <!--<button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>-->
+                    <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
                 </div>
 
                 <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -483,9 +484,9 @@ $obj = json_decode($jsonCab);
     <div class="card-body">
 
         <div class="col mb-2">
-            <button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
-            <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>
-            <?php /*require("../../modulos/seguimiento_tecnico/single_save.php"); */?>
+            <!--<button type="button" class="btn btn-outline-primary" id="botonF"><i class="bx bx-save me-0"></i></button>
+            <button type="button" class="btn btn-outline-primary" onclick="history.back()"><i class="bx bx-arrow-back me-0"></i></button>-->
+            <?php require("../../modulos/seguimiento_tecnico/single_save.php"); ?>
         </div>
 
         <table class="table">

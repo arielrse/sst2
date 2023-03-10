@@ -59,7 +59,7 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
 
         <table width="100%">
             <tr>
-                <td  align="center"><span class="naranja">&nbsp;CM/SCM: <?php echo $idgrupoFound; /*echo $idcentro . ' - ' . $mes . ' - ' . $ultimoDiaMes;*/ ?></span></td>
+                <td  align="center"><span class="naranja">&nbsp;CM/SCM: </span></td>
                 <td>
                     <form name="amper" method="post" action="<?=$link_modulo?>?path=cronograma_cm.php">
                         <input type="hidden" name="param_volver" id="param_volver" value="<?php echo $param_volver ?>" />

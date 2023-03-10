@@ -4,7 +4,9 @@ $dataT3 = [];
 $dataT3Str = '';
 
 ?>
+<?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
 <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_save_ETH"><i class="bx bx-save me-0"></i></button>
+<?php } ?>
 <table class="table table-bordered" id="tabla_ETH">
     <tr class='align-middle'>
 
@@ -108,8 +110,8 @@ $dataT3Str = '';
     var tabla_equipos   = document.getElementById('tabla_equipos');
     var btn_save_ETH    = document.getElementById('btn_save_ETH');
 
-    btn_add_equipos.addEventListener("click", agregarFilaEquiposT3);
-    btn_save_ETH.addEventListener("click", guardarTablaETH);
+    if( btn_add_equipos !== null ) btn_add_equipos.addEventListener("click", agregarFilaEquiposT3);
+    if( btn_save_ETH !== null ) btn_save_ETH.addEventListener("click", guardarTablaETH);
 
     var table_e3 = '<?php echo $table_e3; ?>';
     var dataT3 = <?php echo $dataT3Str; ?>;

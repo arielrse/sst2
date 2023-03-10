@@ -15,7 +15,7 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
         </div>
     </div>
 
-    <?php if ( ($estado=='PEN' && !isClient()) || ( isExpert() && $estado=='REV') && !isClient() ) { ?>
+    <?php if ( ($estado=='PEN' && !isClient()) || ( isExpert() || isAdmin() && $estado=='REV') && !isClient() ) { ?>
     <div class="col">
         <input type="button" id="botonHead" class="btn btn-primary px-4" value="Guardar" />
     </div>
