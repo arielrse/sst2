@@ -7,7 +7,7 @@ $estado = $_GET['estado'];
 $codform = $_GET['codform'];
 $coddep = $_GET['coddep'];
 
-$query = "select * from rutina_imagen where idrutina='$idrutina' order by id desc ";
+$query = "select * from rutina_imagen where idrutina='$idrutina' order by posicion desc ";
 $resultado = mysqli_query($conexion, $query);
 
 $sizeimgage = 0;
@@ -92,42 +92,110 @@ $sizeimgage = round($sizeimgage, 2);
                 <h6 class="mb-0 text-uppercase"></h6>
                 <hr/>
 
+                <div class="card-group shadow"> <!---->
                     <?php
+                    $i = 1;
+                    $cerrar_abrir = '</div><div class="card-group shadow">';
                     foreach($resultado as $row){
                         $idImg = $row['id'];
+                        $posicion = $row['posicion'];
                         $ruta_img = "../../fotos/".$row['imagen'];
                         $extension = pathinfo($ruta_img, PATHINFO_EXTENSION);
                     ?>
-                    <div class="col-md-4">
-                        <div class="img-thumbnail">
-                            <?php if ( exif_imagetype($ruta_img) ){ ?>
-                                <a href="<?php echo $ruta_img ?>" target="_blank"><img src="<?php echo $ruta_img ?>" alt="img" style="width:100%"></a>
-                                <p class="card-text"><?php echo $row['nombre']; ?>
-                            <?php } else { ?>
-                                <p class="card-text">
-                                    <i class="bx bx-file"></i>
-                                    <a href="<?php echo $ruta_img ?>" target="_blank"><?php echo $row['nombre']; ?></a>
-                                    <?php echo '(' . $extension . ')' ?>
+                        <div class="card border-end shadow-none">
+                            <!--<img src="assets/images/gallery/14.png" class="card-img-top" alt="...">-->
+                            <a href="<?php echo $ruta_img ?>" target="_blank"><img src="<?php echo $ruta_img ?>" class="card-img-top" alt="..."></a>
+                            <div class="card-body">
+                                <!--<h5 class="card-title">Card title</h5>-->
+                                <p class="card-text"><?php echo $row['nombre']; ?></p>
+                                <hr>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button type="button" class="btn btn-sm btn-default" data-bs-toggle="modal" data-bs-target="#titlePhotoModal<?php echo $idImg?>">
+                                        <i class="fadeIn animated bx bx-edit-alt"></i>
+                                    </button>
 
-                            <?php } ?>
+                                    <button type="button" class="btn btn-sm btn-default" onclick="eliminarImagen(<?php echo $idImg ?>); return false;"><i class="fadeIn animated bx bx-trash"></i></button>
 
+                                    <!--<a href="javascript:;" class="btn btn-inverse-dark"><i class='bx bx-star'></i>Button</a>
+                                    <a href="javascript:;" class="btn btn-dark"><i class='bx bx-microphone' ></i>Button</a>-->
 
+                                    <div class="modal fade" id="titlePhotoModal<?php echo $idImg?>" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Editar Título</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <textarea class="form-control" id="titleTextarea<?php echo $idImg?>" rows="4"><?php echo $row['nombre']; ?></textarea>
 
+                                                    <div class="row g-2 align-items-center mt-1">
+                                                        <div class="col-auto">
+                                                            <label class="col-form-label">Posición:</label>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <input type="number" min="1" data-bind="value:replyNumber" class="form-control form-control-sm" id="posicion<?php echo $idImg?>" value="<?php echo $posicion ?>">
+                                                        </div>
+                                                    </div>
 
-                                <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
-                                <a href='' id="link-eliminar" onclick="eliminarImagen(<?php echo $idImg ?>); return false;"><i class="lni lni-close"></i></a>
-                            <?php } ?>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" id="btnClose<?php echo $idImg?>" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" onclick="modifyTile('<?php echo $idImg?>')">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            </p>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white"> <small class="text-muted">Posición: <?php echo $posicion ?></small></div>
                         </div>
-                    </div>
+                        <?php if ( $i % 3 == 0 ) echo $cerrar_abrir; ?>
+
+                        <!-- CODE -->
+
+                    <?php $i++; ?>
                     <?php } ?>
+
+                </div><!---->
+
+
             </div>
 
     </div>
 </div>
 
 <script type=text/javascript>
+
+    function modifyTile(idImg) {
+
+        var btn_close = $("#btnClose"+idImg);
+        var title    = $('#titleTextarea'+idImg).val()
+        var posicion = $('#posicion'+idImg).val()
+        /*alert("Titulo..." + title);
+        alert("Posicion..." + posicion);*/
+
+        var frmData = new FormData;
+        frmData.append("idImg", idImg);
+        frmData.append("title", title);
+        frmData.append("posicion", posicion);
+
+        $.ajax({
+            url: 'modificar_foto.php',
+            type: 'POST',
+            data: frmData,
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function (data) {
+                alert(data);
+                btn_close.click();
+                //document.getElementById("btnClose").click();
+                $("#imagenesDiv").load(window.location + " #imagenesDiv");
+            }
+        })
+    }
 
     $('#btn-resize').click(function(){
         if (confirm('Esta seguro de continuar?, esta operacion reduce la calidad de las imagenes.')) {
@@ -240,8 +308,6 @@ $sizeimgage = round($sizeimgage, 2);
                     },
                     success: function (data) {
                         console.log('log: ' + data);
-                        /*if (data=='imagen-ok')
-                            alert('Imagen cargada');*/
 
                         $("#imagenesDiv").load(window.location + " #imagenesDiv");
 
