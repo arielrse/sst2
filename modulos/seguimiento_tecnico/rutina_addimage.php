@@ -61,7 +61,7 @@ $sizeimgage = round($sizeimgage, 2);
 
                         <div class="row row-cols-auto pb-2">
                             <?php
-                            $botonCargar = ($estado == 'PEN') ? '<button type="button" class="btn btn-primary px-4" id="cargar" name="cargar">Cargar Imagen</button>' : '';
+                            $botonCargar = ($estado == 'PEN' || $estado == 'REV') ? '<button type="button" class="btn btn-primary px-4" id="cargar" name="cargar">Cargar Imagen</button>' : '';
                             $botonCargar = (!isClient() && !isNationalClient()) ? $botonCargar : "";
                             ?>
                             <div class="col">
@@ -103,21 +103,18 @@ $sizeimgage = round($sizeimgage, 2);
                         $extension = pathinfo($ruta_img, PATHINFO_EXTENSION);
                     ?>
                         <div class="card border-end shadow-none">
-                            <!--<img src="assets/images/gallery/14.png" class="card-img-top" alt="...">-->
                             <a href="<?php echo $ruta_img ?>" target="_blank"><img src="<?php echo $ruta_img ?>" class="card-img-top" alt="..."></a>
                             <div class="card-body">
                                 <!--<h5 class="card-title">Card title</h5>-->
                                 <p class="card-text"><?php echo $row['nombre']; ?></p>
                                 <hr>
                                 <div class="d-flex align-items-center gap-2">
+                                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                                     <button type="button" class="btn btn-sm btn-default" data-bs-toggle="modal" data-bs-target="#titlePhotoModal<?php echo $idImg?>">
                                         <i class="fadeIn animated bx bx-edit-alt"></i>
                                     </button>
-
                                     <button type="button" class="btn btn-sm btn-default" onclick="eliminarImagen(<?php echo $idImg ?>); return false;"><i class="fadeIn animated bx bx-trash"></i></button>
-
-                                    <!--<a href="javascript:;" class="btn btn-inverse-dark"><i class='bx bx-star'></i>Button</a>
-                                    <a href="javascript:;" class="btn btn-dark"><i class='bx bx-microphone' ></i>Button</a>-->
+                                    <?php } ?>
 
                                     <div class="modal fade" id="titlePhotoModal<?php echo $idImg?>" tabindex="-1" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered">

@@ -857,7 +857,7 @@ function getReporteFotog($conexion, $idrutinax, $codRutina){
     $res = mysqli_query($conexion,
         "SELECT ri.imagen, ri.nombre FROM rutina".$codRutina." r
                 LEFT JOIN rutina_imagen ri ON r.idrutina = ri.idrutina
-                WHERE r.id = " . $idrutinax);
+                WHERE r.id = " . $idrutinax . " ORDER BY ri.posicion ASC");
 
     $result = '<br />
     <main>
