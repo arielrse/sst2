@@ -310,7 +310,7 @@ function getDatos($conexion, $idcorrectivo){
 function getReporteFotografico($conexion, $idcorrectivo){
 
     $res = mysqli_query($conexion,
-        "SELECT r.nombre, r.titulo FROM rutina_correctivo_img r WHERE r.idrutinacorrectivo = " . $idcorrectivo);
+        "SELECT r.nombre, r.titulo FROM rutina_correctivo_img r WHERE r.idrutinacorrectivo = " . $idcorrectivo ." ORDER BY r.posicion ASC");
 
     $result = '<br />
     <main>

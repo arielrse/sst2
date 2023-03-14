@@ -7,6 +7,8 @@ update rutina_imagen r set r.posicion = null;
 update rutina_imagen r set r.posicion = r.id;
 
 -- -----------------------------------------------
+alter table rutina_correctivo_img add column posicion int(11) after id;
+-- -----------------------------------------------
 SELECT @i := @i + 1 AS contador, r.idrutina
 FROM `rutina_imagen` r
 CROSS JOIN (SELECT @i := 0) r
