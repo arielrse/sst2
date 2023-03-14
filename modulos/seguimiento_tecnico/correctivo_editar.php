@@ -58,7 +58,7 @@ $notas = $dato['notas'];
 $insumos = $dato['insumos'];
 $repuestos = $dato['repuestos'];
 
-$permissions = ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient());
+$permissions = ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient());
 
 $volver = "";
 if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
