@@ -27,12 +27,15 @@ $tabla_repuestos = json_decode($repuestosDatos, true);
         if ($tabla_repuestos)
             foreach ($tabla_repuestos as $objVal) {
                 $rowid = $objVal['rowid'];
+
+                $btn_eliminar = $permissions ? '<a href="javascript:;" id="btnEliminarRep" onclick="eliminarRepuesto(`'.$rowid.'`)"><i class="bx bx-x"></i></a>' : '';
+
                 $fila_repuesto .= '
                 <tr id="'.$rowid.'">
                     <td><input type="text" class="form-control form-control-sm" id="repuesto'.$rowid.'" value="'.$objVal['repuesto'].'"></td>
                     <td><input type="text" class="form-control form-control-sm" id="provisto'.$rowid.'" value="'.$objVal['provisto'].'"></td>
                     <td><input type="text" class="form-control form-control-sm" id="danado'.$rowid.'" value="'.$objVal['danado'].'"></td>
-                    <td><a href="javascript:;" id="btnEliminarRep" onclick="eliminarRepuesto(`'.$rowid.'`)"><i class="bx bx-x"></i></a></td>
+                    <td>'.$btn_eliminar.'</td>
                 </tr>';
             }
         echo $fila_repuesto;

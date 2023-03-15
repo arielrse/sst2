@@ -17,7 +17,8 @@
 <!-- Reporte Fotografico -->
 <h6>AMBIENTE - REPORTE FOTOGRÁFICO</h6>
 
-<?php if ( !isClient() && !isNationalClient() ) { ?>
+<?php /*if ( !isClient() && !isNationalClient() ) { */?>
+<?php if ( $permissions ) { ?>
     <div class="row">
         <div class="col">
             <div class="input-group">
@@ -50,7 +51,8 @@
             $hrefDoc = '../../fotos/catastro/' . $nombre;
 
             $eliminarDoc = "";
-            if (!isNationalClient() && !isClient())
+            /*if (!isNationalClient() && !isClient())*/
+            if ( $permissions )
                 $eliminarDoc .= "<a href='javascript:;' class='ms-3' id='btnEliminarDoc' onclick='eliminarImagenCatastro(`$idcatastroimg`)'>
                                     <i class='bx bx-x'></i>
                                  </a>";

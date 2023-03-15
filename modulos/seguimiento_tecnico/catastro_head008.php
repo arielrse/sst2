@@ -83,6 +83,7 @@ foreach ($inOutDoorArr as $element){
 
 /*$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;*/
 $hrefpdf = "../../modulos/$modulo/catastro$cform/reporte.php";
+$permissions = ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient());
 ?>
 <input type="hidden" id="catastroId" value="<?php echo $idcatastro ?>" />
 <!--<input type="hidden" name="link_modulo" id="link_modulo" value="<?php /*echo $hrefrutina */?>" />-->

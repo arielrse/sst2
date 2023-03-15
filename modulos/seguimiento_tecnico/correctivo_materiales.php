@@ -47,6 +47,9 @@ $tabla_insumos = json_decode($insumosDatos, true);
             foreach ($tabla_insumos as $objVal) {
                 $rowid = $objVal['rowid'];
                 $totalMonto += $objVal['total'];
+
+                $btn_eliminar_mat = $permissions ? '<a href="javascript:;" id="btnEliminar" onclick="eliminarMaterial(`'.$rowid.'`)"><i class="bx bx-x"></i></a>' : '';
+
                 $fila_material .= '
         <tr id="'.$rowid.'">
             <td>'.$objVal['codigo'].'</td>
@@ -56,7 +59,7 @@ $tabla_insumos = json_decode($insumosDatos, true);
             <td><input type="text" class="form-control form-control-sm" id="cantidad'.$rowid.'" value="'.$objVal['cantidad'].'" onblur="calcularTotal(`'.$rowid.'`)"></td>
             <td><input type="text" class="form-control form-control-sm" id="total'.$rowid.'" value="'.number_format($objVal['total'], 2, '.', ',').'" disabled></td>
             <td><input type="text" class="form-control form-control-sm" id="observacion'.$rowid.'" value="'.$objVal['observacion'].'"></td>
-            <td><a href="javascript:;" id="btnEliminar" onclick="eliminarMaterial(`'.$rowid.'`)"><i class="bx bx-x"></i></a></td>
+            <td>'.$btn_eliminar_mat.'</td>
         </tr>';
 
             }
