@@ -36,7 +36,7 @@ $table_e1_arr = json_decode($table_e1, true);
                                     <td><input type='text' class='form-control form-control-sm' id='modelo$idrow' value='".$objVal['modelo']."'></td>
                                     <td><input type='text' class='form-control form-control-sm' id='puertoEth$idrow' value='".$objVal['puertoEth']."'></td>
                                     <td><input type='text' class='form-control form-control-sm' id='posicionOdf$idrow' value='".$objVal['posicionOdf']."'></td>
-                                    <td><a href='javascript:;' id='btnEliminar' onclick='eliminar($idrow)'><i class='bx bx-x'></i></a></td>
+                                    <td><a href='javascript:;' id='btnEliminar' onclick='eliminar(`$idrow`)'><i class='bx bx-x'></i></a></td>
                                 </tr>";
                             }
                         echo $rowHtml;

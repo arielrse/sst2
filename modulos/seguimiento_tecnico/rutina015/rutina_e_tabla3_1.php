@@ -61,7 +61,7 @@ $dataT3Str = '';
 
                             $puerto = $objPrto['id_puerto'];
                             $descri = $objPrto['id_descri'];
-                            $estado = $objPrto['id_estado'];
+                            $estadoPrto = $objPrto['id_estado'];
 
                             $puertosArr[] = array(
                                 "row_prto"  => $row_prto,
@@ -74,7 +74,7 @@ $dataT3Str = '';
                                 "<tr class='align-middle' id='".$row_prto."'>" .
                                 "   <td><input type='text' class='form-control form-control-sm' id='" . $id_puerto . "' value='" . $puerto . "'></td>" .
                                 "   <td><input type='text' class='form-control form-control-sm' id='" . $id_descri . "' value='" . $descri . "'></td>" .
-                                "   <td><input type='text' class='form-control form-control-sm' id='" . $id_estado . "' value='" . $estado . "'></td>" .
+                                "   <td><input type='text' class='form-control form-control-sm' id='" . $id_estado . "' value='" . $estadoPrto . "'></td>" .
                                 "   <td><a href='javascript:;' id='btnEliminarPrto' onclick='eliminarPrto(`$row_prto`, `$id_row_eq`)'><i class='bx bx-x'></i></a></td>" .
                                 "</tr>";
                         }
