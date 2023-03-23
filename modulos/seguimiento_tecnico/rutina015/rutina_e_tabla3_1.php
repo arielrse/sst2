@@ -217,6 +217,7 @@ $dataT3Str = '';
                 dataT3.splice(pos, 1);
                 break;
             }
+            i++;
         }
 
     }
@@ -238,7 +239,7 @@ $dataT3Str = '';
                     }
                     i++;
                 }
-                obj
+                //obj
             }
         }
     }

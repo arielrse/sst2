@@ -216,6 +216,7 @@ $dataT4Str = '';
                 dataT4.splice(pos, 1);
                 break;
             }
+            i++;
         }
 
     }
@@ -237,7 +238,7 @@ $dataT4Str = '';
                     }
                     i++;
                 }
-                obj
+                //obj
             }
         }
     }

@@ -1,0 +1,1 @@
+alter table rutina016 add column tabla_5 longtext;

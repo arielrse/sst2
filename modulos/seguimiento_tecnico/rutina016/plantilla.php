@@ -97,6 +97,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $ti
     $puertos1_filas = getPuertos1R16Ant($puertos1_ant)  .   getPuertos1R16($conexion, $idrutinax);
     $puertos2_filas = getPuertos2R16Ant($puertos2_ant)  .   getPuertos2R16($conexion, $idrutinax);
 
+    $puertos_equipos = getPuertosEquiposR16($conexion, $idrutinax);
+    //$puertos_equipos = "";
+
 
 
     $g_desarrollo_g1 = $obj->{'g_desarrollo_g1'};
@@ -239,6 +242,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $ti
                         </tbody>        
                     </table>									                        
                </main>
+               
+               '.$puertos_equipos.'
+               
                <main>
                     <table class="tborder">
                         <tbody>

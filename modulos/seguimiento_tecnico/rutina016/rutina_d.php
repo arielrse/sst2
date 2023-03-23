@@ -862,5 +862,7 @@ $puertos2_ant = array(
 
         <?php require("rutina_tabla_4.php"); ?>
 
+        <?php require("rutina_tabla_5.php"); ?>
+
     </div>
 </div>
