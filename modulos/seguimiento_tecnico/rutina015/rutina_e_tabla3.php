@@ -20,7 +20,6 @@
 
                     <?php require("rutina_e_tabla3_2.php"); ?>
 
-                </div>
             </div>
         </div>
     </div>

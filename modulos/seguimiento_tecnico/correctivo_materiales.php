@@ -1,5 +1,6 @@
 <?php
 $insumosDatos = $insumos;
+$insumosDatos = str_replace("'", "", $insumosDatos);
 $tabla_insumos = json_decode($insumosDatos, true);
 ?>
 
@@ -11,7 +12,9 @@ $tabla_insumos = json_decode($insumosDatos, true);
                 <?php
                 $resultado = mysqli_query($conexion, "SELECT idmaterial, codigo, nombre, unidad, precio FROM material");
                 while($dato=mysqli_fetch_array($resultado)) {
-                    $value = $dato['idmaterial'] . '|' . $dato['codigo'] . '|' . $dato['nombre'] . '|' . $dato['unidad'] . '|' . $dato['precio'];
+                    $nombre = str_replace("'", "", $dato['nombre']);
+                    $nombre = str_replace('"', '', $nombre);
+                    $value = $dato['idmaterial'] . '|' . $dato['codigo'] . '|' . $nombre . '|' . $dato['unidad'] . '|' . $dato['precio'] . '|' . $dato['idmaterial'];
                     echo '<option value="' . $value . '">' . $dato['codigo'] . ' - ' . $dato['nombre'] . ' (' . $dato['precio'] . ')</option>';
                 }
                 ?>
@@ -47,16 +50,28 @@ $tabla_insumos = json_decode($insumosDatos, true);
             foreach ($tabla_insumos as $objVal) {
                 $rowid = $objVal['rowid'];
                 $totalMonto += $objVal['total'];
+
+                $btn_eliminar_mat = $permissions ? '<a href="javascript:;" id="btnEliminar" onclick="eliminarMaterial(`'.$rowid.'`)"><i class="bx bx-x"></i></a>' : '';
+                $nombreMaterial = $objVal['nombre'];
+
+                if ( isset($objVal['idmaterial']) ){
+                    $nombreMaterial = $objVal['idmaterial'];
+                    $resultado = mysqli_query($conexion, "SELECT * FROM material WHERE idmaterial = " . $objVal['idmaterial']);
+                    $dataMat = mysqli_fetch_array($resultado);
+                    $nombreMaterial = $dataMat['nombre'];
+                }
+
+
                 $fila_material .= '
         <tr id="'.$rowid.'">
             <td>'.$objVal['codigo'].'</td>
-            <td>'.$objVal['nombre'].'</td>
+            <td>'.$nombreMaterial.'</td>
             <td>'.$objVal['unidad'].'</td>
             <td><input type="text" class="form-control form-control-sm" id="precio'.$rowid.'" value="'.$objVal['precio'].'" disabled></td>
             <td><input type="text" class="form-control form-control-sm" id="cantidad'.$rowid.'" value="'.$objVal['cantidad'].'" onblur="calcularTotal(`'.$rowid.'`)"></td>
             <td><input type="text" class="form-control form-control-sm" id="total'.$rowid.'" value="'.number_format($objVal['total'], 2, '.', ',').'" disabled></td>
             <td><input type="text" class="form-control form-control-sm" id="observacion'.$rowid.'" value="'.$objVal['observacion'].'"></td>
-            <td><a href="javascript:;" id="btnEliminar" onclick="eliminarMaterial(`'.$rowid.'`)"><i class="bx bx-x"></i></a></td>
+            <td>'.$btn_eliminar_mat.'</td>
         </tr>';
 
             }
@@ -106,6 +121,7 @@ $tabla_insumos = json_decode($insumosDatos, true);
         var nombre = datosArr[2];
         var unidad = datosArr[3];
         var precio = datosArr[4];
+        var idmaterial = datosArr[5];
 
         var rowid = get_uuid();
         var fila =
@@ -128,7 +144,8 @@ $tabla_insumos = json_decode($insumosDatos, true);
             "precio": precio,
             "cantidad": "",
             "total": "",
-            "observacion": ""
+            "observacion": "",
+            "idmaterial": idmaterial
         });
 
         $("#tabla_material").append(fila);

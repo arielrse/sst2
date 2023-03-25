@@ -4,7 +4,9 @@ $dataT4 = [];
 $dataT4Str = '';
 
 ?>
+<?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
 <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_save_ODF"><i class="bx bx-save me-0"></i></button>
+<?php } ?>
 <table class="table table-bordered" id="tabla_ODF">
     <tr class='align-middle'>
 
@@ -59,7 +61,7 @@ $dataT4Str = '';
 
                             $puerto = $objPrto['id_puerto'];
                             $descri = $objPrto['id_descri'];
-                            $estado = $objPrto['id_estado'];
+                            $estadoPrt = $objPrto['id_estado'];
 
                             $puertosArr[] = array(
                                 "row_prto"  => $row_prto,
@@ -72,7 +74,7 @@ $dataT4Str = '';
                                 "<tr class='align-middle' id='".$row_prto."'>" .
                                 "   <td><input type='text' class='form-control form-control-sm' id='" . $id_puerto . "' value='" . $puerto . "'></td>" .
                                 "   <td><input type='text' class='form-control form-control-sm' id='" . $id_descri . "' value='" . $descri . "'></td>" .
-                                "   <td><input type='text' class='form-control form-control-sm' id='" . $id_estado . "' value='" . $estado . "'></td>" .
+                                "   <td><input type='text' class='form-control form-control-sm' id='" . $id_estado . "' value='" . $estadoPrt . "'></td>" .
                                 "   <td><a href='javascript:;' id='btneliminarPrtoODF' onclick='eliminarPrtoODF(`$row_prto`, `$id_row_eq`)'><i class='bx bx-x'></i></a></td>" .
                                 "</tr>";
                         }
@@ -108,8 +110,8 @@ $dataT4Str = '';
     var tabla_equiposODF   = document.getElementById('tabla_equipos_ODF');
     var btn_save_ODF       = document.getElementById('btn_save_ODF');
 
-    btn_add_equiposODF.addEventListener("click", agregarFilaEquiposT4);
-    btn_save_ODF.addEventListener("click", guardarTablaODF);
+    if ( btn_add_equiposODF !== null) btn_add_equiposODF.addEventListener("click", agregarFilaEquiposT4);
+    if ( btn_save_ODF !== null) btn_save_ODF.addEventListener("click", guardarTablaODF);
 
     var table_e4 = '<?php echo $table_e4; ?>';
     var dataT4 = <?php echo $dataT4Str; ?>;
@@ -214,6 +216,7 @@ $dataT4Str = '';
                 dataT4.splice(pos, 1);
                 break;
             }
+            i++;
         }
 
     }
@@ -235,7 +238,7 @@ $dataT4Str = '';
                     }
                     i++;
                 }
-                obj
+                //obj
             }
         }
     }

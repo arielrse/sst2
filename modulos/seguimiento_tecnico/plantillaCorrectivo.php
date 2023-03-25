@@ -310,7 +310,7 @@ function getDatos($conexion, $idcorrectivo){
 function getReporteFotografico($conexion, $idcorrectivo){
 
     $res = mysqli_query($conexion,
-        "SELECT r.nombre, r.titulo FROM rutina_correctivo_img r WHERE r.idrutinacorrectivo = " . $idcorrectivo);
+        "SELECT r.nombre, r.titulo FROM rutina_correctivo_img r WHERE r.idrutinacorrectivo = " . $idcorrectivo ." ORDER BY r.posicion ASC");
 
     $result = '<br />
     <main>
@@ -401,10 +401,19 @@ function getReporteMateriales($conexion, $idcorrectivo){
         $totalMonto = 0;
         foreach ($tabla_insumos as $objVal) {
             $totalMonto += $objVal['total'];
+            $nombreMaterial = $objVal['nombre'];
+
+            if ( isset($objVal['idmaterial']) ){
+                $nombreMaterial = $objVal['idmaterial'];
+                $resultado = mysqli_query($conexion, "SELECT * FROM material WHERE idmaterial = " . $objVal['idmaterial']);
+                $dataMat = mysqli_fetch_array($resultado);
+                $nombreMaterial = $dataMat['nombre'];
+            }
+
             $result .= '
             <tr>
                 <td>'.$objVal['codigo'].'</td>
-                <td>'.$objVal['nombre'].'</td>
+                <td>'.$nombreMaterial.'</td>
                 <td>'.$objVal['unidad'].'</td>
                 <td align="right">'.$objVal['precio'].'</td>
                 <td align="center">'.$objVal['cantidad'].'</td>

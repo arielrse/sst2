@@ -107,13 +107,24 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
                                 </div>
                             </div>
 
+                            <div class="row mb-3">
+                                <label for="inputAddress4" class="col-sm-3 col-form-label"></label>
+                                <div class="col-sm-9">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="copiar" name="copiar">
+                                        <label class="form-check-label" for="copiar">Copiar datos anteriores de Rutinas y Catastros</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputAddress4" class="col-sm-3 col-form-label"></label>
+                                <div class="col-sm-9">
+                                    <select name="ideventoSelect" id="ideventoSelect" class="form-select" disabled></select>
+                                </div>
+                            </div>
 
                             <div class="row row-cols-auto g-3">
-                                <!--<div class="ms-auto">
-                                    <a href="javascript:;" class="btn btn-primary radius-30 mt-2 mt-lg-0">
-                                        <i class="bx bxs-plus-square"></i>Add New Order</a>
-                                </div>-->
-                                <!--<div class="col">-->
                                 <div class="ms-auto">
                                     <input type="submit" class="btn btn-primary px-5 mt-2 mt-lg-0" name="nuevo" value="Guardar" />
                                     <input type="button" onClick="location.href='<?=$mst?>cronograma_cm.php'" value="Cancelar" class="btn btn-secondary px-5 mt-2 mt-lg-0">
@@ -144,4 +155,47 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
             return false;
         }
     }
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        $('#copiar').click(function(){
+            var idsitio  = $('#sitio').val()
+            var frmData = new FormData;
+            frmData.append("idsitio", idsitio);
+
+            $.ajax({
+                url: 'getEventosCronograma.php',
+                type: 'POST',
+                data: frmData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                /*beforeSend: function (data) {
+                    btnEnviar.attr("disabled", true);
+                    btnEnviar.html('<div class="spinner-border spinner-border-sm" role="status"></div>');
+                },*/
+                success: function (data) {
+
+                    var respDates = JSON.parse(data);
+                    var htmlResult = '<option value="0" selected class="title7"> Seleccionar fecha de cronograma </option>';
+
+                    for ( let i=0 ; i < respDates.length; i++ ){
+                        evento = respDates[i];
+                        htmlResult += '<option value="' + evento.id + '">' + evento.fecha + '</option>';
+                    }
+
+                    $("#ideventoSelect").html(htmlResult);
+                    $("#ideventoSelect").attr("disabled", false);
+
+                }
+            })
+
+
+        });
+
+    });
+
 </script>

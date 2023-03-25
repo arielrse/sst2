@@ -7,9 +7,10 @@ $table_e1_arr = json_decode($table_e1, true);
     <div class="card-body">
         <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
             <div class="col">
-
+                <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                 <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_save_t1"><i class="bx bx-save me-0"></i></button>
                 <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_add_ori_dest"><i class="bx bx-plus me-0"></i></button>
+                <?php } ?>
                 <div id="fibra-ori-des">
                     <table class="table table-bordered mb-3" id="lista_fibra">
                         <tr>
@@ -35,7 +36,7 @@ $table_e1_arr = json_decode($table_e1, true);
                                     <td><input type='text' class='form-control form-control-sm' id='modelo$idrow' value='".$objVal['modelo']."'></td>
                                     <td><input type='text' class='form-control form-control-sm' id='puertoEth$idrow' value='".$objVal['puertoEth']."'></td>
                                     <td><input type='text' class='form-control form-control-sm' id='posicionOdf$idrow' value='".$objVal['posicionOdf']."'></td>
-                                    <td><a href='javascript:;' id='btnEliminar' onclick='eliminar($idrow)'><i class='bx bx-x'></i></a></td>
+                                    <td><a href='javascript:;' id='btnEliminar' onclick='eliminar(`$idrow`)'><i class='bx bx-x'></i></a></td>
                                 </tr>";
                             }
                         echo $rowHtml;
@@ -54,8 +55,8 @@ $table_e1_arr = json_decode($table_e1, true);
     var btn_save_t1         = document.getElementById('btn_save_t1');
     var lista_fibra      = document.getElementById('lista_fibra');
 
-    btn_add_ori_dest.addEventListener("click", agregar);
-    btn_save_t1.addEventListener("click", guardarFilas);
+    if ( btn_add_ori_dest !== null ) btn_add_ori_dest.addEventListener("click", agregar);
+    if ( btn_save_t1 !== null )      btn_save_t1.addEventListener("click", guardarFilas);
 
     var table_e1 = '<?php echo $table_e1; ?>';
 

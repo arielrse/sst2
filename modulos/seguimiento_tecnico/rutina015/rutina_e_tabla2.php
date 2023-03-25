@@ -7,9 +7,10 @@ $table_e2_arr = json_decode($table_e2, true);
     <div class="card-body">
         <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
             <div class="col">
-
+                <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                 <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_save_t2"><i class="bx bx-save me-0"></i></button>
                 <button type="button" class="btn btn-sm btn-outline-info mb-1" id="btn_add_t2"><i class="bx bx-plus me-0"></i></button>
+                <?php } ?>
                 <div id="fibra-t2">
                     <table class="table table-bordered mb-3" id="lista_fibra_t2">
                         <tr class='align-middle'>
@@ -61,8 +62,8 @@ $table_e2_arr = json_decode($table_e2, true);
     var btn_save_t2     = document.getElementById('btn_save_t2');
     var lista_fibra_t2  = document.getElementById('lista_fibra_t2');
 
-    btn_add_t2.addEventListener("click", agregarFilaT2);
-    btn_save_t2.addEventListener("click", guardarFilasT2);
+    if ( btn_add_t2 !== null ) btn_add_t2.addEventListener("click", agregarFilaT2);
+    if ( btn_save_t2 !== null ) btn_save_t2.addEventListener("click", guardarFilasT2);
 
     var table_e2 = '<?php echo $table_e2; ?>';
 

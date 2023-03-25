@@ -58,7 +58,7 @@ $notas = $dato['notas'];
 $insumos = $dato['insumos'];
 $repuestos = $dato['repuestos'];
 
-$permissions = ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient());
+$permissions = ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient());
 
 $volver = "";
 if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
@@ -104,7 +104,7 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
                     <input type="submit" id="btn-generar" class="btn btn-secondary px-4" value="Generar" />
                     <input type="hidden" name="idcorrectivo" id="idcorrectivo" value="<?=$id?>" />
 
-                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
+                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                     <input type="button" id="btn-save-mttoc" class="btn btn-primary px-4" value="Guardar" />
                     <?php } ?>
                     <!--<button type="button" class="btn btn-outline-primary" onclick="location.href='<?/*=$link_modulo*/?>?path=correctivos_mtto.php'"><i class="bx bx-arrow-back me-0"></i></button>-->
@@ -701,67 +701,7 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
                     </div>
 
                     <div class="tab-pane fade" id="adjuntosTab" role="tabpanel">
-                        <?php if ( !isClient() && !isNationalClient() ) { ?>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="input-group">
-                                        <div class="col-md-4">
-                                            <input class="form-control form-control-sm" type="file" id="imagen" name="imagen">
-                                        </div>
-                                        <div class="col-md-7">
-                                            <input id="titulodoc" name="titulodoc" class="form-control form-control-sm" type="text" placeholder="Titulo">
-                                        </div>
-                                        <?php if ( $permissions ) { ?>
-                                        <div class="col-md-1">
-                                            <button class="btn btn-sm btn-outline-primary" type="button" id="btn-subirimg" name="btn-subirimg"><i class='bx bx-plus'></i></button>
-                                        </div>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?>
-
-                        <div id="table-docs">
-                            <table class="table mb-0 table-hover">
-                                <?php
-                                $query = "SELECT id, nombre, titulo, idrutinacorrectivo FROM rutina_correctivo_img
-                                          WHERE idrutinacorrectivo = " . $id;
-                                $result = mysqli_query($conexion, $query);
-                                $i = 1;
-                                while( $data = mysqli_fetch_array($result) ){
-                                    $nombreImg = $data['nombre'];
-                                    $idImg = $data['id'];
-                                    $extension = pathinfo($nombreImg, PATHINFO_EXTENSION);
-
-                                    $hrefImg = '../../fotos/correctivo/' . $nombreImg;
-                                    /*$sizedoc = filesize($hrefImg)/1024/1000;
-                                    $sizedoc = round($sizedoc, 1);*/
-
-
-                                    $eliminarImg = "";
-                                    if (!isNationalClient() && !isClient())
-                                        $eliminarImg .= "<a href='javascript:;' class='ms-3' id='btnEliminarDoc' onclick='eliminarImagenCorrectivo(`$idImg`, `$nombreImg`)'>
-                                                            <i class='bx bxs-trash'></i>
-                                                         </a>";
-
-                                    echo "
-                                    <tr>
-                                        <td width='5%'>$i</td>
-                                        <td width='85%'><a href='$hrefImg' target='_blank'>".$data['titulo']."</a></td>
-                                        <td width='10%'>
-                                            <div class='d-flex'>
-                                                <a href='$hrefImg'></a> $extension
-                                                " . $eliminarImg ."
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    ";
-                                    $i++;
-                                }
-                                ?>
-                            </table>
-                        </div>
-
+                        <?php require("../../modulos/seguimiento_tecnico/correctivo_fotos.php"); ?>
                     </div>
 
                 </div>
@@ -772,7 +712,7 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
             <div class="ms-auto">
                 <div>
-                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
+                    <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
                         <input type="button" id="btn-save-mttoc2" class="btn btn-primary px-4" value="Guardar" />
                     <?php } ?>
                 </div>
@@ -935,82 +875,6 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
         //$('#equipofalla')
     });
 
-    $(document).ready(function () {
-
-        var btnEnviar = $("#btn-subirimg");
-
-        $('#btn-subirimg').click(function(){
-
-            var idrutinacorrectivo  = $('#idc').val()
-            var iddepartamento      = $('#iddepartamento').val()
-            var titulodoc           = $('#titulodoc').val()
-
-            var size = document.getElementsByName("imagen")[0].files[0].size;
-            var docsize = ((size / 1024)/1000);
-
-            if ( docsize < 10) {
-                var frmData = new FormData;
-                frmData.append("imagen", $("input[name=imagen]")[0].files[0]);
-                frmData.append("idrutinacorrectivo", idrutinacorrectivo);
-                frmData.append("iddepartamento", iddepartamento);
-                frmData.append("titulodoc", titulodoc);
-
-
-                if (fileValidation()) {
-                    $.ajax({
-                        url: 'subir_imagen_correctivo.php',
-                        type: 'POST',
-                        data: frmData,
-                        processData: false,
-                        contentType: false,
-                        cache: false,
-                        beforeSend: function (data) {
-                            btnEnviar.attr("disabled", true);
-                            btnEnviar.html('<div class="spinner-border spinner-border-sm" role="status"></div>');
-                        },
-                        success: function (data) {
-                            alert(data);
-                            $("#table-docs").load(window.location + " #table-docs");
-                            document.querySelector('#imagen').value = "";
-                            document.querySelector('#titulodoc').value = "";
-                            btnEnviar.html('<i class="bx bx-plus"></i>');
-                            btnEnviar.attr("disabled", false);
-                        }
-                    })
-                } else {
-                    document.querySelector('#imagen').value = "";
-                    document.querySelector('#titulodoc').value = "";
-                }
-
-            } else{
-                alert( 'No es posible, el archivo supera los 10MB' )
-            }
-            return false;
-
-        });
-
-    });
-
-    function eliminarImagenCorrectivo(idImg){
-
-        if (confirm('¿Esta seguro que desea eliminar la imagen? : ' + idImg)) {
-
-            var frmData = new FormData;
-            frmData.append("idImg", idImg);
-
-            $.ajax({
-                url: 'eliminar_imagen_correctivo.php',
-                type: 'POST',
-                data: frmData,
-                processData: false,
-                contentType: false,
-                cache: false,
-                success: function (data) {
-                    $("#table-docs").load(window.location + " #table-docs");
-                }
-            })
-        }
-    }
 
     function fileValidation(){
         var fileInput = document.getElementById('imagen');

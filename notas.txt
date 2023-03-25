@@ -1,0 +1,33 @@
+DELETE FROM rutina001 WHERE idevento = 2559;
+DELETE FROM rutina002 WHERE idevento = 2559;
+DELETE FROM rutina003 WHERE idevento = 2559;
+DELETE FROM rutina004 WHERE idevento = 2559;
+DELETE FROM rutina005 WHERE idevento = 2559;
+DELETE FROM rutina006 WHERE idevento = 2559;
+DELETE FROM rutina007 WHERE idevento = 2559;
+DELETE FROM rutina008 WHERE idevento = 2559;
+DELETE FROM rutina009 WHERE idevento = 2559;
+DELETE FROM rutina010 WHERE idevento = 2559;
+DELETE FROM rutina011 WHERE idevento = 2559;
+DELETE FROM rutina012 WHERE idevento = 2559;
+DELETE FROM rutina013 WHERE idevento = 2559;
+DELETE FROM rutina014 WHERE idevento = 2559;
+DELETE FROM rutina015 WHERE idevento = 2559;
+DELETE FROM rutina016 WHERE idevento = 2559;
+DELETE FROM rutina017 WHERE idevento = 2559;
+DELETE FROM rutina WHERE idevento    = 2559;
+
+DELETE FROM catastro001 WHERE idevento = 2559;
+DELETE FROM catastro002 WHERE idevento = 2559;
+DELETE FROM catastro003 WHERE idevento = 2559;
+DELETE FROM catastro004 WHERE idevento = 2559;
+DELETE FROM catastro005 WHERE idevento = 2559;
+DELETE FROM catastro006 WHERE idevento = 2559;
+DELETE FROM catastro007 WHERE idevento = 2559;
+DELETE FROM catastro008 WHERE idevento = 2559;
+DELETE FROM catastro009 WHERE idevento = 2559;
+DELETE FROM catastro010 WHERE idevento = 2559;
+DELETE FROM catastro011 WHERE idevento = 2559;
+DELETE FROM catastro WHERE idevento    = 2559;
+
+DELETE FROM evento WHERE idevento    = 2559;

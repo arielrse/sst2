@@ -1,22 +1,21 @@
 <?php
 
-$resTablas  = mysqli_query($conexion, "SELECT r.cabecera, r.id, r.tabla_1, r.tabla_2, r.tabla_3, r.tabla_4 FROM rutina016 r WHERE r.idrutina = ".$idrutina);
+$resTablas  = mysqli_query($conexion, "SELECT r.cabecera, r.id, r.tabla_1, r.tabla_2, r.tabla_3, r.tabla_4, r.tabla_5 
+                                             FROM rutina016 r WHERE r.idrutina = ".$idrutina);
 $dataTablas = mysqli_fetch_array($resTablas);
 
 $tabla_1 = $dataTablas['tabla_1'];
 $tabla_2 = $dataTablas['tabla_2'];
 $tabla_3 = $dataTablas['tabla_3'];
 $tabla_4 = $dataTablas['tabla_4'];
+$tabla_5 = $dataTablas['tabla_5'];
 
 $tabla_1_arr = json_decode($tabla_1, true);
 $tabla_2_arr = json_decode($tabla_2, true);
 $tabla_3_arr = json_decode($tabla_3, true);
 $tabla_4_arr = json_decode($tabla_4, true);
+$tabla_5_arr = json_decode($tabla_5, true);
 
-//$tabla_1_arrX = array_merge($equipos_ant, isset($tabla_1_arr) ? $tabla_1_arr : []);
-//$tabla_2_arrX = array_merge($fuentes_ant, isset($tabla_2_arr) ? $tabla_2_arr : []);
-//$tabla_3_arrX = array_merge($puertos1_ant, isset($tabla_3_arr) ? $tabla_3_arr : []);
-//$tabla_4_arrX = array_merge($puertos2_ant, isset($tabla_4_arr) ? $tabla_4_arr : []);
 
 ?>
 

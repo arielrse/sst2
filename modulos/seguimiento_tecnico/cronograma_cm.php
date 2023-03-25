@@ -15,15 +15,10 @@ if ($idcentro == 0){
     $idcentro = $arrayCentro[0];
 }
 
-//$param_volver = base64_encode("&mes=$mes&anio=$anio&centro=$codCentro");
-//$param_volver ="";
-
 /** ----- **/
 
 # definimos los valores iniciales para nuestro calendario
-//$month      = date("n")-1;
 $month      = $mes;
-//$year       = date("Y");
 $year       = $anio;
 $diaActual  = date("j");
 
@@ -47,6 +42,15 @@ AND c.idcentro = " . $idcentro);
 
 $filas	   = mysqli_num_rows($resultado);
 
+/** Encuentra grupo de Mantenimiento **/
+$idgrupoFound = 0;
+$result = mysqli_query($conexion, "SELECT g.idgrupo, g.user1, g.user2 FROM grupo g where g.user1 = ".$id_user." or g.user2 = ".$id_user);
+$row	= mysqli_num_rows($result);
+$data   = mysqli_fetch_array($result);
+if ( $row > 0 ){
+    $idgrupoFound = $data['idgrupo'];
+}
+/** - - - - - - - - - - - - - - - - - - **/
 $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
 
 ?>
@@ -55,7 +59,7 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
 
         <table width="100%">
             <tr>
-                <td  align="center"><span class="naranja">&nbsp;CM/SCM: <?php /*echo $idcentro . ' - ' . $mes . ' - ' . $ultimoDiaMes;*/ ?></span></td>
+                <td  align="center"><span class="naranja">&nbsp;CM/SCM: </span></td>
                 <td>
                     <form name="amper" method="post" action="<?=$link_modulo?>?path=cronograma_cm.php">
                         <input type="hidden" name="param_volver" id="param_volver" value="<?php echo $param_volver ?>" />
@@ -157,16 +161,22 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
             if ($estado == "EJE") $stateClass = "text-primary";
             if ($estado == "REP") $stateClass = "text-warning";
 
-
-            if ( isset($a[$f][$c]) ){
-                $a[$f][$c] .= "<br />";
-                $a[$f][$c] .= "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
-            }
-            else{
-                $a[$f][$c] = "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
-
-            }
-
+            if ( !isTechnical() ){
+                if ( isset($a[$f][$c]) ){
+                    $a[$f][$c] .= "<br />";
+                    $a[$f][$c] .= "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
+                }
+                else
+                    $a[$f][$c] = "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
+            } else
+                if ( ($idgrupo == $idgrupoFound) ){
+                    if ( isset($a[$f][$c]) ){
+                        $a[$f][$c] .= "<br />";
+                        $a[$f][$c] .= "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
+                    }
+                    else
+                        $a[$f][$c] = "<span class='small'><a href='$href' class='$stateClass'>" . $dato['nombre'] . "</a></span>";
+                }
         }
 
         // Mostrando matriz con datos pcargados previamente

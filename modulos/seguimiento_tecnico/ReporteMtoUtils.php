@@ -857,7 +857,7 @@ function getReporteFotog($conexion, $idrutinax, $codRutina){
     $res = mysqli_query($conexion,
         "SELECT ri.imagen, ri.nombre FROM rutina".$codRutina." r
                 LEFT JOIN rutina_imagen ri ON r.idrutina = ri.idrutina
-                WHERE r.id = " . $idrutinax);
+                WHERE r.id = " . $idrutinax . " ORDER BY ri.posicion ASC");
 
     $result = '<br />
     <main>
@@ -1059,6 +1059,59 @@ function getPuertos2R16($conexion, $idrutinax){
         }
     }
     return $result;
+}
+
+function getPuertosEquiposR16($conexion, $idrutinax){
+    $res = mysqli_query($conexion, "SELECT r.id, r.tabla_5 FROM rutina016 r
+                                           WHERE r.id = ".$idrutinax);
+    $data = mysqli_fetch_array($res);
+    $tabla_5   = $data['tabla_5'];
+    $table_e5_arr = json_decode($tabla_5, true);
+
+
+        $dataHtml = "";
+        if ($table_e5_arr) {
+            $cont = 3;
+
+            $dataHtml .= "<main><table class='tborder'>";
+
+            foreach ($table_e5_arr as $objVal) {
+
+                $dataHtml .=
+                    "<tr><td class='text-center' colspan='5'><strong>Puertos Equipo " . $cont++ . "</strong></td></tr>" .
+                    "<tr class='align-middle'>" .
+                    "    <td class='col-5p'>Id</td>" .
+                    "    <td class='col-5p'>Puerto</td>" .
+                    "    <td class='col-30p'>Descripción</td>" .
+                    "    <td class='col-30p'>Posicion</td>" .
+                    "    <td class='col-30p'>Obs</td>" .
+                    "</tr>";
+
+                foreach ($objVal['puertos'] as $objPrto) {
+
+                    $id = $objPrto['id_id'];
+                    $puerto = $objPrto['id_puerto'];
+                    $descri = $objPrto['id_descri'];
+                    $posicionPrt = $objPrto['id_posicion'];
+                    $observacion = $objPrto['id_obs'];
+
+
+                    $dataHtml .=
+                        "<tr class='align-middle'>" .
+                        "   <td>" . $id . "</td>" .
+                        "   <td>" . $puerto . "</td>" .
+                        "   <td>" . $descri . "</td>" .
+                        "   <td>" . $posicionPrt . "</td>" .
+                        "   <td>" . $observacion . "</td>" .
+                        "</tr>";
+                }
+                $dataHtml .= "</table></main>";
+                $dataHtml .= "<main><table class='tborder'>";
+            }
+            $dataHtml .= "</table></main>";
+        }
+
+        return $dataHtml;
 }
 
 ?>
