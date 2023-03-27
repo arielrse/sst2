@@ -1246,6 +1246,45 @@ while($row = mysqli_fetch_array($resultado)){
             $sheet->setCellValue('B'.$fila, $sitioId);
             $sheet->setCellValue('C'.$fila, $propertyId);
             $sheet->setCellValue('D'.$fila, $c_fechaRealizacion);
+            $sheet->setCellValue('E'.$fila, $cod_fijo);
+            $sheet->setCellValue('F'.$fila, $cod_activo);
+            $sheet->setCellValue('G'.$fila, $d01_01);
+            $sheet->setCellValue('H'.$fila, $d02_01);
+            $sheet->setCellValue('I'.$fila, "-");
+            $sheet->setCellValue('J'.$fila, $d03_01);
+            $sheet->setCellValue('K'.$fila, $d03_02);
+            $sheet->setCellValue('L'.$fila, $d04_01);
+            $sheet->setCellValue('M'.$fila, $d04_02);
+            $sheet->setCellValue('N'.$fila, $d05_01);
+            $sheet->setCellValue('O'.$fila, $d06_01);
+            $sheet->setCellValue('P'.$fila, $d07_01);
+            $sheet->setCellValue('Q'.$fila, $d07_02);
+            $sheet->setCellValue('R'.$fila, $d08_01);
+            $sheet->setCellValue('S'.$fila, "-");
+            $sheet->setCellValue('T'.$fila, $d09_01);
+            $sheet->setCellValue('U'.$fila, $d09_02);
+            $sheet->setCellValue('V'.$fila, $d10_01);
+            $sheet->setCellValue('W'.$fila, $d11_01);
+            $sheet->setCellValue('X'.$fila, $d11_02);
+            $sheet->setCellValue('Y'.$fila, $d12_01);
+            $sheet->setCellValue('Z'.$fila, "-");
+            $sheet->setCellValue('AA'.$fila, $d13_01);
+            $sheet->setCellValue('AB'.$fila, $d13_02);
+            $sheet->setCellValue('AC'.$fila, $d14_01);
+            $sheet->setCellValue('AD'.$fila, $d15_01);
+            $sheet->setCellValue('AE'.$fila, $d15_02);
+            $sheet->setCellValue('AF'.$fila, $d16_01);
+            $sheet->setCellValue('AG'.$fila, $d17_01);
+            $sheet->setCellValue('AH'.$fila, $d17_02);
+            $sheet->setCellValue('AI'.$fila, $d18_01);
+            $sheet->setCellValue('AJ'.$fila, "-");
+            $sheet->setCellValue('AK'.$fila, $d19_01);
+            $sheet->setCellValue('AL'.$fila, $d20_01);
+            $sheet->setCellValue('AM'.$fila, $d21_01);
+            $sheet->setCellValue('AN'.$fila, $d22_01);
+            $sheet->setCellValue('AO'.$fila, $d22_02);
+            $sheet->setCellValue('AP'.$fila, $observaciones);
+
 
         }
     }
