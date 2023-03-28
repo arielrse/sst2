@@ -21,3 +21,9 @@ SELECT g.idgrupo, g.user1, g.user2
 FROM grupo g
 where g.user1 = 1 or g.user2 = 1
 ;
+
+-- Duplicados en rutinas
+SELECT r.`idevento`, count(r.`idrutina`) AS conta
+FROM rutina008 r
+GROUP BY r.`idevento` ORDER BY conta DESC
+;
