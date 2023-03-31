@@ -178,6 +178,11 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
                 </li>
 
             </ul>
+            <ul>
+                <li> <a href="<?=$muser?>reporte_txdx.php"><i class="bx bx-right-arrow-alt"></i>Reporte TX, DX</a>
+                </li>
+
+            </ul>
         </li>
 
         <?php if ( isAdmin() || isExpert() ) { ?>
