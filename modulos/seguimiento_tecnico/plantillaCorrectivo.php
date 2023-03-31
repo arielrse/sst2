@@ -20,16 +20,16 @@ function getPlantilla($conexion, $idcorrectivo){
 
     $reporteFotos = getReporteFotografico($conexion, $idcorrectivo);
 
-    $fecha_corte  = $data['fecha_corte'] != '' ? date("d/m/Y H:i", strtotime($data['fecha_corte']) ) : 'NA';
+    $fecha_corte  = $data['fecha_corte'] != '' ? date("d/m/Y H:i", strtotime($data['fecha_corte']) ) : 'No Aplica';
     $fecha_aviso  = $data['fecha_aviso'] != '' ? date("d/m/Y H:i", strtotime($data['fecha_aviso']) ) : '';
     $fecha_salida = $data['fecha_salida'] != '' ?  date("d/m/Y H:i", strtotime($data['fecha_salida'])) : '';
     $fecha_llegada = $data['fecha_llegada'] != '' ?  date("d/m/Y H:i", strtotime($data['fecha_llegada'])) : '';
-    $fecha_superada = $data['fecha_superada'] != '' ?  date("d/m/Y H:i", strtotime($data['fecha_superada'])) : 'NA';
+    $fecha_superada = $data['fecha_superada'] != '' ?  date("d/m/Y H:i", strtotime($data['fecha_superada'])) : 'No Aplica';
     $fecha_fin = $data['fecha_fin'] != '' ?  date("d/m/Y H:i", strtotime($data['fecha_fin'])) : '';
 
     $fecha_base = strtotime("01-01-2010 00:00:00");
-    $fecha_corte    = strtotime($data['fecha_corte'])    < $fecha_base ? 'NA' : $fecha_corte;
-    $fecha_superada = strtotime($data['fecha_superada']) < $fecha_base ? 'NA' : $fecha_superada;
+    $fecha_corte    = strtotime($data['fecha_corte'])    < $fecha_base ? 'No Aplica' : $fecha_corte;
+    $fecha_superada = strtotime($data['fecha_superada']) < $fecha_base ? 'No Aplica' : $fecha_superada;
 
     $plantilla =
 '<body>
