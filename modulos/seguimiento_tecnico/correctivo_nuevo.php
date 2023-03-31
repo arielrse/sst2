@@ -557,8 +557,6 @@ $fecha_eje = date("Y-m-d");
 
     function saveMttoCorrectivo() {
 
-         alert('fecha: ' + $("#fecha_corte").val());
-
          if ( verifyValues() ) {
              var frmData = new FormData;
              frmData.append('razon', $("#razon").val());
