@@ -12,10 +12,10 @@
                         <div class="card-title d-flex align-items-center">
                             <div><i class="bx bx-file me-1 font-20 text-primary"></i>
                             </div>
-                            <h5 class="mb-0 text-primary">Reporte de Transmisión, Datos</h5>
+                            <h5 class="mb-0 text-primary">Reporte Sistemas de Transmisión</h5>
                         </div>
 
-                        <form class="row g-3" name="amper" method="post" action="../../modulos/usuarios/generar_catastros.php">
+                        <form class="row g-3" name="amper" method="post" action="../../modulos/usuarios/generar_reporteTX.php">
                             <div class="col-md-12">
                                 <label for="iddepartamento" class="form-label">Departamento</label>
                                 <select name="iddepartamento" class="form-select" id="iddepartamento" required>
@@ -28,18 +28,18 @@
                                 </select>
                             </div>
 
-                            <div class="col-md-12">
+                            <!--<div class="col-md-12">
                                 <label for="codeidform" class="form-label">Rutina</label>
                                 <select name="codeidform" id="codeidform" class="form-select" required>
                                     <option value="0" selected>Seleccionar...</option>
                                     <?php
-                                    $resultado = mysqli_query($conexion, "SELECT idformulario, codigo, nombre, area 
+/*                                    $resultado = mysqli_query($conexion, "SELECT idformulario, codigo, nombre, area
                                                                                 FROM formulario WHERE tipo = 'PREVENTIVO' AND codigo in (015, 016)");
                                     while($dato=mysqli_fetch_array($resultado))
                                         echo '<option value="'.$dato['codigo'].'|'.$dato['idformulario'].'">'.$dato['codigo'].' - '.$dato['nombre'].'</option>';
-                                    ?>
+                                    */?>
                                 </select>
-                            </div>
+                            </div>-->
 
                             <div class="col-md-6">
                                 <label for="fechainicio" class="form-label">Fecha Inicio</label>
