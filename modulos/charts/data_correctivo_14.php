@@ -20,8 +20,8 @@ $res = mysqli_query($conexion,
             FROM rutina_correctivo r
             LEFT JOIN estacionentel e    ON r.idestacione = e.idestacionentel
             LEFT JOIN centro c           ON e.idcentro = c.idcentro
-            WHERE r.`fecha_eje` BETWEEN '2022-08-01' AND '2022-12-31'
-            AND c.`iddepartamento` = 3
+            WHERE r.`fecha_eje` BETWEEN '$fechainicio' AND '$fechafin'
+            AND c.`iddepartamento` = $iddepartamento
             AND r.atencion = 'En Sitio'
             group by r.en_plazo order by r.en_plazo desc ");
 
