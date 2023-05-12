@@ -103,7 +103,7 @@ while($row = mysqli_fetch_array($resultado)){
         $filaIDU++;
         for ($row = 0; $row < 16; $row++) {
             if ( $row == 0) $sheet->getStyle("A".$filaIDU.":G".$filaIDU)->applyFromArray($tableHead);
-            for ($col = 0; $col < 6; $col++) {
+            for ($col = 0; $col <= 6; $col++) {
                 switch ($col) {
                     case 0: $sheet->setCellValue('A'.$filaIDU, $matrizIdu[$row][$col]);
                     case 1: $sheet->setCellValue('B'.$filaIDU, $matrizIdu[$row][$col]);
@@ -161,7 +161,7 @@ while($row = mysqli_fetch_array($resultado)){
         $filaOdu1++;
         for ($row = 0; $row < 16; $row++) {
             if ( $row == 0) $sheet->getStyle("I".$filaOdu1.":O".$filaOdu1)->applyFromArray($tableHead);
-            for ($col = 0; $col < 6; $col++) {
+            for ($col = 0; $col <= 6; $col++) {
                 switch ($col) {
                     case 0: $sheet->setCellValue('I'.$filaOdu1, $matrizOdu1[$row][$col]);
                     case 1: $sheet->setCellValue('J'.$filaOdu1, $matrizOdu1[$row][$col]);
@@ -220,7 +220,7 @@ while($row = mysqli_fetch_array($resultado)){
         $filaOdu2++;
         for ($row = 0; $row < 16; $row++) {
             if ( $row == 0) $sheet->getStyle("Q".$filaOdu2.":X".$filaOdu2)->applyFromArray($tableHead);
-            for ($col = 0; $col < 6; $col++) {
+            for ($col = 0; $col <= 7; $col++) {
                 switch ($col) {
                     case 0: $sheet->setCellValue('Q'.$filaOdu2, $matrizOdu2[$row][$col]);
                     case 1: $sheet->setCellValue('R'.$filaOdu2, $matrizOdu2[$row][$col]);
@@ -229,7 +229,7 @@ while($row = mysqli_fetch_array($resultado)){
                     case 4: $sheet->setCellValue('U'.$filaOdu2, $matrizOdu2[$row][$col]);
                     case 5: $sheet->setCellValue('V'.$filaOdu2, $matrizOdu2[$row][$col]);
                     case 6: $sheet->setCellValue('W'.$filaOdu2, $matrizOdu2[$row][$col]);
-                    case 6: $sheet->setCellValue('X'.$filaOdu2, $matrizOdu2[$row][$col]);
+                    case 7: $sheet->setCellValue('X'.$filaOdu2, $matrizOdu2[$row][$col]);
                 }
             }
             $filaOdu2++;
