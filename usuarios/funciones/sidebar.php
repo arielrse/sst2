@@ -173,11 +173,21 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
                 </li>
 
             </ul>
+            <?php if ( isAdmin() || isExpert() ) { ?>
             <ul>
                 <li> <a href="<?=$muser?>reporte_ticketsC4.php"><i class="bx bx-right-arrow-alt"></i>Reporte Cert4</a>
                 </li>
 
             </ul>
+            <ul>
+                <li> <a href="<?=$muser?>reporte_transmision.php"><i class="bx bx-right-arrow-alt"></i>Reporte Transmisión</a>
+                </li>
+
+            </ul>
+            <ul>
+                <li><a href="<?=$muser?>reporte_datos.php"><i class="bx bx-right-arrow-alt"></i>Reporte DX</a></li>
+            </ul>
+            <?php } ?>
         </li>
 
         <?php if ( isAdmin() || isExpert() ) { ?>
