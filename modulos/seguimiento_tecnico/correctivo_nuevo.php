@@ -215,7 +215,13 @@ $fecha_eje = date("Y-m-d");
                         <select id="ticket_principal" name="ticket_principal" class="single-select">
                             <option value="" selected class="title7"> Seleccionar... </option>
                             <?php
-                            $resultado = mysqli_query($conexion, "SELECT * FROM st_ticketn");
+                            //$resultado = mysqli_query($conexion, "SELECT * FROM st_ticketn");
+                            $resultado = mysqli_query($conexion,
+                                            "SELECT t.id_st_ticket, t.ticket, t.fecha_inicio_rif FROM st_ticketn t
+                                                   LEFT JOIN estacionentel e ON t.idestacion = e.idestacionentel
+                                                   LEFT JOIN sitio s         ON e.idsitio = s.idsitio
+                                                   WHERE s.iddepartamento = $iddepartamento and t.fecha_inicio_rif >= '2023-01-01'");
+
                             while($dato=mysqli_fetch_array($resultado)) {
                                 echo '<option value="' . $dato['ticket'] . '">' . $dato['ticket'] . ' (' . $dato['fecha_inicio_rif'] . ')</option>';
                             }
@@ -226,7 +232,13 @@ $fecha_eje = date("Y-m-d");
                         <label for="ticket_relacion" class="form-label">Tickets relacionados:</label>
                         <select id="ticket_relacion" name="ticket_relacion" class="multiple-select" data-placeholder="Choose anything" multiple="multiple">
                             <?php
-                            $resultado = mysqli_query($conexion, "SELECT * FROM st_ticketn");
+                            //$resultado = mysqli_query($conexion, "SELECT * FROM st_ticketn");
+                            $resultado = mysqli_query($conexion,
+                                            "SELECT t.id_st_ticket, t.ticket FROM st_ticketn t
+                                                   LEFT JOIN estacionentel e ON t.idestacion = e.idestacionentel
+                                                   LEFT JOIN sitio s         ON e.idsitio = s.idsitio
+                                                   WHERE s.iddepartamento = $iddepartamento and t.fecha_inicio_rif >= '2023-01-01'");
+
                             while($dato=mysqli_fetch_array($resultado)) {
                                 echo '<option value="' . $dato['ticket'] . '">' . $dato['ticket'] . '</option>';
                             }
