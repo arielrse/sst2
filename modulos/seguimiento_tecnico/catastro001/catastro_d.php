@@ -79,7 +79,7 @@ $fusible_mt_en_transArr = ["Si", "No"];
 $fusible_mt_en_transOption = "<option>Seleccionar...</option>";
 foreach ($fusible_mt_en_transArr as $element){
     $selected = "";
-    if ($d09_01 == $element) $selected = "selected";
+    if ($d10_01 == $element) $selected = "selected";
     $fusible_mt_en_transOption .= "<option value='$element' $selected>".$element."</option>";
 
 }
