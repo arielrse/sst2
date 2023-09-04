@@ -50,7 +50,7 @@ $tabla_5_arr = json_decode($tabla_5, true);
                     $rowid = $objVal['rowid'];
 
                     $btn_eliminar = "";
-                    if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) )
+                    if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) )
                         $btn_eliminar = "<a href='javascript:;' id='btnEliminar' onclick='eliminarEquipo(`$rowid`)'><i class='bx bx-x'></i></a>";
 
                     $rowHtml .=
