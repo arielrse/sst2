@@ -17,7 +17,7 @@ $tabla_3_arr = json_decode($tabla_3, true);
 <div class="card">
     <div class="card-body">
 
-        <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
+        <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
         <div class="col mb-2">
             <button id="btn-save-equipos" type="button" class="btn btn-outline-info"><i class="bx bx-save me-0"></i></button>
             <button id="btn-add-row" type="button" class="btn btn-outline-info"><i class="bx bx-plus me-0"></i></button>
@@ -45,7 +45,7 @@ $tabla_3_arr = json_decode($tabla_3, true);
                     $rowid = $objVal['rowid'];
 
                     $btn_eliminar = "";
-                    if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) )
+                    if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) )
                         $btn_eliminar = "<a href='javascript:;' id='btnEliminar' onclick='eliminarEquipo(`$rowid`)'><i class='bx bx-x'></i></a>";
 
                     $rowHtml .=
