@@ -5,7 +5,7 @@
 <div class="card">
     <div class="card-body">
 
-        <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
+        <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
         <div class="col mb-2">
             <button id="btn-save-fuentes" type="button" class="btn btn-outline-info"><i class="bx bx-save me-0"></i></button>
             <button id="btn-add-fuente" type="button" class="btn btn-outline-info"><i class="bx bx-plus me-0"></i></button>

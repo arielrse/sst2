@@ -24,7 +24,7 @@ $tabla_5_arr = json_decode($tabla_5, true);
         <?php /*echo json_encode($equipos_ant) */?>
         <?php /*print_r($tabla_1) */?>
 
-        <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
+        <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || ( isExpert() || isAdmin() && $estado=='REV') && (!isClient() && !isNationalClient()) ) { ?>
         <div class="col mb-2">
             <button id="btn-save-equipos" type="button" class="btn btn-outline-info"><i class="bx bx-save me-0"></i></button>
             <button id="btn-add-row" type="button" class="btn btn-outline-info"><i class="bx bx-plus me-0"></i></button>
