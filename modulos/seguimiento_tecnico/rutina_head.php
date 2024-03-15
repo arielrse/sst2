@@ -78,8 +78,7 @@ $params_volver = "&event=$idevento&gp=$idgrupo&tr=1&tc=0&volver=$volver";*/
 /* ------------------------------------ */
 
 $hrefpdf = "../../modulos/$modulo/rutina$cform/reporte.php";
-/*$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo;*/
-/*$hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&event=".$idevento."&gp=".$idgrupo."&tr=1&tc=0&volver=$volver";*/
+$hrefpdf2 = "../../modulos/$modulo/rutina$cform/reporteDescarga.php";
 
 ?>
 <input type="hidden" name="rutinaId" id="rutinaId" value="<?php echo $idrutina ?>" />

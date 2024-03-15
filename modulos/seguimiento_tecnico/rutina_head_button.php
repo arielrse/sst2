@@ -26,11 +26,22 @@ $hrefrutina    = "../../usuarios/modulos/$link_modulo?path=prev_estacion.php&eve
         <input type="hidden" id="iddepartamento" name="iddepartamento" value="<?php echo $iddepartamento ?>" />
         <input type="hidden" id="idevento" name="idevento" value="<?php echo $idevento ?>" />
 
-
         <div class="col">
             <button type="submit" class="btn btn-secondary px-4" name="Submit" value="Generar"><i class="bx bx-file mr-1"></i>Generar</button>
         </div>
 
+    </form>
+
+    <form action="<?php echo $hrefpdf2 ?>" method="post" enctype="multipart/form-data" target="_blank">
+        <input type="hidden" id="cform" name="cform" value="<?php echo $cform ?>" />
+        <input type="hidden" id="idrutinax" name="idrutinax" value="<?php echo $idrutinax ?>" />
+        <input type="hidden" id="idgrupo" name="idgrupo" value="<?php echo $idgrupo ?>" />
+        <input type="hidden" id="iddepartamento" name="iddepartamento" value="<?php echo $iddepartamento ?>" />
+        <input type="hidden" id="idevento" name="idevento" value="<?php echo $idevento ?>" />
+
+        <div class="col">
+            <button type="submit" class="btn btn-secondary px-4" name="Submit" value="Generar"><i class="bx bx-file mr-1"></i>Descargar</button>
+        </div>
     </form>
 
     <?php if ( ($estado=='PEN' && !isClient() && !isNationalClient()) || (isAdmin() && $estado!='REV' ) ) { ?>

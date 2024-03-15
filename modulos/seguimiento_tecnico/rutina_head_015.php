@@ -79,6 +79,7 @@ while( $data4 = mysqli_fetch_array($res4) ){
     $selectSupervisor .= "<option value='$userId' $selected>" . $data4['nombre'] . " - " . $data4['cargo'] . "</option>";
 }
 $hrefpdf = "../../modulos/$modulo/rutina$cform/reporte.php";
+$hrefpdf2 = "../../modulos/$modulo/rutina$cform/reporteDescarga.php";
 
 ?>
     <input type="hidden" id="rutinaId" value="<?php echo $idrutina ?>" />
