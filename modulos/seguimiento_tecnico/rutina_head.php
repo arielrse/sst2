@@ -72,11 +72,6 @@ while( $data4 = mysqli_fetch_array($res4) ){
 
 $b1View = $cform == "001";
 
-/* ------------------------------------ */
-/*$volver = isset($_GET["volver"]) ? $_GET["volver"] : 0;
-$params_volver = "&event=$idevento&gp=$idgrupo&tr=1&tc=0&volver=$volver";*/
-/* ------------------------------------ */
-
 $hrefpdf = "../../modulos/$modulo/rutina$cform/reporte.php";
 $hrefpdf2 = "../../modulos/$modulo/rutina$cform/reporteDescarga.php";
 
