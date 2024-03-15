@@ -19,9 +19,12 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $ti
     $query = "select id, imagen from rutina017 where id='$idrutinax'";
     $resultado = mysqli_query($conexion, $query);
     $resArr = mysqli_fetch_array($resultado);
-    $nombreImagen = $resArr['imagen'];
 
-
+    $imagenDiagrama = '';
+    if ( $resArr['imagen'] != null ){
+        $nombreImagen = $resArr['imagen'];
+        $imagenDiagrama = '<img src="../../../fotos/'.$nombreImagen.'" style="width: auto; height: 400px; margin: auto;display: block;" />';
+    }
 
     /** g_desarrollo **/
 
@@ -71,8 +74,9 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $ti
                     <div class="notices">
                         <div class="notice"><strong>'.constant('DTITLE').'</strong></div>
                     </div>
-                </main>	
-               <main>
+                </main>
+                
+                <main>
                     <table>
                         <tr>
                             <td>
@@ -117,33 +121,32 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $ti
                             </td>
                         </tr>
                     </table>
-               </main>	
-               <main>
+                </main>
+                
+                <main>
                     <table class="tborder">
-                          <div>
-                               <tr>
-                                  <td class="col-50p">'.constant('D05').'</td>
-                                  <td class="col-20p">'.  $d_05_01 . ' Si</td>
-                                  <td class="col-20p">'.  $d_05_02 . ' No</td>
-                               </tr>    
-                          </div>
+                       <tr>
+                          <td class="col-50p">'.constant('D05').'</td>
+                          <td class="col-20p">'.  $d_05_01 . ' Si</td>
+                          <td class="col-20p">'.  $d_05_02 . ' No</td>
+                       </tr>
                     </table>
-               </main>
-               <main>
-                    <table class="tborder">
-                          <div>
-                               <tr>
-                                  <td class="col-50p">'.constant('D06').'</td>
-                                  <td class="col-50p">'.  $d_06_01 . '</td>
-                               </tr>
-                               <tr>
-                                  <td class="col-50p">'.constant('D07').'</td>
-                                  <td class="col-50p">'.$d_07_01.'</td>
-                               </tr>    
-                          </div>
+                </main>
+                
+                <main>
+                    <table class="tborder">   
+                       <tr>
+                          <td class="col-50p">'.constant('D06').'</td>
+                          <td class="col-50p">'.  $d_06_01 . '</td>
+                       </tr>
+                       <tr>
+                          <td class="col-50p">'.constant('D07').'</td>
+                          <td class="col-50p">'.$d_07_01.'</td>
+                       </tr>
                     </table>
-               </main> 
-               <main>
+                </main>
+                
+                <main>
                     <table>
                         <tr>
                             <td>
@@ -196,97 +199,102 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $ti
                             </td>
                         </tr>
                     </table>
-               </main>
-               <main>
+                </main>
+                
+                <main>
                     <table class="tborder">
                         <tr>
                             <td>
                                 <table class="tborder">
-                                   <tr class="notices">
-                                       <td colspan="6"> <strong>'.constant('ETITLE').'</strong></td>
+                                   <tr>
+                                       <td colspan="6">
+                                           <div class="notices">
+                                                <div class="notice"><strong>'.constant('ETITLE').'</strong></div>
+                                            </div>
+                                       </td>
                                    </tr>
                                    <tr>
                                         <td></td>
                                         <td></td>
-                                        <td><strong>Area m2</strong></td>
-                                        <td><strong>Largo</strong></td>
-                                        <td>X</td>
-                                        <td><strong>Ancho</strong></td>
+                                        <td align="center"><strong>Area m2</strong></td>
+                                        <td align="center"><strong>Largo</strong></td>
+                                        <td align="center">X</td>
+                                        <td align="center"><strong>Ancho</strong></td>
                                    </tr>
                                    <tr>
                                         <td><strong>A1</strong></td>
                                         <td>'.constant('E01').'</td>
-                                        <td><strong>'.$a_01_01.'</strong></td>
-                                        <td><strong>'.$a_01_02.'</strong></td>
-                                        <td>X</td>
-                                        <td><strong>'.$a_01_03.'</strong></td>
+                                        <td align="center"><strong>'.$a_01_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_01_02.'</strong></td>
+                                        <td align="center">X</td>
+                                        <td align="center"><strong>'.$a_01_03.'</strong></td>
                                     </tr>
                                      <tr>
                                         <td><strong>A2</strong></td>
                                         <td>'.constant('E02').'</td>
-                                        <td><strong>'.$a_02_01.'</strong></td>
-                                        <td><strong>'.$a_02_02.'</strong></td>
-                                        <td>X</td>
-                                        <td><strong>'.$a_02_03.'</strong></td>
+                                        <td align="center"><strong>'.$a_02_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_02_02.'</strong></td>
+                                        <td align="center">X</td>
+                                        <td align="center"><strong>'.$a_02_03.'</strong></td>
                                     </tr>
                                      <tr>
                                         <td><strong>A3</strong></td>
                                         <td>'.constant('E03').'</td>
-                                        <td><strong>'.$a_03_01.'</strong></td>
-                                        <td><strong>'.$a_03_02.'</strong></td>
-                                        <td>X</td>
-                                        <td><strong>'.$a_03_03.'</strong></td>
+                                        <td align="center"><strong>'.$a_03_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_03_02.'</strong></td>
+                                        <td align="center">X</td>
+                                        <td align="center"><strong>'.$a_03_03.'</strong></td>
                                     </tr>
                                      <tr>
                                         <td><strong>A4</strong></td>
                                         <td>'.constant('E04').'</td>
-                                        <td><strong>'.$a_04_01.'</strong></td>
-                                        <td><strong>'.$a_04_02.'</strong></td>
-                                        <td>X</td>
-                                        <td><strong>'.$a_04_03.'</strong></td>
+                                        <td align="center" align="center"><strong>'.$a_04_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_04_02.'</strong></td>
+                                        <td align="center">X</td>
+                                        <td align="center"><strong>'.$a_04_03.'</strong></td>
                                     </tr>
                                      <tr>
                                         <td><strong>A5</strong></td>
                                         <td colspan="4">'.constant('E05').'</td>
-                                        <td><strong>'.$a_05_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_05_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A6</strong></td>
                                         <td colspan="4">'.constant('E06').'</td>
-                                        <td><strong>'.$a_06_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_06_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A5</strong></td>
                                         <td colspan="4">'.constant('E07').'</td>
-                                        <td><strong>'.$a_07_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_07_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A7</strong></td>
                                         <td colspan="4">'.constant('E08').'</td>
-                                        <td><strong>'.$a_08_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_08_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A6</strong></td>
                                         <td colspan="4">'.constant('E09').'</td>
-                                        <td><strong>'.$a_09_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_09_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A8</strong></td>
                                         <td colspan="4">'.constant('E10').'</td>
-                                        <td><strong>'.$a_10_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_10_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td><strong>A9</strong></td>
                                         <td colspan="4">'.constant('E11').'</td>
-                                        <td><strong>'.$a_11_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_11_01.'</strong></td>
                                      </tr>
                                      <tr>
                                         <td colspan="5">'.constant('E12').'</td>
-                                        <td><strong>'.$a_12_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_12_01.'</strong></td>
                                      </tr>
                                       <tr>
                                         <td colspan="5">'.constant('E13').'</td>
-                                        <td><strong>'.$a_13_01.'</strong></td>
+                                        <td align="center"><strong>'.$a_13_01.'</strong></td>
                                      </tr>
                                       <tr>
                                         <td colspan="6">'.constant('E14').'</td>
@@ -298,12 +306,12 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $ti
                                     <div class="notice"><strong>'.constant('FTITLE').'</strong></div>
                                 </div>
                                 <div>
-                                    <img src="../../../fotos/'.$nombreImagen.'" style="width: auto; height: 400px; margin: auto;display: block;" />
+                                    '.$imagenDiagrama.'
                                 </div>
                             </td>
                         </tr>
                     </table>
-               </main>
+               </main>               
                
                '.$footerPlantilla.'   
                 </div>

@@ -7,6 +7,9 @@ function getPersonalOyM($conexion, $idusuario){
                                           WHERE u.id = '".$idusuario."'");
     $dataRes = mysqli_fetch_array($res);
 
+    if ( $idusuario === null or $idusuario === '')
+        return array("nombre" => '', "cargo" => '', "cel" => '');
+
     return array("nombre" => $dataRes['nombre'], "cargo" => $dataRes['cargo'], "cel" => $dataRes['cel']);
 }
 
@@ -918,6 +921,10 @@ function getEquiposR16($conexion, $idrutinax){
     $res = mysqli_query($conexion, "SELECT r.id, r.tabla_1 FROM rutina016 r
                                            WHERE r.id = ".$idrutinax);
     $data = mysqli_fetch_array($res);
+
+    if ( $data['tabla_1'] === null )
+        return '';
+
     $tabla_1   = $data['tabla_1'];
     $tabla_1_arr = json_decode($tabla_1, true);
 
@@ -961,6 +968,10 @@ function getFuentesR16($conexion, $idrutinax){
     $res = mysqli_query($conexion, "SELECT r.id, r.tabla_2 FROM rutina016 r
                                            WHERE r.id = ".$idrutinax);
     $data = mysqli_fetch_array($res);
+
+    if ( $data['tabla_2'] === null )
+        return '';
+
     $tabla_2   = $data['tabla_2'];
     $tabla_2_arr = json_decode($tabla_2, true);
 
@@ -1003,6 +1014,10 @@ function getPuertos1R16($conexion, $idrutinax){
     $res = mysqli_query($conexion, "SELECT r.id, r.tabla_3 FROM rutina016 r
                                            WHERE r.id = ".$idrutinax);
     $data = mysqli_fetch_array($res);
+
+    if ( $data['tabla_3'] === null )
+        return '';
+
     $tabla_3   = $data['tabla_3'];
     $tabla_3_arr = json_decode($tabla_3, true);
 
@@ -1042,6 +1057,10 @@ function getPuertos2R16($conexion, $idrutinax){
     $res = mysqli_query($conexion, "SELECT r.id, r.tabla_4 FROM rutina016 r
                                            WHERE r.id = ".$idrutinax);
     $data = mysqli_fetch_array($res);
+
+    if ( $data['tabla_4'] === null )
+        return '';
+
     $tabla_4   = $data['tabla_4'];
     $tabla_4_arr = json_decode($tabla_4, true);
 
@@ -1065,6 +1084,10 @@ function getPuertosEquiposR16($conexion, $idrutinax){
     $res = mysqli_query($conexion, "SELECT r.id, r.tabla_5 FROM rutina016 r
                                            WHERE r.id = ".$idrutinax);
     $data = mysqli_fetch_array($res);
+
+    if ( $data['tabla_5'] === null )
+        return '';
+
     $tabla_5   = $data['tabla_5'];
     $table_e5_arr = json_decode($tabla_5, true);
 

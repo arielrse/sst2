@@ -98,7 +98,6 @@ function getPlantilla($conexion, $jsonData, $idgrupo, $idevento, $idrutinax, $ti
     $puertos2_filas = getPuertos2R16Ant($puertos2_ant)  .   getPuertos2R16($conexion, $idrutinax);
 
     $puertos_equipos = getPuertosEquiposR16($conexion, $idrutinax);
-    //$puertos_equipos = "";
 
 
 

@@ -10,7 +10,7 @@ define('D07', 'Cantidad Utilizada [ml]:');
 define('D10', 'Soleado');
 define('D11', 'Nublado');
 define('D12', 'Lluvioso');
-define('ETITLE', 'E: Datos del Predio');
+define('ETITLE', 'E. Datos del Predio');
 define('E01', 'Terreno Interno:');
 define('E02', 'Loza de equipos:');
 define('E03', 'Sala de equipos GE');
