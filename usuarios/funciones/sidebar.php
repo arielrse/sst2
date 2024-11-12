@@ -185,6 +185,10 @@ $link_home = "../modulos/seguimiento_tecnico.php?path=dashboard.php";
 
             </ul>
             <ul>
+                <li> <a href="<?=$muser?>reporte_rutinas.php"><i class="bx bx-right-arrow-alt"></i>Reporte Rutinas</a>
+                </li>
+            </ul>
+            <ul>
                 <li><a href="<?=$muser?>reporte_datos.php"><i class="bx bx-right-arrow-alt"></i>Reporte DX</a></li>
             </ul>
             <?php } ?>
