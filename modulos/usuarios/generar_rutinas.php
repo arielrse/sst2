@@ -277,12 +277,9 @@ while($row = mysqli_fetch_array($resultado)){
             $municipio  = $row["municipio"];
             $latitud    = $row["latitud"];
             $longitud   = $row["longitud"];
-            //$cm         = $obj->cm;
             $cm         = $row["cm"];
             $sitioId    = $row["sitioId"];
             $propertyId = $row["propertyId"];
-            //$sitioId    = $obj->sitioId;
-            //$propertyId = $obj->propertyId;
             $c_fechaRealizacion = $obj->c_fechaRealizacion;
 
             $d_relevamiento = $obj->d_relevamiento;
@@ -350,9 +347,10 @@ while($row = mysqli_fetch_array($resultado)){
             $d3_08_01=$d_sectores->d3_08_01; $d3_08_02=$d_sectores->d3_08_02; $d3_08_03=$d_sectores->d3_08_03; $d3_08_04=$d_sectores->d3_08_04; $d3_08_05=$d_sectores->d3_08_05; $d3_08_06=$d_sectores->d3_08_06; $d3_08_07=$d_sectores->d3_08_07; $d3_08_08=$d_sectores->d3_08_08; $d3_08_09=$d_sectores->d3_08_09; $d3_08_10=$d_sectores->d3_08_10; $d3_08_11=$d_sectores->d3_08_11; $d3_08_12=$d_sectores->d3_08_12; $d3_08_13=$d_sectores->d3_08_13;
             $d3_09_01=$d_sectores->d3_09_01; $d3_09_02=$d_sectores->d3_09_02; $d3_09_03=$d_sectores->d3_09_03; $d3_09_04=$d_sectores->d3_09_04; $d3_09_05=$d_sectores->d3_09_05; $d3_09_06=$d_sectores->d3_09_06; $d3_09_07=$d_sectores->d3_09_07; $d3_09_08=$d_sectores->d3_09_08; $d3_09_09=$d_sectores->d3_09_09; $d3_09_10=$d_sectores->d3_09_10; $d3_09_11=$d_sectores->d3_09_11; $d3_09_12=$d_sectores->d3_09_12; $d3_09_13=$d_sectores->d3_09_13;
 
+            $num = 0;
             // BTS - 2G
             if ( $d1_01_01 != "" ) {
-                $num = 0;
+
                 $sheet->setCellValue('A' . ($fila + $num), $departamento);
                 $sheet->setCellValue('B' . ($fila + $num), $provincia);
                 $sheet->setCellValue('C' . ($fila + $num), $localidad);
