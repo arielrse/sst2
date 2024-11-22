@@ -50,6 +50,27 @@ $rutina001_titulos = [
     "S1" =>  "Valor aproximado mΩ",
 ];
 
+$rutina012_titulos = [
+    "A1" =>  "Fecha de Mtto",
+    "B1" =>  "CM/SCM",
+    "C1" =>  "ID Sitio",
+    "D1" =>  "Property_id",
+    "E1" =>  "Medida Potencial entre el sistema de tierra y Neutro Termico Pilastra",
+    "F1" =>  "Medida Potencial entre el neutro y masa Termico Pilastra",
+    "G1" =>  "Medida Potencial entre el sistema de tierra y Neutro Termico Tablero Principal",
+    "H1" =>  "Medida Potencial entre el neutro y masa Termico Tablero Pricipal",
+    "I1" =>  "Medida a tierra barra colectora  Pilastra",
+    "J1" =>  "Medida a tierra barra colectora caseta equipos",
+    "K1" =>  "Medida a tierra barra colectora bajante Torre",
+    "L1" =>  "Medida a tierra camara de inspeccion",
+    "M1" =>  "Medida a tierra base torre",
+    "N1" =>  "Medida a tierra barra colectora tablero electrico",
+    "O1" =>  "Medida a tierra rriostra torre",
+    "P1" =>  "Medida a tierra barra colectora grupo electrogeno",
+    "Q1" =>  "",
+    "R1" =>  "",
+    "S1" =>  "",
+];
 $rutina013_titulos = [
     "A1" =>  "Departamento",
     "B1" =>  "Provincia",
@@ -131,6 +152,12 @@ $sheet->setTitle("Datos Rutinas");
 if ($codForm == '001'){
     $sheet->getStyle('A1:S1')->applyFromArray($tableHead);
     foreach ($rutina001_titulos as $columna => $valor){
+        $sheet->setCellValue($columna, $valor);
+    }
+}
+if ($codForm == '012'){
+    $sheet->getStyle('A1:P1')->applyFromArray($tableHead);
+    foreach ($rutina012_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
 }
@@ -217,6 +244,47 @@ while($row = mysqli_fetch_array($resultado)){
             $sheet->setCellValue('Q'.$fila, $g20_2_1);
             $sheet->setCellValue('R'.$fila, $g20_2_2);
             $sheet->setCellValue('S'.$fila, $g21_1);
+        }
+
+        if ($codForm == '012'){
+            $cm         = $row["cm"];
+            $propertyId = $row["propertyId"];
+            $sitioId    = $row["sitioId"];
+            $c_fechaRealizacion = $obj->c_fechaRealizacion;
+
+            $g_desarrollo = $obj->{'g_desarrollo'};
+
+            $g5_01_01 = $g_desarrollo->g5_01_01;
+            $g5_02_01 = $g_desarrollo->g5_02_01;
+            $g5_03_01 = $g_desarrollo->g5_03_01;
+            $g5_04_01 = $g_desarrollo->g5_04_01;
+            $g5_05_01 = $g_desarrollo->g5_05_01;
+            $g5_05_02 = $g_desarrollo->g5_05_02;
+            $g5_06_01 = $g_desarrollo->g5_06_01;
+            $g5_06_02 = $g_desarrollo->g5_06_02;
+            $g5_07_01 = $g_desarrollo->g5_07_01;
+            $g5_07_02 = $g_desarrollo->g5_07_02;
+            $g5_08_01 = $g_desarrollo->g5_08_01;
+            $g5_08_02 = $g_desarrollo->g5_08_02;
+
+
+            $sheet->setCellValue('A'.$fila, $c_fechaRealizacion);
+            $sheet->setCellValue('B'.$fila, $cm);
+            $sheet->setCellValue('C'.$fila, $propertyId);
+            $sheet->setCellValue('D'.$fila, $sitioId);
+            $sheet->setCellValue('E'.$fila, $g5_01_01);
+            $sheet->setCellValue('F'.$fila, $g5_02_01);
+            $sheet->setCellValue('G'.$fila, $g5_03_01);
+            $sheet->setCellValue('H'.$fila, $g5_04_01);
+            $sheet->setCellValue('I'.$fila, $g5_05_01);
+            $sheet->setCellValue('J'.$fila, $g5_05_02);
+            $sheet->setCellValue('K'.$fila, $g5_06_01);
+            $sheet->setCellValue('L'.$fila, $g5_06_02);
+            $sheet->setCellValue('M'.$fila, $g5_07_01);
+            $sheet->setCellValue('N'.$fila, $g5_07_02);
+            $sheet->setCellValue('O'.$fila, $g5_08_01);
+            $sheet->setCellValue('P'.$fila, $g5_08_02);
+
         }
 
         if ($codForm == '013'){
