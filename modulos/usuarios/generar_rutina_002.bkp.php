@@ -15,17 +15,6 @@ $arr = explode('|', $codeidform);
 $codForm = $arr[0];
 $idformulario = $arr[1];
 
-if ($codForm == '001'){
-    include 'generar_rutina_001.php';
-    exit();
-}
-
-if ($codForm == '002'){
-    include 'generar_rutina_002.php';
-    exit();
-}
-
-
 $tableHead = [
     'font' => ['color' => ['rgb'=>'FFFFFF'], ],
     'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '1F618D']],
@@ -1829,5 +1818,12 @@ header('Cache-Control: max-age=0');
 
 $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
 $writer->save('php://output');
+
+/*$writer = new Xlsx($spreadsheet);
+$writer->save('hello-world.xlsx');*/
+
+
+
+//header("Location: ".$link_modulo."?path=ver_usuarios.php");
 
 ?>

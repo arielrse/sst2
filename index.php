@@ -85,7 +85,7 @@ $sw = isset($_GET["sw"]) ? $_GET["sw"] : 0;
                                         <div class="col-12">
                                             <label for="inputChoosePassword" class="form-label">Introducir la contraseña</label>
                                             <div class="input-group" id="show_hide_password">
-                                                <input type="password" name="sena" class="form-control border-end-0" placeholder="Contrase&ntilde;a" id="santo" value="asiles13">
+                                                <input type="password" name="sena" class="form-control border-end-0" placeholder="Contrase&ntilde;a" id="santo" value="Miracula.13">
                                                 <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
                                             </div>
                                         </div>
