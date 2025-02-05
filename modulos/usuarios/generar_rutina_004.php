@@ -59,8 +59,8 @@ $rutina000_titulos = [
     "AE1" => "L1",
     "AF1" => "L2",
     "AG1" => "L3",
-    "AH1" => "Transformador (V) entrada",
-    "AI1" => "Transformador (V) salida",
+    "AH1" => "Tension en Transformador (V) entrada",
+    "AI1" => "Tension en Transformador (V) salida",
     "AJ1" => "MV1 [A]",
     "AK1" => "MV1 [V]",
     "AL1" => "MV2 [A]",
@@ -77,12 +77,10 @@ $rutina000_titulos = [
 
 $sheet->setTitle("Datos Rutinas");
 
-/*if ($codForm == '003'){*/
-    $sheet->getStyle('A1:AU1')->applyFromArray($tableHead);
-    foreach ($rutina000_titulos as $columna => $valor){
-        $sheet->setCellValue($columna, $valor);
-    }
-/*}*/
+$sheet->getStyle('A1:AU1')->applyFromArray($tableHead);
+foreach ($rutina000_titulos as $columna => $valor){
+    $sheet->setCellValue($columna, $valor);
+}
 
 $sql11 = "";
 // Recuperando catastros de la bd
