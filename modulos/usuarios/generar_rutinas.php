@@ -35,7 +35,10 @@ if ($codForm == '004'){
     exit();
 }
 
-
+if ($codForm == '005'){
+    include 'generar_rutina_005.php';
+    exit();
+}
 
 
 $tableHead = [
