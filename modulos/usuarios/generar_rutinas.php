@@ -25,6 +25,11 @@ if ($codForm == '002'){
     exit();
 }
 
+if ($codForm == '003'){
+    include 'generar_rutina_003.php';
+    exit();
+}
+
 
 $tableHead = [
     'font' => ['color' => ['rgb'=>'FFFFFF'], ],

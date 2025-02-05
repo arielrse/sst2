@@ -34,7 +34,7 @@
                                     <option value="0" selected>Seleccionar...</option>
                                     <?php
                                     $resultado = mysqli_query($conexion, "SELECT idformulario, codigo, nombre, area FROM formulario WHERE tipo = 'PREVENTIVO' 
-                                                            AND codigo in ('001','002','012','013','014')");
+                                                            AND codigo in ('001','002','003','012','013','014')");
                                     while($dato=mysqli_fetch_array($resultado))
                                         echo '<option value="'.$dato['codigo'].'|'.$dato['idformulario'].'">'.$dato['codigo'].' - '.$dato['nombre'].'</option>';
                                     ?>
