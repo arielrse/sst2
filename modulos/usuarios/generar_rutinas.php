@@ -41,6 +41,23 @@ if ($codForm == '005'){
 }
 
 
+
+if ($codForm == '007'){
+    include 'generar_rutina_007.php';
+    exit();
+}
+
+if ($codForm == '008'){
+    include 'generar_rutina_008.php';
+    exit();
+}
+
+if ($codForm == '009'){
+    include 'generar_rutina_009.php';
+    exit();
+}
+
+
 $tableHead = [
     'font' => ['color' => ['rgb'=>'FFFFFF'], ],
     'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '1F618D']],
