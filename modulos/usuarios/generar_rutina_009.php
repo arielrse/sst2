@@ -38,22 +38,18 @@ $rutina000_titulos = [
     "I2" =>  "T transfieren",
     "J2" =>  "Tiempo de Re transferencia automática  y parada (Segundos) T retransfer",
     "K2" =>  "T parada",
-
     "L2" =>  "Si",
     "M2" =>  "No",
     "N2" =>  "Si",
     "O2" =>  "No",
-
     "P2" =>  "Si",
     "Q2" =>  "No",
     "R2" =>  "Si",
     "S2" =>  "No",
-
     "T2" =>  "Si",
     "U2" =>  "No",
     "V2" =>  "Si",
     "W2" =>  "No",
-
     "X2" =>  "Si",
     "Y2" =>  "No",
     "Z2" =>  "Si",
