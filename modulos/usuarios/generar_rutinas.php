@@ -3,8 +3,10 @@ require("../../funciones/motor.php");
 require '../../vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
 
 $iddepartamento = $_POST['iddepartamento'];
 $codeidform     = $_POST['codeidform'];
@@ -72,8 +74,10 @@ if ($codForm == '011'){
 
 
 $tableHead = [
-    'font' => ['color' => ['rgb'=>'FFFFFF'], ],
-    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '1F618D']],
+    'font' => ['color' => ['rgb'=>'000000'], ],
+    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => 'EEECE1']],
+    'borders' => ['allBorders' => ['borderStyle' => Border::BORDER_THIN,'color' => ['rgb' => '000000']]],
+    'alignment' => ['horizontal' => Alignment::HORIZONTAL_CENTER,'vertical' => Alignment::VERTICAL_CENTER]
 ];
 
 $spreadsheet = new Spreadsheet();
