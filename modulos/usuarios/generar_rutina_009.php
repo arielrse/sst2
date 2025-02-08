@@ -6,6 +6,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
 
 $iddepartamento = $_POST['iddepartamento'];
 $codeidform     = $_POST['codeidform'];
@@ -17,8 +18,10 @@ $codForm = $arr[0];
 $idformulario = $arr[1];
 
 $tableHead = [
-    'font' => ['color' => ['rgb'=>'FFFFFF'], ],
-    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '1F618D']],
+    'font' => ['color' => ['rgb'=>'000000'], ],
+    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => 'EEECE1']],
+    'borders' => ['allBorders' => ['borderStyle' => Border::BORDER_THIN,'color' => ['rgb' => '000000']]],
+    'alignment' => ['horizontal' => Alignment::HORIZONTAL_CENTER,'vertical' => Alignment::VERTICAL_CENTER]
 ];
 
 $spreadsheet = new Spreadsheet();
@@ -58,32 +61,29 @@ $rutina000_titulos = [
 
 
 $sheet->mergeCells('L1:M1');
-$sheet->getStyle('L1:M1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('L1', 'Corte AC [ Local ]');
 $sheet->mergeCells('N1:O1');
-$sheet->getStyle('N1:O1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('N1', 'Corte AC [ Remoto ]');
-
 $sheet->mergeCells('P1:Q1');
-$sheet->getStyle('P1:Q1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('P1', 'Grupo Electrógeno Encendido [ Local ]');
 $sheet->mergeCells('R1:S1');
-$sheet->getStyle('R1:S1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('R1', 'Grupo Electrógeno Encendido [ Remoto ]');
-
 $sheet->mergeCells('T1:U1');
-$sheet->getStyle('T1:U1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('T1', 'Bajo Nivel de Combustible [ Local ]');
 $sheet->mergeCells('V1:W1');
-$sheet->getStyle('V1:W1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('V1', 'Bajo Nivel de Combustible [ Remoto ]');
-
 $sheet->mergeCells('X1:Y1');
-$sheet->getStyle('X1:Y1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('X1', 'Falla General [ Local ]');
 $sheet->mergeCells('Z1:AA1');
-$sheet->getStyle('Z1:AA1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
+$sheet->setCellValue('L1', 'Corte AC [ Local ]');
+$sheet->setCellValue('N1', 'Corte AC [ Remoto ]');
+$sheet->setCellValue('P1', 'Grupo Electrógeno Encendido [ Local ]');
+$sheet->setCellValue('R1', 'Grupo Electrógeno Encendido [ Remoto ]');
+$sheet->setCellValue('T1', 'Bajo Nivel de Combustible [ Local ]');
+$sheet->setCellValue('V1', 'Bajo Nivel de Combustible [ Remoto ]');
+$sheet->setCellValue('X1', 'Falla General [ Local ]');
 $sheet->setCellValue('Z1', 'Falla General [ Remoto ]');
+$sheet->getStyle('L1:M1')->applyFromArray($tableHead);
+$sheet->getStyle('N1:O1')->applyFromArray($tableHead);
+$sheet->getStyle('P1:Q1')->applyFromArray($tableHead);
+$sheet->getStyle('R1:S1')->applyFromArray($tableHead);
+$sheet->getStyle('T1:U1')->applyFromArray($tableHead);
+$sheet->getStyle('V1:W1')->applyFromArray($tableHead);
+$sheet->getStyle('X1:Y1')->applyFromArray($tableHead);
+$sheet->getStyle('Z1:AA1')->applyFromArray($tableHead);
 
 $sheet->setTitle("Datos Rutinas");
 

@@ -6,6 +6,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
 
 $iddepartamento = $_POST['iddepartamento'];
 $codeidform     = $_POST['codeidform'];
@@ -17,8 +18,10 @@ $codForm = $arr[0];
 $idformulario = $arr[1];
 
 $tableHead = [
-    'font' => ['color' => ['rgb'=>'FFFFFF'], ],
-    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '1F618D']],
+    'font' => ['color' => ['rgb'=>'000000'], ],
+    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => 'EEECE1']],
+    'borders' => ['allBorders' => ['borderStyle' => Border::BORDER_THIN,'color' => ['rgb' => '000000']]],
+    'alignment' => ['horizontal' => Alignment::HORIZONTAL_CENTER,'vertical' => Alignment::VERTICAL_CENTER]
 ];
 
 $spreadsheet = new Spreadsheet();
@@ -78,18 +81,18 @@ $sheet->mergeCells('U1:V1');
 $sheet->mergeCells('W1:X1');
 $sheet->mergeCells('Y1:Z1');
 $sheet->mergeCells('AA1:AB1');
-$sheet->getStyle('E1:F1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('G1:H1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('I1:J1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('K1:L1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('M1:N1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('O1:P1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('Q1:R1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('S1:T1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('U1:V1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('W1:X1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('Y1:Z1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('AA1:AB1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
+$sheet->getStyle('E1:F1')->applyFromArray($tableHead);
+$sheet->getStyle('G1:H1')->applyFromArray($tableHead);
+$sheet->getStyle('I1:J1')->applyFromArray($tableHead);
+$sheet->getStyle('K1:L1')->applyFromArray($tableHead);
+$sheet->getStyle('M1:N1')->applyFromArray($tableHead);
+$sheet->getStyle('O1:P1')->applyFromArray($tableHead);
+$sheet->getStyle('Q1:R1')->applyFromArray($tableHead);
+$sheet->getStyle('S1:T1')->applyFromArray($tableHead);
+$sheet->getStyle('U1:V1')->applyFromArray($tableHead);
+$sheet->getStyle('W1:X1')->applyFromArray($tableHead);
+$sheet->getStyle('Y1:Z1')->applyFromArray($tableHead);
+$sheet->getStyle('AA1:AB1')->applyFromArray($tableHead);
 $sheet->setCellValue('E1', 'Cadena 1');
 $sheet->setCellValue('G1', 'Array 2');
 $sheet->setCellValue('I1', 'Array 3');

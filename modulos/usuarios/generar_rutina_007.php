@@ -6,6 +6,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
 
 $iddepartamento = $_POST['iddepartamento'];
 $codeidform     = $_POST['codeidform'];
@@ -17,8 +18,10 @@ $codForm = $arr[0];
 $idformulario = $arr[1];
 
 $tableHead = [
-    'font' => ['color' => ['rgb'=>'FFFFFF'], ],
-    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '1F618D']],
+    'font' => ['color' => ['rgb'=>'000000'], ],
+    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => 'EEECE1']],
+    'borders' => ['allBorders' => ['borderStyle' => Border::BORDER_THIN,'color' => ['rgb' => '000000']]],
+    'alignment' => ['horizontal' => Alignment::HORIZONTAL_CENTER,'vertical' => Alignment::VERTICAL_CENTER]
 ];
 
 $spreadsheet = new Spreadsheet();
@@ -55,8 +58,8 @@ $rutina000_titulos = [
 
 $sheet->mergeCells('E1:J1');
 $sheet->mergeCells('K1:O1');
-$sheet->getStyle('E1:J1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->getStyle('K1:O1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
+$sheet->getStyle('E1:J1')->applyFromArray($tableHead);
+$sheet->getStyle('K1:O1')->applyFromArray($tableHead);
 
 $sheet->setCellValue('E1', 'Medición de tensión  salida del transformador (V)');
 $sheet->setCellValue('K1', 'Medición de corriente de operación salida transformador (A)');

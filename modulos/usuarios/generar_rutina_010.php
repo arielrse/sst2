@@ -6,6 +6,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
 
 $iddepartamento = $_POST['iddepartamento'];
 $codeidform     = $_POST['codeidform'];
@@ -17,8 +18,10 @@ $codForm = $arr[0];
 $idformulario = $arr[1];
 
 $tableHead = [
-    'font' => ['color' => ['rgb'=>'FFFFFF'], ],
-    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '1F618D']],
+    'font' => ['color' => ['rgb'=>'000000'], ],
+    'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => 'EEECE1']],
+    'borders' => ['allBorders' => ['borderStyle' => Border::BORDER_THIN,'color' => ['rgb' => '000000']]],
+    'alignment' => ['horizontal' => Alignment::HORIZONTAL_CENTER,'vertical' => Alignment::VERTICAL_CENTER]
 ];
 
 $spreadsheet = new Spreadsheet();
@@ -70,43 +73,24 @@ $rutina000_titulos = [
     "AF2" => "No",
 ];
 
-/*
-$sheet->mergeCells('E1:G1');
-$sheet->getStyle('E1:G1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('E1', 'Registrar voltaje  AC de entrada');
-
-$sheet->mergeCells('H1:J1');
-$sheet->getStyle('H1:J1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('H1', 'Registrar de la corriente AC de entrada');
-
-$sheet->mergeCells('P1:Q1');
-$sheet->getStyle('P1:Q1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('P1', 'Verificar y controlar la distribución de AC  UPS en tableros de la estación');
-
-$sheet->mergeCells('R1:S1');
-$sheet->getStyle('R1:S1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('R1', 'Revisión de sobrecalentamiento del cableado en AC y DC.');
-*/
 $sheet->mergeCells('U1:V1');
-$sheet->getStyle('U1:V1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('U1', 'Corte AC [ Local ]');
 $sheet->mergeCells('W1:X1');
-$sheet->getStyle('W1:X1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('W1', 'Corte AC [ Remoto ]');
-
 $sheet->mergeCells('Y1:Z1');
-$sheet->getStyle('Y1:Z1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('Y1', 'Baterias en Descarga [ Local ]');
 $sheet->mergeCells('AA1:AB1');
-$sheet->getStyle('AA1:AB1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('AA1', 'Baterias en Descarga [ Remoto ]');
-
 $sheet->mergeCells('AC1:AD1');
-$sheet->getStyle('AC1:AD1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
-$sheet->setCellValue('AC1', 'Falla Modulo [ Local ]');
 $sheet->mergeCells('AE1:AF1');
-$sheet->getStyle('AE1:AF1')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_THIN);
+$sheet->setCellValue('U1', 'Corte AC [ Local ]');
+$sheet->setCellValue('W1', 'Corte AC [ Remoto ]');
+$sheet->setCellValue('Y1', 'Baterias en Descarga [ Local ]');
+$sheet->setCellValue('AA1', 'Baterias en Descarga [ Remoto ]');
+$sheet->setCellValue('AC1', 'Falla Modulo [ Local ]');
 $sheet->setCellValue('AE1', 'Falla Modulo [ Remoto ]');
+$sheet->getStyle('U1:V1')->applyFromArray($tableHead);
+$sheet->getStyle('W1:X1')->applyFromArray($tableHead);
+$sheet->getStyle('Y1:Z1')->applyFromArray($tableHead);
+$sheet->getStyle('AA1:AB1')->applyFromArray($tableHead);
+$sheet->getStyle('AC1:AD1')->applyFromArray($tableHead);
+$sheet->getStyle('AE1:AF1')->applyFromArray($tableHead);
 
 $sheet->setTitle("Datos Rutinas");
 
