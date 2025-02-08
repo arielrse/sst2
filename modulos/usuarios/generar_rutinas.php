@@ -40,7 +40,10 @@ if ($codForm == '005'){
     exit();
 }
 
-
+if ($codForm == '006'){
+    include 'generar_rutina_006.php';
+    exit();
+}
 
 if ($codForm == '007'){
     include 'generar_rutina_007.php';
