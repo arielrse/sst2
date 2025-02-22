@@ -73,6 +73,12 @@ if ($codForm == '011'){
 }
 
 
+if ($codForm == '013'){
+    include 'generar_rutina_013.php';
+    exit();
+}
+
+
 $tableHead = [
     'font' => ['color' => ['rgb'=>'000000'], ],
     'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => 'EEECE1']],
@@ -131,31 +137,7 @@ $rutina012_titulos = [
     "R1" =>  "",
     "S1" =>  "",
 ];
-$rutina013_titulos = [
-    "A1" =>  "Departamento",
-    "B1" =>  "Provincia",
-    "C1" =>  "Localidad",
-    "D1" =>  "Municipio",
-    "E1" =>  "ID Sitio",
-    "F1" =>  "Property_id",
-    "G1" =>  "CM/SCM",
-    "H1" =>  "Latitud",
-    "I1" =>  "Longitud",
-    "J1" =>  "Trayecto",
-    "K1" =>  "Estado del camino",
-    "L1" =>  "Fecha de Mtto",
-    "M1" =>  "Tipo de  sitio",
-    "N1" =>  "Predio",
-    "O1" =>  "Cerramiento perimetral",
-    "P1" =>  "Dimension predio",
-    "Q1" =>  "Loza de equipos",
-    "R1" =>  "Loza o caseta grupo",
-    "S1" =>  "Espacio en Loza equipos",
-    "T1" =>  "Tipo estructura 1",
-    "U1" =>  "Altura (m)",
-    "V1" =>  "Tipo estructura 2",
-    "W1" =>  "Altura (m)",
-];
+
 $rutina014_titulos = [
     "A1" =>  "Departamento",
     "B1" =>  "Provincia",
@@ -209,24 +191,19 @@ $rutina014_titulos = [
 
 $sheet->setTitle("Datos Rutinas");
 
-if ($codForm == '001'){
+/*if ($codForm == '001'){
     $sheet->getStyle('A1:S1')->applyFromArray($tableHead);
     foreach ($rutina001_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
-}
+}*/
 if ($codForm == '012'){
     $sheet->getStyle('A1:P1')->applyFromArray($tableHead);
     foreach ($rutina012_titulos as $columna => $valor){
         $sheet->setCellValue($columna, $valor);
     }
 }
-if ($codForm == '013'){
-    $sheet->getStyle('A1:W1')->applyFromArray($tableHead);
-    foreach ($rutina013_titulos as $columna => $valor){
-        $sheet->setCellValue($columna, $valor);
-    }
-}
+
 if ($codForm == '014'){
     $sheet->getStyle('A1:AU1')->applyFromArray($tableHead);
     foreach ($rutina014_titulos as $columna => $valor){
@@ -257,7 +234,7 @@ while($row = mysqli_fetch_array($resultado)){
 
     if ($json_OK){
 
-        if ($codForm == '001'){
+        /*if ($codForm == '001'){
             $cm         = $row["cm"];
             $propertyId = $row["propertyId"];
             $sitioId    = $row["sitioId"];
@@ -304,7 +281,7 @@ while($row = mysqli_fetch_array($resultado)){
             $sheet->setCellValue('Q'.$fila, $g20_2_1);
             $sheet->setCellValue('R'.$fila, $g20_2_2);
             $sheet->setCellValue('S'.$fila, $g21_1);
-        }
+        }*/
 
         if ($codForm == '012'){
             $cm         = $row["cm"];
@@ -345,57 +322,6 @@ while($row = mysqli_fetch_array($resultado)){
             $sheet->setCellValue('O'.$fila, $g5_08_01);
             $sheet->setCellValue('P'.$fila, $g5_08_02);
 
-        }
-
-        if ($codForm == '013'){
-            $departamento = $row["nombreDepto"];
-            $provincia = $row["provincia"];
-            $localidad = $row["localidad"];
-            $municipio = $row["municipio"];
-            $latitud    = $row["latitud"];
-            $longitud   = $row["longitud"];
-            $sitioId    = $row["sitioId"];
-            $propertyId = $row["propertyId"];
-            $cm = $row["cm"];
-            $c_fechaRealizacion = $obj->c_fechaRealizacion;
-
-            $b_acceso = $obj->b_acceso;
-            $trayecto       = $b_acceso->b_01_01;
-            $estado_camino  = $b_acceso->b_03_01;
-
-
-            $f_predio = $obj->f_predio;
-            $f_01_01 = $f_predio->f_01_01; $f_01_02 = $f_predio->f_01_02; $f_01_03 = $f_predio->f_01_03;
-            $f_02_01 = $f_predio->f_02_01; $f_02_02 = $f_predio->f_02_02;
-            $f_03_01 = $f_predio->f_03_01; $f_03_02 = $f_predio->f_03_02;
-
-            $g_estructura = $obj->g_estructura;
-            $g_01_01 = $g_estructura->g_01_01; $g_01_02 = $g_estructura->g_01_02;
-            $g_02_01 = $g_estructura->g_02_01; $g_02_02 = $g_estructura->g_02_02;
-
-            $sheet->setCellValue('A'.$fila, $departamento);
-            $sheet->setCellValue('B'.$fila, $provincia);
-            $sheet->setCellValue('C'.$fila, $localidad);
-            $sheet->setCellValue('D'.$fila, $municipio);
-            $sheet->setCellValue('E'.$fila, $sitioId);
-            $sheet->setCellValue('F'.$fila, $propertyId);
-            $sheet->setCellValue('G'.$fila, $cm);
-            $sheet->setCellValue('H'.$fila, $latitud);
-            $sheet->setCellValue('I'.$fila, $longitud);
-            $sheet->setCellValue('J'.$fila, $trayecto);
-            $sheet->setCellValue('K'.$fila, $estado_camino);
-            $sheet->setCellValue('L'.$fila, $c_fechaRealizacion);
-            $sheet->setCellValue('M'.$fila, $f_01_01);
-            $sheet->setCellValue('N'.$fila, $f_01_02);
-            $sheet->setCellValue('O'.$fila, $f_01_03);
-            $sheet->setCellValue('P'.$fila, $f_02_01);
-            $sheet->setCellValue('Q'.$fila, $f_02_02);
-            $sheet->setCellValue('R'.$fila, $f_03_01);
-            $sheet->setCellValue('S'.$fila, $f_03_02);
-            $sheet->setCellValue('T'.$fila, $g_01_01);
-            $sheet->setCellValue('U'.$fila, $g_01_02);
-            $sheet->setCellValue('V'.$fila, $g_02_01);
-            $sheet->setCellValue('W'.$fila, $g_02_02);
         }
 
         if ($codForm == '014'){
