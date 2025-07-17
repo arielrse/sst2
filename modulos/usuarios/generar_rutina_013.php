@@ -40,31 +40,34 @@ $rutina000_titulos = [
     "H1" =>  "Latitud",
     "I1" =>  "Longitud",
     "J1" =>  "Trayecto",
-    "K1" =>  "Estado del camino",
-    "L1" =>  "Fecha de Mtto",
-    "M1" =>  "Nombre Contacto",
-    "N1" =>  "Tipo Contacto",
-    "O1" =>  "Tel. Celular",
-    "P1" =>  "Tel. Fijo",
-    "Q1" =>  "Nombre Contacto",
-    "R1" =>  "Tipo Contacto",
-    "S1" =>  "Tel. Celular",
-    "T1" =>  "Tel. Fijo",
-    "U1" =>  "Tipo de  sitio",
-    "V1" =>  "Predio",
-    "W1" =>  "Cerramiento perimetral",
-    "X1" =>  "Dimension predio",
-    "Y1" =>  "Loza de equipos",
-    "Z1" =>  "Loza o caseta grupo",
-    "AA1" =>  "Espacio en Loza equipos",
-    "AB1" =>  "Tipo estructura 1",
-    "AC1" =>  "Altura (m)",
-    "AD1" =>  "Tipo estructura 2",
-    "AE1" =>  "Altura (m)",
+    "K1" =>  "Dist Km",
+    "L1" =>  "T. Viaje Hrs",
+    "M1" =>  "Estado del camino",
+    "N1" =>  "Traking de Ruta",
+    "O1" =>  "Fecha de Mtto",
+    "P1" =>  "Nombre Contacto",
+    "Q1" =>  "Tipo Contacto",
+    "R1" =>  "Tel. Celular",
+    "S1" =>  "Tel. Fijo",
+    "T1" =>  "Nombre Contacto",
+    "U1" =>  "Tipo Contacto",
+    "V1" =>  "Tel. Celular",
+    "W1" =>  "Tel. Fijo",
+    "X1" =>  "Tipo de  sitio",
+    "Y1" =>  "Predio",
+    "Z1" =>  "Cerramiento perimetral",
+    "AA1" =>  "Dimension predio",
+    "AB1" =>  "Loza de equipos",
+    "AC1" =>  "Loza o caseta grupo",
+    "AD1" =>  "Espacio en Loza equipos",
+    "AE1" =>  "Tipo estructura 1",
+    "AF1" =>  "Altura (m)",
+    "AG1" =>  "Tipo estructura 2",
+    "AH1" =>  "Altura (m)",
 ];
 
 $sheet->setTitle("Datos Rutinas");
-$sheet->getStyle('A1:AE1')->applyFromArray($tableHead);
+$sheet->getStyle('A1:AH1')->applyFromArray($tableHead);
 foreach ($rutina000_titulos as $columna => $valor){
     $sheet->setCellValue($columna, $valor);
 }
@@ -104,7 +107,19 @@ while($row = mysqli_fetch_array($resultado)){
 
         $b_acceso = $obj->b_acceso;
         $trayecto       = $b_acceso->b_01_01;
+        $distancia      = $b_acceso->b_02_01;
+        $tiempo_viaje   = $b_acceso->b_02_02;
         $estado_camino  = $b_acceso->b_03_01;
+        $tracking_si    = $b_acceso->b_04_01;
+        $tracking_no    = $b_acceso->b_04_02;
+
+        $tracking = "";
+        if ($tracking_si) {
+            $tracking = "SI";
+        }
+        if ($tracking_no) {
+            $tracking .= "NO";
+        }
 
 
         $f_predio = $obj->f_predio;
@@ -137,27 +152,30 @@ while($row = mysqli_fetch_array($resultado)){
         $sheet->setCellValue('H'.$fila, $latitud);
         $sheet->setCellValue('I'.$fila, $longitud);
         $sheet->setCellValue('J'.$fila, $trayecto);
-        $sheet->setCellValue('K'.$fila, $estado_camino);
-        $sheet->setCellValue('L'.$fila, $c_fechaRealizacion);
-        $sheet->setCellValue('M'.$fila, $e_01_01);
-        $sheet->setCellValue('N'.$fila, $e_01_02);
-        $sheet->setCellValue('O'.$fila, $e_02_01);
-        $sheet->setCellValue('P'.$fila, $e_02_02);
-        $sheet->setCellValue('Q'.$fila, $e_03_01);
-        $sheet->setCellValue('R'.$fila, $e_03_02);
-        $sheet->setCellValue('S'.$fila, $e_04_01);
-        $sheet->setCellValue('T'.$fila, $e_04_02);
-        $sheet->setCellValue('U'.$fila, $f_01_01);
-        $sheet->setCellValue('V'.$fila, $f_01_02);
-        $sheet->setCellValue('W'.$fila, $f_01_03);
-        $sheet->setCellValue('X'.$fila, $f_02_01);
-        $sheet->setCellValue('Y'.$fila, $f_02_02);
-        $sheet->setCellValue('Z'.$fila, $f_03_01);
-        $sheet->setCellValue('AA'.$fila, $f_03_02);
-        $sheet->setCellValue('AB'.$fila, $g_01_01);
-        $sheet->setCellValue('AC'.$fila, $g_01_02);
-        $sheet->setCellValue('AD'.$fila, $g_02_01);
-        $sheet->setCellValue('AE'.$fila, $g_02_02);
+        $sheet->setCellValue('K'.$fila, $distancia);
+        $sheet->setCellValue('L'.$fila, $tiempo_viaje);
+        $sheet->setCellValue('M'.$fila, $estado_camino);
+        $sheet->setCellValue('N'.$fila, $tracking);
+        $sheet->setCellValue('O'.$fila, $c_fechaRealizacion);
+        $sheet->setCellValue('P'.$fila, $e_01_01);
+        $sheet->setCellValue('Q'.$fila, $e_01_02);
+        $sheet->setCellValue('R'.$fila, $e_02_01);
+        $sheet->setCellValue('S'.$fila, $e_02_02);
+        $sheet->setCellValue('T'.$fila, $e_03_01);
+        $sheet->setCellValue('U'.$fila, $e_03_02);
+        $sheet->setCellValue('V'.$fila, $e_04_01);
+        $sheet->setCellValue('W'.$fila, $e_04_02);
+        $sheet->setCellValue('X'.$fila, $f_01_01);
+        $sheet->setCellValue('Y'.$fila, $f_01_02);
+        $sheet->setCellValue('Z'.$fila, $f_01_03);
+        $sheet->setCellValue('AA'.$fila, $f_02_01);
+        $sheet->setCellValue('AB'.$fila, $f_02_02);
+        $sheet->setCellValue('AC'.$fila, $f_03_01);
+        $sheet->setCellValue('AD'.$fila, $f_03_02);
+        $sheet->setCellValue('AE'.$fila, $g_01_01);
+        $sheet->setCellValue('AF'.$fila, $g_01_02);
+        $sheet->setCellValue('AG'.$fila, $g_02_01);
+        $sheet->setCellValue('AH'.$fila, $g_02_02);
     }
     else {
         $sheet->setCellValue('A'.$fila, 'ERROR');
