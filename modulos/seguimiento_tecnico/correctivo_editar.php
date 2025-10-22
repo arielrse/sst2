@@ -474,6 +474,9 @@ if (isset($_GET['volver'])) $volver = base64_decode($_GET['volver']);
                                             </select>
                                         </td>
                                     </tr>
+
+
+
                                     <tr>
                                         <td class="col-xl-4 bg-light">Sistema/Equipo en falla</td>
                                         <td class="col-xl-8">

@@ -1,3 +1,16 @@
+-- 
+SELECT idsistemafalla, nombresistemafalla 
+FROM ticket_sistemafalla;
+
+SELECT idequipofalla, nombreequipofalla   
+FROM ticket_equipofalla;
+
+SELECT ticket_tipofalla.idtipofalla, ticket_tipofalla.nombretipofalla 
+FROM ticket_tipofalla;
+
+SELECT idsolucion, nombresolucion 
+FROM ticket_solucion ORDER BY idsolucion, nombresolucion;
+-- 
 SELECT * FROM ticket_solucion s
 WHERE s.`idsolucion` LIKE '%ES%';
 
@@ -20,9 +33,9 @@ WHERE tfs.`idequipofalla` = 'TRE-024'
 AND   tfs.`idtipofalla` = 'TRF-045'
 ;
 
-select *
-from ticket_equipofalla e
-where e.idsistemafalla = 3;
+SELECT *
+FROM ticket_equipofalla e
+WHERE e.idsistemafalla = 3;
 
 INSERT INTO ticket_tipofallasolucion (`idtipofalla`, `idsolucion`, `idequipofalla`) VALUES('TRF-046','TRS-042','TRE-024');
 INSERT INTO ticket_tipofallasolucion (`idtipofalla`, `idsolucion`, `idequipofalla`) VALUES('TRF-045','TRS-042','TRE-024');
@@ -39,3 +52,12 @@ INSERT INTO `ticket_tipofalla` (`idtipofalla`, `nombretipofalla`, `idsistemafall
 INSERT INTO `ticket_solucion` (`idsolucion`, `nombresolucion`, `idsistemafalla`) VALUES('ES-050','Otros','2');
 INSERT INTO `ticket_equipofallatipofalla` (`idequipofalla`, `idtipofalla`) VALUES('EE-007','EF-065');
 INSERT INTO `ticket_tipofallasolucion` (`idtipofalla`, `idsolucion`, `idequipofalla`) VALUES('EF-065','ES-050','EE-007');
+
+--
+DELETE FROM `ticket_equipofalla` WHERE activo = 1;
+DELETE FROM `ticket_tipofalla` WHERE activo = 1;
+DELETE FROM `ticket_solucion` WHERE activo = 1;
+
+DELETE FROM `ticket_tipofallasolucion` WHERE idequipofalla = 'EE-020';
+DELETE FROM `ticket_tipofallasolucion` WHERE idequipofalla in (
+'EE-020','EE-021','EE-022','EE-023','EE-024','EE-025','EE-026','EE-027','EE-028','EE-029','EE-030','EE-031','EE-032','EE-033','EE-034','EE-035','EE-036','EE-037','EE-038');

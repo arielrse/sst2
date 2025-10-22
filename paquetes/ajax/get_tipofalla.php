@@ -6,7 +6,9 @@
 	$res = mysqli_query($conexion, "SELECT ticket_tipofalla.idtipofalla, ticket_tipofalla.nombretipofalla 
                                           FROM ticket_tipofalla,ticket_equipofallatipofalla 
                                           WHERE ticket_tipofalla.idtipofalla=ticket_equipofallatipofalla.idtipofalla 
-                                          and ticket_equipofallatipofalla.idequipofalla= '".$idequipofalla."' order by ticket_tipofalla.nombretipofalla") ;
+                                          and ticket_equipofallatipofalla.idequipofalla= '".$idequipofalla."'
+                                          and ticket_tipofalla.activo = '1' 
+                                          order by ticket_tipofalla.idtipofalla") ;
 	//$filas=mysqli_fetch_array($res);
 
 	//echo ('alert("asdf");')
@@ -19,6 +21,6 @@
 	//foreach ($filas as $ver) {	
 
 	while($ver = mysqli_fetch_array($res)){		?>
-		<option value="<?= $ver['idtipofalla'] ?>"> <?= $ver['nombretipofalla'] ?></option>
+		<option value="<?= $ver['idtipofalla'] ?>"> <?= $ver['idtipofalla'] . ' ' . $ver['nombretipofalla'] ?></option>
 		
 	<?php } ?>

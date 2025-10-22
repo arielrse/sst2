@@ -3,7 +3,9 @@
 
 	$idsistemafalla=filter_input(INPUT_POST,'idsistemafalla');
 	//$letters = preg_replace("/[^a-z0-9 ]/si","",$letters);
-	$res = mysqli_query($conexion, "SELECT idequipofalla, nombreequipofalla FROM ticket_equipofalla WHERE idsistemafalla= '".$idsistemafalla."' order by nombreequipofalla");
+	$res = mysqli_query($conexion, "SELECT idequipofalla, nombreequipofalla FROM ticket_equipofalla 
+                                          WHERE idsistemafalla= '".$idsistemafalla."' AND activo = '1' 
+                                          order by idequipofalla");
 	//$filas=mysqli_fetch_array($res);
 
 	//echo ('alert("asdf");')
@@ -16,7 +18,7 @@
 	//foreach ($filas as $ver) {	
 
 	while($ver = mysqli_fetch_array($res)){		?>
-		<option value="<?= $ver['idequipofalla'] ?>"> <?=  $ver['nombreequipofalla'] ?></option>
+		<option value="<?= $ver['idequipofalla'] ?>"> <?= $ver['idequipofalla'] . ' ' . $ver['nombreequipofalla'] ?></option>
 		
 	<?php } ?>
 

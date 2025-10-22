@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8" collation="utf8_general_ci">sst</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="ticket_equipofalla" view="colnames">
+<left>287</left>
+<top>188</top>
+<width>185</width>
+<height>127</height>
+<sql_create_table>CREATE TABLE `ticket_equipofalla` (
+  `idequipofalla` char(15) NOT NULL,
+  `nombreequipofalla` varchar(100) DEFAULT NULL,
+  `idsistemafalla` char(15) NOT NULL,
+  `activo` char(1) DEFAULT NULL,
+  PRIMARY KEY (`idequipofalla`),
+  KEY `idsistemafalla` (`idsistemafalla`),
+  CONSTRAINT `ticket_equipofalla_ibfk_1` FOREIGN KEY (`idsistemafalla`) REFERENCES `ticket_sistemafalla` (`idsistemafalla`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="ticket_sistemafalla" view="colnames">
+<left>514</left>
+<top>32</top>
+<width>158</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `ticket_sistemafalla` (
+  `idsistemafalla` char(15) NOT NULL,
+  `nombresistemafalla` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idsistemafalla`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="ticket_tipofalla" view="colnames">
+<left>712</left>
+<top>179</top>
+<width>185</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `ticket_tipofalla` (
+  `idtipofalla` char(15) NOT NULL,
+  `nombretipofalla` varchar(255) DEFAULT NULL,
+  `idsistemafalla` char(15) NOT NULL,
+  `activo` char(1) DEFAULT NULL,
+  PRIMARY KEY (`idtipofalla`),
+  KEY `Refsistemafallan15` (`idsistemafalla`),
+  CONSTRAINT `ticket_tipofalla_ibfk_1` FOREIGN KEY (`idsistemafalla`) REFERENCES `ticket_sistemafalla` (`idsistemafalla`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="ticket_equipofallatipofalla" view="colnames">
+<left>483</left>
+<top>436</top>
+<width>183</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `ticket_equipofallatipofalla` (
+  `idequipofalla` char(15) NOT NULL,
+  `idtipofalla` char(15) NOT NULL,
+  KEY `RefEquipofallan11` (`idequipofalla`),
+  KEY `Reftipofallan12` (`idtipofalla`),
+  CONSTRAINT `ticket_equipofallatipofalla_ibfk_2` FOREIGN KEY (`idtipofalla`) REFERENCES `ticket_tipofalla` (`idtipofalla`),
+  CONSTRAINT `ticket_equipofallatipofalla_ibfk_1` FOREIGN KEY (`idequipofalla`) REFERENCES `ticket_equipofalla` (`idequipofalla`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="ticket_solucion" view="colnames">
+<left>1107</left>
+<top>164</top>
+<width>192</width>
+<height>141</height>
+<sql_create_table>CREATE TABLE `ticket_solucion` (
+  `idsolucion` char(15) NOT NULL,
+  `nombresolucion` varchar(350) DEFAULT NULL,
+  `idsistemafalla` char(15) DEFAULT NULL,
+  `activo` char(1) DEFAULT NULL,
+  PRIMARY KEY (`idsolucion`),
+  KEY `idsistemafalla` (`idsistemafalla`),
+  CONSTRAINT `ticket_solucion_ibfk_1` FOREIGN KEY (`idsistemafalla`) REFERENCES `ticket_sistemafalla` (`idsistemafalla`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="ticket_tipofallasolucion" view="colnames">
+<left>939</left>
+<top>433</top>
+<width>212</width>
+<height>121</height>
+<sql_create_table>CREATE TABLE `ticket_tipofallasolucion` (
+  `idtipofalla` char(15) NOT NULL,
+  `idsolucion` char(15) NOT NULL,
+  `idequipofalla` char(15) NOT NULL,
+  KEY `idtipofalla` (`idtipofalla`),
+  KEY `idsolucion` (`idsolucion`),
+  KEY `idequipofalla` (`idequipofalla`),
+  CONSTRAINT `ticket_tipofallasolucion_ibfk_3` FOREIGN KEY (`idequipofalla`) REFERENCES `ticket_equipofalla` (`idequipofalla`),
+  CONSTRAINT `ticket_tipofallasolucion_ibfk_1` FOREIGN KEY (`idtipofalla`) REFERENCES `ticket_tipofalla` (`idtipofalla`),
+  CONSTRAINT `ticket_tipofallasolucion_ibfk_2` FOREIGN KEY (`idsolucion`) REFERENCES `ticket_solucion` (`idsolucion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
