@@ -97,6 +97,8 @@ $param_volver = "&mes=$mes&anio=$anio&cm=$idcentro";
                             <option value="2022" <? if($anio==2022) echo"class='naranja' selected"; ?>>2022</option>
                             <option value="2023" <? if($anio==2023) echo"class='naranja' selected"; ?>>2023</option>
                             <option value="2024" <? if($anio==2024) echo"class='naranja' selected"; ?>>2024</option>
+                            <option value="2025" <? if($anio==2025) echo"class='naranja' selected"; ?>>2025</option>
+                            <option value="2026" <? if($anio==2026) echo"class='naranja' selected"; ?>>2026</option>
                         </select>&nbsp;
                         <input class="btn btn-sm btn-secondary px-3" name="ver" type="submit"  value="Ver" />
 
